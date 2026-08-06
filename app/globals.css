@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+@theme { --color-cream:#FAF8F5;--color-ink:#1A1A1A;--color-green:#2D5A4E;--color-gold:#C9A96A;--color-border:#E8E0D5;--font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif; }
+html{scroll-behavior:smooth}body{background:#FAF8F5;color:#1A1A1A;font-family:Inter,sans-serif}h1,h2,h3{font-family:'Cormorant Garamond',serif}*:focus-visible{outline:3px solid #C9A96A;outline-offset:3px}.container{max-width:1120px;margin:auto;padding:0 1.25rem}.section{padding:5rem 0}.eyebrow{color:#2D5A4E;text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:600}.placeholder{background:#e8e0d5;color:#6b6258;display:flex;align-items:center;justify-content:center;text-align:center;min-height:220px}
+
+/* Pomocnicze klasy dostępności i animacji */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:#2D5A4E;color:#fff;padding:.75rem 1.25rem;border-radius:0 0 .5rem 0;font-family:Inter,sans-serif;font-size:.875rem}
+.skip-link:focus{left:0;outline-offset:0}
+section[id]{scroll-margin-top:5.5rem}
+.reveal{transition:opacity .7s ease,transform .7s ease}
+html.js .reveal:not(.is-visible){opacity:0;transform:translateY(18px)}
+html.js .reveal.is-visible{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
+@media (max-width:1023px){body{padding-bottom:4.5rem}}
