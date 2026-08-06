@@ -3,10 +3,10 @@ export const config = {
   title: 'Psycholog / psychoterapeuta',
   phone: '+48 693087574',
   email: 'g.plebaniak@somentiq.pl',
-  address: 'ul. Śliczna 24/28, 50-566 Wrocław',
+  address: 'ul. Śliczna 28/24, 50-566 Wrocław',
   postal: '50-566',
   bookingUrl: 'https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw',
-  mapsUrl: 'https://www.google.com/maps?q=Śliczna+24,+Wrocław&output=embed',
+  mapsUrl: 'https://www.google.com/maps?q=Śliczna+28,+Wrocław&output=embed',
 
   // ===== Firebase (wariant darmowy — Spark) =====
   // Formularz kontaktowy zapisuje wiadomości BEZPOŚREDNIO do Firestore

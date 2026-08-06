@@ -108,7 +108,7 @@ Na końcu w katalogu projektu powstanie folder **`out/`** — to gotowa strona.
 3. **Bing Webmaster:** https://www.bing.com/webmasters — zgłoś tę samą sitemapę.
 4. **Wizytówka Google Business** (dla lokalnego SEO) — dane NAP:
    - Nazwa: **Grzegorz Plebaniak — Gabinet Psychologiczny**
-   - Adres: **ul. Śliczna 24/28, Wrocław**
+   - Adres: **ul. Śliczna 28/24, Wrocław**
    - Telefon: **+48 693087574**
    - E-mail: **g.plebaniak@somentiq.pl**
 

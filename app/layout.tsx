@@ -64,7 +64,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         priceRange: '140–160 zł',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'ul. Śliczna 24/28',
+          streetAddress: 'ul. Śliczna 28/24',
           addressLocality: 'Wrocław',
           postalCode: '50-566',
           addressCountry: 'PL',
