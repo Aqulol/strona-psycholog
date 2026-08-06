@@ -36,7 +36,6 @@ export default function Footer() {
             <p>{config.address}</p>
             <p className="mt-1">{config.phone}</p>
             <p className="mt-1">{config.email}</p>
-            <p className="mt-3">NIP: [do uzupełnienia]</p>
           </div>
         </div>
         <div className="mt-8 flex flex-col gap-2 border-t border-white/20 pt-6 text-sm text-white/70 md:flex-row md:items-center md:justify-between">

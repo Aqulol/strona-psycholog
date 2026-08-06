@@ -40,7 +40,7 @@ const faq = [
   ],
   [
     'Ile kosztuje i jak wygląda płatność?',
-    'Cena sesji: [do uzupełnienia]. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.',
+    'Konsultacja kosztuje 160 zł, sesja psychoterapii 140 zł. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.',
   ],
   [
     'Jak często odbywają się spotkania?',
@@ -61,12 +61,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         name: 'Grzegorz Plebaniak – gabinet psychologiczny',
         telephone: '+48 693087574',
         email: 'g.plebaniak@somentiq.pl',
-        priceRange: '[do uzupełnienia]',
+        priceRange: '140–160 zł',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'ul. Śliczna 24/28',
           addressLocality: 'Wrocław',
-          postalCode: '[do uzupełnienia]',
+          postalCode: '50-566',
           addressCountry: 'PL',
         },
         areaServed: 'Wrocław',

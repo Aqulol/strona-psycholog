@@ -28,9 +28,9 @@ macOS lub Linux).
    | Plik | Co uzupełnić |
    |---|---|
    | `lib/config.ts` | `formEndpoint` (adres funkcji — patrz Krok 4), `gtmId` (GTM-XXXXXXX) i `ga4Id` (G-XXXXXXXXXX) z kont Google |
-   | `app/layout.tsx` | domena w `metadataBase` (zamiast `https://twojadomena.pl`), `postalCode` (kod pocztowy), `priceRange` (cennik), meta tag weryfikacji Search Console (patrz Krok 5) |
+   | `app/layout.tsx` | domena w `metadataBase` (zamiast `https://twojadomena.pl`), meta tag weryfikacji Search Console (patrz Krok 5) |
    | `app/sitemap.ts` i `app/robots.ts` | domena (zamiast `https://twojadomena.pl`) |
-   | sekcje strony | cennik i godziny przyjęć (`components/Contact.tsx`), NIP/REGON (`components/Footer.tsx`), dojazd MPK i parking (`components/Office.tsx`) |
+   | sekcje strony | godziny przyjęć (`components/Contact.tsx`), dojazd MPK i parking (`components/Office.tsx`) |
 
 ## Krok 2 — Pobierz kod
 
@@ -111,7 +111,7 @@ Na końcu w katalogu projektu powstanie folder **`out/`** — to gotowa strona.
 
 ## Checklista wdrożeniowa
 
-- [ ] Realne dane w kodzie: NIP/REGON, godziny przyjęć, cennik, kod pocztowy, domena
+- [ ] Realne dane w kodzie: godziny przyjęć, wykształcenie/szkolenia, MPK/parking, domena, GTM/GA4, meta GSC
 - [ ] Zdjęcia profesjonalne gabinetu (w folderze `public/images/`; opcjonalnie w formacie WebP)
 - [ ] Domena podpięta + SSL + przekierowanie www → bez www
 - [ ] Sitemap zgłoszona w Google Search Console i Bing Webmaster

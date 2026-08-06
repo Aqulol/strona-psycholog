@@ -16,9 +16,21 @@ const posts = [
     date: '[do uzupełnienia]',
     lead: 'Psychoterapia psychodynamiczna pomaga rozumieć powtarzające się trudności. Sprawdzamy, kiedy może być dobrym wyborem.',
   },
+  {
+    href: '/blog/artykul-3',
+    title: 'Pierwsza wizyta u psychologa – jak wygląda i czego się spodziewać',
+    date: '[do uzupełnienia]',
+    lead: 'Spokojnie o pierwszym spotkaniu: konsultacja 50 minut, dyskrecja oraz forma stacjonarna na Gaju i online.',
+  },
+  {
+    href: '/blog/artykul-4',
+    title: 'Wypalenie zawodowe – objawy i kiedy warto szukać pomocy',
+    date: '[do uzupełnienia]',
+    lead: 'O sygnałach przeciążenia, utracie energii i tym, kiedy warto porozmawiać z psychologiem.',
+  },
 ];
 
-/** Sekcja „Blog / Artykuły” na stronie głównej – dwie karty wpisów. */
+/** Sekcja „Blog / Artykuły” na stronie głównej – karty wpisów. */
 export default function BlogSection() {
   return (
     <section id="blog" className="section bg-cream">

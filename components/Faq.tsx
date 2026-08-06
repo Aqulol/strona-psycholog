@@ -16,7 +16,7 @@ const faqItems = [
   {
     question: 'Ile kosztuje i jak wygląda płatność?',
     answer:
-      'Cena sesji: [do uzupełnienia]. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.',
+      'Konsultacja kosztuje 160 zł, sesja psychoterapii 140 zł. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.',
   },
   {
     question: 'Jak często odbywają się spotkania?',

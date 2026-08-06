@@ -3,8 +3,8 @@ export const config = {
   title: 'Psycholog / psychoterapeuta',
   phone: '+48 693087574',
   email: 'g.plebaniak@somentiq.pl',
-  address: 'ul. Śliczna 24/28, Wrocław (Gaj)',
-  postal: '[do uzupełnienia]',
+  address: 'ul. Śliczna 24/28, 50-566 Wrocław',
+  postal: '50-566',
   // Endpoint Cloud Function wysyłającej e-maile z formularza.
   formEndpoint: 'https://europe-west1-psychologplebaniak-e4480.cloudfunctions.net/sendContactForm',
   bookingUrl: 'https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw',
