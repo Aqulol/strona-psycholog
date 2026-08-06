@@ -1,11 +1,15 @@
 # Wdrożenie strony gabinetu — instrukcja krok po kroku
 
 Strona gabinetu psychologicznego Grzegorza Plebaniaka (Wrocław Gaj).
-Projekt Firebase: **psychologplebaniak-e4480** (region funkcji: `europe-west1`).
+Projekt Firebase: **psychologplebaniak-e4480**.
 
 Czas wdrożenia: ok. 1–2 godziny. Nie wymaga znajomości programowania —
 wystarczy wykonywać polecenia w terminalu (na komputerze z systemem Windows,
 macOS lub Linux).
+
+> **Wariant darmowy (Spark).** Formularz kontaktowy zapisuje wiadomości
+> bezpośrednio do bazy Firestore z przeglądarki — bez Cloud Functions i bez
+> planu Blaze (płatnego). Wiadomości odczytuje Pan/Pani w konsoli Firebase.
 
 ---
 
@@ -22,13 +26,13 @@ macOS lub Linux).
    firebase login
    ```
    Przeglądarka otworzy stronę logowania — wybierz konto właściciela projektu.
-4. **Uzupełnij placeholdery w kodzie** — wszystkie dane, których jeszcze nie ma,
-   są oznaczone `[do uzupełnienia]`. Wpisz prawdziwe dane w tych miejscach:
+4. **Uzupełnij placeholdery w kodzie** — dane do uzupełnienia są oznaczone
+   `TU-WPISZ-...` lub `XXXX`:
 
    | Plik | Co uzupełnić |
    |---|---|
-   | `lib/config.ts` | `formEndpoint` (adres funkcji — patrz Krok 4), opcjonalnie `gtmId` i `ga4Id` z kont Google |
-   | `lib/config.ts` | `formEndpoint` (adres funkcji — patrz Krok 4), `gtmId` (opcjonalnie) i `ga4Id` (opcjonalnie) z kont Google |
+   | `lib/config.ts` | `firebaseConfig` — konfiguracja aplikacji webowej Firebase (patrz Krok 4). Pola `apiKey`, `messagingSenderId`, `appId` zawierają placeholder `TU-WPISZ-...`. |
+   | `lib/config.ts` | opcjonalnie `gtmId` (GTM-XXXXXXX) i `ga4Id` (G-XXXXXXXXXX) z kont Google |
    | `app/layout.tsx` | meta tag weryfikacji Search Console (opcjonalnie, patrz Krok 5) |
 
 ## Krok 2 — Pobierz kod
@@ -45,10 +49,6 @@ W katalogu projektu (`gabinet-plebaniak`) wykonaj po kolei:
 
 ```bash
 npm install
-cd functions
-npm install
-npm run build
-cd ..
 NODE_OPTIONS='--max-old-space-size=2048' npm run build
 ```
 
@@ -57,45 +57,51 @@ Na końcu w katalogu projektu powstanie folder **`out/`** — to gotowa strona.
 
 ## Krok 4 — Wdróż na Firebase
 
-1. Ustaw **sekrety** (hasła i dane SMTP) — CLI zapyta o każdą wartość po kolei.
-   Wykonaj w katalogu projektu:
-   ```bash
-   firebase functions:secrets:set SMTP_HOST
-   firebase functions:secrets:set SMTP_PORT
-   firebase functions:secrets:set SMTP_USER
-   firebase functions:secrets:set SMTP_PASS
-   firebase functions:secrets:set MAIL_TO
-   firebase functions:secrets:set SITE_URL
-   ```
-   Podpowiedzi:
-   - `SMTP_PORT` — zwykle `587` (STARTTLS) albo `465` (TLS),
-   - `MAIL_TO` — adres, na który mają trafiać wiadomości z formularza
-     (domyślnie `g.plebaniak@somentiq.pl`),
-   - `SITE_URL` — `https://psychologplebaniak.pl`.
-2. Wdróż wszystko (ID projektu jest już ustawione w `.firebaserc`):
-   ```bash
-   firebase deploy --only functions,firestore,storage,hosting
-   ```
-3. Na końcu komunikatu deploya zobaczysz adres funkcji. Skopiuj go
-   (powinien wyglądać tak):
-   ```
-   https://europe-west1-psychologplebaniak-e4480.cloudfunctions.net/sendContactForm
-   ```
-   i wklej w `lib/config.ts` → pole `formEndpoint`.
-4. Ponownie zbuduj i wdróż sam hosting (formularz będzie wysyłał maile):
+1. **Uzupełnij `firebaseConfig` w `lib/config.ts`** — skąd wziąć wartości:
+   1. Wejdź do konsoli Firebase: https://console.firebase.google.com
+   2. Wybierz projekt **psychologplebaniak-e4480**.
+   3. Kliknij ikonę koła zębatego → **Ustawienia projektu** (Project settings).
+   4. W sekcji **„Twoje aplikacje" / „Your apps"** znajdź aplikację internetową
+      (ikona `</>`). Jeśli jej nie ma — kliknij **„Utwórz aplikację internetową"**
+      (Add app → Web) i przejdź kreatora (nazwa dowolna, hosting NIE trzeba włączać).
+   5. W zakładce **„SDK setup and configuration"** wybierz **„Config"**
+      i skopiuj cały obiekt `firebaseConfig`.
+   6. Wklej poszczególne wartości do `lib/config.ts` ZAMIAST placeholderów
+      `TU-WPISZ-...`. (Pola `authDomain`, `projectId`, `storageBucket` są już
+      wpisane — sprawdź, czy zgadzają się z konsolą.)
+   7. Zapisz plik.
+
+   > **Uwaga:** `apiKey` w aplikacji webowej Firebase jest publiczny (widoczny
+   > w przeglądarce) — to normalne i bezpieczne, jeśli reguły Firestore
+   > pozwalają tylko na ograniczony zapis (patrz `firestore.rules`).
+
+2. Po uzupełnieniu configu przebuduj stronę:
    ```bash
    NODE_OPTIONS='--max-old-space-size=2048' npm run build
-   firebase deploy --only hosting
    ```
+
+3. Wdróż hosting i reguły Firestore (ID projektu jest już ustawione w `.firebaserc`):
+   ```bash
+   firebase deploy --only hosting,firestore
+   ```
+   (Cloud Functions NIE są używane w wariancie darmowym — katalog `functions/`
+   pozostaje w repozytorium jako materiał do ewentualnego wariantu przyszłościowego;
+   opisano to w `README-FUNCTIONS.md`.)
+
+4. **Gdzie czytać wiadomości z formularza?**
+   Wiadomości z formularza kontaktowego pojawiają się w konsoli Firebase:
+   **Build → Firestore Database → kolekcja `messages`**.
+   Każdy dokument zawiera pola `name`, `contact`, `message`, `rodoConsent`
+   oraz `createdAt` (czas wysłania).
 
 ## Krok 5 — Domena i Google
 
 1. **Własna domena + SSL:** konsola Firebase → *Build* → *Hosting* →
-   *Add custom domain*. Wpisz domenę, np. `www.gabinetplebaniak.pl` — SSL
+   *Add custom domain*. Wpisz domenę, np. `www.psychologplebaniak.pl` — SSL
    (certyfikat) zadziała automatycznie. Przekierowanie `www → bez www`
    (lub odwrotnie) ustawia się rekordami DNS w panelu dostawcy domeny.
 2. **Google Search Console:** wejdź na https://search.google.com/search-console,
-   dodaj zasób i wybierz metodę **„Tag HTML”** — skopiowany tag wklej w
+   dodaj zasób i wybierz metodę **„Tag HTML"** — skopiowany tag wklej w
    `app/layout.tsx` (odkomentuj przygotowany wiersz) albo wybierz weryfikację
    przez **DNS** (rekord TXT) — wtedy tag nie jest potrzebny.
    Po wdrożeniu zgłoś w GSC plik `https://psychologplebaniak.pl/sitemap.xml`.
@@ -110,11 +116,12 @@ Na końcu w katalogu projektu powstanie folder **`out/`** — to gotowa strona.
 
 ## Checklista wdrożeniowa
 
+- [ ] `firebaseConfig` uzupełniony w `lib/config.ts`
 - [ ] Opcjonalnie: GTM/GA4 oraz meta tag Search Console
 - [ ] Zdjęcia profesjonalne gabinetu (w folderze `public/images/`; opcjonalnie w formacie WebP)
 - [ ] Domena podpięta + SSL + przekierowanie www → bez www
 - [ ] Sitemap zgłoszona w Google Search Console i Bing Webmaster
 - [ ] Wizytówka Google Business z danymi NAP (zgodnymi ze stroną)
-- [ ] Test formularza kontaktowego (wiadomość dociera na e-mail) + zgoda RODO
+- [ ] Test formularza kontaktowego (wiadomość pojawia się w Firestore → `messages`) + zgoda RODO
 - [ ] Lighthouse > 90 (wydajność, dostępność, SEO)
 - [ ] Testy na urządzeniach: iPhone, Android, Safari, Chrome

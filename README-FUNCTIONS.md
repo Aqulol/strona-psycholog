@@ -1,5 +1,12 @@
 # Firebase Functions — formularz kontaktowy
 
+> **Wariant funkcji (wymaga planu Blaze) — NIEUŻYWANY w obecnym wdrożeniu.**
+> Formularz zapisuje wiadomości bezpośrednio w Firestore
+> (z przeglądarki, bez Cloud Functions). Poniższy opis dotyczy wariantu
+> przyszłościowego — gdyby właściciel zdecydował się na plan Blaze i
+> automatyczne wysyłanie wiadomości e-mail przez SMTP. Do działania
+> wymaga planu Blaze (płatnego) oraz ustawienia sekretów SMTP.
+
 Funkcja `sendContactForm` zapisuje zgłoszenia w Firestore i wysyła je przez SMTP.
 Nie zawiera żadnych sekretów w repozytorium — wszystkie wrażliwe wartości są
 deklarowane w kodzie przez `defineSecret` (z `firebase-functions/params`)

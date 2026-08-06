@@ -6,12 +6,29 @@ import SectionHeading from './SectionHeading';
 import Input from './Input';
 import { config } from '../lib/config';
 
-type FormState = 'idle' | 'sending' | 'success' | 'error';
+// Firebase Web SDK — inicjalizujemy tylko, gdy właściciel wpisał prawdziwy
+// apiKey (zamiast placeholdera „TU-WPISZ-..."). W wariancie darmowym (Spark)
+// formularz zapisuje wiadomości bezpośrednio do Firestore z przeglądarki.
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
+
+type FormState = 'idle' | 'sending' | 'success' | 'error' | 'unconfigured';
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+/** Czy firebaseConfig został już uzupełniony przez właściciela? */
+function isFirebaseConfigured(): boolean {
+  return !config.firebaseConfig.apiKey.startsWith('TU-WPISZ');
+}
+
+/** Inicjalizacja Firebase — tylko raz, tylko gdy config jest uzupełniony. */
+function getDb() {
+  const app = getApps().length ? getApp() : initializeApp(config.firebaseConfig);
+  return getFirestore(app);
+}
+
 /**
- * Waliduje pole „Telefon lub e-mail”: poprawny adres e-mail LUB
+ * Waliduje pole „Telefon lub e-mail": poprawny adres e-mail LUB
  * numer telefonu z min. 9 cyframi.
  */
 function isValidContact(value: string): boolean {
@@ -23,8 +40,9 @@ function isValidContact(value: string): boolean {
 }
 
 /**
- * Sekcja „Kontakt” – dane kontaktowe, rezerwacja online i formularz
- * z walidacją klient-side, honeypotem i wysyłką do config.formEndpoint.
+ * Sekcja „Kontakt" – dane kontaktowe, rezerwacja online i formularz
+ * z walidacją klient-side, honeypotem i zapisem bezpośrednio do Firestore
+ * (wariant darmowy, bez Cloud Functions).
  */
 export default function Contact() {
   const [name, setName] = useState('');
@@ -74,14 +92,23 @@ export default function Contact() {
 
     if (!validate()) return;
 
+    // Jeśli właściciel nie uzupełnił jeszcze firebaseConfig — nie próbuj
+    // zapisu, pokaż komunikat z prośbą o kontakt telefoniczny.
+    if (!isFirebaseConfigured()) {
+      setState('unconfigured');
+      return;
+    }
+
     setState('sending');
     try {
-      const response = await fetch(config.formEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name.trim(), contact: contact.trim(), message: message.trim(), rodo }),
+      const db = getDb();
+      await addDoc(collection(db, 'messages'), {
+        name: name.trim(),
+        contact: contact.trim(),
+        message: message.trim(),
+        rodoConsent: true,
+        createdAt: serverTimestamp(),
       });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
       setState('success');
       setName('');
       setContact('');
@@ -240,13 +267,13 @@ export default function Contact() {
               </p>
             )}
 
-            {state === 'error' && (
+            {(state === 'error' || state === 'unconfigured') && (
               <p
                 role="alert"
                 className="flex items-start gap-2 rounded border border-red-300 bg-red-50 p-4 text-sm text-red-700"
               >
                 <AlertCircle aria-hidden="true" className="mt-0.5 shrink-0" size={18} />
-                Nie udało się wysłać wiadomości. Proszę spróbować później lub skontaktować się telefonicznie.
+                Nie udało się wysłać wiadomości. Proszę spróbować później lub skontaktować się telefonicznie pod numerem {config.phone}.
               </p>
             )}
 
