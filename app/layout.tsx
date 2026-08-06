@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   description:
     'Gabinet psychologiczny we Wrocławiu na Gaju. Grzegorz Plebaniak oferuje konsultacje i psychoterapię psychodynamiczną dorosłych, stacjonarnie oraz online.',
-  metadataBase: new URL('https://twojadomena.pl'),
+  metadataBase: new URL('https://psychologplebaniak.pl'),
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Psycholog Wrocław – Grzegorz Plebaniak',
@@ -84,7 +84,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Strona główna', item: 'https://twojadomena.pl' },
+          { '@type': 'ListItem', position: 1, name: 'Strona główna', item: 'https://psychologplebaniak.pl' },
         ],
       },
     ],

@@ -1,4 +1,4 @@
-import { MapPin, Bus, Car } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import Reveal from './Reveal';
 import { config } from '../lib/config';
@@ -74,14 +74,6 @@ export default function Office() {
                     <br />
                     Wrocław, osiedle Gaj
                   </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Bus aria-hidden="true" className="mt-1 shrink-0 text-green" size={20} />
-                  <span>Dojazd MPK: [do uzupełnienia]</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Car aria-hidden="true" className="mt-1 shrink-0 text-green" size={20} />
-                  <span>Parking: [do uzupełnienia]</span>
                 </li>
               </ul>
             </div>

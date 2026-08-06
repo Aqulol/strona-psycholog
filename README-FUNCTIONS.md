@@ -28,7 +28,7 @@ CLI poprosi o wartość każdego sekretu po kolei. Sugerowane wartości:
 - `SMTP_USER` — login do skrzynki nadawcy,
 - `SMTP_PASS` — hasło do skrzynki nadawcy,
 - `MAIL_TO` — adres odbiorcy wiadomości z formularza; domyślnie (jeśli nie ustawisz) `g.plebaniak@somentiq.pl`,
-- `SITE_URL` — domena produkcyjna, np. `https://twojadomena.pl`; jeśli nie ustawisz, CORS użyje `*` (wygodne testowo, ale nie na produkcję).
+- `SITE_URL` — domena produkcyjna, np. `https://psychologplebaniak.pl`; jeśli nie ustawisz, CORS użyje `*` (wygodne testowo, ale nie na produkcję).
 
 > **Ważne:** sekret musi istnieć ZANIM wdrożysz funkcję. Wdrożenie funkcji,
 > która odwołuje się do nieustawionego sekretu, zakończy się błędem

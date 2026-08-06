@@ -27,10 +27,9 @@ macOS lub Linux).
 
    | Plik | Co uzupełnić |
    |---|---|
-   | `lib/config.ts` | `formEndpoint` (adres funkcji — patrz Krok 4), `gtmId` (GTM-XXXXXXX) i `ga4Id` (G-XXXXXXXXXX) z kont Google |
-   | `app/layout.tsx` | domena w `metadataBase` (zamiast `https://twojadomena.pl`), meta tag weryfikacji Search Console (patrz Krok 5) |
-   | `app/sitemap.ts` i `app/robots.ts` | domena (zamiast `https://twojadomena.pl`) |
-   | sekcje strony | godziny przyjęć (`components/Contact.tsx`), dojazd MPK i parking (`components/Office.tsx`) |
+   | `lib/config.ts` | `formEndpoint` (adres funkcji — patrz Krok 4), opcjonalnie `gtmId` i `ga4Id` z kont Google |
+   | `lib/config.ts` | `formEndpoint` (adres funkcji — patrz Krok 4), `gtmId` (opcjonalnie) i `ga4Id` (opcjonalnie) z kont Google |
+   | `app/layout.tsx` | meta tag weryfikacji Search Console (opcjonalnie, patrz Krok 5) |
 
 ## Krok 2 — Pobierz kod
 
@@ -72,7 +71,7 @@ Na końcu w katalogu projektu powstanie folder **`out/`** — to gotowa strona.
    - `SMTP_PORT` — zwykle `587` (STARTTLS) albo `465` (TLS),
    - `MAIL_TO` — adres, na który mają trafiać wiadomości z formularza
      (domyślnie `g.plebaniak@somentiq.pl`),
-   - `SITE_URL` — Twoja domena, np. `https://twojadomena.pl`.
+   - `SITE_URL` — `https://psychologplebaniak.pl`.
 2. Wdróż wszystko (ID projektu jest już ustawione w `.firebaserc`):
    ```bash
    firebase deploy --only functions,firestore,storage,hosting
@@ -99,7 +98,7 @@ Na końcu w katalogu projektu powstanie folder **`out/`** — to gotowa strona.
    dodaj zasób i wybierz metodę **„Tag HTML”** — skopiowany tag wklej w
    `app/layout.tsx` (odkomentuj przygotowany wiersz) albo wybierz weryfikację
    przez **DNS** (rekord TXT) — wtedy tag nie jest potrzebny.
-   Po wdrożeniu zgłoś w GSC plik `https://twojadomena.pl/sitemap.xml`.
+   Po wdrożeniu zgłoś w GSC plik `https://psychologplebaniak.pl/sitemap.xml`.
 3. **Bing Webmaster:** https://www.bing.com/webmasters — zgłoś tę samą sitemapę.
 4. **Wizytówka Google Business** (dla lokalnego SEO) — dane NAP:
    - Nazwa: **Grzegorz Plebaniak — Gabinet Psychologiczny**
@@ -111,7 +110,7 @@ Na końcu w katalogu projektu powstanie folder **`out/`** — to gotowa strona.
 
 ## Checklista wdrożeniowa
 
-- [ ] Realne dane w kodzie: godziny przyjęć, wykształcenie/szkolenia, MPK/parking, domena, GTM/GA4, meta GSC
+- [ ] Opcjonalnie: GTM/GA4 oraz meta tag Search Console
 - [ ] Zdjęcia profesjonalne gabinetu (w folderze `public/images/`; opcjonalnie w formacie WebP)
 - [ ] Domena podpięta + SSL + przekierowanie www → bez www
 - [ ] Sitemap zgłoszona w Google Search Console i Bing Webmaster

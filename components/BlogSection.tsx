@@ -7,25 +7,25 @@ const posts = [
   {
     href: '/blog/artykul-1',
     title: 'Jak radzić sobie z lękiem we Wrocławiu',
-    date: '[do uzupełnienia]',
+    date: '6 sierpnia 2026',
     lead: 'Lęk bywa trudny do nazwania. Spokojny przewodnik po sygnałach, pierwszym kroku i wsparciu psychologa we Wrocławiu.',
   },
   {
     href: '/blog/artykul-2',
     title: 'Kiedy warto skorzystać z psychoterapii psychodynamicznej?',
-    date: '[do uzupełnienia]',
+    date: '6 sierpnia 2026',
     lead: 'Psychoterapia psychodynamiczna pomaga rozumieć powtarzające się trudności. Sprawdzamy, kiedy może być dobrym wyborem.',
   },
   {
     href: '/blog/artykul-3',
     title: 'Pierwsza wizyta u psychologa – jak wygląda i czego się spodziewać',
-    date: '[do uzupełnienia]',
+    date: '6 sierpnia 2026',
     lead: 'Spokojnie o pierwszym spotkaniu: konsultacja 50 minut, dyskrecja oraz forma stacjonarna na Gaju i online.',
   },
   {
     href: '/blog/artykul-4',
     title: 'Wypalenie zawodowe – objawy i kiedy warto szukać pomocy',
-    date: '[do uzupełnienia]',
+    date: '6 sierpnia 2026',
     lead: 'O sygnałach przeciążenia, utracie energii i tym, kiedy warto porozmawiać z psychologiem.',
   },
 ];

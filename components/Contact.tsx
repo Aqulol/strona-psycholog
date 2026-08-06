@@ -98,7 +98,7 @@ export default function Contact() {
     { icon: Phone, label: 'Telefon', value: config.phone, href: `tel:${config.phone.replace(/\s/g, '')}` },
     { icon: Mail, label: 'E-mail', value: config.email, href: `mailto:${config.email}` },
     { icon: MapPin, label: 'Adres', value: config.address },
-    { icon: Clock, label: 'Godziny przyjęć', value: '[do uzupełnienia]' },
+    { icon: Clock, label: 'Godziny przyjęć', value: 'Aktualne terminy w kalendarzu online – rezerwacja przez ZnanyLekarz.' },
   ];
 
   return (
@@ -155,7 +155,7 @@ export default function Contact() {
                   </a>
                 </>
               ) : (
-                <p className="my-3 text-ink/80">Rezerwacja online: [do uzupełnienia]</p>
+                <p className="my-3 text-ink/80">Aktualne terminy znajdzie Pan/Pani w kalendarzu online ZnanyLekarz.</p>
               )}
             </div>
           </div>

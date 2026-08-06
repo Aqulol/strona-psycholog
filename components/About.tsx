@@ -6,17 +6,17 @@ const trustCards = [
   {
     icon: Award,
     title: 'Dyplom',
-    text: 'Dyplom – [do uzupełnienia]',
+    text: 'Dyplom: wyższe wykształcenie psychologiczne – specjalność kliniczna i zdrowia',
   },
   {
     icon: BookOpen,
     title: 'Szkolenie',
-    text: 'Szkolenie – [do uzupełnienia]',
+    text: 'Szkolenie: w trakcie szkolenia psychoterapeutycznego w MSPPD',
   },
   {
     icon: ShieldCheck,
     title: 'Superwizja',
-    text: 'Regularna superwizja',
+    text: 'Superwizja: regularna, stała',
   },
 ];
 
@@ -47,7 +47,7 @@ export default function About() {
               </p>
               <p>
                 Pracuję w nurcie psychodynamicznym. Pomagam przyglądać się emocjom, relacjom i powtarzającym się
-                sposobom reagowania. Wykształcenie i szkolenia: [do uzupełnienia]. Swoją pracę poddaję regularnej
+                sposobom reagowania. Mam wyższe wykształcenie psychologiczne ze specjalnością kliniczną i zdrowia. Obecnie jestem w trakcie szkolenia psychoterapeutycznego w MSPPD. Swoją pracę poddaję regularnej
                 superwizji.
               </p>
               <p>

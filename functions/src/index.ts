@@ -72,7 +72,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 function corsHeaders(origin: string | undefined): Record<string, string> {
-  // SITE_URL to produkcyjna domena (np. https://twojadomena.pl), ustawiana sekretem.
+  // SITE_URL to produkcyjna domena (np. https://psychologplebaniak.pl), ustawiana sekretem.
   // Domyślnie „*” – wygodne testowo; właściciel powinien ustawić dokładną domenę.
   const allowed = readSecret(SITE_URL, '*') || '*';
   const permitted = allowed === '*' || (origin && origin === allowed) ? (origin || allowed) : allowed;
