@@ -6,16 +6,16 @@ import GtmScript from '../components/GtmScript';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Psycholog Wrocław – Grzegorz Plebaniak | psychoterapia psychodynamiczna',
-    template: '%s | Grzegorz Plebaniak – Psycholog Wrocław',
+    default: 'Grzegorz Plebaniak – psycholog, psychoterapeuta we Wrocławiu',
+    template: '%s | Grzegorz Plebaniak',
   },
   description:
-    'Gabinet psychologiczny we Wrocławiu na Gaju. Grzegorz Plebaniak oferuje konsultacje i psychoterapię psychodynamiczną dorosłych, stacjonarnie oraz online.',
+    'Gabinet psychologiczny we Wrocławiu (Gaj). Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
   metadataBase: new URL('https://psychologplebaniak.pl'),
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Psycholog Wrocław – Grzegorz Plebaniak',
-    description: 'Psychoterapia psychodynamiczna we Wrocławiu i online.',
+    title: 'Grzegorz Plebaniak – psycholog, psychoterapeuta we Wrocławiu',
+    description: 'Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
     images: ['/og-image.svg'],
     type: 'website',
     locale: 'pl_PL',
@@ -44,7 +44,7 @@ const faq = [
   ],
   [
     'Jak często odbywają się spotkania?',
-    'Zwykle spotykamy się raz w tygodniu, o stałej porze. Częstotliwość dopasowujemy do potrzeb i ustaleń kontraktu. Dostępna jest forma stacjonarna i online.',
+    'Zwykle spotykamy się raz lub dwa razy w tygodniu, o stałej porze. Częstotliwość dopasowujemy do potrzeb i ustaleń kontraktu. Dostępna jest forma stacjonarna i online.',
   ],
   [
     'Co to superwizja i jak chronisz moje dane?',

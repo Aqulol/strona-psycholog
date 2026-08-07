@@ -53,9 +53,6 @@ export default function Areas() {
                 <area.icon aria-hidden="true" className="text-green" size={28} strokeWidth={1.5} />
                 <h3 className="mt-4 text-2xl text-green">{area.title}</h3>
                 <p className="mt-2 text-ink/80">{area.text}</p>
-                <a href="#faq" className="mt-4 inline-block text-sm text-green underline hover:text-green/80">
-                  więcej w FAQ
-                </a>
               </div>
             </Reveal>
           ))}
