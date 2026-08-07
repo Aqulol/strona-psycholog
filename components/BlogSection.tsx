@@ -5,25 +5,25 @@ import Reveal from './Reveal';
 
 const posts = [
   {
-    href: '/blog/artykul-1',
-    title: 'Jak radzić sobie z lękiem we Wrocławiu',
+    href: '/blog/jak-radzic-sobie-z-lekiem',
+    title: 'Jak radzić sobie z lękiem?',
     date: '6 sierpnia 2026',
-    lead: 'Lęk bywa trudny do nazwania. Spokojny przewodnik po sygnałach, pierwszym kroku i wsparciu psychologa we Wrocławiu.',
+    lead: 'Lęk bywa trudny do nazwania. Spokojny przewodnik po sygnałach, pierwszym kroku i wsparciu psychologa.',
   },
   {
-    href: '/blog/artykul-2',
+    href: '/blog/psychoterapia-psychodynamiczna',
     title: 'Kiedy warto skorzystać z psychoterapii psychodynamicznej?',
     date: '6 sierpnia 2026',
     lead: 'Psychoterapia psychodynamiczna pomaga rozumieć powtarzające się trudności. Sprawdzamy, kiedy może być dobrym wyborem.',
   },
   {
-    href: '/blog/artykul-3',
+    href: '/blog/pierwsza-wizyta-u-psychologa',
     title: 'Pierwsza wizyta u psychologa – jak wygląda i czego się spodziewać',
     date: '6 sierpnia 2026',
-    lead: 'Spokojnie o pierwszym spotkaniu: konsultacja 50 minut, dyskrecja oraz forma stacjonarna na Gaju i online.',
+    lead: 'Spokojnie o pierwszym spotkaniu: konsultacja 50 minut, dyskrecja oraz forma stacjonarna i online.',
   },
   {
-    href: '/blog/artykul-4',
+    href: '/blog/wypalenie-zawodowe',
     title: 'Wypalenie zawodowe – objawy i kiedy warto szukać pomocy',
     date: '6 sierpnia 2026',
     lead: 'O sygnałach przeciążenia, utracie energii i tym, kiedy warto porozmawiać z psychologiem.',
@@ -38,7 +38,7 @@ export default function BlogSection() {
         <SectionHeading title="Blog / Artykuły">
           <p className="mb-8 max-w-2xl leading-7 text-ink/70">
             Spokojne teksty o emocjach, relacjach i psychoterapii – pisane z myślą o osobach, które szukają
-            wsparcia we Wrocławiu.
+            wsparcia.
           </p>
         </SectionHeading>
 

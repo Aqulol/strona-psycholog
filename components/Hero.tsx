@@ -12,7 +12,7 @@ export default function Hero() {
         <Reveal>
           <p className="eyebrow">Wrocław · Gaj · stacjonarnie i online</p>
           <h1 className="mt-4 text-5xl leading-tight text-green md:text-6xl">
-            Psycholog Wrocław – Grzegorz Plebaniak | psychoterapia psychodynamiczna • Gaj
+            Grzegorz Plebaniak – psycholog i psychoterapeuta
           </h1>
           <p className="my-6 text-lg leading-8 text-ink/80">
             Bezpieczna przestrzeń do rozmowy o tym, co trudne. Pracuję w nurcie psychodynamicznym z osobami

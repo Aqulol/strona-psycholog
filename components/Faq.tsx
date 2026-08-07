@@ -21,7 +21,7 @@ const faqItems = [
   {
     question: 'Jak często odbywają się spotkania?',
     answer:
-      'Zwykle spotykamy się raz w tygodniu, o stałej porze. Częstotliwość dopasowujemy do potrzeb i ustaleń kontraktu. Dostępna jest forma stacjonarna i online.',
+      'Zwykle spotykamy się raz lub dwa razy w tygodniu, o stałej porze. Częstotliwość dopasowujemy do potrzeb i ustaleń kontraktu. Dostępna jest forma stacjonarna i online.',
   },
   {
     question: 'Co to superwizja i jak chronisz moje dane?',

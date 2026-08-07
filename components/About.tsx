@@ -16,7 +16,7 @@ const trustCards = [
   {
     icon: ShieldCheck,
     title: 'Superwizja',
-    text: 'Superwizja: regularna, stała',
+    text: 'Uczęszczam na regularne superwizje.',
   },
 ];
 
