@@ -29,8 +29,24 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-cream/95 backdrop-blur">
       <div className="container flex items-center justify-between py-4">
-        <Link href="/" className="font-heading text-2xl font-semibold text-green">
-          Grzegorz Plebaniak
+        {/* Logo jako przycisk „home" — domyślnie zwinięte do samego znaku,
+            po najechaniu/fokusie klawiatury płynnie rozwija się do pełnego
+            napisu „psycholoGPlebaniak" (transition-all 500 ms). */}
+        <Link
+          href="/"
+          aria-label="Strona główna"
+          className="group inline-flex items-center rounded-sm px-1.5"
+        >
+          <span className="inline-flex h-12 items-center overflow-hidden transition-all duration-500 ease-in-out w-4 group-hover:w-[68px] group-focus-visible:w-[68px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo.svg"
+              alt=""
+              className="h-12 w-auto max-w-none shrink-0 select-none"
+              width={68}
+              height={48}
+            />
+          </span>
         </Link>
 
         {/* Nawigacja desktop (lg+) */}
