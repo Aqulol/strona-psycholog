@@ -8,7 +8,7 @@ export default function Method() {
       <div className="container">
         <SectionHeading title="Metoda pracy" />
         <Reveal>
-          <div className="max-w-3xl space-y-4 text-lg leading-8 text-ink/80">
+          <div className="max-w-4xl space-y-5 text-lg leading-8 text-ink/80 xl:text-xl xl:leading-9">
             <p>
               Nurt psychodynamiczny zakłada, że na nasze samopoczucie wpływają nie tylko bieżące wydarzenia, ale
               także wcześniejsze doświadczenia i relacje.

@@ -14,11 +14,11 @@ const navLinks = [
 /** Stopka – nawigacja, dane firmy, RODO i copyright. */
 export default function Footer() {
   return (
-    <footer className="bg-green py-10 text-white">
+    <footer className="bg-green py-10 text-white lg:py-14">
       <div className="container">
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <p className="font-heading text-3xl">Grzegorz Plebaniak</p>
+            <p className="font-heading text-3xl lg:text-4xl">Grzegorz Plebaniak</p>
             <p className="mt-2 text-sm text-white/80">Psycholog / psychoterapeuta · Wrocław Gaj</p>
           </div>
           <nav aria-label="Nawigacja w stopce">
@@ -39,7 +39,7 @@ export default function Footer() {
             <p className="mt-1">{config.email}</p>
           </div>
         </div>
-        <div className="mt-8 flex flex-col gap-2 border-t border-white/20 pt-6 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 flex flex-col gap-2 border-t border-white/20 pt-8 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Grzegorz Plebaniak. Wszystkie prawa zastrzeżone.</p>
           <Link href="/polityka-prywatnosci" className="underline hover:text-white">
             Polityka prywatności

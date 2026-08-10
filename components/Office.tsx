@@ -37,7 +37,7 @@ export default function Office() {
       <div className="container">
         <SectionHeading title="Gabinet" />
 
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
           {photos.map((photo, index) => (
             <Reveal key={photo.src} delay={(index % 4) * 80}>
               <img
@@ -53,7 +53,7 @@ export default function Office() {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:gap-8">
           <Reveal>
             <iframe
               src={config.mapsUrl}
@@ -64,11 +64,11 @@ export default function Office() {
             />
           </Reveal>
           <Reveal delay={120}>
-            <div className="flex h-full flex-col justify-center rounded-xl border border-border bg-cream p-6">
-              <h3 className="text-2xl text-green">Dojazd</h3>
-              <ul className="mt-4 space-y-3 text-ink/80">
+            <div className="flex h-full flex-col justify-center rounded-xl border border-border bg-cream p-6 lg:p-8">
+              <h3 className="text-2xl text-green lg:text-3xl">Dojazd</h3>
+              <ul className="mt-4 space-y-3 text-lg text-ink/80">
                 <li className="flex items-start gap-3">
-                  <MapPin aria-hidden="true" className="mt-1 shrink-0 text-green" size={20} />
+                  <MapPin aria-hidden="true" className="mt-1 shrink-0 text-green" size={22} />
                   <span>
                     <strong>{config.address}</strong>
                     <br />

@@ -26,7 +26,7 @@ export default function About() {
     <section id="o-mnie" className="section">
       <div className="container">
         <SectionHeading title="O mnie" />
-        <div className="grid gap-8 md:grid-cols-2 md:items-center">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center lg:gap-14">
           <Reveal>
             <img
               src="/images/portret2.jpg"
@@ -39,7 +39,7 @@ export default function About() {
             />
           </Reveal>
           <Reveal delay={120}>
-            <div className="space-y-4 leading-7 text-ink/80">
+            <div className="space-y-5 text-lg leading-8 text-ink/80">
               <p>
                 Nazywam się Grzegorz Plebaniak. Jestem psychologiem i psychoterapeutą pracującym z osobami
                 dorosłymi. W kontakcie z drugim człowiekiem ważne są dla mnie uważność, szacunek i tempo, które
@@ -58,15 +58,15 @@ export default function About() {
           </Reveal>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
+        <div className="mt-10 grid gap-4 md:grid-cols-3 lg:gap-6">
           {trustCards.map((card, index) => (
             <Reveal key={card.title} delay={index * 100}>
-              <div className="h-full rounded border border-border bg-white p-5">
+              <div className="h-full rounded border border-border bg-white p-6 lg:p-7">
                 <div className="flex items-center gap-3">
-                  <card.icon aria-hidden="true" className="text-gold" size={24} />
-                  <h3 className="text-xl text-green">{card.title}</h3>
+                  <card.icon aria-hidden="true" className="text-gold" size={28} />
+                  <h3 className="text-2xl text-green">{card.title}</h3>
                 </div>
-                <p className="mt-2 text-sm text-ink/70">{card.text}</p>
+                <p className="mt-2 text-base text-ink/70">{card.text}</p>
               </div>
             </Reveal>
           ))}
