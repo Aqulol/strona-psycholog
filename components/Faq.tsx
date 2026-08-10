@@ -37,7 +37,7 @@ export default function Faq() {
       <div className="container">
         <SectionHeading title="Najczęstsze pytania" />
         <Reveal>
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <FaqAccordion items={faqItems} />
           </div>
         </Reveal>

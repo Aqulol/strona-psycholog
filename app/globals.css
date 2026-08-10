@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 @import 'tailwindcss';
 @theme { --color-cream:#FAF8F5;--color-ink:#1A1A1A;--color-green:#2D5A4E;--color-gold:#C9A96A;--color-border:#E8E0D5;--font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif; }
-html{scroll-behavior:smooth}body{background:#FAF8F5;color:#1A1A1A;font-family:Inter,sans-serif}h1,h2,h3{font-family:'Cormorant Garamond',serif}*:focus-visible{outline:3px solid #C9A96A;outline-offset:3px}.container{max-width:1120px;margin:auto;padding:0 1.25rem}.section{padding:5rem 0}.eyebrow{color:#2D5A4E;text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:600}.placeholder{background:#e8e0d5;color:#6b6258;display:flex;align-items:center;justify-content:center;text-align:center;min-height:220px}
+html{scroll-behavior:smooth}body{background:#FAF8F5;color:#1A1A1A;font-family:Inter,sans-serif}h1,h2,h3{font-family:'Cormorant Garamond',serif}*:focus-visible{outline:3px solid #C9A96A;outline-offset:3px}.container{max-width:1400px;margin:auto;padding:0 1.25rem}@media (min-width:1024px){.container{padding:0 2rem}}@media (min-width:1800px){.container{max-width:1560px}}.section{padding:5rem 0}@media (min-width:1024px){.section{padding:6.5rem 0}}.eyebrow{color:#2D5A4E;text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:600}.placeholder{background:#e8e0d5;color:#6b6258;display:flex;align-items:center;justify-content:center;text-align:center;min-height:220px}
+
+/* Strony artykułów (blog) i polityka prywatności: czytelna kolumna tekstu mimo szerszego .container */
+main.max-w-3xl{max-width:48rem}
 
 /* Pomocnicze klasy dostępności i animacji */
 .skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:#2D5A4E;color:#fff;padding:.75rem 1.25rem;border-radius:0 0 .5rem 0;font-family:Inter,sans-serif;font-size:.875rem}

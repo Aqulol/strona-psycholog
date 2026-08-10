@@ -133,34 +133,34 @@ export default function Contact() {
       <div className="container">
         <SectionHeading title="Kontakt" />
 
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2 lg:gap-14 xl:gap-16">
           <div>
-            <ul className="space-y-4">
+            <ul className="space-y-5">
               {contactItems.map((item) => (
                 <li key={item.label} className="flex items-start gap-3">
-                  <item.icon aria-hidden="true" className="mt-1 shrink-0 text-green" size={20} />
+                  <item.icon aria-hidden="true" className="mt-1 shrink-0 text-green" size={22} />
                   <div>
                     <p className="text-sm text-ink/60">{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} className="text-ink hover:text-green">
+                      <a href={item.href} className="text-lg text-ink hover:text-green">
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-ink">{item.value}</p>
+                      <p className="text-lg text-ink">{item.value}</p>
                     )}
                   </div>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-8 rounded border border-border bg-cream p-6">
-              <h3 className="text-2xl text-green">Rezerwacja online</h3>
+            <div className="mt-8 rounded border border-border bg-cream p-6 lg:p-8">
+              <h3 className="text-2xl text-green lg:text-3xl">Rezerwacja online</h3>
               {config.bookingUrl && !config.bookingUrl.includes('[do uzupełnienia]') ? (
                 <>
-                  <p className="my-3 text-ink/80">Umów wizytę w dogodnym dla siebie terminie:</p>
+                  <p className="my-3 text-lg text-ink/80">Umów wizytę w dogodnym dla siebie terminie:</p>
                   <a
                     id="zl-url"
-                    className="zl-url inline-block text-green underline"
+                    className="zl-url inline-block text-lg text-green underline"
                     href={config.bookingUrl}
                     rel="nofollow"
                     data-zlw-doctor="grzegorz-plebaniak"
@@ -176,18 +176,18 @@ export default function Contact() {
                     href={config.bookingUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ml-4 inline-block rounded bg-green px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-green/90"
+                    className="ml-4 inline-block rounded bg-green px-6 py-3.5 text-base font-medium text-white transition-colors hover:bg-green/90"
                   >
                     Zarezerwuj termin online
                   </a>
                 </>
               ) : (
-                <p className="my-3 text-ink/80">Aktualne terminy znajdzie Pan/Pani w kalendarzu online ZnanyLekarz.</p>
+                <p className="my-3 text-lg text-ink/80">Aktualne terminy znajdzie Pan/Pani w kalendarzu online ZnanyLekarz.</p>
               )}
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} noValidate className="space-y-4">
+          <form onSubmit={handleSubmit} noValidate className="space-y-5">
             <Input
               id="imie"
               label="Imię"
@@ -280,7 +280,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={state === 'sending'}
-              className="inline-flex items-center gap-2 rounded bg-green px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-green/90 disabled:cursor-not-allowed disabled:opacity-60"
+              className="inline-flex items-center gap-2 rounded bg-green px-6 py-3.5 text-base font-medium text-white transition-colors hover:bg-green/90 disabled:cursor-not-allowed disabled:opacity-60"
             >
               <Send aria-hidden="true" size={16} />
               {state === 'sending' ? 'Wysyłanie…' : 'Wyślij wiadomość'}

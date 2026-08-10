@@ -32,7 +32,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
               <button
                 id={buttonId}
                 type="button"
-                className="flex w-full items-center justify-between gap-4 py-5 text-left font-semibold text-ink"
+                className="flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-semibold text-ink lg:py-6 lg:text-xl"
                 onClick={() => setOpenIndex(isOpen ? null : index)}
                 aria-expanded={isOpen}
                 aria-controls={panelId}
@@ -45,7 +45,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
               </button>
             </h3>
             {isOpen && (
-              <p id={panelId} role="region" aria-labelledby={buttonId} className="pb-5 leading-7 text-ink/80">
+              <p id={panelId} role="region" aria-labelledby={buttonId} className="pb-6 leading-7 text-ink/80 lg:pb-8 lg:leading-8">
                 {item.answer}
               </p>
             )}

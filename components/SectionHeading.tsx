@@ -12,7 +12,7 @@ export default function SectionHeading({ eyebrow = 'Gabinet psychologiczny Wroc≈
   return (
     <Reveal>
       <p className="eyebrow">{eyebrow}</p>
-      <h2 className="mt-2 mb-8 text-4xl text-green md:text-5xl">{title}</h2>
+      <h2 className="mt-3 mb-8 text-4xl text-green md:text-5xl lg:mb-10 xl:text-6xl">{title}</h2>
       {children}
     </Reveal>
   );
