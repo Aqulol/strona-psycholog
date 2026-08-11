@@ -14,7 +14,7 @@ type InputProps = {
 };
 
 const fieldStyles =
-  'w-full rounded border border-border bg-white p-4 text-ink placeholder:text-ink/40 focus-visible:outline-3 focus-visible:outline-gold focus-visible:outline-offset-0';
+  'w-full rounded border border-border bg-white p-4 text-ink placeholder:text-ink/70 focus-visible:outline-3 focus-visible:outline-gold focus-visible:outline-offset-0';
 
 /** Pole formularza z etykietą, komunikatem błędu i obsługą textarea. */
 export default function Input({
