@@ -34,8 +34,14 @@ export default function Home() {
         },
         areaServed: 'Wrocław',
         knowsAbout: ['lęk i depresja', 'kryzysy życiowe', 'relacje', 'stres', 'wypalenie zawodowe'],
+        sameAs: ['https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw'],
       },
-      { '@type': 'Person', name: 'Grzegorz Plebaniak', jobTitle: 'psycholog / psychoterapeuta' },
+      {
+        '@type': 'Person',
+        name: 'Grzegorz Plebaniak',
+        jobTitle: 'psycholog / psychoterapeuta',
+        sameAs: ['https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw'],
+      },
       {
         '@type': 'FAQPage',
         mainEntity: [
