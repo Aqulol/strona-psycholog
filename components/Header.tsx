@@ -29,25 +29,20 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-cream/95 backdrop-blur">
       <div className="container flex items-center justify-between py-4">
-        {/* Logo jako przycisk „home" — domyślnie zwinięte do samego znaku „GP"
-            (znak jest środkiem wordmarku „psycholoGPlebaniak", dlatego obraz jest
-            przesunięty w lewo), po najechaniu/fokusie klawiatury płynnie rozwija
-            się do pełnego napisu (width + translate, 500 ms). */}
+        {/* Logo jako przycisk „home" — statyczne logo (bez animacji) */}
         <Link
           href="/"
           aria-label="Strona główna"
-          className="group inline-flex items-center rounded-sm px-1.5"
+          className="inline-flex items-center rounded-sm px-1.5"
         >
-          <span className="inline-flex h-12 items-center overflow-hidden transition-all duration-500 ease-in-out w-[70px] group-hover:w-[274px] group-focus-visible:w-[274px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo.svg"
-              alt=""
-              className="h-12 w-auto max-w-none shrink-0 select-none -translate-x-[105px] transition-transform duration-500 ease-in-out group-hover:translate-x-0 group-focus-visible:translate-x-0"
-              width={274}
-              height={48}
-            />
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.png"
+            alt=""
+            className="h-12 w-auto max-w-[60vw] select-none"
+            width={1434}
+            height={258}
+          />
         </Link>
 
         {/* Nawigacja desktop (lg+) */}
