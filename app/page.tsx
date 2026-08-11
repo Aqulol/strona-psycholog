@@ -6,7 +6,7 @@ import Method from '../components/Method';
 import Office from '../components/Office';
 import Faq from '../components/Faq';
 import BlogSection from '../components/BlogSection';
-import LazyContact from '../components/LazyContact';
+import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 /**
@@ -110,7 +110,7 @@ export default function Home() {
         <Office />
         <Faq />
         <BlogSection />
-        <LazyContact />
+        <Contact />
       </main>
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
