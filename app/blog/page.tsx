@@ -93,7 +93,7 @@ export default function BlogPage() {
                 <p className="mt-3 text-lg leading-8 text-ink/80">{post.description}</p>
                 <Link
                   href={post.href}
-                  className="mt-5 inline-flex items-center gap-2 text-base font-medium text-green underline hover:text-green/80"
+                  className="mt-auto pt-5 inline-flex items-center gap-2 text-base font-medium text-green underline hover:text-green/80"
                 >
                   Czytaj więcej
                   <ArrowRight aria-hidden="true" size={18} />

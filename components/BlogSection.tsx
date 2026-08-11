@@ -43,7 +43,7 @@ export default function BlogSection() {
 
         <div className="grid gap-5 md:grid-cols-2 lg:gap-8">
           {posts.map((post, index) => (
-            <Reveal key={post.href} delay={index * 100}>
+            <Reveal key={post.href} delay={index * 100} className="h-full">
               <article className="flex h-full flex-col overflow-hidden rounded border border-border bg-white transition-shadow hover:shadow-md">
                 <div className="aspect-[1200/630] w-full overflow-hidden bg-cream">
                   {/* Grafika dekoracyjna – bez znaczenia informacyjnego */}
@@ -67,7 +67,7 @@ export default function BlogSection() {
                   <p className="mt-3 text-lg leading-8 text-ink/80">{post.lead}</p>
                   <Link
                     href={post.href}
-                    className="mt-5 inline-flex items-center gap-2 text-base font-medium text-green underline hover:text-green/80"
+                    className="mt-auto pt-5 inline-flex items-center gap-2 text-base font-medium text-green underline hover:text-green/80"
                   >
                     Czytaj więcej
                     <ArrowRight aria-hidden="true" size={18} />
