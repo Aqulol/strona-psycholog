@@ -7,7 +7,7 @@ const navLinks = [
   { label: 'Metoda pracy', href: '#metoda' },
   { label: 'Gabinet', href: '#gabinet' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Blog', href: '#blog' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
 

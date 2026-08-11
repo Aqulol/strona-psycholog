@@ -1,15 +1,43 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { articleJsonLd } from '../../../lib/articleJsonLd';
+
+const description =
+  'Dlaczego kolejne związki bywają do siebie podobne? Poznaj nieświadome schematy relacyjne z perspektywy psychoterapii psychodynamicznej we Wrocławiu.';
 
 export const metadata: Metadata = {
   title: 'Dlaczego wybieram podobnych partnerów? Schematy relacji',
-  description:
-    'Dlaczego kolejne związki bywają do siebie podobne? Poznaj nieświadome schematy relacyjne z perspektywy psychoterapii psychodynamicznej we Wrocławiu.',
+  description,
 };
+
+const faq: [string, string][] = [
+  [
+    'Czy wybieranie podobnych partnerów oznacza zaburzenie?',
+    'Nie. Powtarzalne wzorce występują u wielu osób. O problemie warto myśleć wtedy, gdy regularnie prowadzą do cierpienia, ograniczają wybór lub utrudniają tworzenie bezpiecznej bliskości.',
+  ],
+  [
+    'Czy za każdy schemat odpowiada dzieciństwo?',
+    'Nie. Znaczenie mają także późniejsze związki, temperament, aktualne warunki życia i doświadczenia społeczne. Terapia bada indywidualną historię zamiast zakładać jedną przyczynę.',
+  ],
+  [
+    'Czy samo rozpoznanie wzorca wystarczy, aby go zmienić?',
+    'Zwykle jest konieczne, ale nie zawsze wystarczające. Schemat obejmuje emocje i automatyczne sposoby reagowania, dlatego zmiana wymaga czasu oraz wielokrotnego przepracowania.',
+  ],
+];
+
+const ld = articleJsonLd({
+  headline: 'Dlaczego ciągle wybieram podobnych partnerów?',
+  description,
+  slug: 'dlaczego-wybieram-podobnych-partnerow',
+  datePublished: '2026-08-11',
+  image: 'https://psychologplebaniak.pl/og-image.png',
+  faq,
+});
 
 export default function Page() {
   return (
-    <main id="tresc" className="container section max-w-3xl">
+    <>
+      <main id="tresc" className="container section max-w-3xl">
       <Link href="/" className="text-green underline">
         ← Strona główna
       </Link>
@@ -152,6 +180,8 @@ export default function Page() {
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu na Gaju</p>
         </li>
       </ul>
-    </main>
+      </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+    </>
   );
 }

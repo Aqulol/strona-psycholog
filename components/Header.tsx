@@ -17,14 +17,18 @@ const navItems = [
 
 /**
  * Sticky header z logotypem, nawigacją (desktop) i hamburgerem (<1024px).
- * Na podstronach linki kotwicowe prowadzą do sekcji strony głównej (/#…).
+ * Na podstronach linki kotwicowe prowadzą do sekcji strony głównej (/#…),
+ * a „Blog” prowadzi do pełnej listy artykułów (/blog).
  */
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === '/';
 
-  const hrefFor = (anchor: string) => (isHome ? `#${anchor}` : `/#${anchor}`);
+  const hrefFor = (anchor: string) => {
+    if (anchor === 'blog' && !isHome) return '/blog';
+    return isHome ? `#${anchor}` : `/#${anchor}`;
+  };
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-cream shadow-[0_4px_20px_rgba(45,90,78,0.12)]">

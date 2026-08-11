@@ -1,15 +1,43 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { articleJsonLd } from '../../../lib/articleJsonLd';
+
+const description =
+  'Rozumienie przyczyn to ważny krok, ale trwała zmiana wymaga emocjonalnego przepracowania. Wyjaśnia to psychoterapia psychodynamiczna we Wrocławiu.';
 
 export const metadata: Metadata = {
   title: 'Dlaczego sama świadomość problemu nie wystarcza?',
-  description:
-    'Rozumienie przyczyn to ważny krok, ale trwała zmiana wymaga emocjonalnego przepracowania. Wyjaśnia to psychoterapia psychodynamiczna we Wrocławiu.',
+  description,
 };
+
+const faq: [string, string][] = [
+  [
+    'Czy wgląd jest w takim razie niepotrzebny?',
+    'Jest potrzebny, ponieważ pomaga rozpoznać wzorzec i nadać mu znaczenie. Największą moc zyskuje jednak wtedy, gdy łączy się z emocjami i doświadczeniem relacyjnym.',
+  ],
+  [
+    'Dlaczego po ważnej sesji problem czasem wraca?',
+    'Jedna rozmowa może przynieść ulgę, ale utrwalone sposoby reagowania uruchamiają się automatycznie. Powrót schematu nie musi oznaczać porażki; przepracowanie wymaga powtórzeń.',
+  ],
+  [
+    'Czy terapia psychodynamiczna daje konkretne narzędzia?',
+    'Jej głównym „narzędziem” jest pogłębione rozumienie i praca w relacji. Efektem mogą być bardzo konkretne zdolności: wcześniejsze rozpoznawanie emocji, stawianie granic i bardziej świadome decyzje.',
+  ],
+];
+
+const ld = articleJsonLd({
+  headline: '„Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?',
+  description,
+  slug: 'dlaczego-sama-swiadomosc-nie-wystarcza',
+  datePublished: '2026-08-11',
+  image: 'https://psychologplebaniak.pl/og-image.png',
+  faq,
+});
 
 export default function Page() {
   return (
-    <main id="tresc" className="container section max-w-3xl">
+    <>
+      <main id="tresc" className="container section max-w-3xl">
       <Link href="/" className="text-green underline">
         ← Strona główna
       </Link>
@@ -150,6 +178,8 @@ export default function Page() {
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu na Gaju</p>
         </li>
       </ul>
-    </main>
+      </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+    </>
   );
 }

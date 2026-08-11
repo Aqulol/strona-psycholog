@@ -3,6 +3,7 @@ import type{MetadataRoute} from 'next';
 export default function sitemap():MetadataRoute.Sitemap{
   return [
     '/',
+    '/blog',
     '/blog/dlaczego-wybieram-podobnych-partnerow',
     '/blog/dlaczego-sama-swiadomosc-nie-wystarcza',
     '/blog/relacja-terapeutyczna-zrodlo-zmiany',

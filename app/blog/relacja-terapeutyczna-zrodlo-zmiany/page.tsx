@@ -1,15 +1,43 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { articleJsonLd } from '../../../lib/articleJsonLd';
+
+const description =
+  'Czym są relacja terapeutyczna, przeniesienie i bezpieczne ramy terapii? Poznaj psychodynamiczne spojrzenie na terapię we Wrocławiu.';
 
 export const metadata: Metadata = {
   title: 'Relacja terapeutyczna — jak staje się źródłem zmiany?',
-  description:
-    'Czym są relacja terapeutyczna, przeniesienie i bezpieczne ramy terapii? Poznaj psychodynamiczne spojrzenie na terapię we Wrocławiu.',
+  description,
 };
+
+const faq: [string, string][] = [
+  [
+    'Czy przywiązanie do terapeuty jest czymś niewłaściwym?',
+    'Nie. Uczucia wobec terapeuty są naturalną częścią znaczącej, regularnej relacji. Ważne jest, aby mogły zostać omówione przy zachowaniu profesjonalnych granic.',
+  ],
+  [
+    'Czy można powiedzieć terapeucie o złości lub rozczarowaniu?',
+    'Tak. Rozmowa o trudnych reakcjach może dostarczyć ważnych informacji i pomóc naprawić nieporozumienie. Terapeuta powinien przyjąć taki temat z ciekawością, a nie odwetem.',
+  ],
+  [
+    'Po czym poznać bezpieczne ramy terapii?',
+    'Zasady są jasne, poufność omówiona, a granice konsekwentne. Terapeuta nie wykorzystuje relacji do zaspokajania własnych potrzeb i jest otwarty na pytania dotyczące sposobu pracy.',
+  ],
+];
+
+const ld = articleJsonLd({
+  headline: 'Co dzieje się między pacjentem a terapeutą? Relacja terapeutyczna jako źródło zmiany',
+  description,
+  slug: 'relacja-terapeutyczna-zrodlo-zmiany',
+  datePublished: '2026-08-11',
+  image: 'https://psychologplebaniak.pl/og-image.png',
+  faq,
+});
 
 export default function Page() {
   return (
-    <main id="tresc" className="container section max-w-3xl">
+    <>
+      <main id="tresc" className="container section max-w-3xl">
       <Link href="/" className="text-green underline">
         ← Strona główna
       </Link>
@@ -152,6 +180,8 @@ export default function Page() {
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu na Gaju</p>
         </li>
       </ul>
-    </main>
+      </main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+    </>
   );
 }

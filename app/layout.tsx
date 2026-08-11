@@ -1,8 +1,30 @@
 import type { Metadata } from 'next';
+import { Cormorant_Garamond, Inter } from 'next/font/google';
 import './globals.css';
 import CookieBanner from '../components/CookieBanner';
 import MobileCtaBar from '../components/MobileCtaBar';
 import GtmScript from '../components/GtmScript';
+
+/**
+ * Fonty: Cormorant Garamond (nagłówki) + Inter (tekst).
+ * Ładowane przez next/font/google — pliki fontów są pobierane podczas
+ * budowania i hostowane lokalnie (/_next/static/media/…), co eliminuje
+ * blokujący renderowanie @import z Google Fonts (LCP) i dodatkowe
+ * zapytania do zewnętrznej domeny. Zmienne CSS: --font-heading / --font-body.
+ */
+const heading = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+  variable: '--font-heading',
+  display: 'swap',
+});
+
+const body = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-body',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -13,14 +35,15 @@ export const metadata: Metadata = {
     'Gabinet psychologiczny we Wrocławiu (Gaj). Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
   metadataBase: new URL('https://psychologplebaniak.pl'),
   alternates: { canonical: '/' },
+  icons: { apple: '/apple-touch-icon.png' },
   openGraph: {
     title: 'Grzegorz Plebaniak – psycholog, psychoterapeuta we Wrocławiu',
     description: 'Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
-    images: ['/og-image.svg'],
+    images: ['/og-image.png'],
     type: 'website',
     locale: 'pl_PL',
   },
-  twitter: { card: 'summary_large_image', images: ['/og-image.svg'] },
+  twitter: { card: 'summary_large_image', images: ['/og-image.png'] },
   other: {
     'ai-content': 'Strona gabinetu psychologicznego',
     'ai-audience': 'Dorośli szukający wsparcia psychologicznego',
@@ -29,69 +52,9 @@ export const metadata: Metadata = {
   },
 };
 
-const faq = [
-  [
-    'Jak wygląda pierwsza wizyta?',
-    'Pierwsze spotkanie to konsultacja trwająca 50 minut. Rozmawiamy o tym, co skłoniło Pana/Panią do szukania wsparcia i wspólnie zastanawiamy się nad dalszą formą pracy.',
-  ],
-  [
-    'Psycholog vs psychiatra vs psychoterapeuta?',
-    'Psycholog zajmuje się wsparciem i diagnozą psychologiczną. Psychiatra jest lekarzem i może prowadzić leczenie farmakologiczne. Psychoterapeuta prowadzi regularną terapię po odpowiednim szkoleniu. Role mogą się uzupełniać.',
-  ],
-  [
-    'Ile kosztuje i jak wygląda płatność?',
-    'Konsultacja kosztuje 160 zł, sesja psychoterapii 140 zł. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.',
-  ],
-  [
-    'Jak często odbywają się spotkania?',
-    'Zwykle spotykamy się raz lub dwa razy w tygodniu, o stałej porze. Częstotliwość dopasowujemy do potrzeb i ustaleń kontraktu. Dostępna jest forma stacjonarna i online.',
-  ],
-  [
-    'Co to superwizja i jak chronisz moje dane?',
-    'Superwizja to poufna konsultacja pracy z doświadczonym specjalistą, bez danych pozwalających na identyfikację. Dbam o dyskrecję i przetwarzam dane zgodnie z RODO.',
-  ],
-];
-
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const ld = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': ['LocalBusiness', 'MedicalBusiness', 'ProfessionalService'],
-        name: 'Grzegorz Plebaniak – gabinet psychologiczny',
-        telephone: '+48 693087574',
-        email: 'g.plebaniak@somentiq.pl',
-        priceRange: '140–160 zł',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'ul. Śliczna 28/24',
-          addressLocality: 'Wrocław',
-          postalCode: '50-566',
-          addressCountry: 'PL',
-        },
-        areaServed: 'Wrocław',
-        knowsAbout: ['lęk i depresja', 'kryzysy życiowe', 'relacje', 'stres', 'wypalenie zawodowe'],
-      },
-      { '@type': 'Person', name: 'Grzegorz Plebaniak', jobTitle: 'psycholog / psychoterapeuta' },
-      {
-        '@type': 'FAQPage',
-        mainEntity: faq.map(([q, a]) => ({
-          '@type': 'Question',
-          name: q,
-          acceptedAnswer: { '@type': 'Answer', text: a },
-        })),
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Strona główna', item: 'https://psychologplebaniak.pl' },
-        ],
-      },
-    ],
-  };
-
   return (
-    <html lang="pl">
+    <html lang="pl" className={`${heading.variable} ${body.variable}`}>
       {/* ===== Weryfikacja Google Search Console =====
           Jak odblokować:
           1. Zaloguj się na https://search.google.com/search-console
@@ -103,6 +66,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           domeny) — wtedy ten tag nie jest potrzebny. Szczegóły:
           README-WDROZENIE.md, krok 5. */}
       {/* <meta name="google-site-verification" content="..." /> */}
+      {/* Preload logo (widoczne w headerze) i preconnect do domen zewnętrznych
+          faktycznie używanych na stronie: widget ZnanyLekarz
+          (platform.docplanner.com), osadzona mapa Google (www.google.com)
+          i GTM/GA4 (www.googletagmanager.com, ładowane po zgodzie na cookies).
+          Tagi <link> wstrzyknięte w <head> jako surowy HTML, aby trafiły do
+          <head> DOKŁADNIE RAZ: elementy <link> renderowane w drzewie React
+          byłyby wyemitowane podwójnie (React 19 hoistuje je do <head>,
+          a Next.js dodatkowo zbiera <link rel="preload"> do własnego head). */}
+      <head
+        dangerouslySetInnerHTML={{
+          __html: `
+            <link rel="preload" as="image" href="/logo.png" />
+            <link rel="preconnect" href="https://platform.docplanner.com" />
+            <link rel="preconnect" href="https://www.google.com" />
+            <link rel="preconnect" href="https://www.googletagmanager.com" />
+          `,
+        }}
+      />
       <body>
         <GtmScript />
         <a href="#tresc" className="skip-link">
@@ -118,7 +99,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <CookieBanner />
         <MobileCtaBar />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       </body>
     </html>
   );
