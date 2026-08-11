@@ -44,7 +44,7 @@ export default function Page() {
       <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
         Dlaczego ciągle wybieram podobnych partnerów?
       </h1>
-      <p className="mt-4 text-sm text-ink/60">11 sierpnia 2026</p>
+      <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026</p>
       <p className="mt-6 leading-8 text-ink/80">
         Zmieniają się imiona, okoliczności i początek znajomości, a jednak po pewnym czasie relacja zaczyna
         przypominać poprzednią. Pojawia się podobny dystans, lęk przed odrzuceniem, nadmierna odpowiedzialność

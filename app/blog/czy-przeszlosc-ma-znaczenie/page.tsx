@@ -44,7 +44,7 @@ export default function Page() {
       <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
         Czy przeszłość naprawdę ma aż takie znaczenie?
       </h1>
-      <p className="mt-4 text-sm text-ink/60">11 sierpnia 2026</p>
+      <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026</p>
       <p className="mt-6 leading-8 text-ink/80">
         Psychoterapia psychodynamiczna bywa kojarzona z niekończącym się powracaniem do dzieciństwa. To
         uproszczenie. Przeszłość ma znaczenie nie dlatego, że wyjaśnia wszystko ani dlatego, że terapeuta szuka

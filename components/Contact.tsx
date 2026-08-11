@@ -253,7 +253,7 @@ export default function Contact() {
                   checked={rodo}
                   onChange={(e) => setRodo(e.target.checked)}
                   className="mt-1"
-                  aria-describedby="rodo-error"
+                  aria-describedby={errors.rodo ? 'rodo-error' : undefined}
                 />
                 <span>
                   Wyrażam zgodę na kontakt i przetwarzanie moich danych osobowych zgodnie z{' '}

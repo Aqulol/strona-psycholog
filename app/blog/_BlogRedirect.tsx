@@ -15,7 +15,7 @@ export default function BlogRedirect({ to, label }: { to: string; label: string 
         </a>
         .
       </p>
-      <p className="mt-2 text-sm text-ink/60">Za chwilę nastąpi automatyczne przekierowanie.</p>
+      <p className="mt-2 text-sm text-ink/70">Za chwilę nastąpi automatyczne przekierowanie.</p>
     </main>
   );
 }
