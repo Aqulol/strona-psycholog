@@ -1,7 +1,51 @@
 @import 'tailwindcss';
-/* Fonty ładowane przez next/font/google (app/layout.tsx) i dostępne przez
-   zmienne --font-heading / --font-body. Brak @import z Google Fonts —
-   zero blokującego renderowanie zapytania sieciowego (LCP). */
+/* Fonty self-hostowane (public/fonts/) — Cormorant Garamond (nagłówki)
+   i Inter (tekst). Pliki pobrane z Google Fonts (wariant latin, format
+   woff2) i wgrane do repo: build NIE pobiera nic z internetu, zero
+   blokującego renderowanie zapytania sieciowego (LCP). Rodziny dostępne
+   przez zmienne --font-heading / --font-body zdefiniowane w @theme. */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-600.woff2') format('woff2');
+}
 @theme { --color-cream:#FAF8F5;--color-ink:#1A1A1A;--color-green:#2D5A4E;--color-gold:#C9A96A;--color-border:#E8E0D5;--font-heading:'Cormorant Garamond',serif;--font-body:'Inter',sans-serif; }
 html{scroll-behavior:smooth}body{background:#FAF8F5;color:#1A1A1A;font-family:var(--font-body)}h1,h2,h3{font-family:var(--font-heading)}*:focus-visible{outline:3px solid #C9A96A;outline-offset:3px}.container{max-width:1400px;margin:auto;padding:0 1.25rem}@media (min-width:1024px){.container{padding:0 2rem}}@media (min-width:1800px){.container{max-width:1560px}}.section{padding:5rem 0}@media (min-width:1024px){.section{padding:6.5rem 0}}.eyebrow{color:#2D5A4E;text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:600}.placeholder{background:#e8e0d5;color:#6b6258;display:flex;align-items:center;justify-content:center;text-align:center;min-height:220px}
 
