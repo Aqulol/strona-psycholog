@@ -2,6 +2,7 @@
 
 import { Award, ShieldCheck, Timer } from 'lucide-react';
 import Reveal from './Reveal';
+import ZnanyLekarzWidget from './ZnanyLekarzWidget';
 import { track } from '../lib/analytics';
 
 /**
@@ -48,6 +49,9 @@ export default function Hero() {
             <li className="flex items-center gap-2">
               <Timer aria-hidden="true" className="text-green" size={20} />
               Sesje 50 min
+            </li>
+            <li className="flex items-center">
+              <ZnanyLekarzWidget />
             </li>
           </ul>
         </Reveal>
