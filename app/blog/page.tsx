@@ -17,6 +17,7 @@ const posts = [
     date: '11 sierpnia 2026',
     description:
       'Dlaczego kolejne związki bywają do siebie podobne? Poznaj nieświadome schematy relacyjne z perspektywy psychoterapii psychodynamicznej we Wrocławiu.',
+    cover: '/covers/cover-partnerzy.svg',
   },
   {
     href: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza',
@@ -24,6 +25,7 @@ const posts = [
     date: '11 sierpnia 2026',
     description:
       'Rozumienie przyczyn to ważny krok, ale trwała zmiana wymaga emocjonalnego przepracowania. Wyjaśnia to psychoterapia psychodynamiczna we Wrocławiu.',
+    cover: '/covers/cover-swiadomosc.svg',
   },
   {
     href: '/blog/relacja-terapeutyczna-zrodlo-zmiany',
@@ -31,6 +33,7 @@ const posts = [
     date: '11 sierpnia 2026',
     description:
       'Czym są relacja terapeutyczna, przeniesienie i bezpieczne ramy terapii? Poznaj psychodynamiczne spojrzenie na terapię we Wrocławiu.',
+    cover: '/covers/cover-relacja.svg',
   },
   {
     href: '/blog/czy-przeszlosc-ma-znaczenie',
@@ -38,6 +41,7 @@ const posts = [
     date: '11 sierpnia 2026',
     description:
       'Jak wcześniejsze doświadczenia wpływają na emocje i związki? Psychoterapia psychodynamiczna we Wrocławiu bada ich znaczenie dla teraźniejszości.',
+    cover: '/covers/cover-przeszlosc.svg',
   },
 ];
 
@@ -61,25 +65,40 @@ export default function BlogPage() {
           {posts.map((post) => (
             <article
               key={post.href}
-              className="flex h-full flex-col rounded border border-border bg-white p-6 transition-shadow hover:shadow-md lg:p-8"
+              className="flex h-full flex-col overflow-hidden rounded border border-border bg-white transition-shadow hover:shadow-md"
             >
-              <p className="flex items-center gap-2 text-sm text-ink/60">
-                <CalendarDays aria-hidden="true" size={18} />
-                {post.date}
-              </p>
-              <h2 className="mt-4 text-2xl text-green xl:text-3xl">
-                <Link href={post.href} className="hover:text-green/80">
-                  {post.title}
+              <div className="aspect-[1200/630] w-full overflow-hidden bg-cream">
+                {/* Grafika dekoracyjna – bez znaczenia informacyjnego */}
+                <img
+                  src={post.cover}
+                  alt=""
+                  aria-hidden="true"
+                  width={1200}
+                  height={630}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-6 lg:p-8">
+                <p className="flex items-center gap-2 text-sm text-ink/60">
+                  <CalendarDays aria-hidden="true" size={18} />
+                  {post.date}
+                </p>
+                <h2 className="mt-4 text-2xl text-green xl:text-3xl">
+                  <Link href={post.href} className="hover:text-green/80">
+                    {post.title}
+                  </Link>
+                </h2>
+                <p className="mt-3 text-lg leading-8 text-ink/80">{post.description}</p>
+                <Link
+                  href={post.href}
+                  className="mt-5 inline-flex items-center gap-2 text-base font-medium text-green underline hover:text-green/80"
+                >
+                  Czytaj więcej
+                  <ArrowRight aria-hidden="true" size={18} />
                 </Link>
-              </h2>
-              <p className="mt-3 text-lg leading-8 text-ink/80">{post.description}</p>
-              <Link
-                href={post.href}
-                className="mt-5 inline-flex items-center gap-2 text-base font-medium text-green underline hover:text-green/80"
-              >
-                Czytaj więcej
-                <ArrowRight aria-hidden="true" size={18} />
-              </Link>
+              </div>
             </article>
           ))}
         </div>
@@ -89,7 +108,7 @@ export default function BlogPage() {
         </p>
         <Link
           href="/#kontakt"
-          className="mt-6 inline-block rounded bg-green px-6 py-3.5 text-base font-medium text-white transition-colors hover:bg-green/90"
+          className="mt-6 inline-block rounded bg-green px-6 py-3.5 text-base font-medium text-white transition hover:bg-green/90 active:scale-[0.99]"
         >
           Skontaktuj się
         </Link>
