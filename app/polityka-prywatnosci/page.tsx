@@ -15,7 +15,7 @@ export default function Page() {
       <h2 className="mt-8 text-3xl">Administrator</h2>
       <p className="mt-3 leading-8">
         Administratorem danych osobowych jest Grzegorz Plebaniak, prowadzący działalność gospodarczą pod nazwą
-        Gabinet Psychologiczny Grzegorz Plebaniak, ul. Śliczna 28/24, 50-566 Wrocław.
+        Gabinet Psychologiczny Grzegorz Plebaniak (NIP 8971967542), ul. Śliczna 28/24, 50-566 Wrocław.
       </p>
       <p className="mt-3 leading-8">
         We wszystkich sprawach dotyczących danych osobowych można skontaktować się z administratorem:
