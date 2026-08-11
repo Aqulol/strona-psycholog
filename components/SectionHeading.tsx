@@ -14,7 +14,7 @@ export default function SectionHeading({ eyebrow = 'Gabinet psychologiczny Wroc≈
       <p className="eyebrow flex items-center gap-2.5">
         <span
           aria-hidden="true"
-          className="inline-block h-px w-8 shrink-0 bg-gradient-to-r from-gold/20 via-gold to-gold"
+          className="inline-block h-[3px] w-10 shrink-0 rounded-full bg-gradient-to-r from-gold to-gold"
         />
         {eyebrow}
       </p>

@@ -79,7 +79,7 @@ export default function Hero() {
               <path
                 d="M 300 30 C 430 40 545 120 560 250 C 575 380 520 495 400 545 C 280 595 140 565 90 435 C 40 305 70 140 170 80 C 210 55 260 30 300 30 Z"
                 fill="#2D5A4E"
-                opacity="0.07"
+                opacity="0.12"
               />
             </svg>
             <img

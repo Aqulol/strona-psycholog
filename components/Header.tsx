@@ -56,7 +56,10 @@ export default function Header() {
   };
 
   const linkClass = (anchor: string) =>
-    active === anchor ? 'text-green font-medium' : 'text-ink/80 hover:text-green';
+    active === anchor ? 'text-green font-semibold underline decoration-gold decoration-2 underline-offset-8' : 'text-ink/80 hover:text-green';
+  // W menu mobilnym (pełna szerokość, block) złote podkreślenie wygląda źle — sam semibold.
+  const mobileLinkClass = (anchor: string) =>
+    active === anchor ? 'text-green font-semibold' : 'text-ink/80 hover:text-green';
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-cream shadow-[0_4px_20px_rgba(45,90,78,0.12)]">
@@ -123,7 +126,7 @@ export default function Header() {
                 <a
                   href={hrefFor(item.anchor)}
                   aria-current={active === item.anchor ? 'true' : undefined}
-                  className={`block py-3 ${linkClass(item.anchor)}`}
+                  className={`block py-3 ${mobileLinkClass(item.anchor)}`}
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
