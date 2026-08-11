@@ -5,10 +5,14 @@ import Link from 'next/link';
 import { Cookie } from 'lucide-react';
 
 const CONSENT_KEY = 'gabinet-cookie-consent';
+const CONSENT_ACCEPTED_EVENT = 'gabinet-consent-accepted';
 
 /**
  * Baner cookies – informacja o plikach i zgoda zapisywana w localStorage.
  * Po wyrażeniu zgody baner nie jest już pokazywany.
+ * Zapis zgody (klucz 'gabinet-cookie-consent' = '1') oraz zdarzenie
+ * 'gabinet-consent-accepted' uruchamiają ładowanie analityki
+ * (components/GtmScript.tsx). Brak zgody = analityka nie działa.
  */
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
@@ -28,6 +32,12 @@ export default function CookieBanner() {
       // localStorage niedostępne – baner zostaje na sesję
     }
     setVisible(false);
+    try {
+      window.dispatchEvent(new CustomEvent(CONSENT_ACCEPTED_EVENT));
+    } catch {
+      // brak wsparcia CustomEvent – analityka nie zostanie wstrzyknięta,
+      // ale strona działa normalnie
+    }
   };
 
   if (!visible) return null;
