@@ -66,17 +66,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           domeny) — wtedy ten tag nie jest potrzebny. Szczegóły:
           README-WDROZENIE.md, krok 5. */}
       {/* <meta name="google-site-verification" content="..." /> */}
-      <head>
-        {/* Preload logo (widoczne w headerze na każdej podstronie — LCP na
-            podstronach) oraz preconnect do domen zewnętrznych faktycznie
-            używanych na stronie: widget ZnanyLekarz (platform.docplanner.com),
-            osadzona mapa Google (www.google.com) i GTM/GA4
-            (www.googletagmanager.com, ładowane po zgodzie na cookies). */}
-        <link rel="preload" as="image" href="/logo.png" />
-        <link rel="preconnect" href="https://platform.docplanner.com" />
-        <link rel="preconnect" href="https://www.google.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-      </head>
+      {/* Preload logo (widoczne w headerze) i preconnect do domen zewnętrznych
+          faktycznie używanych na stronie: widget ZnanyLekarz
+          (platform.docplanner.com), osadzona mapa Google (www.google.com)
+          i GTM/GA4 (www.googletagmanager.com, ładowane po zgodzie na cookies).
+          Tagi <link> wstrzyknięte w <head> jako surowy HTML, aby trafiły do
+          <head> DOKŁADNIE RAZ: elementy <link> renderowane w drzewie React
+          byłyby wyemitowane podwójnie (React 19 hoistuje je do <head>,
+          a Next.js dodatkowo zbiera <link rel="preload"> do własnego head). */}
+      <head
+        dangerouslySetInnerHTML={{
+          __html: `
+            <link rel="preload" as="image" href="/logo.png" />
+            <link rel="preconnect" href="https://platform.docplanner.com" />
+            <link rel="preconnect" href="https://www.google.com" />
+            <link rel="preconnect" href="https://www.googletagmanager.com" />
+          `,
+        }}
+      />
       <body>
         <GtmScript />
         <a href="#tresc" className="skip-link">
