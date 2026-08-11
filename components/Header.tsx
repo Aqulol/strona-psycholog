@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
@@ -20,16 +20,43 @@ const navItems = [
  * Sticky header z logotypem, nawigacją (desktop) i hamburgerem (<1024px).
  * Na podstronach linki kotwicowe prowadzą do sekcji strony głównej (/#…),
  * a „Blog” prowadzi do pełnej listy artykułów (/blog).
+ * Scrollspy (IntersectionObserver) delikatnie podświetla link sekcji,
+ * która jest aktualnie w widoku – tylko na stronie głównej.
  */
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
   const pathname = usePathname();
   const isHome = pathname === '/';
+
+  useEffect(() => {
+    if (!isHome) return;
+    const sections = navItems
+      .map((item) => document.getElementById(item.anchor))
+      .filter((el): el is HTMLElement => el !== null);
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        setActive(visible.length > 0 ? visible[0].target.id : null);
+      },
+      // Pasek w środkowej części ekranu – sekcja, która go przecina, jest „aktywna”.
+      { rootMargin: '-35% 0px -60% 0px', threshold: 0 }
+    );
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [isHome]);
 
   const hrefFor = (anchor: string) => {
     if (anchor === 'blog' && !isHome) return '/blog';
     return isHome ? `#${anchor}` : `/#${anchor}`;
   };
+
+  const linkClass = (anchor: string) =>
+    active === anchor ? 'text-green font-medium' : 'text-ink/80 hover:text-green';
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-cream shadow-[0_4px_20px_rgba(45,90,78,0.12)]">
@@ -53,7 +80,12 @@ export default function Header() {
         {/* Nawigacja desktop (lg+) */}
         <nav aria-label="Nawigacja główna" className="hidden gap-6 text-sm lg:flex">
           {navItems.map((item) => (
-            <a key={item.anchor} href={hrefFor(item.anchor)} className="text-ink/80 hover:text-green">
+            <a
+              key={item.anchor}
+              href={hrefFor(item.anchor)}
+              aria-current={active === item.anchor ? 'true' : undefined}
+              className={linkClass(item.anchor)}
+            >
               {item.label}
             </a>
           ))}
@@ -63,7 +95,7 @@ export default function Header() {
           <a
             href={hrefFor('kontakt')}
             onClick={() => track('book_click', { method: 'znanylekarz', location: 'header' })}
-            className="hidden rounded bg-green px-4 py-2 text-sm text-white transition-colors hover:bg-green/90 lg:inline-block"
+            className="hidden rounded bg-green px-4 py-2 text-sm text-white transition hover:bg-green/90 active:scale-[0.99] lg:inline-block"
           >
             Umów wizytę
           </a>
@@ -90,7 +122,8 @@ export default function Header() {
               <li key={item.anchor}>
                 <a
                   href={hrefFor(item.anchor)}
-                  className="block py-3 text-ink/80 hover:text-green"
+                  aria-current={active === item.anchor ? 'true' : undefined}
+                  className={`block py-3 ${linkClass(item.anchor)}`}
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
@@ -100,7 +133,7 @@ export default function Header() {
             <li className="border-t border-border py-3">
               <a
                 href={hrefFor('kontakt')}
-                className="inline-block rounded bg-green px-4 py-2 text-sm text-white"
+                className="inline-block rounded bg-green px-4 py-2 text-sm text-white transition hover:bg-green/90 active:scale-[0.99]"
                 onClick={() => {
                   track('book_click', { method: 'znanylekarz', location: 'header' });
                   setMenuOpen(false);

@@ -45,7 +45,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="kontakt" className="section scroll-mt-20 bg-white">
+    <section id="kontakt" className="section scroll-mt-20 bg-cream">
       <div className="container">
         <SectionHeading title="Kontakt" />
 

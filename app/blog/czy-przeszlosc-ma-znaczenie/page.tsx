@@ -41,6 +41,14 @@ export default function Page() {
       <Link href="/" className="text-green underline">
         ← Strona główna
       </Link>
+      <img
+        src="/covers/cover-przeszlosc.svg"
+        alt=""
+        aria-hidden="true"
+        width={1200}
+        height={630}
+        className="mt-8 aspect-[1200/630] w-full rounded-xl border border-border object-cover"
+      />
       <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
         Czy przeszłość naprawdę ma aż takie znaczenie?
       </h1>

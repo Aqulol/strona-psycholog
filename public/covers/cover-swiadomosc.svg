@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" focusable="false">
+  <!-- Okładka dekoracyjna: motyw liścia / krzywej (wzrost, proces, nie tylko wiedza). Gradient krem -> blada zieleń. -->
+  <defs>
+    <linearGradient id="tlo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FAF8F5"/>
+      <stop offset="1" stop-color="#E6EFEA"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#tlo)"/>
+  <path d="M 300 520 C 460 470 640 330 860 250 C 760 420 560 500 300 520 Z" fill="#2D5A4E" opacity="0.09"/>
+  <path d="M 300 520 C 320 545 350 565 390 585" fill="none" stroke="#2D5A4E" stroke-width="4" stroke-linecap="round" opacity="0.18"/>
+  <path d="M 300 520 C 480 450 680 340 860 250" fill="none" stroke="#C9A96A" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  <path d="M 520 415 C 580 430 620 450 650 480" fill="none" stroke="#2D5A4E" stroke-width="2" stroke-linecap="round" opacity="0.14"/>
+  <path d="M 700 330 C 750 350 790 380 815 420" fill="none" stroke="#2D5A4E" stroke-width="2" stroke-linecap="round" opacity="0.12"/>
+</svg>

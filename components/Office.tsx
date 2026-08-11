@@ -33,22 +33,24 @@ const photos = [
 /** Sekcja „Gabinet” – galeria zdjęć, mapa dojazdu i informacje o lokalizacji. */
 export default function Office() {
   return (
-    <section id="gabinet" className="section bg-white">
+    <section id="gabinet" className="section bg-cream">
       <div className="container">
         <SectionHeading title="Gabinet" />
 
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
           {photos.map((photo, index) => (
             <Reveal key={photo.src} delay={(index % 4) * 80}>
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                width={photo.width}
-                height={photo.height}
-                loading="lazy"
-                decoding="async"
-                className="aspect-[3/4] w-full rounded-xl border border-border object-cover"
-              />
+              <div className="overflow-hidden rounded-xl border border-border">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={photo.width}
+                  height={photo.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="gallery-zoom aspect-[3/4] w-full object-cover transition-transform duration-500 ease-out hover:scale-105"
+                />
+              </div>
             </Reveal>
           ))}
         </div>
