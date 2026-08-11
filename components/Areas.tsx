@@ -49,7 +49,7 @@ export default function Areas() {
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {areas.map((area, index) => (
             <Reveal key={area.title} delay={(index % 3) * 100} className="h-full">
-              <div className="hover-lift h-full rounded border border-border bg-cream p-6 transition duration-300 hover:-translate-y-1 hover:shadow-md lg:p-8">
+              <div className="hover-lift h-full rounded border border-border bg-cream p-6 transition duration-300 hover:-translate-y-2 hover:shadow-lg lg:p-8">
                 <area.icon aria-hidden="true" className="text-green" size={32} strokeWidth={1.5} />
                 <h3 className="mt-5 text-2xl text-green xl:text-3xl">{area.title}</h3>
                 <p className="mt-3 text-lg text-ink/80">{area.text}</p>

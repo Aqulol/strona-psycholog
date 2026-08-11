@@ -48,7 +48,7 @@ export default function Office() {
                   height={photo.height}
                   loading="lazy"
                   decoding="async"
-                  className="gallery-zoom aspect-[3/4] w-full object-cover transition-transform duration-500 ease-out hover:scale-105"
+                  className="gallery-zoom aspect-[3/4] w-full object-cover transition-transform duration-500 ease-out hover:scale-110"
                 />
               </div>
             </Reveal>
