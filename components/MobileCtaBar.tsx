@@ -17,7 +17,7 @@ export default function MobileCtaBar() {
       <a
         href={href}
         onClick={() => track('book_click', { method: 'znanylekarz', location: 'mobile_bar' })}
-        className="flex items-center justify-center gap-2 rounded bg-green px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-green/90"
+        className="flex items-center justify-center gap-2 rounded bg-green px-5 py-3 text-sm font-medium text-white transition hover:bg-green/90 active:scale-[0.99]"
       >
         <CalendarPlus aria-hidden="true" size={18} />
         Umów wizytę

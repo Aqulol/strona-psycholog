@@ -4,7 +4,7 @@ import Reveal from './Reveal';
 /** Sekcja „Metoda pracy” – opis nurtu psychodynamicznego. */
 export default function Method() {
   return (
-    <section id="metoda" className="section">
+    <section id="metoda" className="section bg-pale">
       <div className="container">
         <SectionHeading title="Metoda pracy" />
         <Reveal>

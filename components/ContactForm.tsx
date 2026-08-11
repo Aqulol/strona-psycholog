@@ -203,7 +203,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state === 'sending'}
-        className="inline-flex items-center gap-2 rounded bg-green px-6 py-3.5 text-base font-medium text-white transition-colors hover:bg-green/90 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex items-center gap-2 rounded bg-green px-6 py-3.5 text-base font-medium text-white transition hover:bg-green/90 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
       >
         <Send aria-hidden="true" size={16} />
         {state === 'sending' ? 'Wysyłanie…' : 'Wyślij wiadomość'}

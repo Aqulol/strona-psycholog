@@ -27,7 +27,7 @@ export default function Button({
   ariaLabel,
 }: ButtonProps) {
   const base =
-    'inline-block rounded px-5 py-3 text-sm font-medium transition-colors focus-visible:outline-3 focus-visible:outline-gold focus-visible:outline-offset-2';
+    'inline-block rounded px-5 py-3 text-sm font-medium transition active:scale-[0.99] focus-visible:outline-3 focus-visible:outline-gold focus-visible:outline-offset-2';
   const styles =
     variant === 'primary'
       ? 'bg-green text-white hover:bg-green/90 disabled:cursor-not-allowed disabled:opacity-60'
