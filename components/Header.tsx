@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
+import { track } from '../lib/analytics';
 
 const navItems = [
   { label: 'O mnie', anchor: 'o-mnie' },
@@ -61,6 +62,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href={hrefFor('kontakt')}
+            onClick={() => track('book_click', { method: 'znanylekarz', location: 'header' })}
             className="hidden rounded bg-green px-4 py-2 text-sm text-white transition-colors hover:bg-green/90 lg:inline-block"
           >
             Umów wizytę
@@ -99,7 +101,10 @@ export default function Header() {
               <a
                 href={hrefFor('kontakt')}
                 className="inline-block rounded bg-green px-4 py-2 text-sm text-white"
-                onClick={() => setMenuOpen(false)}
+                onClick={() => {
+                  track('book_click', { method: 'znanylekarz', location: 'header' });
+                  setMenuOpen(false);
+                }}
               >
                 Umów wizytę
               </a>

@@ -5,6 +5,7 @@ import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, AlertCircle } from 'luc
 import SectionHeading from './SectionHeading';
 import Input from './Input';
 import { config } from '../lib/config';
+import { track } from '../lib/analytics';
 
 // Firebase Web SDK — inicjalizujemy tylko, gdy właściciel wpisał prawdziwy
 // apiKey (zamiast placeholdera „TU-WPISZ-..."). W wariancie darmowym (Spark)
@@ -109,6 +110,7 @@ export default function Contact() {
         rodoConsent: true,
         createdAt: serverTimestamp(),
       });
+      track('form_submit', {});
       setState('success');
       setName('');
       setContact('');
@@ -142,7 +144,16 @@ export default function Contact() {
                   <div>
                     <p className="text-sm text-ink/60">{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} className="text-lg text-ink hover:text-green">
+                      <a
+                        href={item.href}
+                        onClick={() =>
+                          track(
+                            item.href.startsWith('tel:') ? 'call_click' : 'email_click',
+                            { location: 'kontakt' }
+                          )
+                        }
+                        className="text-lg text-ink hover:text-green"
+                      >
                         {item.value}
                       </a>
                     ) : (
@@ -169,6 +180,7 @@ export default function Contact() {
                     data-zlw-hide-branding="true"
                     data-zlw-saas-only="true"
                     data-zlw-a11y-title="Widget umówienia wizyty lekarskiej"
+                    onClick={() => track('book_click', { method: 'znanylekarz', location: 'kontakt' })}
                   >
                     Umów wizytę
                   </a>
@@ -177,6 +189,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ml-4 inline-block rounded bg-green px-6 py-3.5 text-base font-medium text-white transition-colors hover:bg-green/90"
+                    onClick={() => track('book_click', { method: 'znanylekarz', location: 'kontakt' })}
                   >
                     Zarezerwuj termin online
                   </a>
