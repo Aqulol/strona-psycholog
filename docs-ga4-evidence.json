@@ -1,0 +1,19 @@
+{
+  "testedAt": "2026-08-11T16:2x:00Z",
+  "environment": "local static export (out/) served on http://localhost:4100, real GA4 G-5YF0L6DJ1X, real Firestore psychologplebaniak-e4480",
+  "method": "gtag/dataLayer capture hook injected before consent; events read from window.dataLayer",
+  "events": [
+    {"event": "book_click", "params": {"method": "znanylekarz", "location": "hero"}, "fired": true, "how": "real click na CTA 'Umów konsultację' (scrollIntoView + click)"},
+    {"event": "book_click", "params": {"method": "znanylekarz", "location": "header"}, "fired": true, "how": "click na 'Umów wizytę' w headerze"},
+    {"event": "book_click", "params": {"method": "znanylekarz", "location": "mobile_bar"}, "fired": true, "how": "click na pasku mobilnym (viewport 390x844)"},
+    {"event": "book_click", "params": {"method": "znanylekarz", "location": "kontakt"}, "fired": true, "how": "click na 'Zarezerwuj termin online' w sekcji Kontakt"},
+    {"event": "call_click", "params": {"location": "kontakt"}, "fired": true, "how": "real click na tel:+48 693087574"},
+    {"event": "email_click", "params": {"location": "kontakt"}, "fired": true, "how": "click na mailto:g.plebaniak@somentiq.pl"},
+    {"event": "form_submit", "params": {}, "fired": true, "how": "wyslanie formularza PO udanym zapisie do Firestore (komunikat 'Dziękuję za wiadomość...' widoczny, pola wyczyszczone)"}
+  ],
+  "notes": [
+    "gtag laduje sie DOPIERO po akceptacji cookies (localStorage gabinet-cookie-consent=1) - przed zgoda window.gtag === undefined, brak zdarzen",
+    "zdarzenia trafiaja do dataLayer w formie obiektow {'0':'event','1':name,'2':params}",
+    "ksztalt parametrow zgodny z kodem: lib/analytics.ts track() + onClick w Hero/Header/MobileCtaBar/Contact"
+  ]
+}
