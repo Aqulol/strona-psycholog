@@ -1,3 +1,4 @@
+import path from "path";
 import type { NextConfig } from "next";
 
 /**
@@ -7,6 +8,10 @@ import type { NextConfig } from "next";
  */
 const nextConfig: NextConfig = {
   output: "export",
+  // Workspace root wprost wskazany — zapobiega warningowi
+  // "Next.js inferred your workspace root" u wlasciciela (Windows:
+  // package-lock.json lezy tez w katalogu domowym, Next myli root).
+  outputFileTracingRoot: path.join(__dirname),
   trailingSlash: true,
   images: { unoptimized: true },
   reactStrictMode: true,

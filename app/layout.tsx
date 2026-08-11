@@ -1,30 +1,8 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Inter } from 'next/font/google';
 import './globals.css';
 import CookieBanner from '../components/CookieBanner';
 import MobileCtaBar from '../components/MobileCtaBar';
 import GtmScript from '../components/GtmScript';
-
-/**
- * Fonty: Cormorant Garamond (nagłówki) + Inter (tekst).
- * Ładowane przez next/font/google — pliki fontów są pobierane podczas
- * budowania i hostowane lokalnie (/_next/static/media/…), co eliminuje
- * blokujący renderowanie @import z Google Fonts (LCP) i dodatkowe
- * zapytania do zewnętrznej domeny. Zmienne CSS: --font-heading / --font-body.
- */
-const heading = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['500', '600', '700'],
-  variable: '--font-heading',
-  display: 'swap',
-});
-
-const body = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-body',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: {
@@ -54,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pl" className={`${heading.variable} ${body.variable}`}>
+    <html lang="pl">
       {/* ===== Weryfikacja Google Search Console =====
           Jak odblokować:
           1. Zaloguj się na https://search.google.com/search-console
@@ -66,10 +44,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           domeny) — wtedy ten tag nie jest potrzebny. Szczegóły:
           README-WDROZENIE.md, krok 5. */}
       {/* <meta name="google-site-verification" content="..." /> */}
-      {/* Preload logo (widoczne w headerze) i preconnect do domen zewnętrznych
-          faktycznie używanych na stronie: widget ZnanyLekarz
-          (platform.docplanner.com), osadzona mapa Google (www.google.com)
-          i GTM/GA4 (www.googletagmanager.com, ładowane po zgodzie na cookies).
+      {/* Preload logo (widoczne w headerze), self-hostowane fonty
+          (najczęściej używane wagi: Cormorant Garamond 600 i Inter 400)
+          i preconnect do domen zewnętrznych faktycznie używanych na stronie:
+          widget ZnanyLekarz (platform.docplanner.com), osadzona mapa Google
+          (www.google.com) i GTM/GA4 (www.googletagmanager.com, ładowane po
+          zgodzie na cookies). Fonty są hostowane lokalnie w /fonts — build
+          nie pobiera nic z fonts.gstatic.com.
           Tagi <link> wstrzyknięte w <head> jako surowy HTML, aby trafiły do
           <head> DOKŁADNIE RAZ: elementy <link> renderowane w drzewie React
           byłyby wyemitowane podwójnie (React 19 hoistuje je do <head>,
@@ -77,6 +58,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <head
         dangerouslySetInnerHTML={{
           __html: `
+            <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/cormorant-garamond-600.woff2" />
+            <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter-400.woff2" />
             <link rel="preload" as="image" href="/logo.png" />
             <link rel="preconnect" href="https://platform.docplanner.com" />
             <link rel="preconnect" href="https://www.google.com" />
