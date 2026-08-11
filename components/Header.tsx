@@ -27,7 +27,7 @@ export default function Header() {
   const hrefFor = (anchor: string) => (isHome ? `#${anchor}` : `/#${anchor}`);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-cream/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-cream shadow-[0_4px_20px_rgba(45,90,78,0.12)]">
       <div className="container flex items-center justify-between py-4">
         {/* Logo jako przycisk „home" — statyczne logo (bez animacji) */}
         <Link
@@ -103,6 +103,7 @@ export default function Header() {
           </ul>
         </nav>
       )}
+      <div aria-hidden="true" className="h-0.5 w-full bg-gradient-to-r from-green via-gold to-green" />
     </header>
   );
 }
