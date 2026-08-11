@@ -50,7 +50,7 @@ export default function Hero() {
 
         <Reveal delay={150} className="mx-auto w-full max-w-lg lg:max-w-none">
           <img
-            src="/images/portret.jpg"
+            src="/images/portret.webp"
             alt="Grzegorz Plebaniak – psycholog, Wrocław Gaj"
             width={1280}
             height={1280}

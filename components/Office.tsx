@@ -5,25 +5,25 @@ import { config } from '../lib/config';
 
 const photos = [
   {
-    src: '/images/gabinet.jpg',
+    src: '/images/gabinet.webp',
     alt: 'Gabinet psychologiczny we Wrocławiu – przestrzeń do rozmowy',
     width: 1280,
     height: 1707,
   },
   {
-    src: '/images/gabinet-fotel.jpg',
+    src: '/images/gabinet-fotel.webp',
     alt: 'Gabinet – fotel',
     width: 1280,
     height: 1707,
   },
   {
-    src: '/images/gabinet-detal-1.jpg',
+    src: '/images/gabinet-detal-1.webp',
     alt: 'Gabinet – detal wnętrza',
     width: 1280,
     height: 960,
   },
   {
-    src: '/images/gabinet-detal-2.jpg',
+    src: '/images/gabinet-detal-2.webp',
     alt: 'Gabinet – detal wnętrza',
     width: 1280,
     height: 1707,

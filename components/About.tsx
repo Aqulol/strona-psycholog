@@ -29,7 +29,7 @@ export default function About() {
         <div className="grid gap-10 md:grid-cols-2 md:items-center lg:gap-14">
           <Reveal>
             <img
-              src="/images/portret2.jpg"
+              src="/images/portret2.webp"
               alt="Grzegorz Plebaniak – gabinet psychologiczny Wrocław Gaj"
               width={1280}
               height={855}
