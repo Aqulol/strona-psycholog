@@ -1,5 +1,8 @@
+'use client';
+
 import { Award, ShieldCheck, Timer } from 'lucide-react';
 import Reveal from './Reveal';
+import { track } from '../lib/analytics';
 
 /**
  * Hero strony głównej – H1, dwa CTA, micro-trust i portret
@@ -21,6 +24,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3 lg:gap-4">
             <a
               href="#kontakt"
+              onClick={() => track('book_click', { method: 'znanylekarz', location: 'hero' })}
               className="rounded bg-green px-6 py-3.5 text-base font-medium text-white transition-colors hover:bg-green/90"
             >
               Umów konsultację
@@ -50,7 +54,7 @@ export default function Hero() {
 
         <Reveal delay={150} className="mx-auto w-full max-w-lg lg:max-w-none">
           <img
-            src="/images/portret.jpg"
+            src="/images/portret.webp"
             alt="Grzegorz Plebaniak – psycholog, Wrocław Gaj"
             width={1280}
             height={1280}

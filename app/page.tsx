@@ -94,7 +94,7 @@ export default function Home() {
     <>
       {/* Preload zdjęcia portretowego z hero (LCP strony głównej) —
           fetchPriority="high" ustawione bezpośrednio na <img> w Hero. */}
-      <link rel="preload" as="image" href="/images/portret.jpg" fetchPriority="high" />
+      <link rel="preload" as="image" href="/images/portret.webp" fetchPriority="high" />
       <Header />
       <main id="tresc">
         <Hero />
