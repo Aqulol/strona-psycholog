@@ -1,10 +1,15 @@
 import BlogRedirect from '../_BlogRedirect';
 
 export const metadata = {
-  title: 'Przeniesiono artykuł — Pierwsza wizyta u psychologa',
+  title: 'Przeniesiono artykuł — Relacja terapeutyczna jako źródło zmiany',
   robots: { index: false, follow: true },
 };
 
 export default function Page() {
-  return <BlogRedirect to="/blog/pierwsza-wizyta-u-psychologa" label="Pierwsza wizyta u psychologa — jak wygląda i czego się spodziewać" />;
+  return (
+    <BlogRedirect
+      to="/blog/relacja-terapeutyczna-zrodlo-zmiany"
+      label="Co dzieje się między pacjentem a terapeutą? Relacja terapeutyczna jako źródło zmiany"
+    />
+  );
 }

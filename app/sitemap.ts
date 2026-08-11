@@ -3,10 +3,10 @@ import type{MetadataRoute} from 'next';
 export default function sitemap():MetadataRoute.Sitemap{
   return [
     '/',
-    '/blog/jak-radzic-sobie-z-lekiem',
-    '/blog/psychoterapia-psychodynamiczna',
-    '/blog/pierwsza-wizyta-u-psychologa',
-    '/blog/wypalenie-zawodowe',
+    '/blog/dlaczego-wybieram-podobnych-partnerow',
+    '/blog/dlaczego-sama-swiadomosc-nie-wystarcza',
+    '/blog/relacja-terapeutyczna-zrodlo-zmiany',
+    '/blog/czy-przeszlosc-ma-znaczenie',
     '/polityka-prywatnosci',
   ].map(url=>({url:'https://psychologplebaniak.pl'+url,lastModified:new Date()}));
 }

@@ -5,28 +5,28 @@ import Reveal from './Reveal';
 
 const posts = [
   {
-    href: '/blog/jak-radzic-sobie-z-lekiem',
-    title: 'Jak radzić sobie z lękiem?',
-    date: '6 sierpnia 2026',
-    lead: 'Lęk bywa trudny do nazwania. Spokojny przewodnik po sygnałach, pierwszym kroku i wsparciu psychologa.',
+    href: '/blog/dlaczego-wybieram-podobnych-partnerow',
+    title: 'Dlaczego ciągle wybieram podobnych partnerów?',
+    date: '11 sierpnia 2026',
+    lead: 'Zmieniają się imiona, okoliczności i początek znajomości, a jednak po pewnym czasie relacja zaczyna przypominać poprzednią.',
   },
   {
-    href: '/blog/psychoterapia-psychodynamiczna',
-    title: 'Kiedy warto skorzystać z psychoterapii psychodynamicznej?',
-    date: '6 sierpnia 2026',
-    lead: 'Psychoterapia psychodynamiczna pomaga rozumieć powtarzające się trudności. Sprawdzamy, kiedy może być dobrym wyborem.',
+    href: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza',
+    title: '„Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?',
+    date: '11 sierpnia 2026',
+    lead: 'Można trafnie rozumieć własny problem, znać jego historię i mimo to reagować tak samo.',
   },
   {
-    href: '/blog/pierwsza-wizyta-u-psychologa',
-    title: 'Pierwsza wizyta u psychologa – jak wygląda i czego się spodziewać',
-    date: '6 sierpnia 2026',
-    lead: 'Spokojnie o pierwszym spotkaniu: konsultacja 50 minut, dyskrecja oraz forma stacjonarna i online.',
+    href: '/blog/relacja-terapeutyczna-zrodlo-zmiany',
+    title: 'Co dzieje się między pacjentem a terapeutą? Relacja terapeutyczna jako źródło zmiany',
+    date: '11 sierpnia 2026',
+    lead: 'Rozmowa w gabinecie może z zewnątrz przypominać każdą inną rozmowę, ale relacja terapeutyczna ma szczególną strukturę i cel.',
   },
   {
-    href: '/blog/wypalenie-zawodowe',
-    title: 'Wypalenie zawodowe – objawy i kiedy warto szukać pomocy',
-    date: '6 sierpnia 2026',
-    lead: 'O sygnałach przeciążenia, utracie energii i tym, kiedy warto porozmawiać z psychologiem.',
+    href: '/blog/czy-przeszlosc-ma-znaczenie',
+    title: 'Czy przeszłość naprawdę ma aż takie znaczenie?',
+    date: '11 sierpnia 2026',
+    lead: 'Psychoterapia psychodynamiczna bywa kojarzona z niekończącym się powracaniem do dzieciństwa. To uproszczenie.',
   },
 ];
 
@@ -35,12 +35,7 @@ export default function BlogSection() {
   return (
     <section id="blog" className="section bg-cream">
       <div className="container">
-        <SectionHeading title="Blog / Artykuły">
-          <p className="mb-8 max-w-3xl leading-7 text-ink/70 lg:mb-10">
-            Spokojne teksty o emocjach, relacjach i psychoterapii – pisane z myślą o osobach, które szukają
-            wsparcia.
-          </p>
-        </SectionHeading>
+        <SectionHeading title="Blog / Artykuły" />
 
         <div className="grid gap-5 md:grid-cols-2 lg:gap-8">
           {posts.map((post, index) => (
