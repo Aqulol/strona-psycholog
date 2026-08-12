@@ -21,7 +21,7 @@ export default function Home() {
     '@graph': [
       {
         '@type': ['LocalBusiness', 'MedicalBusiness', 'ProfessionalService'],
-        name: 'Grzegorz Plebaniak – gabinet psychologiczny',
+        name: 'Psycholog Grzegorz Plebaniak',
         telephone: '+48 693087574',
         email: 'g.plebaniak@somentiq.pl',
         priceRange: '140–160 zł',
