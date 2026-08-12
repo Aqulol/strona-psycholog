@@ -8,7 +8,7 @@ type SectionHeadingProps = {
 };
 
 /** Nagłówek sekcji: eyebrow + H2 (+ opcjonalny lead). */
-export default function SectionHeading({ eyebrow = 'Gabinet psychologiczny Wrocław', title, children }: SectionHeadingProps) {
+export default function SectionHeading({ eyebrow = 'Psycholog Grzegorz Plebaniak · Wrocław', title, children }: SectionHeadingProps) {
   return (
     <Reveal>
       <p className="eyebrow flex items-center gap-2.5">

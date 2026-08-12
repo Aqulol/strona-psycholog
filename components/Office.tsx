@@ -6,7 +6,7 @@ import { config } from '../lib/config';
 const photos = [
   {
     src: '/images/gabinet.webp',
-    alt: 'Gabinet psychologiczny we Wrocławiu – przestrzeń do rozmowy',
+    alt: 'Przestrzeń do rozmowy we Wrocławiu (Gaj)',
     width: 1280,
     height: 1707,
   },
