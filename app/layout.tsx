@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: '%s | Grzegorz Plebaniak',
   },
   description:
-    'Gabinet psychologiczny we Wrocławiu (Gaj). Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
+    'Psycholog Grzegorz Plebaniak we Wrocławiu (Gaj). Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
   metadataBase: new URL('https://psychologplebaniak.pl'),
   alternates: { canonical: '/' },
   icons: { apple: '/apple-touch-icon.png' },
@@ -75,7 +75,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js');" }} />
         <noscript>
           <p>
-            Gabinet psychologiczny Grzegorza Plebaniaka we Wrocławiu (Gaj). Psychoterapia psychodynamiczna
+            Psycholog Grzegorz Plebaniak we Wrocławiu (Gaj). Psychoterapia psychodynamiczna
             dorosłych, stacjonarnie i online.
           </p>
         </noscript>

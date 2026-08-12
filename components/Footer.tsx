@@ -33,7 +33,7 @@ export default function Footer() {
             </ul>
           </nav>
           <div className="text-sm text-white/85">
-            <p className="mb-2">Gabinet psychologiczny we Wrocławiu (Gaj) — psychoterapia psychodynamiczna dla dorosłych, stacjonarnie i online.</p>
+            <p className="mb-2">Psycholog Grzegorz Plebaniak — psychoterapia psychodynamiczna dla dorosłych, stacjonarnie i online.</p>
             <p>{config.address}</p>
             <p className="mt-1">{config.phone}</p>
             <p className="mt-1">{config.email}</p>

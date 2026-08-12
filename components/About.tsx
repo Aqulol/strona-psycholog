@@ -30,7 +30,7 @@ export default function About() {
           <Reveal>
             <img
               src="/images/portret2.webp"
-              alt="Grzegorz Plebaniak – gabinet psychologiczny Wrocław Gaj"
+              alt="Grzegorz Plebaniak – psycholog, Wrocław Gaj"
               width={1280}
               height={855}
               loading="lazy"
