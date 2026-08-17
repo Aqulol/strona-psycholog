@@ -8,6 +8,12 @@ export const config = {
   bookingUrl: 'https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw',
   mapsUrl: 'https://www.google.com/maps?q=Śliczna+28,+Wrocław&output=embed',
 
+  // ===== Cennik — edytuj TU ręcznie (aktualizuj wg ZnanyLekarz) =====
+  prices: [
+    { key: 'konsultacja', name: 'Konsultacja psychologiczna', price: 160, duration: '50 min' },
+    { key: 'psychoterapia', name: 'Psychoterapia', price: 140, duration: '50 min' },
+  ],
+
   // ===== Firebase (wariant darmowy — Spark) =====
   // Formularz kontaktowy zapisuje wiadomości BEZPOŚREDNIO do Firestore
   // z przeglądarki (bez Cloud Functions i bez planu Blaze).

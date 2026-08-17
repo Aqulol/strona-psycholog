@@ -71,6 +71,22 @@ export default function ContactInfo() {
         ))}
       </ul>
 
+      <div className="mt-8">
+        <h3 className="text-2xl text-green lg:text-3xl">Cennik</h3>
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          {config.prices.map((p) => (
+            <div key={p.key} className="rounded border border-border bg-white p-6">
+              <p className="text-lg text-green">{p.name}</p>
+              <p className="mt-2 text-3xl font-semibold text-ink">{p.price} zł</p>
+              <p className="mt-1 text-sm text-ink/60">sesja {p.duration}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-sm text-ink/70">
+          Stacjonarnie i online. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.
+        </p>
+      </div>
+
       <div className="mt-8 rounded border border-border bg-cream p-6 lg:p-8">
         <h3 className="text-2xl text-green lg:text-3xl">Rezerwacja online</h3>
         {config.bookingUrl && !config.bookingUrl.includes('[do uzupełnienia]') ? (

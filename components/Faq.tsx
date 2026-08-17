@@ -1,6 +1,10 @@
 import SectionHeading from './SectionHeading';
 import FaqAccordion from './FaqAccordion';
 import Reveal from './Reveal';
+import { config } from '../lib/config';
+
+const konsultacja = config.prices.find((p) => p.key === 'konsultacja')!;
+const psychoterapia = config.prices.find((p) => p.key === 'psychoterapia')!;
 
 const faqItems = [
   {
@@ -15,8 +19,7 @@ const faqItems = [
   },
   {
     question: 'Ile kosztuje i jak wygląda płatność?',
-    answer:
-      'Konsultacja kosztuje 160 zł, sesja psychoterapii 140 zł. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.',
+    answer: `Konsultacja kosztuje ${konsultacja.price} zł, sesja psychoterapii ${psychoterapia.price} zł. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.`,
   },
   {
     question: 'Jak często odbywają się spotkania?',

@@ -8,6 +8,13 @@ import Faq from '../components/Faq';
 import BlogSection from '../components/BlogSection';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import { config } from '../lib/config';
+
+const priceValues = config.prices.map((p) => p.price);
+const priceRange = `${Math.min(...priceValues)}–${Math.max(...priceValues)} zł`;
+const konsultacja = config.prices.find((p) => p.key === 'konsultacja')!;
+const psychoterapia = config.prices.find((p) => p.key === 'psychoterapia')!;
+const priceAnswer = `Konsultacja kosztuje ${konsultacja.price} zł, sesja psychoterapii ${psychoterapia.price} zł. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.`;
 
 /**
  * Strona główna – sekcje ułożone jak puzzle:
@@ -24,7 +31,7 @@ export default function Home() {
         name: 'Psycholog Grzegorz Plebaniak',
         telephone: '+48 693087574',
         email: 'g.plebaniak@somentiq.pl',
-        priceRange: '140–160 zł',
+        priceRange,
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'ul. Śliczna 28/24',
@@ -66,7 +73,7 @@ export default function Home() {
             name: 'Ile kosztuje i jak wygląda płatność?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Konsultacja kosztuje 160 zł, sesja psychoterapii 140 zł. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.',
+              text: priceAnswer,
             },
           },
           {
