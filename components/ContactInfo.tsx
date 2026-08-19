@@ -1,15 +1,19 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { config } from '../lib/config';
 import { track } from '../lib/analytics';
 
 /**
- * Statyczna część sekcji „Kontakt" — RZĄD 1: dane kontaktowe, cennik
- * i rezerwacja online (widget kalendarza ZnanyLekarz) jako trzy kolumny
- * obok siebie (grid lg:grid-cols-3). Na mobile/tablet bloki układają się
- * pionowo (jeden pod drugim).
+ * Statyczna część sekcji „Kontakt" — renderuje JEDEN rząd (grid lg:grid-cols-3):
+ *   - kolumna 1: dane kontaktowe (lista z ikonami) + POD nimi blok „Cennik"
+ *     (karty cen z config.prices + stopka „Stacjonarnie i online..."), jedna
+ *     karta;
+ *   - kolumna 2: „Rezerwacja online" — widget kalendarza ZnanyLekarz;
+ *   - kolumna 3: formularz wiadomości (children), przekazany z Contact.tsx.
+ * Na mobile/tablet bloki układają się pionowo w kolejności: dane kontaktowe,
+ * cennik, kalendarz, formularz.
  *
  * Renderuje się OD RAZU na stronie głównej (nie-leniwie), dzięki czemu
  * anchor kalendarza (data-zlw-type="big_with_calendar") trafia do
@@ -17,10 +21,11 @@ import { track } from '../lib/analytics';
  * com/js/widget.js) — wstrzykiwany po hydratacji z guardem na #zl-widget-s —
  * przetwarza ten anchor na starcie, tak samo jak certyfikat w hero.
  *
- * Formularz (z SDK Firestore) jest wydzielony do ContactForm.tsx
- * i ładowany leniwie — patrz components/Contact.tsx (rząd 2).
+ * Formularz (z SDK Firestore) jest wydzielony do ContactForm.tsx i ładowany
+ * LENIwie w components/Contact.tsx, skąd trafia tutaj jako {children}
+ * (kolumna 3).
  */
-export default function ContactInfo() {
+export default function ContactInfo({ children }: { children?: ReactNode }) {
   useEffect(() => {
     if (!config.bookingUrl || config.bookingUrl.includes('[do uzupełnienia]')) return;
     if (document.getElementById('zl-widget-s')) return;
@@ -45,7 +50,8 @@ export default function ContactInfo() {
   ];
 
   return (
-    <div className="grid gap-8 lg:grid-cols-3">
+    <div className="grid items-start gap-8 lg:grid-cols-3">
+      {/* Kolumna 1: dane kontaktowe + cennik (jedna karta) */}
       <div className="rounded border border-border bg-white p-6 lg:p-8">
         <ul className="space-y-5">
           {contactItems.map((item) => (
@@ -73,24 +79,26 @@ export default function ContactInfo() {
             </li>
           ))}
         </ul>
-      </div>
 
-      <div className="rounded border border-border bg-white p-6 lg:p-8">
-        <h3 className="text-2xl text-green lg:text-3xl">Cennik</h3>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-          {config.prices.map((p) => (
-            <div key={p.key} className="rounded border border-border bg-white p-6">
-              <p className="text-lg text-green">{p.name}</p>
-              <p className="mt-2 text-3xl font-semibold text-ink">{p.price} zł</p>
-              <p className="mt-1 text-sm text-ink/60">sesja {p.duration}</p>
-            </div>
-          ))}
+        {/* Cennik — poniżej danych kontaktowych, w tej samej karcie */}
+        <div className="mt-8 border-t border-border pt-8">
+          <h3 className="text-2xl text-green lg:text-3xl">Cennik</h3>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            {config.prices.map((p) => (
+              <div key={p.key} className="rounded border border-border bg-white p-6">
+                <p className="text-lg text-green">{p.name}</p>
+                <p className="mt-2 text-3xl font-semibold text-ink">{p.price} zł</p>
+                <p className="mt-1 text-sm text-ink/60">sesja {p.duration}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-sm text-ink/70">
+            Stacjonarnie i online. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.
+          </p>
         </div>
-        <p className="mt-3 text-sm text-ink/70">
-          Stacjonarnie i online. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.
-        </p>
       </div>
 
+      {/* Kolumna 2: rezerwacja online (kalendarz ZnanyLekarz) */}
       <div className="rounded border border-border bg-white p-6 lg:p-8">
         <h3 className="text-2xl text-green lg:text-3xl">Rezerwacja online</h3>
         {config.bookingUrl && !config.bookingUrl.includes('[do uzupełnienia]') ? (
@@ -125,6 +133,9 @@ export default function ContactInfo() {
           <p className="my-3 text-lg text-ink/80">Aktualne terminy znajdzie Pan/Pani w kalendarzu online ZnanyLekarz.</p>
         )}
       </div>
+
+      {/* Kolumna 3: formularz wiadomości (przekazany z Contact.tsx) */}
+      <div className="rounded border border-border bg-white p-6 lg:p-8">{children}</div>
     </div>
   );
 }
