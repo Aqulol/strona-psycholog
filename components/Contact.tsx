@@ -7,12 +7,12 @@ import ContactInfo from './ContactInfo';
 /**
  * Sekcja „Kontakt" – renderowana OD RAZU (nie-leniwie), bo nie importuje
  * SDK Firestore. Zawiera:
- *  - lewa kolumna: dane kontaktowe + rezerwacja online z kalendarzem
- *    ZnanyLekarz (ContactInfo) — anchor big_with_calendar trafia do
- *    początkowego HTML, więc widget.js przetwarza go na starcie;
- *  - prawa kolumna: formularz (ContactForm) ładowany LENIWIE
+ *  - lewa kolumna: formularz (ContactForm) ładowany LENIWIE
  *    (React.lazy + IntersectionObserver, rootMargin 600px) — dzięki temu
- *    SDK Firestore (~190 kB) pozostaje poza bundlem startowym.
+ *    SDK Firestore (~190 kB) pozostaje poza bundlem startowym;
+ *  - prawa kolumna: dane kontaktowe + rezerwacja online z kalendarzem
+ *    ZnanyLekarz (ContactInfo) — anchor big_with_calendar trafia do
+ *    początkowego HTML, więc widget.js przetwarza go na starcie.
  *
  * Kotwica #kontakt jest na <section> od początku (scroll-mt-20, by
  * przyklejony nagłówek nie zasłaniał sekcji po nawigacji z menu).
