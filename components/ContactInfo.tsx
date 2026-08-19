@@ -6,8 +6,10 @@ import { config } from '../lib/config';
 import { track } from '../lib/analytics';
 
 /**
- * Statyczna część sekcji „Kontakt": dane kontaktowe, godziny przyjęć
- * i rezerwacja online (widget kalendarza ZnanyLekarz).
+ * Statyczna część sekcji „Kontakt" — RZĄD 1: dane kontaktowe, cennik
+ * i rezerwacja online (widget kalendarza ZnanyLekarz) jako trzy kolumny
+ * obok siebie (grid lg:grid-cols-3). Na mobile/tablet bloki układają się
+ * pionowo (jeden pod drugim).
  *
  * Renderuje się OD RAZU na stronie głównej (nie-leniwie), dzięki czemu
  * anchor kalendarza (data-zlw-type="big_with_calendar") trafia do
@@ -16,7 +18,7 @@ import { track } from '../lib/analytics';
  * przetwarza ten anchor na starcie, tak samo jak certyfikat w hero.
  *
  * Formularz (z SDK Firestore) jest wydzielony do ContactForm.tsx
- * i ładowany leniwie — patrz components/Contact.tsx.
+ * i ładowany leniwie — patrz components/Contact.tsx (rząd 2).
  */
 export default function ContactInfo() {
   useEffect(() => {
@@ -43,37 +45,39 @@ export default function ContactInfo() {
   ];
 
   return (
-    <>
-      <ul className="space-y-5">
-        {contactItems.map((item) => (
-          <li key={item.label} className="flex items-start gap-3">
-            <item.icon aria-hidden="true" className="mt-1 shrink-0 text-green" size={22} />
-            <div>
-              <p className="text-sm text-ink/60">{item.label}</p>
-              {item.href ? (
-                <a
-                  href={item.href}
-                  onClick={() =>
-                    track(
-                      item.href.startsWith('tel:') ? 'call_click' : 'email_click',
-                      { location: 'kontakt' }
-                    )
-                  }
-                  className="text-lg text-ink hover:text-green"
-                >
-                  {item.value}
-                </a>
-              ) : (
-                <p className="text-lg text-ink">{item.value}</p>
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
+    <div className="grid gap-8 lg:grid-cols-3">
+      <div className="rounded border border-border bg-white p-6 lg:p-8">
+        <ul className="space-y-5">
+          {contactItems.map((item) => (
+            <li key={item.label} className="flex items-start gap-3">
+              <item.icon aria-hidden="true" className="mt-1 shrink-0 text-green" size={22} />
+              <div>
+                <p className="text-sm text-ink/60">{item.label}</p>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    onClick={() =>
+                      track(
+                        item.href.startsWith('tel:') ? 'call_click' : 'email_click',
+                        { location: 'kontakt' }
+                      )
+                    }
+                    className="text-lg text-ink hover:text-green"
+                  >
+                    {item.value}
+                  </a>
+                ) : (
+                  <p className="text-lg text-ink">{item.value}</p>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-      <div className="mt-8">
+      <div className="rounded border border-border bg-white p-6 lg:p-8">
         <h3 className="text-2xl text-green lg:text-3xl">Cennik</h3>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
           {config.prices.map((p) => (
             <div key={p.key} className="rounded border border-border bg-white p-6">
               <p className="text-lg text-green">{p.name}</p>
@@ -87,7 +91,7 @@ export default function ContactInfo() {
         </p>
       </div>
 
-      <div className="mt-8 rounded border border-border bg-cream p-6 lg:p-8">
+      <div className="rounded border border-border bg-white p-6 lg:p-8">
         <h3 className="text-2xl text-green lg:text-3xl">Rezerwacja online</h3>
         {config.bookingUrl && !config.bookingUrl.includes('[do uzupełnienia]') ? (
           <>
@@ -121,6 +125,6 @@ export default function ContactInfo() {
           <p className="my-3 text-lg text-ink/80">Aktualne terminy znajdzie Pan/Pani w kalendarzu online ZnanyLekarz.</p>
         )}
       </div>
-    </>
+    </div>
   );
 }
