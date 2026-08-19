@@ -50,10 +50,6 @@ export default function Contact() {
         <SectionHeading title="Kontakt" />
 
         <div className="grid gap-10 md:grid-cols-2 lg:gap-14 xl:gap-16">
-          <div>
-            <ContactInfo />
-          </div>
-
           <div ref={formRef}>
             {showForm ? (
               <Suspense
@@ -66,6 +62,10 @@ export default function Contact() {
             ) : (
               <div className="min-h-[320px]" aria-hidden="true" />
             )}
+          </div>
+
+          <div>
+            <ContactInfo />
           </div>
         </div>
       </div>
