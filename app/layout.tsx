@@ -33,17 +33,10 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pl">
-      {/* ===== Weryfikacja Google Search Console =====
-          Jak odblokować:
-          1. Zaloguj się na https://search.google.com/search-console
-          2. Dodaj zasób (domenę lub prefiks URL).
-          3. Wybierz metodę „Tag HTML”.
-          4. Skopiuj wygenerowany tag z wartością content i ODKOMENTUJ poniższy
-             wiersz, podmieniając content="..." na swój identyfikator.
-          Alternatywnie możesz zweryfikować przez DNS (rekord TXT w panelu
-          domeny) — wtedy ten tag nie jest potrzebny. Szczegóły:
-          README-WDROZENIE.md, krok 5. */}
-      {/* <meta name="google-site-verification" content="..." /> */}
+      {/* ===== Weryfikacja Google Search Console — AKTYWNA =====
+          Tag google-site-verification wstrzyknięty w <head> poniżej
+          (content CzlhzCDS5zGi-A7dtgAl5kU80WTzUisLFFLmqwd5wD4),
+          dodany 2026-08-19. Sitemap do zgłoszenia: /sitemap.xml. */}
       {/* Preload logo (widoczne w headerze), self-hostowane fonty
           (najczęściej używane wagi: Cormorant Garamond 600 i Inter 400)
           i preconnect do domen zewnętrznych faktycznie używanych na stronie:
@@ -58,6 +51,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <head
         dangerouslySetInnerHTML={{
           __html: `
+            <meta name="google-site-verification" content="CzlhzCDS5zGi-A7dtgAl5kU80WTzUisLFFLmqwd5wD4" />
             <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/cormorant-garamond-600.woff2" />
             <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter-400.woff2" />
             <link rel="preload" as="image" href="/logo.png" />
