@@ -1,29 +1,28 @@
-import Link from 'next/link';
 import { CalendarDays, ArrowRight } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import Reveal from './Reveal';
 
 const posts = [
   {
-    href: '/blog/dlaczego-wybieram-podobnych-partnerow',
+    href: '/blog/dlaczego-wybieram-podobnych-partnerow/',
     title: 'Dlaczego ciągle wybieram podobnych partnerów?',
     date: '11 sierpnia 2026',
     lead: 'Zmieniają się imiona, okoliczności i początek znajomości, a jednak po pewnym czasie relacja zaczyna przypominać poprzednią.',
   },
   {
-    href: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza',
+    href: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/',
     title: '„Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?',
     date: '11 sierpnia 2026',
     lead: 'Można trafnie rozumieć własny problem, znać jego historię i mimo to reagować tak samo.',
   },
   {
-    href: '/blog/relacja-terapeutyczna-zrodlo-zmiany',
+    href: '/blog/relacja-terapeutyczna-zrodlo-zmiany/',
     title: 'Co dzieje się między pacjentem a terapeutą? Relacja terapeutyczna jako źródło zmiany',
     date: '11 sierpnia 2026',
     lead: 'Rozmowa w gabinecie może z zewnątrz przypominać każdą inną rozmowę, ale relacja terapeutyczna ma szczególną strukturę i cel.',
   },
   {
-    href: '/blog/czy-przeszlosc-ma-znaczenie',
+    href: '/blog/czy-przeszlosc-ma-znaczenie/',
     title: 'Czy przeszłość naprawdę ma aż takie znaczenie?',
     date: '11 sierpnia 2026',
     lead: 'Psychoterapia psychodynamiczna bywa kojarzona z niekończącym się powracaniem do dzieciństwa. To uproszczenie.',
@@ -48,13 +47,13 @@ export default function BlogSection() {
                   </p>
                   <h3 className="mt-4 text-2xl text-green xl:text-3xl">{post.title}</h3>
                   <p className="mt-3 text-lg leading-8 text-ink/80">{post.lead}</p>
-                  <Link
+                  <a
                     href={post.href}
                     className="mt-auto pt-5 inline-flex items-center gap-2 text-base font-medium text-green underline hover:text-green/80"
                   >
                     Czytaj więcej
                     <ArrowRight aria-hidden="true" size={18} />
-                  </Link>
+                  </a>
                 </div>
               </article>
             </Reveal>

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { config } from '../../lib/config';
@@ -95,12 +94,12 @@ export default function CennikPage() {
           >
             Zarezerwuj termin online
           </a>
-          <Link
+          <a
             href="/#kontakt"
             className="rounded border border-green px-6 py-3.5 text-base font-medium text-green transition hover:bg-green/5"
           >
             Napisz wiadomość
-          </Link>
+          </a>
         </div>
 
         <h2 className="mt-14 text-4xl text-green">Jak często odbywają się spotkania?</h2>
@@ -121,15 +120,15 @@ export default function CennikPage() {
         <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
         <ul className="mt-4 space-y-4">
           <li>
-            <Link href="/blog/jak-wybrac-psychoterapeute" className="text-lg font-medium text-green underline hover:text-green/80">
+            <a href="/blog/jak-wybrac-psychoterapeute/" className="text-lg font-medium text-green underline hover:text-green/80">
               Jak wybrać psychoterapeutę? Praktyczny przewodnik
-            </Link>
+            </a>
             <p className="mt-1 leading-7 text-ink/70">na co zwrócić uwagę przy wyborze i pierwszej konsultacji</p>
           </li>
           <li>
-            <Link href="/blog/dlaczego-wybieram-podobnych-partnerow" className="text-lg font-medium text-green underline hover:text-green/80">
+            <a href="/blog/dlaczego-wybieram-podobnych-partnerow/" className="text-lg font-medium text-green underline hover:text-green/80">
               Dlaczego ciągle wybieram podobnych partnerów?
-            </Link>
+            </a>
             <p className="mt-1 leading-7 text-ink/70">nieświadome schematy relacyjne z perspektywy psychodynamicznej</p>
           </li>
         </ul>

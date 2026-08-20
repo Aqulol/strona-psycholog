@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 type ButtonProps = {
@@ -43,9 +42,9 @@ export default function Button({
       );
     }
     return (
-      <Link href={href} className={`${base} ${styles} ${className}`} aria-label={ariaLabel}>
+      <a href={href} className={`${base} ${styles} ${className}`} aria-label={ariaLabel}>
         {children}
-      </Link>
+      </a>
     );
   }
 

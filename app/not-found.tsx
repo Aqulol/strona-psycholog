@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -26,18 +25,18 @@ export default function NotFound() {
             szukasz, na stronie głównej albo na blogu.
           </p>
           <div className="flex flex-wrap gap-3 lg:gap-4">
-            <Link
+            <a
               href="/"
               className="rounded bg-green px-6 py-3.5 text-base font-medium text-white transition-colors hover:bg-green/90"
             >
               Wróć na stronę główną
-            </Link>
-            <Link
-              href="/blog"
+            </a>
+            <a
+              href="/blog/"
               className="rounded border border-green px-6 py-3.5 text-base font-medium text-green transition-colors hover:bg-green/5"
             >
               Zobacz bloga
-            </Link>
+            </a>
           </div>
         </div>
       </main>

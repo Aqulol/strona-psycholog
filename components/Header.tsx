@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { track } from '../lib/analytics';
@@ -51,7 +50,7 @@ export default function Header() {
   }, [isHome]);
 
   const hrefFor = (anchor: string) => {
-    if (anchor === 'blog' && !isHome) return '/blog';
+    if (anchor === 'blog' && !isHome) return '/blog/';
     return isHome ? `#${anchor}` : `/#${anchor}`;
   };
 
@@ -65,7 +64,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-cream shadow-[0_4px_20px_rgba(45,90,78,0.12)]">
       <div className="container flex items-center justify-between py-4">
         {/* Logo jako przycisk „home" — statyczne logo (bez animacji) */}
-        <Link
+        <a
           href="/"
           aria-label="Strona główna"
           className="inline-flex items-center rounded-sm px-1.5"
@@ -78,7 +77,7 @@ export default function Header() {
             width={1434}
             height={258}
           />
-        </Link>
+        </a>
 
         {/* Nawigacja desktop (lg+) */}
         <nav aria-label="Nawigacja główna" className="hidden gap-6 text-sm lg:flex">

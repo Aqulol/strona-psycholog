@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { config } from '../lib/config';
 
 const navLinks = [
@@ -7,8 +6,8 @@ const navLinks = [
   { label: 'Metoda pracy', href: '#metoda' },
   { label: 'Gabinet', href: '#gabinet' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Cennik', href: '/cennik' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Cennik', href: '/cennik/' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
 
@@ -42,9 +41,9 @@ export default function Footer() {
         </div>
         <div className="mt-10 flex flex-col gap-2 border-t border-white/20 pt-8 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Grzegorz Plebaniak. Wszystkie prawa zastrzeżone.</p>
-          <Link href="/polityka-prywatnosci" className="underline hover:text-white">
+          <a href="/polityka-prywatnosci/" className="underline hover:text-white">
             Polityka prywatności
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

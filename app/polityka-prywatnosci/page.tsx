@@ -1,4 +1,3 @@
-import Link from 'next/link';
 
 export const metadata = {
   title: 'Polityka prywatności gabinetu psychologicznego',
@@ -11,7 +10,7 @@ export const metadata = {
 export default function Page() {
   return (
     <main id="tresc" className="container section max-w-3xl">
-      <Link href="/">← Strona główna</Link>
+      <a href="/">← Strona główna</a>
       <h1 className="mt-8 text-6xl text-green">Polityka prywatności</h1>
 
       <h2 className="mt-8 text-3xl">Administrator</h2>

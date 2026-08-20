@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { CalendarDays, ArrowRight } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -14,35 +13,35 @@ export const metadata: Metadata = {
 
 const posts = [
   {
-    href: '/blog/jak-wybrac-psychoterapeute',
+    href: '/blog/jak-wybrac-psychoterapeute/',
     title: 'Jak wybrać psychoterapeutę? Praktyczny przewodnik',
     date: '20 sierpnia 2026',
     description:
       'Psycholog czy psychoterapeuta? Nurt terapii, pierwsza konsultacja, czerwone flagi i logistyka — na co zwrócić uwagę przy wyborze terapeuty we Wrocławiu i online.',
   },
   {
-    href: '/blog/dlaczego-wybieram-podobnych-partnerow',
+    href: '/blog/dlaczego-wybieram-podobnych-partnerow/',
     title: 'Dlaczego ciągle wybieram podobnych partnerów?',
     date: '11 sierpnia 2026',
     description:
       'Dlaczego kolejne związki bywają do siebie podobne? Poznaj nieświadome schematy relacyjne z perspektywy psychoterapii psychodynamicznej we Wrocławiu.',
   },
   {
-    href: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza',
+    href: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/',
     title: '„Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?',
     date: '11 sierpnia 2026',
     description:
       'Rozumienie przyczyn to ważny krok, ale trwała zmiana wymaga emocjonalnego przepracowania. Wyjaśnia to psychoterapia psychodynamiczna we Wrocławiu.',
   },
   {
-    href: '/blog/relacja-terapeutyczna-zrodlo-zmiany',
+    href: '/blog/relacja-terapeutyczna-zrodlo-zmiany/',
     title: 'Co dzieje się między pacjentem a terapeutą? Relacja terapeutyczna jako źródło zmiany',
     date: '11 sierpnia 2026',
     description:
       'Czym są relacja terapeutyczna, przeniesienie i bezpieczne ramy terapii? Poznaj psychodynamiczne spojrzenie na terapię we Wrocławiu.',
   },
   {
-    href: '/blog/czy-przeszlosc-ma-znaczenie',
+    href: '/blog/czy-przeszlosc-ma-znaczenie/',
     title: 'Czy przeszłość naprawdę ma aż takie znaczenie?',
     date: '11 sierpnia 2026',
     description:
@@ -78,18 +77,18 @@ export default function BlogPage() {
                   {post.date}
                 </p>
                 <h2 className="mt-4 text-2xl text-green xl:text-3xl">
-                  <Link href={post.href} className="hover:text-green/80">
+                  <a href={post.href} className="hover:text-green/80">
                     {post.title}
-                  </Link>
+                  </a>
                 </h2>
                 <p className="mt-3 text-lg leading-8 text-ink/80">{post.description}</p>
-                <Link
+                <a
                   href={post.href}
                   className="mt-auto pt-5 inline-flex items-center gap-2 text-base font-medium text-green underline hover:text-green/80"
                 >
                   Czytaj więcej
                   <ArrowRight aria-hidden="true" size={18} />
-                </Link>
+                </a>
               </div>
             </article>
           ))}
@@ -98,12 +97,12 @@ export default function BlogPage() {
           Jeśli któryś z tematów jest Panu/Pani bliski i pojawia się pytanie o terapię — zapraszam do kontaktu
           lub rezerwacji terminu przez kalendarz online.
         </p>
-        <Link
+        <a
           href="/#kontakt"
           className="mt-6 inline-block rounded bg-green px-6 py-3.5 text-base font-medium text-white transition hover:bg-green/90 active:scale-[0.99]"
         >
           Skontaktuj się
-        </Link>
+        </a>
       </div>
       </main>
       <Footer />

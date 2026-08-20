@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { Cookie } from 'lucide-react';
 
 const CONSENT_KEY = 'gabinet-cookie-consent';
@@ -71,9 +70,9 @@ export default function CookieBanner() {
         <Cookie aria-hidden="true" className="hidden shrink-0 text-gold md:block" size={28} />
         <p className="flex-1 text-sm leading-6 text-ink/80">
           Ta strona używa plików cookies w celach technicznych oraz – po wyrażeniu zgody – analitycznych.{' '}
-          <Link href="/polityka-prywatnosci" className="text-green underline">
+          <a href="/polityka-prywatnosci/" className="text-green underline">
             Dowiedz się więcej w polityce prywatności
-          </Link>
+          </a>
           .
         </p>
         <div className="flex shrink-0 flex-wrap items-center gap-2">

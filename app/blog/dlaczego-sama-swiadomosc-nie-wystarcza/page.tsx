@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 
 const description =
@@ -40,9 +39,9 @@ export default function Page() {
   return (
     <>
       <main id="tresc" className="container section max-w-3xl">
-      <Link href="/" className="text-green underline">
+      <a href="/" className="text-green underline">
         ← Strona główna
-      </Link>
+      </a>
       <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
         „Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?
       </h1>
@@ -156,27 +155,27 @@ export default function Page() {
       <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
       <ul className="mt-4 space-y-4">
         <li>
-          <Link
-            href="/blog/dlaczego-wybieram-podobnych-partnerow"
+          <a
+            href="/blog/dlaczego-wybieram-podobnych-partnerow/"
             className="text-lg font-medium text-green underline hover:text-green/80"
           >
             Dlaczego ciągle wybieram podobnych partnerów?
-          </Link>
+          </a>
           <p className="mt-1 leading-7 text-ink/70">powtarzające się schematy relacyjne</p>
         </li>
         <li>
-          <Link
-            href="/blog/relacja-terapeutyczna-zrodlo-zmiany"
+          <a
+            href="/blog/relacja-terapeutyczna-zrodlo-zmiany/"
             className="text-lg font-medium text-green underline hover:text-green/80"
           >
             Co dzieje się między pacjentem a terapeutą?
-          </Link>
+          </a>
           <p className="mt-1 leading-7 text-ink/70">emocjonalne przepracowanie w relacji terapeutycznej</p>
         </li>
         <li>
-          <Link href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
+          <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
             Psychoterapia psychodynamiczna Wrocław – Gaj
-          </Link>
+          </a>
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu na Gaju</p>
         </li>
       </ul>

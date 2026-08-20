@@ -167,7 +167,7 @@ export default function ContactForm() {
           />
           <span>
             Wyrażam zgodę na kontakt i przetwarzanie moich danych osobowych zgodnie z{' '}
-            <a href="/polityka-prywatnosci" className="text-green underline">
+            <a href="/polityka-prywatnosci/" className="text-green underline">
               polityką prywatności
             </a>
             .

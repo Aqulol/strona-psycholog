@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 
 const description =
@@ -40,9 +39,9 @@ export default function Page() {
   return (
     <>
       <main id="tresc" className="container section max-w-3xl">
-        <Link href="/" className="text-green underline">
+        <a href="/" className="text-green underline">
           ← Strona główna
-        </Link>
+        </a>
         <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
           Jak wybrać psychoterapeutę? Praktyczny przewodnik
         </h1>
@@ -180,9 +179,9 @@ export default function Page() {
         <p className="mt-4 leading-8 text-ink/80">
           Ceny są zróżnicowane i zależą od miasta, doświadczenia i formy pracy. Aktualny
           cennik znajdziesz na{' '}
-          <Link href="/cennik" className="text-green underline">
+          <a href="/cennik/" className="text-green underline">
             podstronie z cennikiem
-          </Link>{' '}
+          </a>{' '}
           — tam też opisane są różnice między konsultacją a regularną psychoterapią.
         </p>
 
@@ -197,21 +196,21 @@ export default function Page() {
         <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
         <ul className="mt-4 space-y-4">
           <li>
-            <Link href="/blog/relacja-terapeutyczna-zrodlo-zmiany" className="text-lg font-medium text-green underline hover:text-green/80">
+            <a href="/blog/relacja-terapeutyczna-zrodlo-zmiany/" className="text-lg font-medium text-green underline hover:text-green/80">
               Co dzieje się między pacjentem a terapeutą? Relacja terapeutyczna jako źródło zmiany
-            </Link>
+            </a>
             <p className="mt-1 leading-7 text-ink/70">jak wygląda praca w relacji terapeutycznej</p>
           </li>
           <li>
-            <Link href="/blog/dlaczego-sama-swiadomosc-nie-wystarcza" className="text-lg font-medium text-green underline hover:text-green/80">
+            <a href="/blog/dlaczego-sama-swiadomosc-nie-wystarcza/" className="text-lg font-medium text-green underline hover:text-green/80">
               „Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?
-            </Link>
+            </a>
             <p className="mt-1 leading-7 text-ink/70">czym różni się rozumienie od przepracowania</p>
           </li>
           <li>
-            <Link href="/cennik" className="text-lg font-medium text-green underline hover:text-green/80">
+            <a href="/cennik/" className="text-lg font-medium text-green underline hover:text-green/80">
               Cennik wizyt — Wrocław
-            </Link>
+            </a>
             <p className="mt-1 leading-7 text-ink/70">konsultacja i psychoterapia, stacjonarnie i online</p>
           </li>
         </ul>
