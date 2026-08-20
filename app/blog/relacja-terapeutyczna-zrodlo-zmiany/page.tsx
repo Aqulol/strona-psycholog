@@ -8,6 +8,8 @@ const description =
 export const metadata: Metadata = {
   title: 'Relacja terapeutyczna — jak staje się źródłem zmiany?',
   description,
+  alternates: { canonical: '/blog/relacja-terapeutyczna-zrodlo-zmiany/' },
+  openGraph: { url: 'https://psychologplebaniak.pl/blog/relacja-terapeutyczna-zrodlo-zmiany/' },
 };
 
 const faq: [string, string][] = [
@@ -155,6 +157,15 @@ export default function Page() {
 
       <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
       <ul className="mt-4 space-y-4">
+        <li>
+          <Link
+            href="/blog/jak-wybrac-psychoterapeute"
+            className="text-lg font-medium text-green underline hover:text-green/80"
+          >
+            Jak wybrać psychoterapeutę? Praktyczny przewodnik
+          </Link>
+          <p className="mt-1 leading-7 text-ink/70">na co zwrócić uwagę przy wyborze terapeuty</p>
+        </li>
         <li>
           <Link
             href="/blog/dlaczego-sama-swiadomosc-nie-wystarcza"

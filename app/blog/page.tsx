@@ -8,9 +8,18 @@ export const metadata: Metadata = {
   title: 'Blog – artykuły o psychoterapii',
   description:
     'Artykuły o psychoterapii psychodynamicznej: schematy relacyjne, rola świadomości, relacja terapeutyczna i wpływ przeszłości. Spokojne teksty dla dorosłych.',
+  alternates: { canonical: '/blog/' },
+  openGraph: { url: 'https://psychologplebaniak.pl/blog/' },
 };
 
 const posts = [
+  {
+    href: '/blog/jak-wybrac-psychoterapeute',
+    title: 'Jak wybrać psychoterapeutę? Praktyczny przewodnik',
+    date: '20 sierpnia 2026',
+    description:
+      'Psycholog czy psychoterapeuta? Nurt terapii, pierwsza konsultacja, czerwone flagi i logistyka — na co zwrócić uwagę przy wyborze terapeuty we Wrocławiu i online.',
+  },
   {
     href: '/blog/dlaczego-wybieram-podobnych-partnerow',
     title: 'Dlaczego ciągle wybieram podobnych partnerów?',

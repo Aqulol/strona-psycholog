@@ -73,16 +73,35 @@ export default function GtmScript() {
     };
   }, []);
 
-  // Po uzyskaniu zgody wstrzyknij skrypty (raz).
+  // Po uzyskaniu zgody wstrzyknij skrypty (raz) + zadeklaruj Consent Mode v2.
   useEffect(() => {
     if (!consented || injected.current) return;
     const { gtmReady, ga4Ready, gtmId, ga4Id } = idsReady();
     if (!gtmReady && !ga4Ready) return;
     injected.current = true;
 
+    // Consent Mode v2 — stany domyślne i aktualizacja po zgodzie.
+    // Deklaracja „default" musi trafić do dataLayer przed konfiguracją GA4,
+    // aby gtag.js przetworzył je w poprawnej kolejności. Wszystkie stany
+    // poza analityką pozostają 'denied' (brak reklam, brak personalizacji).
+    const consentPreamble = `
+      window.dataLayer=window.dataLayer||[];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent','default',{
+        ad_storage:'denied',
+        ad_user_data:'denied',
+        ad_personalization:'denied',
+        analytics_storage:'denied',
+        functionality_storage:'granted',
+        personalization_storage:'denied',
+        security_storage:'granted'
+      });
+      gtag('consent','update',{analytics_storage:'granted'});
+    `;
+
     if (gtmReady) {
       const inline = document.createElement('script');
-      inline.text = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      inline.text = `${consentPreamble}(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -97,7 +116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       document.head.appendChild(ga);
 
       const configScript = document.createElement('script');
-      configScript.text = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${ga4Id}');`;
+      configScript.text = `${consentPreamble}gtag('js',new Date());gtag('config','${ga4Id}');`;
       document.head.appendChild(configScript);
     }
   }, [consented]);

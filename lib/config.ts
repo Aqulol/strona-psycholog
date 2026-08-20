@@ -43,11 +43,18 @@ export const config = {
   },
 
   // ===== Analityka (GTM + GA4) =====
-  // MIEJSCE NA ID:
-  // - GTM: Google Tag Manager → Administracja → kontener → ID w formacie GTM-XXXXXXX
-  // - GA4: Google Analytics → Administracja → Strumienie danych → ID pomiaru w formacie G-XXXXXXXXXX
-  // Dopóki pole zawiera placeholder (XXXX), skrypty się NIE ładują –
-  // analityka ruszy dopiero po wpisaniu prawdziwego ID.
-  gtmId: 'GTM-XXXXXXX',
+  // GA4 jest ładowane bezpośrednio (gtag.js) po wyrażeniu zgody w banerze
+  // cookies — GTM NIE jest używane (pole celowo puste, aby nie było ryzyka
+  // podwójnego zliczania odsłon). Jeśli kiedyś włączysz GTM:
+  // Administracja → kontener → ID w formacie GTM-XXXXXXX i wpisz tutaj.
+  gtmId: '',
   ga4Id: 'G-5YF0L6DJ1X',
+
+  // ===== Współrzędne geograficzne gabinetu (opcjonalne, do JSON-LD geo) =====
+  // Jak uzupełnić: otwórz https://maps.google.com, wyszukaj „Śliczna 28, Wrocław",
+  // kliknij prawym przyciskiem w budynek gabinetu → „Co tu jest?" → skopiuj
+  // pierwszy wiersz (np. 51.082600, 17.033900) i wpisz osobno szerokość/długość.
+  // Dopóki pola są puste, JSON-LD nie zawiera współrzędnych (bezpieczne).
+  geoLat: '',
+  geoLng: '',
 };

@@ -72,7 +72,7 @@ export default function Header() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.png"
+            src="/logo.webp"
             alt=""
             className="h-12 w-auto max-w-[60vw] select-none"
             width={1434}

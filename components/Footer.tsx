@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Gabinet', href: '#gabinet' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Cennik', href: '/cennik' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
 
