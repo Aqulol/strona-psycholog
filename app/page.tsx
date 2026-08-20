@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -16,6 +17,13 @@ const konsultacja = config.prices.find((p) => p.key === 'konsultacja')!;
 const psychoterapia = config.prices.find((p) => p.key === 'psychoterapia')!;
 const priceAnswer = `Konsultacja kosztuje ${konsultacja.price} zł, sesja psychoterapii ${psychoterapia.price} zł. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.`;
 
+/** Strona główna — jawny kanonikal '/' i og:url (layout nie narzuca już
+ *  canonical globalnie, żeby nie zerować kanonikali podstron). */
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+  openGraph: { url: 'https://psychologplebaniak.pl/' },
+};
+
 /**
  * Strona główna – sekcje ułożone jak puzzle:
  * Hero → O mnie → Obszary pomocy → Metoda pracy → Gabinet → FAQ → Blog → Kontakt.
@@ -28,10 +36,14 @@ export default function Home() {
     '@graph': [
       {
         '@type': ['LocalBusiness', 'MedicalBusiness', 'ProfessionalService'],
+        '@id': 'https://psychologplebaniak.pl/#gabinet',
         name: 'Psycholog Grzegorz Plebaniak',
+        url: 'https://psychologplebaniak.pl/',
         telephone: '+48 693087574',
         email: 'g.plebaniak@somentiq.pl',
         priceRange,
+        image: 'https://psychologplebaniak.pl/og-image.png',
+        logo: 'https://psychologplebaniak.pl/logo.png',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'ul. Śliczna 28/24',
@@ -39,9 +51,20 @@ export default function Home() {
           postalCode: '50-566',
           addressCountry: 'PL',
         },
+        hasMap: 'https://www.google.com/maps/search/?api=1&query=%C5%9Ali%C4%85czna+28%2C+50-566+Wroc%C5%82aw',
         areaServed: 'Wrocław',
         knowsAbout: ['lęk i depresja', 'kryzysy życiowe', 'relacje', 'stres', 'wypalenie zawodowe'],
         sameAs: ['https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw'],
+        // geo jest dołączane tylko po uzupełnieniu współrzędnych w lib/config.ts
+        ...(config.geoLat && config.geoLng
+          ? {
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: Number(config.geoLat),
+                longitude: Number(config.geoLng),
+              },
+            }
+          : {}),
       },
       {
         '@type': 'Person',
@@ -105,9 +128,9 @@ export default function Home() {
 
   return (
     <>
-      {/* Preload zdjęcia portretowego z hero (LCP strony głównej) —
-          fetchPriority="high" ustawione bezpośrednio na <img> w Hero. */}
-      <link rel="preload" as="image" href="/images/portret.webp" fetchPriority="high" />
+      {/* Preload portretu z hero (LCP) generuje automatycznie Next.js
+          (image preloading w Next 15) na bazie <img loading="eager"
+          fetchPriority="high"> w Hero — nie duplikujemy go ręcznie. */}
       <Header />
       <main id="tresc">
         <Hero />

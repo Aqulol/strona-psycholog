@@ -9,6 +9,88 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/blog/artykul-1",
+        "destination": "/blog/dlaczego-wybieram-podobnych-partnerow/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-1/",
+        "destination": "/blog/dlaczego-wybieram-podobnych-partnerow/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-2",
+        "destination": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-2/",
+        "destination": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-3",
+        "destination": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-3/",
+        "destination": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-4",
+        "destination": "/blog/czy-przeszlosc-ma-znaczenie/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-4/",
+        "destination": "/blog/czy-przeszlosc-ma-znaczenie/",
+        "type": 301
+      },
+      {
+        "source": "/blog/jak-radzic-sobie-z-lekiem",
+        "destination": "/blog/dlaczego-wybieram-podobnych-partnerow/",
+        "type": 301
+      },
+      {
+        "source": "/blog/jak-radzic-sobie-z-lekiem/",
+        "destination": "/blog/dlaczego-wybieram-podobnych-partnerow/",
+        "type": 301
+      },
+      {
+        "source": "/blog/pierwsza-wizyta-u-psychologa",
+        "destination": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+        "type": 301
+      },
+      {
+        "source": "/blog/pierwsza-wizyta-u-psychologa/",
+        "destination": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+        "type": 301
+      },
+      {
+        "source": "/blog/psychoterapia-psychodynamiczna",
+        "destination": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
+        "type": 301
+      },
+      {
+        "source": "/blog/psychoterapia-psychodynamiczna/",
+        "destination": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
+        "type": 301
+      },
+      {
+        "source": "/blog/wypalenie-zawodowe",
+        "destination": "/blog/czy-przeszlosc-ma-znaczenie/",
+        "type": 301
+      },
+      {
+        "source": "/blog/wypalenie-zawodowe/",
+        "destination": "/blog/czy-przeszlosc-ma-znaczenie/",
+        "type": 301
+      }
+    ],
     "headers": [
       {
         "source": "/_next/static/**",
@@ -42,6 +124,14 @@
           {
             "key": "X-Frame-Options",
             "value": "SAMEORIGIN"
+          },
+          {
+            "key": "Permissions-Policy",
+            "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+          },
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://platform.docplanner.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google.com; font-src 'self'; connect-src 'self' https://firestore.googleapis.com wss://firestore.googleapis.com https://firebaseinstallations.googleapis.com https://firebase.googleapis.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://ssl.google-analytics.com https://platform.docplanner.com; frame-src https://www.google.com https://platform.docplanner.com; worker-src 'self' blob:; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
           },
           {
             "key": "Cache-Control",

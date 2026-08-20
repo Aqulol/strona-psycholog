@@ -12,8 +12,22 @@ export const metadata: Metadata = {
   description:
     'Psycholog Grzegorz Plebaniak we Wrocławiu (Gaj). Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
   metadataBase: new URL('https://psychologplebaniak.pl'),
-  alternates: { canonical: '/' },
-  icons: { icon: '/favicon-192.png', shortcut: '/favicon-32.png', apple: '/apple-touch-icon.png' },
+  // UWAGA: NIE ustawiamy tu globalnego alternates.canonical! Poprzednio
+  // canonical: '/' był dziedziczony przez WSZYSTKIE podstrony (blog, artykuły,
+  // polityka prywatności) — każda z nich wskazywała kanonikal na stronę główną,
+  // przez co Google traktował je jako duplikaty '/' i nie indeksował artykułów.
+  // Kanonikale są teraz ustawiane per-podstrona (Next.js generuje je
+  // automatycznie z adresu URL lub jawnie w metadata danej strony).
+  icons: {
+    icon: [
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    shortcut: '/favicon-32.png',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/manifest.json',
   openGraph: {
     title: 'Grzegorz Plebaniak – psycholog, psychoterapeuta we Wrocławiu',
     description: 'Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
@@ -52,9 +66,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         dangerouslySetInnerHTML={{
           __html: `
             <meta name="google-site-verification" content="CzlhzCDS5zGi-A7dtgAl5kU80WTzUisLFFLmqwd5wD4" />
+            <meta name="theme-color" content="#2D5A4E" />
             <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/cormorant-garamond-600.woff2" />
             <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter-400.woff2" />
-            <link rel="preload" as="image" href="/logo.png" />
             <link rel="preconnect" href="https://platform.docplanner.com" />
             <link rel="preconnect" href="https://www.google.com" />
             <link rel="preconnect" href="https://www.googletagmanager.com" />

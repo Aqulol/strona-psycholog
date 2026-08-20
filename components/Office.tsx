@@ -78,6 +78,11 @@ export default function Office() {
                   </span>
                 </li>
               </ul>
+              <p className="mt-4 text-base leading-7 text-ink/70">
+                Gabinet mieści się w Soméntiq – Centrum Psychologii i Psychoterapii
+                (ul. Śliczna 28/24). Wejście i piętro podane są w kalendarzu rezerwacji
+                oraz w wiadomości potwierdzającej wizytę.
+              </p>
             </div>
           </Reveal>
         </div>

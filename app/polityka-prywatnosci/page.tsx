@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Polityka prywatności gabinetu psychologicznego',
   description:
     'Polityka prywatności gabinetu psychologicznego Grzegorza Plebaniaka we Wrocławiu: administrator danych, cele i podstawy przetwarzania, cookies, prawa osób, skarga do UODO, kontakt.',
+  alternates: { canonical: '/polityka-prywatnosci/' },
+  openGraph: { url: 'https://psychologplebaniak.pl/polityka-prywatnosci/' },
 };
 
 export default function Page() {

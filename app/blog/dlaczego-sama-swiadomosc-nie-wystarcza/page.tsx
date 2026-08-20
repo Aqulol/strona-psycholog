@@ -8,6 +8,8 @@ const description =
 export const metadata: Metadata = {
   title: 'Dlaczego sama świadomość problemu nie wystarcza?',
   description,
+  alternates: { canonical: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/' },
+  openGraph: { url: 'https://psychologplebaniak.pl/blog/dlaczego-sama-swiadomosc-nie-wystarcza/' },
 };
 
 const faq: [string, string][] = [

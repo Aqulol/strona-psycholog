@@ -8,6 +8,8 @@ const description =
 export const metadata: Metadata = {
   title: 'Dlaczego wybieram podobnych partnerów? Schematy relacji',
   description,
+  alternates: { canonical: '/blog/dlaczego-wybieram-podobnych-partnerow/' },
+  openGraph: { url: 'https://psychologplebaniak.pl/blog/dlaczego-wybieram-podobnych-partnerow/' },
 };
 
 const faq: [string, string][] = [

@@ -14,5 +14,12 @@ export function track(event: string, params?: Record<string, unknown>): void {
   if (typeof window === 'undefined') return;
   const w = window as unknown as { gtag?: (...args: unknown[]) => void };
   if (typeof w.gtag !== 'function') return;
+  // Twarda brama na zgodę: nawet gdyby gtag istniał (np. wstrzyknięty w innej
+  // zakładce), bez zgody ('gabinet-cookie-consent' = '1') nie wysyłamy zdarzeń.
+  try {
+    if (localStorage.getItem('gabinet-cookie-consent') !== '1') return;
+  } catch {
+    return;
+  }
   w.gtag('event', event, params);
 }

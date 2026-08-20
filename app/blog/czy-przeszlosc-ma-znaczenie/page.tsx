@@ -8,6 +8,8 @@ const description =
 export const metadata: Metadata = {
   title: 'Czy przeszłość wpływa na dorosłe życie i relacje?',
   description,
+  alternates: { canonical: '/blog/czy-przeszlosc-ma-znaczenie/' },
+  openGraph: { url: 'https://psychologplebaniak.pl/blog/czy-przeszlosc-ma-znaczenie/' },
 };
 
 const faq: [string, string][] = [
@@ -153,6 +155,15 @@ export default function Page() {
 
       <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
       <ul className="mt-4 space-y-4">
+        <li>
+          <Link
+            href="/blog/jak-wybrac-psychoterapeute"
+            className="text-lg font-medium text-green underline hover:text-green/80"
+          >
+            Jak wybrać psychoterapeutę? Praktyczny przewodnik
+          </Link>
+          <p className="mt-1 leading-7 text-ink/70">pierwsza konsultacja i wybór terapeuty</p>
+        </li>
         <li>
           <Link
             href="/blog/dlaczego-wybieram-podobnych-partnerow"

@@ -14,7 +14,8 @@ export function articleJsonLd(opts: {
   image: string;
   faq: ArticleFaq;
 }): Record<string, unknown> {
-  const url = `https://psychologplebaniak.pl/blog/${opts.slug}`;
+  // Końcówka '/' zgodna z canonical i rzeczywistym adresem (trailingSlash: true).
+  const url = `https://psychologplebaniak.pl/blog/${opts.slug}/`;
   return {
     '@context': 'https://schema.org',
     '@graph': [
