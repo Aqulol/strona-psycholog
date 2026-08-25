@@ -78,7 +78,7 @@ Podczas udostępniania w social media nie było jawnego `og:url`. **Naprawa:** d
 - ✅ **Logo:** `logo.webp` (12,7 kB zamiast 232 kB, −95%) używane w headerze; `logo.png` pozostaje tylko dla schema.org.
 - ✅ **PWA/manifest:** `public/manifest.json`, `theme-color`, favicony z atrybutami `sizes` (32/192/512).
 - ✅ **Bezpieczeństwo:** `Content-Security-Policy` + `Permissions-Policy` w nagłówkach Firebase Hosting.
-- ✅ **Wzmianka o lokalizacji:** sekcja „Gabinet” informuje, że gabinet mieści się w Soméntiq – Centrum Psychologii i Psychoterapii (spójność NAP).
+- ✅ **Wzmianka o lokalizacji:** sekcja „Gabinet” informuje, że gabinet mieści się w Centrum Równowagi – Centrum Psychologii i Psychoterapii (spójność NAP).
 - ✅ **Porządek w repo:** usunięto z gita `workspace-*.zip` i oryginalne JPG-i (wersje WebP są w `public/images/`); wzorce dodane do `.gitignore`.
 
 ---
@@ -99,21 +99,21 @@ Podczas udostępniania w social media nie było jawnego `og:url`. **Naprawa:** d
 | PWA/manifest | ✅ | manifest.json, theme-color, favicony z sizes |
 
 ### 3.2. SEO treści
-- **Targetowanie fraz:** strona główna dobrze celuje w „psycholog Wrocław”, „psychoterapia psychodynamiczna Wrocław”, „psycholog Gaj”, „psycholog online”. ✔
+- **Targetowanie fraz:** strona główna dobrze celuje w „psycholog Wrocław”, „psychoterapia psychodynamiczna Wrocław”, „psycholog w centrum Wrocławia”, „psycholog online”. ✔
 - **Blog:** 5 wartościowych, długich artykułów (4 z 2026-08-11 + „Jak wybrać psychoterapeutę?” z 2026-08-20) z sekcjami FAQ — bardzo dobry materiał pod frazy informacyjne („jak wybrać psychoterapeutę”, „dlaczego wybieram podobnych partnerów”, „wypalenie zawodowe”, „lęk”). Tematy są trafne, ale jest ich **wciąż za mało** — Google lubi regularność (2–4 wpisy/mies.).
 - **Cennik:** dodana osobna podstrona `/cennik/` (targetowanie fraz „psychoterapia Wrocław cennik”) z danymi strukturalnymi `OfferCatalog`. **„Kontakt” jako osobny URL** nadal można dodać w przyszłości.
 - **Linkowanie wewnętrzne:** dobre — sekcja „Przeczytaj także” w artykułach, kotwice nawigacji. Można dodać linki kontekstowe w treści artykułów do sekcji strony głównej (już częściowo są).
 - **Struktura danych:** LocalBusiness bez `url`, `logo`, `image`, `geo` i `openingHours` — warto uzupełnić (pkt 5.5).
 
 ### 3.3. SEO lokalne — ⚠️ najważniejsza rekomendacja poza kodem
-W wynikach Google strona jest powiązana z bytem **„Gabinet SOMÉNTIQ”** (w snippetach widać „Gabinet SOMÉNTIQ, ul. Śliczna 28/24”, a w sieci funkcjonuje placówka SOMÉNTIQ – psychologia, psychoterapia, coaching, **tel. +48 880 882 172**, piętro 8), natomiast strona podaje **„Grzegorz Plebaniak”, ul. Śliczna 28/24, tel. +48 693 087 574** — bez piętra i z innym numerem.
+W wynikach Google strona jest powiązana z bytem **„Gabinet Centrum Równowagi”** (w snippetach widać „Gabinet Centrum Równowagi, Zygmunta Krasińskiego 13”, a w sieci funkcjonuje placówka Centrum Równowagi – psychologia, psychoterapia, coaching, **tel. +48 880 882 172**, piętro 8), natomiast strona podaje **„Grzegorz Plebaniak”, Zygmunta Krasińskiego 13, tel. +48 693 087 574** — bez piętra i z innym numerem.
 
 **Niespójność NAP (Name/Address/Phone) między stroną, wizytówką Google, ZnanyLekarz (profil lekarza vs placówka) i katalogami (locarate.pl) osłabia lokalny ranking.** Google nie wie, czy to ta sama firma.
 
-**Do decyzji właściciela:** ujednolicić wszędzie jeden zestaw (nazwa, adres z piętrem, jeden telefon) albo świadomie rozdzielić markę osobistą (Grzegorz Plebaniak) od placówki (SOMÉNTIQ). W obu wariantach: strona, Google Business Profile, ZnanyLekarz (profil + placówka), locarate i inne katalogi muszą mieć **identyczne** NAP.
+**Do decyzji właściciela:** ujednolicić wszędzie jeden zestaw (nazwa, adres z piętrem, jeden telefon) albo świadomie rozdzielić markę osobistą (Grzegorz Plebaniak) od placówki (Centrum Równowagi). W obu wariantach: strona, Google Business Profile, ZnanyLekarz (profil + placówka), locarate i inne katalogi muszą mieć **identyczne** NAP.
 
 ### 3.4. Linki (off-page)
-- Domenie brakuje sygnałów zewnętrznych — to naturalne (młoda domena). Najszybsze źródła wartościowych linków: **Google Business Profile**, profil **ZnanyLekarz** (już istnieje i jest mocny), strona placówki somentiq.pl (jeśli istnieje), lokalne media/katalogi, artykuły gościnne.
+- Domenie brakuje sygnałów zewnętrznych — to naturalne (młoda domena). Najszybsze źródła wartościowych linków: **Google Business Profile**, profil **ZnanyLekarz** (już istnieje i jest mocny), strona placówki centrumrownowagi.com (jeśli istnieje), lokalne media/katalogi, artykuły gościnne.
 - Link do ZnanyLekarz z `rel="nofollow"` — OK (link partnerski); nie zmieniać na dofollow w sekcji kontakt.
 - `sameAs` w JSON-LD zawiera tylko ZnanyLekarz — dodać URL wizytówki Google i profili social (jeśli są).
 
@@ -146,7 +146,7 @@ W wynikach Google strona jest powiązana z bytem **„Gabinet SOMÉNTIQ”** (w 
 
 ### P0 — najwyższy priorytet
 1. **Wdróż poprawki** (`npm run build && firebase deploy --only hosting,firestore`) i zrób checklistę 4.2. Bez deploya naprawa kanonikali nie dotrze na produkcję.
-2. **Ujednolić NAP/markę.** Zgodnie z ustaleniem: marka osobista **Grzegorz Plebaniak** (JDG), a Soméntiq to placówka, w której mieści się gabinet (współpraca B2B). Na stronie dodano już wzmiankę „Gabinet mieści się w Soméntiq…”. Do ujednolicenia na zewnątrz: Google Business Profile, ZnanyLekarz (profil + placówka), katalogi (locarate) — NAP identyczne ze stroną, telefon +48 693 087 574.
+2. **Ujednolić NAP/markę.** Zgodnie z ustaleniem: marka osobista **Grzegorz Plebaniak** (JDG), a Centrum Równowagi to placówka, w której mieści się gabinet (współpraca B2B). Na stronie dodano już wzmiankę „Gabinet mieści się w Centrum Równowagi…”. Do ujednolicenia na zewnątrz: Google Business Profile, ZnanyLekarz (profil + placówka), katalogi (locarate) — NAP identyczne ze stroną, telefon +48 693 087 574.
 3. **Google Business Profile:** utworzyć/zweryfikować wizytówkę „Grzegorz Plebaniak — psycholog”, dane NAP identyczne ze stroną, kategoria „Psychologist”, link do strony, zdjęcia gabinetu.
 
 ### P1 — ważne, nieduży wysiłek
@@ -158,7 +158,7 @@ W wynikach Google strona jest powiązana z bytem **„Gabinet SOMÉNTIQ”** (w 
 9. ✅ **Consent Mode v2** + twarda brama zgody w `track()` — wdrożone. **Pozostaje w GA4:** oznaczyć zdarzenia jako konwersje (Administracja → Zdarzenia): `book_click`, `call_click`, `email_click`, `form_submit`.
 
 ### P2 — drobne i strategiczne
-10. 🟡 **Blog:** 1 nowy artykuł dodany („Jak wybrać psychoterapeutę?”, 2026-08-20). Kontynuować: 2–4 wpisy/mies. („pierwsza wizyta u psychologa — jak się przygotować”, „terapia online vs stacjonarnie”, „lęk przed zmianą”…), linkowanie do cennika/kontaktu, frazy lokalne („Wrocław Gaj”).
+10. 🟡 **Blog:** 1 nowy artykuł dodany („Jak wybrać psychoterapeutę?”, 2026-08-20). Kontynuować: 2–4 wpisy/mies. („pierwsza wizyta u psychologa — jak się przygotować”, „terapia online vs stacjonarnie”, „lęk przed zmianą”…), linkowanie do cennika/kontaktu, frazy lokalne („Wrocław”).
 11. ✅ **Logo zoptymalizowane:** `logo.webp` 12,7 kB (zamiast 232 kB PNG) w headerze; `logo.png` pozostaje tylko dla schema.org.
 12. ✅ **PWA/manifest:** `manifest.json`, `theme-color`, favicony z `sizes` — wdrożone.
 13. ✅ **Bezpieczeństwo:** `Content-Security-Policy` + `Permissions-Policy` w `firebase.json` — wdrożone (do weryfikacji po deployu: formularz, widget ZL, mapa).
@@ -196,7 +196,7 @@ Po wdrożeniu (konieczne, aby poprawki trafiły na produkcję):
 |---|---|
 | Technika/wydajność | 9,5/10 |
 | SEO on-page | 8,5/10 (było 5/10 przez kanonikal — naprawione; dodany /cennik/ i artykuł) |
-| SEO lokalne (NAP) | 6/10 — marka ustalona (osobista + Soméntiq jako placówka); do dopięcia w GBP/katalogach |
+| SEO lokalne (NAP) | 6/10 — marka ustalona (osobista + Centrum Równowagi jako placówka); do dopięcia w GBP/katalogach |
 | Konfiguracja GSC | 8/10 — brakuje aktywnego korzystania + Bing |
 | Dostępność | 10/10 |
 | RODO/prywatność | 9,5/10 (baner z odmową + Consent Mode v2; do dopięcia: retencja GA4) |

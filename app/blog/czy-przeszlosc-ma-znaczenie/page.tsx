@@ -128,7 +128,7 @@ export default function Page() {
         historią. Dzięki temu dawne reguły przestają być traktowane jak niepodważalne fakty o świecie.
       </p>
       <p className="mt-4 leading-8 text-ink/80">
-        Psychoterapia psychodynamiczna we Wrocławiu, na Gaju, lub online nie powinna zatrzymywać osoby w
+        Psychoterapia psychodynamiczna we Wrocławiu lub online nie powinna zatrzymywać osoby w
         przeszłości. Jej zadaniem jest zwiększenie swobody w teraźniejszości: możliwość budowania innych relacji,
         łagodniejszego traktowania siebie i bardziej adekwatnego reagowania na bieżące sytuacje. Przeszłość ma
         znaczenie, ale nie jest przeznaczeniem. Właśnie dlatego warto ją rozumieć — aby nie musiała nieświadomie
@@ -183,9 +183,9 @@ export default function Page() {
         </li>
         <li>
           <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
-            Psychoterapia psychodynamiczna Wrocław – Gaj
+            Psychoterapia psychodynamiczna Wrocław
           </a>
-          <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu na Gaju</p>
+          <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>
         </li>
       </ul>
       </main>

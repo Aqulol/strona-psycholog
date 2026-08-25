@@ -1,6 +1,6 @@
 # Wdrożenie strony gabinetu — instrukcja krok po kroku
 
-Strona gabinetu psychologicznego Grzegorza Plebaniaka (Wrocław Gaj).
+Strona gabinetu psychologicznego Grzegorza Plebaniaka (Wrocław).
 Projekt Firebase: **psychologplebaniak-e4480**.
 
 Czas wdrożenia: ok. 1–2 godziny. Nie wymaga znajomości programowania —
@@ -108,9 +108,9 @@ Na końcu w katalogu projektu powstanie folder **`out/`** — to gotowa strona.
 3. **Bing Webmaster:** https://www.bing.com/webmasters — zgłoś tę samą sitemapę.
 4. **Wizytówka Google Business** (dla lokalnego SEO) — dane NAP:
    - Nazwa: **Grzegorz Plebaniak — Gabinet Psychologiczny**
-   - Adres: **ul. Śliczna 28/24, Wrocław**
+   - Adres: **Zygmunta Krasińskiego 13, Wrocław**
    - Telefon: **+48 693087574**
-   - E-mail: **g.plebaniak@somentiq.pl**
+   - E-mail: **gpplebaniak@gmail.com**
 
 ---
 

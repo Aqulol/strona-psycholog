@@ -24,7 +24,7 @@ export default function Hero() {
               aria-hidden="true"
               className="inline-block h-px w-8 shrink-0 bg-gradient-to-r from-gold/20 via-gold to-gold"
             />
-            Wrocław · Gaj · stacjonarnie i online
+            Wrocław · stacjonarnie i online
           </p>
           <h1 className="mt-5 text-5xl leading-tight text-green md:text-6xl xl:text-7xl">
             Grzegorz Plebaniak – psycholog i psychoterapeuta
@@ -84,7 +84,7 @@ export default function Hero() {
             </svg>
             <img
               src="/images/portret.webp"
-              alt="Grzegorz Plebaniak – psycholog, Wrocław Gaj"
+              alt="Grzegorz Plebaniak – psycholog, Wrocław"
               width={1280}
               height={1280}
               loading="eager"

@@ -2,7 +2,7 @@
   "name": "gabinet-plebaniak",
   "version": "0.1.0",
   "private": true,
-  "description": "Strona gabinetu psychologicznego Grzegorza Plebaniaka – Wrocław Gaj (Next.js 15, static export, Firebase Hosting)",
+  "description": "Strona gabinetu psychologicznego Grzegorza Plebaniaka – Wrocław (Next.js 15, static export, Firebase Hosting)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

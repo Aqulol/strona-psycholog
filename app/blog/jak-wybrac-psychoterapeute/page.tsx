@@ -170,8 +170,8 @@ export default function Page() {
           obie formy.
         </p>
         <p className="mt-4 leading-8 text-ink/80">
-          Jeśli mieszkasz we Wrocławiu lub okolicach, gabinet przy ul. Ślicznej 28/24
-          (osiedle Gaj) jest łatwo dostępny; dla osób spoza Wrocławia i podróżujących
+          Jeśli mieszkasz we Wrocławiu lub okolicach, gabinet przy Zygmunta Krasińskiego 13
+          jest łatwo dostępny; dla osób spoza Wrocławia i podróżujących
           prowadzę również sesje online.
         </p>
 

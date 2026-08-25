@@ -2,11 +2,12 @@ export const config = {
   name: 'Grzegorz Plebaniak',
   title: 'Psycholog / psychoterapeuta',
   phone: '+48 693087574',
-  email: 'g.plebaniak@somentiq.pl',
-  address: 'ul. Śliczna 28/24, 50-566 Wrocław',
-  postal: '50-566',
+  email: 'gpplebaniak@gmail.com',
+  address: 'Zygmunta Krasińskiego 13, 50-449 Wrocław',
+  postal: '50-449',
   bookingUrl: 'https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw',
-  mapsUrl: 'https://www.google.com/maps?q=Śliczna+28,+Wrocław&output=embed',
+  officeUrl: 'https://centrumrownowagi.com',
+  mapsUrl: 'https://www.google.com/maps?q=Zygmunta+Krasińskiego+13,+Wrocław&output=embed',
 
   // ===== Cennik — edytuj TU ręcznie (aktualizuj wg ZnanyLekarz) =====
   prices: [
@@ -51,7 +52,7 @@ export const config = {
   ga4Id: 'G-5YF0L6DJ1X',
 
   // ===== Współrzędne geograficzne gabinetu (opcjonalne, do JSON-LD geo) =====
-  // Jak uzupełnić: otwórz https://maps.google.com, wyszukaj „Śliczna 28, Wrocław",
+  // Jak uzupełnić: otwórz https://maps.google.com, wyszukaj „Zygmunta Krasińskiego 13, Wrocław",
   // kliknij prawym przyciskiem w budynek gabinetu → „Co tu jest?" → skopiuj
   // pierwszy wiersz (np. 51.082600, 17.033900) i wpisz osobno szerokość/długość.
   // Dopóki pola są puste, JSON-LD nie zawiera współrzędnych (bezpieczne).

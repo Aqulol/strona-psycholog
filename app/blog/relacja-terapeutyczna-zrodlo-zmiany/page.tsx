@@ -130,7 +130,7 @@ export default function Page() {
         fakty oraz doświadczać bliskości bez automatycznego wycofania lub podporządkowania.
       </p>
       <p className="mt-4 leading-8 text-ink/80">
-        Psychoterapia psychodynamiczna we Wrocławiu, na Gaju, lub online zachowuje te same podstawowe zasady:
+        Psychoterapia psychodynamiczna we Wrocławiu lub online zachowuje te same podstawowe zasady:
         poufność, stabilne ramy i refleksję nad relacją. Jej jakość nie wynika z obietnicy idealnego kontaktu,
         lecz ze zdolności do rozumienia także tego, co niewygodne. Relacja terapeutyczna staje się źródłem zmiany
         wtedy, gdy można w niej nie tylko mówić o własnych wzorcach, ale również bezpiecznie je zauważać i
@@ -185,9 +185,9 @@ export default function Page() {
         </li>
         <li>
           <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
-            Psychoterapia psychodynamiczna Wrocław – Gaj
+            Psychoterapia psychodynamiczna Wrocław
           </a>
-          <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu na Gaju</p>
+          <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>
         </li>
       </ul>
       </main>

@@ -16,13 +16,13 @@ export default function Page() {
       <h2 className="mt-8 text-3xl">Administrator</h2>
       <p className="mt-3 leading-8">
         Administratorem danych osobowych jest Grzegorz Plebaniak, prowadzący działalność gospodarczą pod nazwą
-        Psycholog Grzegorz Plebaniak (NIP 8971967542), ul. Śliczna 28/24, 50-566 Wrocław.
+        Psycholog Grzegorz Plebaniak (NIP 8971967542), Zygmunta Krasińskiego 13, 50-449 Wrocław.
       </p>
       <p className="mt-3 leading-8">
         We wszystkich sprawach dotyczących danych osobowych można skontaktować się z administratorem:
       </p>
       <ul className="mt-3 space-y-2">
-        <li className="leading-8">e-mail: g.plebaniak@somentiq.pl</li>
+        <li className="leading-8">e-mail: gpplebaniak@gmail.com</li>
         <li className="leading-8">telefon: +48 693087574</li>
       </ul>
       <p className="mt-3 leading-8">
@@ -138,7 +138,7 @@ export default function Page() {
         </li>
       </ul>
       <p className="mt-3 leading-8">
-        Aby skorzystać z tych praw, prosimy o wiadomość na adres g.plebaniak@somentiq.pl. Odpowiadamy w ciągu miesiąca
+        Aby skorzystać z tych praw, prosimy o wiadomość na adres gpplebaniak@gmail.com. Odpowiadamy w ciągu miesiąca
         od otrzymania zgłoszenia.
       </p>
 

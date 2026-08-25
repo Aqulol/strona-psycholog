@@ -132,7 +132,7 @@ export default function Page() {
         przestaje być mylony z obojętnością, a napięcie — z miłością.
       </p>
       <p className="mt-4 leading-8 text-ink/80">
-        Psychoterapia psychodynamiczna we Wrocławiu, na Gaju, lub prowadzona online może tworzyć warunki do
+        Psychoterapia psychodynamiczna we Wrocławiu lub prowadzona online może tworzyć warunki do
         takiej pracy, ale tempo zmiany jest indywidualne. Rozpoznanie schematu stanowi początek. Trwalsza zmiana
         pojawia się wtedy, gdy nowe rozumienie zostaje również emocjonalnie przeżyte i wypróbowane w relacji.
       </p>
@@ -176,9 +176,9 @@ export default function Page() {
         </li>
         <li>
           <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
-            Psychoterapia psychodynamiczna Wrocław – Gaj
+            Psychoterapia psychodynamiczna Wrocław
           </a>
-          <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu na Gaju</p>
+          <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>
         </li>
       </ul>
       </main>

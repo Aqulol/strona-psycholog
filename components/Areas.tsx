@@ -43,7 +43,7 @@ export default function Areas() {
         <SectionHeading title="Obszary pomocy">
           <p className="mb-8 max-w-3xl leading-7 text-ink/70 lg:mb-10">
             Prowadzę konsultacje i psychoterapię dla dorosłych. Poniżej obszary, z którymi najczęściej zgłaszają
-            się osoby na Gaju i w całym Wrocławiu.
+            się osoby we Wrocławiu i okolicach.
           </p>
         </SectionHeading>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
