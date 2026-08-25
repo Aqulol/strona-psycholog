@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <p className="font-heading text-3xl lg:text-4xl">Grzegorz Plebaniak</p>
-            <p className="mt-2 text-sm text-white/80">Psycholog / psychoterapeuta · Wrocław Gaj</p>
+            <p className="mt-2 text-sm text-white/80">Psycholog / psychoterapeuta · Wrocław</p>
           </div>
           <nav aria-label="Nawigacja w stopce">
             <ul className="grid grid-cols-2 gap-2 text-sm text-white/85">

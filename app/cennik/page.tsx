@@ -6,7 +6,7 @@ import { config } from '../../lib/config';
 export const metadata: Metadata = {
   title: 'Cennik – konsultacja i psychoterapia we Wrocławiu',
   description:
-    'Cennik wizyt u psychologa Grzegorza Plebaniaka we Wrocławiu (Gaj): konsultacja psychologiczna 160 zł, sesja psychoterapii 140 zł. Sesja trwa 50 minut, stacjonarnie i online.',
+    'Cennik wizyt u psychologa Grzegorza Plebaniaka we Wrocławiu: konsultacja psychologiczna 160 zł, sesja psychoterapii 140 zł. Sesja trwa 50 minut, stacjonarnie i online.',
   alternates: { canonical: '/cennik/' },
   openGraph: { url: 'https://psychologplebaniak.pl/cennik/' },
 };
@@ -36,7 +36,7 @@ export default function CennikPage() {
           price: String(p.price),
           priceCurrency: 'PLN',
           category: 'Psychoterapia',
-          description: `Sesja ${p.duration}. Stacjonarnie (Wrocław, Gaj) i online.`,
+          description: `Sesja ${p.duration}. Stacjonarnie (Wrocław) i online.`,
           areaServed: 'Wrocław',
           url: `https://psychologplebaniak.pl/cennik/#${p.key}`,
         })),
@@ -57,11 +57,11 @@ export default function CennikPage() {
       <main id="tresc" className="container section max-w-3xl">
         <p className="eyebrow">Cennik</p>
         <h1 className="mt-4 text-5xl leading-tight text-green md:text-6xl">
-          Cennik wizyt — Wrocław, Gaj · stacjonarnie i online
+          Cennik wizyt — Wrocław · stacjonarnie i online
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/80">
           Wszystkie spotkania trwają 50 minut. Ceny dotyczą zarówno wizyt stacjonarnych
-          w gabinecie (Soméntiq, ul. Śliczna 28/24), jak i sesji online.
+          w gabinecie (Zygmunta Krasińskiego 13), jak i sesji online.
         </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">

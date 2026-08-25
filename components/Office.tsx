@@ -6,7 +6,7 @@ import { config } from '../lib/config';
 const photos = [
   {
     src: '/images/gabinet.webp',
-    alt: 'Przestrzeń do rozmowy we Wrocławiu (Gaj)',
+    alt: 'Przestrzeń do rozmowy we Wrocławiu',
     width: 1280,
     height: 1707,
   },
@@ -59,7 +59,7 @@ export default function Office() {
           <Reveal>
             <iframe
               src={config.mapsUrl}
-              title="Mapa dojazdu do gabinetu – Wrocław Gaj"
+              title="Mapa dojazdu do gabinetu – Wrocław"
               loading="lazy"
               className="h-full min-h-64 w-full rounded-xl border border-border"
               referrerPolicy="no-referrer-when-downgrade"
@@ -74,13 +74,21 @@ export default function Office() {
                   <span>
                     <strong>{config.address}</strong>
                     <br />
-                    Wrocław, osiedle Gaj
+                    Wrocław
                   </span>
                 </li>
               </ul>
               <p className="mt-4 text-base leading-7 text-ink/70">
-                Gabinet mieści się w Soméntiq – Centrum Psychologii i Psychoterapii
-                (ul. Śliczna 28/24). Wejście i piętro podane są w kalendarzu rezerwacji
+                Gabinet mieści się w{' '}
+                <a
+                  href={config.officeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green underline underline-offset-2 hover:text-ink"
+                >
+                  centrumrownowagi.com
+                </a>{' '}
+                przy Zygmunta Krasińskiego 13. Wejście i piętro podane są w kalendarzu rezerwacji
                 oraz w wiadomości potwierdzającej wizytę.
               </p>
             </div>

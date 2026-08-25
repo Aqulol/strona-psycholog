@@ -129,7 +129,7 @@ export default function Page() {
         schematu w stresie nie przekreśla procesu; może dostarczyć ważnego materiału do dalszej pracy.
       </p>
       <p className="mt-4 leading-8 text-ink/80">
-        Psychoterapia psychodynamiczna we Wrocławiu, na Gaju, podobnie jak terapia online, opiera się na
+        Psychoterapia psychodynamiczna we Wrocławiu, podobnie jak terapia online, opiera się na
         regularności i relacji, a nie na obietnicy natychmiastowej korekty zachowania. Jej celem jest głębsza
         zmiana sposobu przeżywania siebie i innych. Świadomość otwiera drzwi, lecz przejście przez nie wymaga
         czasu, bezpieczeństwa i emocjonalnego doświadczenia.
@@ -174,9 +174,9 @@ export default function Page() {
         </li>
         <li>
           <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
-            Psychoterapia psychodynamiczna Wrocław – Gaj
+            Psychoterapia psychodynamiczna Wrocław
           </a>
-          <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu na Gaju</p>
+          <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>
         </li>
       </ul>
       </main>
