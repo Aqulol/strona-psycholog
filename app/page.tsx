@@ -51,7 +51,7 @@ export default function Home() {
           postalCode: '50-449',
           addressCountry: 'PL',
         },
-        hasMap: 'https://www.google.com/maps/search/?api=1&query=Zygmunta+Krasińskiego+13%2C+50-449+Wrocław',
+        hasMap: `https://www.google.com/maps/search/?api=1&query=${config.geoLat},${config.geoLng}`,
         areaServed: 'Wrocław',
         knowsAbout: ['lęk i depresja', 'kryzysy życiowe', 'relacje', 'stres', 'wypalenie zawodowe'],
         sameAs: ['https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw'],
