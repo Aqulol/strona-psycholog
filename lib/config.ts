@@ -7,7 +7,7 @@ export const config = {
   postal: '50-449',
   bookingUrl: 'https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw',
   officeUrl: 'https://centrumrownowagi.com',
-  mapsUrl: 'https://www.google.com/maps?q=Zygmunta+Krasińskiego+13,+Wrocław&output=embed',
+  mapsUrl: 'https://www.google.com/maps?q=51.1066776,17.0434034&output=embed',
 
   // ===== Cennik — edytuj TU ręcznie (aktualizuj wg ZnanyLekarz) =====
   prices: [
@@ -51,11 +51,10 @@ export const config = {
   gtmId: '',
   ga4Id: 'G-5YF0L6DJ1X',
 
-  // ===== Współrzędne geograficzne gabinetu (opcjonalne, do JSON-LD geo) =====
-  // Jak uzupełnić: otwórz https://maps.google.com, wyszukaj „Zygmunta Krasińskiego 13, Wrocław",
-  // kliknij prawym przyciskiem w budynek gabinetu → „Co tu jest?" → skopiuj
-  // pierwszy wiersz (np. 51.082600, 17.033900) i wpisz osobno szerokość/długość.
-  // Dopóki pola są puste, JSON-LD nie zawiera współrzędnych (bezpieczne).
-  geoLat: '',
-  geoLng: '',
+  // ===== Współrzędne geograficzne gabinetu (do JSON-LD geo) =====
+  // Zweryfikowane przez OpenStreetMap/Nominatim dla Zygmunta Krasińskiego 13,
+  // 50-449 Wrocław. Używane też w hasMap JSON-LD (zamiast tekstowego zapytania,
+  // które Google Maps bywa błędnie geolokalizował przy polskich znakach).
+  geoLat: '51.1066776',
+  geoLng: '17.0434034',
 };
