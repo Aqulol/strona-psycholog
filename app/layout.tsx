@@ -54,9 +54,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Preload logo (widoczne w headerze), self-hostowane fonty
           (najczęściej używane wagi: Cormorant Garamond 600 i Inter 400)
           i preconnect do domen zewnętrznych faktycznie używanych na stronie:
-          widget ZnanyLekarz (platform.docplanner.com), osadzona mapa Google
-          (www.google.com) i GTM/GA4 (www.googletagmanager.com, ładowane po
-          zgodzie na cookies). Fonty są hostowane lokalnie w /fonts — build
+          certyfikat ZnanyLekarz w hero (platform.docplanner.com), osadzona
+          mapa Google (www.google.com) i GTM/GA4 (www.googletagmanager.com,
+          ładowane po zgodzie na cookies). Fonty są hostowane lokalnie w /fonts — build
           nie pobiera nic z fonts.gstatic.com.
           Tagi <link> wstrzyknięte w <head> jako surowy HTML, aby trafiły do
           <head> DOKŁADNIE RAZ: elementy <link> renderowane w drzewie React

@@ -6,7 +6,7 @@ import { config } from '../../lib/config';
 export const metadata: Metadata = {
   title: 'Cennik – konsultacja i psychoterapia we Wrocławiu',
   description:
-    'Cennik wizyt u psychologa Grzegorza Plebaniaka we Wrocławiu: konsultacja psychologiczna 160 zł, sesja psychoterapii 140 zł. Sesja trwa 50 minut, stacjonarnie i online.',
+    'Cennik wizyt u psychologa Grzegorza Plebaniaka we Wrocławiu: konsultacja psychologiczna 200 zł, sesja psychoterapii 200 zł. Sesja trwa 50 minut, stacjonarnie i online.',
   alternates: { canonical: '/cennik/' },
   openGraph: { url: 'https://psychologplebaniak.pl/cennik/' },
 };
