@@ -6,17 +6,17 @@ import ContactInfo from './ContactInfo';
 
 /**
  * Sekcja „Kontakt" – renderowana OD RAZU (nie-leniwie), bo nie importuje
- * SDK Firestore. Zawiera JEDEN rząd na desktopie (lg+), trzy kolumny obok
- * siebie (grid lg:grid-cols-3):
+ * SDK Firestore. Na desktopie (lg+) zawiera rząd z dwiema kolumnami obok
+ * siebie (grid lg:grid-cols-2):
  *   - kolumna 1: dane kontaktowe + cennik (ContactInfo);
- *   - kolumna 2: rezerwacja online z kalendarzem ZnanyLekarz (ContactInfo).
- *     Anchor big_with_calendar trafia do początkowego HTML, więc widget.js
- *     przetwarza go na starcie;
- *   - kolumna 3: formularz (ContactForm) w trzeciej kolumnie, przeniesiony
- *     tutaj przez children do ContactInfo. Ładowany LENIWIE (React.lazy +
- *     IntersectionObserver, rootMargin 600px) — dzięki temu SDK Firestore
- *     (~190 kB) pozostaje poza bundlem startowym. Na mobile/tablet bloki
- *     układają się pionowo: dane kontaktowe, cennik, kalendarz, formularz.
+ *   - kolumna 2: rezerwacja online z kalendarzem Booksy (ContactInfo),
+ *     powiększony do połowy szerokości;
+ *   - formularz (ContactForm) renderowany PONIŻEJ rzędu, na całą szerokość,
+ *     przeniesiony tutaj przez children do ContactInfo. Ładowany LENIWIE
+ *     (React.lazy + IntersectionObserver, rootMargin 600px) — dzięki temu
+ *     SDK Firestore (~190 kB) pozostaje poza bundlem startowym. Na
+ *     mobile/tablet bloki układają się pionowo: dane kontaktowe, cennik,
+ *     kalendarz, a pod nimi formularz.
  *
  * Kotwica #kontakt jest na <section> od początku (scroll-mt-20, by
  * przyklejony nagłówek nie zasłaniał sekcji po nawigacji z menu).
@@ -53,7 +53,7 @@ export default function Contact() {
       <div className="container">
         <SectionHeading title="Kontakt" />
 
-        {/* Jeden rząd: dane kontaktowe+cennik | kalendarz ZL | formularz (3 kolumny, lg+) */}
+        {/* Rząd: dane kontaktowe+cennik | kalendarz Booksy (2 kolumny, lg+); formularz PONIŻEJ */}
         <ContactInfo>
           <div ref={formRef}>
             {showForm ? (

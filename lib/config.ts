@@ -9,10 +9,17 @@ export const config = {
   officeUrl: 'https://centrumrownowagi.com',
   mapsUrl: 'https://www.google.com/maps?q=51.1066776,17.0434034&output=embed',
 
-  // ===== Cennik — edytuj TU ręcznie (aktualizuj wg ZnanyLekarz) =====
+  // ===== Booksy — rezerwacja online (kalendarz w sekcji Kontakt) =====
+  // Wpisz TU unikalny numer ID z Twojego konta Booksy
+  // (Business Settings → Online Booking → Your Website → kod widgetu),
+  // bez <script> i bez src=. Wtedy na stronie pojawi się pełny kalendarz.
+  // Przykład: id=12345  →  booksyId: '12345'
+  booksyId: '357056',
+
+  // ===== Cennik — edytuj TU ręcznie (aktualizuj wg Booksy) =====
   prices: [
-    { key: 'konsultacja', name: 'Konsultacja psychologiczna', price: 160, duration: '50 min' },
-    { key: 'psychoterapia', name: 'Psychoterapia', price: 140, duration: '50 min' },
+    { key: 'konsultacja', name: 'Konsultacja psychologiczna', price: 200, duration: '50 min' },
+    { key: 'psychoterapia', name: 'Psychoterapia', price: 200, duration: '50 min' },
   ],
 
   // ===== Firebase (wariant darmowy — Spark) =====
