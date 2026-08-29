@@ -52,13 +52,13 @@ export default function BooksyCalendar() {
         style={{ border: 0 }}
         loading="lazy"
         allow="payment"
-        sandbox="allow-forms allow-popups allow-same-origin allow-scripts"
+        sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
       />
       <div className="flex items-center justify-between border-t border-border bg-cream px-4 py-3 text-sm text-ink/70">
         <span>
           Rezerwacja online przez{' '}
           <a
-            href={`https://booksy.com/pl-pl/${id}`}
+            href={config.booksyUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-green hover:underline"

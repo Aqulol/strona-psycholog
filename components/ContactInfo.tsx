@@ -87,7 +87,7 @@ export default function ContactInfo({ children }: { children?: ReactNode }) {
         <BooksyCalendar />
         {hasBooksy && (
           <a
-            href={`https://booksy.com/pl-pl/${config.booksyId}`}
+            href={config.booksyUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-block rounded bg-green px-6 py-3.5 text-base font-medium text-white transition-colors hover:bg-green/90"

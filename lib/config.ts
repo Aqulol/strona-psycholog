@@ -15,6 +15,10 @@ export const config = {
   // bez <script> i bez src=. Wtedy na stronie pojawi się pełny kalendarz.
   // Przykład: id=12345  →  booksyId: '12345'
   booksyId: '357056',
+  // Pełny adres profilu Booksy (SEO) — linki „Zarezerwuj termin online”
+  // i stopka kalendarza. WAŻNE: sam booksyId w formie https://booksy.com/pl-pl/<id>
+  // zwraca błąd 404 — potrzebny jest pełny slug z nazwą gabinetu.
+  booksyUrl: 'https://booksy.com/pl-pl/357056_psycholog-grzegorz-plebaniak_psychoterapia_13750_wroclaw',
 
   // ===== Cennik — edytuj TU ręcznie (aktualizuj wg Booksy) =====
   prices: [
