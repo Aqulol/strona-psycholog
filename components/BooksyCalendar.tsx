@@ -58,7 +58,7 @@ export default function BooksyCalendar() {
         <span>
           Rezerwacja online przez{' '}
           <a
-            href={`https://booksy.com/pl-pl/${id}`}
+            href={config.booksyUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-green hover:underline"
