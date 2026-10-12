@@ -113,7 +113,7 @@ export const sendContactForm = onRequest(
       const port = Number(readSecret(SMTP_PORT, '587') || 587);
       const user = readSecret(SMTP_USER);
       const pass = readSecret(SMTP_PASS);
-      const to = readSecret(MAIL_TO, 'g.plebaniak@somentiq.pl') || 'g.plebaniak@somentiq.pl';
+      const to = readSecret(MAIL_TO, 'gpplebaniak@gmail.com') || 'gpplebaniak@gmail.com';
 
       if (host && user && pass) {
         const transporter = nodemailer.createTransport({

@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <p className="font-heading text-3xl lg:text-4xl">Grzegorz Plebaniak</p>
-            <p className="mt-2 text-sm text-white/80">Psycholog / psychoterapeuta · Wrocław Gaj</p>
+            <p className="mt-2 text-sm text-white/80">Psycholog / psychoterapeuta · Wrocław</p>
           </div>
           <nav aria-label="Nawigacja w stopce">
             <ul className="grid grid-cols-2 gap-2 text-sm text-white/85">
@@ -36,7 +36,11 @@ export default function Footer() {
             <p className="mb-2">Psycholog Grzegorz Plebaniak — psychoterapia psychodynamiczna dla dorosłych, stacjonarnie i online.</p>
             <p>{config.address}</p>
             <p className="mt-1">{config.phone}</p>
-            <p className="mt-1">{config.email}</p>
+            <p className="mt-1">
+              <a className="hover:underline" href={`mailto:${config.email}`}>
+                {config.email}
+              </a>
+            </p>
           </div>
         </div>
         <div className="mt-10 flex flex-col gap-2 border-t border-white/20 pt-8 text-sm text-white/70 md:flex-row md:items-center md:justify-between">

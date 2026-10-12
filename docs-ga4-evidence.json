@@ -8,7 +8,7 @@
     {"event": "book_click", "params": {"method": "znanylekarz", "location": "mobile_bar"}, "fired": true, "how": "click na pasku mobilnym (viewport 390x844)"},
     {"event": "book_click", "params": {"method": "znanylekarz", "location": "kontakt"}, "fired": true, "how": "click na 'Zarezerwuj termin online' w sekcji Kontakt"},
     {"event": "call_click", "params": {"location": "kontakt"}, "fired": true, "how": "real click na tel:+48 693087574"},
-    {"event": "email_click", "params": {"location": "kontakt"}, "fired": true, "how": "click na mailto:g.plebaniak@somentiq.pl"},
+    {"event": "email_click", "params": {"location": "kontakt"}, "fired": true, "how": "click na mailto:gpplebaniak@gmail.com"},
     {"event": "form_submit", "params": {}, "fired": true, "how": "wyslanie formularza PO udanym zapisie do Firestore (komunikat 'Dziękuję za wiadomość...' widoczny, pola wyczyszczone)"}
   ],
   "notes": [

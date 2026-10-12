@@ -2,11 +2,12 @@ export const config = {
   name: 'Grzegorz Plebaniak',
   title: 'Psycholog / psychoterapeuta',
   phone: '+48 693087574',
-  email: 'g.plebaniak@somentiq.pl',
-  address: 'ul. Śliczna 28/24, 50-566 Wrocław',
-  postal: '50-566',
+  email: 'gpplebaniak@gmail.com',
+  streetAddress: 'Zygmunta Krasińskiego 13',
+  address: 'Zygmunta Krasińskiego 13, 50-449 Wrocław',
+  postal: '50-449',
   bookingUrl: 'https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw',
-  mapsUrl: 'https://www.google.com/maps?q=Śliczna+28,+Wrocław&output=embed',
+  mapsUrl: 'https://www.google.com/maps?q=Zygmunta+Krasi%C5%84skiego+13,+50-449+Wroc%C5%82aw&output=embed',
 
   // ===== Cennik — edytuj TU ręcznie (aktualizuj wg ZnanyLekarz) =====
   prices: [
@@ -18,16 +19,9 @@ export const config = {
   // Formularz kontaktowy zapisuje wiadomości BEZPOŚREDNIO do Firestore
   // z przeglądarki (bez Cloud Functions i bez planu Blaze).
   //
-  // SKĄD WZIĄĆ WARTOŚCI:
-  //   1. Wejdź do konsoli Firebase: https://console.firebase.google.com
-  //   2. Wybierz projekt „psychologplebaniak-e4480".
-  //   3. Kliknij ikonę koła zębatego → Ustawienia projektu (Project settings).
-  //   4. W sekcji „Twoje aplikacje" / „Your apps" znajdź aplikację internetową
-  //      (z ikoną </>). Jeśli jej nie ma — kliknij „Utwórz aplikację internetową"
-  //      (Add app → Web) i przejdź kreatora.
-  //   5. W zakładce „SDK setup and configuration" wybierz „Config"
-  //      i skopiuj cały obiekt firebaseConfig.
-  //   6. Wklej poniższe wartości ZAMIAST placeholderów „TU-WPISZ-...".
+  // Konfiguracja klienta jest już uzupełniona dla projektu
+  // „psychologplebaniak-e4480". Jeśli zmienisz projekt Firebase,
+  // pobierz jego nowy obiekt firebaseConfig z Project settings → Your apps → Web app.
   //
   // UWAGA: apiKey w aplikacji webowej Firebase jest PUBLICZNY (widoczny
   // w przeglądarce) — to normalne i bezpieczne, jeśli reguły Firestore
@@ -51,7 +45,7 @@ export const config = {
   ga4Id: 'G-5YF0L6DJ1X',
 
   // ===== Współrzędne geograficzne gabinetu (opcjonalne, do JSON-LD geo) =====
-  // Jak uzupełnić: otwórz https://maps.google.com, wyszukaj „Śliczna 28, Wrocław",
+  // Jak uzupełnić: otwórz https://maps.google.com, wyszukaj „Zygmunta Krasińskiego 13, Wrocław",
   // kliknij prawym przyciskiem w budynek gabinetu → „Co tu jest?" → skopiuj
   // pierwszy wiersz (np. 51.082600, 17.033900) i wpisz osobno szerokość/długość.
   // Dopóki pola są puste, JSON-LD nie zawiera współrzędnych (bezpieczne).

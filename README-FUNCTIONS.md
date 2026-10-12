@@ -30,11 +30,11 @@ firebase functions:secrets:set SITE_URL
 
 CLI poprosi o wartość każdego sekretu po kolei. Sugerowane wartości:
 
-- `SMTP_HOST` — serwer poczty wychodzącej (np. `smtp.somentiq.pl`),
+- `SMTP_HOST` — serwer poczty wychodzącej (np. `smtp.gmail.com`),
 - `SMTP_PORT` — zwykle `587` (STARTTLS) albo `465` (TLS),
 - `SMTP_USER` — login do skrzynki nadawcy,
 - `SMTP_PASS` — hasło do skrzynki nadawcy,
-- `MAIL_TO` — adres odbiorcy wiadomości z formularza; domyślnie (jeśli nie ustawisz) `g.plebaniak@somentiq.pl`,
+- `MAIL_TO` — adres odbiorcy wiadomości z formularza; domyślnie (jeśli nie ustawisz) `gpplebaniak@gmail.com`,
 - `SITE_URL` — domena produkcyjna, np. `https://psychologplebaniak.pl`; jeśli nie ustawisz, CORS użyje `*` (wygodne testowo, ale nie na produkcję).
 
 > **Ważne:** sekret musi istnieć ZANIM wdrożysz funkcję. Wdrożenie funkcji,

@@ -1,6 +1,6 @@
 # Wdrożenie strony gabinetu — instrukcja krok po kroku
 
-Strona gabinetu psychologicznego Grzegorza Plebaniaka (Wrocław Gaj).
+Strona gabinetu psychologicznego Grzegorza Plebaniaka (Wrocław).
 Projekt Firebase: **psychologplebaniak-e4480**.
 
 Czas wdrożenia: ok. 1–2 godziny. Nie wymaga znajomości programowania —
@@ -9,7 +9,8 @@ macOS lub Linux).
 
 > **Wariant darmowy (Spark).** Formularz kontaktowy zapisuje wiadomości
 > bezpośrednio do bazy Firestore z przeglądarki — bez Cloud Functions i bez
-> planu Blaze (płatnego). Wiadomości odczytuje Pan/Pani w konsoli Firebase.
+> planu Blaze (płatnego). Wiadomości można odczytać w konsoli Firebase albo
+> lokalnym programem `tools/czytaj-wiadomosci/` (instrukcja w jego README).
 
 ---
 
@@ -26,73 +27,57 @@ macOS lub Linux).
    firebase login
    ```
    Przeglądarka otworzy stronę logowania — wybierz konto właściciela projektu.
-4. **Uzupełnij placeholdery w kodzie** — dane do uzupełnienia są oznaczone
-   `TU-WPISZ-...` lub `XXXX`:
-
-   | Plik | Co uzupełnić |
-   |---|---|
-   | `lib/config.ts` | `firebaseConfig` — konfiguracja aplikacji webowej Firebase (patrz Krok 4). Pola `apiKey`, `messagingSenderId`, `appId` zawierają placeholder `TU-WPISZ-...`. |
-   | `lib/config.ts` | opcjonalnie `gtmId` (GTM-XXXXXXX) i `ga4Id` (G-XXXXXXXXXX) z kont Google |
-   | `app/layout.tsx` | meta tag weryfikacji Search Console (opcjonalnie, patrz Krok 5) |
+4. Konfiguracja `firebaseConfig` w `lib/config.ts` jest już wpisana dla
+   projektu `psychologplebaniak-e4480`. Nie zastępuj jej placeholderami.
+   `gtmId` jest opcjonalne; `ga4Id` i weryfikacja Search Console są już
+   skonfigurowane.
 
 ## Krok 2 — Pobierz kod
 
 ```bash
-git clone <adres-repozytorium-wlasciciela> gabinet-plebaniak
-cd gabinet-plebaniak
+git clone --branch arena/01a03953-strona-psycholog https://github.com/Aqulol/strona-psycholog.git strona-psycholog
+cd strona-psycholog
 ```
 Jeśli otrzymałeś projekt jako spakowany folder — rozpakuj go i wejdź do środka.
 
 ## Krok 3 — Zbuduj projekt
 
-W katalogu projektu (`gabinet-plebaniak`) wykonaj po kolei:
+W katalogu projektu (`strona-psycholog`) wykonaj po kolei:
 
 ```bash
-npm install
-NODE_OPTIONS='--max-old-space-size=2048' npm run build
+npm ci
+npm run build
 ```
 
-Na końcu w katalogu projektu powstanie folder **`out/`** — to gotowa strona.
-(Polecenie `NODE_OPTIONS=...` to tylko zwiększenie pamięci dla procesu budowania.)
+Na końcu powstanie folder **`out/`** — to gotowa strona. Jeśli budowanie
+zgłasza brak pamięci, w PowerShell przed buildem możesz ustawić:
+
+```powershell
+$env:NODE_OPTIONS="--max-old-space-size=2048"
+npm run build
+```
 
 ## Krok 4 — Wdróż na Firebase
 
-1. **Uzupełnij `firebaseConfig` w `lib/config.ts`** — skąd wziąć wartości:
-   1. Wejdź do konsoli Firebase: https://console.firebase.google.com
-   2. Wybierz projekt **psychologplebaniak-e4480**.
-   3. Kliknij ikonę koła zębatego → **Ustawienia projektu** (Project settings).
-   4. W sekcji **„Twoje aplikacje" / „Your apps"** znajdź aplikację internetową
-      (ikona `</>`). Jeśli jej nie ma — kliknij **„Utwórz aplikację internetową"**
-      (Add app → Web) i przejdź kreatora (nazwa dowolna, hosting NIE trzeba włączać).
-   5. W zakładce **„SDK setup and configuration"** wybierz **„Config"**
-      i skopiuj cały obiekt `firebaseConfig`.
-   6. Wklej poszczególne wartości do `lib/config.ts` ZAMIAST placeholderów
-      `TU-WPISZ-...`. (Pola `authDomain`, `projectId`, `storageBucket` są już
-      wpisane — sprawdź, czy zgadzają się z konsolą.)
-   7. Zapisz plik.
-
-   > **Uwaga:** `apiKey` w aplikacji webowej Firebase jest publiczny (widoczny
-   > w przeglądarce) — to normalne i bezpieczne, jeśli reguły Firestore
-   > pozwalają tylko na ograniczony zapis (patrz `firestore.rules`).
-
-2. Po uzupełnieniu configu przebuduj stronę:
+1. W `lib/config.ts` jest już skonfigurowana aplikacja webowa Firebase.
+   Sprawdź, że `.firebaserc` wskazuje projekt **psychologplebaniak-e4480**.
+2. Po zmianach w kodzie zbuduj stronę ponownie:
    ```bash
-   NODE_OPTIONS='--max-old-space-size=2048' npm run build
+   npm run build
    ```
-
-3. Wdróż hosting i reguły Firestore (ID projektu jest już ustawione w `.firebaserc`):
+3. Wdróż hosting i reguły Firestore:
    ```bash
-   firebase deploy --only hosting,firestore
+   firebase deploy --project psychologplebaniak-e4480 --only hosting,firestore
    ```
    (Cloud Functions NIE są używane w wariancie darmowym — katalog `functions/`
    pozostaje w repozytorium jako materiał do ewentualnego wariantu przyszłościowego;
    opisano to w `README-FUNCTIONS.md`.)
 
-4. **Gdzie czytać wiadomości z formularza?**
-   Wiadomości z formularza kontaktowego pojawiają się w konsoli Firebase:
-   **Build → Firestore Database → kolekcja `messages`**.
-   Każdy dokument zawiera pola `name`, `contact`, `message`, `rodoConsent`
-   oraz `createdAt` (czas wysłania).
+4. **Odczyt wiadomości z formularza:**
+   - Najprościej w konsoli Firebase: **Build → Firestore Database → kolekcja `messages`**.
+   - Możesz też uruchomić lokalny program z GitHuba. Instrukcja, bezpieczne
+     przechowywanie klucza i komendy są w `tools/czytaj-wiadomosci/README-narzedzie.md`.
+     Klucz konta usługi nigdy nie może trafić do GitHuba ani do `public/`.
 
 ## Krok 5 — Domena i Google
 
@@ -108,15 +93,16 @@ Na końcu w katalogu projektu powstanie folder **`out/`** — to gotowa strona.
 3. **Bing Webmaster:** https://www.bing.com/webmasters — zgłoś tę samą sitemapę.
 4. **Wizytówka Google Business** (dla lokalnego SEO) — dane NAP:
    - Nazwa: **Grzegorz Plebaniak — Gabinet Psychologiczny**
-   - Adres: **ul. Śliczna 28/24, Wrocław**
+   - Adres: **Zygmunta Krasińskiego 13, 50-449 Wrocław**
    - Telefon: **+48 693087574**
-   - E-mail: **g.plebaniak@somentiq.pl**
+   - E-mail: **gpplebaniak@gmail.com**
 
 ---
 
 ## Checklista wdrożeniowa
 
-- [ ] `firebaseConfig` uzupełniony w `lib/config.ts`
+- [ ] `firebaseConfig` w `lib/config.ts` wskazuje właściwy projekt Firebase
+- [ ] Lokalny program do czytania wiadomości działa (klucz zapisany poza repozytorium)
 - [ ] Opcjonalnie: GTM/GA4 oraz meta tag Search Console
 - [ ] Zdjęcia profesjonalne gabinetu (w folderze `public/images/`; opcjonalnie w formacie WebP)
 - [ ] Domena podpięta + SSL + przekierowanie www → bez www
