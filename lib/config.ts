@@ -7,12 +7,17 @@ export const config = {
   address: 'Zygmunta Krasińskiego 13, 50-449 Wrocław',
   postal: '50-449',
   bookingUrl: 'https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw',
-  mapsUrl: 'https://www.google.com/maps?q=Zygmunta+Krasi%C5%84skiego+13,+50-449+Wroc%C5%82aw&output=embed',
+  officeUrl: 'http://centrumrownowagi.com',
+  mapsUrl: 'https://www.google.com/maps?q=51.1066776,17.0434034&output=embed',
 
-  // ===== Cennik — edytuj TU ręcznie (aktualizuj wg ZnanyLekarz) =====
+  // ===== Booksy — rezerwacja online (kalendarz w sekcji Kontakt) =====
+  booksyId: '357056',
+  booksyUrl: 'https://booksy.com/pl-pl/357056_psycholog-grzegorz-plebaniak_psychoterapia_13750_wroclaw',
+
+  // ===== Cennik — edytuj TU ręcznie (zgodnie z aktualnym cennikiem Booksy) =====
   prices: [
-    { key: 'konsultacja', name: 'Konsultacja psychologiczna', price: 160, duration: '50 min' },
-    { key: 'psychoterapia', name: 'Psychoterapia', price: 140, duration: '50 min' },
+    { key: 'konsultacja', name: 'Konsultacja psychologiczna', price: 200, duration: '50 min' },
+    { key: 'psychoterapia', name: 'Psychoterapia', price: 200, duration: '50 min' },
   ],
 
   // ===== Firebase (wariant darmowy — Spark) =====
@@ -44,11 +49,7 @@ export const config = {
   gtmId: '',
   ga4Id: 'G-5YF0L6DJ1X',
 
-  // ===== Współrzędne geograficzne gabinetu (opcjonalne, do JSON-LD geo) =====
-  // Jak uzupełnić: otwórz https://maps.google.com, wyszukaj „Zygmunta Krasińskiego 13, Wrocław",
-  // kliknij prawym przyciskiem w budynek gabinetu → „Co tu jest?" → skopiuj
-  // pierwszy wiersz (np. 51.082600, 17.033900) i wpisz osobno szerokość/długość.
-  // Dopóki pola są puste, JSON-LD nie zawiera współrzędnych (bezpieczne).
-  geoLat: '',
-  geoLng: '',
+  // ===== Współrzędne gabinetu — zweryfikowane dla nowego adresu =====
+  geoLat: '51.1066776',
+  geoLng: '17.0434034',
 };

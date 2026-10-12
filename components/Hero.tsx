@@ -36,7 +36,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3 lg:gap-4">
             <a
               href="#kontakt"
-              onClick={() => track('book_click', { method: 'znanylekarz', location: 'hero' })}
+              onClick={() => track('book_click', { method: 'booksy', location: 'hero' })}
               className="rounded bg-green px-6 py-3.5 text-base font-medium text-white transition hover:bg-green/90 active:scale-[0.99]"
             >
               Umów konsultację

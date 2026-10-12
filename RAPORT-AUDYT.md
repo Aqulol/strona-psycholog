@@ -68,7 +68,7 @@ Podczas udostępniania w social media nie było jawnego `og:url`. **Naprawa:** d
 > **Do zrobienia po tej sesji:** `npm run build` → `firebase deploy --only hosting` → w GSC „Zażądaj ponownego zindeksowania” dla artykułów (pkt 4.2).
 
 ### 2.6. Dodatkowe poprawki wdrożone w tej sesji (P1+P2 z pkt 5)
-- ✅ **Nowa podstrona `/cennik/`** — osobny adres pod frazy „cennik psychoterapia Wrocław”, dane strukturalne `OfferCatalog` z cenami (160 zł / 140 zł), linki w stopce, blogu i artykułach.
+- ✅ **Nowa podstrona `/cennik/`** — osobny adres pod frazy „cennik psychoterapia Wrocław”, dane strukturalne `OfferCatalog` z cenami (200 zł / 200 zł), linki w stopce, blogu i artykułach.
 - ✅ **Nowy artykuł** „Jak wybrać psychoterapeutę? Praktyczny przewodnik” (`/blog/jak-wybrac-psychoterapeute/`, 2026-08-20) — z JSON-LD Article+FAQ, dodany do listy bloga, sitemap, llms.txt i sekcji „Przeczytaj także” innych wpisów.
 - ✅ **Baner cookies:** dodany przycisk **„Tylko niezbędne”** (równoważna odmowa — zgodność ePrivacy/RODO); zdarzenia analityczne dodatkowo blokowane bez zgody (twarda brama w `lib/analytics.ts`).
 - ✅ **Consent Mode v2** — deklaracja stanów zgody (`analytics_storage` itd.) przed konfiguracją GA4.

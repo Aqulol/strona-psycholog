@@ -3,10 +3,12 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { config } from '../../lib/config';
 
+const konsultacjaPrice = config.prices.find((price) => price.key === 'konsultacja')?.price ?? 0;
+const psychoterapiaPrice = config.prices.find((price) => price.key === 'psychoterapia')?.price ?? 0;
+
 export const metadata: Metadata = {
   title: 'Cennik – konsultacja i psychoterapia we Wrocławiu',
-  description:
-    'Cennik wizyt u psychologa Grzegorza Plebaniaka we Wrocławiu: konsultacja psychologiczna 160 zł, sesja psychoterapii 140 zł. Sesja trwa 50 minut, stacjonarnie i online.',
+  description: `Cennik wizyt u psychologa Grzegorza Plebaniaka we Wrocławiu: konsultacja psychologiczna ${konsultacjaPrice} zł, sesja psychoterapii ${psychoterapiaPrice} zł. Sesja trwa 50 minut, stacjonarnie i online.`,
   alternates: { canonical: '/cennik/' },
   openGraph: { url: 'https://psychologplebaniak.pl/cennik/' },
 };
@@ -64,7 +66,7 @@ export default function CennikPage() {
           w gabinecie przy ul. Zygmunta Krasińskiego 13, 50-449 Wrocław (szczegóły placówki:{' '}
           <a
             className="text-green underline"
-            href="http://centrumrownowagi.com"
+            href={config.officeUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -96,7 +98,7 @@ export default function CennikPage() {
 
         <div className="mt-10 flex flex-wrap gap-3">
           <a
-            href={config.bookingUrl}
+            href={config.booksyUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded bg-green px-6 py-3.5 text-base font-medium text-white transition hover:bg-green/90"

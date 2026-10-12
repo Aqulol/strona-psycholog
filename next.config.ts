@@ -17,6 +17,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   eslint: { ignoreDuringBuilds: true },
+  // Podgląd na żywo w Arena działa pod hostem *.e2b.app (reverse proxy na
+  // port deweloperski). Bez tej listy Next.js ostrzega o "cross origin
+  // request detected from ...e2b.app" — zablokuj dokładnie ten przypadek.
+  allowedDevOrigins: ['*.e2b.app'],
 };
 
 export default nextConfig;

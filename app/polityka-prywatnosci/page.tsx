@@ -93,8 +93,12 @@ export default function Page() {
           oraz Google Analytics; dane mogą być przekazywane do Stanów Zjednoczonych;
         </li>
         <li className="leading-8">
-          <strong>ZnanyLekarz</strong> — platforma rezerwacji wizyt online; w zakresie rezerwacji obowiązuje polityka
-          prywatności ZnanyLekarz (
+          <strong>Booksy</strong> — platforma, za pośrednictwem której można rezerwować wizyty online; dane podane
+          podczas rezerwacji są przetwarzane zgodnie z zasadami i polityką prywatności Booksy;
+        </li>
+        <li className="leading-8">
+          <strong>ZnanyLekarz</strong> — zewnętrzny widget informacyjny na stronie. Po przejściu do serwisu
+          ZnanyLekarz obowiązuje jego polityka prywatności (
           <a className="text-green underline" href="https://www.znanylekarz.pl/prywatnosc" rel="noopener noreferrer">
             https://www.znanylekarz.pl/prywatnosc
           </a>

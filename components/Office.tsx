@@ -82,7 +82,7 @@ export default function Office() {
                 Gabinet mieści się w placówce{' '}
                 <a
                   className="text-green underline"
-                  href="http://centrumrownowagi.com"
+                  href={config.officeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
