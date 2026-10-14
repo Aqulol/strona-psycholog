@@ -158,6 +158,15 @@ export default function Page() {
       <ul className="mt-4 space-y-4">
         <li>
           <a
+            href="/blog/narcyzm-wrazliwy/"
+            className="text-lg font-medium text-green underline hover:text-green/80"
+          >
+            Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?
+          </a>
+          <p className="mt-1 leading-7 text-ink/70">wrażliwość na ocenę i trudności w bliskości</p>
+        </li>
+        <li>
+          <a
             href="/blog/dlaczego-sama-swiadomosc-nie-wystarcza/"
             className="text-lg font-medium text-green underline hover:text-green/80"
           >

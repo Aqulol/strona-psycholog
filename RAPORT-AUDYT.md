@@ -100,7 +100,7 @@ Podczas udostępniania w social media nie było jawnego `og:url`. **Naprawa:** d
 
 ### 3.2. SEO treści
 - **Targetowanie fraz:** strona główna dobrze celuje w „psycholog Wrocław”, „psychoterapia psychodynamiczna Wrocław” i „psycholog online”. ✔
-- **Blog:** 5 wartościowych, długich artykułów (4 z 2026-08-11 + „Jak wybrać psychoterapeutę?” z 2026-08-20) z sekcjami FAQ — bardzo dobry materiał pod frazy informacyjne („jak wybrać psychoterapeutę”, „dlaczego wybieram podobnych partnerów”, „wypalenie zawodowe”, „lęk”). Tematy są trafne, ale jest ich **wciąż za mało** — Google lubi regularność (2–4 wpisy/mies.).
+- **Blog:** 6 artykułów (4 z 2026-08-11, „Jak wybrać psychoterapeutę?” z 2026-08-20 oraz „Narcyzm wrażliwy” z 2026-10-14) — dobry materiał pod frazy informacyjne („jak wybrać psychoterapeutę”, „narcyzm wrażliwy”, „dlaczego wybieram podobnych partnerów”, „wypalenie zawodowe”, „lęk”). Warto utrzymać regularność publikacji (2–4 wpisy/mies.).
 - **Cennik:** dodana osobna podstrona `/cennik/` (targetowanie fraz „psychoterapia Wrocław cennik”) z danymi strukturalnymi `OfferCatalog`. **„Kontakt” jako osobny URL** nadal można dodać w przyszłości.
 - **Linkowanie wewnętrzne:** dobre — sekcja „Przeczytaj także” w artykułach, kotwice nawigacji. Można dodać linki kontekstowe w treści artykułów do sekcji strony głównej (już częściowo są).
 - **Struktura danych:** LocalBusiness bez `url`, `logo`, `image`, `geo` i `openingHours` — warto uzupełnić (pkt 5.5).
@@ -127,7 +127,7 @@ Aktualne dane lokalizacyjne na stronie: **Grzegorz Plebaniak**, Zygmunta Krasiń
 
 ### 4.2. Checklista — co kliknąć w GSC (dane konta; z sandboxa nie da się ich odczytać)
 - [ ] **Sitemaps** → czy `sitemap.xml` ma status **„Sukces”** (jeśli nie — wklej adres i zapisz).
-- [ ] **URL Inspection** → wklej adresy 5 artykułów i `/cennik/` (np. `https://psychologplebaniak.pl/blog/jak-wybrac-psychoterapeute/`) → **„Zażądaj indeksowania”**. **Zrób to PO wdrożeniu naprawy kanonikali** (bez tego prośba nie ma sensu — strona kanonikalizowała na `/`).
+- [ ] **URL Inspection** → wklej adresy 6 artykułów i `/cennik/` (np. `https://psychologplebaniak.pl/blog/jak-wybrac-psychoterapeute/`) → **„Zażądaj indeksowania”**. **Zrób to PO wdrożeniu naprawy kanonikali** (bez tego prośba nie ma sensu — strona kanonikalizowała na `/`).
 - [ ] **Strony (Pages)** → sprawdź liczbę „Zaindeksowanych” i sekcję „Przeskanowano – obecnie nieindeksowana” / „Wykryto – obecnie nieindeksowana”. Po naprawie artykuły powinny trafić do zaindeksowanych w 1–2 tygodnie.
 - [ ] **Skuteczność (Performance)** → ustaw filtr zapytania zawierające „wrocław” i „psycholog” — to Twoje główne frazy; obserwuj CTR i pozycje.
 - [ ] **Core Web Vitals** → czy raport ma dane; jeśli nie, odpal PageSpeed Insights na `/` i `/blog/`.
@@ -181,10 +181,10 @@ npx firebase-tools deploy --only hosting,firestore
 Po wdrożeniu (konieczne, aby poprawki trafiły na produkcję):
 
 1. **Google Search Console** → Sitemaps → `https://psychologplebaniak.pl/sitemap.xml` (status „Sukces”).
-2. **URL Inspection** → wklej po kolei adresy 5 artykułów i `/cennik/` → „Zażądaj indeksowania”.
+2. **URL Inspection** → wklej po kolei adresy 6 artykułów i `/cennik/` → „Zażądaj indeksowania”.
 3. **GA4** → Administracja → Zdarzenia → oznacz jako konwersje: `book_click`, `call_click`, `email_click`, `form_submit`.
 4. **Uzupełnij współrzędne** w `lib/config.ts` (`geoLat`/`geoLng`) — instrukcja w komentarzu w pliku.
-5. **Sprawdź po wdrożeniu** działanie formularza kontaktowego, widgetu ZnanyLekarz i mapy (nowa polityka CSP może wymagać korekty, jeśli któreś zewnętrzne zasoby zostaną zablokowane — patrz komentarz w `firebase.json`).
+5. **Sprawdź po wdrożeniu** działanie formularza kontaktowego, kalendarza Booksy, certyfikatu ZnanyLekarz i mapy (nowa polityka CSP może wymagać korekty, jeśli któreś zewnętrzne zasoby zostaną zablokowane — patrz komentarz w `firebase.json`).
 
 ---
 
@@ -199,4 +199,4 @@ Po wdrożeniu (konieczne, aby poprawki trafiły na produkcję):
 | Dostępność | 10/10 |
 | RODO/prywatność | 9,5/10 (baner z odmową + Consent Mode v2; do dopięcia: retencja GA4) |
 
-**Najważniejsze teraz:** (1) wdrożyć build na produkcję (pkt 6), (2) w GSC zażądać indeksacji 5 artykułów i /cennik/, (3) ujednolicić NAP w Google Business Profile, ZnanyLekarz i katalogach, (4) wstawić współrzędne/ godziny przyjęć w `lib/config.ts`, (5) regularnie publikować artykuły (2–4/mies.).
+**Najważniejsze teraz:** (1) wdrożyć build na produkcję (pkt 6), (2) w GSC zażądać indeksacji 6 artykułów i /cennik/, (3) ujednolicić NAP w Google Business Profile, ZnanyLekarz i katalogach, (4) uzupełnić godziny przyjęć w `lib/config.ts`, (5) regularnie publikować artykuły (2–4/mies.).
