@@ -30,8 +30,9 @@ export default function Hero() {
             Grzegorz Plebaniak – psycholog i psychoterapeuta
           </h1>
           <p className="my-7 text-lg leading-8 text-ink/80 xl:text-xl xl:leading-9">
-            Bezpieczna przestrzeń do rozmowy o tym, co trudne. Pracuję w nurcie psychodynamicznym z osobami
-            dorosłymi, stacjonarnie i online.
+            Pomagam lepiej rozumieć siebie, swoje emocje i relacje oraz przyglądać się temu, co utrudnia
+            codzienne funkcjonowanie. Pracuję w nurcie psychodynamicznym z osobami dorosłymi, stacjonarnie i
+            online.
           </p>
           <div className="flex flex-wrap gap-3 lg:gap-4">
             <a
