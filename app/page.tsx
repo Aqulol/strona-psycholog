@@ -10,9 +10,12 @@ import BlogSection from '../components/BlogSection';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { config } from '../lib/config';
+import { websiteOpenGraph } from '../lib/seoMetadata';
 
 const priceValues = config.prices.map((p) => p.price);
-const priceRange = `${Math.min(...priceValues)}–${Math.max(...priceValues)} zł`;
+const minPrice = Math.min(...priceValues);
+const maxPrice = Math.max(...priceValues);
+const priceRange = minPrice === maxPrice ? `${minPrice} zł` : `${minPrice}–${maxPrice} zł`;
 const konsultacja = config.prices.find((p) => p.key === 'konsultacja')!;
 const psychoterapia = config.prices.find((p) => p.key === 'psychoterapia')!;
 const priceAnswer = `Konsultacja kosztuje ${konsultacja.price} zł, sesja psychoterapii ${psychoterapia.price} zł. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.`;
@@ -21,7 +24,12 @@ const priceAnswer = `Konsultacja kosztuje ${konsultacja.price} zł, sesja psycho
  *  canonical globalnie, żeby nie zerować kanonikali podstron). */
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/' },
+  openGraph: websiteOpenGraph({
+    url: 'https://psychologplebaniak.pl/',
+    title: 'Grzegorz Plebaniak – psycholog, psychoterapeuta we Wrocławiu',
+    description:
+      'Psycholog Grzegorz Plebaniak we Wrocławiu. Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
+  }),
 };
 
 /**

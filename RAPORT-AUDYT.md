@@ -22,10 +22,10 @@
 | Weryfikacja Google Search Console | ✔ **podwójna**: meta tag `google-site-verification` w `<head>` ORAZ plik `google2391dcad42225921.html` — oba działają (plik odpowiada poprawnie) |
 | robots.txt + sitemap.xml | ✔ poprawne; sitemap ma adresy z końcówką `/` (bez błędu „Przekierowanie” w GSC — potwierdza ostatni commit) |
 | Indeksacja domeny | ✔ strona główna w indeksie Google (od ok. stycznia 2026) |
-| Tytuły i opisy meta | ✔ 55–68 znaków / 136–162 znaków — w granicach normy |
+| Tytuły i opisy meta | ✔ unikalne; aktywne strony po skróceniu: tytuły 41–61 znaków, opisy 116–148 znaków |
 | H1 na stronę | ✔ dokładnie 1; hierarchia H1→H2→H3 poprawna |
 | `lang="pl"` | ✔ |
-| JSON-LD | ✔ LocalBusiness + MedicalBusiness + ProfessionalService + Person + FAQPage + BreadcrumbList (home), Article + BreadcrumbList + FAQPage (artykuły) |
+| JSON-LD | ✔ LocalBusiness + MedicalBusiness + ProfessionalService + Person + FAQPage + BreadcrumbList (home), OfferCatalog (cennik), Article + BreadcrumbList (artykuły); FAQPage tylko przy widocznym FAQ |
 | Wydajność | ✔ First Load JS ~103–112 kB, fonty self-hostowane, preload LCP (portret) z `fetchPriority=high`, WebP, lazy loading obrazów w galerii |
 | Dostępność | ✔ udokumentowany audyt WCAG 2.2 AA (docs-a11y-audit.md) — 0 naruszeń |
 | RODO / prywatność | ✔ GA4 ładuje się DOPIERO po zgodzie w banerze; polityka prywatności kompletna; formularz nie przyjmuje danych o zdrowiu |
@@ -103,7 +103,7 @@ Podczas udostępniania w social media nie było jawnego `og:url`. **Naprawa:** d
 - **Blog:** 6 artykułów (4 z 2026-08-11, „Jak wybrać psychoterapeutę?” z 2026-08-20 oraz „Narcyzm wrażliwy” z 2026-10-14) — dobry materiał pod frazy informacyjne („jak wybrać psychoterapeutę”, „narcyzm wrażliwy”, „dlaczego wybieram podobnych partnerów”, „wypalenie zawodowe”, „lęk”). Warto utrzymać regularność publikacji (2–4 wpisy/mies.).
 - **Cennik:** dodana osobna podstrona `/cennik/` (targetowanie fraz „psychoterapia Wrocław cennik”) z danymi strukturalnymi `OfferCatalog`. **„Kontakt” jako osobny URL** nadal można dodać w przyszłości.
 - **Linkowanie wewnętrzne:** dobre — sekcja „Przeczytaj także” w artykułach, kotwice nawigacji. Można dodać linki kontekstowe w treści artykułów do sekcji strony głównej (już częściowo są).
-- **Struktura danych:** LocalBusiness bez `url`, `logo`, `image`, `geo` i `openingHours` — warto uzupełnić (pkt 5.5).
+- **Struktura danych:** LocalBusiness ma `url`, `logo`, `image`, `hasMap` i `geo`; do uzupełnienia pozostają potwierdzone godziny przyjęć (`openingHours`).
 
 ### 3.3. SEO lokalne — ⚠️ najważniejsza rekomendacja poza kodem
 Aktualne dane lokalizacyjne na stronie: **Grzegorz Plebaniak**, Zygmunta Krasińskiego 13, 50-449 Wrocław, tel. +48 693 087 574, e-mail gpplebaniak@gmail.com. Miejsce przyjęć wskazane na stronie: [centrumrownowagi.com](http://centrumrownowagi.com).
@@ -149,20 +149,20 @@ Aktualne dane lokalizacyjne na stronie: **Grzegorz Plebaniak**, Zygmunta Krasiń
 
 ### P1 — ważne, nieduży wysiłek
 4. ✅ **Baner cookies z przyciskiem „Tylko niezbędne”** — wdrożone (równoważna odmowa; ePrivacy/RODO).
-5. ✅ **LocalBusiness JSON-LD** rozszerzony o `url`, `@id`, `image`, `logo`, `hasMap`. Do uzupełnienia przez właściciela: `geo` (współrzędne) w `lib/config.ts` oraz `openingHours` (godziny przyjęć — podaj, a wstawię).
+5. ✅ **LocalBusiness JSON-LD** zawiera `url`, `@id`, `image`, `logo`, `hasMap` i zweryfikowane `geo`. Do uzupełnienia po potwierdzeniu: `openingHours` (godziny przyjęć).
 6. ✅ **Podstrona `/cennik/`** z `OfferCatalog` — wdrożone.
 7. ✅ **301 redirecty** starych adresów bloga w `firebase.json` — wdrożone (16 reguł).
 8. ✅ **GTM:** placeholder usunięty (`gtmId: ''`) — wdrożone.
 9. ✅ **Consent Mode v2** + twarda brama zgody w `track()` — wdrożone. **Pozostaje w GA4:** oznaczyć zdarzenia jako konwersje (Administracja → Zdarzenia): `book_click`, `call_click`, `email_click`, `form_submit`.
 
 ### P2 — drobne i strategiczne
-10. 🟡 **Blog:** 1 nowy artykuł dodany („Jak wybrać psychoterapeutę?”, 2026-08-20). Kontynuować: 2–4 wpisy/mies. („pierwsza wizyta u psychologa — jak się przygotować”, „terapia online vs stacjonarnie”, „lęk przed zmianą”…), linkowanie do cennika/kontaktu, frazy lokalne („psycholog Wrocław”).
+10. ✅ **Blog:** dodano wpis „Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?” (2026-10-14), z bibliografią, linkami wewnętrznymi i metadanymi. Warto utrzymać regularność publikacji (2–4 wpisy/mies.).
 11. ✅ **Logo zoptymalizowane:** `logo.webp` 12,7 kB (zamiast 232 kB PNG) w headerze; `logo.png` pozostaje tylko dla schema.org.
 12. ✅ **PWA/manifest:** `manifest.json`, `theme-color`, favicony z `sizes` — wdrożone.
 13. ✅ **Bezpieczeństwo:** `Content-Security-Policy` + `Permissions-Policy` w `firebase.json` — wdrożone (do weryfikacji po deployu: formularz, widget ZL, mapa).
 14. 🟡 **Formularz:** do rozważenia w przyszłości — reCAPTCHA v3 lub limit w Cloud Function (obecnie honeypot + reguły Firestore).
 15. ✅ **Porządek w repo:** usunięte `workspace-*.zip` i JPG-i; wzorce w `.gitignore`.
-16. 🟡 **Współrzędne geograficzne** — pola `geoLat`/`geoLng` w `lib/config.ts` czekają na wartości (instrukcja w komentarzu); **godziny przyjęć** (`openingHours`) do wstawienia po podaniu.
+16. 🟡 **Godziny przyjęć** (`openingHours`) — do dodania po potwierdzeniu dokładnych godzin.
 
 ---
 
@@ -183,7 +183,7 @@ Po wdrożeniu (konieczne, aby poprawki trafiły na produkcję):
 1. **Google Search Console** → Sitemaps → `https://psychologplebaniak.pl/sitemap.xml` (status „Sukces”).
 2. **URL Inspection** → wklej po kolei adresy 6 artykułów i `/cennik/` → „Zażądaj indeksowania”.
 3. **GA4** → Administracja → Zdarzenia → oznacz jako konwersje: `book_click`, `call_click`, `email_click`, `form_submit`.
-4. **Uzupełnij współrzędne** w `lib/config.ts` (`geoLat`/`geoLng`) — instrukcja w komentarzu w pliku.
+4. **Zweryfikuj pinezkę mapy** na `Zygmunta Krasińskiego 13` po wdrożeniu; współrzędne są już ustawione w `lib/config.ts`.
 5. **Sprawdź po wdrożeniu** działanie formularza kontaktowego, kalendarza Booksy, certyfikatu ZnanyLekarz i mapy (nowa polityka CSP może wymagać korekty, jeśli któreś zewnętrzne zasoby zostaną zablokowane — patrz komentarz w `firebase.json`).
 
 ---

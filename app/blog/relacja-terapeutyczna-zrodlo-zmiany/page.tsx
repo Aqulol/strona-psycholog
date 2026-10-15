@@ -1,14 +1,20 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
+import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const description =
   'Czym są relacja terapeutyczna, przeniesienie i bezpieczne ramy terapii? Poznaj psychodynamiczne spojrzenie na terapię we Wrocławiu.';
 
 export const metadata: Metadata = {
-  title: 'Relacja terapeutyczna — jak staje się źródłem zmiany?',
+  title: 'Relacja terapeutyczna jako źródło zmiany',
   description,
   alternates: { canonical: '/blog/relacja-terapeutyczna-zrodlo-zmiany/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/blog/relacja-terapeutyczna-zrodlo-zmiany/' },
+  openGraph: articleOpenGraph({
+    url: 'https://psychologplebaniak.pl/blog/relacja-terapeutyczna-zrodlo-zmiany/',
+    title: 'Relacja terapeutyczna jako źródło zmiany',
+    description,
+    publishedTime: '2026-08-11',
+  }),
 };
 
 const faq: [string, string][] = [

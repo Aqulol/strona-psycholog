@@ -1,17 +1,23 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
+import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const headline = 'Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?';
 const description =
-  'Narcyzm wrażliwy może wiązać się z silnym przeżywaniem krytyki, zmiennym poczuciem własnej wartości i trudnościami w bliskości. Psychodynamiczne spojrzenie na te doświadczenia.';
+  'Narcyzm wrażliwy a relacje: wrażliwość na krytykę, poczucie własnej wartości, bliskość i psychoterapia psychodynamiczna.';
 const slug = 'narcyzm-wrazliwy';
 const datePublished = '2026-10-14';
 
 export const metadata: Metadata = {
-  title: headline,
+  title: 'Narcyzm wrażliwy a relacje',
   description,
   alternates: { canonical: `/blog/${slug}/` },
-  openGraph: { url: `https://psychologplebaniak.pl/blog/${slug}/` },
+  openGraph: articleOpenGraph({
+    url: `https://psychologplebaniak.pl/blog/${slug}/`,
+    title: 'Narcyzm wrażliwy a relacje',
+    description,
+    publishedTime: datePublished,
+  }),
 };
 
 const ld = articleJsonLd({

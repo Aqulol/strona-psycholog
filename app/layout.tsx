@@ -3,6 +3,7 @@ import './globals.css';
 import CookieBanner from '../components/CookieBanner';
 import MobileCtaBar from '../components/MobileCtaBar';
 import GtmScript from '../components/GtmScript';
+import { socialImage } from '../lib/seoMetadata';
 
 export const metadata: Metadata = {
   title: {
@@ -31,11 +32,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Grzegorz Plebaniak – psycholog, psychoterapeuta we Wrocławiu',
     description: 'Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
-    images: ['/og-image.png'],
+    siteName: 'Grzegorz Plebaniak – psycholog i psychoterapeuta',
+    images: [socialImage],
     type: 'website',
     locale: 'pl_PL',
   },
-  twitter: { card: 'summary_large_image', images: ['/og-image.png'] },
+  twitter: { card: 'summary_large_image', images: [socialImage] },
   other: {
     'ai-content': 'Strona gabinetu psychologicznego',
     'ai-audience': 'Dorośli szukający wsparcia psychologicznego',

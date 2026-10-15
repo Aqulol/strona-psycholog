@@ -1,14 +1,20 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
+import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const description =
   'Rozumienie przyczyn to ważny krok, ale trwała zmiana wymaga emocjonalnego przepracowania. Wyjaśnia to psychoterapia psychodynamiczna we Wrocławiu.';
 
 export const metadata: Metadata = {
-  title: 'Dlaczego sama świadomość problemu nie wystarcza?',
+  title: 'Dlaczego sama świadomość nie wystarcza?',
   description,
   alternates: { canonical: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/blog/dlaczego-sama-swiadomosc-nie-wystarcza/' },
+  openGraph: articleOpenGraph({
+    url: 'https://psychologplebaniak.pl/blog/dlaczego-sama-swiadomosc-nie-wystarcza/',
+    title: 'Dlaczego sama świadomość nie wystarcza?',
+    description,
+    publishedTime: '2026-08-11',
+  }),
 };
 
 const faq: [string, string][] = [

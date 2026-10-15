@@ -1,14 +1,14 @@
 import { config } from '../lib/config';
 
 const navLinks = [
-  { label: 'O mnie', href: '#o-mnie' },
-  { label: 'Obszary pomocy', href: '#obszary' },
-  { label: 'Metoda pracy', href: '#metoda' },
-  { label: 'Gabinet', href: '#gabinet' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'O mnie', href: '/#o-mnie' },
+  { label: 'Obszary pomocy', href: '/#obszary' },
+  { label: 'Metoda pracy', href: '/#metoda' },
+  { label: 'Gabinet', href: '/#gabinet' },
+  { label: 'FAQ', href: '/#faq' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Cennik', href: '/cennik/' },
-  { label: 'Kontakt', href: '#kontakt' },
+  { label: 'Kontakt', href: '/#kontakt' },
 ];
 
 /** Stopka – nawigacja, dane firmy, RODO i copyright. */

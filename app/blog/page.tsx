@@ -2,13 +2,21 @@ import type { Metadata } from 'next';
 import { CalendarDays, ArrowRight } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { websiteOpenGraph } from '../../lib/seoMetadata';
+
+const blogTitle = 'Blog – artykuły o psychoterapii';
+const blogDescription =
+  'Artykuły o psychoterapii psychodynamicznej: narcyzm wrażliwy, relacje, świadomość, przeszłość i terapia. Spokojne teksty dla dorosłych.';
 
 export const metadata: Metadata = {
-  title: 'Blog – artykuły o psychoterapii',
-  description:
-    'Artykuły o psychoterapii psychodynamicznej: schematy relacyjne, narcyzm wrażliwy, rola świadomości, relacja terapeutyczna i wpływ przeszłości. Spokojne teksty dla dorosłych.',
+  title: blogTitle,
+  description: blogDescription,
   alternates: { canonical: '/blog/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/blog/' },
+  openGraph: websiteOpenGraph({
+    url: 'https://psychologplebaniak.pl/blog/',
+    title: blogTitle,
+    description: blogDescription,
+  }),
 };
 
 const posts = [

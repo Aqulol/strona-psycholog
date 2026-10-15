@@ -2,15 +2,22 @@ import type { Metadata } from 'next';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { config } from '../../lib/config';
+import { websiteOpenGraph } from '../../lib/seoMetadata';
 
 const konsultacjaPrice = config.prices.find((price) => price.key === 'konsultacja')?.price ?? 0;
 const psychoterapiaPrice = config.prices.find((price) => price.key === 'psychoterapia')?.price ?? 0;
+const cennikTitle = 'Cennik psychologa we Wrocławiu';
+const cennikDescription = `Cennik psychologa Grzegorza Plebaniaka we Wrocławiu: konsultacja ${konsultacjaPrice} zł, psychoterapia ${psychoterapiaPrice} zł. Sesje po 50 minut, stacjonarnie i online.`;
 
 export const metadata: Metadata = {
-  title: 'Cennik – konsultacja i psychoterapia we Wrocławiu',
-  description: `Cennik wizyt u psychologa Grzegorza Plebaniaka we Wrocławiu: konsultacja psychologiczna ${konsultacjaPrice} zł, sesja psychoterapii ${psychoterapiaPrice} zł. Sesja trwa 50 minut, stacjonarnie i online.`,
+  title: cennikTitle,
+  description: cennikDescription,
   alternates: { canonical: '/cennik/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/cennik/' },
+  openGraph: websiteOpenGraph({
+    url: 'https://psychologplebaniak.pl/cennik/',
+    title: cennikTitle,
+    description: cennikDescription,
+  }),
 };
 
 /**

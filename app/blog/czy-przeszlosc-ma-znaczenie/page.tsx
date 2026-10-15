@@ -1,14 +1,20 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
+import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const description =
   'Jak wcześniejsze doświadczenia wpływają na emocje i związki? Psychoterapia psychodynamiczna we Wrocławiu bada ich znaczenie dla teraźniejszości.';
 
 export const metadata: Metadata = {
-  title: 'Czy przeszłość wpływa na dorosłe życie i relacje?',
+  title: 'Czy przeszłość wpływa na relacje?',
   description,
   alternates: { canonical: '/blog/czy-przeszlosc-ma-znaczenie/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/blog/czy-przeszlosc-ma-znaczenie/' },
+  openGraph: articleOpenGraph({
+    url: 'https://psychologplebaniak.pl/blog/czy-przeszlosc-ma-znaczenie/',
+    title: 'Czy przeszłość wpływa na relacje?',
+    description,
+    publishedTime: '2026-08-11',
+  }),
 };
 
 const faq: [string, string][] = [

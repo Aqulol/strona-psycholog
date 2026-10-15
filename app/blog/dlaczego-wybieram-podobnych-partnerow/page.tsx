@@ -1,14 +1,20 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
+import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const description =
   'Dlaczego kolejne związki bywają do siebie podobne? Poznaj nieświadome schematy relacyjne z perspektywy psychoterapii psychodynamicznej we Wrocławiu.';
 
 export const metadata: Metadata = {
-  title: 'Dlaczego wybieram podobnych partnerów? Schematy relacji',
+  title: 'Dlaczego wybieram podobnych partnerów?',
   description,
   alternates: { canonical: '/blog/dlaczego-wybieram-podobnych-partnerow/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/blog/dlaczego-wybieram-podobnych-partnerow/' },
+  openGraph: articleOpenGraph({
+    url: 'https://psychologplebaniak.pl/blog/dlaczego-wybieram-podobnych-partnerow/',
+    title: 'Dlaczego wybieram podobnych partnerów?',
+    description,
+    publishedTime: '2026-08-11',
+  }),
 };
 
 const faq: [string, string][] = [
