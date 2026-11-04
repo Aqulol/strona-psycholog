@@ -3,7 +3,7 @@ import { articleJsonLd } from '../../../lib/articleJsonLd';
 import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const description =
-  'Dlaczego kolejne związki bywają do siebie podobne? Poznaj nieświadome schematy relacyjne z perspektywy psychoterapii psychodynamicznej we Wrocławiu.';
+  'Dlaczego kolejne związki bywają podobne? O powtarzających się wzorcach relacyjnych i psychoterapii psychodynamicznej.';
 
 export const metadata: Metadata = {
   title: { absolute: 'Dlaczego wybieram podobnych partnerów?' },

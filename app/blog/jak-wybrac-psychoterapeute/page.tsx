@@ -3,7 +3,7 @@ import { articleJsonLd } from '../../../lib/articleJsonLd';
 import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const description =
-  'Praktyczny poradnik: psycholog czy psychoterapeuta, wybór nurtu, pierwsza konsultacja i czerwone flagi przy wyborze terapeuty.';
+  'Poradnik wyboru psychoterapeuty: kompetencje, nurt pracy, pierwsza konsultacja i sygnały ostrzegawcze.';
 
 export const metadata: Metadata = {
   title: 'Jak wybrać psychoterapeutę?',

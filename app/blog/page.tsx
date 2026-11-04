@@ -6,7 +6,7 @@ import { websiteOpenGraph } from '../../lib/seoMetadata';
 
 const blogTitle = 'Blog – artykuły o psychoterapii';
 const blogDescription =
-  'Artykuły o psychoterapii psychodynamicznej: narcyzm wrażliwy, relacje, świadomość, przeszłość i terapia. Spokojne teksty dla dorosłych.';
+  'Artykuły o psychoterapii psychodynamicznej: relacje, przeszłość, świadomość i narcyzm wrażliwy. Spokojne teksty dla dorosłych.';
 
 export const metadata: Metadata = {
   title: blogTitle,

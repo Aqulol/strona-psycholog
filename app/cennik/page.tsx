@@ -7,7 +7,7 @@ import { websiteOpenGraph } from '../../lib/seoMetadata';
 const konsultacjaPrice = config.prices.find((price) => price.key === 'konsultacja')?.price ?? 0;
 const psychoterapiaPrice = config.prices.find((price) => price.key === 'psychoterapia')?.price ?? 0;
 const cennikTitle = 'Cennik psychologa we Wrocławiu';
-const cennikDescription = `Cennik psychologa Grzegorza Plebaniaka we Wrocławiu: konsultacja ${konsultacjaPrice} zł, psychoterapia ${psychoterapiaPrice} zł. Sesje po 50 minut, stacjonarnie i online.`;
+const cennikDescription = `Cennik psychologa we Wrocławiu: konsultacja ${konsultacjaPrice} zł, psychoterapia ${psychoterapiaPrice} zł. Sesje 50 minut, stacjonarnie i online.`;
 
 export const metadata: Metadata = {
   title: cennikTitle,

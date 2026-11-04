@@ -3,7 +3,7 @@ import { articleJsonLd } from '../../../lib/articleJsonLd';
 import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const description =
-  'Jak wcześniejsze doświadczenia wpływają na emocje i związki? Psychoterapia psychodynamiczna we Wrocławiu bada ich znaczenie dla teraźniejszości.';
+  'Jak wcześniejsze doświadczenia wpływają na emocje i relacje? O ich znaczeniu w psychoterapii psychodynamicznej.';
 
 export const metadata: Metadata = {
   title: 'Czy przeszłość wpływa na relacje?',

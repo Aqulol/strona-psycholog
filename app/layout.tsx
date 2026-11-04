@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: '%s | Grzegorz Plebaniak',
   },
   description:
-    'Psycholog Grzegorz Plebaniak we Wrocławiu. Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
+    'Psycholog we Wrocławiu: konsultacje i psychoterapia psychodynamiczna dla dorosłych, stacjonarnie i online.',
   metadataBase: new URL('https://psychologplebaniak.pl'),
   // UWAGA: NIE ustawiamy tu globalnego alternates.canonical! Poprzednio
   // canonical: '/' był dziedziczony przez WSZYSTKIE podstrony (blog, artykuły,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   openGraph: {
     title: 'Psycholog Wrocław | Grzegorz Plebaniak',
-    description: 'Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
+    description: 'Psycholog we Wrocławiu: konsultacje i psychoterapia psychodynamiczna dla dorosłych, stacjonarnie i online.',
     siteName: 'Grzegorz Plebaniak – psycholog i psychoterapeuta',
     images: [socialImage],
     type: 'website',

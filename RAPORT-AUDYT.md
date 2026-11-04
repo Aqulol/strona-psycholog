@@ -22,7 +22,7 @@
 | Weryfikacja Google Search Console | ✔ **podwójna**: meta tag `google-site-verification` w `<head>` ORAZ plik `google2391dcad42225921.html` — oba działają (plik odpowiada poprawnie) |
 | robots.txt + sitemap.xml | ✔ poprawne; sitemap ma adresy z końcówką `/` (bez błędu „Przekierowanie” w GSC — potwierdza ostatni commit) |
 | Indeksacja domeny | ✔ strona główna w indeksie Google (od ok. stycznia 2026) |
-| Tytuły i opisy meta | ✔ unikalne; aktywne strony po skróceniu: tytuły 41–61 znaków, opisy 116–148 znaków |
+| Tytuły i opisy meta | ✔ unikalne; aktywne strony po skróceniu: tytuły 38–54 znaki, opisy 94–126 znaków |
 | H1 na stronę | ✔ dokładnie 1; hierarchia H1→H2→H3 poprawna |
 | `lang="pl"` | ✔ |
 | JSON-LD | ✔ LocalBusiness + MedicalBusiness + ProfessionalService + Person + FAQPage + BreadcrumbList (home), OfferCatalog (cennik), Article + BreadcrumbList (artykuły); FAQPage tylko przy widocznym FAQ |
