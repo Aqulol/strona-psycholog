@@ -1,14 +1,20 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
+import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const description =
-  'Czym są relacja terapeutyczna, przeniesienie i bezpieczne ramy terapii? Poznaj psychodynamiczne spojrzenie na terapię we Wrocławiu.';
+  'Czym jest relacja terapeutyczna i przeniesienie? Poznaj psychodynamiczne spojrzenie na zmianę.';
 
 export const metadata: Metadata = {
-  title: 'Relacja terapeutyczna — jak staje się źródłem zmiany?',
+  title: { absolute: 'Relacja terapeutyczna jako źródło zmiany' },
   description,
   alternates: { canonical: '/blog/relacja-terapeutyczna-zrodlo-zmiany/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/blog/relacja-terapeutyczna-zrodlo-zmiany/' },
+  openGraph: articleOpenGraph({
+    url: 'https://psychologplebaniak.pl/blog/relacja-terapeutyczna-zrodlo-zmiany/',
+    title: 'Relacja terapeutyczna jako źródło zmiany',
+    description,
+    publishedTime: '2026-08-11',
+  }),
 };
 
 const faq: [string, string][] = [
@@ -27,7 +33,7 @@ const faq: [string, string][] = [
 ];
 
 const ld = articleJsonLd({
-  headline: 'Co dzieje się między pacjentem a terapeutą? Relacja terapeutyczna jako źródło zmiany',
+  headline: 'Relacja terapeutyczna jako źródło zmiany',
   description,
   slug: 'relacja-terapeutyczna-zrodlo-zmiany',
   datePublished: '2026-08-11',
@@ -43,12 +49,12 @@ export default function Page() {
         ← Strona główna
       </a>
       <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
-        Co dzieje się między pacjentem a terapeutą? Relacja terapeutyczna jako źródło zmiany
+        Relacja terapeutyczna jako źródło zmiany
       </h1>
       <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026</p>
       <p className="mt-6 leading-8 text-ink/80">
-        Rozmowa w gabinecie może z zewnątrz przypominać każdą inną rozmowę, ale relacja terapeutyczna ma
-        szczególną strukturę i cel. Nie jest przyjaźnią, poradnictwem ani jednostronną analizą pacjenta. W
+        Co dzieje się między pacjentem a terapeutą? Rozmowa w gabinecie może z zewnątrz przypominać każdą inną
+        rozmowę, ale relacja terapeutyczna ma szczególną strukturę i cel. Nie jest przyjaźnią, poradnictwem ani jednostronną analizą pacjenta. W
         psychoterapii psychodynamicznej stanowi jednocześnie bezpieczne środowisko pracy i źródło informacji o
         sposobie przeżywania relacji. To, co pojawia się między osobą w terapii a terapeutą — zaufanie,
         ostrożność, złość, wstyd, idealizacja czy obawa przed oceną — może pomóc zrozumieć wzorce trudne do
@@ -185,7 +191,7 @@ export default function Page() {
         </li>
         <li>
           <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
-            Psychoterapia psychodynamiczna Wrocław
+            Psychoterapia psychodynamiczna we Wrocławiu
           </a>
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>
         </li>

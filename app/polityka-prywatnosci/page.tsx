@@ -1,10 +1,18 @@
+import { websiteOpenGraph } from '../../lib/seoMetadata';
+
+const privacyTitle = 'Polityka prywatności';
+const privacyDescription =
+  'Polityka prywatności gabinetu Grzegorza Plebaniaka: dane osobowe, cele przetwarzania, cookies, prawa osób i kontakt.';
 
 export const metadata = {
-  title: 'Polityka prywatności gabinetu psychologicznego',
-  description:
-    'Polityka prywatności gabinetu psychologicznego Grzegorza Plebaniaka we Wrocławiu: administrator danych, cele i podstawy przetwarzania, cookies, prawa osób, skarga do UODO, kontakt.',
+  title: privacyTitle,
+  description: privacyDescription,
   alternates: { canonical: '/polityka-prywatnosci/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/polityka-prywatnosci/' },
+  openGraph: websiteOpenGraph({
+    url: 'https://psychologplebaniak.pl/polityka-prywatnosci/',
+    title: privacyTitle,
+    description: privacyDescription,
+  }),
 };
 
 export default function Page() {
@@ -22,7 +30,12 @@ export default function Page() {
         We wszystkich sprawach dotyczących danych osobowych można skontaktować się z administratorem:
       </p>
       <ul className="mt-3 space-y-2">
-        <li className="leading-8">e-mail: gpplebaniak@gmail.com</li>
+        <li className="leading-8">
+          e-mail:{' '}
+          <a className="text-green underline" href="mailto:gpplebaniak@gmail.com">
+            gpplebaniak@gmail.com
+          </a>
+        </li>
         <li className="leading-8">telefon: +48 693087574</li>
       </ul>
       <p className="mt-3 leading-8">
@@ -88,8 +101,12 @@ export default function Page() {
           oraz Google Analytics; dane mogą być przekazywane do Stanów Zjednoczonych;
         </li>
         <li className="leading-8">
-          <strong>ZnanyLekarz</strong> — platforma rezerwacji wizyt online; w zakresie rezerwacji obowiązuje polityka
-          prywatności ZnanyLekarz (
+          <strong>Booksy</strong> — platforma, za pośrednictwem której można rezerwować wizyty online; dane podane
+          podczas rezerwacji są przetwarzane zgodnie z zasadami i polityką prywatności Booksy;
+        </li>
+        <li className="leading-8">
+          <strong>ZnanyLekarz</strong> — zewnętrzny widget informacyjny na stronie. Po przejściu do serwisu
+          ZnanyLekarz obowiązuje jego polityka prywatności (
           <a className="text-green underline" href="https://www.znanylekarz.pl/prywatnosc" rel="noopener noreferrer">
             https://www.znanylekarz.pl/prywatnosc
           </a>
@@ -138,8 +155,11 @@ export default function Page() {
         </li>
       </ul>
       <p className="mt-3 leading-8">
-        Aby skorzystać z tych praw, prosimy o wiadomość na adres gpplebaniak@gmail.com. Odpowiadamy w ciągu miesiąca
-        od otrzymania zgłoszenia.
+        Aby skorzystać z tych praw, prosimy o wiadomość na adres{' '}
+        <a className="text-green underline" href="mailto:gpplebaniak@gmail.com">
+          gpplebaniak@gmail.com
+        </a>
+        . Odpowiadamy w ciągu miesiąca od otrzymania zgłoszenia.
       </p>
 
       <h2 className="mt-8 text-3xl">Skarga do UODO</h2>

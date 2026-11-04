@@ -72,24 +72,23 @@ export default function Office() {
                 <li className="flex items-start gap-3">
                   <MapPin aria-hidden="true" className="mt-1 shrink-0 text-green" size={22} />
                   <span>
-                    <strong>{config.address}</strong>
+                    <strong>{config.streetAddress}</strong>
                     <br />
-                    Wrocław
+                    {config.postal} Wrocław
                   </span>
                 </li>
               </ul>
               <p className="mt-4 text-base leading-7 text-ink/70">
-                Gabinet mieści się w{' '}
+                Gabinet mieści się w placówce{' '}
                 <a
+                  className="text-green underline"
                   href={config.officeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green underline underline-offset-2 hover:text-ink"
                 >
                   centrumrownowagi.com
-                </a>{' '}
-                przy Zygmunta Krasińskiego 13. Wejście i piętro podane są w kalendarzu rezerwacji
-                oraz w wiadomości potwierdzającej wizytę.
+                </a>
+                . Szczegóły dotyczące wejścia i wizyty otrzymasz w wiadomości potwierdzającej rezerwację.
               </p>
             </div>
           </Reveal>

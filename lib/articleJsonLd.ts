@@ -12,7 +12,7 @@ export function articleJsonLd(opts: {
   slug: string;
   datePublished: string;
   image: string;
-  faq: ArticleFaq;
+  faq?: ArticleFaq;
 }): Record<string, unknown> {
   // Końcówka '/' zgodna z canonical i rzeczywistym adresem (trailingSlash: true).
   const url = `https://psychologplebaniak.pl/blog/${opts.slug}/`;
@@ -43,14 +43,18 @@ export function articleJsonLd(opts: {
           { '@type': 'ListItem', position: 3, name: opts.headline, item: url },
         ],
       },
-      {
-        '@type': 'FAQPage',
-        mainEntity: opts.faq.map(([q, a]) => ({
-          '@type': 'Question',
-          name: q,
-          acceptedAnswer: { '@type': 'Answer', text: a },
-        })),
-      },
+      ...(opts.faq?.length
+        ? [
+            {
+              '@type': 'FAQPage',
+              mainEntity: opts.faq.map(([q, a]) => ({
+                '@type': 'Question',
+                name: q,
+                acceptedAnswer: { '@type': 'Answer', text: a },
+              })),
+            },
+          ]
+        : []),
     ],
   };
 }

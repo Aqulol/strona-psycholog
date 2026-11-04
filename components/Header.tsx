@@ -72,7 +72,7 @@ export default function Header() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo.webp"
-            alt=""
+            alt="Grzegorz Plebaniak – psycholog i psychoterapeuta"
             className="h-12 w-auto max-w-[60vw] select-none"
             width={1434}
             height={258}
@@ -96,7 +96,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href={hrefFor('kontakt')}
-            onClick={() => track('book_click', { method: 'znanylekarz', location: 'header' })}
+            onClick={() => track('book_click', { method: 'booksy', location: 'header' })}
             className="hidden rounded bg-green px-4 py-2 text-sm text-white transition hover:bg-green/90 active:scale-[0.99] lg:inline-block"
           >
             Umów wizytę
@@ -137,7 +137,7 @@ export default function Header() {
                 href={hrefFor('kontakt')}
                 className="inline-block rounded bg-green px-4 py-2 text-sm text-white transition hover:bg-green/90 active:scale-[0.99]"
                 onClick={() => {
-                  track('book_click', { method: 'znanylekarz', location: 'header' });
+                  track('book_click', { method: 'booksy', location: 'header' });
                   setMenuOpen(false);
                 }}
               >

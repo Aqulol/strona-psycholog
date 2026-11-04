@@ -52,42 +52,42 @@
       },
       {
         "source": "/blog/jak-radzic-sobie-z-lekiem",
-        "destination": "/blog/dlaczego-wybieram-podobnych-partnerow/",
+        "destination": "/#obszary",
         "type": 301
       },
       {
         "source": "/blog/jak-radzic-sobie-z-lekiem/",
-        "destination": "/blog/dlaczego-wybieram-podobnych-partnerow/",
+        "destination": "/#obszary",
         "type": 301
       },
       {
         "source": "/blog/pierwsza-wizyta-u-psychologa",
-        "destination": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+        "destination": "/blog/jak-wybrac-psychoterapeute/",
         "type": 301
       },
       {
         "source": "/blog/pierwsza-wizyta-u-psychologa/",
-        "destination": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+        "destination": "/blog/jak-wybrac-psychoterapeute/",
         "type": 301
       },
       {
         "source": "/blog/psychoterapia-psychodynamiczna",
-        "destination": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
+        "destination": "/#metoda",
         "type": 301
       },
       {
         "source": "/blog/psychoterapia-psychodynamiczna/",
-        "destination": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
+        "destination": "/#metoda",
         "type": 301
       },
       {
         "source": "/blog/wypalenie-zawodowe",
-        "destination": "/blog/czy-przeszlosc-ma-znaczenie/",
+        "destination": "/#obszary",
         "type": 301
       },
       {
         "source": "/blog/wypalenie-zawodowe/",
-        "destination": "/blog/czy-przeszlosc-ma-znaczenie/",
+        "destination": "/#obszary",
         "type": 301
       }
     ],

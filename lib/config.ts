@@ -3,24 +3,18 @@ export const config = {
   title: 'Psycholog / psychoterapeuta',
   phone: '+48 693087574',
   email: 'gpplebaniak@gmail.com',
+  streetAddress: 'Zygmunta Krasińskiego 13',
   address: 'Zygmunta Krasińskiego 13, 50-449 Wrocław',
   postal: '50-449',
   bookingUrl: 'https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw',
-  officeUrl: 'https://centrumrownowagi.com',
+  officeUrl: 'http://centrumrownowagi.com',
   mapsUrl: 'https://www.google.com/maps?q=51.1066776,17.0434034&output=embed',
 
   // ===== Booksy — rezerwacja online (kalendarz w sekcji Kontakt) =====
-  // Wpisz TU unikalny numer ID z Twojego konta Booksy
-  // (Business Settings → Online Booking → Your Website → kod widgetu),
-  // bez <script> i bez src=. Wtedy na stronie pojawi się pełny kalendarz.
-  // Przykład: id=12345  →  booksyId: '12345'
   booksyId: '357056',
-  // Pełny adres profilu Booksy (SEO) — linki „Zarezerwuj termin online”
-  // i stopka kalendarza. WAŻNE: sam booksyId w formie https://booksy.com/pl-pl/<id>
-  // zwraca błąd 404 — potrzebny jest pełny slug z nazwą gabinetu.
   booksyUrl: 'https://booksy.com/pl-pl/357056_psycholog-grzegorz-plebaniak_psychoterapia_13750_wroclaw',
 
-  // ===== Cennik — edytuj TU ręcznie (aktualizuj wg Booksy) =====
+  // ===== Cennik — edytuj TU ręcznie (zgodnie z aktualnym cennikiem Booksy) =====
   prices: [
     { key: 'konsultacja', name: 'Konsultacja psychologiczna', price: 200, duration: '50 min' },
     { key: 'psychoterapia', name: 'Psychoterapia', price: 200, duration: '50 min' },
@@ -30,16 +24,9 @@ export const config = {
   // Formularz kontaktowy zapisuje wiadomości BEZPOŚREDNIO do Firestore
   // z przeglądarki (bez Cloud Functions i bez planu Blaze).
   //
-  // SKĄD WZIĄĆ WARTOŚCI:
-  //   1. Wejdź do konsoli Firebase: https://console.firebase.google.com
-  //   2. Wybierz projekt „psychologplebaniak-e4480".
-  //   3. Kliknij ikonę koła zębatego → Ustawienia projektu (Project settings).
-  //   4. W sekcji „Twoje aplikacje" / „Your apps" znajdź aplikację internetową
-  //      (z ikoną </>). Jeśli jej nie ma — kliknij „Utwórz aplikację internetową"
-  //      (Add app → Web) i przejdź kreatora.
-  //   5. W zakładce „SDK setup and configuration" wybierz „Config"
-  //      i skopiuj cały obiekt firebaseConfig.
-  //   6. Wklej poniższe wartości ZAMIAST placeholderów „TU-WPISZ-...".
+  // Konfiguracja klienta jest już uzupełniona dla projektu
+  // „psychologplebaniak-e4480". Jeśli zmienisz projekt Firebase,
+  // pobierz jego nowy obiekt firebaseConfig z Project settings → Your apps → Web app.
   //
   // UWAGA: apiKey w aplikacji webowej Firebase jest PUBLICZNY (widoczny
   // w przeglądarce) — to normalne i bezpieczne, jeśli reguły Firestore
@@ -62,10 +49,7 @@ export const config = {
   gtmId: '',
   ga4Id: 'G-5YF0L6DJ1X',
 
-  // ===== Współrzędne geograficzne gabinetu (do JSON-LD geo) =====
-  // Zweryfikowane przez OpenStreetMap/Nominatim dla Zygmunta Krasińskiego 13,
-  // 50-449 Wrocław. Używane też w hasMap JSON-LD (zamiast tekstowego zapytania,
-  // które Google Maps bywa błędnie geolokalizował przy polskich znakach).
+  // ===== Współrzędne gabinetu — zweryfikowane dla nowego adresu =====
   geoLat: '51.1066776',
   geoLng: '17.0434034',
 };

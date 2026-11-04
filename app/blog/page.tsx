@@ -2,16 +2,31 @@ import type { Metadata } from 'next';
 import { CalendarDays, ArrowRight } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { websiteOpenGraph } from '../../lib/seoMetadata';
+
+const blogTitle = 'Blog – artykuły o psychoterapii';
+const blogDescription =
+  'Artykuły o psychoterapii psychodynamicznej: relacje, przeszłość, świadomość i narcyzm wrażliwy. Spokojne teksty dla dorosłych.';
 
 export const metadata: Metadata = {
-  title: 'Blog – artykuły o psychoterapii',
-  description:
-    'Artykuły o psychoterapii psychodynamicznej: schematy relacyjne, rola świadomości, relacja terapeutyczna i wpływ przeszłości. Spokojne teksty dla dorosłych.',
+  title: blogTitle,
+  description: blogDescription,
   alternates: { canonical: '/blog/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/blog/' },
+  openGraph: websiteOpenGraph({
+    url: 'https://psychologplebaniak.pl/blog/',
+    title: blogTitle,
+    description: blogDescription,
+  }),
 };
 
 const posts = [
+  {
+    href: '/blog/narcyzm-wrazliwy/',
+    title: 'Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?',
+    date: '14 października 2026',
+    description:
+      'Jak wrażliwy sposób funkcjonowania narcystycznego może wiązać się z przeżywaniem krytyki, poczuciem własnej wartości i bliskością?',
+  },
   {
     href: '/blog/jak-wybrac-psychoterapeute/',
     title: 'Jak wybrać psychoterapeutę? Praktyczny przewodnik',

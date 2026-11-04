@@ -15,6 +15,7 @@ const SITE = 'https://psychologplebaniak.pl';
 
 // Data publikacji artykułów (datePublished z metadata) — spójna z JSON-LD.
 const ARTICLE_DATES: Record<string, string> = {
+  'narcyzm-wrazliwy': '2026-10-14',
   'jak-wybrac-psychoterapeute': '2026-08-20',
   'dlaczego-wybieram-podobnych-partnerow': '2026-08-11',
   'dlaczego-sama-swiadomosc-nie-wystarcza': '2026-08-11',
@@ -23,7 +24,7 @@ const ARTICLE_DATES: Record<string, string> = {
 };
 
 // Ostatnia istotna zmiana strony głównej / listy bloga / polityki.
-const STATIC_LASTMOD = '2026-08-19';
+const STATIC_LASTMOD = '2026-10-15';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages: { path: string; lastmod?: string }[] = [
@@ -33,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       path: `/blog/${slug}/`,
       lastmod,
     })),
-    { path: '/cennik/', lastmod: '2026-08-20' },
+    { path: '/cennik/', lastmod: '2026-10-15' },
     { path: '/polityka-prywatnosci/', lastmod: STATIC_LASTMOD },
   ];
 

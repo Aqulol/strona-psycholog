@@ -34,3 +34,7 @@ yarn-error.log*
 .firebase/
 /functions/lib/
 *.log
+
+# Firebase service-account private keys — never commit
+**/service-account*.json
+**/*firebase-adminsdk*.json

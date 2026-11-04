@@ -2,13 +2,22 @@ import type { Metadata } from 'next';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { config } from '../../lib/config';
+import { websiteOpenGraph } from '../../lib/seoMetadata';
+
+const konsultacjaPrice = config.prices.find((price) => price.key === 'konsultacja')?.price ?? 0;
+const psychoterapiaPrice = config.prices.find((price) => price.key === 'psychoterapia')?.price ?? 0;
+const cennikTitle = 'Cennik psychologa we Wrocławiu';
+const cennikDescription = `Cennik psychologa we Wrocławiu: konsultacja ${konsultacjaPrice} zł, psychoterapia ${psychoterapiaPrice} zł. Sesje 50 minut, stacjonarnie i online.`;
 
 export const metadata: Metadata = {
-  title: 'Cennik – konsultacja i psychoterapia we Wrocławiu',
-  description:
-    'Cennik wizyt u psychologa Grzegorza Plebaniaka we Wrocławiu: konsultacja psychologiczna 200 zł, sesja psychoterapii 200 zł. Sesja trwa 50 minut, stacjonarnie i online.',
+  title: cennikTitle,
+  description: cennikDescription,
   alternates: { canonical: '/cennik/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/cennik/' },
+  openGraph: websiteOpenGraph({
+    url: 'https://psychologplebaniak.pl/cennik/',
+    title: cennikTitle,
+    description: cennikDescription,
+  }),
 };
 
 /**
@@ -36,7 +45,7 @@ export default function CennikPage() {
           price: String(p.price),
           priceCurrency: 'PLN',
           category: 'Psychoterapia',
-          description: `Sesja ${p.duration}. Stacjonarnie (Wrocław) i online.`,
+          description: `Sesja ${p.duration}. Stacjonarnie we Wrocławiu i online.`,
           areaServed: 'Wrocław',
           url: `https://psychologplebaniak.pl/cennik/#${p.key}`,
         })),
@@ -61,7 +70,16 @@ export default function CennikPage() {
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/80">
           Wszystkie spotkania trwają 50 minut. Ceny dotyczą zarówno wizyt stacjonarnych
-          w gabinecie (Zygmunta Krasińskiego 13), jak i sesji online.
+          w gabinecie przy ul. Zygmunta Krasińskiego 13, 50-449 Wrocław (szczegóły placówki:{' '}
+          <a
+            className="text-green underline"
+            href={config.officeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            centrumrownowagi.com
+          </a>
+          ), jak i sesji online.
         </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -87,7 +105,7 @@ export default function CennikPage() {
 
         <div className="mt-10 flex flex-wrap gap-3">
           <a
-            href={config.bookingUrl}
+            href={config.booksyUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded bg-green px-6 py-3.5 text-base font-medium text-white transition hover:bg-green/90"

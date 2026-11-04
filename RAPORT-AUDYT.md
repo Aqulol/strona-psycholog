@@ -22,10 +22,10 @@
 | Weryfikacja Google Search Console | ✔ **podwójna**: meta tag `google-site-verification` w `<head>` ORAZ plik `google2391dcad42225921.html` — oba działają (plik odpowiada poprawnie) |
 | robots.txt + sitemap.xml | ✔ poprawne; sitemap ma adresy z końcówką `/` (bez błędu „Przekierowanie” w GSC — potwierdza ostatni commit) |
 | Indeksacja domeny | ✔ strona główna w indeksie Google (od ok. stycznia 2026) |
-| Tytuły i opisy meta | ✔ 55–68 znaków / 136–162 znaków — w granicach normy |
+| Tytuły i opisy meta | ✔ unikalne; aktywne strony po skróceniu: tytuły 38–54 znaki, opisy 94–126 znaków |
 | H1 na stronę | ✔ dokładnie 1; hierarchia H1→H2→H3 poprawna |
 | `lang="pl"` | ✔ |
-| JSON-LD | ✔ LocalBusiness + MedicalBusiness + ProfessionalService + Person + FAQPage + BreadcrumbList (home), Article + BreadcrumbList + FAQPage (artykuły) |
+| JSON-LD | ✔ LocalBusiness + MedicalBusiness + ProfessionalService + Person + FAQPage + BreadcrumbList (home), OfferCatalog (cennik), Article + BreadcrumbList (artykuły); FAQPage tylko przy widocznym FAQ |
 | Wydajność | ✔ First Load JS ~103–112 kB, fonty self-hostowane, preload LCP (portret) z `fetchPriority=high`, WebP, lazy loading obrazów w galerii |
 | Dostępność | ✔ udokumentowany audyt WCAG 2.2 AA (docs-a11y-audit.md) — 0 naruszeń |
 | RODO / prywatność | ✔ GA4 ładuje się DOPIERO po zgodzie w banerze; polityka prywatności kompletna; formularz nie przyjmuje danych o zdrowiu |
@@ -68,7 +68,7 @@ Podczas udostępniania w social media nie było jawnego `og:url`. **Naprawa:** d
 > **Do zrobienia po tej sesji:** `npm run build` → `firebase deploy --only hosting` → w GSC „Zażądaj ponownego zindeksowania” dla artykułów (pkt 4.2).
 
 ### 2.6. Dodatkowe poprawki wdrożone w tej sesji (P1+P2 z pkt 5)
-- ✅ **Nowa podstrona `/cennik/`** — osobny adres pod frazy „cennik psychoterapia Wrocław”, dane strukturalne `OfferCatalog` z cenami (160 zł / 140 zł), linki w stopce, blogu i artykułach.
+- ✅ **Nowa podstrona `/cennik/`** — osobny adres pod frazy „cennik psychoterapia Wrocław”, dane strukturalne `OfferCatalog` z cenami (200 zł / 200 zł), linki w stopce, blogu i artykułach.
 - ✅ **Nowy artykuł** „Jak wybrać psychoterapeutę? Praktyczny przewodnik” (`/blog/jak-wybrac-psychoterapeute/`, 2026-08-20) — z JSON-LD Article+FAQ, dodany do listy bloga, sitemap, llms.txt i sekcji „Przeczytaj także” innych wpisów.
 - ✅ **Baner cookies:** dodany przycisk **„Tylko niezbędne”** (równoważna odmowa — zgodność ePrivacy/RODO); zdarzenia analityczne dodatkowo blokowane bez zgody (twarda brama w `lib/analytics.ts`).
 - ✅ **Consent Mode v2** — deklaracja stanów zgody (`analytics_storage` itd.) przed konfiguracją GA4.
@@ -78,7 +78,7 @@ Podczas udostępniania w social media nie było jawnego `og:url`. **Naprawa:** d
 - ✅ **Logo:** `logo.webp` (12,7 kB zamiast 232 kB, −95%) używane w headerze; `logo.png` pozostaje tylko dla schema.org.
 - ✅ **PWA/manifest:** `public/manifest.json`, `theme-color`, favicony z atrybutami `sizes` (32/192/512).
 - ✅ **Bezpieczeństwo:** `Content-Security-Policy` + `Permissions-Policy` w nagłówkach Firebase Hosting.
-- ✅ **Wzmianka o lokalizacji:** sekcja „Gabinet” informuje, że gabinet mieści się w Centrum Równowagi – Centrum Psychologii i Psychoterapii (spójność NAP).
+- ✅ **Wzmianka o lokalizacji:** sekcja „Gabinet” informuje o miejscu przyjęć: centrumrownowagi.com, Zygmunta Krasińskiego 13, 50-449 Wrocław.
 - ✅ **Porządek w repo:** usunięto z gita `workspace-*.zip` i oryginalne JPG-i (wersje WebP są w `public/images/`); wzorce dodane do `.gitignore`.
 
 ---
@@ -99,21 +99,19 @@ Podczas udostępniania w social media nie było jawnego `og:url`. **Naprawa:** d
 | PWA/manifest | ✅ | manifest.json, theme-color, favicony z sizes |
 
 ### 3.2. SEO treści
-- **Targetowanie fraz:** strona główna dobrze celuje w „psycholog Wrocław”, „psychoterapia psychodynamiczna Wrocław”, „psycholog w centrum Wrocławia”, „psycholog online”. ✔
-- **Blog:** 5 wartościowych, długich artykułów (4 z 2026-08-11 + „Jak wybrać psychoterapeutę?” z 2026-08-20) z sekcjami FAQ — bardzo dobry materiał pod frazy informacyjne („jak wybrać psychoterapeutę”, „dlaczego wybieram podobnych partnerów”, „wypalenie zawodowe”, „lęk”). Tematy są trafne, ale jest ich **wciąż za mało** — Google lubi regularność (2–4 wpisy/mies.).
+- **Targetowanie fraz:** strona główna dobrze celuje w „psycholog Wrocław”, „psychoterapia psychodynamiczna Wrocław” i „psycholog online”. ✔
+- **Blog:** 6 artykułów (4 z 2026-08-11, „Jak wybrać psychoterapeutę?” z 2026-08-20 oraz „Narcyzm wrażliwy” z 2026-10-14) — dobry materiał pod frazy informacyjne („jak wybrać psychoterapeutę”, „narcyzm wrażliwy”, „dlaczego wybieram podobnych partnerów”, „wypalenie zawodowe”, „lęk”). Warto utrzymać regularność publikacji (2–4 wpisy/mies.).
 - **Cennik:** dodana osobna podstrona `/cennik/` (targetowanie fraz „psychoterapia Wrocław cennik”) z danymi strukturalnymi `OfferCatalog`. **„Kontakt” jako osobny URL** nadal można dodać w przyszłości.
 - **Linkowanie wewnętrzne:** dobre — sekcja „Przeczytaj także” w artykułach, kotwice nawigacji. Można dodać linki kontekstowe w treści artykułów do sekcji strony głównej (już częściowo są).
-- **Struktura danych:** LocalBusiness bez `url`, `logo`, `image`, `geo` i `openingHours` — warto uzupełnić (pkt 5.5).
+- **Struktura danych:** LocalBusiness ma `url`, `logo`, `image`, `hasMap` i `geo`; do uzupełnienia pozostają potwierdzone godziny przyjęć (`openingHours`).
 
 ### 3.3. SEO lokalne — ⚠️ najważniejsza rekomendacja poza kodem
-W wynikach Google strona jest powiązana z bytem **„Gabinet Centrum Równowagi”** (w snippetach widać „Gabinet Centrum Równowagi, Zygmunta Krasińskiego 13”, a w sieci funkcjonuje placówka Centrum Równowagi – psychologia, psychoterapia, coaching, **tel. +48 880 882 172**, piętro 8), natomiast strona podaje **„Grzegorz Plebaniak”, Zygmunta Krasińskiego 13, tel. +48 693 087 574** — bez piętra i z innym numerem.
+Aktualne dane lokalizacyjne na stronie: **Grzegorz Plebaniak**, Zygmunta Krasińskiego 13, 50-449 Wrocław, tel. +48 693 087 574, e-mail gpplebaniak@gmail.com. Miejsce przyjęć wskazane na stronie: [centrumrownowagi.com](http://centrumrownowagi.com).
 
-**Niespójność NAP (Name/Address/Phone) między stroną, wizytówką Google, ZnanyLekarz (profil lekarza vs placówka) i katalogami (locarate.pl) osłabia lokalny ranking.** Google nie wie, czy to ta sama firma.
-
-**Do decyzji właściciela:** ujednolicić wszędzie jeden zestaw (nazwa, adres z piętrem, jeden telefon) albo świadomie rozdzielić markę osobistą (Grzegorz Plebaniak) od placówki (Centrum Równowagi). W obu wariantach: strona, Google Business Profile, ZnanyLekarz (profil + placówka), locarate i inne katalogi muszą mieć **identyczne** NAP.
+**Rekomendacja:** porównać aktualny zestaw NAP (Name/Address/Phone) ze stroną z wizytówką Google, ZnanyLekarz i katalogami (np. locarate.pl), a ewentualne nieaktualne dane poprawić. Spójność nazwy, adresu i telefonu wspiera lokalne SEO.
 
 ### 3.4. Linki (off-page)
-- Domenie brakuje sygnałów zewnętrznych — to naturalne (młoda domena). Najszybsze źródła wartościowych linków: **Google Business Profile**, profil **ZnanyLekarz** (już istnieje i jest mocny), strona placówki centrumrownowagi.com (jeśli istnieje), lokalne media/katalogi, artykuły gościnne.
+- Domenie brakuje sygnałów zewnętrznych — to naturalne (młoda domena). Najszybsze źródła wartościowych linków: **Google Business Profile**, profil **ZnanyLekarz** (już istnieje i jest mocny), strona miejsca przyjęć centrumrownowagi.com, lokalne media/katalogi, artykuły gościnne.
 - Link do ZnanyLekarz z `rel="nofollow"` — OK (link partnerski); nie zmieniać na dofollow w sekcji kontakt.
 - `sameAs` w JSON-LD zawiera tylko ZnanyLekarz — dodać URL wizytówki Google i profili social (jeśli są).
 
@@ -129,7 +127,7 @@ W wynikach Google strona jest powiązana z bytem **„Gabinet Centrum Równowagi
 
 ### 4.2. Checklista — co kliknąć w GSC (dane konta; z sandboxa nie da się ich odczytać)
 - [ ] **Sitemaps** → czy `sitemap.xml` ma status **„Sukces”** (jeśli nie — wklej adres i zapisz).
-- [ ] **URL Inspection** → wklej adresy 5 artykułów i `/cennik/` (np. `https://psychologplebaniak.pl/blog/jak-wybrac-psychoterapeute/`) → **„Zażądaj indeksowania”**. **Zrób to PO wdrożeniu naprawy kanonikali** (bez tego prośba nie ma sensu — strona kanonikalizowała na `/`).
+- [ ] **URL Inspection** → wklej adresy 6 artykułów i `/cennik/` (np. `https://psychologplebaniak.pl/blog/jak-wybrac-psychoterapeute/`) → **„Zażądaj indeksowania”**. **Zrób to PO wdrożeniu naprawy kanonikali** (bez tego prośba nie ma sensu — strona kanonikalizowała na `/`).
 - [ ] **Strony (Pages)** → sprawdź liczbę „Zaindeksowanych” i sekcję „Przeskanowano – obecnie nieindeksowana” / „Wykryto – obecnie nieindeksowana”. Po naprawie artykuły powinny trafić do zaindeksowanych w 1–2 tygodnie.
 - [ ] **Skuteczność (Performance)** → ustaw filtr zapytania zawierające „wrocław” i „psycholog” — to Twoje główne frazy; obserwuj CTR i pozycje.
 - [ ] **Core Web Vitals** → czy raport ma dane; jeśli nie, odpal PageSpeed Insights na `/` i `/blog/`.
@@ -146,25 +144,25 @@ W wynikach Google strona jest powiązana z bytem **„Gabinet Centrum Równowagi
 
 ### P0 — najwyższy priorytet
 1. **Wdróż poprawki** (`npm run build && firebase deploy --only hosting,firestore`) i zrób checklistę 4.2. Bez deploya naprawa kanonikali nie dotrze na produkcję.
-2. **Ujednolić NAP/markę.** Zgodnie z ustaleniem: marka osobista **Grzegorz Plebaniak** (JDG), a Centrum Równowagi to placówka, w której mieści się gabinet (współpraca B2B). Na stronie dodano już wzmiankę „Gabinet mieści się w Centrum Równowagi…”. Do ujednolicenia na zewnątrz: Google Business Profile, ZnanyLekarz (profil + placówka), katalogi (locarate) — NAP identyczne ze stroną, telefon +48 693 087 574.
+2. **Ujednolić NAP/markę.** Na stronie podano markę osobistą **Grzegorz Plebaniak** oraz aktualne miejsce przyjęć i dane kontaktowe: Zygmunta Krasińskiego 13, 50-449 Wrocław; centrumrownowagi.com; telefon +48 693 087 574; e-mail gpplebaniak@gmail.com. Do sprawdzenia poza stroną: Google Business Profile, ZnanyLekarz i katalogi (locarate) — ich dane NAP powinny być aktualne i zgodne ze stroną.
 3. **Google Business Profile:** utworzyć/zweryfikować wizytówkę „Grzegorz Plebaniak — psycholog”, dane NAP identyczne ze stroną, kategoria „Psychologist”, link do strony, zdjęcia gabinetu.
 
 ### P1 — ważne, nieduży wysiłek
 4. ✅ **Baner cookies z przyciskiem „Tylko niezbędne”** — wdrożone (równoważna odmowa; ePrivacy/RODO).
-5. ✅ **LocalBusiness JSON-LD** rozszerzony o `url`, `@id`, `image`, `logo`, `hasMap`. Do uzupełnienia przez właściciela: `geo` (współrzędne) w `lib/config.ts` oraz `openingHours` (godziny przyjęć — podaj, a wstawię).
+5. ✅ **LocalBusiness JSON-LD** zawiera `url`, `@id`, `image`, `logo`, `hasMap` i zweryfikowane `geo`. Do uzupełnienia po potwierdzeniu: `openingHours` (godziny przyjęć).
 6. ✅ **Podstrona `/cennik/`** z `OfferCatalog` — wdrożone.
 7. ✅ **301 redirecty** starych adresów bloga w `firebase.json` — wdrożone (16 reguł).
 8. ✅ **GTM:** placeholder usunięty (`gtmId: ''`) — wdrożone.
 9. ✅ **Consent Mode v2** + twarda brama zgody w `track()` — wdrożone. **Pozostaje w GA4:** oznaczyć zdarzenia jako konwersje (Administracja → Zdarzenia): `book_click`, `call_click`, `email_click`, `form_submit`.
 
 ### P2 — drobne i strategiczne
-10. 🟡 **Blog:** 1 nowy artykuł dodany („Jak wybrać psychoterapeutę?”, 2026-08-20). Kontynuować: 2–4 wpisy/mies. („pierwsza wizyta u psychologa — jak się przygotować”, „terapia online vs stacjonarnie”, „lęk przed zmianą”…), linkowanie do cennika/kontaktu, frazy lokalne („Wrocław”).
+10. ✅ **Blog:** dodano wpis „Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?” (2026-10-14), z bibliografią, linkami wewnętrznymi i metadanymi. Warto utrzymać regularność publikacji (2–4 wpisy/mies.).
 11. ✅ **Logo zoptymalizowane:** `logo.webp` 12,7 kB (zamiast 232 kB PNG) w headerze; `logo.png` pozostaje tylko dla schema.org.
 12. ✅ **PWA/manifest:** `manifest.json`, `theme-color`, favicony z `sizes` — wdrożone.
 13. ✅ **Bezpieczeństwo:** `Content-Security-Policy` + `Permissions-Policy` w `firebase.json` — wdrożone (do weryfikacji po deployu: formularz, widget ZL, mapa).
 14. 🟡 **Formularz:** do rozważenia w przyszłości — reCAPTCHA v3 lub limit w Cloud Function (obecnie honeypot + reguły Firestore).
 15. ✅ **Porządek w repo:** usunięte `workspace-*.zip` i JPG-i; wzorce w `.gitignore`.
-16. 🟡 **Współrzędne geograficzne** — pola `geoLat`/`geoLng` w `lib/config.ts` czekają na wartości (instrukcja w komentarzu); **godziny przyjęć** (`openingHours`) do wstawienia po podaniu.
+16. 🟡 **Godziny przyjęć** (`openingHours`) — do dodania po potwierdzeniu dokładnych godzin.
 
 ---
 
@@ -183,10 +181,10 @@ npx firebase-tools deploy --only hosting,firestore
 Po wdrożeniu (konieczne, aby poprawki trafiły na produkcję):
 
 1. **Google Search Console** → Sitemaps → `https://psychologplebaniak.pl/sitemap.xml` (status „Sukces”).
-2. **URL Inspection** → wklej po kolei adresy 5 artykułów i `/cennik/` → „Zażądaj indeksowania”.
+2. **URL Inspection** → wklej po kolei adresy 6 artykułów i `/cennik/` → „Zażądaj indeksowania”.
 3. **GA4** → Administracja → Zdarzenia → oznacz jako konwersje: `book_click`, `call_click`, `email_click`, `form_submit`.
-4. **Uzupełnij współrzędne** w `lib/config.ts` (`geoLat`/`geoLng`) — instrukcja w komentarzu w pliku.
-5. **Sprawdź po wdrożeniu** działanie formularza kontaktowego, widgetu ZnanyLekarz i mapy (nowa polityka CSP może wymagać korekty, jeśli któreś zewnętrzne zasoby zostaną zablokowane — patrz komentarz w `firebase.json`).
+4. **Zweryfikuj pinezkę mapy** na `Zygmunta Krasińskiego 13` po wdrożeniu; współrzędne są już ustawione w `lib/config.ts`.
+5. **Sprawdź po wdrożeniu** działanie formularza kontaktowego, kalendarza Booksy, certyfikatu ZnanyLekarz i mapy (nowa polityka CSP może wymagać korekty, jeśli któreś zewnętrzne zasoby zostaną zablokowane — patrz komentarz w `firebase.json`).
 
 ---
 
@@ -196,9 +194,9 @@ Po wdrożeniu (konieczne, aby poprawki trafiły na produkcję):
 |---|---|
 | Technika/wydajność | 9,5/10 |
 | SEO on-page | 8,5/10 (było 5/10 przez kanonikal — naprawione; dodany /cennik/ i artykuł) |
-| SEO lokalne (NAP) | 6/10 — marka ustalona (osobista + Centrum Równowagi jako placówka); do dopięcia w GBP/katalogach |
+| SEO lokalne (NAP) | 6/10 — dane lokalizacyjne na stronie zaktualizowane; do weryfikacji w GBP/katalogach |
 | Konfiguracja GSC | 8/10 — brakuje aktywnego korzystania + Bing |
 | Dostępność | 10/10 |
 | RODO/prywatność | 9,5/10 (baner z odmową + Consent Mode v2; do dopięcia: retencja GA4) |
 
-**Najważniejsze teraz:** (1) wdrożyć build na produkcję (pkt 6), (2) w GSC zażądać indeksacji 5 artykułów i /cennik/, (3) ujednolicić NAP w Google Business Profile, ZnanyLekarz i katalogach, (4) wstawić współrzędne/ godziny przyjęć w `lib/config.ts`, (5) regularnie publikować artykuły (2–4/mies.).
+**Najważniejsze teraz:** (1) wdrożyć build na produkcję (pkt 6), (2) w GSC zażądać indeksacji 6 artykułów i /cennik/, (3) ujednolicić NAP w Google Business Profile, ZnanyLekarz i katalogach, (4) uzupełnić godziny przyjęć w `lib/config.ts`, (5) regularnie publikować artykuły (2–4/mies.).

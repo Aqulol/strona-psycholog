@@ -3,14 +3,15 @@ import './globals.css';
 import CookieBanner from '../components/CookieBanner';
 import MobileCtaBar from '../components/MobileCtaBar';
 import GtmScript from '../components/GtmScript';
+import { socialImage } from '../lib/seoMetadata';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Grzegorz Plebaniak – psycholog, psychoterapeuta we Wrocławiu',
+    default: 'Psycholog Wrocław | Grzegorz Plebaniak',
     template: '%s | Grzegorz Plebaniak',
   },
   description:
-    'Psycholog Grzegorz Plebaniak we Wrocławiu. Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
+    'Psycholog we Wrocławiu: konsultacje i psychoterapia psychodynamiczna dla dorosłych, stacjonarnie i online.',
   metadataBase: new URL('https://psychologplebaniak.pl'),
   // UWAGA: NIE ustawiamy tu globalnego alternates.canonical! Poprzednio
   // canonical: '/' był dziedziczony przez WSZYSTKIE podstrony (blog, artykuły,
@@ -29,13 +30,14 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   openGraph: {
-    title: 'Grzegorz Plebaniak – psycholog, psychoterapeuta we Wrocławiu',
-    description: 'Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
-    images: ['/og-image.png'],
+    title: 'Psycholog Wrocław | Grzegorz Plebaniak',
+    description: 'Psycholog we Wrocławiu: konsultacje i psychoterapia psychodynamiczna dla dorosłych, stacjonarnie i online.',
+    siteName: 'Grzegorz Plebaniak – psycholog i psychoterapeuta',
+    images: [socialImage],
     type: 'website',
     locale: 'pl_PL',
   },
-  twitter: { card: 'summary_large_image', images: ['/og-image.png'] },
+  twitter: { card: 'summary_large_image', images: [socialImage] },
   other: {
     'ai-content': 'Strona gabinetu psychologicznego',
     'ai-audience': 'Dorośli szukający wsparcia psychologicznego',
@@ -54,9 +56,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Preload logo (widoczne w headerze), self-hostowane fonty
           (najczęściej używane wagi: Cormorant Garamond 600 i Inter 400)
           i preconnect do domen zewnętrznych faktycznie używanych na stronie:
-          certyfikat ZnanyLekarz w hero (platform.docplanner.com), osadzona
-          mapa Google (www.google.com) i GTM/GA4 (www.googletagmanager.com,
-          ładowane po zgodzie na cookies). Fonty są hostowane lokalnie w /fonts — build
+          widget ZnanyLekarz (platform.docplanner.com), kalendarz Booksy
+          (booksy.com), osadzona mapa Google (www.google.com) i GTM/GA4
+          (www.googletagmanager.com, ładowane po zgodzie na cookies). Fonty są hostowane lokalnie w /fonts — build
           nie pobiera nic z fonts.gstatic.com.
           Tagi <link> wstrzyknięte w <head> jako surowy HTML, aby trafiły do
           <head> DOKŁADNIE RAZ: elementy <link> renderowane w drzewie React
@@ -70,6 +72,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/cormorant-garamond-600.woff2" />
             <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter-400.woff2" />
             <link rel="preconnect" href="https://platform.docplanner.com" />
+            <link rel="preconnect" href="https://booksy.com" />
             <link rel="preconnect" href="https://www.google.com" />
             <link rel="preconnect" href="https://www.googletagmanager.com" />
           `,

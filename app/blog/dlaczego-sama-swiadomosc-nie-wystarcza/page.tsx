@@ -1,14 +1,20 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
+import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const description =
-  'Rozumienie przyczyn to ważny krok, ale trwała zmiana wymaga emocjonalnego przepracowania. Wyjaśnia to psychoterapia psychodynamiczna we Wrocławiu.';
+  'Dlaczego rozumienie problemu nie wystarcza? O emocjonalnej zmianie w psychoterapii psychodynamicznej.';
 
 export const metadata: Metadata = {
-  title: 'Dlaczego sama świadomość problemu nie wystarcza?',
+  title: { absolute: 'Dlaczego sama świadomość nie wystarcza?' },
   description,
   alternates: { canonical: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/blog/dlaczego-sama-swiadomosc-nie-wystarcza/' },
+  openGraph: articleOpenGraph({
+    url: 'https://psychologplebaniak.pl/blog/dlaczego-sama-swiadomosc-nie-wystarcza/',
+    title: 'Dlaczego sama świadomość nie wystarcza?',
+    description,
+    publishedTime: '2026-08-11',
+  }),
 };
 
 const faq: [string, string][] = [
@@ -27,7 +33,7 @@ const faq: [string, string][] = [
 ];
 
 const ld = articleJsonLd({
-  headline: '„Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?',
+  headline: 'Dlaczego sama świadomość nie wystarcza?',
   description,
   slug: 'dlaczego-sama-swiadomosc-nie-wystarcza',
   datePublished: '2026-08-11',
@@ -43,11 +49,12 @@ export default function Page() {
         ← Strona główna
       </a>
       <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
-        „Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?
+        Dlaczego sama świadomość nie wystarcza?
       </h1>
       <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026</p>
       <p className="mt-6 leading-8 text-ink/80">
-        Można trafnie rozumieć własny problem, znać jego historię i mimo to reagować tak samo. Nadal wybierać
+        „Wiem, skąd to się bierze, ale nadal tak robię” — tak może brzmieć to doświadczenie. Można trafnie
+        rozumieć własny problem i znać jego historię, a mimo to reagować tak samo. Ktoś może nadal wybierać
         niedostępne osoby, wycofywać się w chwili bliskości, pracować ponad siły albo zamierać pod wpływem
         krytyki. Taki rozdźwięk bywa źródłem wstydu: skoro przyczyna jest znana, dlaczego nie następuje zmiana?
         Psychoterapia psychodynamiczna odpowiada, że wiedza intelektualna i zmiana emocjonalna nie są tym samym.
@@ -174,7 +181,7 @@ export default function Page() {
         </li>
         <li>
           <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
-            Psychoterapia psychodynamiczna Wrocław
+            Psychoterapia psychodynamiczna we Wrocławiu
           </a>
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>
         </li>

@@ -1,14 +1,20 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
+import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const description =
-  'Dlaczego kolejne związki bywają do siebie podobne? Poznaj nieświadome schematy relacyjne z perspektywy psychoterapii psychodynamicznej we Wrocławiu.';
+  'Dlaczego kolejne związki bywają podobne? O powtarzających się wzorcach relacyjnych i psychoterapii psychodynamicznej.';
 
 export const metadata: Metadata = {
-  title: 'Dlaczego wybieram podobnych partnerów? Schematy relacji',
+  title: { absolute: 'Dlaczego wybieram podobnych partnerów?' },
   description,
   alternates: { canonical: '/blog/dlaczego-wybieram-podobnych-partnerow/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/blog/dlaczego-wybieram-podobnych-partnerow/' },
+  openGraph: articleOpenGraph({
+    url: 'https://psychologplebaniak.pl/blog/dlaczego-wybieram-podobnych-partnerow/',
+    title: 'Dlaczego wybieram podobnych partnerów?',
+    description,
+    publishedTime: '2026-08-11',
+  }),
 };
 
 const faq: [string, string][] = [
@@ -158,6 +164,15 @@ export default function Page() {
       <ul className="mt-4 space-y-4">
         <li>
           <a
+            href="/blog/narcyzm-wrazliwy/"
+            className="text-lg font-medium text-green underline hover:text-green/80"
+          >
+            Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?
+          </a>
+          <p className="mt-1 leading-7 text-ink/70">wrażliwość na ocenę i trudności w bliskości</p>
+        </li>
+        <li>
+          <a
             href="/blog/dlaczego-sama-swiadomosc-nie-wystarcza/"
             className="text-lg font-medium text-green underline hover:text-green/80"
           >
@@ -176,7 +191,7 @@ export default function Page() {
         </li>
         <li>
           <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
-            Psychoterapia psychodynamiczna Wrocław
+            Psychoterapia psychodynamiczna we Wrocławiu
           </a>
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>
         </li>

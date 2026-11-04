@@ -4,6 +4,12 @@ import Reveal from './Reveal';
 
 const posts = [
   {
+    href: '/blog/narcyzm-wrazliwy/',
+    title: 'Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?',
+    date: '14 października 2026',
+    lead: 'Jak wrażliwy sposób funkcjonowania narcystycznego może wiązać się z przeżywaniem krytyki, poczuciem własnej wartości i bliskością?',
+  },
+  {
     href: '/blog/dlaczego-wybieram-podobnych-partnerow/',
     title: 'Dlaczego ciągle wybieram podobnych partnerów?',
     date: '11 sierpnia 2026',
@@ -20,12 +26,6 @@ const posts = [
     title: 'Co dzieje się między pacjentem a terapeutą? Relacja terapeutyczna jako źródło zmiany',
     date: '11 sierpnia 2026',
     lead: 'Rozmowa w gabinecie może z zewnątrz przypominać każdą inną rozmowę, ale relacja terapeutyczna ma szczególną strukturę i cel.',
-  },
-  {
-    href: '/blog/czy-przeszlosc-ma-znaczenie/',
-    title: 'Czy przeszłość naprawdę ma aż takie znaczenie?',
-    date: '11 sierpnia 2026',
-    lead: 'Psychoterapia psychodynamiczna bywa kojarzona z niekończącym się powracaniem do dzieciństwa. To uproszczenie.',
   },
 ];
 

@@ -1,14 +1,14 @@
 import { config } from '../lib/config';
 
 const navLinks = [
-  { label: 'O mnie', href: '#o-mnie' },
-  { label: 'Obszary pomocy', href: '#obszary' },
-  { label: 'Metoda pracy', href: '#metoda' },
-  { label: 'Gabinet', href: '#gabinet' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'O mnie', href: '/#o-mnie' },
+  { label: 'Obszary pomocy', href: '/#obszary' },
+  { label: 'Metoda pracy', href: '/#metoda' },
+  { label: 'Gabinet', href: '/#gabinet' },
+  { label: 'FAQ', href: '/#faq' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Cennik', href: '/cennik/' },
-  { label: 'Kontakt', href: '#kontakt' },
+  { label: 'Kontakt', href: '/#kontakt' },
 ];
 
 /** Stopka – nawigacja, dane firmy, RODO i copyright. */
@@ -36,7 +36,11 @@ export default function Footer() {
             <p className="mb-2">Psycholog Grzegorz Plebaniak — psychoterapia psychodynamiczna dla dorosłych, stacjonarnie i online.</p>
             <p>{config.address}</p>
             <p className="mt-1">{config.phone}</p>
-            <p className="mt-1">{config.email}</p>
+            <p className="mt-1">
+              <a className="hover:underline" href={`mailto:${config.email}`}>
+                {config.email}
+              </a>
+            </p>
           </div>
         </div>
         <div className="mt-10 flex flex-col gap-2 border-t border-white/20 pt-8 text-sm text-white/70 md:flex-row md:items-center md:justify-between">

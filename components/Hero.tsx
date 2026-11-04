@@ -30,13 +30,14 @@ export default function Hero() {
             Grzegorz Plebaniak – psycholog i psychoterapeuta
           </h1>
           <p className="my-7 text-lg leading-8 text-ink/80 xl:text-xl xl:leading-9">
-            Bezpieczna przestrzeń do rozmowy o tym, co trudne. Pracuję w nurcie psychodynamicznym z osobami
-            dorosłymi, stacjonarnie i online.
+            Pomagam lepiej rozumieć siebie, swoje emocje i relacje oraz przyglądać się temu, co utrudnia
+            codzienne funkcjonowanie. Pracuję w nurcie psychodynamicznym z osobami dorosłymi, stacjonarnie i
+            online.
           </p>
           <div className="flex flex-wrap gap-3 lg:gap-4">
             <a
               href="#kontakt"
-              onClick={() => track('book_click', { method: 'znanylekarz', location: 'hero' })}
+              onClick={() => track('book_click', { method: 'booksy', location: 'hero' })}
               className="rounded bg-green px-6 py-3.5 text-base font-medium text-white transition hover:bg-green/90 active:scale-[0.99]"
             >
               Umów konsultację
@@ -84,7 +85,7 @@ export default function Hero() {
             </svg>
             <img
               src="/images/portret.webp"
-              alt="Grzegorz Plebaniak – psycholog, Wrocław"
+              alt="Grzegorz Plebaniak – psycholog we Wrocławiu"
               width={1280}
               height={1280}
               loading="eager"

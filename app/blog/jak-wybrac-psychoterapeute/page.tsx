@@ -1,14 +1,20 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
+import { articleOpenGraph } from '../../../lib/seoMetadata';
 
 const description =
-  'Jak wybrać psychoterapeutę? Praktyczny przewodnik: psycholog czy psychoterapeuta, nurt terapii, na co zwrócić uwagę podczas pierwszej konsultacji i czego unikać.';
+  'Poradnik wyboru psychoterapeuty: kompetencje, nurt pracy, pierwsza konsultacja i sygnały ostrzegawcze.';
 
 export const metadata: Metadata = {
-  title: 'Jak wybrać psychoterapeutę? Praktyczny przewodnik',
+  title: 'Jak wybrać psychoterapeutę?',
   description,
   alternates: { canonical: '/blog/jak-wybrac-psychoterapeute/' },
-  openGraph: { url: 'https://psychologplebaniak.pl/blog/jak-wybrac-psychoterapeute/' },
+  openGraph: articleOpenGraph({
+    url: 'https://psychologplebaniak.pl/blog/jak-wybrac-psychoterapeute/',
+    title: 'Jak wybrać psychoterapeutę?',
+    description,
+    publishedTime: '2026-08-20',
+  }),
 };
 
 const faq: [string, string][] = [
@@ -170,8 +176,8 @@ export default function Page() {
           obie formy.
         </p>
         <p className="mt-4 leading-8 text-ink/80">
-          Jeśli mieszkasz we Wrocławiu lub okolicach, gabinet przy Zygmunta Krasińskiego 13
-          jest łatwo dostępny; dla osób spoza Wrocławia i podróżujących
+          Jeśli mieszkasz we Wrocławiu lub okolicach, gabinet przy ul. Zygmunta Krasińskiego 13,
+          50-449 Wrocław, jest dogodnie położony; dla osób spoza Wrocławia i podróżujących
           prowadzę również sesje online.
         </p>
 

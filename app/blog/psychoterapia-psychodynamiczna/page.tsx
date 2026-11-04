@@ -1,15 +1,10 @@
 import BlogRedirect from '../_BlogRedirect';
 
 export const metadata = {
-  title: 'Przeniesiono artykuł — Dlaczego sama świadomość problemu nie wystarcza?',
+  title: 'Przeniesiono artykuł — metoda pracy',
   robots: { index: false, follow: true },
 };
 
 export default function Page() {
-  return (
-    <BlogRedirect
-      to="/blog/dlaczego-sama-swiadomosc-nie-wystarcza"
-      label="„Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?"
-    />
-  );
+  return <BlogRedirect to="/#metoda" label="Metoda pracy — psychoterapia psychodynamiczna" />;
 }

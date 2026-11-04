@@ -1,10 +1,10 @@
 import BlogRedirect from '../_BlogRedirect';
 
 export const metadata = {
-  title: 'Przeniesiono artykuł — Dlaczego ciągle wybieram podobnych partnerów?',
+  title: 'Przeniesiono artykuł — obszary pomocy',
   robots: { index: false, follow: true },
 };
 
 export default function Page() {
-  return <BlogRedirect to="/blog/dlaczego-wybieram-podobnych-partnerow" label="Dlaczego ciągle wybieram podobnych partnerów?" />;
+  return <BlogRedirect to="/#obszary" label="Obszary pomocy — lęk i depresja" />;
 }
