@@ -7,7 +7,7 @@ import { socialImage } from '../lib/seoMetadata';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Grzegorz Plebaniak – psycholog, psychoterapeuta we Wrocławiu',
+    default: 'Psycholog Wrocław | Grzegorz Plebaniak',
     template: '%s | Grzegorz Plebaniak',
   },
   description:
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   openGraph: {
-    title: 'Grzegorz Plebaniak – psycholog, psychoterapeuta we Wrocławiu',
+    title: 'Psycholog Wrocław | Grzegorz Plebaniak',
     description: 'Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
     siteName: 'Grzegorz Plebaniak – psycholog i psychoterapeuta',
     images: [socialImage],

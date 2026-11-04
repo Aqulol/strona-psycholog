@@ -6,7 +6,7 @@ const description =
   'Dlaczego kolejne związki bywają do siebie podobne? Poznaj nieświadome schematy relacyjne z perspektywy psychoterapii psychodynamicznej we Wrocławiu.';
 
 export const metadata: Metadata = {
-  title: 'Dlaczego wybieram podobnych partnerów?',
+  title: { absolute: 'Dlaczego wybieram podobnych partnerów?' },
   description,
   alternates: { canonical: '/blog/dlaczego-wybieram-podobnych-partnerow/' },
   openGraph: articleOpenGraph({

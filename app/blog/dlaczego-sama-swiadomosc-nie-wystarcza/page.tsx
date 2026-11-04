@@ -6,7 +6,7 @@ const description =
   'Rozumienie przyczyn to ważny krok, ale trwała zmiana wymaga emocjonalnego przepracowania. Wyjaśnia to psychoterapia psychodynamiczna we Wrocławiu.';
 
 export const metadata: Metadata = {
-  title: 'Dlaczego sama świadomość nie wystarcza?',
+  title: { absolute: 'Dlaczego sama świadomość nie wystarcza?' },
   description,
   alternates: { canonical: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/' },
   openGraph: articleOpenGraph({

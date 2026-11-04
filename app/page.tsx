@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   openGraph: websiteOpenGraph({
     url: 'https://psychologplebaniak.pl/',
-    title: 'Grzegorz Plebaniak – psycholog, psychoterapeuta we Wrocławiu',
+    title: 'Psycholog Wrocław | Grzegorz Plebaniak',
     description:
       'Psycholog Grzegorz Plebaniak we Wrocławiu. Konsultacje i psychoterapia psychodynamiczna dla dorosłych — stacjonarnie i online.',
   }),
