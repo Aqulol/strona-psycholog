@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 import { articleOpenGraph } from '../../../lib/seoMetadata';
+import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const description =
   'Poradnik wyboru psychoterapeuty: kompetencje, nurt pracy, pierwsza konsultacja i sygnały ostrzegawcze.';
@@ -198,6 +199,8 @@ export default function Page() {
             <p className="mt-2 leading-8 text-ink/80">{a}</p>
           </div>
         ))}
+
+        <ArticleBookingCta />
 
         <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
         <ul className="mt-4 space-y-4">

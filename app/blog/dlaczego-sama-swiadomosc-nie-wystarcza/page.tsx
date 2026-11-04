@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 import { articleOpenGraph } from '../../../lib/seoMetadata';
+import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const description =
   'Dlaczego rozumienie problemu nie wystarcza? O emocjonalnej zmianie w psychoterapii psychodynamicznej.';
@@ -158,6 +159,8 @@ export default function Page() {
         Jej głównym „narzędziem” jest pogłębione rozumienie i praca w relacji. Efektem mogą być bardzo konkretne
         zdolności: wcześniejsze rozpoznawanie emocji, stawianie granic i bardziej świadome decyzje.
       </p>
+
+      <ArticleBookingCta />
 
       <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
       <ul className="mt-4 space-y-4">

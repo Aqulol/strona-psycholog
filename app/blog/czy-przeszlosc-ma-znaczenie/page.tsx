@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 import { articleOpenGraph } from '../../../lib/seoMetadata';
+import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const description =
   'Jak wcześniejsze doświadczenia wpływają na emocje i relacje? O ich znaczeniu w psychoterapii psychodynamicznej.';
@@ -157,6 +158,8 @@ export default function Page() {
         Może ją zmieniać, jeśli nie pozostaje wyłącznie wyjaśnieniem intelektualnym. Znaczenie ma emocjonalne
         przepracowanie oraz rozwijanie nowych sposobów bycia w relacji.
       </p>
+
+      <ArticleBookingCta />
 
       <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
       <ul className="mt-4 space-y-4">

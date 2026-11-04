@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 import { articleOpenGraph } from '../../../lib/seoMetadata';
+import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const description =
   'Dlaczego kolejne związki bywają podobne? O powtarzających się wzorcach relacyjnych i psychoterapii psychodynamicznej.';
@@ -159,6 +160,8 @@ export default function Page() {
         Zwykle jest konieczne, ale nie zawsze wystarczające. Schemat obejmuje emocje i automatyczne sposoby
         reagowania, dlatego zmiana wymaga czasu oraz wielokrotnego przepracowania.
       </p>
+
+      <ArticleBookingCta />
 
       <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
       <ul className="mt-4 space-y-4">
