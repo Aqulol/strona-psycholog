@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 import { articleOpenGraph } from '../../../lib/seoMetadata';
+import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const headline = 'Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?';
 const description =
@@ -273,6 +274,8 @@ export default function Page() {
             </a>
           </li>
         </ul>
+
+        <ArticleBookingCta />
 
         <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
         <ul className="mt-4 space-y-4">

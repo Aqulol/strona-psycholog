@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 import { articleOpenGraph } from '../../../lib/seoMetadata';
+import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const description =
   'Czym jest relacja terapeutyczna i przeniesienie? Poznaj psychodynamiczne spojrzenie na zmianę.';
@@ -159,6 +160,8 @@ export default function Page() {
         Zasady są jasne, poufność omówiona, a granice konsekwentne. Terapeuta nie wykorzystuje relacji do
         zaspokajania własnych potrzeb i jest otwarty na pytania dotyczące sposobu pracy.
       </p>
+
+      <ArticleBookingCta />
 
       <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
       <ul className="mt-4 space-y-4">
