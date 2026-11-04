@@ -6,7 +6,7 @@ const description =
   'Czym są relacja terapeutyczna, przeniesienie i bezpieczne ramy terapii? Poznaj psychodynamiczne spojrzenie na terapię we Wrocławiu.';
 
 export const metadata: Metadata = {
-  title: 'Relacja terapeutyczna jako źródło zmiany',
+  title: { absolute: 'Relacja terapeutyczna jako źródło zmiany' },
   description,
   alternates: { canonical: '/blog/relacja-terapeutyczna-zrodlo-zmiany/' },
   openGraph: articleOpenGraph({
