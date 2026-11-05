@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { config } from '../lib/config';
 
 /**
- * Skrypty Google Tag Manager i Google Analytics 4 (GA4) — ładowane
+ * Skrypty Google Tag Manager i Google Analytics 4 (GA4) - ładowane
  * WYŁĄCZNIE po wyrażeniu zgody na cookies (RODO / ePrivacy).
  *
  * Zasada działania:
@@ -16,7 +16,7 @@ import { config } from '../lib/config';
  *   są wstrzykiwane natychmiast; na kolejnych wizytach wystarczy zapisana
  *   zgoda w localStorage. Nasłuch 'storage' synchronizuje zakładki.
  * - Jeśli zgoda nie zostanie udzielona lub zostanie odrzucona (brak wartości
- *   w localStorage) — analityka się nie ładuje.
+ *   w localStorage) - analityka się nie ładuje.
  *
  * Renderowane TYLKO wtedy, gdy w lib/config.ts wpisano prawdziwe ID
  * (pole NIE może być puste ani zawierać placeholderów 'GTM-XXXXXXX' /
@@ -31,7 +31,7 @@ import { config } from '../lib/config';
  * `ga4Id` puste (''), aby uniknąć podwójnego zliczania odsłon.
  *
  * Uwaga: wstrzykiwanie następuje po stronie klienta (po zgodzie), dlatego
- * nie ma tu wersji <noscript> — nie można jej uzależnić od zgody bez JS,
+ * nie ma tu wersji <noscript> - nie można jej uzależnić od zgody bez JS,
  * a ładowanie GTM/GA4 bez zgody byłoby naruszeniem zasad RODO.
  */
 
@@ -80,7 +80,7 @@ export default function GtmScript() {
     if (!gtmReady && !ga4Ready) return;
     injected.current = true;
 
-    // Consent Mode v2 — stany domyślne i aktualizacja po zgodzie.
+    // Consent Mode v2 - stany domyślne i aktualizacja po zgodzie.
     // Deklaracja „default" musi trafić do dataLayer przed konfiguracją GA4,
     // aby gtag.js przetworzył je w poprawnej kolejności. Wszystkie stany
     // poza analityką pozostają 'denied' (brak reklam, brak personalizacji).

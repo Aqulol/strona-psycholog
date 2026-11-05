@@ -6,7 +6,7 @@ const trustCards = [
   {
     icon: Award,
     title: 'Dyplom',
-    text: 'Dyplom: wyższe wykształcenie psychologiczne – specjalność kliniczna i zdrowia',
+    text: 'Dyplom: wyższe wykształcenie psychologiczne - specjalność kliniczna i zdrowia',
   },
   {
     icon: BookOpen,
@@ -20,7 +20,7 @@ const trustCards = [
   },
 ];
 
-/** Sekcja „O mnie” – bio, zdjęcie poziome i kafle zaufania. */
+/** Sekcja „O mnie” - bio, zdjęcie poziome i kafle zaufania. */
 export default function About() {
   return (
     <section id="o-mnie" className="section">
@@ -30,7 +30,7 @@ export default function About() {
           <Reveal>
             <img
               src="/images/portret2.webp"
-              alt="Grzegorz Plebaniak – psycholog we Wrocławiu"
+              alt="Grzegorz Plebaniak - psycholog we Wrocławiu"
               width={1280}
               height={855}
               loading="lazy"

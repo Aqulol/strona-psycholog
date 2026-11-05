@@ -6,13 +6,13 @@ import ZnanyLekarzWidget from './ZnanyLekarzWidget';
 import { track } from '../lib/analytics';
 
 /**
- * Hero strony głównej – H1, dwa CTA, micro-trust i portret
+ * Hero strony głównej - H1, dwa CTA, micro-trust i portret
  * (eager loading + fetchpriority high, atrybuty width/height).
  */
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-cream py-20 lg:py-32" aria-label="Powitanie">
-      {/* Delikatny radialny blask po stronie portretu – dekoracja, nie wpływa na kontrast tekstu */}
+      {/* Delikatny radialny blask po stronie portretu - dekoracja, nie wpływa na kontrast tekstu */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_78%_40%,rgba(201,169,106,0.07),transparent_55%)]"
@@ -27,7 +27,7 @@ export default function Hero() {
             Wrocław · stacjonarnie i online
           </p>
           <h1 className="mt-5 text-5xl leading-tight text-green md:text-6xl xl:text-7xl">
-            Grzegorz Plebaniak – psycholog i psychoterapeuta
+            Grzegorz Plebaniak - psycholog i psychoterapeuta
           </h1>
           <p className="my-7 text-lg leading-8 text-ink/80 xl:text-xl xl:leading-9">
             Pomagam lepiej rozumieć siebie, swoje emocje i relacje oraz przyglądać się temu, co utrudnia
@@ -70,7 +70,7 @@ export default function Hero() {
 
         <Reveal delay={150} className="mx-auto w-full max-w-lg lg:max-w-none">
           <div className="relative">
-            {/* Miękki organiczny kształt za portretem – bardzo stonowana zieleń, dekoracja */}
+            {/* Miękki organiczny kształt za portretem - bardzo stonowana zieleń, dekoracja */}
             <svg
               aria-hidden="true"
               viewBox="0 0 600 600"
@@ -85,7 +85,7 @@ export default function Hero() {
             </svg>
             <img
               src="/images/portret.webp"
-              alt="Grzegorz Plebaniak – psycholog we Wrocławiu"
+              alt="Grzegorz Plebaniak - psycholog we Wrocławiu"
               width={1280}
               height={1280}
               loading="eager"

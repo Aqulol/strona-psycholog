@@ -2,18 +2,18 @@ export const dynamic='force-static';
 import type{MetadataRoute} from 'next';
 
 /**
- * Sitemap — Wszystkie adresy z końcówką '/' (serwer z trailingSlash:true
+ * Sitemap - Wszystkie adresy z końcówką '/' (serwer z trailingSlash:true
  * serwuje je bez przekierowania 301; Google odrzuca w sitemap/inspection
  * adresy z przekierowaniem jako „Błąd przekierowania”).
  *
  * WAŻNE: lastmod są STABILNE (stałe daty publikacji), a nie new Date().
  * Wcześniej każdy build ustawiał lastmod na czas budowania, przez co sitemap
- * zmieniała się przy każdym wdrożeniu — Google niepotrzebnie przeszukiwał
+ * zmieniała się przy każdym wdrożeniu - Google niepotrzebnie przeszukiwał
  * wszystkie podstrony i mógł traktować je jako „zmienione”, mimo braku zmian.
  */
 const SITE = 'https://psychologplebaniak.pl';
 
-// Data publikacji artykułów (datePublished z metadata) — spójna z JSON-LD.
+// Data publikacji artykułów (datePublished z metadata) - spójna z JSON-LD.
 const ARTICLE_DATES: Record<string, string> = {
   'narcyzm-wrazliwy': '2026-10-14',
   'jak-wybrac-psychoterapeute': '2026-08-20',

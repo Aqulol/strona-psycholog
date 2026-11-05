@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Podstrona /cennik/ — osobny adres pod frazy „cennik psychoterapia Wrocław”.
+ * Podstrona /cennik/ - osobny adres pod frazy „cennik psychoterapia Wrocław”.
  * Ceny pochodzą z jednego źródła (lib/config.ts), więc nie rozjadą się
  * z sekcją cennika na stronie głównej. JSON-LD: OfferCatalog + BreadcrumbList.
  */
@@ -31,7 +31,7 @@ export default function CennikPage() {
     '@graph': [
       {
         '@type': 'OfferCatalog',
-        name: 'Cennik – psycholog Grzegorz Plebaniak Wrocław',
+        name: 'Cennik - psycholog Grzegorz Plebaniak Wrocław',
         url: 'https://psychologplebaniak.pl/cennik/',
         provider: {
           '@type': ['LocalBusiness', 'ProfessionalService'],
@@ -66,7 +66,7 @@ export default function CennikPage() {
       <main id="tresc" className="container section max-w-3xl">
         <p className="eyebrow">Cennik</p>
         <h1 className="mt-4 text-5xl leading-tight text-green md:text-6xl">
-          Cennik wizyt — Wrocław · stacjonarnie i online
+          Cennik wizyt - Wrocław · stacjonarnie i online
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/80">
           Wszystkie spotkania trwają 50 minut. Ceny dotyczą zarówno wizyt stacjonarnych
@@ -99,7 +99,7 @@ export default function CennikPage() {
 
         <p className="mt-8 text-lg leading-8 text-ink/80">
           Szczegóły płatności (gotówka, przelew, faktura) ustalamy podczas konsultacji.
-          Częstotliwość spotkań — zwykle raz lub dwa razy w tygodniu, o stałej porze —
+          Częstotliwość spotkań - zwykle raz lub dwa razy w tygodniu, o stałej porze -
           dopasowujemy do potrzeb i ustaleń kontraktu.
         </p>
 
@@ -129,7 +129,7 @@ export default function CennikPage() {
 
         <h2 className="mt-12 text-4xl text-green">Czym różni się konsultacja od psychoterapii?</h2>
         <p className="mt-4 leading-8 text-ink/80">
-          Konsultacja to zwykle 1–3 spotkania, podczas których przyglądamy się temu, co
+          Konsultacja to zwykle 1-3 spotkania, podczas których przyglądamy się temu, co
           skłoniło do kontaktu, i wspólnie decydujemy o dalszych krokach. Psychoterapia to
           regularna, długofalowa praca w nurcie psychodynamicznym, ukierunkowana na głębsze
           rozumienie emocji, relacji i powtarzających się wzorców.

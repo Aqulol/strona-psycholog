@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { websiteOpenGraph } from '../../lib/seoMetadata';
 
-const blogTitle = 'Blog – artykuły o psychoterapii';
+const blogTitle = 'Blog - artykuły o psychoterapii';
 const blogDescription =
   'Artykuły o psychoterapii psychodynamicznej: relacje, przeszłość, świadomość i narcyzm wrażliwy. Spokojne teksty dla dorosłych.';
 
@@ -32,7 +32,7 @@ const posts = [
     title: 'Jak wybrać psychoterapeutę? Praktyczny przewodnik',
     date: '20 sierpnia 2026',
     description:
-      'Psycholog czy psychoterapeuta? Nurt terapii, pierwsza konsultacja, czerwone flagi i logistyka — na co zwrócić uwagę przy wyborze terapeuty we Wrocławiu i online.',
+      'Psycholog czy psychoterapeuta? Nurt terapii, pierwsza konsultacja, czerwone flagi i logistyka - na co zwrócić uwagę przy wyborze terapeuty we Wrocławiu i online.',
   },
   {
     href: '/blog/dlaczego-wybieram-podobnych-partnerow/',
@@ -43,7 +43,7 @@ const posts = [
   },
   {
     href: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/',
-    title: '„Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?',
+    title: '„Wiem, skąd to się bierze, ale nadal tak robię” - dlaczego sama świadomość nie wystarcza?',
     date: '11 sierpnia 2026',
     description:
       'Rozumienie przyczyn to ważny krok, ale trwała zmiana wymaga emocjonalnego przepracowania. Wyjaśnia to psychoterapia psychodynamiczna we Wrocławiu.',
@@ -65,7 +65,7 @@ const posts = [
 ];
 
 /**
- * Podstrona /blog – lista artykułów w formie kart.
+ * Podstrona /blog - lista artykułów w formie kart.
  * Spokojny, naturalny ton; każda karta prowadzi do pełnego wpisu.
  */
 export default function BlogPage() {
@@ -109,7 +109,7 @@ export default function BlogPage() {
           ))}
         </div>
         <p className="mt-12 text-lg leading-8 text-ink/80">
-          Jeśli któryś z tematów jest Panu/Pani bliski i pojawia się pytanie o terapię — zapraszam do kontaktu
+          Jeśli któryś z tematów jest Panu/Pani bliski i pojawia się pytanie o terapię - zapraszam do kontaktu
           lub rezerwacji terminu przez kalendarz online.
         </p>
         <a

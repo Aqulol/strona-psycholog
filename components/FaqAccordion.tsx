@@ -13,7 +13,7 @@ type FaqAccordionProps = {
 };
 
 /**
- * Akordeon FAQ – klient-side, dostępny z klawiatury
+ * Akordeon FAQ - klient-side, dostępny z klawiatury
  * (natywny <button> z aria-expanded i aria-controls).
  */
 export default function FaqAccordion({ items }: FaqAccordionProps) {

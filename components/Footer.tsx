@@ -11,7 +11,7 @@ const navLinks = [
   { label: 'Kontakt', href: '/#kontakt' },
 ];
 
-/** Stopka – nawigacja, dane firmy, RODO i copyright. */
+/** Stopka - nawigacja, dane firmy, RODO i copyright. */
 export default function Footer() {
   return (
     <footer className="bg-green py-10 text-white lg:py-14">
@@ -33,7 +33,7 @@ export default function Footer() {
             </ul>
           </nav>
           <div className="text-sm text-white/85">
-            <p className="mb-2">Psycholog Grzegorz Plebaniak — psychoterapia psychodynamiczna dla dorosłych, stacjonarnie i online.</p>
+            <p className="mb-2">Psycholog Grzegorz Plebaniak - psychoterapia psychodynamiczna dla dorosłych, stacjonarnie i online.</p>
             <p>{config.address}</p>
             <p className="mt-1">{config.phone}</p>
             <p className="mt-1">

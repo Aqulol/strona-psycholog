@@ -1,23 +1,23 @@
-# Wdrożenie strony gabinetu — instrukcja krok po kroku
+# Wdrożenie strony gabinetu - instrukcja krok po kroku
 
 Strona gabinetu psychologicznego Grzegorza Plebaniaka (Wrocław).
 Projekt Firebase: **psychologplebaniak-e4480**.
 
-Czas wdrożenia: ok. 1–2 godziny. Nie wymaga znajomości programowania —
+Czas wdrożenia: ok. 1-2 godziny. Nie wymaga znajomości programowania -
 wystarczy wykonywać polecenia w terminalu (na komputerze z systemem Windows,
 macOS lub Linux).
 
 > **Wariant darmowy (Spark).** Formularz kontaktowy zapisuje wiadomości
-> bezpośrednio do bazy Firestore z przeglądarki — bez Cloud Functions i bez
+> bezpośrednio do bazy Firestore z przeglądarki - bez Cloud Functions i bez
 > planu Blaze (płatnego). Wiadomości można odczytać w konsoli Firebase albo
 > lokalnym programem `tools/czytaj-wiadomosci/` (instrukcja w jego README).
 
 ---
 
-## Krok 1 — Przygotowanie
+## Krok 1 - Przygotowanie
 
 1. Zainstaluj **Node.js LTS** (wersja 20 lub nowsza) ze strony
-   https://nodejs.org — podczas instalacji zaznacz domyślne opcje.
+   https://nodejs.org - podczas instalacji zaznacz domyślne opcje.
 2. Zainstaluj **Firebase CLI** (w terminalu):
    ```bash
    npm install -g firebase-tools
@@ -26,21 +26,21 @@ macOS lub Linux).
    ```bash
    firebase login
    ```
-   Przeglądarka otworzy stronę logowania — wybierz konto właściciela projektu.
+   Przeglądarka otworzy stronę logowania - wybierz konto właściciela projektu.
 4. Konfiguracja `firebaseConfig` w `lib/config.ts` jest już wpisana dla
    projektu `psychologplebaniak-e4480`. Nie zastępuj jej placeholderami.
    `gtmId` jest opcjonalne; `ga4Id` i weryfikacja Search Console są już
    skonfigurowane.
 
-## Krok 2 — Pobierz kod
+## Krok 2 - Pobierz kod
 
 ```bash
 git clone --branch arena/01a03953-strona-psycholog https://github.com/Aqulol/strona-psycholog.git strona-psycholog
 cd strona-psycholog
 ```
-Jeśli otrzymałeś projekt jako spakowany folder — rozpakuj go i wejdź do środka.
+Jeśli otrzymałeś projekt jako spakowany folder - rozpakuj go i wejdź do środka.
 
-## Krok 3 — Zbuduj projekt
+## Krok 3 - Zbuduj projekt
 
 W katalogu projektu (`strona-psycholog`) wykonaj po kolei:
 
@@ -49,7 +49,7 @@ npm ci
 npm run build
 ```
 
-Na końcu powstanie folder **`out/`** — to gotowa strona. Jeśli budowanie
+Na końcu powstanie folder **`out/`** - to gotowa strona. Jeśli budowanie
 zgłasza brak pamięci, w PowerShell przed buildem możesz ustawić:
 
 ```powershell
@@ -57,7 +57,7 @@ $env:NODE_OPTIONS="--max-old-space-size=2048"
 npm run build
 ```
 
-## Krok 4 — Wdróż na Firebase
+## Krok 4 - Wdróż na Firebase
 
 1. W `lib/config.ts` jest już skonfigurowana aplikacja webowa Firebase.
    Sprawdź, że `.firebaserc` wskazuje projekt **psychologplebaniak-e4480**.
@@ -69,7 +69,7 @@ npm run build
    ```bash
    firebase deploy --project psychologplebaniak-e4480 --only hosting,firestore
    ```
-   (Cloud Functions NIE są używane w wariancie darmowym — katalog `functions/`
+   (Cloud Functions NIE są używane w wariancie darmowym - katalog `functions/`
    pozostaje w repozytorium jako materiał do ewentualnego wariantu przyszłościowego;
    opisano to w `README-FUNCTIONS.md`.)
 
@@ -79,20 +79,20 @@ npm run build
      przechowywanie klucza i komendy są w `tools/czytaj-wiadomosci/README-narzedzie.md`.
      Klucz konta usługi nigdy nie może trafić do GitHuba ani do `public/`.
 
-## Krok 5 — Domena i Google
+## Krok 5 - Domena i Google
 
 1. **Własna domena + SSL:** konsola Firebase → *Build* → *Hosting* →
-   *Add custom domain*. Wpisz domenę, np. `www.psychologplebaniak.pl` — SSL
+   *Add custom domain*. Wpisz domenę, np. `www.psychologplebaniak.pl` - SSL
    (certyfikat) zadziała automatycznie. Przekierowanie `www → bez www`
    (lub odwrotnie) ustawia się rekordami DNS w panelu dostawcy domeny.
 2. **Google Search Console:** wejdź na https://search.google.com/search-console,
-   dodaj zasób i wybierz metodę **„Tag HTML"** — skopiowany tag wklej w
+   dodaj zasób i wybierz metodę **„Tag HTML"** - skopiowany tag wklej w
    `app/layout.tsx` (odkomentuj przygotowany wiersz) albo wybierz weryfikację
-   przez **DNS** (rekord TXT) — wtedy tag nie jest potrzebny.
+   przez **DNS** (rekord TXT) - wtedy tag nie jest potrzebny.
    Po wdrożeniu zgłoś w GSC plik `https://psychologplebaniak.pl/sitemap.xml`.
-3. **Bing Webmaster:** https://www.bing.com/webmasters — zgłoś tę samą sitemapę.
-4. **Wizytówka Google Business** (dla lokalnego SEO) — dane NAP:
-   - Nazwa: **Grzegorz Plebaniak — Gabinet Psychologiczny**
+3. **Bing Webmaster:** https://www.bing.com/webmasters - zgłoś tę samą sitemapę.
+4. **Wizytówka Google Business** (dla lokalnego SEO) - dane NAP:
+   - Nazwa: **Grzegorz Plebaniak - Gabinet Psychologiczny**
    - Adres: **Zygmunta Krasińskiego 13, 50-449 Wrocław**
    - Telefon: **+48 693087574**
    - E-mail: **gpplebaniak@gmail.com**

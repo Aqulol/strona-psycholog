@@ -12,25 +12,25 @@ const photos = [
   },
   {
     src: '/images/gabinet-fotel.webp',
-    alt: 'Gabinet – fotel',
+    alt: 'Gabinet - fotel',
     width: 1280,
     height: 1707,
   },
   {
     src: '/images/gabinet-detal-1.webp',
-    alt: 'Gabinet – detal wnętrza',
+    alt: 'Gabinet - detal wnętrza',
     width: 1280,
     height: 960,
   },
   {
     src: '/images/gabinet-detal-2.webp',
-    alt: 'Gabinet – detal wnętrza',
+    alt: 'Gabinet - detal wnętrza',
     width: 1280,
     height: 1707,
   },
 ];
 
-/** Sekcja „Gabinet” – galeria zdjęć, mapa dojazdu i informacje o lokalizacji. */
+/** Sekcja „Gabinet” - galeria zdjęć, mapa dojazdu i informacje o lokalizacji. */
 export default function Office() {
   return (
     <section id="gabinet" className="section bg-cream">
@@ -59,7 +59,7 @@ export default function Office() {
           <Reveal>
             <iframe
               src={config.mapsUrl}
-              title="Mapa dojazdu do gabinetu – Wrocław"
+              title="Mapa dojazdu do gabinetu - Wrocław"
               loading="lazy"
               className="h-full min-h-64 w-full rounded-xl border border-border"
               referrerPolicy="no-referrer-when-downgrade"

@@ -13,7 +13,7 @@ type ButtonProps = {
 
 /**
  * Przycisk w dwóch wariantach (primary / outline).
- * Z `href` renderuje link (Next.js), bez `href` – element <button>.
+ * Z `href` renderuje link (Next.js), bez `href` - element <button>.
  */
 export default function Button({
   children,

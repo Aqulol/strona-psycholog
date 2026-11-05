@@ -1,7 +1,7 @@
 import BlogRedirect from '../_BlogRedirect';
 
 export const metadata = {
-  title: 'Przeniesiono artykuł — Relacja terapeutyczna jako źródło zmiany',
+  title: 'Przeniesiono artykuł - Relacja terapeutyczna jako źródło zmiany',
   robots: { index: false, follow: true },
 };
 

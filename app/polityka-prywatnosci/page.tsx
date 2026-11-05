@@ -47,20 +47,20 @@ export default function Page() {
       <p className="mt-3 leading-8">W zależności od formy kontaktu możemy przetwarzać następujące dane:</p>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Dane podane w formularzu kontaktowym</strong> — imię, adres e-mail lub numer telefonu oraz treść
+          <strong>Dane podane w formularzu kontaktowym</strong> - imię, adres e-mail lub numer telefonu oraz treść
           wiadomości.
         </li>
         <li className="leading-8">
-          <strong>Dane techniczne i analityczne</strong> — anonimowe statystyki odwiedzin strony zbierane przez Google
+          <strong>Dane techniczne i analityczne</strong> - anonimowe statystyki odwiedzin strony zbierane przez Google
           Analytics, wyłącznie po wyrażeniu zgody w banerze cookies.
         </li>
         <li className="leading-8">
-          <strong>Dane niezbędne do wystawienia faktury</strong> — imię, nazwisko, adres, a także NIP, jeśli dotyczy.
+          <strong>Dane niezbędne do wystawienia faktury</strong> - imię, nazwisko, adres, a także NIP, jeśli dotyczy.
         </li>
       </ul>
       <p className="mt-3 leading-8">
         Formularz kontaktowy nie jest przeznaczony do przesyłania danych o zdrowiu. Prosimy o niewpisywanie ich w
-        formularzu — szczegóły dotyczące zdrowia można omówić podczas pierwszej wizyty.
+        formularzu - szczegóły dotyczące zdrowia można omówić podczas pierwszej wizyty.
       </p>
 
       <h2 className="mt-8 text-3xl">Dane szczególnej kategorii (art. 9 RODO)</h2>
@@ -76,19 +76,19 @@ export default function Page() {
       <h2 className="mt-8 text-3xl">Cele i podstawy prawne</h2>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Odpowiedź na zapytanie i umówienie wizyty</strong> — art. 6 ust. 1 lit. b RODO (podjęcie działań na
+          <strong>Odpowiedź na zapytanie i umówienie wizyty</strong> - art. 6 ust. 1 lit. b RODO (podjęcie działań na
           żądanie osoby przed zawarciem umowy).
         </li>
         <li className="leading-8">
-          <strong>Prowadzenie dokumentacji i rozliczeń, w tym wystawianie faktur</strong> — art. 6 ust. 1 lit. c RODO
+          <strong>Prowadzenie dokumentacji i rozliczeń, w tym wystawianie faktur</strong> - art. 6 ust. 1 lit. c RODO
           (obowiązek prawny).
         </li>
         <li className="leading-8">
-          <strong>Statystyki odwiedzin (Google Analytics 4)</strong> — art. 6 ust. 1 lit. a RODO (zgoda wyrażona przez
+          <strong>Statystyki odwiedzin (Google Analytics 4)</strong> - art. 6 ust. 1 lit. a RODO (zgoda wyrażona przez
           akceptację cookies w banerze).
         </li>
         <li className="leading-8">
-          <strong>Ewentualne dochodzenie lub obrona roszczeń</strong> — art. 6 ust. 1 lit. f RODO (prawnie uzasadniony
+          <strong>Ewentualne dochodzenie lub obrona roszczeń</strong> - art. 6 ust. 1 lit. f RODO (prawnie uzasadniony
           interes administratora).
         </li>
       </ul>
@@ -97,15 +97,15 @@ export default function Page() {
       <p className="mt-3 leading-8">Z danych mogą korzystać wyłącznie podmioty, które wspierają prowadzenie gabinetu:</p>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Google LLC</strong> — hosting strony (Firebase), przechowywanie wiadomości z formularza (Firestore)
+          <strong>Google LLC</strong> - hosting strony (Firebase), przechowywanie wiadomości z formularza (Firestore)
           oraz Google Analytics; dane mogą być przekazywane do Stanów Zjednoczonych;
         </li>
         <li className="leading-8">
-          <strong>Booksy</strong> — platforma, za pośrednictwem której można rezerwować wizyty online; dane podane
+          <strong>Booksy</strong> - platforma, za pośrednictwem której można rezerwować wizyty online; dane podane
           podczas rezerwacji są przetwarzane zgodnie z zasadami i polityką prywatności Booksy;
         </li>
         <li className="leading-8">
-          <strong>ZnanyLekarz</strong> — zewnętrzny widget informacyjny na stronie. Po przejściu do serwisu
+          <strong>ZnanyLekarz</strong> - zewnętrzny widget informacyjny na stronie. Po przejściu do serwisu
           ZnanyLekarz obowiązuje jego polityka prywatności (
           <a className="text-green underline" href="https://www.znanylekarz.pl/prywatnosc" rel="noopener noreferrer">
             https://www.znanylekarz.pl/prywatnosc
@@ -113,7 +113,7 @@ export default function Page() {
           );
         </li>
         <li className="leading-8">
-          <strong>Biuro rachunkowe lub księgowość</strong> — w zakresie faktur i rozliczeń;
+          <strong>Biuro rachunkowe lub księgowość</strong> - w zakresie faktur i rozliczeń;
         </li>
         <li className="leading-8">
           <strong>Podmioty świadczące usługi informatyczne i hostingowe</strong>.
@@ -126,17 +126,17 @@ export default function Page() {
       <h2 className="mt-8 text-3xl">Okres przechowywania danych</h2>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Wiadomości z formularza kontaktowego</strong> — do czasu obsługi sprawy, nie dłużej niż 12 miesięcy
+          <strong>Wiadomości z formularza kontaktowego</strong> - do czasu obsługi sprawy, nie dłużej niż 12 miesięcy
           od ostatniego kontaktu.
         </li>
         <li className="leading-8">
-          <strong>Faktury i dokumenty księgowe</strong> — 5 lat, zgodnie z przepisami podatkowymi.
+          <strong>Faktury i dokumenty księgowe</strong> - 5 lat, zgodnie z przepisami podatkowymi.
         </li>
         <li className="leading-8">
-          <strong>Dokumentacja związana z terapią</strong> — zgodnie z przepisami o dokumentacji medycznej (20 lat).
+          <strong>Dokumentacja związana z terapią</strong> - zgodnie z przepisami o dokumentacji medycznej (20 lat).
         </li>
         <li className="leading-8">
-          <strong>Dane analityczne (Google Analytics)</strong> — zgodnie z ustawieniami retencji Google Analytics.
+          <strong>Dane analityczne (Google Analytics)</strong> - zgodnie z ustawieniami retencji Google Analytics.
         </li>
       </ul>
 
@@ -150,7 +150,7 @@ export default function Page() {
         <li className="leading-8">prawo do przenoszenia danych,</li>
         <li className="leading-8">prawo do sprzeciwu,</li>
         <li className="leading-8">
-          prawo do wycofania zgody w dowolnym momencie — bez wpływu na zgodność z prawem przetwarzania, którego
+          prawo do wycofania zgody w dowolnym momencie - bez wpływu na zgodność z prawem przetwarzania, którego
           dokonano przed jej wycofaniem.
         </li>
       </ul>
@@ -176,14 +176,14 @@ export default function Page() {
       <p className="mt-3 leading-8">Na stronie używane są następujące rodzaje plików cookies:</p>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Cookies techniczne</strong> — niezbędne do prawidłowego działania strony.
+          <strong>Cookies techniczne</strong> - niezbędne do prawidłowego działania strony.
         </li>
         <li className="leading-8">
-          <strong>Cookies analityczne (Google Analytics 4)</strong> — uruchamiane dopiero po wyrażeniu zgody w banerze
+          <strong>Cookies analityczne (Google Analytics 4)</strong> - uruchamiane dopiero po wyrażeniu zgody w banerze
           cookies.
         </li>
         <li className="leading-8">
-          <strong>Cookies marketingowe</strong> — nie są stosowane.
+          <strong>Cookies marketingowe</strong> - nie są stosowane.
         </li>
       </ul>
       <p className="mt-3 leading-8">
@@ -193,7 +193,7 @@ export default function Page() {
 
       <h2 className="mt-8 text-3xl">Przekazywanie danych poza EOG</h2>
       <p className="mt-3 leading-8">
-        Dane mogą być przekazywane do Stanów Zjednoczonych (Google LLC — hosting, Firestore, Google Analytics).
+        Dane mogą być przekazywane do Stanów Zjednoczonych (Google LLC - hosting, Firestore, Google Analytics).
         Przekazywanie odbywa się na podstawie decyzji o adekwatności (Data Privacy Framework) lub standardowych klauzul
         umownych. Zapewnione są odpowiednie zabezpieczenia danych.
       </p>

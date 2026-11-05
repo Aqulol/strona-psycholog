@@ -25,11 +25,11 @@ const faq: [string, string][] = [
   ],
   [
     'Czy droższy terapeuta znaczy lepszy?',
-    'Nie. Cena zależy głównie od doświadczenia, rodzaju praktyki i lokalizacji. Najważniejszy jest dobry kontakt i poczucie bezpieczeństwa. Warto wybrać osobę, u której można regularnie pracować w ramach własnego budżetu — terapia bywa długim procesem.',
+    'Nie. Cena zależy głównie od doświadczenia, rodzaju praktyki i lokalizacji. Najważniejszy jest dobry kontakt i poczucie bezpieczeństwa. Warto wybrać osobę, u której można regularnie pracować w ramach własnego budżetu - terapia bywa długim procesem.',
   ],
   [
     'Po ilu spotkaniach powinienem/powinnam wiedzieć, że to dobry wybór?',
-    'Pierwsza konsultacja powinna dać wstępne poczucie bezpieczeństwa i jasność co do zasad współpracy. Pełną ocenę relacji warto zrobić po kilku spotkaniach. Jeśli po 3–4 sesjach nie czujesz, że jest to przestrzeń dla Ciebie, warto o tym powiedzieć terapeucie — to też część pracy.',
+    'Pierwsza konsultacja powinna dać wstępne poczucie bezpieczeństwa i jasność co do zasad współpracy. Pełną ocenę relacji warto zrobić po kilku spotkaniach. Jeśli po 3-4 sesjach nie czujesz, że jest to przestrzeń dla Ciebie, warto o tym powiedzieć terapeucie - to też część pracy.',
   ],
 ];
 
@@ -55,7 +55,7 @@ export default function Page() {
         <p className="mt-4 text-sm text-ink/70">20 sierpnia 2026</p>
         <p className="mt-6 leading-8 text-ink/80">
           Wybór terapeuty to jedna z najbardziej osobistych decyzji, jakie można podjąć.
-          Odpowiedź na pytanie „do kogo pójść” rzadko jest jednoznaczna — nie ma jednego
+          Odpowiedź na pytanie „do kogo pójść” rzadko jest jednoznaczna - nie ma jednego
           „najlepszego” specjalisty dla wszystkich. Liczą się kompetencje, nurt pracy,
           logistyka i przede wszystkim to, czy w kontakcie z daną osobą czujesz się
           wystarczająco bezpiecznie, aby mówić o trudnych sprawach. Poniżej praktyczny
@@ -65,16 +65,16 @@ export default function Page() {
         <h2 className="mt-12 text-4xl text-green">Psycholog, psychoterapeuta czy psychiatra?</h2>
         <p className="mt-4 leading-8 text-ink/80">
           To pierwszy krok: wiedzieć, jakich kompetencji szukasz. Psycholog to osoba po
-          studiach psychologicznych — może prowadzić konsultacje, diagnozę i wsparcie,
+          studiach psychologicznych - może prowadzić konsultacje, diagnozę i wsparcie,
           ale tytuł psychologa nie uprawnia sam w sobie do prowadzenia psychoterapii.
           Psychoterapeuta to osoba, która ukończyła dodatkowe, kilkuletnie szkolenie
           psychoterapeutyczne (akredytowane przez towarzystwo, np. Polskie Towarzystwo
           Psychoterapii Psychodynamicznej, lub podobne organizacje). Psychiatra jest
-          lekarzem — diagnozuje zaburzenia i może włączyć leczenie farmakologiczne.
+          lekarzem - diagnozuje zaburzenia i może włączyć leczenie farmakologiczne.
         </p>
         <p className="mt-4 leading-8 text-ink/80">
           Te role często się uzupełniają: część osób korzysta równolegle z psychoterapii
-          i opieki psychiatrycznej. Nie ma „lepszych” i „gorszych” zawodów — chodzi o to,
+          i opieki psychiatrycznej. Nie ma „lepszych” i „gorszych” zawodów - chodzi o to,
           co jest potrzebne w Twojej sytuacji.
         </p>
 
@@ -86,18 +86,18 @@ export default function Page() {
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-6 leading-8 text-ink/80">
           <li>
-            <strong>Psychoterapia psychodynamiczna</strong> — koncentruje się na emocjach,
+            <strong>Psychoterapia psychodynamiczna</strong> - koncentruje się na emocjach,
             nieświadomych wzorcach, relacjach i wpływie przeszłości na teraźniejszość.
             Dobra opcja, jeśli chcesz rozumieć „skąd się to bierze” i pracować głębiej.
           </li>
           <li>
-            <strong>Terapia poznawczo-behawioralna (CBT)</strong> — pracuje głównie z
+            <strong>Terapia poznawczo-behawioralna (CBT)</strong> - pracuje głównie z
             myślami i zachowaniami w teraźniejszości; częściej polecana przy konkretnych
             objawach (np. lęk napadowy, fobie) i krótszych, celowanych formach pracy.
           </li>
           <li>
             <strong>Inne nurty</strong> (humanistyczny, Gestalt, systemowy, psychoterapia
-            online) — różnią się akcentami; warto zapytać terapeutę, jak pracuje, zamiast
+            online) - różnią się akcentami; warto zapytać terapeutę, jak pracuje, zamiast
             wybierać wyłącznie po nazwie nurtu.
           </li>
         </ul>
@@ -108,7 +108,7 @@ export default function Page() {
 
         <h2 className="mt-12 text-4xl text-green">Na co zwrócić uwagę przy wyborze</h2>
         <p className="mt-4 leading-8 text-ink/80">
-          Zanim umówisz pierwszą wizytę, warto sprawdzić kilka rzeczy — to standard,
+          Zanim umówisz pierwszą wizytę, warto sprawdzić kilka rzeczy - to standard,
           a nie przejaw braku zaufania:
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-6 leading-8 text-ink/80">
@@ -124,19 +124,19 @@ export default function Page() {
           </li>
           <li>
             <strong>Doświadczenie w Twoim obszarze.</strong> Jeśli zgłaszasz się z lękiem,
-            kryzysem, trudnościami w relacjach czy wypaleniem — zapytaj, czy pracował
+            kryzysem, trudnościami w relacjach czy wypaleniem - zapytaj, czy pracował
             z podobnymi sprawami.
           </li>
           <li>
             <strong>Zasady współpracy.</strong> Cena, czas sesji, częstotliwość, zasady
-            odwołań i kontrakt — powinny być jasne od początku.
+            odwołań i kontrakt - powinny być jasne od początku.
           </li>
         </ul>
 
-        <h2 className="mt-12 text-4xl text-green">Pierwsza konsultacja — jak ją wykorzystać</h2>
+        <h2 className="mt-12 text-4xl text-green">Pierwsza konsultacja - jak ją wykorzystać</h2>
         <p className="mt-4 leading-8 text-ink/80">
           Pierwsze spotkanie to nie egzamin, tylko wzajemne poznanie. Możesz przygotować
-          sobie kilka pytań — to sygnał zaangażowania, a nie przeszkoda:
+          sobie kilka pytań - to sygnał zaangażowania, a nie przeszkoda:
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-6 leading-8 text-ink/80">
           <li>Jak wygląda Pana/Pani sposób pracy? Jak często i jak długo zwykle trwa terapia?</li>
@@ -147,11 +147,11 @@ export default function Page() {
         <p className="mt-4 leading-8 text-ink/80">
           Po spotkaniu warto zapytać siebie: czy czułem/czułam się wysłuchany? Czy nie
           było oceniania i pośpiechu? Czy zasady były jasne? Intensywność pierwszych emocji
-          jest naturalna — ale poczucie bezpieczeństwa i szacunku to fundament, na którym
+          jest naturalna - ale poczucie bezpieczeństwa i szacunku to fundament, na którym
           można budować dalszą pracę.
         </p>
 
-        <h2 className="mt-12 text-4xl text-green">Czerwone flagi — czego unikać</h2>
+        <h2 className="mt-12 text-4xl text-green">Czerwone flagi - czego unikać</h2>
         <p className="mt-4 leading-8 text-ink/80">
           Są zachowania, które zawsze powinny wzbudzić czujność, niezależnie od tytułów
           i referencji:
@@ -170,7 +170,7 @@ export default function Page() {
 
         <h2 className="mt-12 text-4xl text-green">Logistyka: online czy stacjonarnie?</h2>
         <p className="mt-4 leading-8 text-ink/80">
-          Terapia online sprawdza się dobrze w wielu przypadkach — eliminuje dojazdy i
+          Terapia online sprawdza się dobrze w wielu przypadkach - eliminuje dojazdy i
           ułatwia regularność. Terapia stacjonarna daje pełny kontakt, własną przestrzeń
           i rytuał wyjścia z codzienności. Nie ma jednej słusznej opcji; warto uwzględnić
           to, co realnie utrzyma Cię w regularnym rytmie spotkań. Często można też łączyć
@@ -189,7 +189,7 @@ export default function Page() {
           <a href="/cennik/" className="text-green underline">
             podstronie z cennikiem
           </a>{' '}
-          — tam też opisane są różnice między konsultacją a regularną psychoterapią.
+          - tam też opisane są różnice między konsultacją a regularną psychoterapią.
         </p>
 
         <h2 className="mt-12 text-4xl text-green">Najczęściej zadawane pytania</h2>
@@ -212,13 +212,13 @@ export default function Page() {
           </li>
           <li>
             <a href="/blog/dlaczego-sama-swiadomosc-nie-wystarcza/" className="text-lg font-medium text-green underline hover:text-green/80">
-              „Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?
+              „Wiem, skąd to się bierze, ale nadal tak robię” - dlaczego sama świadomość nie wystarcza?
             </a>
             <p className="mt-1 leading-7 text-ink/70">czym różni się rozumienie od przepracowania</p>
           </li>
           <li>
             <a href="/cennik/" className="text-lg font-medium text-green underline hover:text-green/80">
-              Cennik wizyt — Wrocław
+              Cennik wizyt - Wrocław
             </a>
             <p className="mt-1 leading-7 text-ink/70">konsultacja i psychoterapia, stacjonarnie i online</p>
           </li>

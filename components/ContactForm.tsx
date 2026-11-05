@@ -6,7 +6,7 @@ import Input from './Input';
 import { config } from '../lib/config';
 import { track } from '../lib/analytics';
 
-// Firebase Web SDK — inicjalizujemy tylko, gdy właściciel wpisał prawdziwy
+// Firebase Web SDK - inicjalizujemy tylko, gdy właściciel wpisał prawdziwy
 // apiKey (zamiast placeholdera „TU-WPISZ-..."). W wariancie darmowym (Spark)
 // formularz zapisuje wiadomości bezpośrednio do Firestore z przeglądarki.
 import { initializeApp, getApps, getApp } from 'firebase/app';
@@ -21,7 +21,7 @@ function isFirebaseConfigured(): boolean {
   return !config.firebaseConfig.apiKey.startsWith('TU-WPISZ');
 }
 
-/** Inicjalizacja Firebase — tylko raz, tylko gdy config jest uzupełniony. */
+/** Inicjalizacja Firebase - tylko raz, tylko gdy config jest uzupełniony. */
 function getDb() {
   const app = getApps().length ? getApp() : initializeApp(config.firebaseConfig);
   return getFirestore(app);
@@ -40,7 +40,7 @@ function isValidContact(value: string): boolean {
 }
 
 /**
- * Formularz kontaktowy — walidacja klient-side, honeypot i zapis
+ * Formularz kontaktowy - walidacja klient-side, honeypot i zapis
  * bezpośrednio do Firestore (wariant darmowy, bez Cloud Functions).
  *
  * Komponent ładuje się LENIWIE (React.lazy w components/Contact.tsx),
@@ -79,7 +79,7 @@ export default function ContactForm() {
 
     if (!validate()) return;
 
-    // Jeśli właściciel nie uzupełnił jeszcze firebaseConfig — nie próbuj
+    // Jeśli właściciel nie uzupełnił jeszcze firebaseConfig - nie próbuj
     // zapisu, pokaż komunikat z prośbą o kontakt telefoniczny.
     if (!isFirebaseConfigured()) {
       setState('unconfigured');
@@ -143,7 +143,7 @@ export default function ContactForm() {
         onChange={setMessage}
       />
 
-      {/* Honeypot – ukryte pole antyspamowe */}
+      {/* Honeypot - ukryte pole antyspamowe */}
       <div className="hidden" aria-hidden="true">
         <label htmlFor="website">Nie wypełniaj tego pola</label>
         <input

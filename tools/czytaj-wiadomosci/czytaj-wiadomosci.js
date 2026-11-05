@@ -2,10 +2,10 @@
 /*
  * czytaj-wiadomosci.js
  * Prosty program do odczytu wiadomosci z formularza kontaktowego
- * (Firestore, kolekcja "messages" — projekt psychologplebaniak-e4480).
+ * (Firestore, kolekcja "messages" - projekt psychologplebaniak-e4480).
  *
  * Wymagania: Node.js 20 lub nowszy.
- * Bez dodatkowych pakietow — program uzywa tylko modulow Node.js.
+ * Bez dodatkowych pakietow - program uzywa tylko modulow Node.js.
  *
  * Uruchomienie z katalogu glownego repozytorium:
  *   node tools/czytaj-wiadomosci/czytaj-wiadomosci.js

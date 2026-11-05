@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://psychologplebaniak.pl'),
   // UWAGA: NIE ustawiamy tu globalnego alternates.canonical! Poprzednio
   // canonical: '/' był dziedziczony przez WSZYSTKIE podstrony (blog, artykuły,
-  // polityka prywatności) — każda z nich wskazywała kanonikal na stronę główną,
+  // polityka prywatności) - każda z nich wskazywała kanonikal na stronę główną,
   // przez co Google traktował je jako duplikaty '/' i nie indeksował artykułów.
   // Kanonikale są teraz ustawiane per-podstrona (Next.js generuje je
   // automatycznie z adresu URL lub jawnie w metadata danej strony).
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Psycholog Wrocław | Grzegorz Plebaniak',
     description: 'Psycholog we Wrocławiu: konsultacje i psychoterapia psychodynamiczna dla dorosłych, stacjonarnie i online.',
-    siteName: 'Grzegorz Plebaniak – psycholog i psychoterapeuta',
+    siteName: 'Grzegorz Plebaniak - psycholog i psychoterapeuta',
     images: [socialImage],
     type: 'website',
     locale: 'pl_PL',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pl">
-      {/* ===== Weryfikacja Google Search Console — AKTYWNA =====
+      {/* ===== Weryfikacja Google Search Console - AKTYWNA =====
           Tag google-site-verification wstrzyknięty w <head> poniżej
           (content CzlhzCDS5zGi-A7dtgAl5kU80WTzUisLFFLmqwd5wD4),
           dodany 2026-08-19. Sitemap do zgłoszenia: /sitemap.xml. */}
@@ -58,7 +58,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           i preconnect do domen zewnętrznych faktycznie używanych na stronie:
           widget ZnanyLekarz (platform.docplanner.com), kalendarz Booksy
           (booksy.com), osadzona mapa Google (www.google.com) i GTM/GA4
-          (www.googletagmanager.com, ładowane po zgodzie na cookies). Fonty są hostowane lokalnie w /fonts — build
+          (www.googletagmanager.com, ładowane po zgodzie na cookies). Fonty są hostowane lokalnie w /fonts - build
           nie pobiera nic z fonts.gstatic.com.
           Tagi <link> wstrzyknięte w <head> jako surowy HTML, aby trafiły do
           <head> DOKŁADNIE RAZ: elementy <link> renderowane w drzewie React

@@ -54,4 +54,4 @@ node tools/czytaj-wiadomosci/czytaj-wiadomosci.js "C:\bezpieczne-miejsce\service
 
 Możesz też ustawić zmienną środowiskową `GOOGLE_APPLICATION_CREDENTIALS` na
 pełną ścieżkę do pliku klucza. Program wyświetla maksymalnie 500 najnowszych
-wiadomości. Odczytuje dane — niczego nie usuwa ani nie zmienia.
+wiadomości. Odczytuje dane - niczego nie usuwa ani nie zmienia.

@@ -15,12 +15,12 @@ import { websiteOpenGraph } from '../lib/seoMetadata';
 const priceValues = config.prices.map((p) => p.price);
 const minPrice = Math.min(...priceValues);
 const maxPrice = Math.max(...priceValues);
-const priceRange = minPrice === maxPrice ? `${minPrice} zł` : `${minPrice}–${maxPrice} zł`;
+const priceRange = minPrice === maxPrice ? `${minPrice} zł` : `${minPrice}-${maxPrice} zł`;
 const konsultacja = config.prices.find((p) => p.key === 'konsultacja')!;
 const psychoterapia = config.prices.find((p) => p.key === 'psychoterapia')!;
 const priceAnswer = `Konsultacja kosztuje ${konsultacja.price} zł, sesja psychoterapii ${psychoterapia.price} zł. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.`;
 
-/** Strona główna — jawny kanonikal '/' i og:url (layout nie narzuca już
+/** Strona główna - jawny kanonikal '/' i og:url (layout nie narzuca już
  *  canonical globalnie, żeby nie zerować kanonikali podstron). */
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Strona główna – sekcje ułożone jak puzzle:
+ * Strona główna - sekcje ułożone jak puzzle:
  * Hero → O mnie → Obszary pomocy → Metoda pracy → Gabinet → FAQ → Blog → Kontakt.
  */
 export default function Home() {
@@ -138,7 +138,7 @@ export default function Home() {
     <>
       {/* Preload portretu z hero (LCP) generuje automatycznie Next.js
           (image preloading w Next 15) na bazie <img loading="eager"
-          fetchPriority="high"> w Hero — nie duplikujemy go ręcznie. */}
+          fetchPriority="high"> w Hero - nie duplikujemy go ręcznie. */}
       <Header />
       <main id="tresc">
         <Hero />

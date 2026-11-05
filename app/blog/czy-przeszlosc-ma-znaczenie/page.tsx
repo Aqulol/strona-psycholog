@@ -138,7 +138,7 @@ export default function Page() {
         Psychoterapia psychodynamiczna we Wrocławiu lub online nie powinna zatrzymywać osoby w
         przeszłości. Jej zadaniem jest zwiększenie swobody w teraźniejszości: możliwość budowania innych relacji,
         łagodniejszego traktowania siebie i bardziej adekwatnego reagowania na bieżące sytuacje. Przeszłość ma
-        znaczenie, ale nie jest przeznaczeniem. Właśnie dlatego warto ją rozumieć — aby nie musiała nieświadomie
+        znaczenie, ale nie jest przeznaczeniem. Właśnie dlatego warto ją rozumieć - aby nie musiała nieświadomie
         decydować o przyszłości.
       </p>
 

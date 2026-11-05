@@ -57,8 +57,8 @@ export default function Page() {
         Co dzieje się między pacjentem a terapeutą? Rozmowa w gabinecie może z zewnątrz przypominać każdą inną
         rozmowę, ale relacja terapeutyczna ma szczególną strukturę i cel. Nie jest przyjaźnią, poradnictwem ani jednostronną analizą pacjenta. W
         psychoterapii psychodynamicznej stanowi jednocześnie bezpieczne środowisko pracy i źródło informacji o
-        sposobie przeżywania relacji. To, co pojawia się między osobą w terapii a terapeutą — zaufanie,
-        ostrożność, złość, wstyd, idealizacja czy obawa przed oceną — może pomóc zrozumieć wzorce trudne do
+        sposobie przeżywania relacji. To, co pojawia się między osobą w terapii a terapeutą - zaufanie,
+        ostrożność, złość, wstyd, idealizacja czy obawa przed oceną - może pomóc zrozumieć wzorce trudne do
         uchwycenia wyłącznie poprzez opowiadanie o nich.
       </p>
 
@@ -79,7 +79,7 @@ export default function Page() {
       <p className="mt-4 leading-8 text-ink/80">
         Przeniesienie to tendencja do przeżywania aktualnej relacji przez pryzmat wcześniejszych doświadczeń,
         oczekiwań i fantazji. W terapii może pojawić się przekonanie, że terapeuta jest rozczarowany, znudzony,
-        kontrolujący albo wyjątkowo idealny — nawet gdy dostępne fakty nie dają jednoznacznych podstaw do takiej
+        kontrolujący albo wyjątkowo idealny - nawet gdy dostępne fakty nie dają jednoznacznych podstaw do takiej
         oceny. Nie jest to świadome udawanie ani błąd, który należy szybko skorygować.
       </p>
       <p className="mt-4 leading-8 text-ink/80">

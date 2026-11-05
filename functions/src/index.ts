@@ -39,7 +39,7 @@ const SECRETS = [SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_TO, SITE_URL];
 
 /**
  * Bezpieczny odczyt sekretu: zwraca wartość sekretu (secret.value()),
- * a jeśli sekret nie został ustawiony – fallback. Dzięki temu funkcja
+ * a jeśli sekret nie został ustawiony - fallback. Dzięki temu funkcja
  * działa również lokalnie / testowo: zgłoszenie trafia wtedy do Firestore,
  * a wysyłka SMTP jest pomijana (patrz obsługa w sendContactForm).
  */
@@ -73,7 +73,7 @@ type FormData = z.infer<typeof formSchema>;
 
 function corsHeaders(origin: string | undefined): Record<string, string> {
   // SITE_URL to produkcyjna domena (np. https://psychologplebaniak.pl), ustawiana sekretem.
-  // Domyślnie „*” – wygodne testowo; właściciel powinien ustawić dokładną domenę.
+  // Domyślnie „*” - wygodne testowo; właściciel powinien ustawić dokładną domenę.
   const allowed = readSecret(SITE_URL, '*') || '*';
   const permitted = allowed === '*' || (origin && origin === allowed) ? (origin || allowed) : allowed;
   return {
@@ -125,7 +125,7 @@ export const sendContactForm = onRequest(
         await transporter.sendMail({
           from: user,
           to,
-          subject: `Nowa wiadomość ze strony – ${data.name}`,
+          subject: `Nowa wiadomość ze strony - ${data.name}`,
           text: `Imię: ${data.name}\nKontakt: ${data.contact}\n\nWiadomość:\n${data.message}\n\nZgoda RODO: tak`,
         });
       } else {

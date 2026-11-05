@@ -1,14 +1,14 @@
-# Firebase Functions — formularz kontaktowy
+# Firebase Functions - formularz kontaktowy
 
-> **Wariant funkcji (wymaga planu Blaze) — NIEUŻYWANY w obecnym wdrożeniu.**
+> **Wariant funkcji (wymaga planu Blaze) - NIEUŻYWANY w obecnym wdrożeniu.**
 > Formularz zapisuje wiadomości bezpośrednio w Firestore
 > (z przeglądarki, bez Cloud Functions). Poniższy opis dotyczy wariantu
-> przyszłościowego — gdyby właściciel zdecydował się na plan Blaze i
+> przyszłościowego - gdyby właściciel zdecydował się na plan Blaze i
 > automatyczne wysyłanie wiadomości e-mail przez SMTP. Do działania
 > wymaga planu Blaze (płatnego) oraz ustawienia sekretów SMTP.
 
 Funkcja `sendContactForm` zapisuje zgłoszenia w Firestore i wysyła je przez SMTP.
-Nie zawiera żadnych sekretów w repozytorium — wszystkie wrażliwe wartości są
+Nie zawiera żadnych sekretów w repozytorium - wszystkie wrażliwe wartości są
 deklarowane w kodzie przez `defineSecret` (z `firebase-functions/params`)
 i dostarczane funkcji przez Cloud Functions (opcja `secrets` w `onRequest`).
 
@@ -30,19 +30,19 @@ firebase functions:secrets:set SITE_URL
 
 CLI poprosi o wartość każdego sekretu po kolei. Sugerowane wartości:
 
-- `SMTP_HOST` — serwer poczty wychodzącej (np. `smtp.gmail.com`),
-- `SMTP_PORT` — zwykle `587` (STARTTLS) albo `465` (TLS),
-- `SMTP_USER` — login do skrzynki nadawcy,
-- `SMTP_PASS` — hasło do skrzynki nadawcy,
-- `MAIL_TO` — adres odbiorcy wiadomości z formularza; domyślnie (jeśli nie ustawisz) `gpplebaniak@gmail.com`,
-- `SITE_URL` — domena produkcyjna, np. `https://psychologplebaniak.pl`; jeśli nie ustawisz, CORS użyje `*` (wygodne testowo, ale nie na produkcję).
+- `SMTP_HOST` - serwer poczty wychodzącej (np. `smtp.gmail.com`),
+- `SMTP_PORT` - zwykle `587` (STARTTLS) albo `465` (TLS),
+- `SMTP_USER` - login do skrzynki nadawcy,
+- `SMTP_PASS` - hasło do skrzynki nadawcy,
+- `MAIL_TO` - adres odbiorcy wiadomości z formularza; domyślnie (jeśli nie ustawisz) `gpplebaniak@gmail.com`,
+- `SITE_URL` - domena produkcyjna, np. `https://psychologplebaniak.pl`; jeśli nie ustawisz, CORS użyje `*` (wygodne testowo, ale nie na produkcję).
 
 > **Ważne:** sekret musi istnieć ZANIM wdrożysz funkcję. Wdrożenie funkcji,
 > która odwołuje się do nieustawionego sekretu, zakończy się błędem
 > (CLI wskaże, którego sekretu brakuje). Po ustawieniu (lub zmianie) sekretu
 > trzeba **ponownie wdrożyć funkcję**: `firebase deploy --only functions`.
 
-Sekrety są przechowywane w Google Cloud Secret Manager — nie ma ich w repo,
+Sekrety są przechowywane w Google Cloud Secret Manager - nie ma ich w repo,
 więc można bezpiecznie commitować kod.
 
 ## Instalacja i wdrożenie
@@ -77,13 +77,13 @@ Funkcja akceptuje również docelową nazwę `rodoConsent`.
 
 Odpowiedzi:
 
-- `200` — `{ "ok": true }` (także dla wypełnionego honeypota, bez zapisu),
-- `400` — `{ "ok": false, "error": "..." }` dla niepoprawnych danych,
-- `405` — `{ "ok": false, "error": "..." }` dla innej metody,
-- `500` — `{ "ok": false, "error": "..." }` przy błędzie zapisu lub wysyłki.
+- `200` - `{ "ok": true }` (także dla wypełnionego honeypota, bez zapisu),
+- `400` - `{ "ok": false, "error": "..." }` dla niepoprawnych danych,
+- `405` - `{ "ok": false, "error": "..." }` dla innej metody,
+- `500` - `{ "ok": false, "error": "..." }` przy błędzie zapisu lub wysyłki.
 
 ## Do wdrożenia potrzebne są
 
 ID projektu Firebase (gotowe: `psychologplebaniak-e4480`), dane SMTP
-(4 sekrety `SMTP_*`), docelowy adres e-mail (`MAIL_TO`, opcjonalnie —
+(4 sekrety `SMTP_*`), docelowy adres e-mail (`MAIL_TO`, opcjonalnie -
 domyślny jest już w kodzie) oraz produkcyjna domena (`SITE_URL`).

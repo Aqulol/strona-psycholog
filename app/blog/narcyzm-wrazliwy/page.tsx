@@ -76,7 +76,7 @@ export default function Page() {
         </p>
         <p className="mt-4 leading-8 text-ink/80">
           Nie musi ono oznaczać stałego przekonania o własnej wyjątkowości. Czasami człowiek może czuć się bardzo
-          wartościowy, kompetentny czy wyjątkowy, a innym razem — zupełnie niewystarczający.
+          wartościowy, kompetentny czy wyjątkowy, a innym razem - zupełnie niewystarczający.
         </p>
         <p className="mt-4 leading-8 text-ink/80">Może pojawiać się wewnętrzne przechodzenie między:</p>
         <blockquote className="mt-4 border-l-2 border-gold pl-5 text-lg leading-8 text-ink/80">
@@ -111,7 +111,7 @@ export default function Page() {
           Narcyzm wrażliwy może być szczególnie widoczny w relacjach.
         </p>
         <p className="mt-4 leading-8 text-ink/80">
-          Z jednej strony pojawia się silna potrzeba bycia zauważonym, ważnym i bliskim drugiej osobie. Z drugiej —
+          Z jednej strony pojawia się silna potrzeba bycia zauważonym, ważnym i bliskim drugiej osobie. Z drugiej -
           obawa, że pokazanie własnych potrzeb może prowadzić do odrzucenia, rozczarowania albo utraty kontroli
           nad sytuacją.
         </p>
@@ -136,7 +136,7 @@ export default function Page() {
         </p>
         <p className="mt-4 leading-8 text-ink/80">
           Nie chodzi o to, że jedna z tych ocen musi być prawdziwa, a druga fałszywa. Trudność może polegać na
-          tym, że w silnych emocjach trudno jednocześnie dostrzec różne strony tej samej osoby — jej zalety,
+          tym, że w silnych emocjach trudno jednocześnie dostrzec różne strony tej samej osoby - jej zalety,
           wady, dobre intencje i rozczarowujące zachowania.
         </p>
 
@@ -146,7 +146,7 @@ export default function Page() {
         </p>
         <p className="mt-4 leading-8 text-ink/80">
           Czasami jest widoczna jako otwarty konflikt lub gwałtowny wybuch. Innym razem może przyjmować bardziej
-          wycofaną postać — chłód, dystans, sarkazm, milczenie albo długo przeżywaną urazę.
+          wycofaną postać - chłód, dystans, sarkazm, milczenie albo długo przeżywaną urazę.
         </p>
         <p className="mt-4 leading-8 text-ink/80">
           Szczególnie silna złość może pojawić się wtedy, gdy człowiek czuje się upokorzony, pominięty, odrzucony
@@ -221,7 +221,7 @@ export default function Page() {
 
         <h2 className="mt-12 text-4xl text-green">Jak psychoterapia może pomóc?</h2>
         <p className="mt-4 leading-8 text-ink/80">
-          W psychoterapii psychodynamicznej można przyglądać się temu, co dzieje się w relacjach — zarówno tych
+          W psychoterapii psychodynamicznej można przyglądać się temu, co dzieje się w relacjach - zarówno tych
           poza gabinetem, jak i w samej relacji terapeutycznej.
         </p>
         <p className="mt-4 leading-8 text-ink/80">
@@ -242,7 +242,7 @@ export default function Page() {
           widzą nas inni.
         </p>
         <p className="mt-4 leading-8 text-ink/80">
-          A wtedy można stopniowo zyskać więcej swobody — w relacjach, w podejmowaniu wyzwań i przede wszystkim w
+          A wtedy można stopniowo zyskać więcej swobody - w relacjach, w podejmowaniu wyzwań i przede wszystkim w
           sposobie przeżywania samego siebie.
         </p>
 
@@ -251,7 +251,7 @@ export default function Page() {
           <li>
             Cain, N. M., Pincus, A. L., &amp; Ansell, E. B. (2008). Narcissism at the crossroads: Phenotypic
             description of pathological narcissism across clinical theory, social/personality psychology, and
-            psychiatric diagnosis. <em>Clinical Psychology Review, 28</em>(4), 638–656.{' '}
+            psychiatric diagnosis. <em>Clinical Psychology Review, 28</em>(4), 638-656.{' '}
             <a
               className="text-green underline"
               href="https://doi.org/10.1016/j.cpr.2007.09.006"
@@ -263,7 +263,7 @@ export default function Page() {
           </li>
           <li>
             Pincus, A. L., &amp; Lukowitsky, M. R. (2010). Pathological narcissism and narcissistic personality
-            disorder. <em>Annual Review of Clinical Psychology, 6</em>, 421–446.{' '}
+            disorder. <em>Annual Review of Clinical Psychology, 6</em>, 421-446.{' '}
             <a
               className="text-green underline"
               href="https://doi.org/10.1146/annurev.clinpsy.121208.131215"
