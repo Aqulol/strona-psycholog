@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 
 export const socialImage = {
   url: '/og-image.png',
-  alt: 'Grzegorz Plebaniak – psycholog i psychoterapeuta we Wrocławiu',
+  alt: 'Grzegorz Plebaniak - psycholog i psychoterapeuta we Wrocławiu',
   width: 1200,
   height: 630,
   type: 'image/png',
 };
 
 const socialIdentity = {
-  siteName: 'Grzegorz Plebaniak – psycholog i psychoterapeuta',
+  siteName: 'Grzegorz Plebaniak - psycholog i psychoterapeuta',
   locale: 'pl_PL' as const,
   images: [socialImage],
 };

@@ -4,11 +4,11 @@ import { useEffect } from 'react';
 import { config } from '../lib/config';
 
 /**
- * Widget ZnanyLekarz — certyfikat zaufania (typ "certificate").
+ * Widget ZnanyLekarz - certyfikat zaufania (typ "certificate").
  *
  * Kod osadzenia dostarczony przez właściciela (platform.docplanner.com).
  * Anchor jest renderowany serwerowo (statyczny eksport → trafia do out/),
- * a widget.js jest ładowany po stronie klienta — przez useEffect, dopiero
+ * a widget.js jest ładowany po stronie klienta - przez useEffect, dopiero
  * po hydratacji (wzorzec jak w components/Contact.tsx). Dzięki temu
  * skrypt nie startuje przed hydratacją Reacta i widget nie jest cofany
  * przez re-render. Guard na #zl-widget-s zapobiega zduplikowaniu skryptu.

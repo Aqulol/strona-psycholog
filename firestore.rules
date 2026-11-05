@@ -3,13 +3,13 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     // ============================================================
-    // Formularz kontaktowy (wariant darmowy — zapis z przeglądarki).
+    // Formularz kontaktowy (wariant darmowy - zapis z przeglądarki).
     // Każdy (bez logowania) może utworzyć dokument w kolekcji
     // „messages", ale TYLKO z dopuszczonymi polami i typami.
     // Pola wymagane: name (string), contact (string),
     //                message (string), rodoConsent (bool).
     // Pole opcjonalne: createdAt (ustawiane przez serverTimestamp()).
-    // Odczyt/aktualizacja/usuwanie — tylko dla uwierzytelnionych
+    // Odczyt/aktualizacja/usuwanie - tylko dla uwierzytelnionych
     // (czyli właściciela projektu w konsoli Firebase).
     // ============================================================
     match /messages/{messageId} {
@@ -21,7 +21,7 @@ service cloud.firestore {
                     && request.resource.data.message is string
                     && request.resource.data.rodoConsent is bool
                     && request.resource.data.rodoConsent == true
-                    // createdAt dodawany jest przez serverTimestamp() —
+                    // createdAt dodawany jest przez serverTimestamp() -
                     // dopuszczamy je (opcjonalnie), ale blokujemy
                     // jakiekolwiek inne pola.
                     && (request.resource.data.keys().size() == 4

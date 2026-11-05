@@ -4,11 +4,11 @@ import { config } from '../lib/config';
 import { track } from '../lib/analytics';
 
 /**
- * Widget kalendarza Booksy — osadzony w stronie (inline).
+ * Widget kalendarza Booksy - osadzony w stronie (inline).
  *
  * Kod powstał w oparciu o integrację Booksy (Business Settings → Online
  * Booking → Your Website). Unikalny identyfikator gabinetu pochodzi z
- * lib/config.ts (config.booksyId) — wystarczy go wpisać w jednym miejscu.
+ * lib/config.ts (config.booksyId) - wystarczy go wpisać w jednym miejscu.
  *
  * Kalendarz jest ładowany w <iframe> (pełny, osadzony widok dostępności),
  * dzięki czemu nie wymaga `<script>` od strony klienta i nie jest cofany
@@ -22,7 +22,7 @@ export default function BooksyCalendar() {
   const src = `https://booksy.com/widget/index.html?id=${encodeURIComponent(id)}&lang=pl&country=pl`;
 
   // Gdy booksyId nie jest jeszcze wpisane w lib/config.ts, pokazujemy
-  // przyjazny fallback z przyciskiem do rezerwacji — zamiast komunikatu
+  // przyjazny fallback z przyciskiem do rezerwacji - zamiast komunikatu
   // technicznego przeznaczonego dla dewelopera.
   if (!hasId) {
     return (
@@ -46,7 +46,7 @@ export default function BooksyCalendar() {
   return (
     <div className="overflow-hidden rounded-lg border border-border">
       <iframe
-        title="Rezerwacja wizyty online — Booksy"
+        title="Rezerwacja wizyty online - Booksy"
         src={src}
         className="block h-[780px] w-full lg:h-[920px]"
         style={{ border: 0 }}

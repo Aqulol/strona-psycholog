@@ -1,7 +1,7 @@
 import BlogRedirect from '../_BlogRedirect';
 
 export const metadata = {
-  title: 'Przeniesiono artykuł — Dlaczego ciągle wybieram podobnych partnerów?',
+  title: 'Przeniesiono artykuł - Dlaczego ciągle wybieram podobnych partnerów?',
   robots: { index: false, follow: true },
 };
 

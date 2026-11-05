@@ -5,7 +5,7 @@ import { CalendarPlus } from 'lucide-react';
 import { track } from '../lib/analytics';
 
 /**
- * Sticky bottom CTA bar – tylko na mobile (<lg).
+ * Sticky bottom CTA bar - tylko na mobile (<lg).
  * Na podstronach prowadzi do sekcji kontakt strony głównej (/#kontakt).
  */
 export default function MobileCtaBar() {

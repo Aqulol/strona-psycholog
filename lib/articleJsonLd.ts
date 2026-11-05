@@ -27,7 +27,7 @@ export function articleJsonLd(opts: {
         author: { '@type': 'Person', name: 'Grzegorz Plebaniak' },
         publisher: {
           '@type': 'LocalBusiness',
-          name: 'Grzegorz Plebaniak – gabinet psychologiczny',
+          name: 'Grzegorz Plebaniak - gabinet psychologiczny',
           url: 'https://psychologplebaniak.pl',
         },
         datePublished: opts.datePublished,

@@ -17,7 +17,7 @@ const posts = [
   },
   {
     href: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/',
-    title: '„Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?',
+    title: '„Wiem, skąd to się bierze, ale nadal tak robię” - dlaczego sama świadomość nie wystarcza?',
     date: '11 sierpnia 2026',
     lead: 'Można trafnie rozumieć własny problem, znać jego historię i mimo to reagować tak samo.',
   },
@@ -29,7 +29,7 @@ const posts = [
   },
 ];
 
-/** Sekcja „Blog / Artykuły” na stronie głównej – karty wpisów. */
+/** Sekcja „Blog / Artykuły” na stronie głównej - karty wpisów. */
 export default function BlogSection() {
   return (
     <section id="blog" className="section bg-cream">

@@ -35,7 +35,7 @@ const areas = [
   },
 ];
 
-/** Sekcja „Obszary pomocy” – 6 kafelków z ikonami lucide. */
+/** Sekcja „Obszary pomocy” - 6 kafelków z ikonami lucide. */
 export default function Areas() {
   return (
     <section id="obszary" className="section bg-pale">

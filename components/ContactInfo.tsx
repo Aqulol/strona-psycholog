@@ -7,11 +7,11 @@ import BooksyCalendar from './BooksyCalendar';
 import { track } from '../lib/analytics';
 
 /**
- * Statyczna część sekcji „Kontakt" — renderuje JEDEN rząd (grid lg:grid-cols-2):
+ * Statyczna część sekcji „Kontakt" - renderuje JEDEN rząd (grid lg:grid-cols-2):
  *   - kolumna 1: dane kontaktowe (lista z ikonami) + POD nimi blok „Cennik"
  *     (karty cen z config.prices + stopka „Stacjonarnie i online..."), jedna
  *     karta;
- *   - kolumna 2: „Rezerwacja online" — widget kalendarza Booksy (inline),
+ *   - kolumna 2: „Rezerwacja online" - widget kalendarza Booksy (inline),
  *     na desktopie zajmujący połowę szerokości (większy, czytelniejszy);
  *   - formularz wiadomości (children), przekazany z Contact.tsx, renderowany
  *     PONIŻEJ rzędu, na całą szerokość.
@@ -27,7 +27,7 @@ export default function ContactInfo({ children }: { children?: ReactNode }) {
     { icon: Phone, label: 'Telefon', value: config.phone, href: `tel:${config.phone.replace(/\s/g, '')}` },
     { icon: Mail, label: 'E-mail', value: config.email, href: `mailto:${config.email}` },
     { icon: MapPin, label: 'Adres', value: config.address },
-    { icon: Clock, label: 'Godziny przyjęć', value: 'Aktualne terminy w kalendarzu online – rezerwacja przez Booksy.' },
+    { icon: Clock, label: 'Godziny przyjęć', value: 'Aktualne terminy w kalendarzu online - rezerwacja przez Booksy.' },
   ];
 
   return (
@@ -62,7 +62,7 @@ export default function ContactInfo({ children }: { children?: ReactNode }) {
           ))}
         </ul>
 
-        {/* Cennik — poniżej danych kontaktowych, w tej samej karcie */}
+        {/* Cennik - poniżej danych kontaktowych, w tej samej karcie */}
         <div className="mt-8 border-t border-border pt-8">
           <h3 className="text-2xl text-green lg:text-3xl">Cennik</h3>
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
@@ -80,7 +80,7 @@ export default function ContactInfo({ children }: { children?: ReactNode }) {
         </div>
       </div>
 
-      {/* Kolumna 2: rezerwacja online (kalendarz Booksy) — na desktopie 1/2 szerokości */}
+      {/* Kolumna 2: rezerwacja online (kalendarz Booksy) - na desktopie 1/2 szerokości */}
       <div className="rounded border border-border bg-white p-6 lg:p-8">
         <h3 className="text-2xl text-green lg:text-3xl">Rezerwacja online</h3>
         <p className="my-3 text-lg text-ink/80">Umów wizytę w dogodnym dla siebie terminie:</p>
@@ -99,7 +99,7 @@ export default function ContactInfo({ children }: { children?: ReactNode }) {
       </div>
       </div>
 
-      {/* Formularz wiadomości (przekazany z Contact.tsx) — PONIŻEJ, na całą szerokość */}
+      {/* Formularz wiadomości (przekazany z Contact.tsx) - PONIŻEJ, na całą szerokość */}
       <div className="mt-8 rounded border border-border bg-white p-6 lg:p-8">{children}</div>
     </div>
   );

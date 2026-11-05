@@ -5,7 +5,7 @@ import { config } from '../lib/config';
 import { track } from '../lib/analytics';
 
 /**
- * Spokojne CTA na końcu artykułu — po głównym tekście, przed „Przeczytaj także”.
+ * Spokojne CTA na końcu artykułu - po głównym tekście, przed „Przeczytaj także”.
  *
  * Celowo JEDEN przycisk i zero CTA w środku tekstu: na telefonach działa już
  * stały pasek rezerwacji (components/MobileCtaBar.tsx), a artykuł ma pozostać
@@ -13,7 +13,7 @@ import { track } from '../lib/analytics';
  * (bez pośredniej sekcji kontaktu), więc przejście od czytania do rezerwacji
  * jest jak najkrótsze.
  *
- * Kliknięcie mierzone jako `book_click` z `location: 'article'` — zgodnie
+ * Kliknięcie mierzone jako `book_click` z `location: 'article'` - zgodnie
  * z konwencją używaną w Header/Hero/MobileCtaBar/Contact.
  */
 export default function ArticleBookingCta() {
@@ -23,7 +23,7 @@ export default function ArticleBookingCta() {
       className="mt-12 rounded-lg border border-border bg-white p-6 sm:p-8"
     >
       <p className="text-lg leading-8 text-ink/80">
-        Jeśli ten temat jest Panu/Pani bliski, można omówić go podczas konsultacji — stacjonarnie
+        Jeśli ten temat jest Panu/Pani bliski, można omówić go podczas konsultacji - stacjonarnie
         we Wrocławiu lub online.
       </p>
       <a
@@ -38,7 +38,7 @@ export default function ArticleBookingCta() {
         <span className="sr-only"> (otwiera się w nowej karcie)</span>
       </a>
       <p className="mt-3 text-sm leading-6 text-ink/60">
-        Wybór terminu w kalendarzu Booksy — stacjonarnie lub online.
+        Wybór terminu w kalendarzu Booksy - stacjonarnie lub online.
       </p>
     </aside>
   );

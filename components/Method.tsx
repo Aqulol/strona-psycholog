@@ -1,7 +1,7 @@
 import SectionHeading from './SectionHeading';
 import Reveal from './Reveal';
 
-/** Sekcja „Metoda pracy” – opis nurtu psychodynamicznego. */
+/** Sekcja „Metoda pracy” - opis nurtu psychodynamicznego. */
 export default function Method() {
   return (
     <section id="metoda" className="section bg-pale">

@@ -1,7 +1,7 @@
 import BlogRedirect from '../_BlogRedirect';
 
 export const metadata = {
-  title: 'Przeniesiono artykuł — Jak wybrać psychoterapeutę?',
+  title: 'Przeniesiono artykuł - Jak wybrać psychoterapeutę?',
   robots: { index: false, follow: true },
 };
 

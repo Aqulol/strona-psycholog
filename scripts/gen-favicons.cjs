@@ -1,5 +1,5 @@
 /* Generowanie faviconów z ZNAKU (stylizowana litera "P") logo.png
-   Znak: bbox x=[569..896], y=[4..220] (328x217) — oddzielny glif między "psycholog" a "lebaniak".
+   Znak: bbox x=[569..896], y=[4..220] (328x217) - oddzielny glif między "psycholog" a "lebaniak".
    Kompozycja: contain na kwadracie #FAF8F5, padding 8%.
    Render: 512 -> downscale 192/180/32.
    Użycie: node scripts/gen-favicons.cjs */

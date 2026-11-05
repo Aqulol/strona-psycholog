@@ -57,7 +57,7 @@ export default function Page() {
         Zmieniają się imiona, okoliczności i początek znajomości, a jednak po pewnym czasie relacja zaczyna
         przypominać poprzednią. Pojawia się podobny dystans, lęk przed odrzuceniem, nadmierna odpowiedzialność
         albo poczucie, że ponownie trzeba zabiegać o czyjąś uwagę. Z perspektywy psychodynamicznej nie musi to
-        świadczyć o „złym guście” czy braku rozsądku. Często jest śladem nieświadomego wzorca relacyjnego —
+        świadczyć o „złym guście” czy braku rozsądku. Często jest śladem nieświadomego wzorca relacyjnego -
         sposobu przeżywania bliskości, który powstał wcześniej i nadal organizuje wybory, oczekiwania oraz
         reakcje.
       </p>
@@ -136,7 +136,7 @@ export default function Page() {
         Celem terapii nie jest stworzenie bezbłędnego algorytmu wyboru partnera. Chodzi o większą swobodę:
         zdolność zauważania własnych potrzeb, tolerowania bliskości bez utraty siebie, przyjmowania granic
         drugiej osoby i odróżniania konfliktu od zagrożenia. Ważnym sygnałem zmiany bywa także to, że spokój
-        przestaje być mylony z obojętnością, a napięcie — z miłością.
+        przestaje być mylony z obojętnością, a napięcie - z miłością.
       </p>
       <p className="mt-4 leading-8 text-ink/80">
         Psychoterapia psychodynamiczna we Wrocławiu lub prowadzona online może tworzyć warunki do
@@ -179,7 +179,7 @@ export default function Page() {
             href="/blog/dlaczego-sama-swiadomosc-nie-wystarcza/"
             className="text-lg font-medium text-green underline hover:text-green/80"
           >
-            „Wiem, skąd to się bierze, ale nadal tak robię” — dlaczego sama świadomość nie wystarcza?
+            „Wiem, skąd to się bierze, ale nadal tak robię” - dlaczego sama świadomość nie wystarcza?
           </a>
           <p className="mt-1 leading-7 text-ink/70">sama świadomość nie zawsze zmienia schemat</p>
         </li>

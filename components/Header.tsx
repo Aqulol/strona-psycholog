@@ -20,7 +20,7 @@ const navItems = [
  * Na podstronach linki kotwicowe prowadzą do sekcji strony głównej (/#…),
  * a „Blog” prowadzi do pełnej listy artykułów (/blog).
  * Scrollspy (IntersectionObserver) delikatnie podświetla link sekcji,
- * która jest aktualnie w widoku – tylko na stronie głównej.
+ * która jest aktualnie w widoku - tylko na stronie głównej.
  */
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -42,7 +42,7 @@ export default function Header() {
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
         setActive(visible.length > 0 ? visible[0].target.id : null);
       },
-      // Pasek w środkowej części ekranu – sekcja, która go przecina, jest „aktywna”.
+      // Pasek w środkowej części ekranu - sekcja, która go przecina, jest „aktywna”.
       { rootMargin: '-35% 0px -60% 0px', threshold: 0 }
     );
     sections.forEach((el) => observer.observe(el));
@@ -56,14 +56,14 @@ export default function Header() {
 
   const linkClass = (anchor: string) =>
     active === anchor ? 'text-green font-semibold underline decoration-gold decoration-2 underline-offset-8' : 'text-ink/80 hover:text-green';
-  // W menu mobilnym (pełna szerokość, block) złote podkreślenie wygląda źle — sam semibold.
+  // W menu mobilnym (pełna szerokość, block) złote podkreślenie wygląda źle - sam semibold.
   const mobileLinkClass = (anchor: string) =>
     active === anchor ? 'text-green font-semibold' : 'text-ink/80 hover:text-green';
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-cream shadow-[0_4px_20px_rgba(45,90,78,0.12)]">
       <div className="container flex items-center justify-between py-4">
-        {/* Logo jako przycisk „home" — statyczne logo (bez animacji) */}
+        {/* Logo jako przycisk „home" - statyczne logo (bez animacji) */}
         <a
           href="/"
           aria-label="Strona główna"
@@ -72,7 +72,7 @@ export default function Header() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo.webp"
-            alt="Grzegorz Plebaniak – psycholog i psychoterapeuta"
+            alt="Grzegorz Plebaniak - psycholog i psychoterapeuta"
             className="h-12 w-auto max-w-[60vw] select-none"
             width={1434}
             height={258}

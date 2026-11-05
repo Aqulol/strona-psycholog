@@ -1,11 +1,11 @@
 @import 'tailwindcss';
-/* Fonty self-hostowane (public/fonts/) — Cormorant Garamond (nagłówki)
+/* Fonty self-hostowane (public/fonts/) - Cormorant Garamond (nagłówki)
    i Inter (tekst). Pliki pobrane z Google Fonts (subseciki latin + latin-ext,
-   format woff2, fonty zmienne — jeden plik latin-ext na rodzinę pokrywa
+   format woff2, fonty zmienne - jeden plik latin-ext na rodzinę pokrywa
    wszystkie wagi 500/600/700 oraz 400/500/600) i wgrane do repo: build NIE
    pobiera nic z internetu, zero blokującego renderowanie zapytania sieciowego
    (LCP). Polskie znaki (ą, ę, ł, ń, ś, ź, ż) leżą w zakresie U+0100-02BA
-   (latin-ext) — bez bloków latin-ext przeglądarka rysuje je czcionką
+   (latin-ext) - bez bloków latin-ext przeglądarka rysuje je czcionką
    systemową. Rodziny dostępne przez zmienne --font-heading / --font-body
    zdefiniowane w @theme. */
 @font-face {

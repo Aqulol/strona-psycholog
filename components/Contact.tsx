@@ -5,7 +5,7 @@ import SectionHeading from './SectionHeading';
 import ContactInfo from './ContactInfo';
 
 /**
- * Sekcja „Kontakt" – renderowana OD RAZU (nie-leniwie), bo nie importuje
+ * Sekcja „Kontakt" - renderowana OD RAZU (nie-leniwie), bo nie importuje
  * SDK Firestore. Na desktopie (lg+) zawiera rząd z dwiema kolumnami obok
  * siebie (grid lg:grid-cols-2):
  *   - kolumna 1: dane kontaktowe + cennik (ContactInfo);
@@ -13,7 +13,7 @@ import ContactInfo from './ContactInfo';
  *     powiększony do połowy szerokości;
  *   - formularz (ContactForm) renderowany PONIŻEJ rzędu, na całą szerokość,
  *     przeniesiony tutaj przez children do ContactInfo. Ładowany LENIWIE
- *     (React.lazy + IntersectionObserver, rootMargin 600px) — dzięki temu
+ *     (React.lazy + IntersectionObserver, rootMargin 600px) - dzięki temu
  *     SDK Firestore (~190 kB) pozostaje poza bundlem startowym. Na
  *     mobile/tablet bloki układają się pionowo: dane kontaktowe, cennik,
  *     kalendarz, a pod nimi formularz.

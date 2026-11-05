@@ -54,7 +54,7 @@ export default function Page() {
       </h1>
       <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026</p>
       <p className="mt-6 leading-8 text-ink/80">
-        „Wiem, skąd to się bierze, ale nadal tak robię” — tak może brzmieć to doświadczenie. Można trafnie
+        „Wiem, skąd to się bierze, ale nadal tak robię” - tak może brzmieć to doświadczenie. Można trafnie
         rozumieć własny problem i znać jego historię, a mimo to reagować tak samo. Ktoś może nadal wybierać
         niedostępne osoby, wycofywać się w chwili bliskości, pracować ponad siły albo zamierać pod wpływem
         krytyki. Taki rozdźwięk bywa źródłem wstydu: skoro przyczyna jest znana, dlaczego nie następuje zmiana?
@@ -105,7 +105,7 @@ export default function Page() {
       <h2 className="mt-12 text-4xl text-green">Dlaczego zmiana może budzić opór?</h2>
       <p className="mt-4 leading-8 text-ink/80">
         Nawet pożądana zmiana bywa odczuwana jako zagrożenie. Rezygnacja z perfekcjonizmu może uruchomić lęk
-        przed utratą wartości, postawienie granicy — obawę przed samotnością, a przyjęcie pomocy — poczucie
+        przed utratą wartości, postawienie granicy - obawę przed samotnością, a przyjęcie pomocy - poczucie
         zależności. Stary sposób funkcjonowania jest kosztowny, lecz znany. Nowy oznacza wejście w obszar,
         którego skutków nie można jeszcze przewidzieć.
       </p>
@@ -132,7 +132,7 @@ export default function Page() {
       <h2 className="mt-12 text-4xl text-green">Jak wygląda zmiana w terapii?</h2>
       <p className="mt-4 leading-8 text-ink/80">
         Zmiana rzadko przebiega liniowo. Najpierw pojawia się zdolność zauważenia reakcji już po fakcie, później
-        w jej trakcie, a dopiero z czasem — przed automatycznym działaniem. Zwiększa się tolerancja niepewności,
+        w jej trakcie, a dopiero z czasem - przed automatycznym działaniem. Zwiększa się tolerancja niepewności,
         możliwość nazywania sprzecznych uczuć i wybór między kilkoma sposobami odpowiedzi. Nawrót starego
         schematu w stresie nie przekreśla procesu; może dostarczyć ważnego materiału do dalszej pracy.
       </p>

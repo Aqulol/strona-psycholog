@@ -14,7 +14,7 @@ next-env.d.ts
 .DS_Store
 *.pem
 
-# oryginalne zdjęcia — wersje produkcyjne (WebP) są w public/images/
+# oryginalne zdjęcia - wersje produkcyjne (WebP) są w public/images/
 *.jpg
 workspace-*.zip
 
@@ -35,6 +35,6 @@ yarn-error.log*
 /functions/lib/
 *.log
 
-# Firebase service-account private keys — never commit
+# Firebase service-account private keys - never commit
 **/service-account*.json
 **/*firebase-adminsdk*.json

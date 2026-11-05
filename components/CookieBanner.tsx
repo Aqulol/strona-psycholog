@@ -8,15 +8,15 @@ const CONSENT_ACCEPTED_EVENT = 'gabinet-consent-accepted';
 const CONSENT_REJECTED_EVENT = 'gabinet-consent-rejected';
 
 /**
- * Baner cookies – informacja o plikach i zgoda zapisywana w localStorage.
+ * Baner cookies - informacja o plikach i zgoda zapisywana w localStorage.
  * Po wyrażeniu zgody („Akceptuję") lub odmowie („Tylko niezbędne") baner
  * nie jest już pokazywany.
  * - Zgoda (klucz 'gabinet-cookie-consent' = '1') oraz zdarzenie
  *   'gabinet-consent-accepted' uruchamiają ładowanie analityki
  *   (components/GtmScript.tsx).
- * - Odmowa ('0') i zdarzenie 'gabinet-consent-rejected' — analityka nigdy
+ * - Odmowa ('0') i zdarzenie 'gabinet-consent-rejected' - analityka nigdy
  *   się nie ładuje (brak plików analitycznych).
- * Przycisk „Tylko niezbędne" daje równoważną drogę odmowy — wymóg
+ * Przycisk „Tylko niezbędne" daje równoważną drogę odmowy - wymóg
  * ePrivacy/RODO (odmowa równie łatwa jak zgoda).
  */
 export default function CookieBanner() {
@@ -34,7 +34,7 @@ export default function CookieBanner() {
     try {
       localStorage.setItem(CONSENT_KEY, value);
     } catch {
-      // localStorage niedostępne – baner zostaje na sesję
+      // localStorage niedostępne - baner zostaje na sesję
     }
     setVisible(false);
   };
@@ -44,7 +44,7 @@ export default function CookieBanner() {
     try {
       window.dispatchEvent(new CustomEvent(CONSENT_ACCEPTED_EVENT));
     } catch {
-      // brak wsparcia CustomEvent – analityka nie zostanie wstrzyknięta,
+      // brak wsparcia CustomEvent - analityka nie zostanie wstrzyknięta,
       // ale strona działa normalnie
     }
   };
@@ -69,7 +69,7 @@ export default function CookieBanner() {
       <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-t-2xl border border-border bg-white p-5 shadow-xl md:m-4 md:rounded-2xl md:flex-row md:items-center">
         <Cookie aria-hidden="true" className="hidden shrink-0 text-gold md:block" size={28} />
         <p className="flex-1 text-sm leading-6 text-ink/80">
-          Ta strona używa plików cookies w celach technicznych oraz – po wyrażeniu zgody – analitycznych.{' '}
+          Ta strona używa plików cookies w celach technicznych oraz - po wyrażeniu zgody - analitycznych.{' '}
           <a href="/polityka-prywatnosci/" className="text-green underline">
             Dowiedz się więcej w polityce prywatności
           </a>

@@ -1,7 +1,7 @@
 import BlogRedirect from '../_BlogRedirect';
 
 export const metadata = {
-  title: 'Przeniesiono artykuł — Czy przeszłość naprawdę ma aż takie znaczenie?',
+  title: 'Przeniesiono artykuł - Czy przeszłość naprawdę ma aż takie znaczenie?',
   robots: { index: false, follow: true },
 };
 
