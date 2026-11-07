@@ -24,7 +24,7 @@ export default function Page() {
       <h2 className="mt-8 text-3xl">Administrator</h2>
       <p className="mt-3 leading-8">
         Administratorem danych osobowych jest Grzegorz Plebaniak, prowadzący działalność gospodarczą pod nazwą
-        Psycholog Grzegorz Plebaniak (NIP 8971967542), Zygmunta Krasińskiego 13, 50-449 Wrocław.
+        Psycholog Grzegorz Plebaniak (NIP 8971967542), Zygmunta Krasińskiego 13, 50-529 Wrocław.
       </p>
       <p className="mt-3 leading-8">
         We wszystkich sprawach dotyczących danych osobowych można skontaktować się z administratorem:

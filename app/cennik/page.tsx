@@ -70,7 +70,7 @@ export default function CennikPage() {
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/80">
           Wszystkie spotkania trwają 50 minut. Ceny dotyczą zarówno wizyt stacjonarnych
-          w gabinecie przy ul. Zygmunta Krasińskiego 13, 50-449 Wrocław (szczegóły placówki:{' '}
+          w gabinecie przy ul. Zygmunta Krasińskiego 13, 50-529 Wrocław (szczegóły placówki:{' '}
           <a
             className="text-green underline"
             href={config.officeUrl}
@@ -90,7 +90,7 @@ export default function CennikPage() {
               <p className="mt-1 text-sm text-ink/60">sesja {p.duration}</p>
               <p className="mt-4 leading-7 text-ink/80">
                 {p.key === 'konsultacja'
-                  ? 'Pierwsze spotkanie, podczas którego wspólnie zastanawiamy się nad formą dalszej pracy.'
+                  ? 'Spotkanie konsultacyjne (50 min), podczas którego omawiamy trudności i oczekiwania. Nie zobowiązuje do rozpoczęcia psychoterapii. Zwykle poprzedza ją kilka konsultacji, po których ustalamy dalszą formę pomocy.'
                   : 'Regularne sesje w nurcie psychodynamicznym, dopasowane do indywidualnych potrzeb i tempa.'}
               </p>
             </div>
@@ -129,9 +129,10 @@ export default function CennikPage() {
 
         <h2 className="mt-12 text-4xl text-green">Czym różni się konsultacja od psychoterapii?</h2>
         <p className="mt-4 leading-8 text-ink/80">
-          Konsultacja to zwykle 1-3 spotkania, podczas których przyglądamy się temu, co
-          skłoniło do kontaktu, i wspólnie decydujemy o dalszych krokach. Psychoterapia to
-          regularna, długofalowa praca w nurcie psychodynamicznym, ukierunkowana na głębsze
+          Konsultacja to zwykle kilka spotkań konsultacyjnych, podczas których przyglądamy się temu, co
+          skłoniło do kontaktu, i wspólnie decydujemy o dalszych krokach. Po zakończeniu konsultacji
+          omawiamy możliwość rozpoczęcia regularnej psychoterapii, jej cele oraz zasady współpracy.
+          Psychoterapia to regularna, długofalowa praca w nurcie psychodynamicznym, ukierunkowana na głębsze
           rozumienie emocji, relacji i powtarzających się wzorców.
         </p>
 

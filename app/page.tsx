@@ -61,7 +61,7 @@ export default function Home() {
         },
         hasMap: `https://www.google.com/maps/search/?api=1&query=${config.geoLat},${config.geoLng}`,
         areaServed: 'Wrocław',
-        knowsAbout: ['lęk i depresja', 'kryzysy życiowe', 'relacje', 'stres', 'wypalenie zawodowe'],
+        knowsAbout: ['lęk i obniżony nastrój', 'kryzysy i zmiany życiowe', 'trudności w relacjach', 'stres i regulacja emocji', 'poczucie własnej wartości', 'wypalenie zawodowe'],
         sameAs: ['https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw'],
         // geo jest dołączane tylko po uzupełnieniu współrzędnych w lib/config.ts
         ...(config.geoLat && config.geoLng
@@ -85,10 +85,10 @@ export default function Home() {
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Jak wygląda pierwsza wizyta?',
+            name: 'Jak wygląda pierwsza konsultacja psychologiczna?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Pierwsze spotkanie to konsultacja trwająca 50 minut. Rozmawiamy o tym, co skłoniło Pana/Panią do szukania wsparcia i wspólnie zastanawiamy się nad dalszą formą pracy.',
+              text: 'Pierwsze spotkanie jest okazją do omówienia trudności, które skłoniły do poszukiwania pomocy, oraz oczekiwań wobec dalszej współpracy. Konsultacja trwa 50 minut i nie zobowiązuje do rozpoczęcia psychoterapii. Rozpoczęcie psychoterapii poprzedza zazwyczaj kilka spotkań konsultacyjnych, podczas których przyglądamy się aktualnym trudnościom, historii życia oraz sposobowi funkcjonowania w relacjach. Pozwala to lepiej zrozumieć zgłaszane problemy i ocenić, jaka forma pomocy będzie odpowiednia. Po zakończeniu konsultacji omawiamy możliwość rozpoczęcia regularnej psychoterapii, jej cele oraz zasady współpracy, w tym częstotliwość spotkań, płatności i odwoływanie wizyt.',
             },
           },
           {

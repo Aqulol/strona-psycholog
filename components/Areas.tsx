@@ -5,33 +5,33 @@ import Reveal from './Reveal';
 const areas = [
   {
     icon: HeartPulse,
-    title: 'Lęk i depresja',
-    text: 'Wsparcie w rozumieniu trudnych emocji i codziennym funkcjonowaniu.',
+    title: 'Lęk i obniżony nastrój',
+    text: 'Uporczywe napięcie, napady lęku, lęk przed oceną, obniżony nastrój, utrata energii i trudności z codziennym funkcjonowaniem.',
   },
   {
     icon: LifeBuoy,
-    title: 'Kryzysy życiowe',
-    text: 'Towarzyszenie w zmianie, stracie lub ważnej decyzji.',
+    title: 'Kryzysy i zmiany życiowe',
+    text: 'Rozstanie, żałoba, utrata pracy, choroba, przeprowadzka lub ważna decyzja, z którą trudno sobie poradzić.',
   },
   {
     icon: Users,
     title: 'Trudności w relacjach',
-    text: 'Przyglądanie się potrzebom i sposobom budowania bliskości.',
+    text: 'Powtarzające się konflikty, trudność w stawianiu granic, lęk przed odrzuceniem, zależność lub wycofanie z bliskości.',
   },
   {
     icon: Waves,
     title: 'Stres i regulacja emocji',
-    text: 'Spokojna praca nad rozpoznawaniem napięcia i emocji.',
+    text: 'Przewlekłe napięcie, drażliwość, wybuchy złości, trudność z wyciszeniem, bezsenność i poczucie przeciążenia.',
   },
   {
     icon: Leaf,
     title: 'Poczucie własnej wartości',
-    text: 'Poszukiwanie bardziej życzliwego kontaktu ze sobą.',
+    text: 'Surowy krytycyzm wobec siebie, wstyd, poczucie bycia niewystarczającym i trudność z przyjmowaniem pomocy.',
   },
   {
     icon: Briefcase,
     title: 'Wypalenie zawodowe',
-    text: 'Wsparcie przy przeciążeniu i utracie energii.',
+    text: 'Przeciążenie, utrata motywacji, cynizm, poczucie braku sensu i trudności z odpoczynkiem po pracy.',
   },
 ];
 
@@ -42,8 +42,8 @@ export default function Areas() {
       <div className="container">
         <SectionHeading title="Obszary pomocy">
           <p className="mb-8 max-w-3xl leading-7 text-ink/70 lg:mb-10">
-            Prowadzę konsultacje i psychoterapię dla dorosłych. Poniżej obszary, z którymi najczęściej zgłaszają
-            się osoby we Wrocławiu i okolicach.
+            Prowadzę konsultacje i psychoterapię dla dorosłych. Poniżej przykładowe obszary, z którymi
+            najczęściej zgłaszają się osoby we Wrocławiu i okolicach - to nie pełna lista.
           </p>
         </SectionHeading>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">

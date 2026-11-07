@@ -78,7 +78,7 @@ Podczas udostępniania w social media nie było jawnego `og:url`. **Naprawa:** d
 - ✅ **Logo:** `logo.webp` (12,7 kB zamiast 232 kB, -95%) używane w headerze; `logo.png` pozostaje tylko dla schema.org.
 - ✅ **PWA/manifest:** `public/manifest.json`, `theme-color`, favicony z atrybutami `sizes` (32/192/512).
 - ✅ **Bezpieczeństwo:** `Content-Security-Policy` + `Permissions-Policy` w nagłówkach Firebase Hosting.
-- ✅ **Wzmianka o lokalizacji:** sekcja „Gabinet” informuje o miejscu przyjęć: centrumrownowagi.com, Zygmunta Krasińskiego 13, 50-449 Wrocław.
+- ✅ **Wzmianka o lokalizacji:** sekcja „Gabinet” informuje o miejscu przyjęć: centrumrownowagi.com, Zygmunta Krasińskiego 13, 50-529 Wrocław.
 - ✅ **Porządek w repo:** usunięto z gita `workspace-*.zip` i oryginalne JPG-i (wersje WebP są w `public/images/`); wzorce dodane do `.gitignore`.
 
 ---
@@ -106,7 +106,7 @@ Podczas udostępniania w social media nie było jawnego `og:url`. **Naprawa:** d
 - **Struktura danych:** LocalBusiness ma `url`, `logo`, `image`, `hasMap` i `geo`; do uzupełnienia pozostają potwierdzone godziny przyjęć (`openingHours`).
 
 ### 3.3. SEO lokalne - ⚠️ najważniejsza rekomendacja poza kodem
-Aktualne dane lokalizacyjne na stronie: **Grzegorz Plebaniak**, Zygmunta Krasińskiego 13, 50-449 Wrocław, tel. +48 693 087 574, e-mail gpplebaniak@gmail.com. Miejsce przyjęć wskazane na stronie: [centrumrownowagi.com](http://centrumrownowagi.com).
+Aktualne dane lokalizacyjne na stronie: **Grzegorz Plebaniak**, Zygmunta Krasińskiego 13, 50-529 Wrocław, tel. +48 693 087 574, e-mail gpplebaniak@gmail.com. Miejsce przyjęć wskazane na stronie: [centrumrownowagi.com](http://centrumrownowagi.com).
 
 **Rekomendacja:** porównać aktualny zestaw NAP (Name/Address/Phone) ze stroną z wizytówką Google, ZnanyLekarz i katalogami (np. locarate.pl), a ewentualne nieaktualne dane poprawić. Spójność nazwy, adresu i telefonu wspiera lokalne SEO.
 
@@ -144,7 +144,7 @@ Aktualne dane lokalizacyjne na stronie: **Grzegorz Plebaniak**, Zygmunta Krasiń
 
 ### P0 - najwyższy priorytet
 1. **Wdróż poprawki** (`npm run build && firebase deploy --only hosting,firestore`) i zrób checklistę 4.2. Bez deploya naprawa kanonikali nie dotrze na produkcję.
-2. **Ujednolić NAP/markę.** Na stronie podano markę osobistą **Grzegorz Plebaniak** oraz aktualne miejsce przyjęć i dane kontaktowe: Zygmunta Krasińskiego 13, 50-449 Wrocław; centrumrownowagi.com; telefon +48 693 087 574; e-mail gpplebaniak@gmail.com. Do sprawdzenia poza stroną: Google Business Profile, ZnanyLekarz i katalogi (locarate) - ich dane NAP powinny być aktualne i zgodne ze stroną.
+2. **Ujednolić NAP/markę.** Na stronie podano markę osobistą **Grzegorz Plebaniak** oraz aktualne miejsce przyjęć i dane kontaktowe: Zygmunta Krasińskiego 13, 50-529 Wrocław; centrumrownowagi.com; telefon +48 693 087 574; e-mail gpplebaniak@gmail.com. Do sprawdzenia poza stroną: Google Business Profile, ZnanyLekarz i katalogi (locarate) - ich dane NAP powinny być aktualne i zgodne ze stroną.
 3. **Google Business Profile:** utworzyć/zweryfikować wizytówkę „Grzegorz Plebaniak - psycholog”, dane NAP identyczne ze stroną, kategoria „Psychologist”, link do strony, zdjęcia gabinetu.
 
 ### P1 - ważne, nieduży wysiłek

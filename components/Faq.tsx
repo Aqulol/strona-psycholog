@@ -8,9 +8,9 @@ const psychoterapia = config.prices.find((p) => p.key === 'psychoterapia')!;
 
 const faqItems = [
   {
-    question: 'Jak wygląda pierwsza wizyta?',
+    question: 'Jak wygląda pierwsza konsultacja psychologiczna?',
     answer:
-      'Pierwsze spotkanie to konsultacja trwająca 50 minut. Rozmawiamy o tym, co skłoniło Pana/Panią do szukania wsparcia i wspólnie zastanawiamy się nad dalszą formą pracy.',
+      'Pierwsze spotkanie jest okazją do omówienia trudności, które skłoniły do poszukiwania pomocy, oraz oczekiwań wobec dalszej współpracy. Konsultacja trwa 50 minut i nie zobowiązuje do rozpoczęcia psychoterapii. Rozpoczęcie psychoterapii poprzedza zazwyczaj kilka spotkań konsultacyjnych, podczas których przyglądamy się aktualnym trudnościom, historii życia oraz sposobowi funkcjonowania w relacjach. Pozwala to lepiej zrozumieć zgłaszane problemy i ocenić, jaka forma pomocy będzie odpowiednia. Po zakończeniu konsultacji omawiamy możliwość rozpoczęcia regularnej psychoterapii, jej cele oraz zasady współpracy, w tym częstotliwość spotkań, płatności i odwoływanie wizyt.',
   },
   {
     question: 'Psycholog vs psychiatra vs psychoterapeuta?',
