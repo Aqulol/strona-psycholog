@@ -93,7 +93,7 @@ npm run build
 3. **Bing Webmaster:** https://www.bing.com/webmasters - zgłoś tę samą sitemapę.
 4. **Wizytówka Google Business** (dla lokalnego SEO) - dane NAP:
    - Nazwa: **Grzegorz Plebaniak - Gabinet Psychologiczny**
-   - Adres: **Zygmunta Krasińskiego 13, 50-449 Wrocław**
+   - Adres: **Zygmunta Krasińskiego 13, 50-529 Wrocław**
    - Telefon: **+48 693087574**
    - E-mail: **gpplebaniak@gmail.com**
 

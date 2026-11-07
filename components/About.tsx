@@ -6,17 +6,17 @@ const trustCards = [
   {
     icon: Award,
     title: 'Dyplom',
-    text: 'Dyplom: wyższe wykształcenie psychologiczne - specjalność kliniczna i zdrowia',
+    text: 'Uniwersytet Wrocławski - specjalność psychologia kliniczna i zdrowia dorosłych',
   },
   {
     icon: BookOpen,
     title: 'Szkolenie',
-    text: 'Szkolenie: w trakcie szkolenia psychoterapeutycznego w MSPPD',
+    text: 'II rok czteroletniego szkolenia w Międzynarodowej Szkole Psychoterapii Psychodynamicznej (TFP)',
   },
   {
     icon: ShieldCheck,
     title: 'Superwizja',
-    text: 'Uczęszczam na regularne superwizje.',
+    text: 'Swoją pracę poddaję regularnej superwizji.',
   },
 ];
 
@@ -41,18 +41,15 @@ export default function About() {
           <Reveal delay={120}>
             <div className="space-y-5 text-lg leading-8 text-ink/80">
               <p>
-                Nazywam się Grzegorz Plebaniak. Jestem psychologiem i psychoterapeutą pracującym z osobami
-                dorosłymi. W kontakcie z drugim człowiekiem ważne są dla mnie uważność, szacunek i tempo, które
-                pozwala mówić o sprawach naprawdę istotnych.
+                Jestem psychologiem, absolwentem Uniwersytetu Wrocławskiego ze specjalnością psychologia
+                kliniczna i zdrowia dorosłych. Obecnie jestem na drugim roku czteroletniego szkolenia
+                w Międzynarodowej Szkole Psychoterapii Psychodynamicznej, obejmującego również podejście
+                skoncentrowane na przeniesieniu (TFP).
               </p>
               <p>
-                Pracuję w nurcie psychodynamicznym. Pomagam przyglądać się emocjom, relacjom i powtarzającym się
-                sposobom reagowania. Mam wyższe wykształcenie psychologiczne ze specjalnością kliniczną i zdrowia. Obecnie jestem w trakcie szkolenia psychoterapeutycznego w MSPPD. Swoją pracę poddaję regularnej
-                superwizji.
-              </p>
-              <p>
-                Psychoterapia nie jest gotową poradą ani obietnicą szybkiej zmiany. To wspólna, stopniowa praca.
-                Dbam o poufność i jasne zasady współpracy.
+                Prowadzę konsultacje psychologiczne oraz psychoterapię indywidualną osób dorosłych.
+                Doświadczenie zawodowe zdobywam zarówno w prywatnej praktyce, jak i we współpracy z Poradnią
+                Zdrowia Psychicznego. Swoją pracę poddaję regularnej superwizji.
               </p>
             </div>
           </Reveal>

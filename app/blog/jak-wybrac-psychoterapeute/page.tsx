@@ -135,8 +135,9 @@ export default function Page() {
 
         <h2 className="mt-12 text-4xl text-green">Pierwsza konsultacja - jak ją wykorzystać</h2>
         <p className="mt-4 leading-8 text-ink/80">
-          Pierwsze spotkanie to nie egzamin, tylko wzajemne poznanie. Możesz przygotować
-          sobie kilka pytań - to sygnał zaangażowania, a nie przeszkoda:
+          Pierwsze spotkanie to nie egzamin, tylko wzajemne poznanie. Konsultacja trwa 50 minut
+          i nie zobowiązuje do rozpoczęcia psychoterapii. Możesz przygotować sobie kilka pytań
+          - to sygnał zaangażowania, a nie przeszkoda:
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-6 leading-8 text-ink/80">
           <li>Jak wygląda Pana/Pani sposób pracy? Jak często i jak długo zwykle trwa terapia?</li>
@@ -144,6 +145,14 @@ export default function Page() {
           <li>Jak ustalamy cele i kiedy wracamy do ich oceny?</li>
           <li>Jakie są zasady kontaktu między sesjami i odwołań?</li>
         </ul>
+        <p className="mt-4 leading-8 text-ink/80">
+          Rozpoczęcie psychoterapii poprzedza zazwyczaj kilka spotkań konsultacyjnych, podczas
+          których przyglądamy się aktualnym trudnościom, historii życia oraz sposobowi
+          funkcjonowania w relacjach. Pozwala to lepiej zrozumieć zgłaszane problemy i ocenić,
+          jaka forma pomocy będzie odpowiednia. Po zakończeniu konsultacji omawiamy możliwość
+          rozpoczęcia regularnej psychoterapii, jej cele oraz zasady współpracy, w tym
+          częstotliwość spotkań, płatności i odwoływanie wizyt.
+        </p>
         <p className="mt-4 leading-8 text-ink/80">
           Po spotkaniu warto zapytać siebie: czy czułem/czułam się wysłuchany? Czy nie
           było oceniania i pośpiechu? Czy zasady były jasne? Intensywność pierwszych emocji
@@ -178,7 +187,7 @@ export default function Page() {
         </p>
         <p className="mt-4 leading-8 text-ink/80">
           Jeśli mieszkasz we Wrocławiu lub okolicach, gabinet przy ul. Zygmunta Krasińskiego 13,
-          50-449 Wrocław, jest dogodnie położony; dla osób spoza Wrocławia i podróżujących
+          50-529 Wrocław, jest dogodnie położony; dla osób spoza Wrocławia i podróżujących
           prowadzę również sesje online.
         </p>
 
