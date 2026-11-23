@@ -113,6 +113,9 @@ main.max-w-3xl{max-width:48rem}
 /* Pomocnicze klasy dostępności i animacji */
 .skip-link{position:absolute;left:-9999px;top:0;z-index:100;background:#2D5A4E;color:#fff;padding:.75rem 1.25rem;border-radius:0 0 .5rem 0;font-family:var(--font-body);font-size:.875rem}
 .skip-link:focus{left:0;outline-offset:0}
+/* Wyróżnienie linków w blokach tekstu (nie tylko kolorem - wymóg WCAG/Lighthouse) */
+p a:not([class*="bg-"]):not([class*="border"]),
+li a:not([class*="bg-"]):not([class*="border"]){text-decoration:underline;text-underline-offset:3px}
 section[id]{scroll-margin-top:5.5rem}
 .reveal{transition:opacity .7s ease,transform .7s ease}
 html.js .reveal:not(.is-visible){opacity:0;transform:translateY(18px)}

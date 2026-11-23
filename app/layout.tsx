@@ -71,6 +71,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <meta name="theme-color" content="#2D5A4E" />
             <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/cormorant-garamond-600.woff2" />
             <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="/fonts/inter-400.woff2" />
+            <link rel="preload" as="image" href="/images/portret.webp" fetchpriority="high" />
             <link rel="preconnect" href="https://platform.docplanner.com" />
             <link rel="preconnect" href="https://booksy.com" />
             <link rel="preconnect" href="https://www.google.com" />

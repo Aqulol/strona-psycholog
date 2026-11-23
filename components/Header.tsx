@@ -73,7 +73,7 @@ export default function Header() {
           <img
             src="/logo.webp"
             alt="Grzegorz Plebaniak - psycholog i psychoterapeuta"
-            className="h-12 w-auto max-w-[60vw] select-none"
+            className="h-10 w-auto select-none sm:h-12"
             width={1434}
             height={258}
           />
