@@ -1,7 +1,6 @@
 'use client';
 
 import { Award, ShieldCheck, Timer } from 'lucide-react';
-import Reveal from './Reveal';
 import ZnanyLekarzWidget from './ZnanyLekarzWidget';
 import { track } from '../lib/analytics';
 
@@ -18,7 +17,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_78%_40%,rgba(201,169,106,0.07),transparent_55%)]"
       />
       <div className="container relative grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
-        <Reveal>
+        <div>
           <p className="eyebrow flex items-center gap-2.5">
             <span
               aria-hidden="true"
@@ -66,9 +65,9 @@ export default function Hero() {
               <ZnanyLekarzWidget />
             </li>
           </ul>
-        </Reveal>
+        </div>
 
-        <Reveal delay={150} className="mx-auto w-full max-w-lg lg:max-w-none">
+        <div className="mx-auto w-full max-w-lg lg:max-w-none">
           <div className="relative">
             {/* Miękki organiczny kształt za portretem - bardzo stonowana zieleń, dekoracja */}
             <svg
@@ -94,7 +93,7 @@ export default function Hero() {
               className="relative aspect-square w-full rounded-2xl border border-border object-cover shadow-lg shadow-green/5"
             />
           </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

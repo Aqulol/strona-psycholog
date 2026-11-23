@@ -19,7 +19,7 @@ const photos = [
   {
     src: '/images/gabinet-detal-1.webp',
     alt: 'Gabinet - detal wnętrza',
-    width: 1280,
+    width: 720,
     height: 960,
   },
   {
