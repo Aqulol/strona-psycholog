@@ -45,13 +45,18 @@ export default function BlogSection() {
                     <CalendarDays aria-hidden="true" size={18} />
                     {post.date}
                   </p>
-                  <h3 className="mt-4 text-2xl text-green xl:text-3xl">{post.title}</h3>
+                  <h3 className="mt-4 text-2xl text-green xl:text-3xl">
+                    <a href={post.href} className="hover:underline">
+                      {post.title}
+                    </a>
+                  </h3>
                   <p className="mt-3 text-lg leading-8 text-ink/80">{post.lead}</p>
                   <a
                     href={post.href}
-                    className="mt-auto pt-5 inline-flex items-center gap-2 text-base font-medium text-green underline hover:text-green/80"
+                    aria-label={`Czytaj artykuł: ${post.title}`}
+                    className="mt-auto inline-flex items-center gap-2 pt-5 text-base font-medium text-green underline hover:text-green/80"
                   >
-                    Czytaj więcej
+                    Czytaj artykuł
                     <ArrowRight aria-hidden="true" size={18} />
                   </a>
                 </div>
