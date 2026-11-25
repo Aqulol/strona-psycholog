@@ -42,8 +42,9 @@ export default function Areas() {
       <div className="container">
         <SectionHeading title="Obszary pomocy">
           <p className="mb-8 max-w-3xl leading-7 text-ink/70 lg:mb-10">
-            Prowadzę konsultacje i psychoterapię dla dorosłych. Poniżej przykładowe obszary, z którymi
-            najczęściej zgłaszają się osoby we Wrocławiu i okolicach - to nie pełna lista.
+            Prowadzę konsultacje psychologiczne i psychoterapię dla dorosłych we Wrocławiu oraz online.
+            Poniżej przykładowe obszary, z którymi najczęściej zgłaszają się osoby - to nie pełna lista.
+            Jeśli chcesz omówić swoją sytuację, <a href="#kontakt" className="text-green underline hover:text-green/80">napisz lub umów konsultację</a>.
           </p>
         </SectionHeading>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">

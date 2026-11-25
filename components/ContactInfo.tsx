@@ -76,6 +76,11 @@ export default function ContactInfo({ children }: { children?: ReactNode }) {
           </div>
           <p className="mt-3 text-sm text-ink/70">
             Stacjonarnie i online. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.
+            <br />
+            <a href="/cennik/" className="text-green underline hover:text-green/80">
+              Zobacz pełny cennik konsultacji i psychoterapii
+            </a>
+            .
           </p>
         </div>
       </div>

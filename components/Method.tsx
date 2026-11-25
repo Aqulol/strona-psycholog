@@ -24,6 +24,13 @@ export default function Method() {
               Każda osoba ma własne tempo pracy, dlatego proces terapeutyczny jest dostosowany do jej
               indywidualnych potrzeb i możliwości.
             </p>
+            <p>
+              Jeśli rozważasz konsultację psychologiczną we Wrocławiu lub online, możesz{' '}
+              <a href="#kontakt" className="text-green underline hover:text-green/80">
+                skontaktować się ze mną
+              </a>{' '}
+              i omówić, jaka forma pomocy będzie odpowiednia.
+            </p>
           </div>
         </Reveal>
       </div>

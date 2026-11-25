@@ -26,12 +26,12 @@ export default function Hero() {
             Wrocław · stacjonarnie i online
           </p>
           <h1 className="mt-5 text-5xl leading-tight text-green md:text-6xl xl:text-7xl">
-            Grzegorz Plebaniak - psycholog i psychoterapeuta
+            Psycholog we Wrocławiu – Grzegorz Plebaniak
           </h1>
           <p className="my-7 text-lg leading-8 text-ink/80 xl:text-xl xl:leading-9">
             Pomagam lepiej rozumieć siebie, swoje emocje i relacje oraz przyglądać się temu, co utrudnia
-            codzienne funkcjonowanie. Pracuję w nurcie psychodynamicznym z osobami dorosłymi, stacjonarnie i
-            online.
+            codzienne funkcjonowanie. Prowadzę konsultacje psychologiczne we Wrocławiu i online oraz
+            psychoterapię psychodynamiczną osób dorosłych.
           </p>
           <div className="flex flex-wrap gap-3 lg:gap-4">
             <a
