@@ -61,3 +61,26 @@ for (const path of paths) {
     assert.ok(html.includes(`"author":{"@id":"${root}/#osoba"}`));
   }
 }
+
+// Featured articles must be in the static export and discoverable from the blog and homepage.
+const sitemapXml = read('out/sitemap.xml');
+const publicationDate = process.env.FEATURE_ARTICLES_PUBLISHED_ON;
+for (const slug of ['samotnosc', 'poczucie-wlasnej-wartosci']) {
+  const path = `/blog/${slug}/`;
+  const html = read(file(path));
+  assert.ok(paths.includes(path));
+  assert.ok(homepage.includes(`href="${path}"`));
+  assert.ok(read(file('/blog/')).includes(`href="${path}"`));
+  assert.ok(read(file('/psychoterapia-dorosli/')).includes(`href="${path}"`));
+  assert.ok(html.includes('Źródła i dalsza lektura'));
+  assert.ok(html.includes(`"@id":"${root}${path}#artykul"`));
+  if (publicationDate) {
+    assert.ok(html.toLowerCase().includes(`datetime="${publicationDate}"`));
+    assert.ok(html.includes(`"datePublished":"${publicationDate}"`));
+    assert.ok(html.includes(`property="article:published_time" content="${publicationDate}"`));
+    const sitemapEntry = sitemapXml.split('<url>').find(entry => entry.includes(`<loc>${root}${path}</loc>`));
+    assert.ok(sitemapEntry?.includes(`<lastmod>${publicationDate}</lastmod>`));
+  } else {
+    assert.ok(!html.includes('"datePublished":'));
+  }
+}

@@ -1,3 +1,4 @@
+import {featureArticles} from '../lib/feature-articles';
 import {paths} from '../lib/site';
 import {editorial} from '../lib/editorial';
 export const dynamic='force-static';
@@ -32,8 +33,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages: { path: string; lastmod?: string }[] = [
     { path: '/' },
     ...Object.values(paths).map(path=>({path})),
+    ...featureArticles.map(a=>({path:`/blog/${a.slug}/`,lastmod:a.published})),
     ...editorial.filter(a=>a.slug).map(a=>({path:`/blog/${a.slug}/`})),
-    { path: '/blog/', lastmod: STATIC_LASTMOD },
+    { path: '/blog/', lastmod: featureArticles[0].published },
     ...Object.entries(ARTICLE_DATES).map(([slug, lastmod]) => ({
       path: `/blog/${slug}/`,
       lastmod,

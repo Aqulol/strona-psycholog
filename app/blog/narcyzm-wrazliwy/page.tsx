@@ -269,7 +269,8 @@ export default function Page() {
 
         <ArticleBookingCta />
 
-        <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
+        <p className="mt-6 leading-8">Wahania samooceny mogą mieć różne przyczyny. O tym, jak na <a href="/blog/poczucie-wlasnej-wartosci/" className="text-link">poczucie własnej wartości</a> wpływają krytyka, uznanie i relacje, piszę w osobnym artykule.</p>
+      <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
         <ul className="mt-4 space-y-4">
           <li>
             <a
