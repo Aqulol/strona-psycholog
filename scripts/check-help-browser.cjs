@@ -10,7 +10,7 @@ const { readFileSync } = require('node:fs');
     const headers = Object.fromEntries(configHeaders.map(({key,value}) => [key.toLowerCase(),value]));
     const links = html => [...html.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => new URL(m[1]).pathname).filter(p => p.startsWith('/w-czym-pomagam/'));
     const all = links(await (await fetch(`${site}/sitemap.xml`)).text());
-    assert.equal(all.length, 55);
+    assert.equal(all.length, 66);
     for (const p of all) assert.equal((await fetch(site + p, {redirect:'manual'})).status, 200, p);
     for (const viewport of [{width:1366,height:900},{width:390,height:844}]) {
       const context = await browser.newContext({viewport});
@@ -26,17 +26,17 @@ const { readFileSync } = require('node:fs');
       page.on('requestfailed', request => { if (new URL(request.url()).hostname === 'booksy.com') failures.push(request.failure()?.errorText); });
       page.on('request', request => { if (!request.url().startsWith(site)) external.push(request.url()); if (request.url().startsWith('https://booksy.com/widget/')) booksy.push(request.allHeaders()); });
       await page.goto(site + hub);
-      assert.equal(await page.locator('#lista-tematow a[href^="/w-czym-pomagam/"]').count(), 55);
+      assert.equal(await page.locator('#lista-tematow a[href^="/w-czym-pomagam/"]').count(), 66);
       const search = page.getByRole('searchbox', {name:'Znajdź temat'});
       await search.fill('nerwica');
       await page.waitForFunction(() => document.querySelectorAll('#lista-tematow a[href^="/w-czym-pomagam/"]').length === 1);
-      assert.match(await page.locator('#lista-tematow').innerText(), /Zaburzenia i stany lękowe/);
+      assert.match(await page.locator('#lista-tematow').innerText(), /Lęk i zaburzenia lękowe/);
       await search.fill('zlosc');
-      await page.waitForFunction(() => document.querySelector('#lista-tematow')?.textContent?.includes('Trudności w radzeniu sobie ze złością'));
+      await page.waitForFunction(() => document.querySelector('#lista-tematow')?.textContent?.includes('Problemy ze złością'));
       await search.fill('nieprawdopodobny-brak-wynikow');
       await page.getByText('Nie znaleziono pasujących tematów.', {exact:false}).waitFor();
       await page.getByRole('button', {name:'Wyczyść'}).click();
-      assert.equal(await page.locator('#lista-tematow a[href^="/w-czym-pomagam/"]').count(), 55);
+      assert.equal(await page.locator('#lista-tematow a[href^="/w-czym-pomagam/"]').count(), 66);
       await search.fill('powracające wspomnienia');
       await page.evaluate(() => { window.catalogueTestMarker = 1; });
       await page.locator('#lista-tematow a[href$="/powracajace-wspomnienia/"]').click();
@@ -60,6 +60,6 @@ const { readFileSync } = require('node:fs');
       console.log(JSON.stringify({viewport, widgetRequests: booksy.length, failures, consoleErrors, external}));
       await context.close();
     }
-    console.log('55 topic addresses returned direct HTTP 200. Local layout, filter, navigation and initial referrer checks passed. This test does not verify booking availability or checkout.');
+    console.log('66 topic addresses returned direct HTTP 200. Local layout, filter, navigation and initial referrer checks passed. This test does not verify booking availability or checkout.');
   } finally { await browser.close(); }
 })().catch(error => {console.error(error);process.exitCode=1;});

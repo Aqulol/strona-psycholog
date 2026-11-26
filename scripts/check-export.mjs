@@ -84,7 +84,7 @@ for (const slug of ['samotnosc', 'poczucie-wlasnej-wartosci']) {
 const helpPaths = paths.filter(path => path.startsWith('/w-czym-pomagam/'));
 const helpIndexPath = '/kiedy-zglosic-sie-na-terapie/';
 const helpIndex = read(file(helpIndexPath));
-assert.equal(helpPaths.length, 55, 'Only the completed topics are exported');
+assert.equal(helpPaths.length, 66, 'Only the completed topics are exported');
 assert.ok(!existsSync(file('/w-czym-pomagam/')), 'No competing topic index');
 for (const path of helpPaths) {
   const html = read(file(path));
@@ -111,7 +111,7 @@ for (const id of ['emocje-mlodziezy', 'relacje-mlodziezy', 'dorastanie-i-tozsamo
 assert.match(helpIndex, /<h1>W czym mogę pomóc\?<\/h1>/);
 const groupCounts = [...helpIndex.matchAll(/<div class="editorial-card help-topic-card">.*?<ul>(.*?)<\/ul>/gs)]
   .map(([, list]) => [...list.matchAll(/href="\/w-czym-pomagam\//g)].length);
-assert.deepEqual(groupCounts, [6, 6, 9, 7, 5, 6, 5, 5, 6]);
+assert.deepEqual(groupCounts, [10, 9, 10, 9, 5, 6, 5, 5, 1, 6]);
 const topicIntros = helpPaths.map(path => {
   const html = read(file(path));
   assert.ok((html.match(/<h2[ >]/g) || []).length >= 4, `${path}: substantive sections`);
@@ -131,7 +131,31 @@ for (const re of [/<title>([^<]+)<\/title>/, /<meta name="description" content="
 const clinicalSections = helpPaths.map(path => {
   const html = read(file(path));
   const section = html.match(/<section data-topic-depth="true"><h2>([^<]+)<\/h2><p>([^<]+)<\/p><\/section>/);
-  assert.ok(section, `${path}: dedicated clinical explanation`);
-  return section[2];
+  if (section) return section[2];
+  const paragraphs = [...html.matchAll(/<section><h2>[^<]+<\/h2><p>([^<]+)<\/p><\/section>/g)];
+  assert.ok(paragraphs.filter(([, text]) => text.length >= 220).length >= 2, `${path}: dedicated clinical explanation`);
+  return paragraphs.map(([, text]) => text).join(" ");
 });
 assert.equal(new Set(clinicalSections).size, helpPaths.length, 'Distinct clinical explanation for every topic');
+
+assert.doesNotMatch(helpIndex, /Wszystkie tematy:/);
+const catalogueNames = [...helpIndex.matchAll(/href="(\/w-czym-pomagam\/[^"]+)"[^>]*>([^<]+)<span/g)];
+assert.equal(catalogueNames.length, 66);
+for (const [, path, label] of catalogueNames) {
+  const html = read(file(path));
+  assert.ok(html.includes(`<span aria-current="page">${label}</span>`), `${path}: breadcrumb uses catalogue label`);
+}
+
+const { searchWords, matchesTopic, searchTerms } = await import('../lib/help-topic-search.mjs');
+for (const [query, slugs] of [
+  ['NERWICA', ['zaburzenia-lekowe']], ['bezsennosc', ['trudnosci-ze-snem']],
+  ['brak pewności siebie', ['niska-samoocena']], ['overthinking', ['nadmierne-analizowanie']],
+  ['ZLOSC', ['radzenie-sobie-ze-zloscia']], ['toksycznych związków', ['problemy-w-relacjach', 'powtarzajace-sie-trudnosci-w-relacjach']],
+  ['brak motywacji', ['depresja', 'wypalenie-zawodowe']], ['strach przed oceną', ['lek-spoleczny', 'nadwrazliwosc-na-krytyke']],
+  ['wyrzutów sumienia', ['nadmierne-poczucie-winy']], ['strach przed niepowodzeniem', ['lek-przed-porazka']],
+  ['bycie perfekcjonistką', ['perfekcjonizm']],
+]) {
+  const results = catalogueNames.filter(([, path, label]) => matchesTopic(searchWords(query), label, searchTerms[path.split('/')[2]]));
+  for (const slug of slugs) assert.ok(results.some(([, path]) => path === `/w-czym-pomagam/${slug}/`), `${query}: ${slug}`);
+}
+assert.ok(!paths.some(path => /psychologiczne-aspekty-przewleklego-bolu|trudnosci-zwiazane-z-obrazem-ciala/.test(path)));

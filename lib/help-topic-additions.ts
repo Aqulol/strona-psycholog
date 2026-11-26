@@ -8,7 +8,7 @@ export type Addition = {
 
 export const additions: Addition[] = [
   {
-    group: 0, slug: 'rozpoznawanie-emocji', label: 'Trudności w rozpoznawaniu i rozumieniu emocji',
+    group: 0, slug: 'rozpoznawanie-emocji', label: 'Trudności w rozumieniu emocji',
     description: 'Konsultacja, gdy trudno nazwać własne emocje lub odróżnić je od siebie. Punktem wyjścia mogą być sygnały z ciała, sytuacja i to, na co ma się wtedy ochotę.',
     intro: 'Po spotkaniu pozostaje napięcie, ale nie wiadomo, czy chodzi o złość, zawstydzenie, czy zmęczenie. Czasem łatwiej powiedzieć, co się wydarzyło, niż opisać własną reakcję.',
     sections: [
@@ -17,7 +17,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Nie trzeba opowiadać o uczuciach w uporządkowany sposób. Można zacząć od wydarzenia, po którym zostało poczucie, że coś było nie w porządku.', links: ['trudnosci-emocjonalne', 'zrozumienie-siebie'],
   },
   {
-    group: 0, slug: 'radzenie-sobie-ze-zloscia', label: 'Trudności w radzeniu sobie ze złością',
+    group: 0, slug: 'radzenie-sobie-ze-zloscia', label: 'Problemy ze złością',
     description: 'Na konsultacji można omówić złość, którą trudno wyrazić, albo reakcje, których skutki budzą niepokój. O różnicy między uczuciem a podjętym działaniem.',
     intro: 'Złość może być dobrze widoczna dla innych, choć rozpoznaje się ją dopiero po kłótni. Może też zostać niewypowiedziana i ujawnić się wiele godzin później jako żal lub niechęć do rozmowy.',
     sections: [
@@ -26,7 +26,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Można przynieść przykład reakcji, której się żałuje, lub rozmowy, w której sprzeciw pozostał niewypowiedziany. Ustalimy, czy potrzebna jest też inna forma wsparcia.', links: ['intensywne-emocje', 'asertywnosc-i-granice'], urgent: true,
   },
   {
-    group: 1, slug: 'trudnosci-ze-snem', label: 'Trudności ze snem i samopoczucie psychiczne',
+    group: 1, slug: 'trudnosci-ze-snem', label: 'Problemy ze snem',
     description: 'Rozmowa o trudnościach z zasypianiem, nocnych pobudkach i ich wpływie na samopoczucie. Konsultacja nie zastępuje oceny możliwych przyczyn medycznych.',
     intro: 'Noc po trudnym dniu nie zawsze przynosi odpoczynek. Niekiedy niepokój pojawia się dopiero w łóżku, a myśl o kolejnym dniu zwiększa presję, żeby jak najszybciej zasnąć.',
     sections: [
@@ -35,12 +35,12 @@ export const additions: Addition[] = [
     ], firstVisit: 'Pomocne może być opisanie ostatniego tygodnia: od kiedy sen się zmienił, jak przebiega dzień i czy problem był już konsultowany medycznie.', links: ['stres', 'natlok-mysli'], sources: [['https://www.nhlbi.nih.gov/health/insomnia/treatment', 'NHLBI: leczenie bezsenności']],
   },
   {
-    group: 1, slug: 'odpoczynek-i-przeciazenie', label: 'Trudności z odpoczynkiem i przeciążenie psychiczne',
+    group: 1, slug: 'odpoczynek-i-przeciazenie', label: 'Trudności z odpoczynkiem',
     description: 'Konsultacja, gdy mimo chwili wolnego trudno odłożyć obowiązki i odpocząć. Można porozmawiać o obciążeniach i o tym, co dzieje się po zwolnieniu tempa.',
     intro: 'Dzień się kończy, lecz kolejna wolna chwila od razu staje się okazją, żeby coś nadrobić. Gdy nic nie ma do zrobienia, zamiast ulgi pojawia się niepokój albo poczucie winy.',
     sections: [
       ['Brak czasu a trudność z wykorzystaniem wolnego czasu', 'Opieka, praca i nieregularny grafik mogą zostawiać zbyt mało przestrzeni na regenerację. W innej sytuacji czas jest dostępny, ale odpoczynek trudno rozpocząć lub utrzymać. Tych sytuacji nie rozwiązuje się tak samo. Przede wszystkim warto zobaczyć, czy można realnie zdjąć część obciążenia.'],
-      ['Co wywołuje zwolnienie tempa', 'W rozmowie można sprawdzić, z czym wiąże się odkładanie obowiązku: z przewidywaniem kłopotów, obawą przed oceną czy poczuciem, że bez działania trudno określić własną wartość. W podejściu psychodynamicznym można pytać, co odpoczynek oznacza dla danej osoby, zamiast przedstawiać relaks jako kolejne zadanie do wykonania.'],
+      ['Co wywołuje zwolnienie tempa', 'W rozmowie można sprawdzić, z czym wiąże się odkładanie obowiązku: z przewidywaniem kłopotów, obawą przed oceną czy poczuciem, że bez działania trudno określić własną wartość. W podejściu psychodynamicznym można pytać, czy przerwa budzi winę, ponieważ odpoczynek jest przeżywany jako utrata kontroli lub dowód niewystarczającego wysiłku. Przywracanie prawa do przerwy nie oznacza pomijania rzeczywistych obowiązków.'],
     ], firstVisit: 'Można opisać ostatnią chwilę, którą planowało się przeznaczyć na odpoczynek, i to, co ostatecznie się z nią stało.', links: ['stres', 'wypalenie-zawodowe', 'trudnosci-ze-snem'],
   },
   {
@@ -62,7 +62,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Wystarczy krótki opis jednej rozmowy, która poszła inaczej, niż się oczekiwało. Spotkanie ma charakter indywidualny, nie jest treningiem dla pary.', links: ['asertywnosc-i-granice', 'problemy-w-relacjach'],
   },
   {
-    group: 2, slug: 'nawiazywanie-kontaktow-spolecznych', label: 'Trudności w nawiązywaniu kontaktów społecznych',
+    group: 2, slug: 'nawiazywanie-kontaktow-spolecznych', label: 'Trudności w nawiązywaniu znajomości',
     description: 'Konsultacja przy trudnościach z nawiązywaniem znajomości. O różnicy między brakiem okazji, niepewnością na początku i trudnością z jej podtrzymaniem.',
     intro: 'Po zmianie miasta lub pracy można znać wiele osób z widzenia, a mimo to nie mieć kogo zaprosić na spotkanie. Czasem pierwsza rozmowa jest możliwa, ale trudno przejść do kolejnego kontaktu.',
     sections: [
@@ -89,7 +89,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Można przytoczyć dwa zdania z własnego komentarza po pomyłce i opowiedzieć, co wydarzyło się później.', links: ['nadwrazliwosc-na-krytyke', 'poczucie-niewystarczalnosci'],
   },
   {
-    group: 3, slug: 'nadwrazliwosc-na-krytyke', label: 'Nadwrażliwość na krytykę',
+    group: 3, slug: 'nadwrazliwosc-na-krytyke', label: 'Trudności w radzeniu sobie z krytyką',
     description: 'Konsultacja, gdy informacja zwrotna wywołuje silny wstyd, złość lub potrzebę wycofania. Można omówić, co w ocenie innych okazuje się szczególnie trudne.',
     intro: 'Po uwadze dotyczącej jednego zadania trudno skupić się na reszcie rozmowy. Można natychmiast zacząć się bronić albo dopiero po spotkaniu zauważyć, jak mocno ta uwaga zabolała.',
     sections: [
@@ -107,7 +107,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Można zacząć od wyboru, który zaskoczył osobę podejmującą decyzję, lub od pytania, które powraca w różnych sytuacjach.', links: ['rozpoznawanie-emocji', 'stabilny-obraz-siebie', '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/'],
   },
   {
-    group: 3, slug: 'potrzeba-akceptacji', label: 'Nadmierna potrzeba akceptacji',
+    group: 3, slug: 'potrzeba-akceptacji', label: 'Zależność od akceptacji innych',
     description: 'Konsultacja, gdy opinie innych mają większy wpływ na wybory niż własne potrzeby. O różnicy między potrzebą przynależności a stałym zabieganiem o zgodę.',
     intro: 'Przed podjęciem decyzji łatwo wyobrazić sobie, co powiedzą inni, ale trudno ustalić, co samemu uważa się za dobre rozwiązanie. Po odmowie pojawia się chęć szybkiego wyjaśnienia albo cofnięcia decyzji.',
     sections: [
@@ -116,7 +116,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Można przynieść przykład sytuacji, w której reakcja innych przeważyła nad własnym zdaniem mimo wątpliwości.', links: ['lek-przed-odrzuceniem', 'asertywnosc-i-granice'],
   },
   {
-    group: 3, slug: 'poczucie-niewystarczalnosci', label: 'Poczucie bycia niewystarczająco dobrym',
+    group: 3, slug: 'poczucie-niewystarczalnosci', label: 'Poczucie bycia niewystarczającym',
     description: 'Na konsultacji można porozmawiać o poczuciu, że nawet dobry wynik nie wystarcza, by uznać własny wysiłek lub pozwolić sobie na odpoczynek po zadaniu.',
     intro: 'Zadanie jest skończone i inni wydają się zadowoleni, a jednak zostaje poczucie, że należało zrobić więcej. Niekiedy ten brak domknięcia dotyczy również bycia partnerem, rodzicem lub pracownikiem.',
     sections: [
@@ -125,7 +125,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Można opowiedzieć o czymś, co zakończyło się dobrze, lecz nie przyniosło ulgi, i o tym, czego nadal się od siebie oczekiwało.', links: ['niska-samoocena', 'nadmierny-samokrytycyzm'],
   },
   {
-    group: 6, slug: 'narcyzm', label: 'Trudności związane z narcyzmem',
+    group: 6, slug: 'narcyzm', label: 'Narcyzm i trudności narcystyczne',
     description: 'Na konsultacji można omówić zależność samooceny od uznania, wstyd i napięcie w relacjach. Potoczne użycie słowa „narcyzm” nie jest rozpoznaniem klinicznym.',
     intro: 'Jedna osoba zgłasza się, bo sukces szybko traci dla niej znaczenie bez uznania innych. Inna zastanawia się nad uwagą, że w bliskich relacjach trudno jej dostrzec perspektywę drugiej strony, szczególnie podczas konfliktu.',
     sections: [
@@ -134,16 +134,16 @@ export const additions: Addition[] = [
     ], firstVisit: 'Zamiast zaczynać od pytania „czy to narcyzm?”, można opowiedzieć o tym, co w ostatnim konflikcie było najbardziej dotkliwe i jakie były jego skutki.', links: ['zaburzenia-osobowosci', 'niestabilna-samoocena', '/blog/narcyzm-wrazliwy/', '/terapia-skoncentrowana-na-przeniesieniu-tfp/'],
   },
   {
-    group: 6, slug: 'intensywne-emocje', label: 'Trudności w radzeniu sobie z intensywnymi emocjami',
+    group: 0, slug: 'intensywne-emocje', label: 'Intensywne emocje',
     description: 'Konsultacja, gdy emocje narastają szybko i trudno odzyskać równowagę. Można omówić przebieg reakcji, jej skutki i sytuacje, wymagające pilnej pomocy.',
     intro: 'W jednej chwili da się rozmawiać, a po kilku zdaniach trudno wyobrazić sobie jakąkolwiek odpowiedź poza ucieczką lub natychmiastowym działaniem. Niekiedy równie obciążające jest to, jak długo napięcie utrzymuje się później.',
     sections: [
-      ['Znaczenie ma tempo, natężenie i czas powrotu do równowagi', 'Można dobrze wiedzieć, że czuje się lęk albo złość, i nadal mieć trudność z powstrzymaniem reakcji. To nie to samo co problem z nazwaniem uczuć. Warto omówić, co dzieje się tuż przed wzrostem napięcia i czy nasilenie wiąże się na przykład z brakiem snu, przeciążeniem, niepewnością w relacji lub zmianami zdrowotnymi. Nie jest to test na borderline.'],
+      ['Znaczenie ma tempo, natężenie i czas powrotu do równowagi', 'Można dobrze wiedzieć, że czuje się lęk albo złość, i nadal mieć trudność z powstrzymaniem reakcji. Natężenie uczucia nie musi oznaczać, że trudno je regulować. Tematem jest tu siła przeżycia i czas powrotu do równowagi, nie ogólna umiejętność rozpoznawania i wyrażania emocji. Warto omówić, co dzieje się tuż przed wzrostem napięcia i czy nasilenie wiąże się na przykład z brakiem snu, przeciążeniem, niepewnością w relacji lub zmianami zdrowotnymi. Nie jest to test na borderline.'],
       ['Jak wrócić do sytuacji, gdy napięcie już opadnie', 'Podczas spotkań można analizować krótkie odcinki wydarzeń zamiast oceniać całą reakcję naraz. W ujęciu psychodynamicznym istotne może być to, jak pod wpływem emocji zmienia się obraz siebie i rozmówcy. Gdy reakcje są częste, prowadzą do urazów lub pojawia się ryzyko zrobienia krzywdy sobie albo komuś, potrzebna może być pilna lub równoległa pomoc, a nie oczekiwanie na termin w gabinecie.'],
     ], firstVisit: 'Warto powiedzieć, jak szybko reakcje narastają i czy zdarza się obawiać o bezpieczeństwo. Od tego zależy, jaka forma pomocy powinna być pierwsza.', links: ['trudnosci-emocjonalne', 'radzenie-sobie-ze-zloscia', 'borderline'], urgent: true,
   },
   {
-    group: 6, slug: 'stabilny-obraz-siebie', label: 'Trudności w budowaniu stabilnego obrazu siebie',
+    group: 6, slug: 'stabilny-obraz-siebie', label: 'Niestabilny obraz siebie',
     description: 'Na konsultacji można omówić poczucie, że w różnych relacjach trudno rozpoznać własne potrzeby, granice i wybory. Nie oznacza to samo w sobie rozpoznania.',
     intro: 'W jednej relacji łatwo mieć własne zdanie, w innej trudno je nawet nazwać. Po zakończeniu ważnej znajomości może pojawić się pytanie, które wybory były własne, a które wynikały głównie z dopasowania.',
     sections: [
@@ -161,7 +161,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Na spotkanie przychodzi jedna osoba. Dobrym początkiem jest pytanie, co stało się pilne i jakiej decyzji nie trzeba jeszcze podejmować.', links: ['rozstanie-i-rozwod', 'doswiadczenie-przemocy', 'trudnosci-komunikacyjne'],
   },
   {
-    group: 7, slug: 'doswiadczenie-zdrady', label: 'Doświadczenie zdrady',
+    group: 7, slug: 'doswiadczenie-zdrady', label: 'Zdrada w związku',
     description: 'Indywidualna konsultacja po doświadczeniu zdrady. Można rozmawiać o zaufaniu, pytaniach i granicach bez nacisku na wybaczenie lub rozstanie.',
     intro: 'Po odkryciu zdrady niektóre wspomnienia zaczynają znaczyć coś innego niż wcześniej. Można chcieć uzyskać szczegóły i zarazem obawiać się, co przyniesie ich poznanie.',
     sections: [
@@ -179,7 +179,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Można opisać konkretną chwilę, w której obecność drugiej osoby nie zmniejszyła samotności, i powiedzieć, jakiego kontaktu wtedy brakowało.', links: ['samotnosc', 'kryzys-w-zwiazku', '/blog/samotnosc/'],
   },
   {
-    group: 7, slug: 'podobni-partnerzy', label: 'Powtarzające się wybory podobnych partnerów',
+    group: 7, slug: 'podobni-partnerzy', label: 'Wybieranie podobnych partnerów',
     description: 'Indywidualna konsultacja, gdy kolejne związki zaczynają się podobnie lub prowadzą do znajomych rozczarowań. O tym, co można zauważyć przed zaangażowaniem.',
     intro: 'Na początku kolejna osoba wydaje się zupełnie inna, lecz po pewnym czasie wraca znajome uczucie, że tylko jedna strona zabiega o kontakt. Można przyjrzeć się temu bez założenia, że każdy wybór był pomyłką.',
     sections: [
@@ -215,7 +215,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Można zacząć od rozróżnienia: jakie decyzje wymagają działania teraz, a jaka część zmiany jest trudna do przyjęcia niezależnie od formalności.', links: ['wypalenie-zawodowe', 'wazne-zmiany-zyciowe'],
   },
   {
-    group: 4, slug: 'wazne-zmiany-zyciowe', label: 'Trudności związane z ważnymi zmianami życiowymi',
+    group: 4, slug: 'wazne-zmiany-zyciowe', label: 'Trudności w przystosowaniu się do zmian',
     description: 'Konsultacja w okresie przeprowadzki, usamodzielnienia lub ważnej zmiany. Można rozmawiać o niepewności także wtedy, gdy zmiana była chciana i planowana.',
     intro: 'Można długo czekać na przeprowadzkę lub samodzielność, a po zmianie tęsknić za dawnym porządkiem. Ambiwalencja nie musi oznaczać, że decyzja była zła.',
     sections: [
@@ -233,7 +233,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Wystarczy powiedzieć, co dzieje się obecnie, gdy wraca wspomnienie, i czego potrzeba, by móc bezpiecznie rozmawiać.', links: ['doswiadczenie-przemocy', 'trudne-doswiadczenia-z-dziecinstwa'], sources: [['https://www.nice.org.uk/guidance/ng116', 'NICE: rozpoznawanie i leczenie PTSD']], urgent: true,
   },
   {
-    group: 5, slug: 'wczesniejsze-doswiadczenia-a-relacje', label: 'Wpływ wcześniejszych doświadczeń na obecne relacje',
+    group: 5, slug: 'wczesniejsze-doswiadczenia-a-relacje', label: 'Wpływ przeszłości na relacje',
     description: 'Indywidualna konsultacja, gdy dawne doświadczenia wydają się wpływać na to, jak przeżywa się dzisiejszą bliskość, niezgodę lub zależność od innych osób.',
     intro: 'Gdy ktoś prosi o chwilę dla siebie, jego słowa mogą zabrzmieć jak zapowiedź dłuższego odsunięcia. Mogą się wtedy spotkać dwie różne historie: to, co dzieje się dziś, i to, czego wcześniej można było oczekiwać w podobnej sytuacji.',
     sections: [
@@ -251,7 +251,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Na pierwszym spotkaniu warto usłyszeć zarówno to, co niepokoi rodzica, jak i to, co chciałaby zmienić młoda osoba.', links: ['stres-szkolny', 'relacje-z-rowiesnikami'], urgent: true,
   },
   {
-    group: 8, slug: 'relacje-z-rowiesnikami', label: 'Trudności w relacjach z rówieśnikami',
+    group: 8, slug: 'relacje-z-rowiesnikami', label: 'Problemy w relacjach z rówieśnikami',
     description: 'Konsultacja od 15. roku życia, gdy trudność dotyczy przyjaźni, wykluczenia lub miejsca w grupie. O perspektywie młodej osoby i dostępnej pomocy dorosłych.',
     intro: 'Po zmianie klasy trudno znaleźć dla siebie miejsce, a poza szkołą konflikty mogą ciągnąć się w komunikatorach. Czasem jedna znajomość jest ważna właśnie dlatego, że reszta grupy wydaje się niedostępna.',
     sections: [
@@ -260,7 +260,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Można zacząć od jednej znajomości, zmiany w klasie albo sytuacji, w której trudno było się odezwać. Nie trzeba przedstawiać wiadomości czy rozmów z grupy.', links: ['lek-spoleczny', 'samoocena-mlodziezy'],
   },
   {
-    group: 8, slug: 'relacje-rodzinne-mlodziezy', label: 'Trudności w relacjach rodzinnych młodzieży',
+    group: 8, slug: 'relacje-rodzinne-mlodziezy', label: 'Problemy w relacjach rodzinnych',
     description: 'Indywidualna pomoc dla młodzieży od 15. roku życia przy napięciu w domu, konfliktach lub zmianach rodzinnych. To nie oferta terapii rodzinnej ani mediacji.',
     intro: 'Spór w domu może dotyczyć godziny powrotu, ocen lub prywatności, a pod spodem mogą być bardzo różne oczekiwania dotyczące samodzielności i bezpieczeństwa.',
     sections: [
@@ -278,7 +278,7 @@ export const additions: Addition[] = [
     ], firstVisit: 'Jeśli ważniejsze od samego tematu są obawy o sposób prowadzenia rozmowy, można najpierw zapytać o ramy spotkań i granice poufności.', links: ['relacje-rodzinne-mlodziezy', 'relacje-z-rowiesnikami'],
   },
   {
-    group: 8, slug: 'samoocena-mlodziezy', label: 'Trudności z poczuciem własnej wartości u młodzieży',
+    group: 8, slug: 'samoocena-mlodziezy', label: 'Niska samoocena u młodzieży',
     description: 'Konsultacja od 15. roku życia, gdy oceny, porównania i reakcje rówieśników przesłaniają własne zdanie o sobie. O wpływie szkoły, relacji i oczekiwań.',
     intro: 'Ocena z jednego sprawdzianu, komentarz o wyglądzie lub reakcja grupy mogą zmienić to, jak młoda osoba myśli o sobie przez resztę dnia. Otoczenie może widzieć drobiazg tam, gdzie stawką jest poczucie przynależności.',
     sections: [
