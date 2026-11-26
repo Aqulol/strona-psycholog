@@ -1,6 +1,6 @@
 'use client';
 
-import { config } from '../lib/config';
+import { config, booksyWidgetUrl } from '../lib/config';
 import { track } from '../lib/analytics';
 
 /**
@@ -18,8 +18,6 @@ import { track } from '../lib/analytics';
 export default function BooksyCalendar() {
   const id = config.booksyId;
   const hasId = Boolean(id);
-
-  const src = `https://booksy.com/widget/index.html?id=${encodeURIComponent(id)}&lang=pl&country=pl`;
 
   // Gdy booksyId nie jest jeszcze wpisane w lib/config.ts, pokazujemy
   // przyjazny fallback z przyciskiem do rezerwacji - zamiast komunikatu
@@ -47,7 +45,7 @@ export default function BooksyCalendar() {
     <div className="overflow-hidden rounded-lg border border-border">
       <iframe
         title="Rezerwacja wizyty online - Booksy"
-        src={src}
+        src={booksyWidgetUrl}
         className="block h-[780px] w-full lg:h-[920px]"
         style={{ border: 0 }}
         loading="lazy"

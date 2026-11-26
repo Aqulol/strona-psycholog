@@ -1,3 +1,4 @@
+import {helpTopics, topicPath} from '../lib/help-topics';
 import {featureArticles} from '../lib/feature-articles';
 import {paths} from '../lib/site';
 import {editorial} from '../lib/editorial';
@@ -27,12 +28,13 @@ const ARTICLE_DATES: Record<string, string> = {
 };
 
 // Ostatnia istotna zmiana strony głównej / listy bloga / polityki.
-const STATIC_LASTMOD = '2026-10-15';
+const HELP_CONTENT_LASTMOD = '2026-11-26';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages: { path: string; lastmod?: string }[] = [
-    { path: '/' },
-    ...Object.values(paths).map(path=>({path})),
+    { path: '/', lastmod: HELP_CONTENT_LASTMOD },
+    ...Object.values(paths).map(path=>({path, lastmod: (path === paths.signs || path === paths.youth) ? HELP_CONTENT_LASTMOD : undefined})),
+    ...helpTopics.map(({slug}) => ({path: topicPath(slug), lastmod: HELP_CONTENT_LASTMOD})),
     ...featureArticles.map(a=>({path:`/blog/${a.slug}/`,lastmod:a.published})),
     ...editorial.filter(a=>a.slug).map(a=>({path:`/blog/${a.slug}/`})),
     { path: '/blog/', lastmod: featureArticles[0].published },
@@ -41,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastmod,
     })),
     { path: '/cennik/', lastmod: '2026-10-15' },
-    { path: '/polityka-prywatnosci/', lastmod: STATIC_LASTMOD },
+    { path: '/polityka-prywatnosci/', lastmod: HELP_CONTENT_LASTMOD },
   ];
 
   return pages.map((p) => ({
