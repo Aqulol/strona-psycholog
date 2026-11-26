@@ -1,3 +1,4 @@
+import {officeId, personId} from './entities';
 /**
  * Structured data (schema.org) dla artykułów bloga.
  * Spójne z JSON-LD strony głównej (app/page.tsx): ten sam @context,
@@ -10,7 +11,8 @@ export function articleJsonLd(opts: {
   headline: string;
   description: string;
   slug: string;
-  datePublished: string;
+  datePublished?: string;
+  dateModified?: string;
   image: string;
   faq?: ArticleFaq;
 }): Record<string, unknown> {
@@ -24,14 +26,11 @@ export function articleJsonLd(opts: {
         headline: opts.headline,
         description: opts.description,
         inLanguage: 'pl-PL',
-        author: { '@type': 'Person', name: 'Grzegorz Plebaniak' },
-        publisher: {
-          '@type': 'LocalBusiness',
-          name: 'Grzegorz Plebaniak - gabinet psychologiczny',
-          url: 'https://psychologplebaniak.pl',
-        },
-        datePublished: opts.datePublished,
-        dateModified: opts.datePublished,
+        '@id': `${url}#artykul`,
+        author: { '@id': personId },
+        publisher: { '@id': officeId },
+        ...(opts.datePublished ? {datePublished: opts.datePublished} : {}),
+        ...(opts.dateModified ? {dateModified: opts.dateModified} : {}),
         image: opts.image,
         mainEntityOfPage: url,
       },

@@ -19,7 +19,7 @@ const SITE = 'https://psychologplebaniak.pl';
 const ARTICLE_DATES: Record<string, string> = {
   'narcyzm-wrazliwy': '2026-10-14',
   'jak-wybrac-psychoterapeute': '2026-08-20',
-  'dlaczego-wybieram-podobnych-partnerow': '2026-08-11',
+  'dlaczego-wybieram-podobnych-partnerow': '2026-11-26',
   'dlaczego-sama-swiadomosc-nie-wystarcza': '2026-08-11',
   'relacja-terapeutyczna-zrodlo-zmiany': '2026-08-11',
   'czy-przeszlosc-ma-znaczenie': '2026-08-11',
