@@ -16,9 +16,10 @@ const published = [
 const consultationLinks: Record<string, [string,string]> = {
   samotnosc: [topicPath('samotnosc'), 'jak rozmawiam o samotności na konsultacji'],
   'poczucie-wlasnej-wartosci': [topicPath('niska-samoocena'), 'jak wygląda konsultacja dotycząca samooceny'],
-  'dlaczego-wybieram-podobnych-partnerow': [topicPath('problemy-w-relacjach'), 'jak można pracować indywidualnie nad trudnościami w relacjach'],
-  'czy-przeszlosc-ma-znaczenie': [topicPath('trudne-doswiadczenia-z-dziecinstwa'), 'jak można porozmawiać o doświadczeniach z dzieciństwa na konsultacji'],
-  'narcyzm-wrazliwy': [topicPath('zaburzenia-osobowosci'), 'czemu służy konsultacja przy utrwalonych trudnościach w relacjach'],
+  'dlaczego-wybieram-podobnych-partnerow': [topicPath('podobni-partnerzy'), 'jak wygląda konsultacja dotycząca powtarzających się wyborów w związkach'],
+  'relacja-terapeutyczna-zrodlo-zmiany': [topicPath('powtarzajace-sie-trudnosci-w-relacjach'), 'jak rozmawiam o powtarzających się trudnościach w relacjach'],
+  'czy-przeszlosc-ma-znaczenie': [topicPath('wczesniejsze-doswiadczenia-a-relacje'), 'jak można omówić wpływ wcześniejszych doświadczeń na obecne relacje'],
+  'narcyzm-wrazliwy': [topicPath('narcyzm'), 'co można omówić na konsultacji dotyczącej trudności związanych z narcyzmem'],
 };
 export const dynamicParams = false;
 export function generateStaticParams() { return published.map(a => ({ article: a.slug })); }

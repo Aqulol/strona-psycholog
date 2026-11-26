@@ -84,7 +84,7 @@ for (const slug of ['samotnosc', 'poczucie-wlasnej-wartosci']) {
 const helpPaths = paths.filter(path => path.startsWith('/w-czym-pomagam/'));
 const helpIndexPath = '/kiedy-zglosic-sie-na-terapie/';
 const helpIndex = read(file(helpIndexPath));
-assert.equal(helpPaths.length, 24, 'Only the completed topics are exported');
+assert.equal(helpPaths.length, 55, 'Only the completed topics are exported');
 assert.ok(!existsSync(file('/w-czym-pomagam/')), 'No competing topic index');
 for (const path of helpPaths) {
   const html = read(file(path));
@@ -109,9 +109,19 @@ for (const id of ['emocje-mlodziezy', 'relacje-mlodziezy', 'dorastanie-i-tozsamo
 }
 
 assert.match(helpIndex, /<h1>W czym mogę pomóc\?<\/h1>/);
-for (const [, id] of helpIndex.matchAll(/href="#(kategoria-\d+)"/g)) {
-  assert.ok(helpIndex.includes(`id="${id}"`), `Catalog jump target: ${id}`);
-}
+const groupCounts = [...helpIndex.matchAll(/<div class="editorial-card help-topic-card">.*?<ul>(.*?)<\/ul>/gs)]
+  .map(([, list]) => [...list.matchAll(/href="\/w-czym-pomagam\//g)].length);
+assert.deepEqual(groupCounts, [6, 6, 9, 7, 5, 6, 5, 5, 6]);
+const topicIntros = helpPaths.map(path => {
+  const html = read(file(path));
+  assert.ok((html.match(/<h2[ >]/g) || []).length >= 4, `${path}: substantive sections`);
+  assert.ok(html.includes(`property="og:url" content="${root}${path}"`), `${path}: Open Graph URL`);
+  assert.ok(html.includes('href="#rezerwacja"') && html.includes('id="rezerwacja"'), `${path}: booking jump link`);
+  const intro = html.match(/<p class="hero-copy">([^<]+)<\/p>/)?.[1];
+  assert.ok(intro && intro.length >= 80, `${path}: unique introductory copy`);
+  return intro;
+});
+assert.equal(new Set(topicIntros).size, helpPaths.length);
 for (const re of [/<title>([^<]+)<\/title>/, /<meta name="description" content="([^"]+)"/, /<h1[^>]*>([^<]+)<\/h1>/]) {
   const values = helpPaths.map(path => read(file(path)).match(re)?.[1]);
   assert.ok(values.every(Boolean));

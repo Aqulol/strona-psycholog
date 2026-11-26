@@ -3,7 +3,7 @@ import HelpTopicIndex from './HelpTopicIndex';
 import ConsultationTopics from './ConsultationTopics';
 import {webPage} from '../lib/entities';
 import {serviceNotes} from '../lib/service-notes';
-import {Crumbs, Json, Questions, SeeAlso} from './Site';
+import {Booking, Crumbs, Json, Questions, SeeAlso} from './Site';
 import ExternalFrame from './ExternalFrame';
 import BookingAndContact from './BookingAndContact';
 import {pages} from '../lib/pages';
@@ -29,6 +29,9 @@ export default function ServicePage({kind}:{kind:keyof typeof paths}){
  {kind==='adults' && <p className="mt-6">Nie trzeba przechodzić kryzysu, żeby rozważyć terapię. Przykłady tematów opisuję na stronie <a href={paths.signs}>„W czym pomagam?”</a>.</p>}
  {kind==='consult' && <p className="mt-6">Jeśli ma Pan/Pani wcześniejsze rozpoznanie lub korzysta z innej pomocy, można o tym powiedzieć. Można też zacząć od tego, co jest teraz trudne. Więcej przykładów znajduje się w sekcji <a href={paths.signs}>„W czym pomagam?”</a>.</p>}
  {kind==='method' && <p>Przykłady trudności, o których można porozmawiać przed podjęciem decyzji o terapii, opisuję w sekcji <a href={paths.signs}>„W czym pomagam?”</a>.</p>}
- {kind==='signs' && <p className="mt-6"><a href={paths.consult}>Jak wyglądają konsultacje psychologiczne we Wrocławiu i online?</a></p>}
+ {kind==='signs' && <>
+   <section><h2>Pierwsza konsultacja</h2><p>Rozmawiamy o obecnej sytuacji, oczekiwaniach i możliwych dalszych krokach. Więcej o przebiegu spotkania na stronie <a href={paths.consult}>konsultacji psychologicznych we Wrocławiu i online</a>.</p></section>
+   <section><h2>Umów konsultację</h2><p>Termin można wybrać w Booksy. Jeśli nie ma odpowiedniego terminu, można <a href={paths.contact}>skontaktować się telefonicznie lub mailowo</a>.</p><p className="mt-3"><Booking/></p></section>
+ </>}
  <SeeAlso links={page.related}/></main>;
 }
