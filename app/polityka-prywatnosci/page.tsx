@@ -148,7 +148,7 @@ export default function Page() {
       </p>
 
       <h2 className="mt-8 text-3xl">Cookies</h2>
-      <p className="mt-3 leading-8">Strona nie uruchamia analityki ani narzędzi marketingowych. Osadzone mapy Google i kalendarz Booksy nie łączą się z dostawcami, dopóki nie wybierze Pan/Pani opcji ich wyświetlenia. Dostawcy mogą wtedy używać własnych plików cookies. Można skorzystać z telefonu lub e-maila bez wyświetlania tych elementów. Ustawienia cookies można zmienić w przeglądarce.</p>
+      <p className="mt-3 leading-8">Strona nie uruchamia analityki ani narzędzi marketingowych. Kalendarz Booksy ładuje się automatycznie w pobliżu sekcji rezerwacji, a mapa Google dopiero po wybraniu opcji jej wyświetlenia. Przy wczytaniu tych elementów dostawcy otrzymują informacje o połączeniu i mogą używać własnych plików cookies. Rezerwacja za pośrednictwem Booksy nie jest wymagana: można zadzwonić lub napisać. Ustawienia cookies można zmienić w przeglądarce.</p>
 
       <h2 className="mt-8 text-3xl">Przekazywanie danych poza EOG</h2>
       <p className="mt-3 leading-8">

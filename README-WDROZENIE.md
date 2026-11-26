@@ -37,7 +37,7 @@ Pobierz kopię starego katalogu publicznego przez menedżer plików lub SFTP, a 
 
 - Otwórz `/`, `/kontakt/`, `/cennik/`, `/polityka-prywatnosci/` i cztery zachowane artykuły. Sprawdź też stary adres `/blog/artykul-3/` (301) i losowy nieistniejący adres (404).
 - Na telefonie i komputerze sprawdź menu, podmenu, poruszanie się samą klawiaturą i powiększenie tekstu. W Lighthouse wykonaj pomiar mobilny na własnej domenie przed uznaniem wyniku >90 za osiągnięty. Sam build nie certyfikuje WCAG 2.2 AA.
-- Sprawdź link Booksy, wyświetlanie jego kalendarza i mapy dopiero na żądanie, położenie znacznika oraz link pomocniczy ZnanyLekarz. Jeśli osadzenie Booksy nie działa po stronie dostawcy, wciąż dostępny jest bezpośredni link w nagłówku.
+- Sprawdź link Booksy, automatyczne wyświetlanie kalendarza przy przewijaniu oraz otwieranie mapy na żądanie, położenie znacznika oraz link pomocniczy ZnanyLekarz. Jeśli osadzenie Booksy nie działa po stronie dostawcy, wciąż dostępny jest bezpośredni link w nagłówku.
 - Przetestuj formularz bez zgody, z błędnym kontaktem oraz poprawną wiadomością testową. Sprawdź potwierdzenie i dokument w kolekcji `messages`. Skasuj test. Dostęp do wiadomości wymaga uprawnień administracyjnych w konsoli, nie jest dostępny przez klienta webowego.
 - W Search Console zgłoś `https://psychologplebaniak.pl/sitemap.xml` i zbadaj nowe adresy. Upewnij się, że canonical wskazuje właściwy adres z końcowym ukośnikiem. Sprawdź podgląd udostępniania `og-image.png`.
 - Porównaj nazwę, adres, numer telefonu, opisy usług, grupy wiekowe, czas i ceny w Profilu Firmy w Google, Booksy i ZnanyLekarz. Sprawdź też kwalifikator statusu szkolenia.
