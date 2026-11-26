@@ -167,15 +167,6 @@ body { background:#faf8f3;color:#243b34; }
 .help-hero p:last-child { max-width:38rem; margin-inline:auto; line-height:1.7; }
 .help-directory > h2 { text-align:center; margin:0 auto 1.4rem; max-width:32ch; text-wrap:balance; }
 .help-catalogue-page h2 { color:var(--help-green); font-size:clamp(1.55rem, 3vw, 2.55rem); line-height:1.14; }
-.help-search { width:min(100%, 42rem); margin:0 auto 1.7rem; }
-.help-search label { display:block; font-weight:600; font-size:.9rem; margin-bottom:.4rem; }
-.help-search-field { display:flex; gap:.65rem; align-items:center; padding:.2rem .7rem; border:1px solid #a2b2a5; border-radius:.6rem; background:#fffdf8; color:var(--help-green); }
-.help-search-field > svg { flex:none; }
-.help-search-field input { width:100%; min-width:0; min-height:2.8rem; padding:.3rem .15rem; color:#233e35; }
-.help-search-field input::-webkit-search-cancel-button { display:none; }
-.help-search-field input::placeholder { color:#596860; }
-.help-search-field button { display:flex; align-items:center; gap:.25rem; padding:.4rem .25rem; min-height:2.75rem; font-size:.85rem; font-weight:600; }
-.help-empty { padding:1.25rem; margin-bottom:1rem; text-align:center; background:#efece3; border-radius:.6rem; }
 .help-card-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:1.35rem; }
 .help-category { display:flex; flex-direction:column; min-width:0; padding:1.15rem; border:1px solid var(--help-border); border-radius:.7rem; background:#fffdf8; transition:border-color .18s, box-shadow .18s; }
 .help-category:hover, .help-category:focus-within { border-color:#9aafa0; box-shadow:0 5px 15px #2945390c; }
@@ -220,9 +211,9 @@ body { background:#faf8f3;color:#243b34; }
 .help-cta :focus-visible { outline-color:#f6d79a; }
 @media (min-width:40rem) {
   .help-card-grid, .help-youth .help-links { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .help-card-grid:not([data-searching="true"]) .help-category { min-height:22rem; }
-  .help-card-grid:has(.help-more[open]), .help-card-grid[data-searching="true"] { align-items:start; }
-  .help-card-grid[data-searching="false"]:not(:has(.help-more[open])) { grid-auto-rows:1fr; }
+  .help-card-grid .help-category { min-height:22rem; }
+  .help-card-grid:has(.help-more[open]) { align-items:start; }
+  .help-card-grid:not(:has(.help-more[open])) { grid-auto-rows:1fr; }
 }
 @media (min-width:62rem) {
   .help-card-grid, .help-youth .help-links { grid-template-columns:repeat(3,minmax(0,1fr)); }
