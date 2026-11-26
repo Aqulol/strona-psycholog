@@ -28,13 +28,13 @@ export default function HelpTopicIndex() {
       return { href: topicPath(t.slug), label: t.label };
     }),
   }));
-  return <section aria-labelledby="tematy-konsultacji">
+  return <section aria-labelledby="tematy-konsultacji" className="help-catalogue-section">
     <h2 id="tematy-konsultacji">Obszary pomocy psychologicznej i psychoterapii</h2>
     <div className="help-topic-grid" id="lista-tematow">
       {categories.map(category => <div key={category.title} className="editorial-card help-topic-card">
         <h3>{category.title}</h3>
         {category.note && <p>{category.note}</p>}
-        <ul>{category.links.map(link => <li key={link.href}><a href={link.href}>{link.label}<span aria-hidden="true">↗</span></a></li>)}</ul>
+        <ul role="list">{category.links.map(link => <li key={link.href}><a href={link.href}>{link.label}</a></li>)}</ul>
         {category.more && <p><a href={category.more.href}>{category.more.label}</a></p>}
       </div>)}
     </div>
