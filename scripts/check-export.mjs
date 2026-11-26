@@ -86,7 +86,7 @@ const helpIndexPath = '/kiedy-zglosic-sie-na-terapie/';
 const helpIndex = read(file(helpIndexPath));
 assert.equal(helpPaths.length, 74, 'Only the completed topics are exported');
 const additionalSlugs = ['zdrowie-fizyczne-i-psychiczne', 'trudnosci-okoloporodowe', 'rodzicielstwo', 'stres-mniejszosciowy', 'seksualnosc-i-intymnosc', 'trudnosci-z-odzywianiem', 'obraz-ciala', 'problemowe-uzywanie-substancji'];
-const additionalSection = helpIndex.match(/<section aria-labelledby="obszary-rozmowy">([\s\S]*?)<\/section>/)?.[1];
+const additionalSection = helpIndex.match(/<section aria-labelledby="obszary-rozmowy"[^>]*>([\s\S]*?)<\/section>/)?.[1];
 assert.ok(additionalSection);
 for (const slug of additionalSlugs) {
   const path = `/w-czym-pomagam/${slug}/`;
@@ -120,7 +120,7 @@ for (const id of ['emocje-mlodziezy', 'relacje-mlodziezy', 'dorastanie-i-tozsamo
 }
 
 assert.match(helpIndex, /<h1>W czym mogę pomóc\?<\/h1>/);
-const groupCounts = [...helpIndex.matchAll(/<div class="editorial-card help-topic-card">.*?<ul>(.*?)<\/ul>/gs)]
+const groupCounts = [...helpIndex.matchAll(/<div class="editorial-card help-topic-card">.*?<ul[^>]*>(.*?)<\/ul>/gs)]
   .map(([, list]) => [...list.matchAll(/href="\/w-czym-pomagam\//g)].length);
 assert.deepEqual(groupCounts, [10, 9, 10, 9, 5, 6, 5, 5, 1, 6, 8]);
 const topicIntros = helpPaths.map(path => {
@@ -150,7 +150,7 @@ const clinicalSections = helpPaths.map(path => {
 assert.equal(new Set(clinicalSections).size, helpPaths.length, 'Distinct clinical explanation for every topic');
 
 assert.doesNotMatch(helpIndex, /Wszystkie tematy:/);
-const catalogueNames = [...helpIndex.matchAll(/href="(\/w-czym-pomagam\/[^"]+)"[^>]*>([^<]+)<span/g)];
+const catalogueNames = [...helpIndex.matchAll(/href="(\/w-czym-pomagam\/[^"]+)"[^>]*>([^<]+)<\/a>/g)];
 assert.equal(catalogueNames.length, 74);
 for (const [, path, label] of catalogueNames) {
   const html = read(file(path));

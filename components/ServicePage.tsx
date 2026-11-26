@@ -16,7 +16,7 @@ const officePhotos = [
 export default function ServicePage({kind}:{kind:keyof typeof paths}){
  const page=pages[kind];
  const service = ['method', 'adults', 'youth', 'online', 'consult'].includes(kind) ? page.h1 : undefined;
- return <main id="tresc" className="reading"><Json data={webPage(paths[kind], page.h1, page.description, service)}/><Crumbs path={paths[kind]} title={page.h1}/><p className="eyebrow">Gabinet psychologiczny · Wrocław i online</p><h1>{page.h1}</h1><p className="hero-copy">{page.intro}</p>
+ return <main id="tresc" className={kind === 'signs' ? 'reading help-catalogue-page' : 'reading'}><Json data={webPage(paths[kind], page.h1, page.description, service)}/><Crumbs path={paths[kind]} title={page.h1}/><p className="eyebrow">Gabinet psychologiczny · Wrocław i online</p><h1>{page.h1}</h1><p className="hero-copy">{page.intro}</p>
  {kind==='about'&&<img src="/images/portret.webp" width="1280" height="1280" loading="lazy" alt="Portret Grzegorza Plebaniaka"/>}
  {kind==='youth' && <YouthConsultationTopics/>}
  {kind==='signs' && <><HelpTopicIndex/><ConsultationTopics/></>}
