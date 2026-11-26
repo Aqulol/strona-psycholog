@@ -1,5 +1,6 @@
+import {webPage} from '../lib/entities';
 import {serviceNotes} from '../lib/service-notes';
-import {Crumbs, Questions, SeeAlso} from './Site';
+import {Crumbs, Json, Questions, SeeAlso} from './Site';
 import ExternalFrame from './ExternalFrame';
 import BookingAndContact from './BookingAndContact';
 import {pages} from '../lib/pages';
@@ -11,7 +12,8 @@ const officePhotos = [
 ] as const;
 export default function ServicePage({kind}:{kind:keyof typeof paths}){
  const page=pages[kind];
- return <main id="tresc" className="reading"><Crumbs path={paths[kind]} title={page.h1}/><p className="eyebrow">Gabinet psychologiczny · Wrocław i online</p><h1>{page.h1}</h1><p className="hero-copy">{page.intro}</p>
+ const service = ['method', 'adults', 'youth', 'online', 'consult'].includes(kind) ? page.h1 : undefined;
+ return <main id="tresc" className="reading"><Json data={webPage(paths[kind], page.h1, page.description, service)}/><Crumbs path={paths[kind]} title={page.h1}/><p className="eyebrow">Gabinet psychologiczny · Wrocław i online</p><h1>{page.h1}</h1><p className="hero-copy">{page.intro}</p>
  {kind==='about'&&<img src="/images/portret2.webp" width="1280" height="855" loading="lazy" alt="Grzegorz Plebaniak w gabinecie"/>}
  {kind==='signs'&&<ul><li>Intensywne emocje, które trudno nazwać, albo wybuchy złości, po których pojawia się wstyd.</li><li>Lęk przed odrzuceniem, unikanie bliskości lub trudność w stawianiu granic.</li><li>Duże wahania samooceny albo surowa ocena siebie po drobnym błędzie.</li><li>Przeciążenie, poczucie pustki albo trudność z odnalezieniem kierunku w życiu.</li></ul>}
  {[...page.sections,...(serviceNotes[kind]??[])].map(([heading,...paragraphs])=><section key={heading} id={heading==='Superwizja'?'superwizja':undefined}><h2>{heading}</h2>{paragraphs.map(p=><p key={p}>{p}</p>)}</section>)}

@@ -1,14 +1,14 @@
+import ArticleByline from '../../../components/ArticleByline';
 import {Crumbs} from '../../../components/Site';
-import {meta,status} from '../../../lib/site';
+import {meta} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
-import ArticleBookingCta from '../../../components/ArticleBookingCta';
+import {paths} from '../../../lib/site';
+const updated = '2026-11-26';
 
-const description =
-  'Dlaczego w różnych związkach pojawiają się podobne doświadczenia? O wpływie emocji, oczekiwań i wcześniejszych relacji na wybory bliskich osób.';
-
-const seo=meta('/blog/dlaczego-wybieram-podobnych-partnerow/','Dlaczego wybieram podobnych partnerów?',description,true);
-export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:'2026-08-11'}};
+const description = 'Dlaczego wybieramy podobnych partnerów? O powtarzających się wzorcach w relacjach, granicach badań i pytaniach, które można omówić podczas konsultacji.';
+const seo = meta('/blog/dlaczego-wybieram-podobnych-partnerow/', 'Wybieranie podobnych partnerów: dlaczego się powtarza?', description, true);
+export const metadata: Metadata = {...seo, openGraph: {...seo.openGraph, type:'article', publishedTime:'2026-08-11', modifiedTime:updated}};
 
 const faq: [string, string][] = [
   [
@@ -30,6 +30,7 @@ const ld = articleJsonLd({
   description,
   slug: 'dlaczego-wybieram-podobnych-partnerow',
   datePublished: '2026-08-11',
+  dateModified: updated,
   image: 'https://psychologplebaniak.pl/og-image.png',
   faq,
 });
@@ -42,8 +43,8 @@ export default function Page() {
       <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
         Dlaczego ciągle wybieram podobnych partnerów?
       </h1>
-        <p className="mt-3">{status}</p>
-      <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026</p>
+        <ArticleByline/>
+      <p className="mt-4 text-sm text-ink/70">Opublikowano <time dateTime="2026-08-11">11 sierpnia 2026</time> · Zaktualizowano <time dateTime={updated}>26 listopada 2026</time></p>
       <p className="mt-6 leading-8 text-ink/80">
         Zmieniają się imiona, okoliczności i początek znajomości, a jednak po pewnym czasie relacja zaczyna
         przypominać poprzednią. Pojawia się podobny dystans, lęk przed odrzuceniem, nadmierna odpowiedzialność
@@ -152,7 +153,10 @@ export default function Page() {
         reagowania, dlatego zmiana wymaga czasu oraz wielokrotnego przepracowania.
       </p>
 
-      <ArticleBookingCta />
+      <h2 className="mt-12 text-4xl text-green">Co wiemy z badań?</h2>
+      <p className="mt-4 leading-8 text-ink/80">Badanie porównujące opisy osobowości byłych i obecnych partnerów wykazało pewne podobieństwo w tej grupie. Nie wyjaśnia jednak, dlaczego konkretna osoba wchodzi w podobne relacje, ani nie potwierdza, że przyczyną zawsze są doświadczenia z dzieciństwa.</p>
+      <p className="mt-4 leading-8 text-ink/80">Źródło: Park, Y. i MacDonald, G. (2019). <a className="text-link" href="https://doi.org/10.1073/pnas.1902937116">Consistency between individuals’ past and current romantic partners’ own reports of their personalities</a>. <cite>Proceedings of the National Academy of Sciences</cite>.</p>
+      <p className="mt-8 leading-8 text-ink/80">Jeśli chce Pan/Pani przyjrzeć się powracającym trudnościom w relacjach, można sprawdzić <a className="text-link" href={paths.consult}>jak wygląda konsultacja psychologiczna</a>. Konsultacja nie zobowiązuje do rozpoczęcia terapii.</p>
 
       <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
       <ul className="mt-4 space-y-4">

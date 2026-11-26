@@ -1,6 +1,7 @@
+import ArticleByline from '../../../components/ArticleByline';
 import {config} from '../../../lib/config';
 import {Crumbs} from '../../../components/Site';
-import {meta,status} from '../../../lib/site';
+import {meta} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 import ArticleBookingCta from '../../../components/ArticleBookingCta';
@@ -43,7 +44,7 @@ export default function Page() {
         <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
           Jak wybrać psychoterapeutę? Praktyczny przewodnik
         </h1>
-        <p className="mt-3">{status}</p>
+        <ArticleByline/>
         <p className="mt-4 text-sm text-ink/70">20 sierpnia 2026</p>
         <p className="mt-6 leading-8 text-ink/80">
           Wybór terapeuty to jedna z najbardziej osobistych decyzji, jakie można podjąć.

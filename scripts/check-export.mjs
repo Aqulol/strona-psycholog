@@ -44,3 +44,20 @@ for (const name of ['portret', 'gabinet', 'logo']) {
 }
 assert.match(homepage, /<img\b(?=[^>]*portret\.webp)(?=[^>]*fetchpriority="high")[^>]*>/i);
 assert.doesNotMatch(homepage, /<link[^>]+rel="stylesheet"/i, 'Homepage CSS must not require a blocking request');
+
+const hosting = JSON.parse(read('firebase.json')).hosting;
+assert.equal(hosting.public, 'out');
+assert.equal(hosting.trailingSlash, true);
+assert.equal((hosting.rewrites ?? []).length, 0, 'No fallback rewrite that can mask a true 404');
+assert.match(read('out/404.html'), /name="robots" content="noindex/);
+for (const bot of ['OAI-SearchBot', 'Bingbot']) {
+  assert.ok(read('out/robots.txt').includes(`User-Agent: ${bot}`));
+}
+for (const path of paths) {
+  const html = read(file(path));
+  assert.match(html, /Zygmunta Krasińskiego 13A Oficyna, 50-449 Wrocław/);
+  if (/^\/blog\/.+\/$/.test(path)) {
+    assert.match(html, /Autor: <a[^>]+href="\/o-mnie\/"/);
+    assert.ok(html.includes(`"author":{"@id":"${root}/#osoba"}`));
+  }
+}

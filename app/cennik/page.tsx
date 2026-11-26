@@ -1,8 +1,9 @@
+import {officeId} from '../../lib/entities';
 import {Crumbs} from '../../components/Site';
 import {details,meta} from '../../lib/site';
 import { config } from '../../lib/config';
 
-export const metadata=meta('/cennik/','Cennik psychoterapii i konsultacji - Wrocław','Sprawdzi Pan/Pani cenę i czas konsultacji psychologicznej oraz psychoterapii we Wrocławiu lub online. Każde spotkanie trwa 50 minut i kosztuje 200 zł.');
+export const metadata=meta('/cennik/','Psycholog Wrocław - cennik konsultacji i terapii','Sprawdzi Pan/Pani cenę i czas konsultacji psychologicznej oraz psychoterapii we Wrocławiu lub online. Każde spotkanie trwa 50 minut i kosztuje 200 zł.');
 
 /**
  * Podstrona /cennik/ - osobny adres pod frazy „cennik psychoterapia Wrocław”.
@@ -17,14 +18,9 @@ export default function CennikPage() {
         '@type': 'OfferCatalog',
         name: 'Cennik - psycholog Grzegorz Plebaniak Wrocław',
         url: 'https://psychologplebaniak.pl/cennik/',
-        provider: {
-          '@type': ['LocalBusiness', 'ProfessionalService'],
-          name: 'Psycholog Grzegorz Plebaniak',
-          url: 'https://psychologplebaniak.pl/',
-          telephone: config.phone,
-        },
         itemListElement: config.prices.map((p) => ({
           '@type': 'Offer',
+          seller: { '@id': officeId },
           name: p.name,
           price: String(p.price),
           priceCurrency: 'PLN',
