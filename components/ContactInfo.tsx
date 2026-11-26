@@ -22,7 +22,7 @@ import { track } from '../lib/analytics';
  * LENIwie w components/Contact.tsx, skąd trafia tutaj jako {children}.
  */
 export default function ContactInfo({ children }: { children?: ReactNode }) {
-  const hasBooksy = Boolean(config.booksyId && !config.booksyId.includes('[do uzupełnienia]'));
+  const hasBooksy = Boolean(config.booksyId);
   const contactItems = [
     { icon: Phone, label: 'Telefon', value: config.phone, href: `tel:${config.phone.replace(/\s/g, '')}` },
     { icon: Mail, label: 'E-mail', value: config.email, href: `mailto:${config.email}` },
