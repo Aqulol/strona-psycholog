@@ -153,6 +153,7 @@ export default function Page() {
 
       <ArticleBookingCta />
 
+      <p className="mt-6 leading-8">Przykład tego, jak można uwzględniać zarówno historię relacji, jak i aktualne okoliczności, omawiam w artykule o <a href="/blog/samotnosc/" className="text-link">poczuciu samotności</a>.</p>
       <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
       <ul className="mt-4 space-y-4">
         <li>

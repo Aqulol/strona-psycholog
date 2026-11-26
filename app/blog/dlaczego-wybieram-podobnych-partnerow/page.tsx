@@ -158,6 +158,7 @@ export default function Page() {
       <p className="mt-4 leading-8 text-ink/80">Źródło: Park, Y. i MacDonald, G. (2019). <a className="text-link" href="https://doi.org/10.1073/pnas.1902937116">Consistency between individuals’ past and current romantic partners’ own reports of their personalities</a>. <cite>Proceedings of the National Academy of Sciences</cite>.</p>
       <p className="mt-8 leading-8 text-ink/80">Jeśli chce Pan/Pani przyjrzeć się powracającym trudnościom w relacjach, można sprawdzić <a className="text-link" href={paths.consult}>jak wygląda konsultacja psychologiczna</a>. Konsultacja nie zobowiązuje do rozpoczęcia terapii.</p>
 
+      <p className="mt-6 leading-8">Powracający dystans w relacjach można rozważyć także od strony <a href="/blog/samotnosc/" className="text-link">samotności w związku</a>. Jeśli ważnym tematem jest zabieganie o akceptację, może zainteresować Pana/Panią artykuł o <a href="/blog/poczucie-wlasnej-wartosci/" className="text-link">poczuciu własnej wartości w relacjach</a>.</p>
       <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
       <ul className="mt-4 space-y-4">
         <li>
