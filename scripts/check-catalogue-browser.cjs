@@ -36,8 +36,7 @@ const links = page => page.locator(selector).evaluateAll(anchors => anchors.map(
       await page.setViewportSize({ width, height: 900 });
       await page.goto(site + route);
       await page.evaluate(() => document.fonts.ready);
-      const input = page.getByRole('searchbox');
-      await input.waitFor();
+      assert.equal(await page.getByRole('searchbox').count(), 0);
       assert.deepEqual(await links(page), original);
       assert.equal(await page.locator('.help-category').count(), 9);
       const layout = await page.locator('.help-card-grid').evaluate(grid => ({
@@ -61,29 +60,13 @@ const links = page => page.locator(selector).evaluateAll(anchors => anchors.map(
       assert.ok(await page.locator('.help-more[open] a:focus-visible').count());
       await summary.click();
       assert.equal(await page.locator('.help-more[open]').count(), 0);
-      for (const [query, path] of [['WYPALENIE', 'wypalenie-zawodowe'], ['szkolny', 'stres-szkolny'], ['alkoholu lub innych', 'problemowe-uzywanie-substancji'], ['LĘK społeczny', 'lek-spoleczny']]) {
-        await input.fill(query);
-        assert.deepEqual(await page.locator(topics).evaluateAll(anchors => anchors.map(a => a.getAttribute('href'))), [`/w-czym-pomagam/${path}/`]);
-      }
-      await input.fill('brakxyz123');
-      assert.match(await page.getByRole('status').innerText(), /Nie znaleziono/);
-      assert.equal(await page.locator(topics).count(), 0);
-      assert.ok(await page.getByText(/pierwszeństwo ma pilna ocena medyczna/).isVisible());
-      await page.getByRole('button', {name:'Wyczyść'}).click();
-      assert.equal(await input.inputValue(), '');
-      assert.equal(await page.locator('input:focus').count(), 1);
-      assert.deepEqual(await links(page), original);
-      await input.fill('SAMOTNOSC');
-      assert.equal(await page.locator(topics).count(), 2);
-      await input.press('Escape');
-      assert.deepEqual(await links(page), original);
       console.log(JSON.stringify({ width, ...layout }));
     }
-    await page.getByRole('searchbox').fill('samotnosc');
-    await page.getByRole('link', {name:'Samotność', exact:true}).click();
+    const loneliness = page.getByRole('link', {name:'Samotność', exact:true});
+    await loneliness.click();
     assert.equal(new URL(page.url()).pathname, '/w-czym-pomagam/samotnosc/');
     assert.deepEqual(errors, []);
     for (const path of original) assert.equal((await fetch(site + path, { redirect:'manual' })).status, 200, path);
-    console.log('75 direct HTTP 200 links. No-JS HTML, native details, keyboard and search passed.');
+    console.log('75 direct HTTP 200 links. No-JS HTML, native details, and keyboard passed.');
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

@@ -162,7 +162,7 @@ for (const [, path, label] of catalogueNames) {
 
 assert.ok(!paths.some(path => /psychologiczne-aspekty-przewleklego-bolu|trudnosci-zwiazane-z-obrazem-ciala/.test(path)));
 
-assert.match(helpIndex, /id="help-search"/);
+assert.doesNotMatch(helpIndex, /help-search|type="search"|role="search"/);
 for (const path of paths) {
   const html = read(file(path));
   if (/^\/blog\/.+\/$/.test(path)) {

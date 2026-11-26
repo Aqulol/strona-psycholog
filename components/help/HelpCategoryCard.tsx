@@ -15,12 +15,12 @@ export function HelpBadge({ icon, tone }: Pick<HelpCategory, 'icon' | 'tone'>) {
   return <span className="help-badge" data-tone={tone}><HelpTopicIcon name={icon} size={27}/></span>;
 }
 
-export default function HelpCategoryCard({ category, searching }: { category: HelpCategory; searching: boolean }) {
+export default function HelpCategoryCard({ category }: { category: HelpCategory }) {
   const { title, topics } = category;
   return <div className="help-category">
     <div className="help-category-heading"><HelpBadge {...category}/><h3>{title}</h3></div>
-    <HelpLinks topics={searching ? topics : topics.slice(0, 4)}/>
-    {!searching && topics.length > 4 && <details className="help-more">
+    <HelpLinks topics={topics.slice(0, 4)}/>
+    {topics.length > 4 && <details className="help-more">
       <summary><span className="sr-only">{title}: </span><span className="help-more-open">Zobacz wszystkie tematy ({topics.length})</span><span className="help-more-close">Zwiń tematy</span><HelpTopicIcon name="ChevronDown" size={17}/></summary>
       <HelpLinks topics={topics.slice(4)}/>
     </details>}

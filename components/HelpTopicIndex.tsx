@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import { helpTopics, topicPath } from '../lib/help-topics';
-import HelpSearch, { type HelpCategory } from './help/HelpSearch';
+import { paths } from '../lib/site';
+import HelpCategoryCard, { HelpBadge, HelpLinks, type HelpCategory } from './help/HelpCategoryCard';
+import HelpTopicIcon from './help/HelpTopicIcon';
 
 // Presentation only: topic pages retain their own taxonomy, text and metadata.
 const groups = [
@@ -116,5 +118,23 @@ const categories: HelpCategory[] = groups.map(([title, icon, tone, entries]) => 
 if (assigned.size !== helpTopics.length) throw new Error('Unassigned catalogue topics');
 
 export default function HelpTopicIndex({ scope }: { scope: ReactNode }) {
-  return <HelpSearch categories={categories.slice(0, 9)} youth={categories[9]} scope={categories[10]}>{scope}</HelpSearch>;
+  const [youth, services] = categories.slice(-2);
+  return <>
+    <section className="help-directory help-width" aria-labelledby="tematy-konsultacji">
+      <h2 id="tematy-konsultacji">Obszary pomocy psychologicznej i psychoterapii</h2>
+      <div className="help-card-grid" id="lista-tematow">
+        {categories.slice(0, -2).map(category => <HelpCategoryCard key={category.title} category={category}/>)}
+      </div>
+    </section>
+    <section className="help-youth help-width" aria-labelledby="help-youth-heading">
+      <div className="help-panel-heading"><HelpBadge {...youth}/><h2 id="help-youth-heading">{youth.title}</h2></div>
+      <HelpLinks topics={youth.topics}/>
+      <a className="help-youth-cta" href={paths.youth}>Jak wygląda konsultacja dla młodzieży? <HelpTopicIcon name="ArrowUpRight" size={17}/></a>
+    </section>
+    <section className="help-scope help-width" aria-labelledby="help-scope-heading">
+      <div className="help-panel-heading"><HelpBadge {...services}/><h2 id="help-scope-heading">{services.title}</h2></div>
+      <HelpLinks topics={services.topics}/>
+      {scope}
+    </section>
+  </>;
 }
