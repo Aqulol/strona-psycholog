@@ -151,3 +151,10 @@ body { background:#faf8f3;color:#243b34; }
 .editorial-card h2 a,.editorial-card h3 a { text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px; }
 .reading h1,main.max-w-3xl h1 { overflow-wrap:anywhere; }
 .embed[title*="Booksy"] { min-height:42rem; }
+
+.support-list { display:grid; list-style:none; border-top:1px solid #d8ded3; margin-bottom:.6rem; }
+.support-list li { padding:.85rem 0; border-bottom:1px solid #d8ded3; }
+.support-list h3 { font-size:1.15rem; font-weight:600; line-height:1.35; color:#244e41; margin-bottom:.2rem; }
+@media(min-width:720px) {
+  .support-list { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:2rem; }
+}
