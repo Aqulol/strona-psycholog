@@ -127,3 +127,11 @@ for (const re of [/<title>([^<]+)<\/title>/, /<meta name="description" content="
   assert.ok(values.every(Boolean));
   assert.equal(new Set(values).size, helpPaths.length, `Unique topic metadata: ${re}`);
 }
+
+const clinicalSections = helpPaths.map(path => {
+  const html = read(file(path));
+  const section = html.match(/<section data-topic-depth="true"><h2>([^<]+)<\/h2><p>([^<]+)<\/p><\/section>/);
+  assert.ok(section, `${path}: dedicated clinical explanation`);
+  return section[2];
+});
+assert.equal(new Set(clinicalSections).size, helpPaths.length, 'Distinct clinical explanation for every topic');

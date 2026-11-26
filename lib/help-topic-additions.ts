@@ -235,7 +235,7 @@ export const additions: Addition[] = [
   {
     group: 5, slug: 'wczesniejsze-doswiadczenia-a-relacje', label: 'Wpływ wcześniejszych doświadczeń na obecne relacje',
     description: 'Indywidualna konsultacja, gdy dawne doświadczenia wydają się wpływać na to, jak przeżywa się dzisiejszą bliskość, niezgodę lub zależność od innych osób.',
-    intro: 'Ktoś prosi o chwilę dla siebie, a odpowiedź brzmi znajomo, jakby była zapowiedzią dłuższego odsunięcia. Mogą się wtedy spotkać dwie różne historie: to, co dzieje się dziś, i to, czego wcześniej można było oczekiwać w podobnej sytuacji.',
+    intro: 'Gdy ktoś prosi o chwilę dla siebie, jego słowa mogą zabrzmieć jak zapowiedź dłuższego odsunięcia. Mogą się wtedy spotkać dwie różne historie: to, co dzieje się dziś, i to, czego wcześniej można było oczekiwać w podobnej sytuacji.',
     sections: [
       ['Dawne doświadczenie nie musi pochodzić z dzieciństwa', 'Na obecne oczekiwania mogą wpływać również wcześniejsze związki, odejście bliskiej osoby lub wykluczenie w późniejszym okresie. Podobne reakcje nie dowodzą wspólnej przyczyny. Warto uwzględnić to, czy obecny rozmówca zachowuje się inaczej, a jeśli tak, czy jest to dostrzegalne w chwili napięcia.'],
       ['Hipoteza, którą można sprawdzić również w gabinecie', 'Psychodynamicznie można analizować, jak oczekiwanie krytyki, odmowy lub obojętności wpływa na to, co zostaje usłyszane. Jeśli podobne oczekiwanie pojawi się w rozmowie ze mną, można mówić o nim bez rozstrzygania, że pochodzi wyłącznie z przeszłości. Celem jest zauważanie różnic, nie przypisywanie wszystkim obecnym relacjom jednego znaczenia.'],
