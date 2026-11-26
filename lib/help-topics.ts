@@ -1,9 +1,12 @@
+import { additions } from './help-topic-additions';
+
 export const helpGroups = ['Nastrój i emocje', 'Lęk, stres i przeciążenie', 'Relacje i bliskość', 'Poczucie własnej wartości i rozumienie siebie', 'Kryzysy i zmiany życiowe', 'Przeszłość i trudne doświadczenia', 'Osobowość i długotrwałe trudności emocjonalne', 'Związki i relacje partnerskie', 'Młodzież od 15. roku życia'] as const;
 
 type Topic = {
   slug: string; group: typeof helpGroups[number]; label: string; h1?: string;
   title: string; description: string; intro: string;
   sections: [string, string][]; related: [string, string][];
+  firstVisit?: string;
   faq?: [string, string];
   sources?: [string, string][]; urgent?: boolean;
 };
@@ -12,7 +15,7 @@ export const topicPath = (slug: string) => `/w-czym-pomagam/${slug}/`;
 const tfp: [string, string] = ['/terapia-skoncentrowana-na-przeniesieniu-tfp/', 'Jak wygląda praca w TFP'];
 const borderlineGuide: [string, string] = ['https://www.nice.org.uk/guidance/cg78', 'NICE: rozpoznawanie i leczenie zaburzenia osobowości borderline'];
 
-export const helpTopics: Topic[] = [
+const existingTopics: Topic[] = [
   {
     slug: 'depresja', group: helpGroups[0], label: 'Depresja i obniżony nastrój', title: 'Depresja i obniżony nastrój - konsultacja we Wrocławiu',
     description: 'Konsultacja psychologiczna we Wrocławiu przy obniżonym nastroju lub rozpoznanej depresji. O czym można porozmawiać i kiedy potrzebna jest inna pomoc?',
@@ -176,13 +179,13 @@ export const helpTopics: Topic[] = [
   {
     slug: 'doswiadczenie-przemocy', group: helpGroups[5], label: 'Emocjonalne następstwa przemocy', h1: 'Konsultacja po doświadczeniu przemocy', title: 'Doświadczenie przemocy - konsultacja psychologiczna',
     description: 'Na konsultacji można porozmawiać o wpływie doświadczenia przemocy na emocje, zaufanie i relacje. W sytuacji zagrożenia pierwszeństwo ma bezpieczeństwo.',
-    intro: 'Po doświadczeniu przemocy można mieć trudność z poczuciem bezpieczeństwa również w sytuacjach, które wcześniej nie budziły obaw. Można też nie wiedzieć, od czego zacząć rozmowę. Nie trzeba opowiadać szczegółów wydarzenia na pierwszym spotkaniu.',
+    intro: 'Po doświadczeniu przemocy można mieć trudność z poczuciem bezpieczeństwa również w sytuacjach, które wcześniej nie budziły obaw. Można też nie wiedzieć, od czego zacząć rozmowę. Doświadczenie przemocy lub traumy może być powodem konsultacji. Nie trzeba opowiadać szczegółów wydarzenia na pierwszym spotkaniu.',
     sections: [
       ['Gdy zagrożenie nadal trwa', 'Najpierw liczy się bezpieczeństwo i dostęp do pomocy, nie analiza przyczyn własnych reakcji. Za przemoc odpowiada osoba, która ją stosuje. Jeśli nie ma bezpośredniego zagrożenia, ale potrzebne jest wsparcie w ustaleniu bezpiecznego dalszego działania, można skontaktować się ze specjalistyczną placówką pomocy osobom doświadczającym przemocy. Planowa wizyta w gabinecie nie zastępuje takiego wsparcia.'],
       ['O czym można rozmawiać, gdy jest już bezpiecznie', 'Powodem zgłoszenia może być trudność z zaufaniem, napięcie przy określonych rozmowach, powracające wspomnienia lub niepewność w ocenie własnych granic. Na konsultacji można ustalić, co jest najtrudniejsze teraz i jaka pomoc odpowiada aktualnym potrzebom. Jeśli potrzebna jest inna forma leczenia lub specjalistycznego wsparcia, można o tym porozmawiać bez zobowiązania do rozpoczęcia psychoterapii w gabinecie.'],
     ],
     sources: [['https://nidzica.policja.gov.pl/o12/aktualnosci/141999,Jestes-swiadkiem-lub-doswiadczasz-przemocy-domowej-Reaguj.html', 'Policja: gdzie szukać pomocy w przypadku przemocy domowej']],
-    urgent: true, related: [[topicPath('kryzys-zyciowy'), 'Konsultacja w okresie trudnych zmian'], [topicPath('trudne-doswiadczenia-z-dziecinstwa'), 'Wpływ wcześniejszych doświadczeń']],
+    urgent: true, related: [[topicPath('powracajace-wspomnienia'), 'Powracające wspomnienia trudnych wydarzeń'], [topicPath('trudne-doswiadczenia-z-dziecinstwa'), 'Wpływ wcześniejszych doświadczeń']],
   },
   {
     slug: 'lek-spoleczny', group: helpGroups[1], label: 'Lęk społeczny', h1: 'Lęk społeczny i obawa przed oceną', title: 'Lęk społeczny - konsultacja psychologiczna',
@@ -257,4 +260,30 @@ export const helpTopics: Topic[] = [
     ],
     related: [['/psychoterapia-mlodziezy-od-15-roku-zycia/', 'Pierwsze spotkanie i udział rodziców'], [topicPath('lek-spoleczny'), 'Obawa przed oceną w grupie']],
   },
+];
+
+const topicLabels = new Map([...existingTopics, ...additions].map(t => [t.slug, t.label]));
+const resourceLabels: Record<string, string> = {
+  '/blog/relacja-terapeutyczna-zrodlo-zmiany/': 'Artykuł: relacja terapeutyczna a zmiana',
+  '/blog/narcyzm-wrazliwy/': 'Artykuł o narcyzmie wrażliwym',
+  '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/': 'Artykuł: dlaczego sama świadomość nie wystarcza?',
+  '/blog/samotnosc/': 'Artykuł o doświadczeniu samotności',
+  '/blog/dlaczego-wybieram-podobnych-partnerow/': 'Artykuł: dlaczego wybieram podobnych partnerów?',
+  '/blog/czy-przeszlosc-ma-znaczenie/': 'Artykuł: czy przeszłość ma znaczenie?',
+  '/terapia-skoncentrowana-na-przeniesieniu-tfp/': 'Jak wygląda praca w TFP',
+};
+
+export const helpTopics: Topic[] = [
+  ...existingTopics,
+  ...additions.map(({ group, links, ...topic }): Topic => ({
+    ...topic,
+    group: helpGroups[group],
+    title: topic.label.length <= 45 ? `${topic.label} - konsultacja` : topic.label,
+    related: links.map(link => {
+      const externalToCatalogue = link.startsWith('/');
+      const label = externalToCatalogue ? resourceLabels[link] : topicLabels.get(link);
+      if (!label) throw new Error(`Missing label for topic link: ${link}`);
+      return [externalToCatalogue ? link : topicPath(link), label];
+    }),
+  })),
 ];
