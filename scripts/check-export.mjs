@@ -33,3 +33,14 @@ for (const { destination, type } of redirects) {
 }
 assert.ok(read('out/robots.txt').includes(`${root}/sitemap.xml`));
 console.log(`Checked ${paths.length} exported pages and ${redirects.length} redirects.`);
+
+const homepage = read(file('/'));
+for (const name of ['portret', 'gabinet', 'logo']) {
+  const match = homepage.match(new RegExp(`srcSet="([^"]*/responsive/${name}-[^"]*)"`, 'i'));
+  assert.ok(match, `Homepage: responsive ${name}`);
+  for (const candidate of match[1].split(', ')) {
+    assert.ok(existsSync(join('out', candidate.split(' ')[0])), `Responsive asset: ${candidate}`);
+  }
+}
+assert.match(homepage, /<img\b(?=[^>]*portret\.webp)(?=[^>]*fetchpriority="high")[^>]*>/i);
+assert.doesNotMatch(homepage, /<link[^>]+rel="stylesheet"/i, 'Homepage CSS must not require a blocking request');

@@ -8,7 +8,6 @@ import { config } from '../lib/config';
 // Firebase Web SDK - inicjalizujemy tylko, gdy właściciel wpisał prawdziwy
 // apiKey (zamiast placeholdera „TU-WPISZ-..."). W wariancie darmowym (Spark)
 // formularz zapisuje wiadomości bezpośrednio do Firestore z przeglądarki.
-import { initializeApp, getApps, getApp } from 'firebase/app';
 
 type FormState = 'idle' | 'sending' | 'success' | 'error' | 'unconfigured';
 
@@ -17,13 +16,6 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 /** Czy firebaseConfig został już uzupełniony przez właściciela? */
 function isFirebaseConfigured(): boolean {
   return !config.firebaseConfig.apiKey.startsWith('TU-WPISZ');
-}
-
-/** Inicjalizacja Firebase - tylko raz, tylko gdy config jest uzupełniony. */
-async function getDb() {
-  const {getFirestore} = await import('firebase/firestore');
-  const app = getApps().length ? getApp() : initializeApp(config.firebaseConfig);
-  return getFirestore(app);
 }
 
 /**
@@ -90,8 +82,11 @@ export default function ContactForm() {
 
     setState('sending');
     try {
-      const {collection,addDoc,serverTimestamp} = await import('firebase/firestore');
-      const db = await getDb();
+      const [{initializeApp, getApps, getApp}, {getFirestore, collection, addDoc, serverTimestamp}] = await Promise.all([
+        import('firebase/app'), import('firebase/firestore'),
+      ]);
+      const app = getApps().length ? getApp() : initializeApp(config.firebaseConfig);
+      const db = getFirestore(app);
       await addDoc(collection(db, 'messages'), {
         name: name.trim(),
         contact: contact.trim(),
