@@ -1,3 +1,4 @@
+import BlogReading from '../../../components/BlogReading';
 import ArticleByline from '../../../components/ArticleByline';
 import {Crumbs} from '../../../components/Site';
 import {meta} from '../../../lib/site';
@@ -155,7 +156,6 @@ export default function Page() {
 
       <h2 className="mt-12 text-4xl text-green">Co wiemy z badań?</h2>
       <p className="mt-4 leading-8 text-ink/80">Badanie porównujące opisy osobowości byłych i obecnych partnerów wykazało pewne podobieństwo w tej grupie. Nie wyjaśnia jednak, dlaczego konkretna osoba wchodzi w podobne relacje, ani nie potwierdza, że przyczyną zawsze są doświadczenia z dzieciństwa.</p>
-      <p className="mt-4 leading-8 text-ink/80">Źródło: Park, Y. i MacDonald, G. (2019). <a className="text-link" href="https://doi.org/10.1073/pnas.1902937116">Consistency between individuals’ past and current romantic partners’ own reports of their personalities</a>. <cite>Proceedings of the National Academy of Sciences</cite>.</p>
       <p className="mt-8 leading-8 text-ink/80">Jeśli chce Pan/Pani przyjrzeć się powracającym trudnościom w relacjach, można sprawdzić <a className="text-link" href={paths.consult}>jak wygląda konsultacja psychologiczna</a>. Konsultacja nie zobowiązuje do rozpoczęcia terapii.</p>
 
       <p className="mt-6 leading-8">Powracający dystans w relacjach można rozważyć także od strony <a href="/blog/samotnosc/" className="text-link">samotności w związku</a>. Jeśli ważnym tematem jest zabieganie o akceptację, może zainteresować Pana/Panią artykuł o <a href="/blog/poczucie-wlasnej-wartosci/" className="text-link">poczuciu własnej wartości w relacjach</a>.</p>
@@ -195,7 +195,8 @@ export default function Page() {
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>
         </li>
       </ul>
-      </main>
+      <BlogReading slug="dlaczego-wybieram-podobnych-partnerow"/>
+    </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>
   );

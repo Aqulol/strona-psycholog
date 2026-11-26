@@ -1,7 +1,5 @@
 import { paths } from '../lib/site';
 import { helpGroups, helpTopics, topicPath } from '../lib/help-topics';
-import { searchTerms } from '../lib/help-topic-search.mjs';
-import HelpTopicFilter from './HelpTopicFilter';
 
 const categoryOrder = [0, 1, 2, 3, 6, 7, 4, 5, 9, 8] as const;
 
@@ -27,11 +25,18 @@ export default function HelpTopicIndex() {
     links: orderedSlugs[i].map(slug => {
       const t = helpTopics.find(topic => topic.slug === slug && topic.group === helpGroups[i]);
       if (!t) throw new Error(`Topic not found in category: ${slug}`);
-      return { href: topicPath(t.slug), label: t.label, terms: searchTerms[t.slug] };
+      return { href: topicPath(t.slug), label: t.label };
     }),
   }));
   return <section aria-labelledby="tematy-konsultacji">
     <h2 id="tematy-konsultacji">Obszary pomocy psychologicznej i psychoterapii</h2>
-    <HelpTopicFilter categories={categories}/>
+    <div className="help-topic-grid" id="lista-tematow">
+      {categories.map(category => <div key={category.title} className="editorial-card help-topic-card">
+        <h3>{category.title}</h3>
+        {category.note && <p>{category.note}</p>}
+        <ul>{category.links.map(link => <li key={link.href}><a href={link.href}>{link.label}<span aria-hidden="true">↗</span></a></li>)}</ul>
+        {category.more && <p><a href={category.more.href}>{category.more.label}</a></p>}
+      </div>)}
+    </div>
   </section>;
 }

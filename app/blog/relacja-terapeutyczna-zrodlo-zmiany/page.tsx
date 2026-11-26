@@ -1,3 +1,4 @@
+import BlogReading from '../../../components/BlogReading';
 import ArticleByline from '../../../components/ArticleByline';
 import {Crumbs} from '../../../components/Site';
 import {meta} from '../../../lib/site';
@@ -191,7 +192,9 @@ export default function Page() {
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>
         </li>
       </ul>
-      </main>
+      <p className="mt-6 leading-8">W metaanalizie badań nad psychoterapią dorosłych jakość przymierza terapeutycznego wiązała się z wynikami terapii. Związek ten nie dowodzi, że sama relacja powoduje poprawę. Psychodynamiczne rozumienie tego, co ujawnia się w relacji, jest odrębną perspektywą kliniczną.</p>
+      <BlogReading slug="relacja-terapeutyczna-zrodlo-zmiany"/>
+    </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>
   );

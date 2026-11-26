@@ -1,3 +1,4 @@
+import BlogReading from '../../../components/BlogReading';
 import ArticleByline from '../../../components/ArticleByline';
 import {config} from '../../../lib/config';
 import {Crumbs} from '../../../components/Site';
@@ -214,7 +215,8 @@ export default function Page() {
             <p className="mt-1 leading-7 text-ink/70">konsultacja i psychoterapia, stacjonarnie i online</p>
           </li>
         </ul>
-      </main>
+      <BlogReading slug="jak-wybrac-psychoterapeute"/>
+    </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>
   );

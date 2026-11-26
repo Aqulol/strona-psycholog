@@ -1,4 +1,4 @@
-import { depthSources, topicDepth } from '../../../lib/help-topic-depth';
+import { topicDepth } from '../../../lib/help-topic-depth';
 import { config } from '../../../lib/config';
 import { notFound } from 'next/navigation';
 import BookingSidebar from '../../../components/BookingSidebar';
@@ -25,7 +25,6 @@ export default async function TopicPage({ params }: Props) {
   const path = topicPath(t.slug);
   const heading = t.h1 ?? t.label;
   const depth = topicDepth[t.slug];
-  const sources = [...(t.sources ?? []), ...(depthSources[t.slug] ?? [])];
   const youth = t.group === helpGroups[8];
   return <main id="tresc" className="reading topic-page">
     <Crumbs path={path} title={t.label}/>
@@ -40,8 +39,8 @@ export default async function TopicPage({ params }: Props) {
         {depth && <section data-topic-depth><h2>{depth[0]}</h2><p>{depth[1]}</p></section>}
         {t.sections.map(([title, text]) => <section key={title}><h2>{title}</h2><p>{text}</p></section>)}
         <section><h2>Pierwsza konsultacja</h2><p>{t.firstVisit ?? 'Pierwsze spotkanie służy poznaniu sytuacji i oczekiwań oraz omówieniu możliwych form dalszej pomocy. Nie zobowiązuje do rozpoczęcia psychoterapii.'}</p>{youth && <p>Przyjmuję młodzież od 15. roku życia. Na pierwsze spotkanie z osobą niepełnoletnią zapraszam rodzica lub rodziców. Kolejne spotkania z młodą osobą odbywają się indywidualnie. Ramy współpracy i granice poufności omawiam podczas konsultacji.</p>}<p>Więcej informacji: <a href={paths.consult}>konsultacje psychologiczne we Wrocławiu i online</a>.</p></section>
+        {t.slug === 'doswiadczenie-przemocy' && <p><a href="https://nidzica.policja.gov.pl/o12/aktualnosci/141999,Jestes-swiadkiem-lub-doswiadczasz-przemocy-domowej-Reaguj.html">Gdzie szukać pomocy w przypadku przemocy domowej – informacje Policji</a></p>}
         {t.faq && <section><h2>Najczęstsze pytania</h2><h3>{t.faq[0]}</h3><p>{t.faq[1]}</p></section>}
-        {sources.length > 0 && <section><h2>Źródła</h2><ul>{sources.map(([url, label]) => <li key={url}><a href={url} rel="noreferrer">{label}</a></li>)}</ul></section>}
         <SeeAlso links={[...t.related, ...(t.related.some(([url]) => url === (youth ? paths.youth : paths.adults)) ? [] : [[youth ? paths.youth : paths.adults, youth ? 'Psychoterapia młodzieży od 15. roku życia' : 'Psychoterapia indywidualna dorosłych'] as [string, string]]), [paths.method, 'Jak pracuję w nurcie psychodynamicznym']]}/>
       </article>
       <BookingSidebar/>

@@ -165,39 +165,35 @@ body { background:#faf8f3;color:#243b34; }
 .help-topic-card li + li { margin-top:.35rem; }
 .help-topic-card a { display:inline-flex; align-items:center; min-height:36px; }
 .help-topic-card a:hover { color:#244e41; text-decoration-thickness:2px; }
-.topic-page { width:min(100% - 2.5rem, 72rem); }
+.topic-page { width:min(100% - 1.5rem, 86rem); }
 .topic-layout { display:grid; gap:2rem; align-items:start; }
 .topic-layout > * { min-width:0; }
+.topic-layout > article { width:100%; max-width:76ch; justify-self:center; }
 .topic-page h1 { font-size:clamp(2.2rem, 5vw, 3.8rem); }
 .topic-page h2 { font-size:clamp(1.45rem, 2.8vw, 2.2rem); }
-.topic-booking { scroll-margin-top:1rem; }
+.topic-booking { scroll-margin-top:1rem; padding:clamp(.75rem, 2vw, 1rem); word-break:normal; overflow-wrap:normal; hyphens:none; }
 .topic-calendar { margin-block:1rem; }
 .topic-calendar p { margin-bottom:.65rem; font-size:.9rem; }
-.topic-calendar iframe { width:100%; height:780px; max-height:none; }
+.topic-calendar iframe { display:block; width:100%; height:780px; max-height:none; }
 .topic-safety { margin-block:1.25rem; padding:.85rem 1rem; border-inline-start:3px solid #244e41; background:#f7f4ee; }
 @media (min-width:42rem) { .help-topic-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (min-width:58rem) {
-  .topic-layout { grid-template-columns:minmax(0, 2fr) minmax(0, 1fr); }
-  .topic-mobile-booking { display:none; }
-}
-.help-topic-jumps { display:flex; flex-wrap:wrap; gap:.4rem .8rem; margin-block:.75rem 1.25rem; }
-.help-topic-jumps a { display:flex; align-items:center; min-height:44px; }
-.help-topic-card { scroll-margin-top:1rem; }
 .topic-booking-person { display:flex; align-items:center; gap:.8rem; margin-bottom:.8rem; }
 .topic-booking-person img { flex:none; border-radius:50%; object-fit:cover; }
-@media (min-width:66rem) {
-  .topic-layout { grid-template-columns:minmax(0, 65fr) minmax(0, 35fr); }
-  .topic-booking { padding:1.25rem; }
+/* Switch to columns only with room for both readable text and a full-width widget. */
+@media (min-width:68rem) {
+  .topic-page { width:min(100% - 2.5rem, 86rem); }
+  .topic-layout { grid-template-columns:minmax(0, 58fr) minmax(28rem, 42fr); }
+  .topic-layout > article { justify-self:start; }
+  .topic-mobile-booking { display:none; }
 }
-/* Keep the whole panel accessible without adding a nested scroll area. */
-@media (min-width:66rem) and (min-height:92rem) {
+@media (min-width:68rem) and (min-height:92rem) {
   .topic-booking { position:sticky; top:1rem; }
 }
-.help-topic-search { display:flex; flex-wrap:wrap; align-items:center; gap:.55rem .75rem; margin-block:1rem 1.4rem; }
-.help-topic-search label,.help-topic-search p { flex:0 0 100%; }
-.help-topic-search label { font-weight:600; }
-.help-topic-search input { flex:1 1 14rem; min-width:0; min-height:44px; padding:.5rem .7rem; background:#fffdf8; border:1px solid #627169; border-radius:.35rem; }
-.help-topic-search button { min-height:44px; padding:.45rem .75rem; border:1px solid #627169; border-radius:.35rem; }
+.article-sources { margin-top:2rem; padding-top:1rem; border-top:1px solid #cdd6ca; }
+.article-sources h2 { font-size:clamp(1.5rem, 3vw, 2rem); color:#244e41; }
+.article-sources ul { list-style:disc; padding-inline-start:1.25rem; }
+.article-sources li { margin:.5rem 0; line-height:1.6; overflow-wrap:anywhere; }
+.article-sources a { text-decoration:underline; text-underline-offset:3px; }
 .help-topic-card a { gap:.35rem; min-height:44px; }
 .help-topic-card a span { flex:none; font-size:.85em; }
 .topic-mobile-booking { margin-top:1rem; }
