@@ -29,10 +29,10 @@ export default function About() {
         <div className="grid gap-10 md:grid-cols-2 md:items-center lg:gap-14">
           <Reveal>
             <img
-              src="/images/portret2.webp"
+              src="/images/portret.webp"
               alt="Grzegorz Plebaniak - psycholog we Wrocławiu"
               width={1280}
-              height={855}
+              height={1280}
               loading="lazy"
               decoding="async"
               className="aspect-[3/2] w-full rounded-2xl border border-border object-cover"

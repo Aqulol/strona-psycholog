@@ -2,7 +2,7 @@
 # Run from repo root after replacing the original photos or logo. Requires ImageMagick.
 set -eu
 mkdir -p public/images/responsive
-for name in portret gabinet; do
+for name in portret2 gabinet; do
   for width in 320 480 640 800 960; do
     convert "public/images/$name.webp" -resize "${width}x" -strip -quality 77 "public/images/responsive/$name-$width.webp"
   done
