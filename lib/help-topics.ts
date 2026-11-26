@@ -1,9 +1,10 @@
-export const helpGroups = ['Nastrój i emocje', 'Lęk, stres i przeciążenie', 'Relacje i bliskość', 'Poczucie własnej wartości i osobowość', 'Zmiany i kryzysy życiowe', 'Wpływ wcześniejszych doświadczeń'] as const;
+export const helpGroups = ['Nastrój i emocje', 'Lęk, stres i przeciążenie', 'Relacje i bliskość', 'Poczucie własnej wartości i rozumienie siebie', 'Kryzysy i zmiany życiowe', 'Przeszłość i trudne doświadczenia', 'Osobowość i długotrwałe trudności emocjonalne', 'Związki i relacje partnerskie', 'Młodzież od 15. roku życia'] as const;
 
 type Topic = {
   slug: string; group: typeof helpGroups[number]; label: string; h1?: string;
   title: string; description: string; intro: string;
   sections: [string, string][]; related: [string, string][];
+  faq?: [string, string];
   sources?: [string, string][]; urgent?: boolean;
 };
 
@@ -63,7 +64,7 @@ export const helpTopics: Topic[] = [
     related: [['/blog/samotnosc/', 'Więcej o różnych doświadczeniach samotności'], [topicPath('problemy-w-relacjach'), 'Problemy w relacjach']],
   },
   {
-    slug: 'zaburzenia-osobowosci', group: helpGroups[3], label: 'Zaburzenia osobowości', h1: 'Zaburzenia osobowości - konsultacja i możliwości psychoterapii', title: 'Zaburzenia osobowości - konsultacja i psychoterapia',
+    slug: 'zaburzenia-osobowosci', group: helpGroups[6], label: 'Zaburzenia osobowości', h1: 'Zaburzenia osobowości - konsultacja i możliwości psychoterapii', title: 'Zaburzenia osobowości - konsultacja i psychoterapia',
     description: 'Konsultacja przy rozpoznaniu zaburzenia osobowości lub trwałych trudnościach. Można omówić dotychczasową pomoc i zasadność psychoterapii, w tym TFP.',
     intro: 'Po rozpoznaniu zaburzenia osobowości można mieć pytania o jego znaczenie i dalsze możliwości leczenia. Na konsultację można też zgłosić się bez rozpoznania, jeśli od dłuższego czasu powtarzają się trudności w relacjach lub przeżywaniu emocji.',
     sections: [
@@ -73,7 +74,7 @@ export const helpTopics: Topic[] = [
     related: [tfp, [topicPath('borderline'), 'Zaburzenie osobowości borderline'], ['/blog/narcyzm-wrazliwy/', 'Artykuł o narcyzmie wrażliwym']], sources: [['https://www.who.int/publications/i/item/9789240077263', 'WHO: opisy kliniczne i wymagania diagnostyczne ICD-11']],
   },
   {
-    slug: 'borderline', group: helpGroups[3], label: 'Zaburzenie osobowości borderline', h1: 'Zaburzenie osobowości borderline - konsultacje i psychoterapia we Wrocławiu', title: 'Borderline - konsultacja i psychoterapia we Wrocławiu',
+    slug: 'borderline', group: helpGroups[6], label: 'Zaburzenie osobowości borderline', h1: 'Zaburzenie osobowości borderline - konsultacje i psychoterapia we Wrocławiu', title: 'Borderline - konsultacja i psychoterapia we Wrocławiu',
     description: 'Na konsultacji można omówić rozpoznanie borderline, dotychczasową pomoc i możliwości leczenia, w tym to, czy psychoterapia TFP odpowiada potrzebom.',
     intro: 'Po rozpoznaniu borderline można mieć pytania o dotychczasowe leczenie albo o to, jakiej pomocy szukać dalej. W rozmowie można zacząć od tego, co w obecnej sytuacji jest najtrudniejsze.',
     sections: [
@@ -199,9 +200,61 @@ export const helpTopics: Topic[] = [
     description: 'Na konsultacji można porozmawiać o życiu po śmierci bliskiej osoby, o zmieniających się emocjach i o wsparciu, którego potrzeba w codziennych sytuacjach.',
     intro: 'Po śmierci bliskiej osoby może brakować nie tylko rozmów i wspólnych planów, ale też zwykłych rytuałów. Niekiedy trudność staje się bardziej odczuwalna później, gdy inni wracają do swoich spraw, a codzienne życie nadal wygląda inaczej.',
     sections: [
-      ['Nie ma jednego sposobu przeżywania straty', 'Tęsknota, złość, odrętwienie czy chwile ulgi mogą pojawiać się w różnej kolejności, a czasem obok siebie. Znaczenie mają między innymi charakter więzi, okoliczności śmierci, dostępne wsparcie i to, co zmieniło się w codziennym życiu. Żałoba sama w sobie nie jest powodem do rozpoznania zaburzenia ani nie oznacza konieczności rozpoczęcia terapii.'],
+      ['Nie ma jednego sposobu przeżywania straty', 'Tęsknota, złość, odrętwienie czy chwile ulgi mogą pojawiać się w różnej kolejności, a czasem obok siebie. Znaczenie mają między innymi charakter więzi, okoliczności śmierci, dostępne wsparcie i to, co zmieniło się w codzienności. Żałoba sama w sobie nie jest powodem do rozpoznania zaburzenia ani nie oznacza konieczności rozpoczęcia terapii.'],
       ['O czym można porozmawiać po stracie', 'Można zacząć od tego, co jest teraz najtrudniejsze: od samotnych wieczorów, zmiany obowiązków albo uczuć, o których trudno mówić przy bliskich. W pracy psychodynamicznej można przyjrzeć się różnym uczuciom wobec zmarłej osoby i temu, jakie miejsce ta więź zajmuje dzisiaj. Nie chodzi o narzucanie tempa ani oczekiwanie, że o zmarłej osobie przestanie się myśleć. Jeśli trudności są bardzo nasilone lub utrzymują się i uniemożliwiają codzienne funkcjonowanie, można omówić, czy potrzebna jest również konsultacja lekarska lub inna forma pomocy.'],
     ],
     urgent: true, related: [[topicPath('kryzys-zyciowy'), 'Kryzys życiowy i trudne zmiany'], [topicPath('samotnosc'), 'Samotność po zmianie lub stracie']],
+  },
+  {
+    slug: 'lek-przed-odrzuceniem', group: helpGroups[2], label: 'Lęk przed odrzuceniem', title: 'Lęk przed odrzuceniem - konsultacja psychologiczna',
+    description: 'Konsultacja, gdy obawa przed utratą ważnej relacji utrudnia mówienie o potrzebach. Można omówić konkretne sytuacje i to, jak wpływają na codzienne decyzje.',
+    intro: 'Krótka odpowiedź albo odwołane spotkanie mogą uruchomić obawę, że relacja się kończy. Czasem trudno o tym zapytać wprost, bo sama rozmowa wydaje się ryzykiem.',
+    sections: [
+      ['Obawa przed utratą więzi', 'Lęk przed odrzuceniem dotyczy przede wszystkim możliwości utraty akceptacji lub kontaktu. To nie to samo co lęk przed bliskością, w którym trudność może nasilać się właśnie wtedy, gdy druga osoba odwzajemnia zainteresowanie. Obie obawy mogą współwystępować. Trzeba też uwzględnić, czy druga osoba rzeczywiście bywa nieprzewidywalna albo wycofuje się bez wyjaśnienia.'],
+      ['Co można zbadać podczas spotkań', 'Można przyjrzeć się chwili między niejasnym sygnałem a decyzją: czy pojawia się potrzeba natychmiastowego potwierdzenia więzi, czy raczej chęć wycofania się jako pierwsza osoba? W terapii można sprawdzać, co utrudnia pozostanie w rozmowie mimo niepewności, bez przekonywania siebie, że każde zachowanie drugiej osoby jest bezpieczne.'],
+    ],
+    faq: ['Czy lęk przed odrzuceniem oznacza borderline?', 'Nie. Jedno doświadczenie nie wystarcza do rozpoznania zaburzenia osobowości. Na konsultacji można porozmawiać o wpływie lęku bez przypisywania mu diagnozy.'],
+    related: [[topicPath('lek-przed-bliskoscia'), 'Lęk przed bliskością'], [topicPath('asertywnosc-i-granice'), 'Trudność z odmową i stawianiem granic']],
+  },
+  {
+    slug: 'lek-przed-bliskoscia', group: helpGroups[2], label: 'Lęk przed bliskością', title: 'Lęk przed bliskością - konsultacja psychologiczna',
+    description: 'Na konsultacji można porozmawiać o sytuacjach, w których wzajemne zaangażowanie budzi napięcie, i odróżnić potrzebę przestrzeni od obawy przed bliskością.',
+    intro: 'Na początku znajomość może sprawiać przyjemność. Kiedy druga osoba zaczyna częściej szukać kontaktu albo pyta o wspólne plany, może pojawić się napięcie i potrzeba wycofania.',
+    sections: [
+      ['Kiedy zbliżenie staje się trudne', 'Nie każda potrzeba przestrzeni jest lękiem. Ważne może być to, czy chęć oddalenia odpowiada realnemu naciskowi lub naruszeniu granic, czy powraca również wtedy, gdy druga osoba szanuje odmowę. W odróżnieniu od obawy przed odrzuceniem pytanie może dotyczyć nie tyle tego, czy druga osoba odejdzie, ile tego, co się zmieni, jeśli pozostanie blisko.'],
+      ['Rozmowa o bliskości bez nacisku', 'Na konsultacji można przyjrzeć się temu, co w praktyce oznacza zbliżenie: bycie widzianym, zależność, dzielenie się planami czy dzielenie odpowiedzialności. W perspektywie psychodynamicznej można sprawdzać, czy oczekiwania z wcześniejszych relacji powracają w nowych. Celem nie jest zmuszanie do większej bliskości, lecz rozróżnienie własnego wyboru od reakcji, która pozostawia poczucie utraty czegoś ważnego.'],
+    ],
+    related: [[topicPath('lek-przed-odrzuceniem'), 'Lęk przed odrzuceniem'], [topicPath('problemy-w-relacjach'), 'Problemy w relacjach']],
+  },
+  {
+    slug: 'rozstanie-i-rozwod', group: helpGroups[7], label: 'Rozstanie i rozwód', title: 'Rozstanie i rozwód - konsultacja indywidualna',
+    description: 'Indywidualna konsultacja po rozstaniu lub rozwodzie. Można porozmawiać o trudnych emocjach, dalszym kontakcie z byłym partnerem i zmianach w codzienności.',
+    intro: 'Po rozstaniu decyzja o zakończeniu związku może być przemyślana, a jednocześnie może brakować wspólnej codzienności. Gdy kontakt trwa ze względu na dzieci lub sprawy organizacyjne, zakończenie związku nie oznacza końca wszystkich rozmów.',
+    sections: [
+      ['Co zmieniło się po zakończeniu związku', 'Można opłakiwać wspólne plany, czuć ulgę i równocześnie obawiać się przyszłości. Nie trzeba wybierać jednego uczucia ani uzgadniać, kto ponosi odpowiedzialność za wszystkie trudności. Na spotkaniu można odróżnić pilne decyzje dotyczące codzienności od pytań o to, co zakończenie relacji znaczy dla danej osoby.'],
+      ['Konsultacja indywidualna, nie mediacja', 'Można omówić, co utrudnia rozmowy po rozstaniu, jakie granice są potrzebne i jak obecne doświadczenie wpływa na obraz siebie. Jeśli po konsultacji rozważana jest psychoterapia, jednym z kierunków może być przyjrzenie się temu, co trudno było wyrażać w związku. Nie prowadzę terapii par ani mediacji i nie udzielam porad prawnych.'],
+    ],
+    faq: ['Czy można przyjść przed podjęciem decyzji o rozstaniu?', 'Tak. Można porozmawiać o wątpliwościach i konsekwencjach różnych możliwości. Konsultacja nie służy podjęciu decyzji za osobę zgłaszającą się.'],
+    related: [[topicPath('kryzys-zyciowy'), 'Kryzys życiowy i trudne zmiany'], [topicPath('samotnosc'), 'Samotność po zmianie']],
+  },
+  {
+    slug: 'niestabilna-samoocena', group: helpGroups[3], label: 'Niestabilna samoocena', title: 'Niestabilna samoocena - konsultacja psychologiczna',
+    description: 'Konsultacja przy dużych zmianach w ocenie siebie po sukcesie, krytyce lub porównaniu z innymi. O tym, jak zauważać te zmiany i ich wpływ na wybory.',
+    intro: 'Po udanej rozmowie można czuć się kompetentnie, a po jednej uwadze tego samego dnia nabrać przekonania, że nic się nie umie. Trudność dotyczy wtedy nie tylko tego, jak surowa jest ocena, lecz także tego, jak gwałtownie się zmienia.',
+    sections: [
+      ['Zmienność nie jest tym samym co stale niska ocena siebie', 'Ocena konkretnych umiejętności może się zmieniać w odpowiedzi na doświadczenie. Warto przyjrzeć się sytuacji, gdy pojedynczy wynik albo reakcja ważnej osoby przesłania wcześniejsze doświadczenia i staje się podstawą oceny całej osoby. Można sprawdzić, czy dotyczy to głównie pracy, wyglądu lub relacji, czy wielu dziedzin naraz.'],
+      ['Jak można pracować nad ciągłością obrazu siebie', 'W rozmowie można zestawić dwie sytuacje, po których pojawiły się przeciwne oceny siebie, i zauważyć, które fakty przestały być wtedy dostępne w myśleniu. W perspektywie psychodynamicznej istotne może być to, od kogo potrzebne jest uznanie i co dzieje się, gdy go brakuje. Nie chodzi o utrzymywanie zawsze pozytywnej samooceny, lecz o możliwość uwzględnienia także tych doświadczeń, które nie pasują do chwilowego odczucia.'],
+    ],
+    related: [[topicPath('niska-samoocena'), 'Niskie poczucie własnej wartości'], ['/blog/poczucie-wlasnej-wartosci/', 'Jak kształtuje się poczucie własnej wartości?']],
+  },
+  {
+    slug: 'stres-szkolny', group: helpGroups[8], label: 'Stres i przeciążenie szkolne', title: 'Stres szkolny - konsultacja dla młodzieży od 15 lat',
+    description: 'Konsultacja dla młodzieży od 15. roku życia, gdy wymagania szkolne utrudniają odpoczynek. Jak rozmawiać o przeciążeniu i jak wygląda pierwsze spotkanie?',
+    intro: 'Nawet po odrobieniu lekcji trudno czasem przestać myśleć o ocenach, zaległościach lub sprawdzianie. Przeciążenie może dotyczyć też osoby, która nadal dobrze się uczy i z zewnątrz wydaje się radzić sobie bez trudności.',
+    sections: [
+      ['Co w szkole pochłania najwięcej wysiłku', 'Warto odróżnić spiętrzenie zadań od obawy, że każda pomyłka będzie miała poważne konsekwencje. Znaczenie mogą mieć również konflikty w klasie, oczekiwania dorosłych, dojazdy lub zbyt mało czasu na sen. Jeśli problem wynika z warunków w szkole, nie da się go sprowadzić do sposobu myślenia młodej osoby.'],
+      ['Jak wygląda rozmowa o przeciążeniu', 'Możemy zacząć od rozpisania zwykłego dnia i ustalenia, w którym momencie napięcie staje się największe. Na pierwsze spotkanie z osobą niepełnoletnią zapraszam rodzica lub rodziców. Na kolejnych indywidualnych spotkaniach możemy przyglądać się między innymi temu, jak nastolatek przeżywa oczekiwania i prosi o pomoc. Konsultacja nie zastępuje zmian organizacyjnych w szkole ani oceny lekarskiej przy utrzymujących się dolegliwościach.'],
+    ],
+    related: [['/psychoterapia-mlodziezy-od-15-roku-zycia/', 'Pierwsze spotkanie i udział rodziców'], [topicPath('lek-spoleczny'), 'Obawa przed oceną w grupie']],
   },
 ];

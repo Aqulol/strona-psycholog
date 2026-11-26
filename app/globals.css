@@ -180,3 +180,16 @@ body { background:#faf8f3;color:#243b34; }
   .topic-layout { grid-template-columns:minmax(0, 2fr) minmax(0, 1fr); }
   .topic-mobile-booking { display:none; }
 }
+.help-topic-jumps { display:flex; flex-wrap:wrap; gap:.4rem .8rem; margin-block:.75rem 1.25rem; }
+.help-topic-jumps a { display:flex; align-items:center; min-height:44px; }
+.help-topic-card { scroll-margin-top:1rem; }
+.topic-booking-person { display:flex; align-items:center; gap:.8rem; margin-bottom:.8rem; }
+.topic-booking-person img { flex:none; border-radius:50%; object-fit:cover; }
+@media (min-width:66rem) {
+  .topic-layout { grid-template-columns:minmax(0, 65fr) minmax(0, 35fr); }
+  .topic-booking { padding:1.25rem; }
+}
+/* Keep the whole panel accessible without adding a nested scroll area. */
+@media (min-width:66rem) and (min-height:92rem) {
+  .topic-booking { position:sticky; top:1rem; }
+}
