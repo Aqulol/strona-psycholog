@@ -146,9 +146,9 @@ export default function Page() {
           można budować dalszą pracę.
         </p>
 
-        <h2 className="mt-12 text-4xl text-green">Czerwone flagi - czego unikać</h2>
+        <h2 className="mt-12 text-4xl text-green">Co powinno wzbudzić wątpliwości?</h2>
         <p className="mt-4 leading-8 text-ink/80">
-          Są zachowania, które zawsze powinny wzbudzić czujność, niezależnie od tytułów
+          Warto zwrócić uwagę na poniższe zachowania, niezależnie od tytułów
           i referencji:
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-6 leading-8 text-ink/80">
