@@ -10,7 +10,7 @@ const { join } = require('node:path');
   const shots = process.env.HELP_SCREENSHOT_DIR;
   const widths = [1920, 1440, 1366, 1280, 1024, 768, 430, 390, 360];
   const hub = '/kiedy-zglosic-sie-na-terapie/';
-  const topics = ['lek-spoleczny', 'depresja', 'borderline', 'stres-szkolny'];
+  const topics = ['lek-spoleczny', 'depresja', 'borderline', 'stres-szkolny', 'zdrowie-fizyczne-i-psychiczne', 'trudnosci-okoloporodowe', 'rodzicielstwo', 'stres-mniejszosciowy', 'seksualnosc-i-intymnosc', 'trudnosci-z-odzywianiem', 'obraz-ciala', 'problemowe-uzywanie-substancji'];
   const cfg = JSON.parse(readFileSync('firebase.json')).hosting.headers.find(x => x.source === '**').headers;
   const headers = Object.fromEntries(cfg.map(({key, value}) => [key.toLowerCase(), value]));
   function observe(page) {
@@ -34,7 +34,7 @@ const { join } = require('node:path');
     if (shots) mkdirSync(shots, { recursive: true });
     const sitemap = await (await fetch(`${site}/sitemap.xml`)).text();
     const all = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => new URL(m[1]).pathname).filter(p => p.startsWith('/w-czym-pomagam/'));
-    assert.equal(all.length, 66);
+    assert.equal(all.length, 74);
     for (const path of all) assert.equal((await fetch(site + path, {redirect:'manual'})).status, 200, path);
     const context = await browser.newContext({viewport:{width:1366,height:900}});
     for (const origin of [site, baseline].filter(Boolean)) {
@@ -48,8 +48,14 @@ const { join } = require('node:path');
     const { failures, errors, requests } = observe(page);
     await page.goto(site + hub);
     assert.equal(await page.locator('#lista-tematow a[href^="/w-czym-pomagam/"]').count(), 66);
+    assert.equal(await page.locator('[aria-labelledby=obszary-rozmowy] a[href^="/w-czym-pomagam/"]').count(), 8);
+    if (shots) await page.locator('[aria-labelledby=obszary-rozmowy]').screenshot({path:join(shots,'katalog-1366.png')});
+    const additional = page.locator('[aria-labelledby=obszary-rozmowy] a[href$="/obraz-ciala/"]');
+    await additional.click();
+    assert.match(page.url(), /\/obraz-ciala\/$/);
+    await page.goto(site + hub);
     assert.equal(await page.getByRole('searchbox').count(), 0);
-    assert.equal(await page.locator('.help-topic-card').count(), 10);
+    assert.equal(await page.locator('#lista-tematow .help-topic-card').count(), 10);
     await page.locator('#lista-tematow a[href$="/lek-spoleczny/"]').click();
     assert.match(page.url(), /\/lek-spoleczny\/$/);
     await page.goto(site + '/blog/samotnosc/');
@@ -73,6 +79,15 @@ const { join } = require('node:path');
         assert.equal(after.sideBySide, width >= 1088, `${slug} at ${width}: columns`);
         assert.ok(after.noOverflow, `${slug} at ${width}: horizontal overflow`);
         assert.deepEqual(after.hostWrap, ['normal','normal','none']);
+        if (shots && slug === 'trudnosci-okoloporodowe' && [1366, 390].includes(width)) {
+          await page.goto(page.url(), {waitUntil:'load'});
+          await page.screenshot({path:join(shots,`okoloporodowe-${width}.png`)});
+          if (width === 390) {
+            await page.getByRole('link', {name:'Przejdź do osadzonego kalendarza'}).click();
+            await page.locator('#rezerwacja').screenshot({path:join(shots,'okoloporodowe-panel-390.png')});
+          }
+          console.log(JSON.stringify({slug,width,after}));
+        }
         if (after.sideBySide) assert.ok(after.frame >= 414 && after.article >= 500);
         assert.equal(await page.getByRole('heading', {name:'Literatura i źródła'}).count(), 0);
         assert.ok(await page.locator('#rezerwacja a[href^="https://booksy.com/"]').isVisible());
