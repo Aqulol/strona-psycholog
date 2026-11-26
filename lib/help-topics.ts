@@ -1,6 +1,7 @@
+import { newTopics } from './help-topic-new';
 import { additions } from './help-topic-additions';
 
-export const helpGroups = ['Nastrój i emocje', 'Lęk, stres i przeciążenie', 'Relacje i bliskość', 'Poczucie własnej wartości i rozumienie siebie', 'Kryzysy i zmiany życiowe', 'Przeszłość i trudne doświadczenia', 'Osobowość i długotrwałe trudności emocjonalne', 'Związki i relacje partnerskie', 'Młodzież od 15. roku życia'] as const;
+export const helpGroups = ['Nastrój i emocje', 'Lęk, stres i przeciążenie', 'Relacje i funkcjonowanie społeczne', 'Poczucie własnej wartości i rozumienie siebie', 'Kryzysy i zmiany życiowe', 'Przeszłość i trudne doświadczenia', 'Osobowość i tożsamość', 'Związki i relacje partnerskie', 'Młodzież od 15. roku życia', 'Zdrowie fizyczne i psychiczne'] as const;
 
 type Topic = {
   slug: string; group: typeof helpGroups[number]; label: string; h1?: string;
@@ -27,7 +28,7 @@ const existingTopics: Topic[] = [
     urgent: true, related: [[topicPath('kryzys-zyciowy'), 'Kryzys życiowy i trudne zmiany']], sources: [['https://www.nice.org.uk/guidance/ng222', 'NICE: depresja u dorosłych']],
   },
   {
-    slug: 'zaburzenia-lekowe', group: helpGroups[1], label: 'Zaburzenia i stany lękowe', h1: 'Zaburzenia lękowe i nawracający lęk', title: 'Zaburzenia lękowe - konsultacja we Wrocławiu',
+    slug: 'zaburzenia-lekowe', group: helpGroups[1], label: 'Lęk i zaburzenia lękowe', title: 'Lęk i zaburzenia lękowe - konsultacja we Wrocławiu',
     description: 'Gdy zamartwianie się, napięcie lub unikanie zaczynają ograniczać codzienne życie, można omówić je na konsultacji psychologicznej we Wrocławiu lub online.',
     intro: 'Czasem lęk sprawia, że coraz więcej decyzji podejmuje się z myślą o tym, jak uniknąć trudnej sytuacji. Innym razem trudno przerwać rozważanie tego, co może pójść nie tak, nawet gdy nic szczególnego się nie wydarzyło.',
     sections: [
@@ -117,17 +118,18 @@ const existingTopics: Topic[] = [
     related: [[topicPath('stres'), 'Przewlekły stres poza pracą'], [topicPath('depresja'), 'Depresja i obniżony nastrój']], sources: [['https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon', 'WHO: wypalenie jako zjawisko zawodowe w ICD-11']],
   },
   {
-    slug: 'poczucie-pustki', group: helpGroups[0], label: 'Poczucie pustki i braku sensu', title: 'Poczucie pustki i braku sensu - konsultacja',
+    slug: 'poczucie-pustki', group: helpGroups[0], label: 'Poczucie pustki i braku sensu życia', title: 'Poczucie pustki i braku sensu życia - konsultacja',
     description: 'Na konsultacji można porozmawiać o poczuciu pustki, braku satysfakcji i trudnościach z rozpoznaniem tego, co jest ważne, także gdy trudno je nazwać.',
     intro: 'Z zewnątrz życie może wyglądać tak jak wcześniej: praca, spotkania, obowiązki. A jednak trudno poczuć, że coś naprawdę cieszy, porusza albo ma znaczenie. O takim doświadczeniu można porozmawiać bez gotowego wyjaśnienia.',
     sections: [
+      ['Pustka i pytanie o sens to różne doświadczenia', 'Pustka może polegać na odrętwieniu lub braku poczucia więzi. Brak sensu częściej dotyczy pytania, czy to, jak się żyje, odpowiada własnym wartościom. Obydwa doświadczenia mogą występować osobno lub razem. Utrata zainteresowań, energii i zdolności czerpania przyjemności wymaga osobnego namysłu nad stanem zdrowia i możliwą depresją.'],
       ['Co kryje się za słowem „pustka”?', 'Jedna osoba mówi tak o zobojętnieniu, a inna o poczuciu, że robi wiele rzeczy, lecz żadna nie jest jej wyborem. Niekiedy pojawia się ono po stracie lub długim przeciążeniu, czasem szczególnie wyraźnie w określonych relacjach. Warto zastanowić się, kiedy pustka jest najbardziej odczuwalna i czy zdarzają się chwile, w których ustępuje. Samo jej występowanie nie przesądza o depresji ani o zaburzeniu osobowości.'],
       ['Od czego można zacząć rozmowę', 'Na konsultacji można opisać zwykły moment, w którym pojawia się poczucie pustki, nawet jeśli trudno powiedzieć, co się wtedy czuje. W psychoterapii psychodynamicznej można przyjrzeć się temu, czy łatwiej rozpoznawać oczekiwania innych niż własne pragnienia albo czy w niektórych sytuacjach trudno dopuścić do siebie złość, smutek lub potrzebę bliskości. To pytania do wspólnego sprawdzenia, nie założenie o przyczynie pustki.'],
     ],
     urgent: true, related: [[topicPath('depresja'), 'Depresja i obniżony nastrój'], [topicPath('samotnosc'), 'Samotność i potrzeba bliskości']],
   },
   {
-    slug: 'trudnosci-emocjonalne', group: helpGroups[0], label: 'Trudności w radzeniu sobie z emocjami', title: 'Trudności w radzeniu sobie z emocjami - konsultacja',
+    slug: 'trudnosci-emocjonalne', group: helpGroups[0], label: 'Trudności w regulacji emocji', title: 'Trudności w regulacji emocji - konsultacja',
     description: 'Konsultacja może być miejscem rozmowy o silnych emocjach, odcinaniu się od nich i sytuacjach, w których trudno zrozumieć własną reakcję lub ją wyrazić.',
     intro: 'Po rozmowie może zostać poczucie, że złość była silniejsza, niż można się było spodziewać. Bywa też odwrotnie: dopiero po kilku godzinach przychodzi myśl, że w ważnej chwili trudno było w ogóle coś poczuć albo odpowiedzieć.',
     sections: [
@@ -137,17 +139,17 @@ const existingTopics: Topic[] = [
     related: [[topicPath('asertywnosc-i-granice'), 'Stawianie granic i wyrażanie potrzeb'], [topicPath('stres'), 'Przewlekły stres i przeciążenie']],
   },
   {
-    slug: 'natlok-mysli', group: helpGroups[0], label: 'Natłok myśli i nadmierne analizowanie', title: 'Natłok myśli i nadmierne analizowanie - konsultacja',
-    description: 'Jeśli trudno przestać wracać myślami do rozmów lub bez końca rozważa się decyzje, na konsultacji można przyjrzeć się skutkom tego doświadczenia.',
-    intro: 'Rozmowa już się skończyła, ale w myślach trwa dalej. Wracają pytania o to, jak zabrzmiała odpowiedź i co druga osoba miała na myśli. Czasem podobnie wygląda podejmowanie decyzji: im dłużej rozważa się dostępne możliwości, tym trudniej wybrać.',
+    slug: 'natlok-mysli', group: helpGroups[1], label: 'Natłok myśli', title: 'Natłok myśli - konsultacja psychologiczna',
+    description: 'Natłok myśli to trudność z uporządkowaniem wielu równoczesnych wątków. Konsultacja pomaga rozróżnić przeciążenie od ciągłego analizowania jednej sprawy.',
+    intro: 'Przy natłoku myśli trudno wybrać, na czym skupić uwagę: kolejne wątki pojawiają się szybko, jeden przerywa drugi, a powrót do zadania wymaga wysiłku. To inne doświadczenie niż uporczywe rozważanie jednej sprawy.',
     sections: [
-      ['Od namysłu do krążenia wokół jednej sprawy', 'Namysł może prowadzić do decyzji lub pomóc przygotować się do rozmowy. Kiedy jednak te same pytania powracają mimo braku nowych informacji, można zacząć odkładać zadania, tracić sen albo mieć mniej uwagi na to, co dzieje się teraz. Na konsultacji warto opisać, czy chodzi o powracanie do tego, co już się wydarzyło, czy raczej o próby przewidzenia tego, co może się stać.'],
-      ['Czego próbuje się dowiedzieć dzięki analizowaniu?', 'Można przyjrzeć się chwili, w której pojawia się potrzeba ponownego prześledzenia sytuacji. Czy chodzi o znalezienie rozwiązania, uniknięcie pomyłki, a może uzyskanie pewności, jak odebrał nas ktoś ważny? W pracy psychodynamicznej można rozważyć, czy skupienie na analizie pomaga odsunąć trudne uczucia, np. wstyd; nie zakładam, że tak jest zawsze. Jeśli trudnościom towarzyszą znaczące zmiany snu, nastroju lub tempa działania, warto omówić również ocenę lekarską.'],
+      ['Kiedy trudno utrzymać kolejność i kierunek myśli', 'Przy spiętrzeniu obowiązków, braku snu lub napięciu uwaga może przeskakiwać między sprawami. Ustalenie, czy zjawisko pojawia się po nieprzespanej nocy, w stresujących rozmowach czy niezależnie od sytuacji, pomaga dobrać dalsze kroki. Wyraźna, nagła zmiana połączona z małą potrzebą snu i nietypowo dużą aktywnością wymaga szybkiej oceny lekarskiej.'],
+      ['Rozróżnianie przeciążenia, pobudzenia i konfliktu', 'W pracy psychodynamicznej można zastanawiać się, czy poczucie naporu nasila się przy zderzeniu sprzecznych żądań lub w chwili trudnej emocjonalnie. Nie jest to założenie o przyczynie. Celem konsultacji jest ustalenie, jaki wpływ natłok ma na odpoczynek, koncentrację i decyzje i czy ważniejsza jest pomoc psychologiczna, zmiana obciążenia czy ocena zdrowia.'],
     ],
-    related: [[topicPath('zaburzenia-lekowe'), 'Nawracający lęk i zamartwianie się'], [topicPath('niska-samoocena'), 'Surowa ocena siebie']],
+    related: [[topicPath('nadmierne-analizowanie'), 'Nadmierne analizowanie'], [topicPath('trudnosci-ze-snem'), 'Problemy ze snem']],
   },
   {
-    slug: 'asertywnosc-i-granice', group: helpGroups[2], label: 'Asertywność i stawianie granic', title: 'Asertywność i stawianie granic - konsultacja',
+    slug: 'asertywnosc-i-granice', group: helpGroups[2], label: 'Trudności z asertywnością i stawianiem granic', title: 'Trudności z asertywnością i stawianiem granic - konsultacja',
     description: 'Można porozmawiać o tym, co utrudnia odmowę, wyrażenie sprzeciwu lub proszenie o zmianę, oraz o tym, jakie reakcje innych osób trzeba wziąć pod uwagę.',
     intro: 'Czasem łatwiej zgodzić się od razu, niż znieść czyjeś rozczarowanie. Dopiero później pojawia się złość albo poczucie, że kolejny raz nie było miejsca na własną decyzję. W innej sytuacji odmowa jest możliwa, ale długo towarzyszy jej poczucie winy.',
     sections: [
@@ -167,7 +169,7 @@ const existingTopics: Topic[] = [
     related: [['/blog/czy-przeszlosc-ma-znaczenie/', 'Czy przeszłość ma znaczenie?'], [topicPath('dda'), 'Dorastanie w rodzinie z problemem alkoholowym'], [topicPath('doswiadczenie-przemocy'), 'Doświadczenie przemocy']],
   },
   {
-    slug: 'dda', group: helpGroups[5], label: 'Doświadczenia dorosłych dzieci alkoholików (DDA)', title: 'DDA - konsultacja po dorastaniu z problemem alkoholu',
+    slug: 'dda', group: helpGroups[5], label: 'Dorastanie w rodzinie z problemem alkoholowym (DDA)', title: 'DDA - konsultacja po dorastaniu z problemem alkoholu',
     description: 'Konsultacja dla osób, które dorastały w rodzinie z problemem alkoholowym. Można omówić znaczenie doświadczeń z domu dla obecnego życia, bez diagnozowania.',
     intro: 'Jeśli w domu rodzinnym dużo zależało od tego, w jakim stanie wróci dorosły, uważne obserwowanie innych mogło być ważne dla codziennego bezpieczeństwa. Po latach niektóre osoby zauważają, że trudno im przestać brać odpowiedzialność za nastrój lub decyzje bliskich. Nie jest to doświadczenie każdej osoby wychowanej w takim domu.',
     sections: [
@@ -177,7 +179,7 @@ const existingTopics: Topic[] = [
     related: [[topicPath('trudne-doswiadczenia-z-dziecinstwa'), 'Trudne doświadczenia z dzieciństwa'], [topicPath('asertywnosc-i-granice'), 'Asertywność i granice w relacjach']],
   },
   {
-    slug: 'doswiadczenie-przemocy', group: helpGroups[5], label: 'Emocjonalne następstwa przemocy', h1: 'Konsultacja po doświadczeniu przemocy', title: 'Doświadczenie przemocy - konsultacja psychologiczna',
+    slug: 'doswiadczenie-przemocy', group: helpGroups[5], label: 'Doświadczenie przemocy', title: 'Doświadczenie przemocy - konsultacja',
     description: 'Na konsultacji można porozmawiać o wpływie doświadczenia przemocy na emocje, zaufanie i relacje. W sytuacji zagrożenia pierwszeństwo ma bezpieczeństwo.',
     intro: 'Po doświadczeniu przemocy można mieć trudność z poczuciem bezpieczeństwa również w sytuacjach, które wcześniej nie budziły obaw. Można też nie wiedzieć, od czego zacząć rozmowę. Doświadczenie przemocy lub traumy może być powodem konsultacji. Nie trzeba opowiadać szczegółów wydarzenia na pierwszym spotkaniu.',
     sections: [
@@ -188,14 +190,14 @@ const existingTopics: Topic[] = [
     urgent: true, related: [[topicPath('powracajace-wspomnienia'), 'Powracające wspomnienia trudnych wydarzeń'], [topicPath('trudne-doswiadczenia-z-dziecinstwa'), 'Wpływ wcześniejszych doświadczeń']],
   },
   {
-    slug: 'lek-spoleczny', group: helpGroups[1], label: 'Lęk społeczny', h1: 'Lęk społeczny i obawa przed oceną', title: 'Lęk społeczny - konsultacja psychologiczna',
+    slug: 'lek-spoleczny', group: helpGroups[1], label: 'Lęk społeczny (fobia społeczna)', title: 'Lęk społeczny (fobia społeczna) - konsultacja',
     description: 'Konsultacja, gdy obawa przed oceną utrudnia rozmowy, spotkania, naukę lub pracę. O różnicy między nieśmiałością a lękiem, który ogranicza codzienne życie.',
     intro: 'Można chcieć zabrać głos na spotkaniu, a jednak milczeć z obawy, że inni zauważą zdenerwowanie. Czasem napięcie pojawia się już przed spotkaniem, a po nim długo wraca się myślami do tego, jak wypadła rozmowa.',
     sections: [
       ['Nieśmiałość a lęk, który ogranicza wybór', 'Nieśmiałość sama w sobie nie jest zaburzeniem. Warto porozmawiać o lęku wtedy, gdy obawa przed oceną powtarza się i sprawia, że rezygnuje się z ważnych działań, na przykład z rozmów na zajęciach, spotkań ze znajomymi lub okazji zawodowych. Znaczenie ma także kontekst: w otoczeniu, w którym dochodzi do wyśmiewania lub wykluczania, ostrożność może być odpowiedzią na rzeczywiste doświadczenia.'],
       ['Co można omówić na konsultacji', 'Można zacząć od sytuacji, w której łatwiej było się wycofać niż narazić na ocenę. W pracy psychodynamicznej można przyjrzeć się temu, jak dana osoba przeżywa bycie zauważoną i czego spodziewa się po reakcji innych, również w rozmowie w gabinecie. To możliwy kierunek pracy, a nie założenie o przyczynie lęku. Przy podejrzeniu zaburzenia lęku społecznego warto rozważyć ocenę kliniczną i inne formy leczenia, w tym terapię poznawczo-behawioralną ukierunkowaną na lęk społeczny, którą NICE rekomenduje dorosłym.'],
     ],
-    related: [[topicPath('zaburzenia-lekowe'), 'Zaburzenia lękowe i nawracający lęk'], [topicPath('natlok-mysli'), 'Wracanie myślami do rozmów']],
+    related: [[topicPath('zaburzenia-lekowe'), 'Zaburzenia lękowe i nawracający lęk'], [topicPath('nadmierne-analizowanie'), 'Nadmierne analizowanie rozmów']],
     sources: [['https://www.nice.org.uk/guidance/cg159', 'NICE: rozpoznawanie, ocena i leczenie zaburzenia lęku społecznego']],
   },
   {
@@ -251,7 +253,7 @@ const existingTopics: Topic[] = [
     related: [[topicPath('niska-samoocena'), 'Niskie poczucie własnej wartości'], ['/blog/poczucie-wlasnej-wartosci/', 'Jak kształtuje się poczucie własnej wartości?']],
   },
   {
-    slug: 'stres-szkolny', group: helpGroups[8], label: 'Stres i przeciążenie szkolne', title: 'Stres szkolny - konsultacja dla młodzieży od 15 lat',
+    slug: 'stres-szkolny', group: helpGroups[8], label: 'Stres szkolny', title: 'Stres szkolny - konsultacja dla młodzieży od 15 lat',
     description: 'Konsultacja dla młodzieży od 15. roku życia, gdy wymagania szkolne utrudniają odpoczynek. Jak rozmawiać o przeciążeniu i jak wygląda pierwsze spotkanie?',
     intro: 'Stres szkolny to reakcja na wymagania związane z nauką i życiem w grupie. Jeśli napięcie utrzymuje się po zakończeniu obowiązków, może odbierać czas i energię potrzebne na sen, odpoczynek i relacje.',
     sections: [
@@ -262,7 +264,7 @@ const existingTopics: Topic[] = [
   },
 ];
 
-const topicLabels = new Map([...existingTopics, ...additions].map(t => [t.slug, t.label]));
+const topicLabels = new Map([...existingTopics, ...additions, ...newTopics].map(t => [t.slug, t.label]));
 const resourceLabels: Record<string, string> = {
   '/blog/relacja-terapeutyczna-zrodlo-zmiany/': 'Artykuł: relacja terapeutyczna a zmiana',
   '/blog/narcyzm-wrazliwy/': 'Artykuł o narcyzmie wrażliwym',
@@ -275,7 +277,7 @@ const resourceLabels: Record<string, string> = {
 
 export const helpTopics: Topic[] = [
   ...existingTopics,
-  ...additions.map(({ group, links, ...topic }): Topic => ({
+  ...[...additions, ...newTopics].map(({ group, links, ...topic }): Topic => ({
     ...topic,
     group: helpGroups[group],
     title: topic.label.length <= 45 ? `${topic.label} - konsultacja` : topic.label,
