@@ -86,12 +86,13 @@ const helpIndexPath = '/kiedy-zglosic-sie-na-terapie/';
 const helpIndex = read(file(helpIndexPath));
 assert.equal(helpPaths.length, 74, 'Only the completed topics are exported');
 const additionalSlugs = ['zdrowie-fizyczne-i-psychiczne', 'trudnosci-okoloporodowe', 'rodzicielstwo', 'stres-mniejszosciowy', 'seksualnosc-i-intymnosc', 'trudnosci-z-odzywianiem', 'obraz-ciala', 'problemowe-uzywanie-substancji'];
-const additionalSection = helpIndex.match(/<section aria-labelledby="obszary-rozmowy"[^>]*>([\s\S]*?)<\/section>/)?.[1];
-assert.ok(additionalSection);
+assert.doesNotMatch(helpIndex, /obszary-rozmowy|Dodatkowe obszary konsultacji psychologicznych/);
+const catalogue = helpIndex.match(/<section aria-labelledby="tematy-konsultacji"[^>]*>([\s\S]*?)<\/section>/)?.[1];
+assert.ok(catalogue, 'One shared catalogue');
 for (const slug of additionalSlugs) {
   const path = `/w-czym-pomagam/${slug}/`;
   assert.ok(helpPaths.includes(path), `${path}: in sitemap`);
-  assert.ok(additionalSection.includes(`href="${path}"`), `${path}: in additional topics`);
+  assert.ok(catalogue.includes(`href="${path}"`), `${path}: in common catalogue`);
   const html = read(file(path));
   assert.match(html, /"@type":"WebPage"/);
   assert.ok((html.match(/<section><h2>/g) || []).length >= 4, `${path}: clinical sections and consultation`);
@@ -122,7 +123,7 @@ for (const id of ['emocje-mlodziezy', 'relacje-mlodziezy', 'dorastanie-i-tozsamo
 assert.match(helpIndex, /<h1>W czym mogę pomóc\?<\/h1>/);
 const groupCounts = [...helpIndex.matchAll(/<div class="editorial-card help-topic-card">.*?<ul[^>]*>(.*?)<\/ul>/gs)]
   .map(([, list]) => [...list.matchAll(/href="\/w-czym-pomagam\//g)].length);
-assert.deepEqual(groupCounts, [10, 9, 10, 9, 5, 6, 5, 5, 1, 6, 8]);
+assert.deepEqual(groupCounts, [10, 9, 11, 9, 5, 7, 4, 5, 3, 2, 2, 1, 6]);
 const topicIntros = helpPaths.map(path => {
   const html = read(file(path));
   assert.ok((html.match(/<h2[ >]/g) || []).length >= 4, `${path}: substantive sections`);
@@ -150,8 +151,9 @@ const clinicalSections = helpPaths.map(path => {
 assert.equal(new Set(clinicalSections).size, helpPaths.length, 'Distinct clinical explanation for every topic');
 
 assert.doesNotMatch(helpIndex, /Wszystkie tematy:/);
-const catalogueNames = [...helpIndex.matchAll(/href="(\/w-czym-pomagam\/[^"]+)"[^>]*>([^<]+)<\/a>/g)];
+const catalogueNames = [...catalogue.matchAll(/href="(\/w-czym-pomagam\/[^"]+)"[^>]*>([^<]+)<\/a>/g)];
 assert.equal(catalogueNames.length, 74);
+assert.deepEqual(catalogueNames.map(([, path]) => path).sort(), [...helpPaths].sort());
 for (const [, path, label] of catalogueNames) {
   const html = read(file(path));
   assert.ok(html.includes(`<span aria-current="page">${label}</span>`), `${path}: breadcrumb uses catalogue label`);
