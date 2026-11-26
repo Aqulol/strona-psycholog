@@ -17,10 +17,10 @@ export default function Home(){return <main id="tresc">
 <section className="editorial-card"><p className="eyebrow">03 / Podejście</p><h3>Praca z przeniesieniem</h3><p>W TFP badamy, jak znane z życia wzorce relacji pojawiają się także w kontakcie ze mną. Stosuję to podejście w klasycznym ujęciu, w ramach szkolenia i pod superwizją.</p><More href={paths.tfp}>Czym jest TFP</More></section></div></div>
 <section className="shell home-block" aria-labelledby="tematy-konsultacji">
   <h2 id="tematy-konsultacji">W czym mogę pomóc?</h2>
-  <p className="mb-6">Pomagam przyjrzeć się zarówno codziennym trudnościom, jak i problemom, które trwają dłużej lub wyraźnie wpływają na życie. Nie trzeba mieć diagnozy, żeby umówić się na konsultację. Jeśli ma Pan/Pani rozpoznanie, możemy porozmawiać o nim i wspólnie zastanowić się, jaka forma pomocy będzie odpowiednia.</p>
+  <p className="mb-6">Na konsultacji można porozmawiać o rozpoznaniu, takim jak depresja czy zaburzenie lękowe, ale też o trudnościach, które nie mają jeszcze nazwy. Powodem do spotkania może być samotność, brak satysfakcji z życia albo chęć lepszego zrozumienia siebie. Nie trzeba mieć diagnozy, żeby się umówić.</p>
   <ul className="support-list" role="list">
-    <li><h3>Nastrój i poczucie sensu</h3><p>Smutek, obniżony nastrój, utrata zainteresowania tym, co wcześniej cieszyło, poczucie pustki lub braku sensu. Na konsultacji można też porozmawiać o otrzymanym rozpoznaniu depresji.</p></li>
-    <li><h3>Lęk, stres i przeciążenie</h3><p>Codzienne napięcie, zamartwianie się, stres w pracy, trudność z odpoczynkiem albo wypalenie. Tematem rozmowy może być też lęk, który utrudnia codzienne życie, lub rozpoznane zaburzenie lękowe.</p></li>
+    <li><h3>Nastrój i poczucie sensu</h3><p>Smutek, obniżony nastrój, utrata zainteresowania tym, co wcześniej cieszyło, poczucie pustki lub braku sensu.</p></li>
+    <li><h3>Lęk, stres i przeciążenie</h3><p>Codzienne napięcie, zamartwianie się, stres w pracy, trudność z odpoczynkiem albo wypalenie.</p></li>
     <li><h3>Relacje i samotność</h3><p>Trudności w związku, rodzinie lub pracy, samotność także wśród bliskich, powtarzające się konflikty, lęk przed odrzuceniem albo trudność w zaufaniu i stawianiu granic.</p></li>
     <li><h3>Kryzysy i zmiany życiowe</h3><p>Rozstanie, rozwód, żałoba, choroba, utrata pracy lub przeprowadzka. Można też porozmawiać o powracających myślach i uczuciach związanych z trudnymi przeżyciami.</p></li>
     <li><h3>Poczucie własnej wartości i zrozumienie siebie</h3><p>Surowa ocena siebie, wrażliwość na krytykę, poczucie, że nie jest się wystarczająco dobrym, albo trudność w rozpoznawaniu potrzeb i rozumieniu własnych reakcji.</p></li>
