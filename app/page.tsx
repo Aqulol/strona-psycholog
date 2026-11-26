@@ -16,17 +16,17 @@ export default function Home(){return <main id="tresc">
 <section className="editorial-card"><p className="eyebrow">02 / Nurt</p><h3>Psychoterapia psychodynamiczna</h3><p>Przyglądam się razem z Panem/Panią temu, jak wcześniejsze doświadczenia mogą wiązać się z dzisiejszymi reakcjami. Ważne jest również to, co dzieje się w samej rozmowie.</p><More href={paths.method}>Na czym polega terapia</More></section>
 <section className="editorial-card"><p className="eyebrow">03 / Podejście</p><h3>Praca z przeniesieniem</h3><p>W TFP badamy, jak znane z życia wzorce relacji pojawiają się także w kontakcie ze mną. Stosuję to podejście w klasycznym ujęciu, w ramach szkolenia i pod superwizją.</p><More href={paths.tfp}>Czym jest TFP</More></section></div></div>
 <section className="shell home-block" aria-labelledby="tematy-konsultacji">
-  <h2 id="tematy-konsultacji">Z czym można zgłosić się na konsultację?</h2>
-  <p className="mb-6">Poniżej podaję przykłady tematów, z którymi można do mnie przyjść. Nie trzeba mieć diagnozy ani wiedzieć, od czego zacząć.</p>
-  <ul className="card-grid">
-    <li className="editorial-card"><h3>Relacje i bliskość</h3><p>Powtarzające się konflikty z bliskimi lub w pracy, samotność, lęk przed odrzuceniem, trudność w zaufaniu albo stawianiu granic.</p></li>
-    <li className="editorial-card"><h3>Nastrój i emocje</h3><p>Obniżony nastrój, niepokój, poczucie pustki albo silne emocje, które trudno nazwać lub zrozumieć.</p></li>
-    <li className="editorial-card"><h3>Stres i przeciążenie</h3><p>Napięcie, wypalenie lub poczucie, że codzienne obowiązki zaczynają przekraczać dostępne siły.</p></li>
-    <li className="editorial-card"><h3>Ważne zmiany i trudne doświadczenia</h3><p>Rozstanie, trudne wydarzenie, niepewność przed ważną decyzją albo powracające myśli o tym, co wydarzyło się wcześniej.</p></li>
-    <li className="editorial-card"><h3>Poczucie własnej wartości</h3><p>Surowa ocena siebie, wahania samooceny albo poczucie, że uznanie innych decyduje o tym, jak się o sobie myśli.</p></li>
-    <li className="editorial-card"><h3>Lepsze zrozumienie siebie</h3><p>Chęć przyjrzenia się własnym potrzebom, reakcjom i sytuacjom, które powtarzają się w życiu.</p></li>
+  <h2 id="tematy-konsultacji">W czym mogę pomóc?</h2>
+  <p className="mb-6">Pomagam lepiej zrozumieć własne emocje, potrzeby i to, co powtarza się w relacjach. Poniżej podaję przykłady trudności, nad którymi możemy wspólnie pracować. Nie trzeba mieć diagnozy, żeby zacząć rozmowę.</p>
+  <ul className="support-list" role="list">
+    <li><h3>Relacje i bliskość</h3><p>Powtarzające się konflikty z bliskimi lub w pracy, samotność, lęk przed odrzuceniem, trudność w zaufaniu, mówieniu „nie” albo proszeniu o wsparcie.</p></li>
+    <li><h3>Nastrój i emocje</h3><p>Obniżony nastrój, niepokój, poczucie pustki, wahania nastroju albo chwile, gdy trudno nazwać to, co się czuje lub poradzić sobie ze złością.</p></li>
+    <li><h3>Stres i przeciążenie</h3><p>Napięcie, wypalenie, trudność z odpoczynkiem po pracy albo poczucie, że codzienne obowiązki zaczynają przerastać.</p></li>
+    <li><h3>Ważne zmiany i trudne doświadczenia</h3><p>Rozstanie, zmiana pracy, przeprowadzka, niepewność przed ważną decyzją albo powracające myśli o trudnych przeżyciach.</p></li>
+    <li><h3>Poczucie własnej wartości</h3><p>Surowa ocena siebie po błędzie, porównywanie się z innymi, wahania samooceny albo trudność w przyjmowaniu krytyki.</p></li>
+    <li><h3>Lepsze zrozumienie siebie</h3><p>Trudność w rozpoznawaniu własnych potrzeb, niepewność co do tego, co jest dla siebie ważne, albo chęć zrozumienia, dlaczego podobne sytuacje wywołują podobne reakcje.</p></li>
   </ul>
-  <More href={paths.signs}>Więcej o powodach zgłoszenia i granicach pomocy</More>
+  <More href={paths.signs}>Więcej o zakresie pomocy</More>
 </section>
 <section className="band"><div className="shell home-block"><p className="eyebrow">Pierwsze spotkania</p><h2>Od konsultacji do regularnych sesji</h2><p>Po kontakcie zwykle spotykamy się cztery razy na konsultacjach. Jeśli wspólnie zdecydujemy się na terapię, ustalamy zasady współpracy i rytm jednej lub dwóch sesji w tygodniu.</p><More href={paths.consult}>Jak przebiegają konsultacje</More></div></section>
 <div className="shell home-block home-pair"><section><h2>Dorośli</h2><p>Pracuję indywidualnie z osobami dorosłymi. Zapraszam zarówno po zmianie życiowej, jak i wtedy, gdy trudności powracają od dawna.</p><More href={paths.adults}>Psychoterapia dorosłych</More></section><section><h2>Młodzież od 15. roku życia</h2><p>Pracuję w tym samym nurcie także z młodzieżą. Na pierwsze spotkanie z osobą niepełnoletnią zapraszam rodzica lub rodziców.</p><More href={paths.youth}>Psychoterapia młodzieży</More></section><section><h2>Superwizja</h2><p>Regularnie omawiam swoją pracę z doświadczonym specjalistą z zachowaniem poufności. Pomaga mi to dbać o jakość i bezpieczeństwo procesu.</p><More href={paths.about+'#superwizja'}>Czym jest superwizja</More></section><section><h2>O mnie</h2><p>Jestem psychologiem, absolwentem Uniwersytetu Wrocławskiego. Jestem na II roku czteroletniego szkolenia w Międzynarodowej Szkole Psychoterapii Psychodynamicznej.</p><More href={paths.about}>Wykształcenie i szkolenie</More></section></div>
