@@ -83,10 +83,10 @@ export default function Hero() {
               />
             </svg>
             <img
-              src="/images/portret.webp"
+              src="/images/portret2.webp"
               alt="Grzegorz Plebaniak - psycholog we Wrocławiu"
               width={1280}
-              height={1280}
+              height={855}
               loading="eager"
               fetchPriority="high"
               decoding="async"

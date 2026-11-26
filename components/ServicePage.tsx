@@ -14,7 +14,7 @@ export default function ServicePage({kind}:{kind:keyof typeof paths}){
  const page=pages[kind];
  const service = ['method', 'adults', 'youth', 'online', 'consult'].includes(kind) ? page.h1 : undefined;
  return <main id="tresc" className="reading"><Json data={webPage(paths[kind], page.h1, page.description, service)}/><Crumbs path={paths[kind]} title={page.h1}/><p className="eyebrow">Gabinet psychologiczny · Wrocław i online</p><h1>{page.h1}</h1><p className="hero-copy">{page.intro}</p>
- {kind==='about'&&<img src="/images/portret2.webp" width="1280" height="855" loading="lazy" alt="Grzegorz Plebaniak w gabinecie"/>}
+ {kind==='about'&&<img src="/images/portret.webp" width="1280" height="1280" loading="lazy" alt="Portret Grzegorza Plebaniaka"/>}
  {kind==='signs'&&<ul><li>Intensywne emocje, które trudno nazwać, albo wybuchy złości, po których pojawia się wstyd.</li><li>Lęk przed odrzuceniem, unikanie bliskości lub trudność w stawianiu granic.</li><li>Duże wahania samooceny albo surowa ocena siebie po drobnym błędzie.</li><li>Przeciążenie, poczucie pustki albo trudność z odnalezieniem kierunku w życiu.</li></ul>}
  {[...page.sections,...(serviceNotes[kind]??[])].map(([heading,...paragraphs])=><section key={heading} id={heading==='Superwizja'?'superwizja':undefined}><h2>{heading}</h2>{paragraphs.map(p=><p key={p}>{p}</p>)}</section>)}
  {kind==='tfp'&&<section><h2>Źródła i dalsza lektura</h2><ul><li>John F. Clarkin, Frank E. Yeomans, Otto F. Kernberg: <cite>Psychotherapy for Borderline Personality: Focusing on Object Relations</cite>.</li><li>Frank E. Yeomans, John F. Clarkin, Otto F. Kernberg: <cite>Transference-Focused Psychotherapy for Borderline Personality Disorder: A Clinical Guide</cite>.</li></ul></section>}
