@@ -4,13 +4,11 @@ import { useState, type FormEvent } from 'react';
 import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import Input from './Input';
 import { config } from '../lib/config';
-import { track } from '../lib/analytics';
 
 // Firebase Web SDK - inicjalizujemy tylko, gdy właściciel wpisał prawdziwy
 // apiKey (zamiast placeholdera „TU-WPISZ-..."). W wariancie darmowym (Spark)
 // formularz zapisuje wiadomości bezpośrednio do Firestore z przeglądarki.
 import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 type FormState = 'idle' | 'sending' | 'success' | 'error' | 'unconfigured';
 
@@ -22,7 +20,8 @@ function isFirebaseConfigured(): boolean {
 }
 
 /** Inicjalizacja Firebase - tylko raz, tylko gdy config jest uzupełniony. */
-function getDb() {
+async function getDb() {
+  const {getFirestore} = await import('firebase/firestore');
   const app = getApps().length ? getApp() : initializeApp(config.firebaseConfig);
   return getFirestore(app);
 }
@@ -54,7 +53,7 @@ export default function ContactForm() {
   const [rodo, setRodo] = useState(false);
   const [honeypot, setHoneypot] = useState('');
   const [state, setState] = useState<FormState>('idle');
-  const [errors, setErrors] = useState<{ name?: string; contact?: string; rodo?: string }>({});
+  const [errors, setErrors] = useState<{ name?: string; contact?: string; rodo?: string; message?: string }>({});
 
   const validate = () => {
     const next: typeof errors = {};
@@ -62,6 +61,9 @@ export default function ContactForm() {
     if (!isValidContact(contact)) {
       next.contact = 'Proszę podać poprawny e-mail lub numer telefonu (min. 9 cyfr).';
     }
+    if (message.trim().length < 1 || message.trim().length > 1000) next.message = 'Proszę wpisać krótką wiadomość (do 1000 znaków).';
+    if (name.trim().length > 80) next.name = 'Proszę skrócić imię do 80 znaków.';
+    if (contact.trim().length > 160) next.contact = 'Proszę skrócić dane kontaktowe do 160 znaków.';
     if (!rodo) next.rodo = 'Zgoda RODO jest wymagana.';
     setErrors(next);
     return Object.keys(next).length === 0;
@@ -88,7 +90,8 @@ export default function ContactForm() {
 
     setState('sending');
     try {
-      const db = getDb();
+      const {collection,addDoc,serverTimestamp} = await import('firebase/firestore');
+      const db = await getDb();
       await addDoc(collection(db, 'messages'), {
         name: name.trim(),
         contact: contact.trim(),
@@ -96,7 +99,6 @@ export default function ContactForm() {
         rodoConsent: true,
         createdAt: serverTimestamp(),
       });
-      track('form_submit', {});
       setState('success');
       setName('');
       setContact('');
@@ -136,9 +138,10 @@ export default function ContactForm() {
       <Input
         id="wiadomosc"
         label="Wiadomość"
-        placeholder="W kilku zdaniach: czego dotyczy Pana/Pani zgłoszenie?"
+        placeholder="Np. pytanie o dostępność innego terminu"
         required
         textarea
+        error={errors.message}
         value={message}
         onChange={setMessage}
       />
@@ -163,10 +166,12 @@ export default function ContactForm() {
             checked={rodo}
             onChange={(e) => setRodo(e.target.checked)}
             className="mt-1"
+            required
+            aria-invalid={errors.rodo ? true : undefined}
             aria-describedby={errors.rodo ? 'rodo-error' : undefined}
           />
           <span>
-            Wyrażam zgodę na kontakt i przetwarzanie moich danych osobowych zgodnie z{' '}
+            Wyrażam zgodę na przetwarzanie danych podanych w formularzu w celu odpowiedzi na moją wiadomość. Więcej w{' '}
             <a href="/polityka-prywatnosci/" className="text-green underline">
               polityką prywatności
             </a>
@@ -186,7 +191,7 @@ export default function ContactForm() {
           className="flex items-start gap-2 rounded border border-green/30 bg-green/5 p-4 text-sm text-green"
         >
           <CheckCircle2 aria-hidden="true" className="mt-0.5 shrink-0" size={18} />
-          Dziękuję za wiadomość. Odpowiem najszybciej, jak to możliwe.
+          Dziękuję za wiadomość. Odpowiem na podane dane kontaktowe.
         </p>
       )}
 

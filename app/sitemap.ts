@@ -1,3 +1,5 @@
+import {paths} from '../lib/site';
+import {editorial} from '../lib/editorial';
 export const dynamic='force-static';
 import type{MetadataRoute} from 'next';
 
@@ -28,7 +30,9 @@ const STATIC_LASTMOD = '2026-10-15';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages: { path: string; lastmod?: string }[] = [
-    { path: '/', lastmod: STATIC_LASTMOD },
+    { path: '/' },
+    ...Object.values(paths).map(path=>({path})),
+    ...editorial.filter(a=>a.slug).map(a=>({path:`/blog/${a.slug}/`})),
     { path: '/blog/', lastmod: STATIC_LASTMOD },
     ...Object.entries(ARTICLE_DATES).map(([slug, lastmod]) => ({
       path: `/blog/${slug}/`,

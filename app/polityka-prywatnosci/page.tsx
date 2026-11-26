@@ -1,24 +1,11 @@
-import { websiteOpenGraph } from '../../lib/seoMetadata';
-
-const privacyTitle = 'Polityka prywatności';
-const privacyDescription =
-  'Polityka prywatności gabinetu Grzegorza Plebaniaka: dane osobowe, cele przetwarzania, cookies, prawa osób i kontakt.';
-
-export const metadata = {
-  title: privacyTitle,
-  description: privacyDescription,
-  alternates: { canonical: '/polityka-prywatnosci/' },
-  openGraph: websiteOpenGraph({
-    url: 'https://psychologplebaniak.pl/polityka-prywatnosci/',
-    title: privacyTitle,
-    description: privacyDescription,
-  }),
-};
+import {Crumbs,SeeAlso} from '../../components/Site';
+import {meta,paths} from '../../lib/site';
+export const metadata=meta('/polityka-prywatnosci/','Polityka prywatności i cookies | Plebaniak','Zasady przetwarzania danych w gabinecie Grzegorza Plebaniaka: formularz, odbiorcy danych, pliki cookies, prawa osób i kontakt w sprawach prywatności.');
 
 export default function Page() {
   return (
     <main id="tresc" className="container section max-w-3xl">
-      <a href="/">← Strona główna</a>
+      <Crumbs path="/polityka-prywatnosci/" title="Polityka prywatności"/>
       <h1 className="mt-8 text-6xl text-green">Polityka prywatności</h1>
 
       <h2 className="mt-8 text-3xl">Administrator</h2>
@@ -40,7 +27,7 @@ export default function Page() {
       </ul>
       <p className="mt-3 leading-8">
         To ten sam adres, na który można zgłaszać się w sprawach umówienia wizyty. Jeśli wiadomość dotyczy danych
-        osobowych, prosimy wpisać w temacie „RODO”.
+        osobowych, proszę wpisać w temacie „RODO”.
       </p>
 
       <h2 className="mt-8 text-3xl">Jakie dane przetwarzamy</h2>
@@ -49,10 +36,6 @@ export default function Page() {
         <li className="leading-8">
           <strong>Dane podane w formularzu kontaktowym</strong> - imię, adres e-mail lub numer telefonu oraz treść
           wiadomości.
-        </li>
-        <li className="leading-8">
-          <strong>Dane techniczne i analityczne</strong> - anonimowe statystyki odwiedzin strony zbierane przez Google
-          Analytics, wyłącznie po wyrażeniu zgody w banerze cookies.
         </li>
         <li className="leading-8">
           <strong>Dane niezbędne do wystawienia faktury</strong> - imię, nazwisko, adres, a także NIP, jeśli dotyczy.
@@ -76,16 +59,11 @@ export default function Page() {
       <h2 className="mt-8 text-3xl">Cele i podstawy prawne</h2>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Odpowiedź na zapytanie i umówienie wizyty</strong> - art. 6 ust. 1 lit. b RODO (podjęcie działań na
-          żądanie osoby przed zawarciem umowy).
+          <strong>Odpowiedź na zapytanie i umówienie wizyty</strong> - art. 6 ust. 1 lit. a RODO (zgoda) w przypadku formularza; w przypadku kontaktu w sprawie zawarcia umowy poza formularzem art. 6 ust. 1 lit. b RODO.
         </li>
         <li className="leading-8">
           <strong>Prowadzenie dokumentacji i rozliczeń, w tym wystawianie faktur</strong> - art. 6 ust. 1 lit. c RODO
           (obowiązek prawny).
-        </li>
-        <li className="leading-8">
-          <strong>Statystyki odwiedzin (Google Analytics 4)</strong> - art. 6 ust. 1 lit. a RODO (zgoda wyrażona przez
-          akceptację cookies w banerze).
         </li>
         <li className="leading-8">
           <strong>Ewentualne dochodzenie lub obrona roszczeń</strong> - art. 6 ust. 1 lit. f RODO (prawnie uzasadniony
@@ -97,15 +75,14 @@ export default function Page() {
       <p className="mt-3 leading-8">Z danych mogą korzystać wyłącznie podmioty, które wspierają prowadzenie gabinetu:</p>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Google LLC</strong> - hosting strony (Firebase), przechowywanie wiadomości z formularza (Firestore)
-          oraz Google Analytics; dane mogą być przekazywane do Stanów Zjednoczonych;
+          <strong>Google LLC</strong> - hosting strony (Firebase), przechowywanie wiadomości z formularza (Firestore); dane mogą być przekazywane do Stanów Zjednoczonych;
         </li>
         <li className="leading-8">
           <strong>Booksy</strong> - platforma, za pośrednictwem której można rezerwować wizyty online; dane podane
           podczas rezerwacji są przetwarzane zgodnie z zasadami i polityką prywatności Booksy;
         </li>
         <li className="leading-8">
-          <strong>ZnanyLekarz</strong> - zewnętrzny widget informacyjny na stronie. Po przejściu do serwisu
+          <strong>ZnanyLekarz</strong> - odnośnik do zewnętrznego profilu. Po przejściu do serwisu
           ZnanyLekarz obowiązuje jego polityka prywatności (
           <a className="text-green underline" href="https://www.znanylekarz.pl/prywatnosc" rel="noopener noreferrer">
             https://www.znanylekarz.pl/prywatnosc
@@ -135,9 +112,6 @@ export default function Page() {
         <li className="leading-8">
           <strong>Dokumentacja związana z terapią</strong> - zgodnie z przepisami o dokumentacji medycznej (20 lat).
         </li>
-        <li className="leading-8">
-          <strong>Dane analityczne (Google Analytics)</strong> - zgodnie z ustawieniami retencji Google Analytics.
-        </li>
       </ul>
 
       <h2 className="mt-8 text-3xl">Prawa osób</h2>
@@ -155,11 +129,11 @@ export default function Page() {
         </li>
       </ul>
       <p className="mt-3 leading-8">
-        Aby skorzystać z tych praw, prosimy o wiadomość na adres{' '}
+        Aby skorzystać z tych praw, proszę o wiadomość na adres{' '}
         <a className="text-green underline" href="mailto:gpplebaniak@gmail.com">
           gpplebaniak@gmail.com
         </a>
-        . Odpowiadamy w ciągu miesiąca od otrzymania zgłoszenia.
+        . Odpowiadam w ciągu miesiąca od otrzymania zgłoszenia.
       </p>
 
       <h2 className="mt-8 text-3xl">Skarga do UODO</h2>
@@ -173,34 +147,18 @@ export default function Page() {
       </p>
 
       <h2 className="mt-8 text-3xl">Cookies</h2>
-      <p className="mt-3 leading-8">Na stronie używane są następujące rodzaje plików cookies:</p>
-      <ul className="mt-3 space-y-2">
-        <li className="leading-8">
-          <strong>Cookies techniczne</strong> - niezbędne do prawidłowego działania strony.
-        </li>
-        <li className="leading-8">
-          <strong>Cookies analityczne (Google Analytics 4)</strong> - uruchamiane dopiero po wyrażeniu zgody w banerze
-          cookies.
-        </li>
-        <li className="leading-8">
-          <strong>Cookies marketingowe</strong> - nie są stosowane.
-        </li>
-      </ul>
-      <p className="mt-3 leading-8">
-        Zgodą można zarządzać w banerze cookies na stronie, a ustawienia plików cookies można również zmienić w
-        przeglądarce.
-      </p>
+      <p className="mt-3 leading-8">Strona nie uruchamia analityki ani narzędzi marketingowych. Osadzone mapy Google i kalendarz Booksy nie łączą się z dostawcami, dopóki nie wybierze Pan/Pani opcji ich wyświetlenia. Dostawcy mogą wtedy używać własnych plików cookies. Można skorzystać z telefonu lub e-maila bez wyświetlania tych elementów. Ustawienia cookies można zmienić w przeglądarce.</p>
 
       <h2 className="mt-8 text-3xl">Przekazywanie danych poza EOG</h2>
       <p className="mt-3 leading-8">
-        Dane mogą być przekazywane do Stanów Zjednoczonych (Google LLC - hosting, Firestore, Google Analytics).
+        Dane mogą być przekazywane do Stanów Zjednoczonych (Google LLC - hosting, Firestore).
         Przekazywanie odbywa się na podstawie decyzji o adekwatności (Data Privacy Framework) lub standardowych klauzul
         umownych. Zapewnione są odpowiednie zabezpieczenia danych.
       </p>
 
       <h2 className="mt-8 text-3xl">Zautomatyzowane podejmowanie decyzji</h2>
       <p className="mt-3 leading-8">
-        Nie stosujemy profilowania ani zautomatyzowanego podejmowania decyzji, w tym decyzji wywołujących skutki
+        Nie stosuję profilowania ani zautomatyzowanego podejmowania decyzji, w tym decyzji wywołujących skutki
         prawne lub istotnie wpływających na sytuację osoby.
       </p>
 
@@ -209,6 +167,7 @@ export default function Page() {
         Podanie danych w formularzu kontaktowym jest dobrowolne, ale niezbędne, aby odpowiedzieć na zapytanie.
         Konsekwencją niepodania danych jest brak możliwości obsługi zapytania.
       </p>
+      <SeeAlso links={[[paths.contact,'Kontakt'],[paths.faq,'Pytania organizacyjne']]}/>
     </main>
   );
 }

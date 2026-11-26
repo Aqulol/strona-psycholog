@@ -1,22 +1,14 @@
+import {Crumbs} from '../../../components/Site';
+import {meta,status} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
-import { articleOpenGraph } from '../../../lib/seoMetadata';
 import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const description =
-  'Jak wcześniejsze doświadczenia wpływają na emocje i relacje? O ich znaczeniu w psychoterapii psychodynamicznej.';
+  'Jak wcześniejsze doświadczenia wpływają na emocje i relacje? Wyjaśniam, jak w terapii psychodynamicznej łączymy historię życia z obecną sytuacją.';
 
-export const metadata: Metadata = {
-  title: 'Czy przeszłość wpływa na relacje?',
-  description,
-  alternates: { canonical: '/blog/czy-przeszlosc-ma-znaczenie/' },
-  openGraph: articleOpenGraph({
-    url: 'https://psychologplebaniak.pl/blog/czy-przeszlosc-ma-znaczenie/',
-    title: 'Czy przeszłość wpływa na relacje?',
-    description,
-    publishedTime: '2026-08-11',
-  }),
-};
+const seo=meta('/blog/czy-przeszlosc-ma-znaczenie/','Czy przeszłość wpływa na relacje?',description,true);
+export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:'2026-08-11'}};
 
 const faq: [string, string][] = [
   [
@@ -46,12 +38,11 @@ export default function Page() {
   return (
     <>
       <main id="tresc" className="container section max-w-3xl">
-      <a href="/" className="text-green underline">
-        ← Strona główna
-      </a>
+      <Crumbs path="/blog/czy-przeszlosc-ma-znaczenie/" title={'Czy przeszłość naprawdę ma aż takie znaczenie?'}/>
       <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
         Czy przeszłość naprawdę ma aż takie znaczenie?
       </h1>
+        <p className="mt-3">{status}</p>
       <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026</p>
       <p className="mt-6 leading-8 text-ink/80">
         Psychoterapia psychodynamiczna bywa kojarzona z niekończącym się powracaniem do dzieciństwa. To
@@ -161,7 +152,7 @@ export default function Page() {
 
       <ArticleBookingCta />
 
-      <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
+      <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
       <ul className="mt-4 space-y-4">
         <li>
           <a
@@ -191,7 +182,7 @@ export default function Page() {
           <p className="mt-1 leading-7 text-ink/70">różnica między rozumieniem a przepracowaniem</p>
         </li>
         <li>
-          <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
+          <a href="/psychoterapia-psychodynamiczna-wroclaw/" className="text-lg font-medium text-green underline hover:text-green/80">
             Psychoterapia psychodynamiczna we Wrocławiu
           </a>
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>

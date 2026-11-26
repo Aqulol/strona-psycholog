@@ -8,7 +8,7 @@ export const metadata = {
 export default function Page() {
   return (
     <BlogRedirect
-      to="/blog/jak-wybrac-psychoterapeute/"
+      to="/konsultacje-psychologiczne-wroclaw/"
       label="Jak wybrać psychoterapeutę? Praktyczny przewodnik"
     />
   );

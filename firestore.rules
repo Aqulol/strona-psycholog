@@ -1,48 +1,30 @@
 rules_version = '2';
-
 service cloud.firestore {
   match /databases/{database}/documents {
-    // ============================================================
-    // Formularz kontaktowy (wariant darmowy - zapis z przeglądarki).
-    // Każdy (bez logowania) może utworzyć dokument w kolekcji
-    // „messages", ale TYLKO z dopuszczonymi polami i typami.
-    // Pola wymagane: name (string), contact (string),
-    //                message (string), rodoConsent (bool).
-    // Pole opcjonalne: createdAt (ustawiane przez serverTimestamp()).
-    // Odczyt/aktualizacja/usuwanie - tylko dla uwierzytelnionych
-    // (czyli właściciela projektu w konsoli Firebase).
-    // ============================================================
+    // Staff access via Firebase Console IAM, never via browser SDK.
     match /messages/{messageId} {
-      allow create: if request.resource.data.keys().hasAll(['name', 'contact', 'message', 'rodoConsent'])
+      allow create: if request.resource.data.keys().hasOnly(['name','contact','message','rodoConsent','createdAt'])
                     && request.resource.data.name is string
-                    && request.resource.data.name.size() > 0
+                    && request.resource.data.name.size() >= 2
+                    && request.resource.data.name.size() <= 80
                     && request.resource.data.contact is string
                     && request.resource.data.contact.size() > 0
+                    && request.resource.data.contact.size() <= 160
                     && request.resource.data.message is string
-                    && request.resource.data.rodoConsent is bool
+                    && request.resource.data.message.size() > 0
+                    && request.resource.data.message.size() <= 1000
                     && request.resource.data.rodoConsent == true
-                    // createdAt dodawany jest przez serverTimestamp() -
-                    // dopuszczamy je (opcjonalnie), ale blokujemy
-                    // jakiekolwiek inne pola.
-                    && (request.resource.data.keys().size() == 4
-                        || (request.resource.data.keys().size() == 5
-                            && 'createdAt' in request.resource.data));
-      allow read: if request.auth != null;
-      allow update, delete: if false;
+                    && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if false;
     }
-
-    // Treści publiczne są dostępne do odczytu; zapis wymaga uwierzytelnienia.
     match /blogPosts/{postId} {
       allow read: if true;
-      allow write: if request.auth != null;
     }
     match /opinions/{opinionId} {
       allow read: if true;
-      allow write: if request.auth != null;
     }
     match /terms/{termId} {
       allow read: if true;
-      allow write: if request.auth != null;
     }
   }
 }

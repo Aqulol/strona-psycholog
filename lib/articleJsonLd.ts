@@ -20,7 +20,7 @@ export function articleJsonLd(opts: {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Article',
+        '@type': 'BlogPosting',
         headline: opts.headline,
         description: opts.description,
         inLanguage: 'pl-PL',
@@ -34,14 +34,6 @@ export function articleJsonLd(opts: {
         dateModified: opts.datePublished,
         image: opts.image,
         mainEntityOfPage: url,
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Strona główna', item: 'https://psychologplebaniak.pl' },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://psychologplebaniak.pl/blog' },
-          { '@type': 'ListItem', position: 3, name: opts.headline, item: url },
-        ],
       },
       ...(opts.faq?.length
         ? [

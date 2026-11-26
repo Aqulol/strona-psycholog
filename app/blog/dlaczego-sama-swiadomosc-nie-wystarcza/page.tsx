@@ -1,22 +1,14 @@
+import {Crumbs} from '../../../components/Site';
+import {meta,status} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
-import { articleOpenGraph } from '../../../lib/seoMetadata';
 import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const description =
-  'Dlaczego rozumienie problemu nie wystarcza? O emocjonalnej zmianie w psychoterapii psychodynamicznej.';
+  'Dlaczego rozumienie problemu nie zawsze zmienia sposób reagowania? O roli emocji, powtórzeń i relacji w pracy podczas psychoterapii psychodynamicznej.';
 
-export const metadata: Metadata = {
-  title: { absolute: 'Dlaczego sama świadomość nie wystarcza?' },
-  description,
-  alternates: { canonical: '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/' },
-  openGraph: articleOpenGraph({
-    url: 'https://psychologplebaniak.pl/blog/dlaczego-sama-swiadomosc-nie-wystarcza/',
-    title: 'Dlaczego sama świadomość nie wystarcza?',
-    description,
-    publishedTime: '2026-08-11',
-  }),
-};
+const seo=meta('/blog/dlaczego-sama-swiadomosc-nie-wystarcza/','Dlaczego sama świadomość nie wystarcza?',description,true);
+export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:'2026-08-11'}};
 
 const faq: [string, string][] = [
   [
@@ -46,12 +38,11 @@ export default function Page() {
   return (
     <>
       <main id="tresc" className="container section max-w-3xl">
-      <a href="/" className="text-green underline">
-        ← Strona główna
-      </a>
+      <Crumbs path="/blog/dlaczego-sama-swiadomosc-nie-wystarcza/" title={'Dlaczego sama świadomość nie wystarcza?'}/>
       <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
         Dlaczego sama świadomość nie wystarcza?
       </h1>
+        <p className="mt-3">{status}</p>
       <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026</p>
       <p className="mt-6 leading-8 text-ink/80">
         „Wiem, skąd to się bierze, ale nadal tak robię” - tak może brzmieć to doświadczenie. Można trafnie
@@ -162,7 +153,7 @@ export default function Page() {
 
       <ArticleBookingCta />
 
-      <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
+      <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
       <ul className="mt-4 space-y-4">
         <li>
           <a
@@ -183,7 +174,7 @@ export default function Page() {
           <p className="mt-1 leading-7 text-ink/70">emocjonalne przepracowanie w relacji terapeutycznej</p>
         </li>
         <li>
-          <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
+          <a href="/psychoterapia-psychodynamiczna-wroclaw/" className="text-lg font-medium text-green underline hover:text-green/80">
             Psychoterapia psychodynamiczna we Wrocławiu
           </a>
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>
