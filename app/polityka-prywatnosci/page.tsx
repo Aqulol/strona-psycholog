@@ -43,8 +43,7 @@ export default function Page() {
         </li>
       </ul>
       <p className="mt-3 leading-8">
-        Formularz kontaktowy nie jest przeznaczony do przesyłania danych o zdrowiu. Prosimy o niewpisywanie ich w
-        formularzu - szczegóły dotyczące zdrowia można omówić podczas pierwszej wizyty.
+        Formularz kontaktowy nie jest przeznaczony do przesyłania danych o zdrowiu. Proszę nie wpisywać ich w formularzu. Informacje o zdrowiu można omówić podczas pierwszej wizyty.
       </p>
 
       <h2 className="mt-8 text-3xl">Dane szczególnej kategorii (art. 9 RODO)</h2>

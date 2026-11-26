@@ -9,7 +9,7 @@ export default function BlogRedirect({ to, label }: { to: string; label: string 
       <meta httpEquiv="refresh" content={`0; url=${to}`} />
       <h1 className="text-4xl text-green">Przeniesiono artykuł</h1>
       <p className="mt-4 leading-8 text-ink/80">
-        Ten artykuł znajdziesz teraz pod adresem:{' '}
+        Treść jest dostępna na stronie:{' '}
         <a href={to} className="text-green underline">
           {label}
         </a>
