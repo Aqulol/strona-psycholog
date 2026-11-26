@@ -1,5 +1,3 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 export const metadata = {
   title: '404 - strona nie istnieje',
@@ -15,7 +13,7 @@ export const metadata = {
 export default function NotFound() {
   return (
     <>
-      <Header />
+
       <main id="tresc" className="section bg-cream">
         <div className="container max-w-2xl">
           <p className="eyebrow">Błąd 404</p>
@@ -40,7 +38,7 @@ export default function NotFound() {
           </div>
         </div>
       </main>
-      <Footer />
+
     </>
   );
 }

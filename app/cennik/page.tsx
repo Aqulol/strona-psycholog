@@ -1,29 +1,13 @@
-import type { Metadata } from 'next';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import {Crumbs} from '../../components/Site';
+import {details,meta} from '../../lib/site';
 import { config } from '../../lib/config';
-import { websiteOpenGraph } from '../../lib/seoMetadata';
 
-const konsultacjaPrice = config.prices.find((price) => price.key === 'konsultacja')?.price ?? 0;
-const psychoterapiaPrice = config.prices.find((price) => price.key === 'psychoterapia')?.price ?? 0;
-const cennikTitle = 'Cennik psychologa we Wrocławiu';
-const cennikDescription = `Cennik psychologa we Wrocławiu: konsultacja ${konsultacjaPrice} zł, psychoterapia ${psychoterapiaPrice} zł. Sesje 50 minut, stacjonarnie i online.`;
-
-export const metadata: Metadata = {
-  title: cennikTitle,
-  description: cennikDescription,
-  alternates: { canonical: '/cennik/' },
-  openGraph: websiteOpenGraph({
-    url: 'https://psychologplebaniak.pl/cennik/',
-    title: cennikTitle,
-    description: cennikDescription,
-  }),
-};
+export const metadata=meta('/cennik/','Cennik psychoterapii i konsultacji – Wrocław','Sprawdzi Pan/Pani cenę i czas konsultacji psychologicznej oraz psychoterapii we Wrocławiu lub online. Każde spotkanie trwa 50 minut i kosztuje 200 zł.');
 
 /**
  * Podstrona /cennik/ - osobny adres pod frazy „cennik psychoterapia Wrocław”.
  * Ceny pochodzą z jednego źródła (lib/config.ts), więc nie rozjadą się
- * z sekcją cennika na stronie głównej. JSON-LD: OfferCatalog + BreadcrumbList.
+ * z sekcją cennika na stronie głównej. JSON-LD: OfferCatalog.
  */
 export default function CennikPage() {
   const ld = {
@@ -50,21 +34,14 @@ export default function CennikPage() {
           url: `https://psychologplebaniak.pl/cennik/#${p.key}`,
         })),
       },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Strona główna', item: 'https://psychologplebaniak.pl' },
-          { '@type': 'ListItem', position: 2, name: 'Cennik', item: 'https://psychologplebaniak.pl/cennik/' },
-        ],
-      },
     ],
   };
 
   return (
     <>
-      <Header />
+
       <main id="tresc" className="container section max-w-3xl">
-        <p className="eyebrow">Cennik</p>
+        <Crumbs path="/cennik/" title="Cennik"/>
         <h1 className="mt-4 text-5xl leading-tight text-green md:text-6xl">
           Cennik wizyt - Wrocław · stacjonarnie i online
         </h1>
@@ -98,27 +75,10 @@ export default function CennikPage() {
         </div>
 
         <p className="mt-8 text-lg leading-8 text-ink/80">
-          Szczegóły płatności (gotówka, przelew, faktura) ustalamy podczas konsultacji.
-          Częstotliwość spotkań - zwykle raz lub dwa razy w tygodniu, o stałej porze -
-          dopasowujemy do potrzeb i ustaleń kontraktu.
+          {details}
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-3">
-          <a
-            href={config.booksyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded bg-green px-6 py-3.5 text-base font-medium text-white transition hover:bg-green/90"
-          >
-            Zarezerwuj termin online
-          </a>
-          <a
-            href="/#kontakt"
-            className="rounded border border-green px-6 py-3.5 text-base font-medium text-green transition hover:bg-green/5"
-          >
-            Napisz wiadomość
-          </a>
-        </div>
+        <p className="mt-8"><a className="text-link" href="/kontakt/">Dane kontaktowe</a></p>
 
         <h2 className="mt-14 text-4xl text-green">Jak często odbywają się spotkania?</h2>
         <p className="mt-4 leading-8 text-ink/80">
@@ -136,7 +96,7 @@ export default function CennikPage() {
           rozumienie emocji, relacji i powtarzających się wzorców.
         </p>
 
-        <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
+        <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
         <ul className="mt-4 space-y-4">
           <li>
             <a href="/blog/jak-wybrac-psychoterapeute/" className="text-lg font-medium text-green underline hover:text-green/80">
@@ -152,7 +112,7 @@ export default function CennikPage() {
           </li>
         </ul>
       </main>
-      <Footer />
+
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>
   );

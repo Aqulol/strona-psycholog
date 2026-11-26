@@ -1,22 +1,14 @@
+import {Crumbs} from '../../../components/Site';
+import {meta,status} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
-import { articleOpenGraph } from '../../../lib/seoMetadata';
 import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const description =
-  'Czym jest relacja terapeutyczna i przeniesienie? Poznaj psychodynamiczne spojrzenie na zmianę.';
+  'Co dzieje się w relacji z psychoterapeutą? O tym, jak podczas spotkań można dostrzec powracające wzorce, emocje i oczekiwania wobec innych osób.';
 
-export const metadata: Metadata = {
-  title: { absolute: 'Relacja terapeutyczna jako źródło zmiany' },
-  description,
-  alternates: { canonical: '/blog/relacja-terapeutyczna-zrodlo-zmiany/' },
-  openGraph: articleOpenGraph({
-    url: 'https://psychologplebaniak.pl/blog/relacja-terapeutyczna-zrodlo-zmiany/',
-    title: 'Relacja terapeutyczna jako źródło zmiany',
-    description,
-    publishedTime: '2026-08-11',
-  }),
-};
+const seo=meta('/blog/relacja-terapeutyczna-zrodlo-zmiany/','Relacja terapeutyczna jako źródło zmiany',description,true);
+export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:'2026-08-11'}};
 
 const faq: [string, string][] = [
   [
@@ -46,12 +38,11 @@ export default function Page() {
   return (
     <>
       <main id="tresc" className="container section max-w-3xl">
-      <a href="/" className="text-green underline">
-        ← Strona główna
-      </a>
+      <Crumbs path="/blog/relacja-terapeutyczna-zrodlo-zmiany/" title={'Relacja terapeutyczna jako źródło zmiany'}/>
       <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
         Relacja terapeutyczna jako źródło zmiany
       </h1>
+        <p className="mt-3">{status}</p>
       <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026</p>
       <p className="mt-6 leading-8 text-ink/80">
         Co dzieje się między pacjentem a terapeutą? Rozmowa w gabinecie może z zewnątrz przypominać każdą inną
@@ -163,7 +154,7 @@ export default function Page() {
 
       <ArticleBookingCta />
 
-      <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
+      <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
       <ul className="mt-4 space-y-4">
         <li>
           <a
@@ -193,7 +184,7 @@ export default function Page() {
           <p className="mt-1 leading-7 text-ink/70">wpływ wcześniejszych relacji na teraźniejszość</p>
         </li>
         <li>
-          <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
+          <a href="/psychoterapia-psychodynamiczna-wroclaw/" className="text-lg font-medium text-green underline hover:text-green/80">
             Psychoterapia psychodynamiczna we Wrocławiu
           </a>
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>

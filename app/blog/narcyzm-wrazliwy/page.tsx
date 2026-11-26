@@ -1,25 +1,17 @@
+import {Crumbs} from '../../../components/Site';
+import {meta,status} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
-import { articleOpenGraph } from '../../../lib/seoMetadata';
 import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const headline = 'Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?';
 const description =
-  'Narcyzm wrażliwy a relacje: wrażliwość na krytykę, poczucie własnej wartości, bliskość i psychoterapia psychodynamiczna.';
+  'Narcyzm wrażliwy a relacje: wrażliwość na krytykę, poczucie własnej wartości i bliskość. Wyjaśniam, dlaczego ten opis nie jest odrębną diagnozą.';
 const slug = 'narcyzm-wrazliwy';
 const datePublished = '2026-10-14';
 
-export const metadata: Metadata = {
-  title: 'Narcyzm wrażliwy a relacje',
-  description,
-  alternates: { canonical: `/blog/${slug}/` },
-  openGraph: articleOpenGraph({
-    url: `https://psychologplebaniak.pl/blog/${slug}/`,
-    title: 'Narcyzm wrażliwy a relacje',
-    description,
-    publishedTime: datePublished,
-  }),
-};
+const seo=meta('/blog/narcyzm-wrazliwy/','Narcyzm wrażliwy a relacje',description,true);
+export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:datePublished}};
 
 const ld = articleJsonLd({
   headline,
@@ -33,10 +25,9 @@ export default function Page() {
   return (
     <>
       <main id="tresc" className="container section max-w-3xl">
-        <a href="/" className="text-green underline">
-          ← Strona główna
-        </a>
+        <Crumbs path="/blog/narcyzm-wrazliwy/" title={headline}/>
         <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">{headline}</h1>
+        <p className="mt-3">{status}</p>
         <p className="mt-4 text-sm text-ink/70">14 października 2026</p>
         <p className="mt-6 leading-8 text-ink/80">
           Kiedy słyszymy słowo „narcyzm”, często wyobrażamy sobie osobę pewną siebie, skupioną na sobie,
@@ -277,7 +268,7 @@ export default function Page() {
 
         <ArticleBookingCta />
 
-        <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
+        <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
         <ul className="mt-4 space-y-4">
           <li>
             <a

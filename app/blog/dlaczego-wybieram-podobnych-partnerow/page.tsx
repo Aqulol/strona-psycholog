@@ -1,22 +1,14 @@
+import {Crumbs} from '../../../components/Site';
+import {meta,status} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
-import { articleOpenGraph } from '../../../lib/seoMetadata';
 import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const description =
-  'Dlaczego kolejne związki bywają podobne? O powtarzających się wzorcach relacyjnych i psychoterapii psychodynamicznej.';
+  'Dlaczego w różnych związkach pojawiają się podobne doświadczenia? O wpływie emocji, oczekiwań i wcześniejszych relacji na wybory bliskich osób.';
 
-export const metadata: Metadata = {
-  title: { absolute: 'Dlaczego wybieram podobnych partnerów?' },
-  description,
-  alternates: { canonical: '/blog/dlaczego-wybieram-podobnych-partnerow/' },
-  openGraph: articleOpenGraph({
-    url: 'https://psychologplebaniak.pl/blog/dlaczego-wybieram-podobnych-partnerow/',
-    title: 'Dlaczego wybieram podobnych partnerów?',
-    description,
-    publishedTime: '2026-08-11',
-  }),
-};
+const seo=meta('/blog/dlaczego-wybieram-podobnych-partnerow/','Dlaczego wybieram podobnych partnerów?',description,true);
+export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:'2026-08-11'}};
 
 const faq: [string, string][] = [
   [
@@ -46,12 +38,11 @@ export default function Page() {
   return (
     <>
       <main id="tresc" className="container section max-w-3xl">
-      <a href="/" className="text-green underline">
-        ← Strona główna
-      </a>
+      <Crumbs path="/blog/dlaczego-wybieram-podobnych-partnerow/" title={'Dlaczego ciągle wybieram podobnych partnerów?'}/>
       <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
         Dlaczego ciągle wybieram podobnych partnerów?
       </h1>
+        <p className="mt-3">{status}</p>
       <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026</p>
       <p className="mt-6 leading-8 text-ink/80">
         Zmieniają się imiona, okoliczności i początek znajomości, a jednak po pewnym czasie relacja zaczyna
@@ -163,7 +154,7 @@ export default function Page() {
 
       <ArticleBookingCta />
 
-      <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
+      <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
       <ul className="mt-4 space-y-4">
         <li>
           <a
@@ -193,7 +184,7 @@ export default function Page() {
           <p className="mt-1 leading-7 text-ink/70">relacja terapeutyczna</p>
         </li>
         <li>
-          <a href="/#metoda" className="text-lg font-medium text-green underline hover:text-green/80">
+          <a href="/psychoterapia-psychodynamiczna-wroclaw/" className="text-lg font-medium text-green underline hover:text-green/80">
             Psychoterapia psychodynamiczna we Wrocławiu
           </a>
           <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>

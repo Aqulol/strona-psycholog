@@ -1,6 +1,6 @@
 export const config = {
   name: 'Grzegorz Plebaniak',
-  title: 'Psycholog / psychoterapeuta',
+  title: 'Psycholog, psychoterapeuta (w trakcie szkolenia)',
   phone: '+48 693087574',
   email: 'gpplebaniak@gmail.com',
   streetAddress: 'Zygmunta Krasińskiego 13',

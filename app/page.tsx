@@ -1,157 +1,19 @@
-import type { Metadata } from 'next';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import About from '../components/About';
-import Areas from '../components/Areas';
-import Method from '../components/Method';
-import Office from '../components/Office';
-import Faq from '../components/Faq';
-import BlogSection from '../components/BlogSection';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
-import { config } from '../lib/config';
-import { websiteOpenGraph } from '../lib/seoMetadata';
-
-const priceValues = config.prices.map((p) => p.price);
-const minPrice = Math.min(...priceValues);
-const maxPrice = Math.max(...priceValues);
-const priceRange = minPrice === maxPrice ? `${minPrice} zł` : `${minPrice}-${maxPrice} zł`;
-const konsultacja = config.prices.find((p) => p.key === 'konsultacja')!;
-const psychoterapia = config.prices.find((p) => p.key === 'psychoterapia')!;
-const priceAnswer = `Konsultacja kosztuje ${konsultacja.price} zł, sesja psychoterapii ${psychoterapia.price} zł. Sesja trwa 50 minut. Szczegóły płatności ustalamy podczas konsultacji.`;
-
-/** Strona główna - jawny kanonikal '/' i og:url (layout nie narzuca już
- *  canonical globalnie, żeby nie zerować kanonikali podstron). */
-export const metadata: Metadata = {
-  alternates: { canonical: '/' },
-  openGraph: websiteOpenGraph({
-    url: 'https://psychologplebaniak.pl/',
-    title: 'Psycholog Wrocław | Konsultacje psychologiczne',
-    description:
-      'Psycholog we Wrocławiu: konsultacje psychologiczne i psychoterapia psychodynamiczna dla dorosłych. Wizyty stacjonarnie lub online. Umów spotkanie.',
-  }),
-};
-
-/**
- * Strona główna - sekcje ułożone jak puzzle:
- * Hero → O mnie → Obszary pomocy → Metoda pracy → Gabinet → FAQ → Blog → Kontakt.
- */
-export default function Home() {
-  // Structured data (schema.org) tylko na stronie głównej: LocalBusiness +
-  // MedicalBusiness + ProfessionalService + Person + FAQPage + BreadcrumbList.
-  const ld = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': ['LocalBusiness', 'MedicalBusiness', 'ProfessionalService'],
-        '@id': 'https://psychologplebaniak.pl/#gabinet',
-        name: 'Psycholog Grzegorz Plebaniak',
-        url: 'https://psychologplebaniak.pl/',
-        telephone: '+48 693087574',
-        email: config.email,
-        priceRange,
-        image: 'https://psychologplebaniak.pl/og-image.png',
-        logo: 'https://psychologplebaniak.pl/logo.png',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: config.streetAddress,
-          addressLocality: 'Wrocław',
-          postalCode: config.postal,
-          addressCountry: 'PL',
-        },
-        hasMap: `https://www.google.com/maps/search/?api=1&query=${config.geoLat},${config.geoLng}`,
-        areaServed: 'Wrocław',
-        knowsAbout: ['lęk i obniżony nastrój', 'kryzysy i zmiany życiowe', 'trudności w relacjach', 'stres i regulacja emocji', 'poczucie własnej wartości', 'wypalenie zawodowe'],
-        sameAs: ['https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw'],
-        // geo jest dołączane tylko po uzupełnieniu współrzędnych w lib/config.ts
-        ...(config.geoLat && config.geoLng
-          ? {
-              geo: {
-                '@type': 'GeoCoordinates',
-                latitude: Number(config.geoLat),
-                longitude: Number(config.geoLng),
-              },
-            }
-          : {}),
-      },
-      {
-        '@type': 'Person',
-        name: 'Grzegorz Plebaniak',
-        jobTitle: 'psycholog / psychoterapeuta',
-        sameAs: ['https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw'],
-      },
-      {
-        '@type': 'FAQPage',
-        mainEntity: [
-          {
-            '@type': 'Question',
-            name: 'Jak wygląda pierwsza konsultacja psychologiczna?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Pierwsze spotkanie jest okazją do omówienia trudności, które skłoniły do poszukiwania pomocy, oraz oczekiwań wobec dalszej współpracy. Konsultacja trwa 50 minut i nie zobowiązuje do rozpoczęcia psychoterapii. Rozpoczęcie psychoterapii poprzedza zazwyczaj kilka spotkań konsultacyjnych, podczas których przyglądamy się aktualnym trudnościom, historii życia oraz sposobowi funkcjonowania w relacjach. Pozwala to lepiej zrozumieć zgłaszane problemy i ocenić, jaka forma pomocy będzie odpowiednia. Po zakończeniu konsultacji omawiamy możliwość rozpoczęcia regularnej psychoterapii, jej cele oraz zasady współpracy, w tym częstotliwość spotkań, płatności i odwoływanie wizyt.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Psycholog vs psychiatra vs psychoterapeuta?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Psycholog zajmuje się wsparciem i diagnozą psychologiczną. Psychiatra jest lekarzem i może prowadzić leczenie farmakologiczne. Psychoterapeuta prowadzi regularną terapię po odpowiednim szkoleniu. Role mogą się uzupełniać.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Ile kosztuje i jak wygląda płatność?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: priceAnswer,
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Jak często odbywają się spotkania?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Zwykle spotykamy się raz lub dwa razy w tygodniu, o stałej porze. Częstotliwość dopasowujemy do potrzeb i ustaleń kontraktu. Dostępna jest forma stacjonarna i online.',
-            },
-          },
-          {
-            '@type': 'Question',
-            name: 'Co to superwizja i jak chronisz moje dane?',
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: 'Superwizja to poufna konsultacja pracy z doświadczonym specjalistą, bez danych pozwalających na identyfikację. Dbam o dyskrecję i przetwarzam dane zgodnie z RODO.',
-            },
-          },
-        ],
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Strona główna', item: 'https://psychologplebaniak.pl' },
-        ],
-      },
-    ],
-  };
-
-  return (
-    <>
-      {/* Preload portretu z hero (LCP) generuje automatycznie Next.js
-          (image preloading w Next 15) na bazie <img loading="eager"
-          fetchPriority="high"> w Hero - nie duplikujemy go ręcznie. */}
-      <Header />
-      <main id="tresc">
-        <Hero />
-        <About />
-        <Areas />
-        <Method />
-        <Office />
-        <Faq />
-        <BlogSection />
-        <Contact />
-      </main>
-      <Footer />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
-    </>
-  );
-}
+import {Booking, Json, Questions} from '../components/Site';
+import {config} from '../lib/config';
+import {articles,domain,faq,meta,paths} from '../lib/site';
+export const metadata=meta('/','Psychoterapia psychodynamiczna Wrocław | Plebaniak','Grzegorz Plebaniak – psycholog, psychoterapeuta (w trakcie szkolenia). Psychoterapia psychodynamiczna dla dorosłych i młodzieży 15+: Wrocław i online.');
+function More({href,children}:{href:string,children:React.ReactNode}){return <a className="text-link" href={href}>{children}<span aria-hidden="true">↗</span></a>;}
+export default function Home(){return <main id="tresc">
+<Json data={{'@context':'https://schema.org','@graph':[{'@type':'Person','@id':domain+'/#osoba',name:config.name,jobTitle:'Psycholog, psychoterapeuta w trakcie szkolenia',url:domain,email:config.email,image:domain+'/images/portret.webp',alumniOf:{'@type':'CollegeOrUniversity',name:'Uniwersytet Wrocławski'},sameAs:[config.booksyUrl,config.bookingUrl]},{'@type':'LocalBusiness','@id':domain+'/#gabinet',name:'Gabinet psychologiczny Grzegorz Plebaniak',url:domain,telephone:config.phone,priceRange:'200 PLN',image:domain+'/images/gabinet.webp',address:{'@type':'PostalAddress',streetAddress:config.streetAddress,postalCode:config.postal,addressLocality:'Wrocław',addressCountry:'PL'}}]}}/>
+<section className="hero-home"><div className="shell hero-grid"><div><p className="eyebrow">Grzegorz Plebaniak · Gabinet psychologiczny</p><h1>Psychoterapia psychodynamiczna we Wrocławiu</h1><p className="hero-copy">Psycholog, psychoterapeuta (w trakcie szkolenia) · TFP · praca pod superwizją · dorośli i młodzież od 15. roku życia · Wrocław i online</p><p className="hero-copy">Zapraszam na konsultację, jeśli chce Pan/Pani lepiej zrozumieć to, co powtarza się w emocjach lub relacjach. Nie trzeba wiedzieć, od czego zacząć.</p><Booking/></div><figure className="hero-photo"><img src="/images/portret.webp" width="1280" height="1280" alt="Portret Grzegorza Plebaniaka" fetchPriority="high"/><figcaption>Grzegorz Plebaniak <span aria-hidden="true">·</span> Wrocław / online</figcaption></figure></div></section>
+<div className="shell home-block"><p className="eyebrow">Jak pracuję</p><h2>Od czego można zacząć?</h2><div className="card-grid">
+<section className="editorial-card"><p className="eyebrow">01 / Dla kogo</p><h3>Kiedy się zgłosić</h3><p>Pretekstem do rozmowy może być trudność z bliskością, obniżony nastrój lub konflikt, który powraca. Można też zgłosić się z trudnościami związanymi z zaburzeniami osobowości, w tym typu borderline.</p><More href={paths.signs}>Sygnały do konsultacji</More></section>
+<section className="editorial-card"><p className="eyebrow">02 / Nurt</p><h3>Psychoterapia psychodynamiczna</h3><p>Przyglądam się razem z Panem/Panią temu, jak wcześniejsze doświadczenia mogą wiązać się z dzisiejszymi reakcjami. Ważne jest również to, co dzieje się w samej rozmowie.</p><More href={paths.method}>Na czym polega terapia</More></section>
+<section className="editorial-card"><p className="eyebrow">03 / Podejście</p><h3>Praca z przeniesieniem</h3><p>W TFP badamy, jak znane z życia wzorce relacji pojawiają się także w kontakcie ze mną. Stosuję to podejście w klasycznym ujęciu, w ramach szkolenia i pod superwizją.</p><More href={paths.tfp}>Czym jest TFP</More></section></div></div>
+<section className="band"><div className="shell home-block"><p className="eyebrow">Pierwsze spotkania</p><h2>Od konsultacji do regularnych sesji</h2><p>Po kontakcie zwykle spotykamy się cztery razy na konsultacjach. Jeśli wspólnie zdecydujemy się na terapię, ustalamy zasady współpracy i rytm jednej lub dwóch sesji w tygodniu.</p><More href={paths.consult}>Jak przebiegają konsultacje</More></div></section>
+<div className="shell home-block home-pair"><section><h2>Dorośli</h2><p>Pracuję indywidualnie z osobami dorosłymi. Zapraszam zarówno po zmianie życiowej, jak i wtedy, gdy trudności powracają od dawna.</p><More href={paths.adults}>Psychoterapia dorosłych</More></section><section><h2>Młodzież od 15 lat</h2><p>Pracuję w tym samym nurcie także z młodzieżą. Na pierwsze spotkanie z osobą niepełnoletnią zapraszam rodzica lub rodziców.</p><More href={paths.youth}>Psychoterapia młodzieży</More></section><section><h2>Superwizja</h2><p>Regularnie omawiam swoją pracę z doświadczonym specjalistą z zachowaniem poufności. Pomaga mi to dbać o jakość i bezpieczeństwo procesu.</p><More href={paths.about+'#superwizja'}>Czym jest superwizja</More></section><section><h2>O mnie</h2><p>Jestem psychologiem, absolwentem Uniwersytetu Wrocławskiego. Jestem na II roku czteroletniego szkolenia w Międzynarodowej Szkole Psychoterapii Psychodynamicznej.</p><More href={paths.about}>Wykształcenie i szkolenie</More></section></div>
+<section className="band"><div className="shell home-block home-pair"><div><p className="eyebrow">Wrocław / online</p><h2>Gabinet i informacje praktyczne</h2><p>Przyjmuję przy ul. Zygmunta Krasińskiego 13 we Wrocławiu oraz online. Konsultacja i sesja psychoterapii trwają po 50 minut i kosztują po 200 zł.</p><More href={paths.office}>Adres, mapa i zdjęcia</More><br/><More href={paths.online}>Spotkania online</More></div><img className="rounded-sm w-full max-h-80 object-cover" src="/images/gabinet.webp" alt="Wnętrze gabinetu psychoterapii we Wrocławiu" width="1280" height="1707" loading="lazy"/></div></section>
+<section className="shell home-block"><h2>Najczęstsze pytania</h2><Questions items={faq.slice(0,3)}/><More href={paths.faq}>Więcej pytań i odpowiedzi</More></section>
+<section className="band"><div className="shell home-block"><h2>Ostatnie artykuły</h2><div className="card-grid">{articles.slice(0,3).map(([slug,title])=><article key={slug} className="editorial-card"><h3><a href={`/blog/${slug}/`}>{title}</a></h3></article>)}</div><More href="/blog/">Wszystkie artykuły</More></div></section>
+<section className="shell home-block"><h2>Kontakt i rezerwacja</h2><p>Terminy konsultacji są dostępne w Booksy. Jeśli nie ma odpowiedniego terminu, zapraszam do kontaktu telefonicznego lub mailowego.</p><More href={paths.contact}>Kontakt i dostępne terminy</More></section>
+</main>;}

@@ -1,27 +1,19 @@
+import {Crumbs} from '../../../components/Site';
+import {meta,status} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
-import { articleOpenGraph } from '../../../lib/seoMetadata';
 import ArticleBookingCta from '../../../components/ArticleBookingCta';
 
 const description =
-  'Poradnik wyboru psychoterapeuty: kompetencje, nurt pracy, pierwsza konsultacja i sygnały ostrzegawcze.';
+  'Jak wybrać psychoterapeutę i o co zapytać podczas konsultacji? W tekście omawiam wykształcenie, szkolenie, superwizję i zasady regularnych spotkań.';
 
-export const metadata: Metadata = {
-  title: 'Jak wybrać psychoterapeutę?',
-  description,
-  alternates: { canonical: '/blog/jak-wybrac-psychoterapeute/' },
-  openGraph: articleOpenGraph({
-    url: 'https://psychologplebaniak.pl/blog/jak-wybrac-psychoterapeute/',
-    title: 'Jak wybrać psychoterapeutę?',
-    description,
-    publishedTime: '2026-08-20',
-  }),
-};
+const seo=meta('/blog/jak-wybrac-psychoterapeute/','Jak wybrać psychoterapeutę?',description,true);
+export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:'2026-08-20'}};
 
 const faq: [string, string][] = [
   [
     'Czy każdy psychoterapeuta jest psychologiem?',
-    'Nie. Psychoterapeuta to osoba, która ukończyła akredytowane szkolenie psychoterapeutyczne. Może mieć wykształcenie psychologiczne, medyczne lub inne kierunkowe. Warto pytać o wykształcenie, ukończone szkolenie i przynależność do towarzystwa psychoterapeutycznego.',
+    'Nie. Role psychologa i psychoterapeuty nie są tożsame. Warto zapytać o wykształcenie, etap szkolenia psychoterapeutycznego, superwizję i ewentualny certyfikat.',
   ],
   [
     'Czy droższy terapeuta znaczy lepszy?',
@@ -29,7 +21,7 @@ const faq: [string, string][] = [
   ],
   [
     'Po ilu spotkaniach powinienem/powinnam wiedzieć, że to dobry wybór?',
-    'Pierwsza konsultacja powinna dać wstępne poczucie bezpieczeństwa i jasność co do zasad współpracy. Pełną ocenę relacji warto zrobić po kilku spotkaniach. Jeśli po 3-4 sesjach nie czujesz, że jest to przestrzeń dla Ciebie, warto o tym powiedzieć terapeucie - to też część pracy.',
+    'Pierwsza konsultacja powinna dać wstępne poczucie bezpieczeństwa i jasność co do zasad współpracy. Pełną ocenę relacji warto zrobić po kilku spotkaniach. Jeśli po kilku sesjach trudno Panu/Pani rozmawiać swobodnie, warto o tym powiedzieć terapeucie - to też część pracy.',
   ],
 ];
 
@@ -46,49 +38,42 @@ export default function Page() {
   return (
     <>
       <main id="tresc" className="container section max-w-3xl">
-        <a href="/" className="text-green underline">
-          ← Strona główna
-        </a>
+        <Crumbs path="/blog/jak-wybrac-psychoterapeute/" title={'Jak wybrać psychoterapeutę? Praktyczny przewodnik'}/>
         <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">
           Jak wybrać psychoterapeutę? Praktyczny przewodnik
         </h1>
+        <p className="mt-3">{status}</p>
         <p className="mt-4 text-sm text-ink/70">20 sierpnia 2026</p>
         <p className="mt-6 leading-8 text-ink/80">
           Wybór terapeuty to jedna z najbardziej osobistych decyzji, jakie można podjąć.
           Odpowiedź na pytanie „do kogo pójść” rzadko jest jednoznaczna - nie ma jednego
           „najlepszego” specjalisty dla wszystkich. Liczą się kompetencje, nurt pracy,
-          logistyka i przede wszystkim to, czy w kontakcie z daną osobą czujesz się
+          logistyka i przede wszystkim to, czy w kontakcie z daną osobą może Pan/Pani czuć się
           wystarczająco bezpiecznie, aby mówić o trudnych sprawach. Poniżej praktyczny
           przewodnik, który pomoże zawęzić wybór i dobrze wykorzystać pierwsze spotkanie.
         </p>
 
         <h2 className="mt-12 text-4xl text-green">Psycholog, psychoterapeuta czy psychiatra?</h2>
         <p className="mt-4 leading-8 text-ink/80">
-          To pierwszy krok: wiedzieć, jakich kompetencji szukasz. Psycholog to osoba po
-          studiach psychologicznych - może prowadzić konsultacje, diagnozę i wsparcie,
-          ale tytuł psychologa nie uprawnia sam w sobie do prowadzenia psychoterapii.
-          Psychoterapeuta to osoba, która ukończyła dodatkowe, kilkuletnie szkolenie
-          psychoterapeutyczne (akredytowane przez towarzystwo, np. Polskie Towarzystwo
-          Psychoterapii Psychodynamicznej, lub podobne organizacje). Psychiatra jest
-          lekarzem - diagnozuje zaburzenia i może włączyć leczenie farmakologiczne.
+          Wykształcenie psychologiczne nie jest tym samym co szkolenie do prowadzenia psychoterapii.
+          Warto zapytać o etap takiego szkolenia, o superwizję i o certyfikat, jeśli ktoś się na niego powołuje.
+          Psychiatra jest lekarzem, który może m.in. zaproponować leczenie farmakologiczne.
         </p>
         <p className="mt-4 leading-8 text-ink/80">
           Te role często się uzupełniają: część osób korzysta równolegle z psychoterapii
           i opieki psychiatrycznej. Nie ma „lepszych” i „gorszych” zawodów - chodzi o to,
-          co jest potrzebne w Twojej sytuacji.
+          co jest potrzebne w Pana/Pani sytuacji.
         </p>
 
         <h2 className="mt-12 text-4xl text-green">Czy nurt terapii ma znaczenie?</h2>
         <p className="mt-4 leading-8 text-ink/80">
-          Tak, ale inaczej, niż się często sądzi. Badania wskazują, że skuteczność terapii
-          w większym stopniu zależy od jakości relacji terapeutycznej niż od samej nazwy
-          nurtu. Nurt opisuje jednak sposób myślenia o problemach i charakter pracy:
+          Nurt opisuje sposób rozumienia trudności i charakter pracy. Oprócz nazwy podejścia warto wziąć pod uwagę także jakość kontaktu podczas konsultacji:
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-6 leading-8 text-ink/80">
           <li>
             <strong>Psychoterapia psychodynamiczna</strong> - koncentruje się na emocjach,
             nieświadomych wzorcach, relacjach i wpływie przeszłości na teraźniejszość.
-            Dobra opcja, jeśli chcesz rozumieć „skąd się to bierze” i pracować głębiej.
+            Ważne jest także to, co dzieje się w relacji podczas sesji.
           </li>
           <li>
             <strong>Terapia poznawczo-behawioralna (CBT)</strong> - pracuje głównie z
@@ -96,19 +81,18 @@ export default function Page() {
             objawach (np. lęk napadowy, fobie) i krótszych, celowanych formach pracy.
           </li>
           <li>
-            <strong>Inne nurty</strong> (humanistyczny, Gestalt, systemowy, psychoterapia
-            online) - różnią się akcentami; warto zapytać terapeutę, jak pracuje, zamiast
+            <strong>Inne nurty</strong> (humanistyczny, Gestalt, systemowy) - różnią się akcentami; warto zapytać terapeutę, jak pracuje, zamiast
             wybierać wyłącznie po nazwie nurtu.
           </li>
         </ul>
         <p className="mt-4 leading-8 text-ink/80">
-          Jeśli nurt nie jest dla Ciebie oczywisty, zadaj pytanie podczas konsultacji.
+          Jeśli sposób pracy nie jest dla Pana/Pani jasny, można o niego zapytać podczas konsultacji.
           Dobry terapeuta potrafi w prostych słowach opisać, na czym polega jego praca.
         </p>
 
         <h2 className="mt-12 text-4xl text-green">Na co zwrócić uwagę przy wyborze</h2>
         <p className="mt-4 leading-8 text-ink/80">
-          Zanim umówisz pierwszą wizytę, warto sprawdzić kilka rzeczy - to standard,
+          Przed umówieniem pierwszej wizyty, warto sprawdzić kilka rzeczy - to standard,
           a nie przejaw braku zaufania:
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-6 leading-8 text-ink/80">
@@ -123,8 +107,8 @@ export default function Page() {
             dobry znak jakości i bezpieczeństwa.
           </li>
           <li>
-            <strong>Doświadczenie w Twoim obszarze.</strong> Jeśli zgłaszasz się z lękiem,
-            kryzysem, trudnościami w relacjach czy wypaleniem - zapytaj, czy pracował
+            <strong>Doświadczenie z podobnymi trudnościami.</strong> Jeśli zgłasza się Pan/Pani z lękiem,
+            kryzysem, trudnościami w relacjach czy wypaleniem - można zapytać, czy dana osoba pracowała
             z podobnymi sprawami.
           </li>
           <li>
@@ -136,7 +120,7 @@ export default function Page() {
         <h2 className="mt-12 text-4xl text-green">Pierwsza konsultacja - jak ją wykorzystać</h2>
         <p className="mt-4 leading-8 text-ink/80">
           Pierwsze spotkanie to nie egzamin, tylko wzajemne poznanie. Konsultacja trwa 50 minut
-          i nie zobowiązuje do rozpoczęcia psychoterapii. Możesz przygotować sobie kilka pytań
+          i nie zobowiązuje do rozpoczęcia psychoterapii. Może Pan/Pani przygotować sobie kilka pytań
           - to sygnał zaangażowania, a nie przeszkoda:
         </p>
         <ul className="mt-4 list-disc space-y-2 pl-6 leading-8 text-ink/80">
@@ -211,7 +195,7 @@ export default function Page() {
 
         <ArticleBookingCta />
 
-        <h2 className="mt-12 text-4xl text-green">Przeczytaj także</h2>
+        <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
         <ul className="mt-4 space-y-4">
           <li>
             <a href="/blog/relacja-terapeutyczna-zrodlo-zmiany/" className="text-lg font-medium text-green underline hover:text-green/80">

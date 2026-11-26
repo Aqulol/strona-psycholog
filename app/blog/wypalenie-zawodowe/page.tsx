@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <BlogRedirect to="/#obszary" label="Obszary pomocy - wypalenie zawodowe" />;
+  return <BlogRedirect to="/kiedy-zglosic-sie-na-terapie/" label="Obszary pomocy - wypalenie zawodowe" />;
 }

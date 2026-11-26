@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <BlogRedirect to="/#metoda" label="Metoda pracy - psychoterapia psychodynamiczna" />;
+  return <BlogRedirect to="/psychoterapia-psychodynamiczna-wroclaw/" label="Metoda pracy - psychoterapia psychodynamiczna" />;
 }
