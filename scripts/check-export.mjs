@@ -84,7 +84,7 @@ for (const slug of ['samotnosc', 'poczucie-wlasnej-wartosci']) {
 const helpPaths = paths.filter(path => path.startsWith('/w-czym-pomagam/'));
 const helpIndexPath = '/kiedy-zglosic-sie-na-terapie/';
 const helpIndex = read(file(helpIndexPath));
-assert.equal(helpPaths.length, 19, 'Only the completed topics are exported');
+assert.equal(helpPaths.length, 24, 'Only the completed topics are exported');
 assert.ok(!existsSync(file('/w-czym-pomagam/')), 'No competing topic index');
 for (const path of helpPaths) {
   const html = read(file(path));
@@ -103,7 +103,17 @@ for (const path of helpPaths) {
 
 const youthPath = '/psychoterapia-mlodziezy-od-15-roku-zycia/';
 const youthHtml = read(file(youthPath));
+assert.ok(helpIndex.includes(`href="${youthPath}"`));
 for (const id of ['emocje-mlodziezy', 'relacje-mlodziezy', 'dorastanie-i-tozsamosc']) {
-  assert.ok(helpIndex.includes(`href="${youthPath}#${id}"`));
   assert.ok(youthHtml.includes(`id="${id}"`));
+}
+
+assert.match(helpIndex, /<h1>W czym mogę pomóc\?<\/h1>/);
+for (const [, id] of helpIndex.matchAll(/href="#(kategoria-\d+)"/g)) {
+  assert.ok(helpIndex.includes(`id="${id}"`), `Catalog jump target: ${id}`);
+}
+for (const re of [/<title>([^<]+)<\/title>/, /<meta name="description" content="([^"]+)"/, /<h1[^>]*>([^<]+)<\/h1>/]) {
+  const values = helpPaths.map(path => read(file(path)).match(re)?.[1]);
+  assert.ok(values.every(Boolean));
+  assert.equal(new Set(values).size, helpPaths.length, `Unique topic metadata: ${re}`);
 }

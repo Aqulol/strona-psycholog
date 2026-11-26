@@ -34,6 +34,7 @@ export default async function TopicPage({ params }: Props) {
         <p className="topic-mobile-booking"><a href="#rezerwacja">Przejdź do rezerwacji</a></p>
         {t.sections.map(([title, text]) => <section key={title}><h2>{title}</h2><p>{text}</p></section>)}
         <section><h2>Pierwsza konsultacja</h2><p>Pierwsze spotkanie służy poznaniu sytuacji i oczekiwań oraz omówieniu możliwych form dalszej pomocy. Nie zobowiązuje do rozpoczęcia psychoterapii. Więcej informacji: <a href={paths.consult}>konsultacje psychologiczne we Wrocławiu i online</a>.</p></section>
+        {t.faq && <section><h2>Najczęstsze pytania</h2><h3>{t.faq[0]}</h3><p>{t.faq[1]}</p></section>}
         {t.sources && <section><h2>Źródła</h2><ul>{t.sources.map(([url, label]) => <li key={url}><a href={url} rel="noreferrer">{label}</a></li>)}</ul></section>}
         <SeeAlso links={[...t.related, [paths.method, 'Jak pracuję w nurcie psychodynamicznym']]}/>
       </article>
