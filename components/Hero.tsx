@@ -26,7 +26,7 @@ export default function Hero() {
             Wrocław · stacjonarnie i online
           </p>
           <h1 className="mt-5 text-5xl leading-tight text-green md:text-6xl xl:text-7xl">
-            Psycholog we Wrocławiu – Grzegorz Plebaniak
+            Psycholog we Wrocławiu - Grzegorz Plebaniak
           </h1>
           <p className="my-7 text-lg leading-8 text-ink/80 xl:text-xl xl:leading-9">
             Pomagam lepiej rozumieć siebie, swoje emocje i relacje oraz przyglądać się temu, co utrudnia

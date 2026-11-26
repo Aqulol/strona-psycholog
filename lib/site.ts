@@ -26,5 +26,5 @@ export const paths = {
  method: '/psychoterapia-psychodynamiczna-wroclaw/', tfp: '/terapia-skoncentrowana-na-przeniesieniu-tfp/', adults: '/psychoterapia-dorosli/', youth: '/psychoterapia-mlodziezy-od-15-roku-zycia/', online: '/psychoterapia-online/', consult: '/konsultacje-psychologiczne-wroclaw/', signs: '/kiedy-zglosic-sie-na-terapie/', about: '/o-mnie/', office: '/gabinet-wroclaw/', faq: '/faq/', contact: '/kontakt/',
 };
 export function meta(path:string, title:string, description:string, article = false): Metadata {
- return {title, description, alternates:{canonical:path}, openGraph:{title, description,url:path,locale:'pl_PL',siteName:config.name, type: article?'article':'website',images:[{url:'/og-image.png',alt:'Grzegorz Plebaniak – gabinet psychologiczny'}]}, twitter:{card:'summary_large_image',title,description,images:['/og-image.png']}};
+ return {title, description, alternates:{canonical:path}, openGraph:{title, description,url:path,locale:'pl_PL',siteName:config.name, type: article?'article':'website',images:[{url:'/og-image.png',alt:'Grzegorz Plebaniak - gabinet psychologiczny'}]}, twitter:{card:'summary_large_image',title,description,images:['/og-image.png']}};
 }
