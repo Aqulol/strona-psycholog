@@ -1,10 +1,11 @@
+import { consultationGroup, consultationTopics } from './consultation-topics';
 import { newTopics } from './help-topic-new';
 import { additions } from './help-topic-additions';
 
 export const helpGroups = ['Nastrój i emocje', 'Lęk, stres i przeciążenie', 'Relacje i funkcjonowanie społeczne', 'Poczucie własnej wartości i rozumienie siebie', 'Kryzysy i zmiany życiowe', 'Przeszłość i trudne doświadczenia', 'Osobowość i tożsamość', 'Związki i relacje partnerskie', 'Młodzież od 15. roku życia', 'Zdrowie fizyczne i psychiczne'] as const;
 
 type Topic = {
-  slug: string; group: typeof helpGroups[number]; label: string; h1?: string;
+  slug: string; group: typeof helpGroups[number] | typeof consultationGroup; label: string; h1?: string;
   title: string; description: string; intro: string;
   sections: [string, string][]; related: [string, string][];
   firstVisit?: string;
@@ -264,7 +265,7 @@ const existingTopics: Topic[] = [
   },
 ];
 
-const topicLabels = new Map([...existingTopics, ...additions, ...newTopics].map(t => [t.slug, t.label]));
+const topicLabels = new Map([...existingTopics, ...additions, ...newTopics, ...consultationTopics].map(t => [t.slug, t.label]));
 const resourceLabels: Record<string, string> = {
   '/blog/relacja-terapeutyczna-zrodlo-zmiany/': 'Artykuł: relacja terapeutyczna a zmiana',
   '/blog/narcyzm-wrazliwy/': 'Artykuł o narcyzmie wrażliwym',
@@ -275,17 +276,26 @@ const resourceLabels: Record<string, string> = {
   '/terapia-skoncentrowana-na-przeniesieniu-tfp/': 'Jak wygląda praca w TFP',
 };
 
+function relatedTopics(links: string[]): Topic['related'] {
+  return links.map(link => {
+    const externalToCatalogue = link.startsWith('/');
+    const label = externalToCatalogue ? resourceLabels[link] : topicLabels.get(link);
+    if (!label) throw new Error(`Missing label for topic link: ${link}`);
+    return [externalToCatalogue ? link : topicPath(link), label];
+  });
+}
+
 export const helpTopics: Topic[] = [
   ...existingTopics,
   ...[...additions, ...newTopics].map(({ group, links, ...topic }): Topic => ({
     ...topic,
     group: helpGroups[group],
     title: topic.label.length <= 45 ? `${topic.label} - konsultacja` : topic.label,
-    related: links.map(link => {
-      const externalToCatalogue = link.startsWith('/');
-      const label = externalToCatalogue ? resourceLabels[link] : topicLabels.get(link);
-      if (!label) throw new Error(`Missing label for topic link: ${link}`);
-      return [externalToCatalogue ? link : topicPath(link), label];
-    }),
+    related: relatedTopics(links),
+  })),
+  ...consultationTopics.map(({ links, ...topic }): Topic => ({
+    ...topic,
+    group: consultationGroup,
+    related: relatedTopics(links),
   })),
 ];
