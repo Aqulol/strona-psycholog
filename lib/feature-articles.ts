@@ -1,8 +1,5 @@
-// Set once, on the first production publication, not on every build.
-const publication = process.env.FEATURE_ARTICLES_PUBLISHED_ON;
-if (publication && (!/^\d{4}-\d{2}-\d{2}$/.test(publication) || !Number.isFinite(Date.parse(publication)) || new Date(publication).toISOString().slice(0, 10) !== publication)) {
-  throw new Error('FEATURE_ARTICLES_PUBLISHED_ON must be a valid YYYY-MM-DD date');
-}
+// Stała data publikacji obu artykułów, niezależna od kolejnych buildów.
+const publication = '2026-11-26';
 
 export const featureArticles = [
   {

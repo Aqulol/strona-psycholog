@@ -18,7 +18,7 @@ Strona usługi zachowuje konsultacje, zasady częstotliwości, podejście psycho
 
 ### Data publikacji i wdrożenie
 
-Właściciel powinien zaakceptować teksty i w dniu pierwszej publikacji ustawić `FEATURE_ARTICLES_PUBLISHED_ON` na rzeczywistą datę w formacie `YYYY-MM-DD` dla `npm run build`. Tę samą wartość należy zachować przy późniejszych buildach (np. w lokalnej `.env.local` lub ustawieniach procesu budowania). Bez wartości eksport nie pokazuje daty i nie wymyśla jej. Data trafia do widocznego `<time>`, Open Graph, BlogPosting i sitemap. Daty aktualizacji nie deklarujemy przed rzeczywistą aktualizacją merytoryczną. Nie wdrożono na Firebase; na podglądzie sprawdzić wygląd na telefonie, 404, kanoniczne adresy i odnośniki. Po pierwszej publikacji zgłosić powyższe trzy adresy i odświeżyć sitemapę w Search Console.
+Datę publikacji obu artykułów ustawiono na 26 listopada 2026 r. w `lib/feature-articles.ts`. Nie trzeba konfigurować zmiennej środowiskowej przed buildem. Data trafia do widocznego `<time>`, Open Graph, BlogPosting i sitemap. Daty aktualizacji nie deklarujemy przed rzeczywistą aktualizacją merytoryczną. Nie wdrożono na Firebase; na podglądzie sprawdzić wygląd na telefonie, 404, kanoniczne adresy i odnośniki. Po pierwszej publikacji zgłosić powyższe trzy adresy i odświeżyć sitemapę w Search Console.
 
 ## Dodane powiązania
 
