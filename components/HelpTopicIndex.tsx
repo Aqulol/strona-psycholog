@@ -1,49 +1,120 @@
-import { paths } from '../lib/site';
-import { helpGroups, helpTopics, topicPath } from '../lib/help-topics';
+import type { ReactNode } from 'react';
+import { helpTopics, topicPath } from '../lib/help-topics';
+import HelpSearch, { type HelpCategory } from './help/HelpSearch';
 
-// Catalogue-only taxonomy: the topic pages retain their original data and metadata.
+// Presentation only: topic pages retain their own taxonomy, text and metadata.
 const groups = [
-  [helpGroups[0], 'depresja poczucie-pustki brak-satysfakcji-z-zycia trudnosci-emocjonalne rozpoznawanie-emocji radzenie-sobie-ze-zloscia intensywne-emocje impulsywnosc nadmierne-poczucie-winy wstyd'],
-  [helpGroups[1], 'zaburzenia-lekowe lek-spoleczny lek-przed-porazka stres wypalenie-zawodowe trudnosci-ze-snem odpoczynek-i-przeciazenie natlok-mysli nadmierne-analizowanie'],
-  [helpGroups[2], 'problemy-w-relacjach samotnosc lek-przed-odrzuceniem lek-przed-bliskoscia trudnosci-z-zaufaniem asertywnosc-i-granice trudnosci-komunikacyjne nawiazywanie-kontaktow-spolecznych powtarzajace-sie-trudnosci-w-relacjach zaleznosc-emocjonalna stres-mniejszosciowy'],
-  [helpGroups[3], 'niska-samoocena niestabilna-samoocena nadmierny-samokrytycyzm perfekcjonizm nadwrazliwosc-na-krytyke potrzeba-akceptacji poczucie-niewystarczalnosci zrozumienie-siebie trudnosci-w-podejmowaniu-decyzji'],
-  [helpGroups[6], 'zaburzenia-osobowosci borderline narcyzm stabilny-obraz-siebie trudnosci-w-okresleniu-tozsamosci'],
-  ['Związki, bliskość i seksualność', 'kryzys-w-zwiazku doswiadczenie-zdrady rozstanie-i-rozwod samotnosc-w-zwiazku podobni-partnerzy budowanie-bliskich-relacji seksualnosc-i-intymnosc'],
-  [helpGroups[4], 'kryzys-zyciowy zaloba utrata-pracy-i-zmiany-zawodowe wazne-zmiany-zyciowe'],
-  [helpGroups[5], 'trudne-doswiadczenia-z-dziecinstwa dda doswiadczenie-przemocy powracajace-wspomnienia wczesniejsze-doswiadczenia-a-relacje'],
-  [helpGroups[9], 'zaburzenia-psychosomatyczne trudnosci-zwiazane-z-choroba zdrowie-fizyczne-i-psychiczne'],
-  ['Odżywianie i obraz ciała', 'trudnosci-z-odzywianiem obraz-ciala'],
-  ['Ciąża i rodzicielstwo', 'trudnosci-okoloporodowe rodzicielstwo'],
-  ['Używanie substancji psychoaktywnych', 'problemowe-uzywanie-substancji'],
-  [helpGroups[8], 'stres-szkolny trudnosci-emocjonalne-mlodziezy relacje-z-rowiesnikami relacje-rodzinne-mlodziezy dorastanie-i-tozsamosc samoocena-mlodziezy'],
+  ['Nastrój i emocje', 'CloudSun', 'sand', [
+    ['depresja', 'CloudRain'],
+    ['poczucie-pustki', 'CircleDashed'],
+    ['brak-satysfakcji-z-zycia', 'BatteryMedium'],
+    ['trudnosci-emocjonalne', 'SlidersHorizontal'],
+    ['rozpoznawanie-emocji', 'Lightbulb'],
+    ['radzenie-sobie-ze-zloscia', 'Flame'],
+    ['intensywne-emocje', 'Waves'],
+    ['impulsywnosc', 'Zap'],
+    ['nadmierne-poczucie-winy', 'Scale'],
+    ['wstyd', 'EyeOff'],
+  ]],
+  ['Lęk i stres', 'Wind', 'blue', [
+    ['zaburzenia-lekowe', 'ShieldAlert'],
+    ['lek-spoleczny', 'UsersRound'],
+    ['lek-przed-porazka', 'Flag'],
+    ['stres', 'Activity'],
+    ['wypalenie-zawodowe', 'BatteryLow'],
+    ['trudnosci-ze-snem', 'Moon'],
+    ['odpoczynek-i-przeciazenie', 'Coffee'],
+    ['natlok-mysli', 'Cloud'],
+    ['nadmierne-analizowanie', 'Repeat'],
+  ]],
+  ['Samoocena i rozumienie siebie', 'Fingerprint', 'rose', [
+    ['niska-samoocena', 'Gem'],
+    ['niestabilna-samoocena', 'ScanFace'],
+    ['nadmierny-samokrytycyzm', 'PenLine'],
+    ['perfekcjonizm', 'Target'],
+    ['nadwrazliwosc-na-krytyke', 'MessageCircle'],
+    ['potrzeba-akceptacji', 'ThumbsUp'],
+    ['poczucie-niewystarczalnosci', 'CircleMinus'],
+    ['zrozumienie-siebie', 'Compass'],
+    ['trudnosci-w-podejmowaniu-decyzji', 'Signpost'],
+  ]],
+  ['Relacje z innymi', 'UsersRound', 'sage', [
+    ['problemy-w-relacjach', 'Handshake'],
+    ['samotnosc', 'UserRound'],
+    ['lek-przed-odrzuceniem', 'DoorClosed'],
+    ['lek-przed-bliskoscia', 'LockKeyhole'],
+    ['trudnosci-z-zaufaniem', 'KeyRound'],
+    ['asertywnosc-i-granice', 'Fence'],
+    ['trudnosci-komunikacyjne', 'MessageSquare'],
+    ['nawiazywanie-kontaktow-spolecznych', 'UserRoundPlus'],
+    ['powtarzajace-sie-trudnosci-w-relacjach', 'RefreshCw'],
+    ['zaleznosc-emocjonalna', 'Link'],
+    ['stres-mniejszosciowy', 'Umbrella'],
+  ]],
+  ['Związki i bliskość', 'HeartHandshake', 'rose', [
+    ['kryzys-w-zwiazku', 'HeartCrack'],
+    ['doswiadczenie-zdrady', 'Unlink'],
+    ['rozstanie-i-rozwod', 'Scissors'],
+    ['samotnosc-w-zwiazku', 'HeartOff'],
+    ['podobni-partnerzy', 'Repeat2'],
+    ['budowanie-bliskich-relacji', 'HeartHandshake'],
+    ['seksualnosc-i-intymnosc', 'Heart'],
+  ]],
+  ['Osobowość i tożsamość', 'Brain', 'blue', [
+    ['zaburzenia-osobowosci', 'Shapes'],
+    ['borderline', 'Split'],
+    ['narcyzm', 'Sparkles'],
+    ['stabilny-obraz-siebie', 'Frame'],
+    ['trudnosci-w-okresleniu-tozsamosci', 'ScanHeart'],
+  ]],
+  ['Kryzysy i trudne doświadczenia', 'Sprout', 'sage', [
+    ['kryzys-zyciowy', 'CloudLightning'],
+    ['zaloba', 'Leaf'],
+    ['utrata-pracy-i-zmiany-zawodowe', 'Briefcase'],
+    ['wazne-zmiany-zyciowe', 'ArrowLeftRight'],
+    ['trudne-doswiadczenia-z-dziecinstwa', 'ToyBrick'],
+    ['dda', 'House'],
+    ['doswiadczenie-przemocy', 'ShieldX'],
+    ['powracajace-wspomnienia', 'History'],
+    ['wczesniejsze-doswiadczenia-a-relacje', 'BookOpen'],
+  ]],
+  ['Ciało i zdrowie', 'HeartPulse', 'sand', [
+    ['zaburzenia-psychosomatyczne', 'HeartPulse'],
+    ['trudnosci-zwiazane-z-choroba', 'Stethoscope'],
+    ['zdrowie-fizyczne-i-psychiczne', 'CirclePlus'],
+    ['trudnosci-z-odzywianiem', 'Utensils'],
+    ['obraz-ciala', 'ScanLine'],
+  ]],
+  ['Ciąża i rodzicielstwo', 'Baby', 'rose', [
+    ['trudnosci-okoloporodowe', 'Baby'],
+    ['rodzicielstwo', 'Blocks'],
+  ]],
+  ['Pomoc psychologiczna dla młodzieży od 15. roku życia', 'GraduationCap', 'sage', [
+    ['stres-szkolny', 'GraduationCap'],
+    ['trudnosci-emocjonalne-mlodziezy', 'CloudDrizzle'],
+    ['relacje-z-rowiesnikami', 'Users'],
+    ['relacje-rodzinne-mlodziezy', 'Lamp'],
+    ['dorastanie-i-tozsamosc', 'Sprout'],
+    ['samoocena-mlodziezy', 'SquareUserRound'],
+  ]],
+  ['Zakres pomocy i współpraca z innymi specjalistami', 'ShieldCheck', 'sand', [
+    ['problemowe-uzywanie-substancji', 'Wine'],
+  ]],
 ] as const;
 
 const topicsBySlug = new Map(helpTopics.map(topic => [topic.slug, topic]));
 const assigned = new Set<string>();
-const categories = groups.map(([title, slugs]) => ({
-  title,
-  links: slugs.split(' ').map(slug => {
+const categories: HelpCategory[] = groups.map(([title, icon, tone, entries]) => ({
+  title, icon, tone,
+  topics: entries.map(([slug, icon]) => {
     const topic = topicsBySlug.get(slug);
     if (!topic || assigned.has(slug)) throw new Error(`Missing or duplicated catalogue topic: ${slug}`);
     assigned.add(slug);
-    return { href: topicPath(slug), label: topic.label };
+    return { href: topicPath(slug), label: topic.label, icon };
   }),
 }));
-if (assigned.size !== helpTopics.length) {
-  throw new Error(`Unassigned catalogue topics: ${helpTopics.filter(topic => !assigned.has(topic.slug)).map(topic => topic.slug).join(', ')}`);
-}
+if (assigned.size !== helpTopics.length) throw new Error('Unassigned catalogue topics');
 
-export default function HelpTopicIndex() {
-  return <section aria-labelledby="tematy-konsultacji" className="help-catalogue-section">
-    <h2 id="tematy-konsultacji">Obszary pomocy psychologicznej i psychoterapii</h2>
-    <div className="help-topic-columns" id="lista-tematow">
-      {categories.map(category => <div key={category.title} className="editorial-card help-topic-card">
-        <h3>{category.title}</h3>
-        <ul role="list">
-          {category.links.map(link => <li key={link.href}><a href={link.href}>{link.label}</a></li>)}
-          {category.title === helpGroups[8] && <li><a href={paths.youth}>Jak wygląda konsultacja dla młodzieży?</a></li>}
-        </ul>
-      </div>)}
-    </div>
-  </section>;
+export default function HelpTopicIndex({ scope }: { scope: ReactNode }) {
+  return <HelpSearch categories={categories.slice(0, 9)} youth={categories[9]} scope={categories[10]}>{scope}</HelpSearch>;
 }

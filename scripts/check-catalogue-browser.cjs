@@ -4,94 +4,86 @@ const { join } = require('node:path');
 const { chromium } = require('playwright-core');
 
 const site = process.env.HELP_TEST_URL || 'http://127.0.0.1:3010';
-const baseline = process.env.HELP_BASELINE_URL;
-const screenshots = process.env.HELP_SCREENSHOT_DIR;
 const route = '/kiedy-zglosic-sie-na-terapie/';
-const selectors = '#lista-tematow a, [aria-labelledby="obszary-rozmowy"] .help-topic-card a';
-const widths = [2560, 1920, 1728, 1440, 1366, 1344, 1280, 1024, 976, 768, 640, 390, 360];
-
-async function measure(page, origin, width, name) {
-  await page.setViewportSize({ width, height: 900 });
-  await page.goto(origin + route);
-  await page.evaluate(() => document.fonts.ready);
-  const data = await page.evaluate(selectors => {
-    const main = document.querySelector('[aria-labelledby="tematy-konsultacji"]');
-    const additional = document.querySelector('[aria-labelledby="obszary-rozmowy"]');
-    const grid = main.querySelector('#lista-tematow');
-    const cards = [...grid.children];
-    const bounds = element => element.getBoundingClientRect();
-    const entries = [...document.querySelectorAll(selectors)];
-    const lead = document.querySelector('.help-catalogue-intro') || document.querySelector('h1');
-    const end = document.querySelector('.help-catalogue-details') || document.querySelector('main .see-also');
-    const center = el => Math.round(bounds(el).left + bounds(el).width / 2);
-    const round = Math.round;
-    const style = getComputedStyle(grid);
-    return {
-      columns: Number(style.columnCount) || style.gridTemplateColumns.split(' ').length,
-      width: round(bounds(grid).width),
-      cardWidth: round(Math.min(...cards.map(card => bounds(card).width))),
-      height: round(bounds(additional || main).bottom - bounds(main).top),
-      pageHeight: round(bounds(document.querySelector('main')).height),
-      intro: [round(bounds(lead).width), center(lead)],
-      details: [round(bounds(end).width), center(end)],
-      noOverflow: document.documentElement.scrollWidth <= innerWidth && entries.every(link => link.scrollWidth <= link.clientWidth + 1),
-      minimumLinkHeight: round(Math.min(...entries.map(link => bounds(link).height))),
-      titles: cards.map(card => card.querySelector('h3').textContent),
-      links: entries.map(link => link.getAttribute('href')),
-      visible: entries.every(link => link.checkVisibility() && bounds(link).height > 0),
-      hasAdditional: Boolean(additional),
-      cardOrder: cards.map(card => [round(bounds(card).left), round(bounds(card).top)]),
-      unsplit: cards.every(card => card.getClientRects().length === 1),
-    };
-  }, selectors);
-  if (screenshots && [1920, 1366, 390].includes(width)) {
-    await page.locator('main').screenshot({ path: join(screenshots, `${width}-${name}.png`) });
-  }
-  return data;
-}
+const shots = process.env.HELP_SCREENSHOT_DIR;
+const topics = 'main a[href^="/w-czym-pomagam/"]';
+const selector = `${topics}, .help-youth-cta`;
+const links = page => page.locator(selector).evaluateAll(anchors => anchors.map(anchor => anchor.getAttribute('href')));
 
 (async () => {
-  if (screenshots) mkdirSync(screenshots, { recursive: true });
+  if (shots) mkdirSync(shots, { recursive: true });
   const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined, headless: true });
   try {
-    const page = await browser.newPage();
-    let allLinks;
-    for (const width of widths) {
-      const before = baseline && await measure(page, baseline, width, 'przed');
-      const after = await measure(page, site, width, 'po');
-      assert.equal(after.columns, width >= 1728 ? 5 : width >= 1344 ? 4 : width >= 976 ? 3 : width >= 640 ? 2 : 1);
-      assert.deepEqual(after.intro, [Math.min(832, width - 40), Math.round(width / 2)]);
-      assert.deepEqual(after.intro, after.details);
-      assert.ok(after.width > after.intro[0]);
-      assert.ok(after.noOverflow && after.visible && after.unsplit, `Visible links and intact cards without overflow at ${width}px`);
-      assert.ok(!after.hasAdditional);
-      assert.ok(after.minimumLinkHeight >= 32);
-      assert.equal(after.titles.length, 13);
-      assert.equal(after.links.filter(link => link.startsWith('/w-czym-pomagam/')).length, 74);
-      assert.equal(after.links.length, new Set(after.links).size);
-      assert.deepEqual(after.cardOrder, [...after.cardOrder].sort(([ax,ay], [bx,by]) => ax - bx || ay - by));
-      if (before) {
-        assert.deepEqual([...after.links].sort(), [...before.links].sort());
-        assert.ok(after.height < before.height, `Shorter catalogue at ${width}px: ${before.height} → ${after.height}`);
+    const staticContext = await browser.newContext({ javaScriptEnabled: false });
+    const staticPage = await staticContext.newPage();
+    await staticPage.goto(site + route);
+    const original = await links(staticPage);
+    assert.equal(original.length, 75);
+    assert.equal(new Set(original).size, 75);
+    assert.equal(await staticPage.getByRole('searchbox').count(), 0);
+    const native = staticPage.locator('.help-more').first();
+    assert.equal(await native.getAttribute('open'), null);
+    await native.locator('summary').focus();
+    await staticPage.keyboard.press('Enter');
+    assert.equal(await native.getAttribute('open'), '');
+    assert.ok(await native.locator('a').first().isVisible());
+    await staticContext.close();
+
+    const page = await browser.newPage({ reducedMotion: 'reduce' });
+    const errors = [];
+    page.on('pageerror', error => errors.push(String(error)));
+    for (const width of [375, 768, 1024, 1440, 1920]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto(site + route);
+      await page.evaluate(() => document.fonts.ready);
+      const input = page.getByRole('searchbox');
+      await input.waitFor();
+      assert.deepEqual(await links(page), original);
+      assert.equal(await page.locator('.help-category').count(), 9);
+      const layout = await page.locator('.help-card-grid').evaluate(grid => ({
+        gridWidth: grid.clientWidth,
+        columns: getComputedStyle(grid).gridTemplateColumns.split(' ').length,
+        overflow: document.documentElement.scrollWidth > innerWidth,
+        heights: [...grid.children].map(card => Math.round(card.getBoundingClientRect().height)),
+        visibleLinks: [...grid.children].map(card => [...card.querySelectorAll('a')].filter(a => a.checkVisibility()).length),
+      }));
+      assert.equal(layout.columns, width >= 992 ? 3 : width >= 640 ? 2 : 1);
+      assert.ok(!layout.overflow && layout.gridWidth <= 1240);
+      if (width >= 640) assert.equal(new Set(layout.heights).size, 1);
+      assert.equal(await page.locator('.help-category a:visible').first().evaluate(a => getComputedStyle(a).textDecorationLine), 'none');
+      assert.deepEqual(layout.visibleLinks, [4,4,4,4,4,4,4,4,2]);
+      if (shots) await page.locator('main').screenshot({ path: join(shots, `katalog-${width}.png`) });
+      const summary = page.locator('.help-more summary').first();
+      await summary.focus();
+      await page.keyboard.press('Space');
+      assert.equal(await page.locator('.help-more[open]').count(), 1);
+      await page.keyboard.press('Tab');
+      assert.ok(await page.locator('.help-more[open] a:focus-visible').count());
+      await summary.click();
+      assert.equal(await page.locator('.help-more[open]').count(), 0);
+      for (const [query, path] of [['WYPALENIE', 'wypalenie-zawodowe'], ['szkolny', 'stres-szkolny'], ['alkoholu lub innych', 'problemowe-uzywanie-substancji'], ['LĘK społeczny', 'lek-spoleczny']]) {
+        await input.fill(query);
+        assert.deepEqual(await page.locator(topics).evaluateAll(anchors => anchors.map(a => a.getAttribute('href'))), [`/w-czym-pomagam/${path}/`]);
       }
-      if ([1366, 390].includes(width)) {
-        await page.locator(selectors).first().focus();
-        for (const [i, path] of after.links.entries()) {
-          if (i) await page.keyboard.press('Tab');
-          assert.equal(await page.locator(':focus-visible').getAttribute('href'), path, `Tab order at ${width}px`);
-        }
-        await page.keyboard.press('Enter');
-        await page.waitForURL(`${site}${after.links.at(-1)}`);
-      }
-      allLinks = after.links;
-      function summary(data) {
-        if (!data) return undefined;
-        const { links, titles, cardOrder, ...metrics } = data;
-        return metrics;
-      }
-      console.log(JSON.stringify({ width, before: summary(before), after: summary(after) }));
+      await input.fill('brakxyz123');
+      assert.match(await page.getByRole('status').innerText(), /Nie znaleziono/);
+      assert.equal(await page.locator(topics).count(), 0);
+      assert.ok(await page.getByText(/pierwszeństwo ma pilna ocena medyczna/).isVisible());
+      await page.getByRole('button', {name:'Wyczyść'}).click();
+      assert.equal(await input.inputValue(), '');
+      assert.equal(await page.locator('input:focus').count(), 1);
+      assert.deepEqual(await links(page), original);
+      await input.fill('SAMOTNOSC');
+      assert.equal(await page.locator(topics).count(), 2);
+      await input.press('Escape');
+      assert.deepEqual(await links(page), original);
+      console.log(JSON.stringify({ width, ...layout }));
     }
-    for (const link of allLinks) assert.equal((await fetch(site + link, {redirect:'manual'})).status, 200, link);
-    console.log(`${allLinks.length} direct HTTP 200 links; full Tab traversal and Enter activation passed on desktop and mobile.`);
+    await page.getByRole('searchbox').fill('samotnosc');
+    await page.getByRole('link', {name:'Samotność', exact:true}).click();
+    assert.equal(new URL(page.url()).pathname, '/w-czym-pomagam/samotnosc/');
+    assert.deepEqual(errors, []);
+    for (const path of original) assert.equal((await fetch(site + path, { redirect:'manual' })).status, 200, path);
+    console.log('75 direct HTTP 200 links. No-JS HTML, native details, keyboard and search passed.');
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });
