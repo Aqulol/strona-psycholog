@@ -17,7 +17,7 @@ import { track } from '../lib/analytics';
  */
 export default function BooksyCalendar() {
   const id = config.booksyId;
-  const hasId = Boolean(id && !id.includes('[do uzupełnienia]'));
+  const hasId = Boolean(id);
 
   const src = `https://booksy.com/widget/index.html?id=${encodeURIComponent(id)}&lang=pl&country=pl`;
 
