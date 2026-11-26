@@ -12,7 +12,7 @@ export const metadata: Metadata = {...seo, openGraph: {...seo.openGraph, type:'a
 
 const faq: [string, string][] = [
   [
-    'Czy wybieranie podobnych partnerów oznacza zaburzenie?',
+    'Czy podobne wybory w relacjach zawsze są powodem do niepokoju?',
     'Nie. Powtarzalne wzorce występują u wielu osób. O problemie warto myśleć wtedy, gdy regularnie prowadzą do cierpienia, ograniczają wybór lub utrudniają tworzenie bezpiecznej bliskości.',
   ],
   [
@@ -137,7 +137,7 @@ export default function Page() {
       </p>
 
       <h2 className="mt-12 text-4xl text-green">Najczęściej zadawane pytania</h2>
-      <h3 className="mt-6 text-2xl text-green">Czy wybieranie podobnych partnerów oznacza zaburzenie?</h3>
+      <h3 className="mt-6 text-2xl text-green">Czy podobne wybory w relacjach zawsze są powodem do niepokoju?</h3>
       <p className="mt-2 leading-8 text-ink/80">
         Nie. Powtarzalne wzorce występują u wielu osób. O problemie warto myśleć wtedy, gdy regularnie prowadzą
         do cierpienia, ograniczają wybór lub utrudniają tworzenie bezpiecznej bliskości.
