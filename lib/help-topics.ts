@@ -22,7 +22,7 @@ const existingTopics: Topic[] = [
     intro: 'Zwykłe czynności mogą zacząć wymagać dużego wysiłku, a to, co wcześniej sprawiało przyjemność, przestaje cieszyć. Można porozmawiać o takiej zmianie także wtedy, gdy nie wiadomo, czy ma ona związek z depresją.',
     sections: [
       ['Kiedy przygnębienie zaczyna utrudniać codzienność', 'Nie każdy okres przygnębienia oznacza depresję. Istotne jest, od kiedy samopoczucie się zmieniło, czy trudniej się skupić, spać albo spotykać z ludźmi i jak przekłada się to na codzienne życie. W ocenie sytuacji mogą być ważne również stan zdrowia, stosowane leki i wcześniejsze epizody.'],
-      ['Co można omówić na konsultacji', 'Można zacząć od opisania jednego dnia i tego, co zmieniło się w porównaniu z wcześniejszym okresem. Jeśli istotne są strata, poczucie winy lub trudności w relacjach, w psychoterapii psychodynamicznej można przyglądać się temu, jak są przeżywane. Nie zakładam, że wyjaśniają one depresję. W zależności od nasilenia trudności warto omówić konsultację lekarską lub psychiatryczną oraz dotychczasowe leczenie.'],
+      ['Ocena trudności i znaczenie psychoterapii', 'Punktem wyjścia może być opis jednego dnia i tego, co zmieniło się w porównaniu z wcześniejszym okresem. Jeśli istotne są strata, poczucie winy lub trudności w relacjach, w psychoterapii psychodynamicznej można przyglądać się temu, jak są przeżywane. Nie zakładam, że wyjaśniają one depresję. W zależności od nasilenia trudności warto omówić konsultację lekarską lub psychiatryczną oraz dotychczasowe leczenie.'],
     ],
     urgent: true, related: [[topicPath('kryzys-zyciowy'), 'Kryzys życiowy i trudne zmiany']], sources: [['https://www.nice.org.uk/guidance/ng222', 'NICE: depresja u dorosłych']],
   },
@@ -62,7 +62,7 @@ const existingTopics: Topic[] = [
     intro: 'Samotność można odczuwać także w związku, wśród znajomych albo w domu pełnym ludzi. Nie trzeba rezygnować z czasu spędzanego samemu, żeby zastanowić się, jakich relacji brakuje.',
     sections: [
       ['Brak osób do rozmowy czy brak poczucia bliskości?', 'Po przeprowadzce lub stracie może być mniej okazji do spotkań. W innej sytuacji ludzi wokół jest wielu, ale trudno porozmawiać z nimi o ważnych sprawach. Rozróżnienie tych doświadczeń pomaga określić, czy większym problemem jest dostęp do kontaktu, czy możliwość poczucia się w nim swobodnie.'],
-      ['Od czego zacząć na spotkaniu', 'Nie trzeba wiedzieć, dlaczego jest się samotnym. Można opowiedzieć o tym, kiedy najbardziej odczuwa się brak kontaktu i co dzieje się, gdy ktoś próbuje się zbliżyć. W terapii można przyglądać się obawie przed odrzuceniem, o ile jest istotna. Psychoterapia nie zastępuje więzi społecznych; uwzględnia też praktyczne przeszkody, takie jak izolacja po zmianie miejsca zamieszkania.'],
+      ['Od czego zacząć na spotkaniu', 'Nie trzeba wiedzieć, dlaczego jest się samotnym. Można opowiedzieć o tym, kiedy najbardziej odczuwa się brak kontaktu i co dzieje się, gdy ktoś próbuje się zbliżyć. W terapii można przyglądać się obawie przed odrzuceniem, o ile jest istotna. Psychoterapia nie zastępuje więzi społecznych. Rozmowa powinna uwzględniać również praktyczne przeszkody, takie jak izolacja po zmianie miejsca zamieszkania.'],
     ],
     related: [['/blog/samotnosc/', 'Więcej o różnych doświadczeniach samotności'], [topicPath('problemy-w-relacjach'), 'Problemy w relacjach']],
   },
@@ -253,10 +253,10 @@ const existingTopics: Topic[] = [
   {
     slug: 'stres-szkolny', group: helpGroups[8], label: 'Stres i przeciążenie szkolne', title: 'Stres szkolny - konsultacja dla młodzieży od 15 lat',
     description: 'Konsultacja dla młodzieży od 15. roku życia, gdy wymagania szkolne utrudniają odpoczynek. Jak rozmawiać o przeciążeniu i jak wygląda pierwsze spotkanie?',
-    intro: 'Nawet po odrobieniu lekcji trudno czasem przestać myśleć o ocenach, zaległościach lub sprawdzianie. Przeciążenie może dotyczyć też osoby, która nadal dobrze się uczy i z zewnątrz wydaje się radzić sobie bez trudności.',
+    intro: 'Stres szkolny to reakcja na wymagania związane z nauką i życiem w grupie. Jeśli napięcie utrzymuje się po zakończeniu obowiązków, może odbierać czas i energię potrzebne na sen, odpoczynek i relacje.',
     sections: [
-      ['Co w szkole pochłania najwięcej wysiłku', 'Warto odróżnić spiętrzenie zadań od obawy, że każda pomyłka będzie miała poważne konsekwencje. Znaczenie mogą mieć również konflikty w klasie, oczekiwania dorosłych, dojazdy lub zbyt mało czasu na sen. Jeśli problem wynika z warunków w szkole, nie da się go sprowadzić do sposobu myślenia młodej osoby.'],
-      ['Jak wygląda rozmowa o przeciążeniu', 'Możemy zacząć od rozpisania zwykłego dnia i ustalenia, w którym momencie napięcie staje się największe. Na pierwsze spotkanie z osobą niepełnoletnią zapraszam rodzica lub rodziców. Na kolejnych indywidualnych spotkaniach możemy przyglądać się między innymi temu, jak nastolatek przeżywa oczekiwania i prosi o pomoc. Konsultacja nie zastępuje zmian organizacyjnych w szkole ani oceny lekarskiej przy utrzymujących się dolegliwościach.'],
+      ['Źródła przeciążenia: wymagania, relacje i lęk przed błędem', 'Warto odróżnić spiętrzenie zadań od obawy, że każda pomyłka będzie miała poważne konsekwencje. Znaczenie mogą mieć również konflikty w klasie, oczekiwania dorosłych, dojazdy lub zbyt mało czasu na sen. Jeśli problem wynika z warunków w szkole, nie da się go sprowadzić do sposobu myślenia młodej osoby.'],
+      ['Cele pracy psychoterapeutycznej i rola rodziców', 'Rozmowa dotyczy przebiegu napięcia i jego wpływu na naukę, relacje oraz odpoczynek. Na pierwsze spotkanie z osobą niepełnoletnią zapraszam rodzica lub rodziców. Na kolejnych indywidualnych spotkaniach możemy przyglądać się między innymi temu, jak nastolatek przeżywa oczekiwania i prosi o pomoc. Konsultacja nie zastępuje zmian organizacyjnych w szkole ani oceny lekarskiej przy utrzymujących się dolegliwościach.'],
     ],
     related: [['/psychoterapia-mlodziezy-od-15-roku-zycia/', 'Pierwsze spotkanie i udział rodziców'], [topicPath('lek-spoleczny'), 'Obawa przed oceną w grupie']],
   },
