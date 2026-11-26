@@ -2,7 +2,7 @@ import {Crumbs} from '../../components/Site';
 import {details,meta} from '../../lib/site';
 import { config } from '../../lib/config';
 
-export const metadata=meta('/cennik/','Cennik psychoterapii i konsultacji – Wrocław','Sprawdzi Pan/Pani cenę i czas konsultacji psychologicznej oraz psychoterapii we Wrocławiu lub online. Każde spotkanie trwa 50 minut i kosztuje 200 zł.');
+export const metadata=meta('/cennik/','Cennik psychoterapii i konsultacji - Wrocław','Sprawdzi Pan/Pani cenę i czas konsultacji psychologicznej oraz psychoterapii we Wrocławiu lub online. Każde spotkanie trwa 50 minut i kosztuje 200 zł.');
 
 /**
  * Podstrona /cennik/ - osobny adres pod frazy „cennik psychoterapia Wrocław”.
@@ -47,7 +47,7 @@ export default function CennikPage() {
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/80">
           Wszystkie spotkania trwają 50 minut. Ceny dotyczą zarówno wizyt stacjonarnych
-          w gabinecie przy ul. Zygmunta Krasińskiego 13, 50-529 Wrocław (szczegóły placówki:{' '}
+          w gabinecie przy ul. {config.address} (szczegóły placówki:{' '}
           <a
             className="text-green underline"
             href={config.officeUrl}

@@ -1,3 +1,4 @@
+import {config} from '../../lib/config';
 import {Crumbs,SeeAlso} from '../../components/Site';
 import {meta,paths} from '../../lib/site';
 export const metadata=meta('/polityka-prywatnosci/','Polityka prywatności i cookies | Plebaniak','Zasady przetwarzania danych w gabinecie Grzegorza Plebaniaka: formularz, odbiorcy danych, pliki cookies, prawa osób i kontakt w sprawach prywatności.');
@@ -11,7 +12,7 @@ export default function Page() {
       <h2 className="mt-8 text-3xl">Administrator</h2>
       <p className="mt-3 leading-8">
         Administratorem danych osobowych jest Grzegorz Plebaniak, prowadzący działalność gospodarczą pod nazwą
-        Psycholog Grzegorz Plebaniak (NIP 8971967542), Zygmunta Krasińskiego 13, 50-529 Wrocław.
+        Psycholog Grzegorz Plebaniak (NIP 8971967542), {config.address}.
       </p>
       <p className="mt-3 leading-8">
         We wszystkich sprawach dotyczących danych osobowych można skontaktować się z administratorem:

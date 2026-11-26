@@ -51,7 +51,7 @@ Pobierz kopię starego katalogu publicznego przez menedżer plików lub SFTP, a 
 
 ## Do potwierdzenia przed publikacją
 
-- **[DO ZWERYFIKOWANIA – sprawdź aktualność numerów]**: sprawdź, czy 116 123 i 116 111 są właściwe dla opisanych grup i działają całodobowo; potem usuń adnotację w stopce. 112 dotyczy nagłego zagrożenia.
+- **[DO ZWERYFIKOWANIA - sprawdź aktualność numerów]**: sprawdź, czy 116 123 i 116 111 są właściwe dla opisanych grup i działają całodobowo; potem usuń adnotację w stopce. 112 dotyczy nagłego zagrożenia.
 - Potwierdź opis granic pracy (aktywne uzależnienie, ciężkie zaburzenia odżywiania, brak własnej gotowości). Nie publikuję reguły o bezwzględnej detoksykacji ani twierdzenia, że metoda „nie przyniesie efektów”. Potrzebę leczenia odstawienia ocenia właściwy specjalista.
 - Potwierdź status szkolenia, opis klasycznego TFP, indywidualny dobór częstotliwości oraz opis udziału rodziców i poufności. Nie podaję porównawczego twierdzenia o skuteczności jednej lub dwóch sesji bez źródła dowodowego.
 - **[DO UZUPEŁNIENIA po weryfikacji, jeśli treść nie odpowiada praktyce]**: zweryfikuj dotychczasową klauzulę prywatności: dane administratora, podstawy prawne dokumentacji i danych o zdrowiu, retencję, odbiorców, umowy powierzenia i transfery poza EOG. W szczególności potwierdź, czy faktycznie obowiązują okresy opisane w zachowanej polityce. Weryfikacji wymagają też cookies osadzanych usług po ich otwarciu. Nowy serwis nie uruchamia GA4 ani pikseli marketingowych. Nie jest to opinia prawna.

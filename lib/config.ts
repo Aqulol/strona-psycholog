@@ -1,14 +1,20 @@
+const streetAddress = 'Zygmunta Krasińskiego 13A Oficyna';
+const postal = '50-449';
+const address = `${streetAddress}, ${postal} Wrocław`;
+const mapQuery = encodeURIComponent(address);
+
 export const config = {
   name: 'Grzegorz Plebaniak',
   title: 'Psycholog, psychoterapeuta (w trakcie szkolenia)',
   phone: '+48 693087574',
   email: 'gpplebaniak@gmail.com',
-  streetAddress: 'Zygmunta Krasińskiego 13',
-  address: 'Zygmunta Krasińskiego 13, 50-529 Wrocław',
-  postal: '50-529',
+  streetAddress,
+  address,
+  postal,
   bookingUrl: 'https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw',
   officeUrl: 'http://centrumrownowagi.com',
-  mapsUrl: 'https://www.google.com/maps?q=51.1066776,17.0434034&output=embed',
+  mapsUrl: `https://www.google.com/maps?q=${mapQuery}&output=embed`,
+  mapsLink: `https://www.google.com/maps/search/?api=1&query=${mapQuery}`,
 
   // ===== Booksy - rezerwacja online (kalendarz w sekcji Kontakt) =====
   booksyId: '357056',
@@ -49,7 +55,4 @@ export const config = {
   gtmId: '',
   ga4Id: 'G-5YF0L6DJ1X',
 
-  // ===== Współrzędne gabinetu - zweryfikowane dla nowego adresu =====
-  geoLat: '51.1066776',
-  geoLng: '17.0434034',
 };

@@ -1,3 +1,4 @@
+import {config} from '../../../lib/config';
 import {Crumbs} from '../../../components/Site';
 import {meta,status} from '../../../lib/site';
 import type { Metadata } from 'next';
@@ -170,8 +171,7 @@ export default function Page() {
           obie formy.
         </p>
         <p className="mt-4 leading-8 text-ink/80">
-          Jeśli mieszkasz we Wrocławiu lub okolicach, gabinet przy ul. Zygmunta Krasińskiego 13,
-          50-529 Wrocław, jest dogodnie położony; dla osób spoza Wrocławia i podróżujących
+          Jeśli mieszkasz we Wrocławiu lub okolicach, gabinet przy ul. {config.address}, jest dogodnie położony; dla osób spoza Wrocławia i podróżujących
           prowadzę również sesje online.
         </p>
 
