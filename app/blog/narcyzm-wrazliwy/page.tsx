@@ -98,7 +98,7 @@ export default function Page() {
           wartości, kiedy porównanie z drugą osobą stało się bolesne.
         </p>
 
-        <h2 className="mt-12 text-4xl text-green">Bliskość może przynosić jednocześnie potrzebę i lęk</h2>
+        <h2 className="mt-12 text-4xl text-green">Można jednocześnie potrzebować bliskości i się jej obawiać</h2>
         <p className="mt-4 leading-8 text-ink/80">
           Narcyzm wrażliwy może być szczególnie widoczny w relacjach.
         </p>

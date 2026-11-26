@@ -168,22 +168,19 @@ export default function Page() {
           Terapia online sprawdza się dobrze w wielu przypadkach - eliminuje dojazdy i
           ułatwia regularność. Terapia stacjonarna daje pełny kontakt, własną przestrzeń
           i rytuał wyjścia z codzienności. Nie ma jednej słusznej opcji; warto uwzględnić
-          to, co realnie utrzyma Cię w regularnym rytmie spotkań. Często można też łączyć
+          to, co ułatwi regularne spotkania. Często można też łączyć
           obie formy.
         </p>
         <p className="mt-4 leading-8 text-ink/80">
-          Jeśli mieszkasz we Wrocławiu lub okolicach, gabinet przy ul. {config.address}, jest dogodnie położony; dla osób spoza Wrocławia i podróżujących
-          prowadzę również sesje online.
+          Przyjmuję w gabinecie przy ul. {config.address}. Prowadzę również sesje online.
         </p>
 
         <h2 className="mt-12 text-4xl text-green">Ile to kosztuje?</h2>
         <p className="mt-4 leading-8 text-ink/80">
-          Ceny są zróżnicowane i zależą od miasta, doświadczenia i formy pracy. Aktualny
-          cennik znajdziesz na{' '}
+          Ceny są zróżnicowane i zależą od miasta, doświadczenia i formy pracy. Ceny i różnice między konsultacją a regularną psychoterapią opisuję w{' '}
           <a href="/cennik/" className="text-green underline">
-            podstronie z cennikiem
-          </a>{' '}
-          - tam też opisane są różnice między konsultacją a regularną psychoterapią.
+            cenniku
+          </a>.
         </p>
 
         <h2 className="mt-12 text-4xl text-green">Najczęściej zadawane pytania</h2>
