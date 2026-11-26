@@ -72,7 +72,7 @@ for (const slug of ['samotnosc', 'poczucie-wlasnej-wartosci']) {
   assert.ok(homepage.includes(`href="${path}"`));
   assert.ok(read(file('/blog/')).includes(`href="${path}"`));
   assert.ok(read(file('/psychoterapia-dorosli/')).includes(`href="${path}"`));
-  assert.ok(html.includes('Źródła i dalsza lektura'));
+  assert.ok(html.includes('Literatura i źródła'));
   assert.ok(html.includes(`"@id":"${root}${path}#artykul"`));
   assert.ok(html.toLowerCase().includes(`datetime="${publicationDate}"`));
   assert.ok(html.includes(`"datePublished":"${publicationDate}"`));
@@ -146,16 +146,15 @@ for (const [, path, label] of catalogueNames) {
   assert.ok(html.includes(`<span aria-current="page">${label}</span>`), `${path}: breadcrumb uses catalogue label`);
 }
 
-const { searchWords, matchesTopic, searchTerms } = await import('../lib/help-topic-search.mjs');
-for (const [query, slugs] of [
-  ['NERWICA', ['zaburzenia-lekowe']], ['bezsennosc', ['trudnosci-ze-snem']],
-  ['brak pewności siebie', ['niska-samoocena']], ['overthinking', ['nadmierne-analizowanie']],
-  ['ZLOSC', ['radzenie-sobie-ze-zloscia']], ['toksycznych związków', ['problemy-w-relacjach', 'powtarzajace-sie-trudnosci-w-relacjach']],
-  ['brak motywacji', ['depresja', 'wypalenie-zawodowe']], ['strach przed oceną', ['lek-spoleczny', 'nadwrazliwosc-na-krytyke']],
-  ['wyrzutów sumienia', ['nadmierne-poczucie-winy']], ['strach przed niepowodzeniem', ['lek-przed-porazka']],
-  ['bycie perfekcjonistką', ['perfekcjonizm']],
-]) {
-  const results = catalogueNames.filter(([, path, label]) => matchesTopic(searchWords(query), label, searchTerms[path.split('/')[2]]));
-  for (const slug of slugs) assert.ok(results.some(([, path]) => path === `/w-czym-pomagam/${slug}/`), `${query}: ${slug}`);
-}
 assert.ok(!paths.some(path => /psychologiczne-aspekty-przewleklego-bolu|trudnosci-zwiazane-z-obrazem-ciala/.test(path)));
+
+assert.doesNotMatch(helpIndex, /szukaj-tematu|Znajdź temat|Znalezione tematy/);
+for (const path of paths) {
+  const html = read(file(path));
+  if (/^\/blog\/.+\/$/.test(path)) {
+    assert.equal((html.match(/id="literatura-i-zrodla"/g) || []).length, 1, `${path}: one bibliography`);
+  } else {
+    assert.doesNotMatch(html, /<h[2-4][^>]*>(Literatura(?: i źródła)?|Źródła(?: i dalsza lektura| naukowe)?|Bibliografia)<\/h[2-4]>/i, `${path}: no public bibliography`);
+  }
+}
+assert.match(read(file('/w-czym-pomagam/doswiadczenie-przemocy/')), /href="https:\/\/nidzica\.policja\.gov\.pl\//);

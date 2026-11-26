@@ -1,3 +1,4 @@
+import BlogReading from '../../../components/BlogReading';
 import { topicPath } from '../../../lib/help-topics';
 import { notFound } from 'next/navigation';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
@@ -47,6 +48,7 @@ export default async function Page({ params }: Props) {
       <Json data={articleJsonLd({ slug: a.slug, headline: a.h1, description: a.description, image: domain + '/og-image.png', datePublished: a.published })}/>
       {a.slug === 'samotnosc' ? <LonelinessArticle/> : a.slug === 'poczucie-wlasnej-wartosci' ? <SelfWorthArticle/> : a.sections?.map(([heading, text]) => <section key={heading}><h2>{heading}</h2><p>{text}</p></section>)}
       {consultation && <p className="mt-6">Jeśli temat dotyczy Pana/Pani sytuacji, można przeczytać, <a href={consultation[0]}>{consultation[1]}</a>.</p>}
+      <BlogReading slug={a.slug}/>
     </article>
     <SeeAlso links={[[a.link, a.sections ? 'Więcej o tym, jak pracuję' : 'Psychoterapia indywidualna dorosłych'], [paths.faq, 'Pytania przed konsultacją']]}/>
   </main>;

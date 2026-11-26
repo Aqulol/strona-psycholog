@@ -1,3 +1,4 @@
+import ArticleSources from '../../../components/ArticleSources';
 import ArticleByline from '../../../components/ArticleByline';
 import {Crumbs} from '../../../components/Site';
 import {meta} from '../../../lib/site';
@@ -238,34 +239,7 @@ export default function Page() {
           sposobie przeżywania samego siebie.
         </p>
 
-        <h2 className="mt-12 text-4xl text-green">Źródła i dalsza lektura</h2>
-        <ul className="mt-4 list-disc space-y-3 pl-6 leading-7 text-ink/80">
-          <li>
-            Cain, N. M., Pincus, A. L., &amp; Ansell, E. B. (2008). Narcissism at the crossroads: Phenotypic
-            description of pathological narcissism across clinical theory, social/personality psychology, and
-            psychiatric diagnosis. <em>Clinical Psychology Review, 28</em>(4), 638-656.{' '}
-            <a
-              className="text-green underline"
-              href="https://doi.org/10.1016/j.cpr.2007.09.006"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              doi:10.1016/j.cpr.2007.09.006
-            </a>
-          </li>
-          <li>
-            Pincus, A. L., &amp; Lukowitsky, M. R. (2010). Pathological narcissism and narcissistic personality
-            disorder. <em>Annual Review of Clinical Psychology, 6</em>, 421-446.{' '}
-            <a
-              className="text-green underline"
-              href="https://doi.org/10.1146/annurev.clinpsy.121208.131215"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              doi:10.1146/annurev.clinpsy.121208.131215
-            </a>
-          </li>
-        </ul>
+
 
         <ArticleBookingCta />
 
@@ -291,7 +265,33 @@ export default function Page() {
             <p className="mt-1 leading-7 text-ink/70">o tym, jak emocje ujawniają się w kontakcie z terapeutą</p>
           </li>
         </ul>
-      </main>
+      <ArticleSources><li>
+            Cain, N. M., Pincus, A. L., &amp; Ansell, E. B. (2008). Narcissism at the crossroads: Phenotypic
+            description of pathological narcissism across clinical theory, social/personality psychology, and
+            psychiatric diagnosis. <em>Clinical Psychology Review, 28</em>(4), 638-656.{' '}
+            <a
+              className="text-green underline"
+              href="https://doi.org/10.1016/j.cpr.2007.09.006"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              doi:10.1016/j.cpr.2007.09.006
+            </a>
+          </li>
+          <li>
+            Pincus, A. L., &amp; Lukowitsky, M. R. (2010). Pathological narcissism and narcissistic personality
+            disorder. <em>Annual Review of Clinical Psychology, 6</em>, 421-446.{' '}
+            <a
+              className="text-green underline"
+              href="https://doi.org/10.1146/annurev.clinpsy.121208.131215"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              doi:10.1146/annurev.clinpsy.121208.131215
+            </a>
+          </li>
+        </ArticleSources>
+    </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>
   );
