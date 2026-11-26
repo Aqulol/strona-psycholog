@@ -147,7 +147,7 @@ export default function Page() {
       </p>
 
       <h2 className="mt-8 text-3xl">Cookies</h2>
-      <p className="mt-3 leading-8">Strona nie uruchamia analityki ani narzędzi marketingowych. Kalendarz Booksy ładuje się automatycznie w pobliżu sekcji rezerwacji, a mapa Google dopiero po wybraniu opcji jej wyświetlenia. Przy wczytaniu tych elementów dostawcy otrzymują informacje o połączeniu i mogą używać własnych plików cookies. Rezerwacja za pośrednictwem Booksy nie jest wymagana: można zadzwonić lub napisać. Ustawienia cookies można zmienić w przeglądarce.</p>
+      <p className="mt-3 leading-8">Strona nie uruchamia analityki ani narzędzi marketingowych. W sekcji kontaktowej kalendarz Booksy ładuje się automatycznie w pobliżu rezerwacji. Na podstronach tematycznych kalendarz również ładuje się automatycznie, gdy panel rezerwacji znajdzie się w pobliżu widocznej części strony, bez przekazywania adresu podstrony jako strony odsyłającej. Mapa Google ładuje się po wybraniu opcji jej wyświetlenia. Przy wczytaniu tych elementów dostawcy otrzymują informacje o połączeniu i mogą używać własnych plików cookies. Rezerwacja za pośrednictwem Booksy nie jest wymagana: można zadzwonić lub napisać. Ustawienia cookies można zmienić w przeglądarce.</p>
 
       <h2 className="mt-8 text-3xl">Przekazywanie danych poza EOG</h2>
       <p className="mt-3 leading-8">

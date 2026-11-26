@@ -158,3 +158,25 @@ body { background:#faf8f3;color:#243b34; }
 @media(min-width:720px) {
   .support-list { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:2rem; }
 }
+
+/* Katalog tematów i podstrony konsultacji */
+.help-topic-grid { display:grid; gap:1rem; }
+.help-topic-card h3 { color:#244e41; font-size:1.3rem; }
+.help-topic-card li + li { margin-top:.35rem; }
+.help-topic-card a { display:inline-flex; align-items:center; min-height:36px; }
+.help-topic-card a:hover { color:#244e41; text-decoration-thickness:2px; }
+.topic-page { width:min(100% - 2.5rem, 72rem); }
+.topic-layout { display:grid; gap:2rem; align-items:start; }
+.topic-layout > * { min-width:0; }
+.topic-page h1 { font-size:clamp(2.2rem, 5vw, 3.8rem); }
+.topic-page h2 { font-size:clamp(1.45rem, 2.8vw, 2.2rem); }
+.topic-booking { scroll-margin-top:1rem; }
+.topic-calendar { margin-block:1rem; }
+.topic-calendar p { margin-bottom:.65rem; font-size:.9rem; }
+.topic-calendar iframe { width:100%; height:780px; max-height:none; }
+.topic-safety { margin-block:1.25rem; padding:.85rem 1rem; border-inline-start:3px solid #244e41; background:#f7f4ee; }
+@media (min-width:42rem) { .help-topic-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (min-width:58rem) {
+  .topic-layout { grid-template-columns:minmax(0, 2fr) minmax(0, 1fr); }
+  .topic-mobile-booking { display:none; }
+}

@@ -80,3 +80,30 @@ for (const slug of ['samotnosc', 'poczucie-wlasnej-wartosci']) {
   const sitemapEntry = sitemapXml.split('<url>').find(entry => entry.includes(`<loc>${root}${path}</loc>`));
   assert.ok(sitemapEntry?.includes(`<lastmod>${publicationDate}</lastmod>`));
 }
+
+const helpPaths = paths.filter(path => path.startsWith('/w-czym-pomagam/'));
+const helpIndexPath = '/kiedy-zglosic-sie-na-terapie/';
+const helpIndex = read(file(helpIndexPath));
+assert.equal(helpPaths.length, 19, 'Only the completed topics are exported');
+assert.ok(!existsSync(file('/w-czym-pomagam/')), 'No competing topic index');
+for (const path of helpPaths) {
+  const html = read(file(path));
+  assert.ok(helpIndex.includes(`href="${path}"`), `${path}: linked from catalog`);
+  assert.ok(html.includes(`href="${helpIndexPath}"`), `${path}: backlink to catalog`);
+  assert.match(html, /"@type":"BreadcrumbList"/);
+  assert.match(html, /name="referrer" content="no-referrer"/);
+  const frame = html.match(/<iframe\b[^>]*>/)?.[0];
+  assert.ok(frame, `${path}: Booksy iframe rendered without clicking`);
+  assert.match(frame, /src="https:\/\/booksy\.com\/widget\/index\.html\?id=357056&amp;lang=pl&amp;country=pl"/);
+  assert.match(frame, /loading="lazy"/);
+  assert.match(frame, /referrerPolicy="no-referrer"/i);
+  assert.doesNotMatch(html, /name="robots" content="[^\"]*noindex/);
+  assert.match(html, /href="https:\/\/booksy\.com\/pl-pl\/357056_[^"?]+" rel="noreferrer"/);
+}
+
+const youthPath = '/psychoterapia-mlodziezy-od-15-roku-zycia/';
+const youthHtml = read(file(youthPath));
+for (const id of ['emocje-mlodziezy', 'relacje-mlodziezy', 'dorastanie-i-tozsamosc']) {
+  assert.ok(helpIndex.includes(`href="${youthPath}#${id}"`));
+  assert.ok(youthHtml.includes(`id="${id}"`));
+}

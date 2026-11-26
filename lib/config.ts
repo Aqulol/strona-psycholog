@@ -56,3 +56,5 @@ export const config = {
   ga4Id: 'G-5YF0L6DJ1X',
 
 };
+
+export const booksyWidgetUrl = `https://booksy.com/widget/index.html?id=${encodeURIComponent(config.booksyId)}&lang=pl&country=pl`;
