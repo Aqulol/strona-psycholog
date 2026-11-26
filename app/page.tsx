@@ -17,14 +17,14 @@ export default function Home(){return <main id="tresc">
 <section className="editorial-card"><p className="eyebrow">03 / Podejście</p><h3>Praca z przeniesieniem</h3><p>W TFP badamy, jak znane z życia wzorce relacji pojawiają się także w kontakcie ze mną. Stosuję to podejście w klasycznym ujęciu, w ramach szkolenia i pod superwizją.</p><More href={paths.tfp}>Czym jest TFP</More></section></div></div>
 <section className="shell home-block" aria-labelledby="tematy-konsultacji">
   <h2 id="tematy-konsultacji">W czym mogę pomóc?</h2>
-  <p className="mb-6">Pomagam lepiej zrozumieć własne emocje, potrzeby i to, co powtarza się w relacjach. Poniżej podaję przykłady trudności, nad którymi możemy wspólnie pracować. Nie trzeba mieć diagnozy, żeby zacząć rozmowę.</p>
+  <p className="mb-6">Pomagam przyjrzeć się zarówno codziennym trudnościom, jak i problemom, które trwają dłużej lub wyraźnie wpływają na życie. Nie trzeba mieć diagnozy, żeby umówić się na konsultację. Jeśli ma Pan/Pani rozpoznanie, możemy porozmawiać o nim i wspólnie zastanowić się, jaka forma pomocy będzie odpowiednia.</p>
   <ul className="support-list" role="list">
-    <li><h3>Relacje i bliskość</h3><p>Powtarzające się konflikty z bliskimi lub w pracy, samotność, lęk przed odrzuceniem, trudność w zaufaniu, mówieniu „nie” albo proszeniu o wsparcie.</p></li>
-    <li><h3>Nastrój i emocje</h3><p>Obniżony nastrój, niepokój, poczucie pustki, wahania nastroju albo chwile, gdy trudno nazwać to, co się czuje lub poradzić sobie ze złością.</p></li>
-    <li><h3>Stres i przeciążenie</h3><p>Napięcie, wypalenie, trudność z odpoczynkiem po pracy albo poczucie, że codzienne obowiązki zaczynają przerastać.</p></li>
-    <li><h3>Ważne zmiany i trudne doświadczenia</h3><p>Rozstanie, zmiana pracy, przeprowadzka, niepewność przed ważną decyzją albo powracające myśli o trudnych przeżyciach.</p></li>
-    <li><h3>Poczucie własnej wartości</h3><p>Surowa ocena siebie po błędzie, porównywanie się z innymi, wahania samooceny albo trudność w przyjmowaniu krytyki.</p></li>
-    <li><h3>Lepsze zrozumienie siebie</h3><p>Trudność w rozpoznawaniu własnych potrzeb, niepewność co do tego, co jest dla siebie ważne, albo chęć zrozumienia, dlaczego podobne sytuacje wywołują podobne reakcje.</p></li>
+    <li><h3>Nastrój i poczucie sensu</h3><p>Smutek, obniżony nastrój, utrata zainteresowania tym, co wcześniej cieszyło, poczucie pustki lub braku sensu. Na konsultacji można też porozmawiać o otrzymanym rozpoznaniu depresji.</p></li>
+    <li><h3>Lęk, stres i przeciążenie</h3><p>Codzienne napięcie, zamartwianie się, stres w pracy, trudność z odpoczynkiem albo wypalenie. Tematem rozmowy może być też lęk, który utrudnia codzienne życie, lub rozpoznane zaburzenie lękowe.</p></li>
+    <li><h3>Relacje i samotność</h3><p>Trudności w związku, rodzinie lub pracy, samotność także wśród bliskich, powtarzające się konflikty, lęk przed odrzuceniem albo trudność w zaufaniu i stawianiu granic.</p></li>
+    <li><h3>Kryzysy i zmiany życiowe</h3><p>Rozstanie, rozwód, żałoba, choroba, utrata pracy lub przeprowadzka. Można też porozmawiać o powracających myślach i uczuciach związanych z trudnymi przeżyciami.</p></li>
+    <li><h3>Poczucie własnej wartości i zrozumienie siebie</h3><p>Surowa ocena siebie, wrażliwość na krytykę, poczucie, że nie jest się wystarczająco dobrym, albo trudność w rozpoznawaniu potrzeb i rozumieniu własnych reakcji.</p></li>
+    <li><h3>Długotrwałe trudności w emocjach i relacjach</h3><p>Silne wahania emocji, impulsywne reakcje lub powracające trudności w bliskich relacjach. Można też omówić wcześniejsze rozpoznanie zaburzenia osobowości, na przykład borderline.</p></li>
   </ul>
   <More href={paths.signs}>Więcej o zakresie pomocy</More>
 </section>
