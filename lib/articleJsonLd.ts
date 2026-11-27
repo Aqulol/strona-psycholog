@@ -15,6 +15,7 @@ export function articleJsonLd(opts: {
   dateModified?: string;
   image: string;
   faq?: ArticleFaq;
+  editorialByline?: boolean;
 }): Record<string, unknown> {
   // Końcówka '/' zgodna z canonical i rzeczywistym adresem (trailingSlash: true).
   const url = `https://psychologplebaniak.pl/blog/${opts.slug}/`;
@@ -27,7 +28,7 @@ export function articleJsonLd(opts: {
         description: opts.description,
         inLanguage: 'pl-PL',
         '@id': `${url}#artykul`,
-        author: { '@id': personId },
+        ...(!opts.editorialByline ? {author: { '@id': personId }} : {}),
         publisher: { '@id': officeId },
         ...(opts.datePublished ? {datePublished: opts.datePublished} : {}),
         ...(opts.dateModified ? {dateModified: opts.dateModified} : {}),

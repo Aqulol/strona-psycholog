@@ -38,20 +38,21 @@ export default async function Page({ params }: Props) {
   const { a, path } = await getPage(params);
   const date = a.published && new Intl.DateTimeFormat('pl-PL', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(a.published));
   const {body,contents} = withArticleContents(contextLinks(path,a.body));
+  const editorialByline = 'editorialByline' in a && a.editorialByline === true;
   const consultation = consultationLinks[a.slug];
   return <main id="tresc" className="reading article-editorial">
     <Crumbs path={path} title={a.title}/>
     <article>
       <h1>{a.h1}</h1>
-      <ArticleByline minutes={date ? undefined : blogReadingMinutes(a.slug)}/>
+      {editorialByline ? <p>Materiał redakcyjny witryny · <ReadingTime minutes={blogReadingMinutes(a.slug)}/></p> : <ArticleByline minutes={date ? undefined : blogReadingMinutes(a.slug)}/>}
       {date && <p>Opublikowano: <time dateTime={a.published}>{date}</time> <ReadingTime minutes={blogReadingMinutes(a.slug)}/></p>}
-      <Json data={articleJsonLd({ slug: a.slug, headline: a.h1, description: a.description, image: domain + '/og-image.png', datePublished: a.published })}/>
+      <Json data={articleJsonLd({ slug: a.slug, headline: a.h1, description: a.description, image: domain + '/og-image.png', datePublished: a.published, editorialByline })}/>
       {contents}{body}
       {consultation && <p className="mt-6">Jeśli temat dotyczy Pana/Pani sytuacji, można przeczytać, <a href={consultation[0]}>{consultation[1]}</a>.</p>}
       {a.slug === 'tfp-dla-kogo' && <p>Na pytanie, jak ocenia się funkcjonowanie osobowości, odpowiadam osobno w opisie <a data-context-link href={services.personality.href}>diagnozy osobowości</a>. Sama ocena nie przesądza, czy proponowana psychoterapia będzie odpowiednia.</p>}
       <BlogReading slug={a.slug}/>
     </article>
     <RelatedContent path={path}/>
-    <SeeAlso links={[[a.link, a.slug === 'adhd-u-doroslych' ? 'Diagnoza ADHD we Wrocławiu' : a.sections ? 'Więcej o tym, jak pracuję' : 'Psychoterapia indywidualna dorosłych'], [paths.faq, 'Pytania przed konsultacją']]}/>
+    <SeeAlso links={[[a.link, editorialByline ? 'Jak wygląda pomoc dla młodzieży od 15. roku życia' : a.slug === 'adhd-u-doroslych' ? 'Diagnoza ADHD we Wrocławiu' : a.sections ? 'Więcej o tym, jak pracuję' : 'Psychoterapia indywidualna dorosłych'], [paths.faq, 'Pytania przed konsultacją']]}/>
   </main>;
 }

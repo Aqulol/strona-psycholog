@@ -1,3 +1,4 @@
+import { empathyArticle } from './empathy-article';
 import { adhdArticle } from './adhd-article';
 import type { ReactNode } from 'react';
 import { body as past } from '../app/blog/czy-przeszlosc-ma-znaczenie/content';
@@ -18,6 +19,7 @@ const features = {
 };
 
 export const generatedArticles = [
+  empathyArticle,
   adhdArticle,
   ...featureArticles.map(article => ({ ...article, sections: undefined, link: paths.adults, body: features[article.slug]() })),
   ...editorial.flatMap(article => article.slug && article.sections ? [{
