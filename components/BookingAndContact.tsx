@@ -1,4 +1,5 @@
 import { config } from '../lib/config';
+import ContactForm from './ContactForm';
 import BooksyCalendar from './BooksyCalendar';
 
 export default function BookingAndContact() {
@@ -8,9 +9,9 @@ export default function BookingAndContact() {
       <BooksyCalendar/>
     </section>
     <section className="editorial-card">
-      <h3>Pytanie organizacyjne</h3>
+      <h3>Formularz kontaktowy</h3>
+      <ContactForm/>
       <p><a href={`mailto:${config.email}`}>{config.email}</a> · <a href={`tel:${config.phone.replace(/\s+/g,'')}`}>{config.phone}</a></p>
-      <p>Można zapytać o formy pomocy, zakres i organizację diagnozy, ceny, wolne terminy, zasady współpracy lub udział opiekuna w konsultacji osoby niepełnoletniej. Nie trzeba przesyłać rozpoznania, opisu objawów ani dokumentacji. Kontakt organizacyjny nie jest poradą psychologiczną.</p>
     </section>
   </div>;
 }

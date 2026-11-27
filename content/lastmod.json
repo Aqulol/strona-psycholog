@@ -1,8 +1,8 @@
 {
   "/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:3a514bee25d78636f5a37c3bf04fe332880ea838d06c823f685d349267e3871d",
-    "evidence": "Redakcyjna rozbudowa strony głównej: dodane obszary ADHD i młodzieży, przebieg współpracy oraz linkowanie do oferty i słownika; nie jest to data wdrożenia."
+    "fingerprint": "v1:971bfc3cbf30fb389d2863ff68b9c6e1860c8ce14e5ee59ac78c13e86ca6ebcb",
+    "evidence": "Redakcyjna rozbudowa strony głównej: dodane obszary ADHD i młodzieży, przebieg współpracy oraz linkowanie do oferty i słownika; nie jest to data wdrożenia. Uwzględniono zmianę techniczną: przywrócenie formularza przy Booksy."
   },
   "/baza-wiedzy/": {
     "date": "2026-11-26",
@@ -66,8 +66,8 @@
   },
   "/kontakt/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:58645e6e5e4d7f57c3280052a3e292b1f04948a0044dc2460a17a284fd166a01",
-    "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
+    "fingerprint": "v1:d1d86130adf266ccd33498e286c03b4b88ce5ef052a1d06a5d3e09c62e432188",
+    "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157. Uwzględniono zmianę techniczną: przywrócenie formularza przy Booksy."
   },
   "/materialy-psychologiczne/": {
     "date": "2026-11-26",
@@ -91,8 +91,8 @@
   },
   "/polityka-prywatnosci/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:8cf6009f7e9bd4a73104f894481d8858d88b842fe556436f1379240c41c0f2ff",
-    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+    "fingerprint": "v1:1909216ad7e97e930d23aa6a6f830fd239a68098c50fe39ffa3e1b76efb0b29d",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia. Uwzględniono opis wysyłki formularza i liczników antyspamowych."
   },
   "/poradnictwo-psychologiczne-wroclaw/": {
     "date": "2026-11-26",
