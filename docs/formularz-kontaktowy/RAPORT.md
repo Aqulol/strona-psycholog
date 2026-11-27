@@ -1,5 +1,7 @@
 # Przywrócenie formularza kontaktowego
 
+> Raport historyczny PR #85. Opisaną niżej integrację Firebase Functions zastępuje [wariant na Spark](SPARK.md).
+
 ## Co usunięto
 
 [PR #71](https://github.com/Aqulol/strona-psycholog/pull/71), commit `6126f84`, zastąpił formularz kartą „Pytanie organizacyjne” z telefonem, e-mailem i opisem. Według metadanych GitHuba PR scalono **27 listopada 2026 o 11:20 UTC**; data scalenia nie jest datą potwierdzonej publikacji na Firebase. Raport tego etapu (`docs/etap-lastmod/RAPORT.md`) wskazuje ograniczenie zbierania dowolnej treści oraz potrzebę sprawdzenia retencji i reguł Firestore przed przywróceniem formularza.

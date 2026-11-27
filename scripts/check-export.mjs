@@ -1,4 +1,4 @@
-import {assertContactRewrite} from './sitemap-lib.mjs';
+import {assertSparkHosting} from './sitemap-lib.mjs';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -57,7 +57,7 @@ assert.ok(gzipSync(homepage).length + gzipSync(read(join('out',styles[0]))).leng
 const hosting = JSON.parse(read('firebase.json')).hosting;
 assert.equal(hosting.public, 'out');
 assert.equal(hosting.trailingSlash, true);
-assertContactRewrite(hosting);
+assertSparkHosting(JSON.parse(read('firebase.json')));
 assert.match(read('out/404.html'), /name="robots" content="noindex/);
 for (const bot of ['OAI-SearchBot', 'Bingbot']) {
   assert.ok(read('out/robots.txt').includes(`User-Agent: ${bot}`));

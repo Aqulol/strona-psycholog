@@ -23,7 +23,6 @@
     "redirects:sync-html": "node scripts/sync-html-redirects.mjs"
   },
   "dependencies": {
-    "firebase": "^12.17.1",
     "lucide-react": "^0.469.0",
     "next": "^15.1.6",
     "react": "^19.0.0",

@@ -27,27 +27,6 @@ export const config = {
   // ===== Cennik - edytuj TU ręcznie (zgodnie z aktualnym cennikiem Booksy) =====
   prices: [consultationRate, therapyRate],
 
-  // ===== Firebase (wariant darmowy - Spark) =====
-  // Formularz kontaktowy zapisuje wiadomości BEZPOŚREDNIO do Firestore
-  // z przeglądarki (bez Cloud Functions i bez planu Blaze).
-  //
-  // Konfiguracja klienta jest już uzupełniona dla projektu
-  // „psychologplebaniak-e4480". Jeśli zmienisz projekt Firebase,
-  // pobierz jego nowy obiekt firebaseConfig z Project settings → Your apps → Web app.
-  //
-  // UWAGA: apiKey w aplikacji webowej Firebase jest PUBLICZNY (widoczny
-  // w przeglądarce) - to normalne i bezpieczne, jeśli reguły Firestore
-  // pozwalają tylko na ograniczony zapis (patrz firestore.rules).
-  // Więcej: https://firebase.google.com/docs/projects/api-keys
-  firebaseConfig: {
-    apiKey: 'AIzaSyBebRlxqPzx_uNZNs2pZpZH9nCcwRgEwps',
-    authDomain: 'psychologplebaniak-e4480.firebaseapp.com',
-    projectId: 'psychologplebaniak-e4480',
-    storageBucket: 'psychologplebaniak-e4480.firebasestorage.app',
-    messagingSenderId: '794131052999',
-    appId: '1:794131052999:web:6e6c2e7e011edbf7a041e2',
-  },
-
   // ===== Analityka (GTM + GA4) =====
   // GA4 jest ładowane bezpośrednio (gtag.js) po wyrażeniu zgody w banerze
   // cookies - GTM NIE jest używane (pole celowo puste, aby nie było ryzyka
