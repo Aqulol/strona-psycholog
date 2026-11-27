@@ -7,7 +7,7 @@ import { useBooksyConsent } from './PrivacyPreferences';
 function CalendarFrame() {
   const slot = useRef<HTMLDivElement>(null);
   const [near, setNear] = useState(false);
-  const [status, setStatus] = useState<'loading' | 'loaded' | 'slow' | 'failed'>('loading');
+  const [status, setStatus] = useState<'loading' | 'navigation-ended' | 'slow' | 'failed'>('loading');
 
   useEffect(() => {
     if (!slot.current || !('IntersectionObserver' in window)) {
@@ -30,16 +30,17 @@ function CalendarFrame() {
   }, [near, status]);
 
   return <>
-    <div className="booksy-slot" ref={slot}>
-      {status !== 'loaded' && <p className="booksy-loading" role="status">{status === 'slow' || status === 'failed'
+    <div className="booksy-slot" ref={slot} data-status={status}>
+      {status !== 'navigation-ended' && <p className="booksy-loading" role="status">{status === 'slow' || status === 'failed'
         ? 'Nie widać terminów? Skorzystaj z odnośnika do Booksy powyżej.'
         : 'Wczytywanie kalendarza Booksy…'}</p>}
+      {/* Cross-origin load can also mean a browser error document. The direct link remains available. */}
       {near && status !== 'failed' && <iframe
         src={booksyWidgetUrl}
         title="Kalendarz rezerwacji Booksy"
         sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         referrerPolicy="no-referrer"
-        onLoad={() => setStatus('loaded')}
+        onLoad={() => setStatus('navigation-ended')}
         onError={() => setStatus('failed')}
       />}
     </div>
@@ -51,6 +52,9 @@ export default function BooksyCalendar({ linkLabel = 'Otwórz kalendarz w Booksy
   const allowed = useBooksyConsent(Boolean(config.booksyId));
   return <div className="booksy-calendar">
     <p><a className={primary ? 'booking' : 'text-link'} href={config.booksyUrl} rel="noreferrer">{linkLabel}</a></p>
-    {config.booksyId && allowed && <CalendarFrame/>}
+    {config.booksyId && allowed && <>
+      <p className="booksy-fallback-note">Jeśli kalendarz nie pokazuje terminów, skorzystaj z odnośnika powyżej.</p>
+      <CalendarFrame/>
+    </>}
   </div>;
 }
