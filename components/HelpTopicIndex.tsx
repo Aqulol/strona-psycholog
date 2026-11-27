@@ -120,7 +120,7 @@ if (assigned.size !== helpTopics.length) throw new Error('Unassigned catalogue t
 
 export default function HelpTopicIndex({ scope }: { scope: ReactNode }) {
   const [youth, services] = categories.slice(-2);
-  return <CategoryCatalogue categories={categories.map(c=>c.title)}>
+  return <CategoryCatalogue categories={categories.map(c=>c.title)} counts={Object.fromEntries(categories.map(c=>[c.title,c.topics.length]))}>
     <nav className="help-width help-category-nav" aria-label="Przejdź do obszaru pomocy"><ul>{categories.map((category,index)=><li key={category.title}><a data-catalogue-letter href={`#obszar-${index+1}`}>{category.title}</a></li>)}</ul></nav>
     <section className="help-directory help-width" aria-labelledby="tematy-konsultacji" data-catalogue-section>
       <h2 id="tematy-konsultacji">Obszary pomocy psychologicznej i psychoterapii</h2>

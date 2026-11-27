@@ -15,7 +15,7 @@
   },
   "diamond": {
     "label": "Diamond, A. (2013). Executive functions. Annual Review of Psychology, 64, 135–168.",
-    "href": "https://doi.org/10.1146/annurev-psych-113011-143750"
+    "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4084861/"
   },
   "kernberg1994": {
     "label": "Kernberg, O. F. (1994). Aggression, trauma, and hatred in the treatment of borderline patients. Psychiatric Clinics of North America, 17(4), 701–714.",
@@ -52,7 +52,7 @@
     "href": "https://doi.org/10.1037/0022-3514.53.6.1146"
   },
   "vaillant": {
-    "label": "Vaillant, G. E. (1992). Ego Mechanisms of Defense: A Guide for Clinicians and Researchers. American Psychiatric Press."
+    "label": "Vaillant, G. E. (red.). (1992). Ego Mechanisms of Defense: A Guide for Clinicians and Researchers. American Psychiatric Press."
   },
   "anna": {
     "label": "Freud, A. (1936). Das Ich und die Abwehrmechanismen [Ego i mechanizmy obronne]. Internationaler Psychoanalytischer Verlag."
@@ -79,5 +79,101 @@
   },
   "holding": {
     "label": "Winnicott, D. W. (1960). The theory of the parent-infant relationship. International Journal of Psychoanalysis, 41, 585–595."
+  },
+  "dmrs": {
+    "label": "Di Giuseppe, M., i Perry, J. C. (2021). The Hierarchy of Defense Mechanisms: Assessing Defensive Functioning With the Defense Mechanisms Rating Scales Q-Sort. Frontiers in Psychology, 12, 718440.",
+    "href": "https://doi.org/10.3389/fpsyg.2021.718440"
+  },
+  "kernberg-tech": {
+    "label": "Kernberg, O. F. (2021). Extensions of Psychoanalytic Technique: The Mutual Influences of Standard Psychoanalysis and Transference-Focused Psychotherapy. Psychodynamic Psychiatry, 49(4), 506–531.",
+    "href": "https://formazionecontinuainpsicologia.it/wp-content/uploads/2021/12/Kernberg-2021-Dynam-Psych.pdf"
+  },
+  "klein-trust": {
+    "label": "Melanie Klein Trust. Envy and Gratitude and Other Works 1946–1963: omówienie tomu.",
+    "href": "https://melanie-klein-trust.org.uk/resources/test-resource-3/"
+  },
+  "winnicott-trust": {
+    "label": "Winnicott Trust. Donald Winnicott: opracowanie biograficzne, część dotycząca relacji z Melanie Klein i agresji.",
+    "href": "https://winnicott-trust.org.uk/wp-content/uploads/2024/08/Donald-Winnicott.pdf"
+  },
+  "apa-agresja": {
+    "label": "APA Dictionary of Psychology: aggression.",
+    "href": "https://dictionary.apa.org/aggression"
+  },
+  "apa-zlosc": {
+    "label": "APA Dictionary of Psychology: anger.",
+    "href": "https://dictionary.apa.org/anger"
+  },
+  "apa-wrogosc": {
+    "label": "APA Dictionary of Psychology: hostility.",
+    "href": "https://dictionary.apa.org/hostility"
+  },
+  "apa-frustracja": {
+    "label": "APA Dictionary of Psychology: frustration.",
+    "href": "https://dictionary.apa.org/frustration"
+  },
+  "apa-tolerancja-frustracji": {
+    "label": "APA Dictionary of Psychology: frustration tolerance.",
+    "href": "https://dictionary.apa.org/frustration-tolerance"
+  },
+  "apa-psychopatologia": {
+    "label": "APA Dictionary of Psychology: psychopathology.",
+    "href": "https://dictionary.apa.org/psychopathology"
+  },
+  "apa-diagnoza-roznicowa": {
+    "label": "APA Dictionary of Psychology: differential diagnosis.",
+    "href": "https://dictionary.apa.org/differential-diagnosis"
+  },
+  "apa-formacja-kompromisowa": {
+    "label": "APA Dictionary of Psychology: compromise formation.",
+    "href": "https://dictionary.apa.org/compromise-formation"
+  },
+  "apa-psychoanaliza": {
+    "label": "APA Dictionary of Psychology: psychoanalysis.",
+    "href": "https://dictionary.apa.org/psychoanalysis"
+  },
+  "apa-ocena-psychologiczna": {
+    "label": "APA Dictionary of Psychology: psychological assessment.",
+    "href": "https://dictionary.apa.org/psychological-assessment"
+  },
+  "apa-psychologia-rozwojowa": {
+    "label": "APA Dictionary of Psychology: developmental psychology.",
+    "href": "https://dictionary.apa.org/developmental-psychology"
+  },
+  "apa-regulacja-emocji": {
+    "label": "APA Dictionary of Psychology: emotion regulation.",
+    "href": "https://dictionary.apa.org/emotion-regulation"
+  },
+  "apa-relacja-interpersonalna": {
+    "label": "APA Dictionary of Psychology: relationship (znaczenie interpersonalne).",
+    "href": "https://dictionary.apa.org/relationship"
+  },
+  "apa-obiekt-wewnetrzny": {
+    "label": "APA Dictionary of Psychology: internal object.",
+    "href": "https://dictionary.apa.org/internal-object"
+  },
+  "apa-enactment": {
+    "label": "APA Dictionary of Psychology: enactment.",
+    "href": "https://dictionary.apa.org/enactment"
+  },
+  "apa-holding": {
+    "label": "APA Dictionary of Psychology: holding environment.",
+    "href": "https://dictionary.apa.org/holding-environment"
+  },
+  "apa-separacja-indywiduacja": {
+    "label": "APA Dictionary of Psychology: separation individuation.",
+    "href": "https://dictionary.apa.org/separation-individuation"
+  },
+  "apa-objaw-cecha-stan": {
+    "label": "APA Dictionary of Psychology: trait.",
+    "href": "https://dictionary.apa.org/trait"
+  },
+  "indirect": {
+    "label": "Farrell i in. Assessment of Adolescents’ Victimization, Aggression, and Problem Behaviors: Evaluation of the Problem Behavior Frequency Scale. Pełny tekst w CDC Stacks.",
+    "href": "https://stacks.cdc.gov/view/cdc/81070/cdc_81070_DS1.pdf"
+  },
+  "structural-review": {
+    "label": "Three Dimensional Approaches to Personality Disorders: a Review on Personality Functioning, Personality Structure, and Personality Organization (2021). Sekcja „Personality Organization”.",
+    "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8238706/"
   }
 }

@@ -175,6 +175,8 @@ for (const path of paths) {
   const html = read(file(path));
   if (/^\/blog\/.+\/$/.test(path)) {
     assert.equal((html.match(/id="literatura-i-zrodla"/g) || []).length, 1, `${path}: one bibliography`);
+  } else if (/^\/slownik-psychologiczny\/[^/]+\/$/.test(path)) {
+    assert.equal((html.match(/<h2>Bibliografia<\/h2>/g) || []).length, 1, `${path}: one glossary bibliography`);
   } else {
     assert.doesNotMatch(html, /<h[2-4][^>]*>(Literatura(?: i źródła)?|Źródła(?: i dalsza lektura| naukowe)?|Bibliografia)<\/h[2-4]>/i, `${path}: no public bibliography`);
   }

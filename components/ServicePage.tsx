@@ -1,3 +1,4 @@
+import GlossaryLink from './GlossaryLink';
 import { services } from '../lib/services';
 import { contextLinks } from '../lib/context-links';
 import { servicePaths } from '../lib/service-paths';
@@ -24,8 +25,8 @@ export default function ServicePage({kind}:{kind:Exclude<keyof typeof paths, 'si
  return <main id="tresc" className="reading practice-editorial" data-practice-page={kind}><Json data={webPage(paths[kind], page.h1, page.description, service?.name, service?.rate ?? undefined)}/><Crumbs path={paths[kind]} title={page.h1}/><p className="eyebrow">Gabinet psychologiczny · Wrocław i online</p><h1>{page.h1}</h1>{intro}
  {kind==='about'&&<img src="/images/portret.webp" width="1280" height="1280" loading="lazy" alt="Portret Grzegorza Plebaniaka"/>}
  {kind==='youth' && <><YouthConsultationTopics/><p>Informacje o wymaganej zgodzie na spotkania, udziale rodziców lub opiekunów oraz granicach poufności wyjaśniam przed rozpoczęciem regularnej współpracy. Pierwszą <a href={paths.consult}>konsultację psychologiczną</a> można potraktować jako miejsce na pytania o dalsze kroki.</p></>}
- {kind==='method' && <p>W <a data-context-link href={services.individual.href}>psychoterapii indywidualnej</a> wykorzystuję <a data-context-link href={paths.tfp}>model skoncentrowany na przeniesieniu (TFP)</a> w ramach nurtu psychodynamicznego. To opis mojego sposobu pracy, nie osobna usługa do wyboru.</p>}
- {kind==='tfp' && <p>TFP wywodzi się z teorii relacji z obiektem i należy do <a data-context-link href={paths.method}>nurtu psychodynamicznego</a>. Opis modelu nie jest deklaracją stosowania pełnego protokołu u każdej osoby.</p>}
+ {kind==='method' && <p>W <a data-context-link href={services.individual.href}>psychoterapii indywidualnej</a> wykorzystuję <a data-context-link href={paths.tfp}>model skoncentrowany na przeniesieniu (TFP)</a> w ramach <GlossaryLink slug="psychoterapia-psychodynamiczna">nurtu psychodynamicznego</GlossaryLink>. To opis mojego sposobu pracy, nie osobna usługa do wyboru.</p>}
+ {kind==='tfp' && <p>TFP wywodzi się z <GlossaryLink slug="relacje-z-obiektem">teorii relacji z obiektem</GlossaryLink> i należy do <a data-context-link href={paths.method}>nurtu psychodynamicznego</a>. Opis modelu nie jest deklaracją stosowania pełnego protokołu u każdej osoby.</p>}
  {kind==='online' && <p>Online odbywa się ta sama <a data-context-link href={services.individual.href}>psychoterapia indywidualna</a> w nurcie psychodynamicznym z wykorzystaniem TFP. O tym, czy forma zdalna jest odpowiednia, rozmawiamy podczas konsultacji.</p>}
  {sections}
  {kind==='faq'&&<section><h2>Przed pierwszym spotkaniem</h2><Questions items={faq}/></section>}

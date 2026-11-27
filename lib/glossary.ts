@@ -2,8 +2,8 @@ import entries from '../content/glossary.json';
 import sources from '../content/glossary-sources.json';
 import {isPublishedTerm} from './glossary-policy.mjs';
 export const glossarySources:Record<string,{label:string;href?:string}>=sources;
-export type GlossaryEntry={slug:string;term:string;category:string;status:string;verification:string; definition:string;explanation:string;examples:string[];distinction:string;clinical?:string;related:string[];sources:string[];links:{href:string;label:string}[];synonyms:string[];english?:string;categories?:string[];sections?:{title:string;paragraphs:string[]}[];h1?:string;featured?:boolean;published?:string;updated?:string;reviewedAt?:string;author?:string;reviewer?:string};
-export const reviewedTerms=(entries as GlossaryEntry[]).filter(isPublishedTerm).sort((a,b)=>a.term.localeCompare(b.term,'pl'));
+export type GlossaryEntry={slug:string;term:string;category:string;status:string;verification?:string; definition:string;explanation:string;examples:string[];distinction:string;clinical?:string;related:string[];sources:string[];links:{href:string;label:string}[];synonyms:string[];english?:string;categories?:string[];sections?:{title:string;paragraphs:string[]}[];h1?:string;featured?:boolean;published?:string;updated?:string;reviewedAt?:string;author?:string;reviewer?:string};
+export const publishedTerms=(entries as GlossaryEntry[]).filter(isPublishedTerm).sort((a,b)=>a.term.localeCompare(b.term,'pl'));
 // A curated index into already published explanations. Not separate draft entries.
 export const publishedExplanations=[
  ['Borderline','Osobowość','/w-czym-pomagam/borderline/','Na czym polegają trudności opisywane w związku z tym rozpoznaniem?'],

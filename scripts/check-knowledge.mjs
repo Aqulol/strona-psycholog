@@ -2,7 +2,7 @@ import {readRegistry} from './glossary-registry.mjs';
 import {isPublishedTerm} from '../lib/glossary-policy.mjs';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
-import {readExport} from './sitemap-lib.mjs';
+import {readExport,parseSitemap} from './sitemap-lib.mjs';
 import {findContent,fold} from '../lib/search-core.mjs';
 const index=JSON.parse(readFileSync('out/indeks-tresci.json','utf8'));
 const {pages}=readExport();
@@ -16,14 +16,30 @@ for(const [query, expected] of [
 ]) assert.ok(findContent(index,query).some(row=>row.href===expected),`${query}: ${expected}`);
 assert.deepEqual(findContent(index,'xxxqqqzzz'),[]);
 const terms=readRegistry();
+const prefix='/slownik-psychologiczny/';
+const glossaryIndex=readFileSync(`out${prefix}index.html`,'utf8').match(/<main\b[\s\S]+?<\/main>/)?.[0];
+const sitemap=parseSitemap(readFileSync('out/sitemap.xml','utf8'));
+assert.equal(isPublishedTerm({status:'published'}),true);
+assert.equal(isPublishedTerm({status:'draft',verification:'verified',reviewer:'fixture'}),false);
+const published=terms.filter(isPublishedTerm);
+assert.ok(published.some(row=>row.slug==='agresja'),'Agresja must be public');
+assert.equal([...sitemap.keys()].filter(path=>path.startsWith(prefix)&&path!==prefix).length,published.length);
+assert.equal(new Set(published.map(row=>pages.get(`${prefix}${row.slug}/`)?.titles[0])).size,published.length);
+assert.ok(glossaryIndex?.includes(`>${published.length}</strong> pełnych haseł`));
 for(const row of terms){
  const href=`/slownik-psychologiczny/${row.slug}/`;
  const present=pages.has(href);
- for(const link of row.links)assert.ok(pages.has(link.href.split('#')[0]),`${row.slug}: ${link.href}`);
+ for(const link of row.links??[])assert.ok(pages.has(link.href.split('#')[0]),`${row.slug}: ${link.href}`);
  assert.equal(present,isPublishedTerm(row),href);
  assert.equal(existsSync(`out${href}index.html`),present,href);
  assert.equal(index.some(entry=>entry.href===href),present,href);
+ assert.equal(sitemap.has(href),present,href);
+ assert.equal(glossaryIndex.includes(`href="${href}"`),present,href);
  if(present){
+  for(const query of [row.term,...row.synonyms]){
+   const hits=findContent(index,query).filter(hit=>hit.group==='Słownik psychologiczny');
+   assert.ok(hits.slice(0,8).some(hit=>hit.href===href),`Global search: ${query} → ${href}`);
+  }
   const html=readFileSync(`out${href}index.html`,'utf8');
   for(const marker of ['DefinedTerm','BreadcrumbList','Zacytuj to hasło']) assert.ok(html.includes(marker),`${href}: ${marker}`);
  }

@@ -217,3 +217,6 @@ main.price-editorial{width:min(100% - 2 * var(--gutter),53rem);max-width:53rem;p
 .help-category-nav a:not([hidden]) {display:inline-flex;align-items:center;min-height:44px;font-size:.875rem;}
 .help-category-nav li:not(:has(a:not([hidden]))) {display:none;}
 .help-catalogue-page [data-filter-group], .lexicon-group {scroll-margin-top:7rem;}
+.knowledge-page .glossary-category-counts {display:flex;flex-wrap:wrap;gap:.35rem .65rem;list-style:none;padding:0;margin:1.1rem 0;color:var(--muted);font-size:.8rem;}
+.glossary-category-counts li {padding:.18rem .5rem;border:1px solid var(--rule);border-radius:var(--edge);}
+.glossary-category-counts strong {color:var(--deep);margin-inline-start:.3em;}

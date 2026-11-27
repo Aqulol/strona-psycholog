@@ -1,3 +1,5 @@
+import {publishedTerms} from './glossary';
+import {glossaryPath} from './knowledge';
 import { cloneElement, Fragment, isValidElement, type ReactNode } from 'react';
 
 // Reviewed source/phrase/target pairs. New prose never creates links automatically.
@@ -112,11 +114,26 @@ const reviewed: Record<string, Record<string, string>> = {
   }
 };
 
+// These phrases were selected in the exported paragraphs, not inferred from labels or navigation.
+const glossaryMatches: Record<string, Record<string,string>> = {
+ '/blog/adhd-u-doroslych/':{'funkcje wykonawcze':'funkcje-wykonawcze','ocenie różnicowej':'diagnoza-roznicowa'},
+ '/blog/dlaczego-sama-swiadomosc-nie-wystarcza/':{'mechanizmy obronne':'mechanizmy-obronne'},
+ '/blog/relacja-terapeutyczna-zrodlo-zmiany/':{'przeniesienie':'przeniesienie','przeciwprzeniesienie':'przeciwprzeniesienie'},
+ '/blog/tfp-dla-kogo/':{'organizacją osobowości':'organizacja-osobowosci'},
+ '/terapia-skoncentrowana-na-przeniesieniu-tfp/':{'rozszczepienie':'rozszczepienie','przeniesienie':'przeniesienie','organizacją osobowości':'organizacja-osobowosci'},
+ '/w-czym-pomagam/radzenie-sobie-ze-zloscia/':{'złość':'zlosc'},
+ '/w-czym-pomagam/rozpoznawanie-emocji/':{'złość':'zlosc'},
+ '/w-czym-pomagam/seksualnosc-i-intymnosc/':{'mechanizm obronny':'mechanizmy-obronne'},
+ '/w-czym-pomagam/zaburzenia-osobowosci/':{'organizacji osobowości':'organizacja-osobowosci','relacji z obiektem':'relacje-z-obiektem'},
+};
+const publicSlugs=new Set(publishedTerms.map(term=>term.slug));
+
 type ProseProps = { children?: ReactNode; href?: string; 'data-reading-ignore'?: boolean };
 const excluded = new Set(['a', 'aside', 'button', 'code', 'footer', 'nav', 'pre', 'script', 'style', 'svg']);
 export function contextLinks(path: string, body: ReactNode, limit = 3): ReactNode {
-  const targets = reviewed[path];
-  if (!targets) return body;
+  const glossary = Object.entries(glossaryMatches[path]??{}).filter(([,slug])=>publicSlugs.has(slug)).map(([phrase,slug])=>[phrase,`${glossaryPath}${slug}/`]);
+  const targets = {...reviewed[path],...Object.fromEntries(glossary)};
+  if (!Object.keys(targets).length) return body;
   const pattern = new RegExp(`(?<![\\p{L}\\p{N}])(${Object.keys(targets).sort((a, b) => b.length - a.length).map(phrase => phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})(?![\\p{L}\\p{N}])`, 'giu');
   const linked = new Set([path]);
   function collect(node: ReactNode) {
