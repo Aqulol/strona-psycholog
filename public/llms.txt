@@ -17,4 +17,4 @@
 
 ## Optional
 
-- [Blog](https://psychologplebaniak.pl/blog/): Artykuły edukacyjne o psychoterapii i relacjach.
+- [Baza wiedzy](https://psychologplebaniak.pl/baza-wiedzy/): Artykuły, słownik psychologiczny i informacje dla pacjentów.

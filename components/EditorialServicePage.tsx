@@ -32,7 +32,7 @@ export default function EditorialServicePage({id}:{id:EditorialKey}) {
     {category === 'diagnosis' && <nav className="page-toc diagnostic-toc" aria-label="Spis treści diagnozy"><ol>{sections.map(([title],index)=><li key={title}><a href={`#etap-${index+1}`}>{title}</a></li>)}</ol></nav>}
     {sections.map(([title,content],index) => <section key={title} id={category==='diagnosis'?`etap-${index+1}`:undefined}><h2>{title}</h2>{content}</section>)}
     {(id === 'general' || id === 'personality') && <section><h2>Jak się przygotować do diagnozy?</h2>
-      <p>{id === 'general' ? 'Zapisz jedno pytanie, na które chcesz uzyskać odpowiedź, oraz przykłady trudności: kiedy się zaczęły, gdzie występują i co się wtedy zmieniło.' : 'Przypomnij sobie konkretne sytuacje, które powtarzają się w relacjach lub wpływają na obraz siebie. Pomaga przykład aktualny i taki z wcześniejszego okresu. Nie trzeba samodzielnie dobierać testów ani rozpoznania.'} Pomocna może być <a href="/materialy-psychologiczne/#diagnoza">karta przygotowania do diagnozy</a>.</p>
+      <p>{id === 'general' ? 'Zapisz jedno pytanie, na które chcesz uzyskać odpowiedź, oraz przykłady trudności: kiedy się zaczęły, gdzie występują i co się wtedy zmieniło.' : 'Przypomnij sobie konkretne sytuacje, które powtarzają się w relacjach lub wpływają na obraz siebie. Pomaga przykład aktualny i taki z wcześniejszego okresu. Nie trzeba samodzielnie dobierać testów ani rozpoznania.'}</p>
     </section>}
     {'faq' in entry && <section><h2>Najczęściej zadawane pytania</h2><Questions items={entry.faq}/></section>}
     <RelatedContent path={href}/>

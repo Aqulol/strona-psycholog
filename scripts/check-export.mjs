@@ -24,7 +24,7 @@ for (const path of paths) {
   assert.ok(!titles.has(title) && !descriptions.has(description), `${path}: duplicated SEO metadata`);
   titles.add(title); descriptions.add(description);
   for (const [, link] of html.matchAll(/<a\b[^>]*href="(\/[^"#?]*)[^\"]*"/g)) {
-    assert.ok(existsSync(file(link)) || ((link === '/materialy/karty-psychologiczne.pdf' || /^\/images\/[a-z0-9/_-]+\.(?:webp|avif)$/i.test(link)) && existsSync(join('out',link))), `${path}: internal link ${link}`);
+    assert.ok(existsSync(file(link)) || (/^\/images\/[a-z0-9/_-]+\.(?:webp|avif)$/i.test(link) && existsSync(join('out',link))), `${path}: internal link ${link}`);
   }
   for (const [, source] of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)) {
     assert.doesNotThrow(() => JSON.parse(source), `${path}: JSON-LD`);
@@ -257,3 +257,17 @@ for (const html of [offerHtml]) {
   for (const path of [therapyService,...therapyReferences]) assert.ok(cards[0][1].includes(`href="${path}"`));
 }
 console.log('Therapy: one offer with method, approach and delivery links; one initial consultation CTA per card.');
+
+const knowledgeHub = read(file('/baza-wiedzy/'));
+const knowledgeDestinations = ['/blog/', '/slownik-psychologiczny/', '/informacje-dla-pacjentow/'];
+for (const [html, className, heading] of [[homepage, 'home-facts home-knowledge-grid', 3], [knowledgeHub, 'knowledge-grid', 2]]) {
+  const grid = html.split(`class="${className}">`)[1];
+  // Homepage role is serialized after class; get the grid by its opening tag instead.
+  const content = grid ?? html.match(new RegExp(`class="${className}"[^>]*>([\\s\\S]*)`))?.[1];
+  assert.ok(content, `Knowledge grid: ${className}`);
+  const cards = content.split(className === 'knowledge-grid' ? '</section></div>' : '</ul>')[0];
+  assert.deepEqual([...cards.matchAll(new RegExp(`<h${heading}><a href="([^"]+)"`, 'g'))].map(match => match[1]), knowledgeDestinations);
+}
+for (const destination of ['/faq/', '/kiedy-zglosic-sie-na-terapie/']) {
+  assert.ok(knowledgeHub.match(/<main\b[\s\S]*?<\/main>/)?.[0].includes(`href="${destination}"`));
+}

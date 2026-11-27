@@ -116,8 +116,8 @@ export function readExport(directory = out, dates = JSON.parse(readFileSync(last
   assert.equal(hosting.cleanUrls, true);
   assert.equal(hosting.trailingSlash, true);
   assertSparkHosting(JSON.parse(readFileSync('firebase.json', 'utf8')));
-  for (const group of hosting.headers ?? []) for (const {key,value} of group.headers) {
-    if (/^x-robots-tag$/i.test(key)) assert.ok(group.source === '/materialy/karty-psychologiczne.pdf' && value === 'noindex', 'Unexpected Firebase robots header');
+  for (const group of hosting.headers ?? []) for (const {key} of group.headers) {
+    if (/^x-robots-tag$/i.test(key)) assert.fail(`Unexpected Firebase robots header: ${group.source}`);
   }
   const redirects = inspectRedirectRules(hosting.redirects ?? []);
   const pages = new Map();
@@ -201,7 +201,7 @@ export function auditLinks(pages, redirects) {
       const { pathname, hash } = target;
       if (redirects.has(pathname)) legacy.add(`${path} → ${href}`);
       else if (!pages.has(pathname)) {
-        const asset = (/^\/images\/[a-z0-9/_-]+\.(?:webp|avif)$/i.test(pathname) || pathname === '/materialy/karty-psychologiczne.pdf') && !target.search && !hash;
+        const asset = (/^\/images\/[a-z0-9/_-]+\.(?:webp|avif)$/i.test(pathname)) && !target.search && !hash;
         if (!asset || !statSync(join(out, pathname), {throwIfNoEntry:false})?.isFile()) broken.add(`${path} → ${href}`);
       }
       else {

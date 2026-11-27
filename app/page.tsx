@@ -1,4 +1,4 @@
-import {ArrowUpRight, BookOpen, CalendarDays, Compass, FileDown, FlaskConical, GitFork, GraduationCap, HeartHandshake, LibraryBig, MapPin, MessagesSquare} from 'lucide-react';
+import {ArrowUpRight, BookOpen, CalendarDays, Compass, FileText, FlaskConical, GitFork, GraduationCap, HeartHandshake, LibraryBig, MapPin, MessagesSquare} from 'lucide-react';
 import {knowledgeLinks} from '../lib/knowledge';
 import {homeFaq, homeTopics} from '../lib/home-content';
 import {professionalProfiles} from '../lib/professional-profiles';
@@ -95,7 +95,7 @@ export default function Home(){return <main id="tresc" className="editorial-home
   <ul className="home-facts home-knowledge-grid" role="list">{[
     {Icon:BookOpen,...knowledgeLinks[0],copy:'Teksty o emocjach, relacjach i psychoterapii.'},
     {Icon:LibraryBig,...knowledgeLinks[1],copy:'Wyjaśnienia pojęć z psychologii, diagnozy i psychoterapii.'},
-    {Icon:FileDown,...knowledgeLinks[2],copy:'Karty, które możesz wydrukować i wykorzystać do samodzielnej refleksji.'},
+    {Icon:FileText,...knowledgeLinks[2],copy:'Przygotowanie do pierwszej wizyty i organizacja spotkań.'},
   ].map(({Icon,href,name,copy})=><li key={href}><Icon aria-hidden="true"/><div><h3><a href={href}>{name}</a></h3><p>{copy}</p></div></li>)}</ul>
   <section aria-labelledby="home-latest" className="home-latest">
     <h3 id="home-latest">Najnowsze artykuły z datą publikacji</h3>

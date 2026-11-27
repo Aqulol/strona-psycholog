@@ -1,4 +1,4 @@
-import { knowledgePath, knowledgeLinks, patientPath } from './knowledge';
+import { knowledgePath, knowledgeLinks } from './knowledge';
 import { categoryNames, offerPath, psychologyGroups, services, therapyKeys, type ServiceKey } from './services';
 import { paths } from './site';
 import { servicePaths } from './service-paths';
@@ -16,7 +16,7 @@ export const navigation = {
     { label:'Psychoterapeuta', href:servicePaths.therapist, items:menuItems(therapyKeys) },
   ] satisfies NavigationGroup[],
   knowledge: {label:'Baza wiedzy',href:knowledgePath,items:[...knowledgeLinks,
-    {href:patientPath,name:'Informacje dla pacjentów',guide:false}, {href:paths.faq,name:'Najczęstsze pytania',guide:false},
+    {href:paths.faq,name:'Najczęstsze pytania',guide:false},
   ]} satisfies NavigationGroup,
   contact:paths.contact,
   links: [
