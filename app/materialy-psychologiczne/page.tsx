@@ -18,5 +18,5 @@ export default function Page(){return <KnowledgePage path={path} title={title} d
   <p>To propozycje do namysłu, nie test ani zastępstwo diagnozy lub psychoterapii.</p>
   <nav aria-label="Materiały"><ul>{sheets.map(([id,name])=><li key={id}><a href={`#${id}`}>{name}</a></li>)}</ul></nav>
   {sheets.map(([id,name,items])=><section className="education-sheet" key={id} id={id}><h2>{name}</h2><ul>{items.map(item=><li key={item}>{item}</li>)}</ul><p>psychologplebaniak.pl</p></section>)}
-  <p><a href={paths.consult}>Jak przebiega konsultacja</a>{' · '}<a href={services.adhd.href}>Jak przebiega ocena ADHD</a>{' · '}<a href="/narzedzia-psychologiczne/">Kalkulator kosztów sesji</a></p>
+  <p><a href={paths.consult}>Jak przebiega konsultacja</a>{' · '}<a href={services.adhd.href}>Jak przebiega ocena ADHD</a></p>
 </KnowledgePage>}

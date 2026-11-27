@@ -84,7 +84,6 @@ export default function CennikPage() {
 
         <p className="mt-8"><a className="text-link" href="/kontakt/">Dane kontaktowe</a></p>
 
-        <p className="mt-4"><a href="/narzedzia-psychologiczne/">Oblicz orientacyjny koszt kilku sesji psychoterapii</a></p>
         <h2 className="mt-14 text-4xl text-green">Jak często odbywają się spotkania?</h2>
         <p className="mt-4 leading-8 text-ink/80">
           Zwykle spotykamy się raz lub dwa razy w tygodniu, o stałej porze. Częstotliwość
