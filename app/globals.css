@@ -108,9 +108,6 @@ body { background:#faf8f3;color:#243b34; }
 .hero-home h1 { max-width:12em;margin:.55rem 0 1.1rem;font-size:clamp(2.65rem,6vw,5.65rem);line-height:.98;color:#20483d;letter-spacing:-.035em; }
 .eyebrow { color:#385b50;text-transform:uppercase;letter-spacing:.16em;font-size:.71rem;font-weight:700; }
 .hero-copy { max-width:34rem;line-height:1.75;margin:.9rem 0 1.4rem; }
-.hero-photo { position:relative;margin:0; }
-.hero-photo img { width:100%;height:auto;aspect-ratio:1 / 1;object-fit:cover;border-radius:48% 48% .35rem .35rem; }
-.hero-photo figcaption { padding:.8rem 0 0;border-bottom:1px solid #b7c2b6;color:#37564a;font-size:.8rem;padding-bottom:.6rem; }
 .home-block { padding-block:clamp(2.7rem,6vw,5.3rem); }
 .home-block h2,.reading h2,.see-also h2 { font-size:clamp(1.95rem,3.5vw,3rem);line-height:1.1;color:#244e41;margin-bottom:.7rem; }
 .home-block p,.reading p { line-height:1.75; }
@@ -234,7 +231,7 @@ body { background:#faf8f3;color:#243b34; }
 .booking-contact-layout { align-items:start; }
 .topic-safety { margin-block:1.25rem; padding:.85rem 1rem; border-inline-start:3px solid #244e41; background:#f7f4ee; }
 .topic-booking-person { display:flex; align-items:center; gap:.8rem; margin-bottom:.8rem; }
-.topic-booking-person img { flex:none; border-radius:50%; object-fit:cover; }
+.topic-booking-person img { flex:none; width:64px; height:64px; border-radius:50%; object-fit:cover; }
 /* Switch to columns only with room for both readable text and a full-width widget. */
 @media (min-width:68rem) {
   .topic-page { width:min(100% - 2.5rem, 86rem); }

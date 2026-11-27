@@ -1,3 +1,4 @@
+import {responsiveSrcSet} from '../lib/responsive-images';
 import { empathyStudy } from '../lib/research';
 import GlossaryLink from './GlossaryLink';
 import { services } from '../lib/services';
@@ -24,7 +25,7 @@ export default function ServicePage({kind}:{kind:Exclude<keyof typeof paths, 'si
  </>;
  const [intro, sections] = contextLinks(paths[kind], prose.props.children) as [React.ReactNode, React.ReactNode];
  return <main id="tresc" className="reading practice-editorial" data-practice-page={kind}><Json data={webPage(paths[kind], page.h1, page.description, service?.name, service?.rate ?? undefined)}/><Crumbs path={paths[kind]} title={page.h1}/><p className="eyebrow">Gabinet psychologiczny · Wrocław i online</p><h1>{page.h1}</h1>{intro}
- {kind==='about'&&<img src="/images/portret.webp" width="1280" height="1280" loading="lazy" alt="Portret Grzegorza Plebaniaka"/>}
+ {kind==='about'&&<img className="practice-portrait" src="/images/portret.webp" srcSet={responsiveSrcSet('portret')} sizes="auto, (min-width: 640px) 576px, calc(100vw - 2 * clamp(16px, 4vw, 60px))" width="1280" height="1280" loading="lazy" alt="Portret Grzegorza Plebaniaka"/>}
  {kind==='youth' && <><YouthConsultationTopics/><p>Informacje o wymaganej zgodzie na spotkania, udziale rodziców lub opiekunów oraz granicach poufności wyjaśniam przed rozpoczęciem regularnej współpracy. Pierwszą <a href={paths.consult}>konsultację psychologiczną</a> można potraktować jako miejsce na pytania o dalsze kroki.</p></>}
  {kind==='method' && <p>W <a data-context-link href={services.individual.href}>psychoterapii indywidualnej</a> wykorzystuję <a data-context-link href={paths.tfp}>model skoncentrowany na przeniesieniu (TFP)</a> w ramach <GlossaryLink slug="psychoterapia-psychodynamiczna">nurtu psychodynamicznego</GlossaryLink>. To opis mojego sposobu pracy, nie osobna usługa do wyboru.</p>}
  {kind==='tfp' && <p>TFP wywodzi się z <GlossaryLink slug="relacje-z-obiektem">teorii relacji z obiektem</GlossaryLink> i należy do <a data-context-link href={paths.method}>nurtu psychodynamicznego</a>. Opis modelu nie jest deklaracją stosowania pełnego protokołu u każdej osoby.</p>}

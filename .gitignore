@@ -47,3 +47,6 @@ yarn-error.log*
 # Optional contact Worker: local secrets and runtime state.
 .dev.vars*
 .wrangler/
+
+# Hero and photograph audit screenshots (documentation, not site assets).
+!/docs/fotografie/porownanie/*.jpg
