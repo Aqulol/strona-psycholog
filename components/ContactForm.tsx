@@ -2,6 +2,7 @@
 
 import {useEffect, useId, useRef, useState, type FormEvent} from 'react';
 
+import {countConversion} from '../lib/conversions';
 import {contactEndpoint} from '../lib/contact-endpoint.mjs';
 
 // Public URL only. Mail credentials exist exclusively in the Worker.
@@ -47,6 +48,7 @@ export default function ContactForm() {
         }
         throw new Error('Delivery unconfirmed');
       }
+      countConversion('contact_submit_success');
       form.reset();
       setFeedback({kind:'success',text:'Dziękuję za wiadomość. Została przyjęta do wysyłki.'});
     } catch {

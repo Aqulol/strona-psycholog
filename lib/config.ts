@@ -16,7 +16,7 @@ export const config = {
   address,
   postal,
   bookingUrl: 'https://www.znanylekarz.pl/grzegorz-plebaniak/psycholog/wroclaw',
-  officeUrl: 'http://centrumrownowagi.com',
+  officeUrl: 'https://centrumrownowagi.com/',
   mapsUrl: `https://www.google.com/maps?q=${mapQuery}&output=embed`,
   mapsLink: `https://www.google.com/maps/search/?api=1&query=${mapQuery}`,
 
@@ -27,13 +27,6 @@ export const config = {
   // ===== Cennik - edytuj TU ręcznie (zgodnie z aktualnym cennikiem Booksy) =====
   prices: [consultationRate, therapyRate],
 
-  // ===== Analityka (GTM + GA4) =====
-  // GA4 jest ładowane bezpośrednio (gtag.js) po wyrażeniu zgody w banerze
-  // cookies - GTM NIE jest używane (pole celowo puste, aby nie było ryzyka
-  // podwójnego zliczania odsłon). Jeśli kiedyś włączysz GTM:
-  // Administracja → kontener → ID w formacie GTM-XXXXXXX i wpisz tutaj.
-  gtmId: '',
-  ga4Id: 'G-5YF0L6DJ1X',
 
 };
 

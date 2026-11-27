@@ -1,0 +1,24 @@
+name = "gabinet-statystyki"
+main = "index.mjs"
+compatibility_date = "2026-11-26"
+workers_dev = true
+preview_urls = false
+
+[observability]
+enabled = false
+
+[vars]
+SITE_ORIGIN = "https://psychologplebaniak.pl"
+
+[[ratelimits]]
+name = "INGEST_LIMIT"
+namespace_id = "41403"
+simple = { limit = 30, period = 60 }
+
+[[d1_databases]]
+binding = "COUNTS"
+database_name = "gabinet-statystyki"
+database_id = "WSTAW-ID-Z-WLASNEGO-KONTA"
+
+[triggers]
+crons = ["37 2 * * *"]

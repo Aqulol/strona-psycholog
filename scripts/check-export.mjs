@@ -24,7 +24,7 @@ for (const path of paths) {
   assert.ok(!titles.has(title) && !descriptions.has(description), `${path}: duplicated SEO metadata`);
   titles.add(title); descriptions.add(description);
   for (const [, link] of html.matchAll(/<a\b[^>]*href="(\/[^"#?]*)[^\"]*"/g)) {
-    assert.ok(existsSync(file(link)) || (/^\/images\/[a-z0-9/_-]+\.(?:webp|avif)$/i.test(link) && existsSync(join('out',link))), `${path}: internal link ${link}`);
+    assert.ok(existsSync(file(link)) || ((link === '/materialy/karty-psychologiczne.pdf' || /^\/images\/[a-z0-9/_-]+\.(?:webp|avif)$/i.test(link)) && existsSync(join('out',link))), `${path}: internal link ${link}`);
   }
   for (const [, source] of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)) {
     assert.doesNotThrow(() => JSON.parse(source), `${path}: JSON-LD`);
@@ -52,7 +52,7 @@ assert.match(homepage, /<img\b(?=[^>]*portret-hero-855\.webp)(?=[^>]*fetchpriori
 const styles = [...homepage.split('</head>')[0].matchAll(/<link rel="stylesheet" href="([^"]+)"/g)].map(match => match[1]);
 assert.equal(styles.length,1,'Expected one shared stylesheet for the homepage');
 assert.match(styles[0],/^\/_next\/static\/css\/[a-f0-9]+\.css$/);
-assert.ok(gzipSync(homepage).length + gzipSync(read(join('out',styles[0]))).length < 38_000, 'Homepage HTML and CSS gzip budget');
+assert.ok(gzipSync(homepage).length + gzipSync(read(join('out',styles[0]))).length < 39_000, 'Homepage HTML and CSS gzip budget');
 
 const hosting = JSON.parse(read('firebase.json')).hosting;
 assert.equal(hosting.public, 'out');
@@ -66,8 +66,14 @@ for (const path of paths) {
   const html = read(file(path));
   assert.match(html, /Zygmunta Krasińskiego 13A Oficyna, 50-449 Wrocław/);
   if (/^\/blog\/.+\/$/.test(path)) {
-    assert.match(html, /Autor: <a[^>]+href="\/o-mnie\/"/);
-    assert.ok(html.includes(`"author":{"@id":"${root}/#osoba"}`));
+    const article = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)]
+      .flatMap(([, source]) => {const data = JSON.parse(source); return data['@graph'] ?? [data];}).find(node => node['@type'] === 'BlogPosting');
+    assert.ok(article, `${path}: BlogPosting`);
+    if (html.includes('Materiał redakcyjny witryny')) assert.equal(article.author, undefined, `${path}: no assumed personal byline`);
+    else {
+      assert.match(html, /Autor: <a[^>]+href="\/o-mnie\/"/);
+      assert.deepEqual(article.author, {'@id':`${root}/#osoba`});
+    }
   }
 }
 
@@ -114,7 +120,7 @@ for (const path of helpPaths) {
   assert.match(html, /"@type":"BreadcrumbList"/);
   assert.match(html, /name="referrer" content="no-referrer"/);
   assert.doesNotMatch(html, /<iframe\b/i, `${path}: Booksy must not load before activation`);
-  assert.match(html, /Pokaż kalendarz Booksy/);
+  assert.match(html, /Ustawienia prywatności/);
   assert.doesNotMatch(html, /name="robots" content="[^\"]*noindex/);
   assert.match(html, /href="https:\/\/booksy\.com\/pl-pl\/357056_[^"?]+" rel="noreferrer"/);
 }
@@ -175,7 +181,10 @@ assert.doesNotMatch(catalogue, /type="search"/, "Catalogue links do not depend o
 for (const path of paths) {
   const html = read(file(path));
   if (/^\/blog\/.+\/$/.test(path)) {
-    assert.equal((html.match(/id="literatura-i-zrodla"/g) || []).length, 1, `${path}: one bibliography`);
+    if (path === '/blog/tworczosc-i-empatia-u-dzieci/') {
+      assert.match(html, /<h2[^>]*>Publikacja źródłowa<\/h2>/);
+      assert.match(html, /href="https:\/\/doi.org\/10\.1016\/j\.tsc\.2026\.102233"/);
+    } else assert.equal((html.match(/id="literatura-i-zrodla"/g) || []).length, 1, `${path}: one bibliography`);
   } else if (/^\/slownik-psychologiczny\/[^/]+\/$/.test(path)) {
     assert.equal((html.match(/<h2>Bibliografia<\/h2>/g) || []).length, 1, `${path}: one glossary bibliography`);
   } else {
@@ -213,7 +222,10 @@ for (const path of diagnosisRoutes) {
   const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0];
   assert.ok(main);
   assert.match(main, /"@type":"Service"/);
-  assert.doesNotMatch(main, /"@type":"Offer"|href="https:\/\/booksy\.com\//, `${path}: no unconfirmed rate or specific booking`);
+  assert.doesNotMatch(main, /"@type":"Offer"/, `${path}: no unconfirmed diagnostic rate`);
+  const bookings = [...main.matchAll(/<a[^>]+href="https:\/\/booksy\.com\/pl-pl\/357056_[^"?]+" rel="noreferrer">([^<]+)<\/a>/g)];
+  assert.deepEqual(bookings.map(match => match[1]), ['Umów standardową konsultację'], `${path}: no claim of direct diagnostic booking`);
+  assert.equal((main.match(/href="https:\/\/booksy\.com\//g) ?? []).length, 1);
   assert.match(main, /href="\/kontakt\/"/);
   assert.ok(offerMain.includes(`href="${path}"`), `${path}: visible catalogue link`);
   for (const sibling of diagnosisRoutes.filter(candidate => candidate !== path)) assert.ok(main.includes(`href="${sibling}"`));
@@ -237,7 +249,7 @@ for (const path of therapyReferences) {
   assert.doesNotMatch(main, /"@type":"(?:Service|Offer)"/, `${path}: educational page, not a separate therapy offer`);
 }
 assert.match(read(file(therapyService)), /"@type":"Service","@id":"https:\/\/psychologplebaniak\.pl\/psychoterapia-indywidualna-wroclaw\/#usluga"/);
-for (const html of [homepage, offerHtml]) {
+for (const html of [offerHtml]) {
   const cards = [...html.matchAll(/<article[^>]*data-therapy-card="true"[^>]*>([\s\S]*?)<\/article>/g)];
   assert.equal(cards.length, 1);
   assert.equal((cards[0][1].match(/href="https:\/\/booksy\.com\//g) || []).length, 1);

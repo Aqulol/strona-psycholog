@@ -12,12 +12,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "headers": [
-      {
-        "source": "/materialy/karty-psychologiczne.pdf",
-        "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
-      }
-    ],
     "redirects": [
       {
         "source": "/blog/artykul-1",
@@ -185,8 +179,23 @@
         "type": 301
       },
       {
+        "source": "/blog/adhd-a-borderline-u-doroslych.html",
+        "destination": "/blog/adhd-a-borderline-u-doroslych/",
+        "type": 301
+      },
+      {
         "source": "/blog/adhd-u-doroslych.html",
         "destination": "/blog/adhd-u-doroslych/",
+        "type": 301
+      },
+      {
+        "source": "/blog/cechy-borderline-a-zaburzenie-osobowosci.html",
+        "destination": "/blog/cechy-borderline-a-zaburzenie-osobowosci/",
+        "type": 301
+      },
+      {
+        "source": "/blog/czy-mozna-zloscic-sie-na-psychoterapeute.html",
+        "destination": "/blog/czy-mozna-zloscic-sie-na-psychoterapeute/",
         "type": 301
       },
       {
@@ -207,6 +216,16 @@
       {
         "source": "/blog.html",
         "destination": "/blog/",
+        "type": 301
+      },
+      {
+        "source": "/blog/jak-przygotowac-sie-do-diagnozy-adhd.html",
+        "destination": "/blog/jak-przygotowac-sie-do-diagnozy-adhd/",
+        "type": 301
+      },
+      {
+        "source": "/blog/jak-rozpoznac-postepy-w-psychoterapii.html",
+        "destination": "/blog/jak-rozpoznac-postepy-w-psychoterapii/",
         "type": 301
       },
       {
@@ -1147,6 +1166,15 @@
     ],
     "headers": [
       {
+        "source": "/materialy/karty-psychologiczne.pdf",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex"
+          }
+        ]
+      },
+      {
         "source": "**",
         "headers": [
           {
@@ -1155,7 +1183,7 @@
           },
           {
             "key": "Referrer-Policy",
-            "value": "strict-origin-when-cross-origin"
+            "value": "no-referrer"
           },
           {
             "key": "X-Frame-Options",
@@ -1167,7 +1195,7 @@
           },
           {
             "key": "Content-Security-Policy",
-            "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com https://booksy.com https://*.booksy.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+            "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com https://booksy.com https://*.booksy.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
           },
           {
             "key": "Cache-Control",

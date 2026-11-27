@@ -1,3 +1,4 @@
+import {conversionEndpoint} from '../../lib/contact-endpoint.mjs';
 import {config} from '../../lib/config';
 import {Crumbs,SeeAlso} from '../../components/Site';
 import {meta,paths} from '../../lib/site';
@@ -149,9 +150,15 @@ export default function Page() {
       </p>
 
       <h2 id="cookies" className="mt-8 text-3xl">Cookies</h2>
-      <p className="mt-3 leading-8">Strona nie uruchamia analityki ani narzędzi marketingowych. Osadzony kalendarz jest opcjonalny. Po akceptacji opcjonalnych treści w globalnych ustawieniach prywatności kalendarz ładuje się automatycznie, bez dodatkowego przycisku pod ramką, gdy użytkownik zbliży się do sekcji rezerwacji. Bez tej zgody witryna nie wczytuje ramki Booksy. Wybór jest zapisywany w pamięci lokalnej przeglądarki i stosowany we wszystkich sekcjach z kalendarzem tej witryny. Można go zmienić lub wycofać na dowolnej podstronie przez „Ustawienia prywatności” w stopce.</p>
+      <p className="mt-3 leading-8">{conversionEndpoint(process.env.NEXT_PUBLIC_CONVERSION_ENDPOINT) ? 'Strona nie uruchamia narzędzi marketingowych. Pomiar skuteczności jest domyślnie wyłączony.' : 'Strona nie uruchamia analityki ani narzędzi marketingowych.'} Osadzony kalendarz jest opcjonalny. Po akceptacji opcjonalnych treści w globalnych ustawieniach prywatności kalendarz ładuje się automatycznie, bez dodatkowego przycisku pod ramką, gdy użytkownik zbliży się do sekcji rezerwacji. Bez tej zgody witryna nie wczytuje ramki Booksy. Wybór jest zapisywany w pamięci lokalnej przeglądarki i stosowany we wszystkich sekcjach z kalendarzem tej witryny. Można go zmienić lub wycofać na dowolnej podstronie przez „Ustawienia prywatności” w stopce.</p>
       <p className="mt-3 leading-8">Po wczytaniu kalendarza Booksy otrzymuje dane połączenia, np. adres IP. Witryna nie przekazuje adresu podstrony w nagłówku odsyłającym przy wczytaniu ramki ani przy przejściu przez bezpośredni link do Booksy. Samo połączenie nadal ujawnia dostawcy dane techniczne. W ramce mogą działać skrypty i pliki cookies dostawcy zgodnie z <a href="https://booksy.com/pl-pl/p/privacy" rel="noreferrer">polityką prywatności Booksy</a>. Wycofanie zgody usuwa ramkę, ale nie usuwa danych już otrzymanych przez Booksy ani jego plików cookies. Można rezerwować bezpośrednio w serwisie Booksy, zadzwonić lub napisać.</p>
       <p className="mt-3 leading-8">Mapa Google ładuje się dopiero po wybraniu opcji jej wyświetlenia. Przy wczytaniu mapy dostawca otrzymuje dane połączenia i może używać własnych plików cookies. Ustawienia cookies można zmienić w przeglądarce.</p>
+
+      {conversionEndpoint(process.env.NEXT_PUBLIC_CONVERSION_ENDPOINT) && <>
+        <h2 id="pomiar-skutecznosci" className="mt-8 text-3xl">Opcjonalny pomiar skuteczności</h2>
+        <p className="mt-3 leading-8">Na podstawie osobnej zgody zliczamy kliknięcia w link do Booksy, telefon, e-mail i cennik oraz potwierdzenia przyjęcia formularza do wysyłki. Nie mierzymy rozpoczęcia ani zakończenia rezerwacji. Do Cloudflare przesyłamy wyłącznie nazwę działania, bez treści formularza, adresu odwiedzanej podstrony ani identyfikatora. Cloudflare otrzymuje techniczne dane połączenia, w tym IP, i może je przetwarzać poza EOG. Aplikacja nie zapisuje tych danych do licznika.</p>
+        <p className="mt-3 leading-8">W bazie pozostaje licznik dzienny według rodzaju działania, bez historii poszczególnych osób. Liczniki w aktywnej bazie przechowujemy przez 90 dni; kopie techniczne dostawcy mogą wygasać później. Ustawienie zgody jest zapisywane w pamięci lokalnej. Można je zmienić w stopce w „Ustawieniach prywatności”. Wycofanie nie wpływa na wcześniejszy pomiar i nie usuwa sum, których nie można przypisać do osoby. Brak zgody nie ogranicza dostępu do strony, formularza ani rezerwacji.</p>
+      </>}
 
       <h2 className="mt-8 text-3xl">Przekazywanie danych poza EOG</h2>
       <p className="mt-3 leading-8">

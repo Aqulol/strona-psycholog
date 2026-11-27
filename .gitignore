@@ -57,3 +57,8 @@ yarn-error.log*
 !/docs/usuniecie-narzedzi/*.jpg
 
 !/docs/booksy-ux/*.jpg
+
+# Environment and Worker instance configuration (examples may be tracked).
+.env.*
+!.env.example
+/analytics-worker/wrangler.toml
