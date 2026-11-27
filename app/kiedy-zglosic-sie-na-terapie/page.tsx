@@ -18,6 +18,7 @@ export default function Page() {
       <h1>W czym mogę pomóc?</h1>
       <p>Prowadzę konsultacje psychologiczne i psychoterapię indywidualną w nurcie psychodynamicznym dla dorosłych oraz młodzieży od 15. roku życia. <strong>Nie trzeba mieć diagnozy</strong>, żeby zgłosić się na konsultację.</p>
     </div>
+    <section className="help-width diagnostic-note"><h2>Uwaga, emocje i bezpieczeństwo</h2><p>Trudności z koncentracją, planowaniem lub odkładaniem zadań nie muszą oznaczać ADHD. O <a data-context-link href="/blog/adhd-u-doroslych/">uwadze i codziennym funkcjonowaniu z ADHD</a> można przeczytać na blogu. <a href="/pomoc-w-kryzysie/">Pilna pomoc w kryzysie</a> ma osobną stronę z numerami wsparcia.</p></section>
     <HelpTopicIndex scope={<div className="help-scope-copy">{page.sections[1].slice(1).map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>}/>
     <div className="help-width help-related"><SeeAlso links={page.related}/></div>
     <section className="help-cta help-width" aria-labelledby="help-cta-heading">

@@ -1,11 +1,11 @@
 import HelpTopicIcon, { type IconName } from './HelpTopicIcon';
 
-export type HelpLink = { href: string; label: string; icon: IconName };
+export type HelpLink = { href: string; label: string; icon: IconName; aliases?:string };
 export type HelpCategory = { title: string; icon: IconName; tone: string; topics: HelpLink[] };
 
 export function HelpLinks({ topics }: { topics: HelpLink[] }) {
   return <ul className="help-links" role="list">
-    {topics.map(({ href, label, icon }) => <li key={href}>
+    {topics.map(({ href, label, icon, aliases }) => <li key={href} data-filter-row="" data-alias={aliases}>
       <a href={href}><HelpTopicIcon name={icon}/><span>{label}</span><HelpTopicIcon name="ChevronRight" size={15}/></a>
     </li>)}
   </ul>;
@@ -17,7 +17,7 @@ export function HelpBadge({ icon, tone }: Pick<HelpCategory, 'icon' | 'tone'>) {
 
 export default function HelpCategoryCard({ category }: { category: HelpCategory }) {
   const { title, topics } = category;
-  return <div className="help-category">
+  return <div className="help-category" data-filter-group={title}>
     <div className="help-category-heading"><HelpBadge {...category}/><h3>{title}</h3></div>
     <HelpLinks topics={topics.slice(0, 4)}/>
     {topics.length > 4 && <details className="help-more">

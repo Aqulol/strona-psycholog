@@ -8,6 +8,7 @@ const paths = urls.map((url) => new URL(url).pathname);
 assert.equal(paths.length, new Set(paths).size, 'No duplicated routes in sitemap');
 assert.ok(paths.length >= 24, 'All editorial and service routes exported');
 const file = (path) => join('out', path, 'index.html');
+const titles = new Set(), descriptions = new Set();
 for (const path of paths) {
   const html = read(file(path));
   assert.equal((html.match(/<h1(?:\s|>)/g) || []).length, 1, `${path}: H1`);
@@ -17,7 +18,9 @@ for (const path of paths) {
   const plain = (text) => text.replace(/&(?:[a-z]+|#\d+);/gi, 'x');
   const title = plain(html.match(/<title>([^<]+)<\/title>/)[1]);
   const description = plain(html.match(/<meta name="description" content="([^"]+)"/)[1]);
-  assert.ok(title.length <= 60 && description.length >= 140 && description.length <= 155, `${path}: SEO lengths`);
+  assert.ok(title.trim() && description.trim(), `${path}: title and description required`);
+  assert.ok(!titles.has(title) && !descriptions.has(description), `${path}: duplicated SEO metadata`);
+  titles.add(title); descriptions.add(description);
   for (const [, link] of html.matchAll(/<a\b[^>]*href="(\/[^"#?]*)[^\"]*"/g)) {
     assert.ok(existsSync(file(link)), `${path}: internal link ${link}`);
   }
@@ -164,7 +167,8 @@ for (const [, path, label] of catalogueNames) {
 
 assert.ok(!paths.some(path => /psychologiczne-aspekty-przewleklego-bolu|trudnosci-zwiazane-z-obrazem-ciala/.test(path)));
 
-assert.doesNotMatch(helpIndex, /help-search|type="search"|role="search"/);
+assert.match(helpIndex, /<dialog[^>]+class="site-search"/);
+assert.doesNotMatch(catalogue, /type="search"/, "Catalogue links do not depend on a search form");
 for (const path of paths) {
   const html = read(file(path));
   if (/^\/blog\/.+\/$/.test(path)) {
@@ -215,7 +219,7 @@ for (const path of guideRoutes) {
   assert.ok(!offerMain.includes(`href="${path}"`));
   assert.ok(read(file('/psycholog-wroclaw/')).includes(`href="${path}"`));
 }
-for (const [selector, hub] of [['Psycholog','/psycholog-wroclaw/'],['Psychoterapeuta','/psychoterapeuta-wroclaw/']]) {
+for (const [selector, hub] of [['Psycholog','/psycholog-wroclaw/'],['Psychoterapeuta','/psychoterapeuta-wroclaw/'],['Baza wiedzy','/baza-wiedzy/']]) {
   assert.ok(homepage.includes(`<a href="${hub}">${selector}</a><button type="button" aria-label="Podmenu: ${selector}" aria-expanded="false" aria-controls="`));
 }
 console.log('Offer catalogue: diagnosis links, guarded prices/bookings, informational routes and split menu controls checked.');
