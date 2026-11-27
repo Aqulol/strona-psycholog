@@ -1,6 +1,9 @@
+import type { ReactNode } from 'react';
 import { BookOpen, Brain, BrainCircuit, Compass, FileChartColumn, FileSearch, Fingerprint, HeartHandshake, MessagesSquare, Monitor, Network, Route, ScanSearch, Sprout, UserRound, UsersRound, Video, Workflow } from 'lucide-react';
 import { paths } from '../lib/site';
 import { config } from '../lib/config';
+import { guidePath } from '../lib/knowledge';
+import { Booking } from './Site';
 import { categoryNames, categoryServices, offerPath, services, type Category, type ServiceKey } from '../lib/services';
 
 const icons = {
@@ -56,17 +59,69 @@ export function OfferGroups({categories, compact = false}: {categories:readonly 
     </section>;
   })}</>;
 }
+function ServiceLink({ service, children }: {service:ServiceKey; children?:ReactNode}) {
+  return <a href={services[service].href}>{children ?? services[service].name}</a>;
+}
+
 const homeGroups = [
-  {category:'support', link:services.consult.href, keys:['consult','onlineConsult'], text:'Pierwsza rozmowa o tym, co jest teraz trudne. Można spotkać się w gabinecie lub online.'},
-  {category:'diagnosis', link:`${offerPath}#oferta-diagnosis`, keys:['general','personality','adhd'], text:'Pogłębiona ocena objawów i funkcjonowania, nie tylko wykonanie testu.'},
-  {category:'education', link:services.edu.href, keys:['edu','eduAdhd'], text:'Indywidualne spotkania poświęcone rozumieniu własnych reakcji i sposobów funkcjonowania.'},
-] as const;
+  {
+    category: 'support',
+    title: categoryNames.support,
+    description: 'Wsparcie w trudnościach emocjonalnych, problemach w relacjach, kryzysach życiowych oraz sytuacjach wymagających lepszego zrozumienia siebie.',
+    items: [<ServiceLink service="consult">Konsultacje psychologiczne</ServiceLink>, <ServiceLink service="counselling"/>, <ServiceLink service="crisis"/>],
+    rate: services.consult.rate,
+    rateLabel: 'Konsultacja',
+    details: [`${offerPath}#oferta-support`, 'Więcej o pomocy psychologicznej'],
+  },
+  {
+    category: 'diagnosis',
+    title: categoryNames.diagnosis,
+    description: 'Pogłębiona ocena funkcjonowania psychicznego, emocjonalnego i interpersonalnego, służąca rozpoznawaniu charakteru i możliwych przyczyn doświadczanych trudności.',
+    items: [<ServiceLink service="general"/>, <ServiceLink service="personality"/>, <ServiceLink service="adhd"/>],
+    details: [`${offerPath}#oferta-diagnosis`, 'Więcej o diagnostyce'],
+  },
+  {
+    category: 'education',
+    title: categoryNames.education,
+    description: 'Indywidualne spotkania poświęcone lepszemu rozumieniu własnego funkcjonowania psychicznego, emocji, potrzeb i powtarzających się sposobów reagowania.',
+    items: [<ServiceLink service="eduAdhd"/>, 'Rozumienie emocji i własnych reakcji', 'Rozumienie wzorców funkcjonowania w relacjach'],
+    details: [services.edu.href, 'Więcej o psychoedukacji'],
+  },
+  {
+    category: 'therapy',
+    title: services.individual.name,
+    description: <>Psychoterapia indywidualna w <ServiceLink service="method">nurcie psychodynamicznym</ServiceLink> z wykorzystaniem <ServiceLink service="tfp">podejścia skoncentrowanego na przeniesieniu (TFP)</ServiceLink>. Praca nad emocjami, relacjami, obrazem siebie i powtarzającymi się trudnościami.</>,
+    items: [<a href={paths.adults}>Psychoterapia dorosłych</a>, <a href={paths.youth}>Psychoterapia młodzieży od 15. roku życia</a>, <ServiceLink service="onlineTherapy"/>],
+    rate: services.individual.rate,
+    rateLabel: 'Sesja',
+    details: [services.individual.href, 'Więcej o psychoterapii indywidualnej'],
+  },
+] satisfies readonly {
+  category: Exclude<Category, 'online'>;
+  title: string;
+  description: ReactNode;
+  items: readonly [ReactNode, ReactNode, ReactNode];
+  rate?: (typeof services.consult)['rate'];
+  rateLabel?: string;
+  details: readonly [string, string];
+}[];
+
 export function HomeServiceCards() {
-  return <><div className="offer-overview">{homeGroups.map(({category,link,keys,text}) => {
-    const Icon = groupIcons[category];
-    return <section className="editorial-card service-directory-card" data-service-area={category} key={category}>
-      <span className="service-icon"><Icon size={24} aria-hidden="true"/></span><h3><a href={link}>{categoryNames[category]}</a></h3><p>{text}</p>
-      <ul>{keys.filter(key => services[key].href !== link).map(key => <li key={key}><a href={services[key].href}>{services[key].name}</a></li>)}</ul>
-    </section>;
-  })}<TherapyCard/></div><p className="offer-home-cta"><a className="booking" href={offerPath}>Zobacz całą ofertę <span aria-hidden="true">↗</span></a></p></>;
+  return <>
+    <div className="offer-overview">{homeGroups.map(({category, title, description, items, rate, rateLabel, details: [href, label]}) => {
+      const Icon = groupIcons[category];
+      return <article className="home-offer-card" data-service-area={category} key={category}>
+        <div className="home-offer-heading"><span className="service-icon"><Icon size={22} strokeWidth={1.6} aria-hidden="true"/></span><h3>{title}</h3></div>
+        <p>{description}</p>
+        <ul>{items.map((item, index) => <li key={index}>{item}</li>)}</ul>
+        {rate && <p className="offer-meta">{rateLabel}: {rate.price} zł / {rate.duration}</p>}
+        <p className="home-offer-details"><a href={href}>{label}</a></p>
+      </article>;
+    })}</div>
+    <div className="offer-home-cta">
+      <Booking/>{' '}
+      <a className="button-secondary" href={offerPath}>Zobacz pełną ofertę</a>{' '}
+      <a className="text-link" href={guidePath}>Nie wiem, jakiej pomocy potrzebuję</a>
+    </div>
+  </>;
 }

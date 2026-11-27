@@ -63,21 +63,19 @@ body{background:var(--paper);color:var(--ink)}
 .editorial-label{padding-block-start:.3rem;color:var(--pine);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em}
 @media(min-width:900px){.editorial-heading{grid-template-columns:11rem 1fr;align-items:start;border-top:1px solid var(--strong-rule);padding-top:1.1rem}}
 .home-block h2,.reading h2{color:var(--deep);font-size:var(--heading);letter-spacing:-.035em}
-.offer-overview{grid-template-columns:minmax(0,1fr);gap:.7rem}
-.offer-overview .service-directory-card{background:var(--surface);border-radius:var(--edge);min-width:0;padding:clamp(1.15rem,3vw,2.3rem)}
-.offer-overview [data-service-area=diagnosis]{background:var(--sage);border-color:var(--sage)}
-.offer-overview [data-service-area=education]{background:var(--sand);border-color:var(--sand)}
-.offer-overview [data-therapy-card]{background:var(--deep);color:var(--surface);border-color:var(--deep)}
-.offer-overview [data-therapy-card] :is(h3,.offer-meta,a,.service-icon){color:var(--surface)}
-.offer-overview [data-therapy-card] .service-icon{background:transparent;border-color:var(--strong-rule)}
-.offer-overview [data-therapy-card] .booking{background:var(--surface);color:var(--deep)}
-.offer-overview [data-therapy-card] .booking:hover{background:var(--sage)}
-.offer-overview [data-therapy-card] :focus-visible{outline-color:var(--gold)}
-.offer-overview .service-directory-card h3{font-size:clamp(1.45rem,2.7vw,2.35rem)}
-.offer-overview .service-directory-card ul{margin-top:1rem}
-.offer-home-cta .booking{background:transparent;color:var(--deep);border-color:var(--strong-rule)}
-.offer-home-cta .booking:hover{background:var(--sage)}
-@media(min-width:900px){.offer-overview{grid-template-columns:repeat(5,minmax(0,1fr))}.offer-overview [data-service-area=support],.offer-overview [data-service-area=education]{grid-column:span 2}.offer-overview [data-service-area=diagnosis],.offer-overview [data-therapy-card]{grid-column:span 3}}
+.offer-overview{grid-template-columns:minmax(0,1fr);gap:clamp(.8rem,2vw,1.4rem)}
+.home-offer-card{display:flex;flex-direction:column;align-items:stretch;gap:.7rem;min-width:0;padding:clamp(1rem,2.2vw,1.8rem);border:1px solid var(--rule);border-radius:var(--edge);background:var(--surface);text-align:start}
+.home-offer-card[data-service-area=therapy]{background:var(--sage);border-color:var(--strong-rule)}
+.home-offer-heading{display:flex;align-items:center;gap:.75rem;color:var(--deep)}
+.home-offer-heading .service-icon{flex:none}
+.home-offer-heading h3{min-width:0;font-size:clamp(1.3rem,2.1vw,1.85rem);line-height:1.15}
+.home-offer-card ul{list-style:disc;padding-inline-start:1.2rem}
+.home-offer-card li+li{margin-block-start:.25rem}
+.home-offer-card li::marker{color:var(--pine)}
+.home-offer-details{margin-top:auto;padding-top:.3rem}
+.offer-home-cta{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem 1rem}
+.offer-home-cta .text-link{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+@media(min-width:48rem){.offer-overview{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .support-list{border-color:var(--rule)}
 .support-list > li{display:grid;grid-template-columns:1.8rem minmax(0,1fr);gap:.9rem;border-color:var(--rule);padding:1.2rem 0}
 .support-list svg{color:var(--pine);margin-top:.1rem}
@@ -275,7 +273,7 @@ main.container.article-editorial {padding-inline:var(--gutter);}
 :where(.article-sources,.knowledge-page section:has(+nav[aria-label="Sąsiednie hasła"])) li a[href] {
  font-weight:500;
 }
-:where(.site-footer,.help-cta,.offer-overview [data-therapy-card]) {
+:where(.site-footer,.help-cta) {
  --link-color:var(--surface);
  --link-hover:#f1dfb6;
 }
