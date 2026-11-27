@@ -1,5 +1,8 @@
 import path from "path";
 import type { NextConfig } from "next";
+import { PHASE_PRODUCTION_BUILD } from 'next/constants';
+import firebase from './firebase.json';
+import {validateContactHosting} from './lib/contact-endpoint.mjs';
 
 /**
  * Konfiguracja Next.js 15 - eksport statyczny (output: "export").
@@ -23,4 +26,7 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ['*.e2b.app'],
 };
 
-export default nextConfig;
+export default function configForPhase(phase: string) {
+  if (phase === PHASE_PRODUCTION_BUILD) validateContactHosting(process.env.NEXT_PUBLIC_CONTACT_ENDPOINT, firebase.hosting);
+  return nextConfig;
+}

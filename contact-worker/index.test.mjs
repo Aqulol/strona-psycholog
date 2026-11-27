@@ -31,7 +31,7 @@ test('CORS allows only POST preflight from the configured site', async()=>{
 
 test('server validates fields, phone and reply address and bounds streamed input', async()=>{
   const mustNotSend = {...env,SEND_BUDGET:{limit:async()=>assert.fail('invalid submission reached send budget')}};
-  for (const patch of [{email:'bad'}, {email:'a,b@example.test'}, {website:'robot'}, {phone:'abc12345678'}, {subject:'Subject\nOther'}, {message:'short'}, {unexpected:true}]) {
+  for (const patch of [{email:'bad'}, {email:'a,b@example.test'}, {website:'robot'}, {email:'test@example.test\r\n'}, {message:'x'.repeat(1001)}, {phone:'abc12345678'}, {subject:'Subject\nOther'}, {message:'short'}, {unexpected:true}]) {
     await rejected(request(JSON.stringify({...payload,...patch})),mustNotSend,400);
   }
   await rejected(request('x'.repeat(8193)),mustNotSend,413);
@@ -62,4 +62,30 @@ test('mail API refusal, quota exhaustion and malformed receipts never report suc
     assert.equal(mock.mock.callCount(),1);
     mock.mock.restore();
   }
+});
+
+test('only a provider acceptance receipt yields success; outbound mail is fixed and text-only', async(t)=>{
+  const unique = {...payload,subject:'Temat testowy',phone:'+48 500 000 000',message:'Syntetyczna wiadomość\nDrugi wiersz.'};
+  const mock = t.mock.method(globalThis,'fetch',async(url, options)=>{
+    assert.equal(url,'https://api.resend.com/emails');
+    assert.equal(options.redirect,'error');
+    assert.deepEqual(JSON.parse(options.body),{
+      from:env.MAIL_FROM,to:[env.MAIL_TO],reply_to:unique.email,
+      subject:'Wiadomość z formularza gabinetu',
+      text:`Imię: ${unique.name}\nE-mail: ${unique.email}\nTelefon: ${unique.phone}\nTemat: ${unique.subject}\n\n${unique.message}`,
+    });
+    return Response.json({id:'synthetic-provider-receipt'},{status:200});
+  });
+  const res = await worker.fetch(request(JSON.stringify(unique)),env);
+  assert.equal(mock.mock.callCount(),1);
+  assert.equal(res.status,200);
+  assert.equal(res.headers.get('Access-Control-Allow-Origin'),origin);
+  assert.deepEqual(await res.json(),{status:'accepted'});
+});
+
+test('network failure and non-JSON provider response cannot confirm acceptance', async(t)=>{
+  const mock = t.mock.method(globalThis,'fetch',async()=>{throw new Error('Fake network failure');});
+  await rejected(request(),env,503);
+  mock.mock.mockImplementation(async()=>new Response('not a receipt'));
+  await rejected(request(),env,503);
 });
