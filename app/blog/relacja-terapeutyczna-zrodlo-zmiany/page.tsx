@@ -1,3 +1,4 @@
+import {standalonePublication} from '../../../lib/blog-publication';
 import {withArticleContents} from '../../../components/ArticleContents';
 import { contextLinks } from '../../../lib/context-links';
 import { body } from './content';
@@ -9,11 +10,10 @@ import {meta} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 
-const description =
-  'Co dzieje się w relacji z psychoterapeutą? O tym, jak podczas spotkań można dostrzec powracające wzorce, emocje i oczekiwania wobec innych osób.';
+const {description, published: publication} = standalonePublication['relacja-terapeutyczna-zrodlo-zmiany'];
 
 const seo=meta('/blog/relacja-terapeutyczna-zrodlo-zmiany/','Relacja terapeutyczna jako źródło zmiany',description,true);
-export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:'2026-08-11'}};
+export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:publication}};
 
 const faq: [string, string][] = [
   [
@@ -34,7 +34,7 @@ const ld = articleJsonLd({
   headline: 'Relacja terapeutyczna jako źródło zmiany',
   description,
   slug: 'relacja-terapeutyczna-zrodlo-zmiany',
-  datePublished: '2026-08-11',
+  datePublished: publication,
   image: 'https://psychologplebaniak.pl/og-image.png',
   faq,
 });

@@ -224,8 +224,6 @@ body { background:#faf8f3;color:#243b34; }
 .privacy-preferences h2 { font-size:1.35rem; }
 .site-footer .privacy-preferences a[href] { color:var(--pine); }
 .privacy-preferences-actions { display:flex; flex-wrap:wrap; gap:.5rem; }
-.booksy-status:empty { display:none; }
-.booksy-status { font-size:.875rem; }
 .booksy-slot { min-inline-size:0; height:clamp(38rem, 85svh, 49rem); background:var(--surface); border:1px solid var(--rule); border-radius:var(--edge); }
 .booksy-slot iframe { display:block; width:100%; height:100%; border:0; }
 .booking-contact-layout { align-items:start; }
@@ -335,3 +333,8 @@ p > .reading-time:not(:first-child) { margin-inline-start:.7rem; }
 .office-lightbox {margin:auto;padding:1rem;border:1px solid #2d5a4e;border-radius:.5rem;background:#faf8f3;color:#203d34;max-width:calc(100vw - 1.5rem);max-height:calc(100dvh - 1.5rem);}
 .office-lightbox::backdrop {background:#10241ddd;}
 .office-lightbox img {display:block;margin:.6rem auto 0;width:auto;height:auto;max-height:calc(100dvh - 7.5rem);object-fit:contain;}
+
+.booksy-slot{position:relative;isolation:isolate}
+.booksy-slot iframe{position:relative;background:var(--surface)}
+.booksy-slot:has(.booksy-loading) iframe{background:transparent}
+.booksy-loading{position:absolute;inset:auto .75rem .6rem;margin:0;padding:.55rem .75rem;border-radius:var(--edge);background:var(--surface);color:var(--muted);font-size:.86rem;z-index:1;pointer-events:none}

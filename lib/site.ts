@@ -8,7 +8,7 @@ export const faq = [
  ['Ile trwa i kosztuje spotkanie?', visitRatesText],
  ['Czy mogę spotkać się online?', 'Tak, przyjmuję online oraz stacjonarnie we Wrocławiu.'],
  ['Czy rodzic uczestniczy w pierwszym spotkaniu?', 'Na pierwsze spotkanie z osobą niepełnoletnią zapraszam rodzica lub rodziców. Dalsze zasady ustalamy indywidualnie.'],
- ['Ile jest spotkań konsultacyjnych?', 'Zazwyczaj są to cztery spotkania. Pomagają nam wspólnie zdecydować, czy rozpocząć psychoterapię.'],
+ ['Ile konsultacji poprzedza rozpoczęcie psychoterapii?', 'Zazwyczaj cztery. Pomagają nam wspólnie zdecydować, czy rozpocząć psychoterapię. Nie jest to wymagana liczba spotkań przy każdej formie pomocy.'],
  ['Jak często odbywa się terapia?', 'Spotkania odbywają się raz lub dwa razy w tygodniu. W opisie klasycznego modelu TFP typowy rytm to dwie sesje tygodniowo. Częstotliwość dobieramy indywidualnie.'],
  ['Czy z góry ustalamy koniec terapii?', 'Nie określam z góry liczby sesji. Proponuję psychoterapię długoterminową, a jej przebieg jest indywidualny.'],
  ['Co zrobić, jeśli w Booksy nie ma terminów?', 'Zapraszam do kontaktu telefonicznego lub mailowego.'],

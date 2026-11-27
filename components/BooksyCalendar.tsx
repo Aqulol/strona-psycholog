@@ -7,7 +7,7 @@ import { useBooksyConsent } from './PrivacyPreferences';
 function CalendarFrame() {
   const slot = useRef<HTMLDivElement>(null);
   const [near, setNear] = useState(false);
-  const [status, setStatus] = useState<'loading' | 'loaded' | 'slow'>('loading');
+  const [status, setStatus] = useState<'loading' | 'loaded' | 'slow' | 'failed'>('loading');
 
   useEffect(() => {
     if (!slot.current || !('IntersectionObserver' in window)) {
@@ -31,18 +31,19 @@ function CalendarFrame() {
 
   return <>
     <div className="booksy-slot" ref={slot}>
-      {near && <iframe
+      {status !== 'loaded' && <p className="booksy-loading" role="status">{status === 'slow' || status === 'failed'
+        ? 'Nie widać terminów? Skorzystaj z odnośnika do Booksy powyżej.'
+        : 'Wczytywanie kalendarza Booksy…'}</p>}
+      {near && status !== 'failed' && <iframe
         src={booksyWidgetUrl}
         title="Kalendarz rezerwacji Booksy"
         sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         referrerPolicy="no-referrer"
         onLoad={() => setStatus('loaded')}
-        onError={() => setStatus('slow')}
+        onError={() => setStatus('failed')}
       />}
     </div>
-    <p className="booksy-status" role="status">{status === 'slow'
-      ? 'Kalendarz ładuje się długo. Można przejść bezpośrednio do Booksy, korzystając z odnośnika powyżej.'
-      : ''}</p>
+
   </>;
 }
 

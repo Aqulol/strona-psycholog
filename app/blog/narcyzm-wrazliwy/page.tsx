@@ -1,3 +1,4 @@
+import {standalonePublication} from '../../../lib/blog-publication';
 import {withArticleContents} from '../../../components/ArticleContents';
 import RelatedContent from '../../../components/RelatedContent';
 import { services } from '../../../lib/services';
@@ -12,10 +13,9 @@ import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 
 const headline = 'Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?';
-const description =
-  'Narcyzm wrażliwy a relacje: wrażliwość na krytykę, poczucie własnej wartości i bliskość. Wyjaśniam, dlaczego ten opis nie jest odrębną diagnozą.';
+const {description, published: publication} = standalonePublication['narcyzm-wrazliwy'];
 const slug = 'narcyzm-wrazliwy';
-const datePublished = '2026-10-14';
+const datePublished = publication;
 
 const seo=meta('/blog/narcyzm-wrazliwy/','Narcyzm wrażliwy a relacje',description,true);
 export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:datePublished}};

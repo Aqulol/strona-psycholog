@@ -1,3 +1,4 @@
+import {standalonePublication} from '../../../lib/blog-publication';
 import {withArticleContents} from '../../../components/ArticleContents';
 import { contextLinks } from '../../../lib/context-links';
 import { body } from './content';
@@ -10,9 +11,9 @@ import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 const updated = '2026-11-26';
 
-const description = 'Dlaczego wybieramy podobnych partnerów? O powtarzających się wzorcach w relacjach, granicach badań i pytaniach, które można omówić podczas konsultacji.';
+const {description, published: publication} = standalonePublication['dlaczego-wybieram-podobnych-partnerow'];
 const seo = meta('/blog/dlaczego-wybieram-podobnych-partnerow/', 'Wybieranie podobnych partnerów: dlaczego się powtarza?', description, true);
-export const metadata: Metadata = {...seo, openGraph: {...seo.openGraph, type:'article', publishedTime:'2026-08-11', modifiedTime:updated}};
+export const metadata: Metadata = {...seo, openGraph: {...seo.openGraph, type:'article', publishedTime:publication, modifiedTime:updated}};
 
 const faq: [string, string][] = [
   [
@@ -33,7 +34,7 @@ const ld = articleJsonLd({
   headline: 'Dlaczego ciągle wybieram podobnych partnerów?',
   description,
   slug: 'dlaczego-wybieram-podobnych-partnerow',
-  datePublished: '2026-08-11',
+  datePublished: publication,
   dateModified: updated,
   image: 'https://psychologplebaniak.pl/og-image.png',
   faq,

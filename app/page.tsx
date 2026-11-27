@@ -1,61 +1,108 @@
-import {ArrowUpRight, AudioLines, CalendarDays, Compass, Fingerprint, GitFork, HeartHandshake, Layers, MessagesSquare, Sprout, Waves, Wind} from 'lucide-react';
-import EditorialHeading from '../components/EditorialHeading';
+import {ArrowUpRight, BookOpen, CalendarDays, Compass, FileDown, FlaskConical, GitFork, GraduationCap, HeartHandshake, LibraryBig, MapPin, MessagesSquare, NotebookPen} from 'lucide-react';
+import {homeFaq, homeTopics} from '../lib/home-content';
+import {professionalProfiles} from '../lib/professional-profiles';
+import {empathyStudy} from '../lib/research';
 import { services } from '../lib/services';
 import { HomeServiceCards } from '../components/ServiceCards';
 import ReadingTime from '../components/ReadingTime';
-import { blogReadingMinutes } from '../lib/blog-content';
-import {featureArticles} from '../lib/feature-articles';
+import { blogReadingMinutes, latestDatedArticles } from '../lib/blog-content';
 import {webPage} from "../lib/entities";
 import { heroPortraitSizes, heroPortraitSrcSet, responsiveSrcSet } from '../lib/responsive-images';
 import BookingAndContact from '../components/BookingAndContact';
 import {Booking, Json, Questions} from '../components/Site';
-import {config, visitRatesText} from '../lib/config';
-import {articles,faq,meta,paths} from '../lib/site';
+import {config} from '../lib/config';
+import {meta,paths} from '../lib/site';
 const homeDescription = 'Grzegorz Plebaniak, psycholog i psychoterapeuta (w trakcie szkolenia). Wrocław: konsultacje, diagnoza psychologiczna, psychoedukacja i psychoterapia.';
 export const metadata = meta('/', 'Grzegorz Plebaniak | Gabinet psychologiczny Wrocław', homeDescription);
 function More({href,children}:{href:string,children:React.ReactNode}){return <a className="text-link" href={href}>{children}<span aria-hidden="true">↗</span></a>;}
 export default function Home(){return <main id="tresc" className="editorial-home">
 <Json data={webPage('/', 'Gabinet psychologiczny we Wrocławiu', homeDescription)}/>
-<section className="hero-home"><div className="shell hero-grid"><div className="hero-editorial-copy"><p className="eyebrow hero-edition">Grzegorz Plebaniak <span aria-hidden="true"/> Wrocław / online</p><h1>Gabinet psychologiczny <span>we Wrocławiu</span></h1><p className="hero-identity">Psycholog, psychoterapeuta (w trakcie szkolenia)</p><p className="hero-copy">Prowadzę konsultacje, diagnostykę psychologiczną, psychoedukację i psychoterapię indywidualną w nurcie psychodynamicznym z wykorzystaniem TFP. Przyjmuję dorosłych i młodzież od 15. roku życia.</p><div className="hero-actions"><Booking/>{' '}<a className="button-secondary" href="/oferta/">Poznaj ofertę <ArrowUpRight size={16} aria-hidden="true"/></a></div><p className="hero-practical"><a href="/cennik/">{services.consult.rate?.price} zł / {services.consult.rate?.duration}</a> za konsultację <span aria-hidden="true">·</span> <a href={paths.consult}>Jak wygląda spotkanie?</a></p></div><div className="hero-photo"><img src="/images/responsive/portret-hero-855.webp" srcSet={heroPortraitSrcSet} sizes={heroPortraitSizes} width="855" height="855" alt="Portret Grzegorza Plebaniaka" fetchPriority="high"/></div></div></section>
-<div className="trust-band"><ul className="shell"><li>Magister psychologii</li><li>Szkolenie psychoterapeutyczne</li><li>Praca pod superwizją</li><li>Nurt psychodynamiczny · TFP</li><li>W gabinecie i online</li></ul></div>
-<section className="shell home-block" aria-labelledby="home-uslugi"><EditorialHeading label="Oferta" title="Oferta gabinetu" id="home-uslugi"><p>Od rozmowy o aktualnej sytuacji po pogłębioną ocenę lub regularną pracę.</p></EditorialHeading><HomeServiceCards/></section>
-<section className="shell home-block" aria-labelledby="tematy-konsultacji">
-  <EditorialHeading label="Obszary pomocy" title="W czym mogę pomóc?" id="tematy-konsultacji"/>
-  <p className="mb-6">Na konsultacji można porozmawiać o rozpoznaniu, takim jak <a data-context-link href="/w-czym-pomagam/depresja/">depresja</a> czy <a data-context-link href="/w-czym-pomagam/zaburzenia-lekowe/">zaburzenie lękowe</a>, ale też o trudnościach, które nie mają jeszcze nazwy. Powodem do spotkania może być <a data-context-link href="/w-czym-pomagam/samotnosc/">samotność</a>, brak satysfakcji z życia albo chęć lepszego zrozumienia siebie. Nie trzeba mieć diagnozy, żeby się umówić.</p>
-  <ul className="support-list" role="list">
-    <li><Waves size={24} strokeWidth={1.5} aria-hidden="true"/><div><h3>Nastrój i poczucie sensu</h3><p>Smutek, obniżony nastrój, utrata zainteresowania tym, co wcześniej cieszyło, poczucie pustki lub braku sensu.</p></div></li>
-    <li><Wind size={24} strokeWidth={1.5} aria-hidden="true"/><div><h3>Lęk, stres i przeciążenie</h3><p>Codzienne napięcie, zamartwianie się, stres w pracy, trudność z odpoczynkiem albo wypalenie.</p></div></li>
-    <li><HeartHandshake size={24} strokeWidth={1.5} aria-hidden="true"/><div><h3>Relacje i samotność</h3><p>Trudności w związku, rodzinie lub pracy, samotność także wśród bliskich, powtarzające się konflikty, lęk przed odrzuceniem albo trudność w zaufaniu i stawianiu granic.</p></div></li>
-    <li><Compass size={24} strokeWidth={1.5} aria-hidden="true"/><div><h3>Kryzysy i zmiany życiowe</h3><p>Rozstanie, rozwód, żałoba, choroba, utrata pracy lub przeprowadzka. Można też porozmawiać o powracających myślach i uczuciach związanych z trudnymi przeżyciami.</p></div></li>
-    <li><Fingerprint size={24} strokeWidth={1.5} aria-hidden="true"/><div><h3>Poczucie własnej wartości i zrozumienie siebie</h3><p>Surowa ocena siebie, wrażliwość na krytykę, poczucie, że nie jest się wystarczająco dobrym, albo trudność w rozpoznawaniu potrzeb i rozumieniu własnych reakcji.</p></div></li>
-    <li><Layers size={24} strokeWidth={1.5} aria-hidden="true"/><div><h3>Długotrwałe trudności w emocjach i relacjach</h3><p>Silne wahania emocji, impulsywne reakcje lub powracające trudności w bliskich relacjach. Można też omówić wcześniejsze rozpoznanie zaburzenia osobowości, na przykład <a data-context-link href="/w-czym-pomagam/borderline/">borderline</a>.</p></div></li>
-    <li><AudioLines size={24} strokeWidth={1.5} aria-hidden="true"/><div><h3>ADHD i codzienne zadania</h3><p>Uwaga, organizacja i planowanie. <a href={services.eduAdhd.href}>Psychoedukacja ADHD</a>.</p></div></li>
-    <li><Sprout size={24} strokeWidth={1.5} aria-hidden="true"/><div><h3>Okres dorastania</h3><p>Emocje, relacje i zmiany w szkole lub w domu. <a href={paths.youth}>Pomoc od 15. roku życia</a>.</p></div></li>
-  </ul>
-  <p>O uwadze i codziennych zadaniach piszę osobno w artykule o <a data-context-link href="/blog/adhd-u-doroslych/">ADHD w dorosłości</a>.</p>
-  <More href={paths.signs}>W czym pomagam?</More>
+<section className="hero-home"><div className="shell hero-grid"><div className="hero-editorial-copy"><p className="eyebrow hero-edition">Grzegorz Plebaniak <span aria-hidden="true"/> Wrocław / online</p><h1>Gabinet psychologiczny <span>we Wrocławiu</span></h1><p className="hero-purpose">Pomoc w lepszym zrozumieniu siebie, własnych emocji i relacji.</p><p className="hero-identity">Psycholog, psychoterapeuta w trakcie szkolenia</p><p className="hero-copy">Prowadzę konsultacje psychologiczne, diagnostykę, psychoedukację oraz psychoterapię indywidualną w nurcie psychodynamicznym z wykorzystaniem TFP. Pracuję z dorosłymi i młodzieżą od 15. roku życia.</p><div className="hero-actions"><Booking/>{' '}<a className="button-secondary" href={paths.about}>Poznaj mnie <ArrowUpRight size={16} aria-hidden="true"/></a></div><p className="hero-practical"><a href="/cennik/">{services.consult.rate?.price} zł / {services.consult.rate?.duration}</a> za konsultację <span aria-hidden="true">·</span> <a href={paths.consult}>Jak wygląda spotkanie?</a></p></div><div className="hero-photo"><img src="/images/responsive/portret-hero-855.webp" srcSet={heroPortraitSrcSet} sizes={heroPortraitSizes} width="855" height="855" alt="Portret Grzegorza Plebaniaka" fetchPriority="high"/></div></div></section>
+<div className="trust-band"><ul className="shell" role="list">{[
+  {Icon:GraduationCap,label:'Magister psychologii'}, {Icon:BookOpen,label:'Czteroletnie szkolenie psychoterapeutyczne – w trakcie'},
+  {Icon:MessagesSquare,label:'Regularna superwizja'}, {Icon:HeartHandshake,label:'Psychoterapia psychodynamiczna z wykorzystaniem TFP'}, {Icon:MapPin,label:'Spotkania we Wrocławiu i online'},
+].map(({Icon,label})=><li key={label}><Icon size={17} aria-hidden="true"/>{label}</li>)}</ul></div>
+
+<section className="shell home-block" aria-labelledby="home-uslugi">
+  <h2 id="home-uslugi">Oferta gabinetu</h2>
+  <p>Dostępne formy pomocy psychologicznej, diagnostyki i psychoterapii.</p>
+  <HomeServiceCards/>
 </section>
-<section className="band process-band" aria-labelledby="home-konsultacja">
-  <div className="shell home-block">
-    <EditorialHeading label="Pierwsza wizyta" title="Od konsultacji do dalszych kroków" id="home-konsultacja"/>
-    <ul className="process-grid" role="list">
-      {[
-        {Icon: CalendarDays, title: 'Rezerwacja', copy: 'Wybierz termin standardowej konsultacji w Booksy lub skontaktuj się z gabinetem.'},
-        {Icon: MessagesSquare, title: 'Pierwsza rozmowa', copy: 'Można zacząć od tego, co skłoniło Pana/Panią do szukania pomocy.'},
-        {Icon: Compass, title: 'Określenie potrzeb', copy: 'Przyglądamy się temu, co jest ważne i jakiej pomocy warto szukać.'},
-        {Icon: GitFork, title: 'Dalsza decyzja', copy: 'Wspólnie omawiamy kolejne kroki. Konsultacja nie zobowiązuje do psychoterapii.'},
-      ].map(({Icon, title, copy}) => <li key={title}>
-        <Icon size={24} strokeWidth={1.5} aria-hidden="true"/>
-        <h3>{title}</h3>
-        <p>{copy}</p>
-      </li>)}
+
+<section className="band" aria-labelledby="home-about">
+  <div className="shell home-block home-about">
+    <div className="home-about-intro">
+      <div><h2 id="home-about">O mnie</h2>
+        <p>Jestem psychologiem, absolwentem Uniwersytetu Wrocławskiego, oraz psychoterapeutą w trakcie szkolenia. W swojej pracy pomagam przyjrzeć się emocjom, relacjom, obrazowi siebie i temu, co w życiu się powtarza.</p>
+        <p>Pracuję w nurcie psychodynamicznym, wykorzystując podejście skoncentrowane na przeniesieniu (TFP). Swoją pracę poddaję regularnej superwizji.</p>
+      </div>
+      <img src="/images/responsive/portret-288.webp" srcSet={responsiveSrcSet('portret')} sizes="auto, 144px" alt="Portret Grzegorza Plebaniaka" width="288" height="288" loading="lazy"/>
+    </div>
+    <ul className="home-facts" role="list">
+      <li><GraduationCap aria-hidden="true"/><div><h3>Wykształcenie</h3><p>Magister psychologii, Uniwersytet Wrocławski. Specjalność studiów: psychologia kliniczna i zdrowia dorosłych.</p></div></li>
+      <li><BookOpen aria-hidden="true"/><div><h3>Szkolenie psychoterapeutyczne</h3><p>II rok czteroletniego szkolenia w Międzynarodowej Szkole Psychoterapii Psychodynamicznej.</p></div></li>
+      <li><MessagesSquare aria-hidden="true"/><div><h3>Superwizja</h3><p>Regularnie omawiam swoją pracę z doświadczonym specjalistą, z zachowaniem poufności.</p></div></li>
+      <li><FlaskConical aria-hidden="true"/><div><h3>Działalność naukowa</h3><p>Jestem współautorem badania nad twórczością i empatią u dzieci, opublikowanego w <cite>Thinking Skills and Creativity</cite> ({empathyStudy.year}). <a href={`${paths.about}#publikacje`}>Dane publikacji i lista autorów</a>.</p></div></li>
     </ul>
-    <p>Po kontakcie zwykle spotykamy się cztery razy na konsultacjach. Jeśli wspólnie zdecydujemy się na terapię, ustalamy zasady współpracy i rytm jednej lub dwóch sesji w tygodniu.</p><More href={paths.consult}>Jak przebiegają konsultacje</More>
+    <More href={paths.about}>Więcej o moim doświadczeniu</More>
+    <div className="home-professional"><h3>Moje profile zawodowe</h3><ul role="list">{professionalProfiles.map(({label,href})=><li key={href}><a href={href} rel="noreferrer">{label} <ArrowUpRight size={14} aria-hidden="true"/></a></li>)}</ul></div>
   </div>
 </section>
-<div className="shell home-block home-pair audience-editorial"><section><h2>Dorośli</h2><p>Pracuję indywidualnie z osobami dorosłymi. Zapraszam zarówno po zmianie życiowej, jak i wtedy, gdy trudności powracają od dawna.</p><More href={paths.adults}>Psychoterapia dorosłych</More></section><section><h2>Młodzież od 15. roku życia</h2><p>Pracuję w tym samym nurcie także z młodzieżą. Na pierwsze spotkanie z osobą niepełnoletnią zapraszam rodzica lub rodziców.</p><More href={paths.youth}>Psychoterapia młodzieży</More></section><section><h2>Superwizja</h2><p>Regularnie omawiam swoją pracę z doświadczonym specjalistą z zachowaniem poufności. Pomaga mi to dbać o jakość i bezpieczeństwo procesu.</p><More href={paths.about+'#superwizja'}>Czym jest superwizja</More></section><section className="home-profile"><img src="/images/responsive/portret-288.webp" alt="" width="288" height="288" loading="lazy"/><h2>O mnie</h2><p>Jestem psychologiem, absolwentem Uniwersytetu Wrocławskiego. Jestem na II roku czteroletniego szkolenia w Międzynarodowej Szkole Psychoterapii Psychodynamicznej.</p><More href={paths.about}>Wykształcenie i szkolenie</More></section></div>
-<section className="band office-band"><div className="shell home-block home-pair"><div><p className="eyebrow">Wrocław / online</p><h2>Gabinet i informacje praktyczne</h2><p>Przyjmuję przy ul. {config.address} oraz online. {visitRatesText}</p><More href={paths.office}>Adres, mapa i zdjęcia</More><br/><More href={paths.online}>Spotkania online</More></div><div className="office-duet"><img src="/images/responsive/gabinet-detal-1-320.webp" srcSet={responsiveSrcSet('gabinet-detal-1')} sizes="auto, (min-width: 720px) 14vw, 28vw" alt="" width="320" height="427" loading="lazy"/><img className="office-home-photo" src="/images/gabinet.webp" srcSet={responsiveSrcSet('gabinet')} sizes="auto, (min-width: 1352px) 420px, (min-width: 720px) 33vw, 65vw" alt="Wnętrze gabinetu psychoterapii we Wrocławiu" width="1280" height="1707" loading="lazy"/></div></div></section>
-<section className="shell home-block"><h2>Najczęstsze pytania</h2><Questions items={faq.slice(0,3)}/><More href={paths.faq}>Więcej pytań i odpowiedzi</More></section>
-<section className="band journal-band"><div className="shell home-block"><EditorialHeading label="Baza wiedzy" title="Ostatnie artykuły"/><div className="journal-grid">{[...featureArticles.map(a=>[a.slug,a.h1]),...articles].slice(0,3).map(([slug,title],i)=><article key={slug}><p className="eyebrow">{i===0?'Wyróżniony artykuł':'Z archiwum'}</p><h3><a href={`/blog/${slug}/`}>{title}</a></h3><ReadingTime minutes={blogReadingMinutes(slug)}/></article>)}</div><div className="hero-actions"><More href="/blog/">Wszystkie artykuły</More>{' '}<More href="/slownik-psychologiczny/">Słownik psychologiczny</More></div></div></section>
-<section className="shell home-block contact-editorial"><h2>Kontakt i rezerwacja</h2><p>Terminy konsultacji są dostępne w Booksy. Jeśli nie ma odpowiedniego terminu, zapraszam do kontaktu telefonicznego lub mailowego.</p><BookingAndContact/><More href={paths.contact}>Dane kontaktowe</More></section>
+
+<section className="shell home-block" aria-labelledby="tematy-konsultacji">
+  <h2 id="tematy-konsultacji">W czym mogę pomóc?</h2>
+  <p>Nie musisz mieć diagnozy ani wiedzieć, jak nazwać to, czego doświadczasz.</p>
+  <ul className="support-list" role="list">{homeTopics.map(({Icon,title,copy,links})=><li key={title}>
+    <Icon size={24} strokeWidth={1.5} aria-hidden="true"/><div><h3>{title}</h3><p>{copy}</p>
+    <ul className="home-topic-links" role="list">{links.map(({href,label})=><li key={href}><a href={href}>{label}</a></li>)}</ul></div>
+  </li>)}</ul>
+  <More href={paths.signs}>Zobacz wszystkie obszary pomocy</More>
+</section>
+
+<section className="band process-band" aria-labelledby="home-konsultacja">
+  <div className="shell home-block">
+    <h2 id="home-konsultacja">Jak wygląda współpraca?</h2>
+    <ul className="process-grid" role="list">{[
+        {Icon:CalendarDays,title:'Rezerwacja wizyty',copy:<>Wybierz dogodny termin konsultacji w <a href={config.booksyUrl} rel="noreferrer">Booksy</a> lub <a href={paths.contact}>skontaktuj się ze mną</a>.</>},
+        {Icon:MessagesSquare,title:'Pierwsze spotkanie',copy:'Rozmawiamy o tym, co skłoniło Cię do szukania pomocy, oraz o Twojej aktualnej sytuacji.'},
+        {Icon:Compass,title:'Zrozumienie trudności',copy:'Wspólnie przyglądamy się temu, co jest dla Ciebie trudne, czego potrzebujesz i jakiej pomocy oczekujesz.'},
+        {Icon:GitFork,title:'Ustalenie dalszych kroków',copy:'Omawiamy możliwe formy pomocy i decydujemy, czy i w jakiej formie kontynuować spotkania.'},
+      ].map(({Icon,title,copy})=><li key={title}><Icon size={24} strokeWidth={1.5} aria-hidden="true"/><h3>{title}</h3><p>{copy}</p></li>)}</ul>
+    <p>Rozpoczęcie psychoterapii poprzedzają zazwyczaj cztery konsultacje. Pozwalają lepiej zrozumieć zgłaszane trudności i określić cele dalszej pracy. Jeśli wspólnie zdecydujemy się na psychoterapię, ustalamy zasady współpracy i częstotliwość spotkań – zwykle raz lub dwa razy w tygodniu.</p>
+    <p>Konsultacja nie zobowiązuje do rozpoczęcia psychoterapii.</p>
+    <More href={paths.consult}>Jak przebiegają konsultacje</More>
+  </div>
+</section>
+
+<section className="shell home-block" aria-labelledby="home-audience">
+  <h2 id="home-audience">Z kim pracuję?</h2>
+  <div className="home-pair audience-editorial">
+    <section><h3>Dorośli</h3><p>Pracuję indywidualnie z osobami dorosłymi. Możemy porozmawiać o bieżącej sytuacji lub o sprawach, które od dawna do Ciebie wracają.</p><More href={paths.adults}>Psychoterapia dorosłych</More></section>
+    <section><h3>Młodzież od 15. roku życia</h3><p>Pracuję także z młodzieżą od 15. roku życia. Na pierwsze spotkanie z osobą niepełnoletnią zapraszam rodzica lub rodziców.</p><More href={paths.youth}>Psychoterapia młodzieży</More></section>
+  </div>
+</section>
+
+<section className="band office-band"><div className="shell home-block home-pair"><div><h2>Gabinet we Wrocławiu</h2><p>{config.address}. Gabinet mieści się w oficynie Centrum Równowagi.</p><p>Możemy też spotkać się <a href={paths.online}>online</a>.</p><div className="home-links"><More href={paths.office}>Mapa i wskazówki dojazdu</More><a href={config.mapsLink} rel="noreferrer">Wyznacz trasę w Mapach Google</a></div></div><div className="office-duet"><img src="/images/responsive/gabinet-detal-1-320.webp" srcSet={responsiveSrcSet('gabinet-detal-1')} sizes="auto, (min-width: 720px) 14vw, 28vw" alt="" width="320" height="427" loading="lazy"/><img className="office-home-photo" src="/images/gabinet.webp" srcSet={responsiveSrcSet('gabinet')} sizes="auto, (min-width: 1352px) 420px, (min-width: 720px) 33vw, 65vw" alt="Wnętrze gabinetu psychoterapii we Wrocławiu" width="1280" height="1707" loading="lazy"/></div></div></section>
+
+<section className="shell home-block" aria-labelledby="home-faq"><h2 id="home-faq">Najczęstsze pytania</h2><Questions items={homeFaq}/><More href={paths.faq}>Więcej pytań i odpowiedzi</More></section>
+
+<section className="shell home-block contact-editorial" aria-labelledby="home-contact">
+  <h2 id="home-contact">Kontakt i rezerwacja</h2><p>Wybierz termin w Booksy albo napisz do mnie, jeśli chcesz zapytać o spotkanie.</p>
+  <BookingAndContact/><More href={paths.contact}>Skontaktuj się ze mną</More>
+</section>
+
+<section className="band journal-band" aria-labelledby="home-knowledge"><div className="shell home-block">
+  <h2 id="home-knowledge">Baza wiedzy psychologicznej</h2>
+  <ul className="home-facts" role="list">{[
+    {Icon:BookOpen,href:'/blog/',label:'Artykuły psychologiczne',copy:'Teksty o emocjach, relacjach i psychoterapii.'},
+    {Icon:LibraryBig,href:'/slownik-psychologiczny/',label:'Słownik psychologiczny',copy:'Wyjaśnienia pojęć z psychologii, diagnozy i psychoterapii.'},
+    {Icon:FileDown,href:'/materialy-psychologiczne/',label:'Materiały do pobrania',copy:'Karty, które możesz wydrukować i wykorzystać do samodzielnej refleksji.'},
+    {Icon:NotebookPen,href:'/narzedzia-psychologiczne/',label:'Narzędzia psychologiczne',copy:'Kalkulator kosztów spotkań i notes do refleksji.'},
+  ].map(({Icon,href,label,copy})=><li key={href}><Icon aria-hidden="true"/><div><h3><a href={href}>{label}</a></h3><p>{copy}</p></div></li>)}</ul>
+  <section aria-labelledby="home-latest" className="home-latest">
+    <h3 id="home-latest">Najnowsze artykuły z datą publikacji</h3>
+    <div className="journal-grid">{latestDatedArticles.slice(0,3).map(({slug,title,description})=><article key={slug}><h4><a href={`/blog/${slug}/`}>{title}</a></h4><ReadingTime minutes={blogReadingMinutes(slug)}/><p>{description}</p></article>)}</div>
+    <More href="/blog/">Wszystkie artykuły psychologiczne</More>
+  </section>
+</div></section>
 </main>;}

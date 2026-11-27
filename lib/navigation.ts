@@ -15,7 +15,11 @@ export const navigation = {
     { label:'Psycholog', href:servicePaths.psychologist, columns:psychologyGroups.map(({category,keys}) => ({label:categoryNames[category],href:`${servicePaths.psychologist}#oferta-${category}`,items:menuItems(keys)})) },
     { label:'Psychoterapeuta', href:servicePaths.therapist, items:menuItems(therapyKeys) },
   ] satisfies NavigationGroup[],
-  knowledge: {label:'Baza wiedzy',href:knowledgePath,items:knowledgeLinks} satisfies NavigationGroup,
+  knowledge: {label:'Baza wiedzy',href:knowledgePath,items:[...knowledgeLinks.slice(0,2),
+    {href:'/materialy-psychologiczne/',name:'Materiały do pobrania',guide:false},
+    {href:'/narzedzia-psychologiczne/',name:'Narzędzia psychologiczne',guide:false},
+    ...knowledgeLinks.slice(2), {href:paths.faq,name:'Najczęstsze pytania',guide:false},
+  ]} satisfies NavigationGroup,
   contact:paths.contact,
   links: [
     ['Dorośli', paths.adults], ['Młodzież od 15. roku życia', paths.youth], ['W czym pomagam?', paths.signs],

@@ -1,8 +1,8 @@
 {
   "/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:6b7cb644a1327f2e5a0d08a0910c284ad4fd5c9213ef0fb6b5cd7d5dfeeaa843",
-    "evidence": "Redakcyjna rozbudowa strony głównej: dodane obszary ADHD i młodzieży, przebieg współpracy oraz linkowanie do oferty i słownika; nie jest to data wdrożenia. Uwzględniono zmianę techniczną: przywrócenie formularza przy Booksy. Usunięto zduplikowany podpis portretu, zachowując datę redakcyjną."
+    "fingerprint": "v1:65fa2aa382c08b5a2673909b61ee6370fa620b5a908e289ed47c251a598275e0",
+    "evidence": "Przebudowa kolejności i treści sekcji, osiem FAQ, 24 linki tematyczne oraz aktualna lista artykułów."
   },
   "/baza-wiedzy/": {
     "date": "2026-11-26",
@@ -81,8 +81,8 @@
   },
   "/o-mnie/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:e1c0ca471e9b033a67bb2d1bda4b7149f9b802427233079dbaecb66bd2d3d0e1",
-    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+    "fingerprint": "v1:d183635b69e6d63e399bd2e62ab00ce0e54846b93791f3b7fb1ae49c2def9045",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia. Zweryfikowano aktualny tekst przy optymalizacji strony gabinetu."
   },
   "/oferta/": {
     "date": "2026-11-26",
@@ -91,8 +91,8 @@
   },
   "/polityka-prywatnosci/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:426425754c8639558ddc05c78a02bd61aafe057a9054c826c28afa5bd22589f1",
-    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia. Uwzględniono opis wysyłki formularza i liczników antyspamowych. Zaktualizowano techniczny opis transportu kontaktu bez zmiany daty mapy."
+    "fingerprint": "v1:4f9e88bd7562ace864255a97f22ea4b1522565dab991fe807298e59b82a12cf8",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia. Uwzględniono opis wysyłki formularza i liczników antyspamowych. Zaktualizowano techniczny opis transportu kontaktu bez zmiany daty mapy. Zweryfikowano aktualny tekst przy optymalizacji strony gabinetu."
   },
   "/poradnictwo-psychologiczne-wroclaw/": {
     "date": "2026-11-26",
