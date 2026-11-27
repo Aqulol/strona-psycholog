@@ -1,14 +1,21 @@
 # Grzegorz Plebaniak - psycholog Wrocław
 Gabinet psychologiczny we Wrocławiu, Zygmunta Krasińskiego 13A Oficyna, 50-449 Wrocław. Psycholog, absolwent Uniwersytetu Wrocławskiego (specjalność psychologia kliniczna i zdrowia dorosłych), w trakcie szkolenia psychoterapeutycznego w Międzynarodowej Szkole Psychoterapii Psychodynamicznej (TFP). Prowadzę konsultacje i psychoterapię indywidualną psychodynamiczną z wykorzystaniem TFP pod superwizją dla dorosłych i młodzieży od 15. roku życia, stacjonarnie i online.
 Kontakt: +48 693087574, gpplebaniak@gmail.com
-Miejsce przyjęć: http://centrumrownowagi.com
-Blog: https://psychologplebaniak.pl/blog - lista artykułów o psychoterapii.
-Cennik: https://psychologplebaniak.pl/cennik - konsultacja 200 zł, psychoterapia 200 zł (sesja 50 min).
+Dojazd i zdjęcia: https://psychologplebaniak.pl/gabinet-wroclaw/
+Blog: https://psychologplebaniak.pl/blog/ - lista artykułów o psychoterapii.
+Cennik: https://psychologplebaniak.pl/cennik/ - konsultacja 200 zł, psychoterapia 200 zł (sesja 50 min).
 
-Artykuły blogowe:
-- Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?: https://psychologplebaniak.pl/blog/narcyzm-wrazliwy - wrażliwość na krytykę, zmienne poczucie własnej wartości, bliskość i relacje.
-- Jak wybrać psychoterapeutę? Praktyczny przewodnik: https://psychologplebaniak.pl/blog/jak-wybrac-psychoterapeute - na co zwrócić uwagę przy wyborze terapeuty, pierwsza konsultacja, czerwone flagi.
-- Dlaczego ciągle wybieram podobnych partnerów?: https://psychologplebaniak.pl/blog/dlaczego-wybieram-podobnych-partnerow - nieświadome schematy relacyjne i ich wpływ na wybory w związkach.
-- „Wiem, skąd to się bierze, ale nadal tak robię” - dlaczego sama świadomość nie wystarcza?: https://psychologplebaniak.pl/blog/dlaczego-sama-swiadomosc-nie-wystarcza - różnica między wiedzą intelektualną a emocjonalnym przepracowaniem.
-- Co dzieje się między pacjentem a terapeutą? Relacja terapeutyczna jako źródło zmiany: https://psychologplebaniak.pl/blog/relacja-terapeutyczna-zrodlo-zmiany - przeniesienie, bezpieczne ramy i praca w relacji terapeutycznej.
-- Czy przeszłość naprawdę ma aż takie znaczenie?: https://psychologplebaniak.pl/blog/czy-przeszlosc-ma-znaczenie - wpływ wcześniejszych doświadczeń na dorosłe życie i relacje.
+Diagnostyka i psychoedukacja:
+- https://psychologplebaniak.pl/diagnoza-psychologiczna-wroclaw/
+- https://psychologplebaniak.pl/diagnoza-adhd-wroclaw/
+- https://psychologplebaniak.pl/diagnoza-osobowosci-wroclaw/
+- https://psychologplebaniak.pl/psychoedukacja/
+Cennik standardowych spotkań nie określa ceny pełnej diagnozy. Booksy służy do rezerwacji standardowej konsultacji; kalendarz w witrynie wymaga osobnej zgody. Formularz kontaktowy nie służy do przesyłania danych medycznych; korzysta z transportu Cloudflare Workers i Resend po konfiguracji. Strona to statyczny eksport Next.js na Firebase Hosting. Więcej: https://psychologplebaniak.pl/polityka-prywatnosci/
+
+Wybrane artykuły (pełny indeks: https://psychologplebaniak.pl/blog/):
+- Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?: https://psychologplebaniak.pl/blog/narcyzm-wrazliwy/ - wrażliwość na krytykę, zmienne poczucie własnej wartości, bliskość i relacje.
+- Jak wybrać psychoterapeutę? Praktyczny przewodnik: https://psychologplebaniak.pl/blog/jak-wybrac-psychoterapeute/ - na co zwrócić uwagę przy wyborze terapeuty, pierwsza konsultacja, czerwone flagi.
+- Dlaczego ciągle wybieram podobnych partnerów?: https://psychologplebaniak.pl/blog/dlaczego-wybieram-podobnych-partnerow/ - nieświadome schematy relacyjne i ich wpływ na wybory w związkach.
+- „Wiem, skąd to się bierze, ale nadal tak robię” - dlaczego sama świadomość nie wystarcza?: https://psychologplebaniak.pl/blog/dlaczego-sama-swiadomosc-nie-wystarcza/ - różnica między wiedzą intelektualną a emocjonalnym przepracowaniem.
+- Co dzieje się między pacjentem a terapeutą? Relacja terapeutyczna jako źródło zmiany: https://psychologplebaniak.pl/blog/relacja-terapeutyczna-zrodlo-zmiany/ - przeniesienie, bezpieczne ramy i praca w relacji terapeutycznej.
+- Czy przeszłość naprawdę ma aż takie znaczenie?: https://psychologplebaniak.pl/blog/czy-przeszlosc-ma-znaczenie/ - wpływ wcześniejszych doświadczeń na dorosłe życie i relacje.

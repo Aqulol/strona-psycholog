@@ -2,6 +2,8 @@
 
 Strona pozostaje na Firebase. Next.js jest potrzebny tylko podczas budowania. Folder **`out/` to gotowa paczka HTML/CSS/JS i zdjęć**: każda podstrona ma swój `index.html`. Nie trzeba uruchamiać serwera Node na hostingu.
 
+Lokalny podgląd po `npm ci && npm run build`: `npm run preview` (statyczny HTTP; nie `next start`). Formularz korzysta z osobnego Workera i Resend po konfiguracji. Pomiar konwersji jest wyłączony w zwykłym buildzie; [warunki ewentualnego uruchomienia](docs/audyt-koncowy/POMIAR.md). Booksy to osobna decyzja użytkownika, nie statystyka strony.
+
 ## 1. Zabezpiecz obecną wersję
 
 1. W konsoli Firebase projektu `psychologplebaniak-e4480` wejdź w **Hosting → Historia wersji**. Zapisz, która wersja jest obecnie aktywna. Tam można ją przywrócić poleceniem **Rollback**.
@@ -30,7 +32,7 @@ Konfiguracja `firebase.json` wdraża **wyłącznie statyczny Hosting** na Spark.
 firebase deploy --only hosting --project psychologplebaniak-e4480
 ```
 
-Zwykłe `firebase deploy` dla tej konfiguracji również wybierze tylko Hosting. Nie wdraża osobnego Workera i nie zmienia danych bądź reguł Firestore. Zachowany plik `firestore.rules` służy jako odniesienie przy ręcznej kontroli reguł historycznej kolekcji `/messages`.
+Zwykłe `firebase deploy` dla tej konfiguracji również wybierze tylko Hosting. Nie wdraża osobnego Workera i nie zmienia danych bądź reguł Firestore. Zachowane `firestore.rules` i `storage.rules` nie dowodzą stanu produkcji i nie są objęte tym wdrożeniem. Historyczną kolekcję `/messages` i uprawnienia IAM sprawdź w konsoli, bez pobierania wiadomości do repozytorium.
 
 ### Inny hosting, gdyby był potrzebny
 
@@ -40,7 +42,7 @@ Pobierz kopię starego katalogu publicznego przez menedżer plików lub SFTP, a 
 
 - Otwórz `/`, `/kontakt/`, `/cennik/`, `/polityka-prywatnosci/` i cztery zachowane artykuły. Sprawdź też stary adres `/blog/artykul-3/` (301) i losowy nieistniejący adres (404).
 - Na telefonie i komputerze sprawdź menu, podmenu, poruszanie się samą klawiaturą i powiększenie tekstu. W Lighthouse wykonaj pomiar mobilny na własnej domenie przed uznaniem wyniku >90 za osiągnięty. Sam build nie certyfikuje WCAG 2.2 AA.
-- Sprawdź link Booksy, automatyczne wyświetlanie kalendarza przy przewijaniu oraz otwieranie mapy na żądanie, położenie znacznika oraz link pomocniczy ZnanyLekarz. Jeśli osadzenie Booksy nie działa po stronie dostawcy, wciąż dostępny jest bezpośredni link w nagłówku.
+- Sprawdź link Booksy, wyświetlanie kalendarza po zgodzie na Booksy i przewinięciu oraz otwieranie mapy na żądanie, położenie znacznika oraz link pomocniczy ZnanyLekarz. Jeśli osadzenie Booksy nie działa po stronie dostawcy, wciąż dostępny jest bezpośredni link w nagłówku.
 - Wyślij jedną uzgodnioną wiadomość testową bez danych osobowych, sprawdź rzeczywisty odbiór w skrzynce gabinetu i działanie `Reply-To`. Sprawdź błędny e-mail i zachowanie wpisanej treści przy awarii transportu. Nowe wiadomości nie trafiają do Firestore.
 - W Search Console zgłoś `https://psychologplebaniak.pl/sitemap.xml` i zbadaj nowe adresy. Upewnij się, że canonical wskazuje właściwy adres z końcowym ukośnikiem. Sprawdź podgląd udostępniania `og-image.png`.
 - Porównaj nazwę, adres, numer telefonu, opisy usług, grupy wiekowe, czas i ceny w Profilu Firmy w Google, Booksy i ZnanyLekarz. Sprawdź też kwalifikator statusu szkolenia.

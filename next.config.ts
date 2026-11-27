@@ -27,6 +27,6 @@ const nextConfig: NextConfig = {
 };
 
 export default function configForPhase(phase: string) {
-  if (phase === PHASE_PRODUCTION_BUILD) validateContactHosting(process.env.NEXT_PUBLIC_CONTACT_ENDPOINT, firebase.hosting);
+  if (phase === PHASE_PRODUCTION_BUILD) validateContactHosting(process.env.NEXT_PUBLIC_CONTACT_ENDPOINT, firebase.hosting, process.env.NEXT_PUBLIC_CONVERSION_ENDPOINT);
   return nextConfig;
 }

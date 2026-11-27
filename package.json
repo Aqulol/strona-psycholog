@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "preview": "npx serve@latest out -l 3010",
+    "preview": "node scripts/preview.mjs",
     "check:export": "node scripts/check-export.mjs",
     "check:links": "node scripts/check-sitemap.mjs",
     "check:content": "node scripts/check-knowledge.mjs",
@@ -20,11 +19,12 @@
     "predev": "node scripts/glossary-registry.mjs --check",
     "check:redirects": "node scripts/check-redirects.mjs",
     "check:indexability": "node scripts/check-indexability.mjs",
-    "redirects:sync-html": "node scripts/sync-html-redirects.mjs"
+    "redirects:sync-html": "node scripts/sync-html-redirects.mjs",
+    "check:conversions": "node --test analytics-worker/*.test.mjs contact-worker/hosting.test.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",
-    "next": "^15.1.6",
+    "next": "~15.5.29",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -34,8 +34,16 @@
     "@types/react": "^19.0.4",
     "@types/react-dom": "^19.0.2",
     "parse5": "^7.3.0",
-    "postcss": "^8.5.1",
+    "postcss": "^8.5.34",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.3"
+  },
+  "overrides": {
+    "postcss": "$postcss",
+    "source-map-js": "^1.2.2",
+    "nanoid": "^3.3.18",
+    "next": {
+      "sharp": "0.35.5"
+    }
   }
 }

@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 
+import {conversionsEnabled, readConversionChoice, subscribeConversionChoice, saveConversionChoice} from '../lib/conversions';
+
 const consentKey = 'gabinet-booksy-consent-v1';
 const consentEvent = 'gabinet-booksy-consent-change';
 type Consent = 'granted' | 'denied' | null;
@@ -54,6 +56,7 @@ export function useBooksyConsent(hasWidget: boolean) {
 
 export default function PrivacyPreferences() {
   const consent = useSyncExternalStore(subscribe, readConsent, () => null);
+  const conversionChoice = useSyncExternalStore(subscribeConversionChoice, readConversionChoice, () => null);
   const [requested, setRequested] = useState(false);
   const [hasWidget, setHasWidget] = useState(false);
   const trigger = useRef<HTMLButtonElement>(null);
@@ -80,10 +83,15 @@ export default function PrivacyPreferences() {
       <h2 id="privacy-preferences-title" ref={heading} tabIndex={-1}>Ustawienia prywatności</h2>
       <p>Kalendarz Booksy może używać własnych cookies i otrzymuje dane połączenia. Jeśli zezwolisz na opcjonalne treści, terminy wczytają się automatycznie w sekcjach rezerwacji na całej stronie. Bez zgody nadal możesz rezerwować bezpośrednio w Booksy. <a href="/polityka-prywatnosci/#cookies">Polityka prywatności</a></p>
       {consent && <p>Aktualny wybór: {consent === 'granted' ? 'zaakceptowano' : 'odrzucono'}.</p>}
+      {conversionsEnabled && requested && <fieldset>
+        <legend>Opcjonalny pomiar skuteczności witryny</legend>
+        <p>Po zgodzie zliczamy tylko wybrane działania, bez adresu strony, treści wiadomości i identyfikatora użytkownika. <a href="/polityka-prywatnosci/#pomiar-skutecznosci">Jak działa pomiar</a></p>
+        <label><input type="checkbox" checked={conversionChoice === 'granted'} onChange={event=>saveConversionChoice(event.currentTarget.checked ? 'granted' : 'denied')}/> Zgadzam się na pomiar skuteczności</label>
+      </fieldset>}
       <div className="privacy-preferences-actions">
-        <button className="button-secondary" type="button" onClick={() => { saveConsent('granted'); close(); }}>Akceptuję opcjonalne treści</button>
-        <button className="button-secondary" type="button" onClick={() => { saveConsent('denied'); close(); }}>Odrzucam opcjonalne treści</button>
-        {requested && consent !== null && <button className="button-secondary" type="button" onClick={close}>Zamknij</button>}
+        <button className="button-secondary" type="button" onClick={() => { saveConsent('granted'); close(); }}>{conversionsEnabled ? 'Zezwalam na kalendarz Booksy' : 'Akceptuję opcjonalne treści'}</button>
+        <button className="button-secondary" type="button" onClick={() => { saveConsent('denied'); close(); }}>{conversionsEnabled ? 'Nie zezwalam na kalendarz Booksy' : 'Odrzucam opcjonalne treści'}</button>
+        {requested && (consent !== null || conversionsEnabled) && <button className="button-secondary" type="button" onClick={close}>Zamknij</button>}
       </div>
     </section>}
   </>;
