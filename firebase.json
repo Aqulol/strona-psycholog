@@ -12,6 +12,12 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "headers": [
+      {
+        "source": "/materialy/karty-psychologiczne.pdf",
+        "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+      }
+    ],
     "redirects": [
       {
         "source": "/blog/artykul-1",
@@ -244,6 +250,11 @@
         "type": 301
       },
       {
+        "source": "/blog/tworczosc-i-empatia-u-dzieci.html",
+        "destination": "/blog/tworczosc-i-empatia-u-dzieci/",
+        "type": 301
+      },
+      {
         "source": "/cennik.html",
         "destination": "/cennik/",
         "type": 301
@@ -326,6 +337,16 @@
       {
         "source": "/kontakt.html",
         "destination": "/kontakt/",
+        "type": 301
+      },
+      {
+        "source": "/materialy-psychologiczne.html",
+        "destination": "/materialy-psychologiczne/",
+        "type": 301
+      },
+      {
+        "source": "/narzedzia-psychologiczne.html",
+        "destination": "/narzedzia-psychologiczne/",
         "type": 301
       },
       {

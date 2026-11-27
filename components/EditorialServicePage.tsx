@@ -22,11 +22,23 @@ export default function EditorialServicePage({id}:{id:EditorialKey}) {
   const entry = editorial[id];
   return <main id="tresc" className="reading service-editorial" data-service-category={category}>
     <Crumbs path={href} title={h1}/>
-    <Json data={{...webPage(href,h1,description,status === 'provided' ? name : undefined,rate ?? undefined),author:{'@id':personId}}}/>
+    <Json data={{...webPage(href,h1,description,status === 'provided' ? name : undefined,rate ?? undefined),...(category !== 'diagnosis' ? {author:{'@id':personId}} : {})}}/>
     <div className="service-masthead"><p className="eyebrow">{status === 'guide' ? 'Przewodnik po konsultacjach' : categoryNames[category]}</p>
     <ServiceIcon name={icon}/><h1>{h1}</h1><p className="hero-copy">{intro}</p>
-    <p className="offer-meta">Opracowanie: <a href={paths.about}>{config.name}</a>, psycholog</p></div>
+    <p className="offer-meta">{category === 'diagnosis' ? 'Gabinet prowadzi: ' : 'Opracowanie: '}<a href={paths.about}>{config.name}</a>, psycholog</p></div>
     {status === 'guide' && <div className="diagnostic-note"><p>Materiał informacyjny. Nie jest to osobna pozycja do rezerwacji. Na <a data-context-link href={services.consult.href}>standardowej konsultacji psychologicznej</a> można omówić swoją sytuację i możliwy dalszy krok.</p></div>}
+    {category === 'diagnosis' && <section className="diagnostic-note" aria-labelledby="przed-rezerwacja">
+      <h2 id="przed-rezerwacja">Przed umówieniem spotkania</h2>
+      <dl>
+        <dt><strong>Kontakt w sprawie diagnostyki</strong></dt>
+        <dd><a href={`tel:${config.phone.replace(/\s/g, '')}`}>{config.phone}</a> lub <a href={`mailto:${config.email}`}>e-mail do gabinetu</a>. Wystarczy pytanie organizacyjne; nie przesyłaj dokumentacji ani opisu objawów.</dd>
+        <dt><strong>Dostępność</strong></dt>
+        <dd>Przed rezerwacją ustal, czy zakres oceny odpowiada Twojemu pytaniu, oraz potwierdź dostępność dla danej grupy wiekowej i w wybranej formie.</dd>
+        <dt><strong>Koszt i zakres</strong></dt>
+        <dd>Stawka z <a href="/cennik/">cennika konsultacji</a> nie jest ceną pełnej diagnozy. Jeśli potrzebujesz dokumentu, zapytaj o jego dostępność przed rozpoczęciem oceny.</dd>
+      </dl>
+      <p className="mt-3"><a href="/materialy-psychologiczne/#diagnoza">Lista pytań przed diagnostyką</a></p>
+    </section>}
     {category === 'diagnosis' && <nav className="page-toc diagnostic-toc" aria-label="Spis treści diagnozy"><ol>{sections.map(([title],index)=><li key={title}><a href={`#etap-${index+1}`}>{title}</a></li>)}</ol></nav>}
     {sections.map(([title,content],index) => <section key={title} id={category==='diagnosis'?`etap-${index+1}`:undefined}><h2>{title}</h2>{content}</section>)}
     {'faq' in entry && <section><h2>Najczęściej zadawane pytania</h2><Questions items={entry.faq}/></section>}

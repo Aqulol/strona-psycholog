@@ -75,6 +75,7 @@ export default function CennikPage() {
 
         <section className="diagnostic-note"><h2>Dodatkowe usługi: ustalenie kosztu</h2>
           <p>Stawka za pojedynczą konsultację nie stanowi ceny procesu diagnostycznego. Informacje o opłatach i czasie proszę ustalić z gabinetem przed spotkaniem.</p>
+          <p><a href={services.diagnostic.href}>Konsultacja ukierunkowana diagnostycznie</a> to rozmowa o kierunku oceny, a nie z góry wyceniony pakiet ani osobna pozycja w rezerwacji. Cenę i czas psychoedukacji trzeba ustalić niezależnie od stawek powyżej.</p>
           <ul>{(['general','personality','adhd','edu','eduAdhd'] as const).map(key=><li key={key}><a href={services[key].href}>{services[key].name}</a></li>)}</ul>
         </section>
         <p className="mt-8 text-lg leading-8 text-ink/80">
@@ -83,6 +84,7 @@ export default function CennikPage() {
 
         <p className="mt-8"><a className="text-link" href="/kontakt/">Dane kontaktowe</a></p>
 
+        <p className="mt-4"><a href="/narzedzia-psychologiczne/">Oblicz orientacyjny koszt kilku sesji psychoterapii</a></p>
         <h2 className="mt-14 text-4xl text-green">Jak często odbywają się spotkania?</h2>
         <p className="mt-4 leading-8 text-ink/80">
           Zwykle spotykamy się raz lub dwa razy w tygodniu, o stałej porze. Częstotliwość

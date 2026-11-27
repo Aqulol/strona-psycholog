@@ -193,7 +193,7 @@ export function auditLinks(pages, redirects) {
       const { pathname, hash } = target;
       if (redirects.has(pathname)) legacy.add(`${path} → ${href}`);
       else if (!pages.has(pathname)) {
-        const asset = /^\/images\/[a-z0-9/_-]+\.(?:webp|avif)$/i.test(pathname) && !target.search && !hash;
+        const asset = (/^\/images\/[a-z0-9/_-]+\.(?:webp|avif)$/i.test(pathname) || pathname === '/materialy/karty-psychologiczne.pdf') && !target.search && !hash;
         if (!asset || !statSync(join(out, pathname), {throwIfNoEntry:false})?.isFile()) broken.add(`${path} → ${href}`);
       }
       else {

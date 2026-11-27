@@ -296,3 +296,17 @@ main.container.article-editorial {padding-inline:var(--gutter);}
 .help-catalogue-page .help-links li a:focus-visible {background:var(--sage);}
 /* Unlike link labels, printed URLs may be longer than a narrow screen. */
 :where(main p,main li) a[href^="https://"] {overflow-wrap:anywhere;}
+
+/* Educational worksheets and the local, non-persistent cost calculator. */
+.session-cost {display:grid;align-items:start;gap:.6rem;max-inline-size:30rem;}
+.session-cost :is(input,select) {min-height:44px;max-inline-size:100%;border:1px solid var(--strong-rule);border-radius:var(--edge);background:var(--surface);padding:.4rem .6rem;color:var(--ink);}
+.education-sheet li+li {margin-block-start:.5rem;}
+@media print {
+  body:has(.education-sheet) :is(.site-header,.site-footer,.skip-link,.crumbs,.knowledge-page nav,.education-download) {display:none;}
+  .education-sheet {break-inside:avoid;}
+}
+.education-notes {margin-block:.7rem;padding:.75rem 1rem;border:1px solid var(--rule);border-radius:var(--edge);}
+.education-notes summary {cursor:pointer;min-height:44px;align-content:center;font-weight:600;color:var(--pine);}
+.notes-fields {display:grid;gap:.65rem;margin-block:.8rem;}
+.notes-fields label,.notes-fields textarea {display:block;}
+.notes-fields textarea {width:100%;min-height:44px;resize:vertical;border:1px solid var(--strong-rule);border-radius:var(--edge);background:var(--surface);padding:.45rem;color:var(--ink);}

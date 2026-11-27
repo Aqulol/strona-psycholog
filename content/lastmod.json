@@ -6,23 +6,48 @@
   },
   "/baza-wiedzy/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:bc637c49609212e6f922c22d243a3504f260dce1630e69e5405c7c7d913b6598",
-    "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
+    "fingerprint": "v1:bb181d47a16785860f0b8c42243c149ab24acb39bd3b4dc225575a7f9d97d028",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+  },
+  "/blog/": {
+    "date": "2026-11-26",
+    "fingerprint": "v1:d7849bfab607f982e779e22d52b33bca8104fa1e77420c53689a5ac9f8420c71",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+  },
+  "/blog/tworczosc-i-empatia-u-dzieci/": {
+    "date": "2026-11-26",
+    "fingerprint": "v1:2f1e20a67ce211125fc91619e8fa79739dd5bbbf8a753654ef2c61e787560c0f",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+  },
+  "/cennik/": {
+    "date": "2026-11-26",
+    "fingerprint": "v1:0510e4ad4f6bc0db543d34eca3c408ee68ce17d49f1c15852670102987891374",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+  },
+  "/diagnoza-adhd-wroclaw/": {
+    "date": "2026-11-26",
+    "fingerprint": "v1:a924e71cea7f4f3336d266fed370a88e60f7c73fa828df17b2e8d39382754032",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+  },
+  "/diagnoza-osobowosci-wroclaw/": {
+    "date": "2026-11-26",
+    "fingerprint": "v1:2e2adbdaa1de2af1ac230038dc46ba3094ee1e66d437e97a80087cdbd82b9030",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
   },
   "/diagnoza-psychologiczna-wroclaw/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:6b0b79b62fa940bd65d0a5ce38931ca33ae548c54cec0c4ff9c0ecc6487324f8",
-    "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
+    "fingerprint": "v1:98d359f4dc1bd2453fc3b067762576aed9c62c1991070d99b302bb0a11188269",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
   },
   "/gabinet-wroclaw/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:a56e49c4f3fa382fc9b6bbd437e8d66adae9d14e3d124106a3d27dc84b27b187",
-    "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
+    "fingerprint": "v1:4f9c76f583fe17a098efb11b7babe18c5052866e4685a1dbe33daaad134a4e6b",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
   },
   "/informacje-dla-pacjentow/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:1846cdc2000b550afb976dd2b3a9d8aa733abebbe6c4842e160cc8660ec903ca",
-    "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
+    "fingerprint": "v1:b3bb821a172e9409e6d61a98a96b6caaa69bb6543ab866a36a803689bbc58a80",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
   },
   "/jaka-forme-pomocy-wybrac/": {
     "date": "2026-11-26",
@@ -34,15 +59,30 @@
     "fingerprint": "v1:691c5d8e6efbb6db523da3f591d545a0749fd0c240c27c8566bb0e9c4f9826ca",
     "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
   },
+  "/konsultacja-diagnostyczna-wroclaw/": {
+    "date": "2026-11-26",
+    "fingerprint": "v1:021358b817713800b1391224128fc402371e01c82fcb823582ba3a9c54efd21b",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+  },
   "/kontakt/": {
     "date": "2026-11-26",
     "fingerprint": "v1:58645e6e5e4d7f57c3280052a3e292b1f04948a0044dc2460a17a284fd166a01",
     "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
   },
+  "/materialy-psychologiczne/": {
+    "date": "2026-11-26",
+    "fingerprint": "v1:fae1f0a3f5ac77d699c792d6f9c390bea882d706d5f53339fabfbc57a0a5792d",
+    "evidence": "Dodanie pobieralnego zestawu PDF z pięcioma kartami."
+  },
+  "/narzedzia-psychologiczne/": {
+    "date": "2026-11-26",
+    "fingerprint": "v1:92217ad28681b3d6ac3a2775f35a05700f9e2e6e727948127a4b0f6796b83be0",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+  },
   "/o-mnie/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:a29539e5a0d506a8ef68109ec610705f4e39a59b30b998befbd2c0e716862607",
-    "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
+    "fingerprint": "v1:e1c0ca471e9b033a67bb2d1bda4b7149f9b802427233079dbaecb66bd2d3d0e1",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
   },
   "/oferta/": {
     "date": "2026-11-26",
@@ -51,8 +91,8 @@
   },
   "/polityka-prywatnosci/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:2a2c183f753134da1eabe96410c449845b5c0352ce7d1935af926232c78dce0c",
-    "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
+    "fingerprint": "v1:8cf6009f7e9bd4a73104f894481d8858d88b842fe556436f1379240c41c0f2ff",
+    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
   },
   "/poradnictwo-psychologiczne-wroclaw/": {
     "date": "2026-11-26",
