@@ -345,11 +345,6 @@
         "type": 301
       },
       {
-        "source": "/narzedzia-psychologiczne.html",
-        "destination": "/narzedzia-psychologiczne/",
-        "type": 301
-      },
-      {
         "source": "/o-mnie.html",
         "destination": "/o-mnie/",
         "type": 301

@@ -153,8 +153,6 @@ export default function Page() {
       <p className="mt-3 leading-8">Po wczytaniu kalendarza Booksy otrzymuje dane połączenia, np. adres IP. Witryna nie wysyła adresu podstrony w nagłówku odsyłającym przy wczytaniu ramki. W ramce mogą działać skrypty i pliki cookies dostawcy zgodnie z <a href="https://booksy.com/pl-pl/p/privacy" rel="noreferrer">polityką prywatności Booksy</a>. Wycofanie zgody usuwa ramkę, ale nie usuwa danych już otrzymanych przez Booksy ani jego plików cookies. Można rezerwować bezpośrednio w serwisie Booksy, zadzwonić lub napisać.</p>
       <p className="mt-3 leading-8">Mapa Google ładuje się dopiero po wybraniu opcji jej wyświetlenia. Przy wczytaniu mapy dostawca otrzymuje dane połączenia i może używać własnych plików cookies. Ustawienia cookies można zmienić w przeglądarce.</p>
 
-      <h2 className="mt-8 text-3xl">Narzędzia psychoedukacyjne</h2>
-      <p className="mt-3 leading-8">Wpisy w dziennikach i ustawienia kalkulatora pozostają w bieżącej pamięci karty przeglądarki. Nie są przekazywane gabinetowi ani usługom zewnętrznym i witryna nie zapisuje ich na stałe. Wpisy można wyczyścić przyciskiem w danym narzędziu. Na współdzielonym urządzeniu warto wyczyścić pola przed pozostawieniem otwartej karty.</p>
       <h2 className="mt-8 text-3xl">Przekazywanie danych poza EOG</h2>
       <p className="mt-3 leading-8">
         Dane mogą być przekazywane do Stanów Zjednoczonych (Google LLC - hosting, Firestore).

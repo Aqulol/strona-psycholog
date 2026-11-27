@@ -1,4 +1,5 @@
-import {ArrowUpRight, BookOpen, CalendarDays, Compass, FileDown, FlaskConical, GitFork, GraduationCap, HeartHandshake, LibraryBig, MapPin, MessagesSquare, NotebookPen} from 'lucide-react';
+import {ArrowUpRight, BookOpen, CalendarDays, Compass, FileDown, FlaskConical, GitFork, GraduationCap, HeartHandshake, LibraryBig, MapPin, MessagesSquare} from 'lucide-react';
+import {knowledgeLinks} from '../lib/knowledge';
 import {homeFaq, homeTopics} from '../lib/home-content';
 import {professionalProfiles} from '../lib/professional-profiles';
 import {empathyStudy} from '../lib/research';
@@ -93,12 +94,11 @@ export default function Home(){return <main id="tresc" className="editorial-home
 
 <section className="band journal-band" aria-labelledby="home-knowledge"><div className="shell home-block">
   <h2 id="home-knowledge">Baza wiedzy psychologicznej</h2>
-  <ul className="home-facts" role="list">{[
-    {Icon:BookOpen,href:'/blog/',label:'Artykuły psychologiczne',copy:'Teksty o emocjach, relacjach i psychoterapii.'},
-    {Icon:LibraryBig,href:'/slownik-psychologiczny/',label:'Słownik psychologiczny',copy:'Wyjaśnienia pojęć z psychologii, diagnozy i psychoterapii.'},
-    {Icon:FileDown,href:'/materialy-psychologiczne/',label:'Materiały do pobrania',copy:'Karty, które możesz wydrukować i wykorzystać do samodzielnej refleksji.'},
-    {Icon:NotebookPen,href:'/narzedzia-psychologiczne/',label:'Narzędzia psychologiczne',copy:'Kalkulator kosztów spotkań i notes do refleksji.'},
-  ].map(({Icon,href,label,copy})=><li key={href}><Icon aria-hidden="true"/><div><h3><a href={href}>{label}</a></h3><p>{copy}</p></div></li>)}</ul>
+  <ul className="home-facts home-knowledge-grid" role="list">{[
+    {Icon:BookOpen,...knowledgeLinks[0],copy:'Teksty o emocjach, relacjach i psychoterapii.'},
+    {Icon:LibraryBig,...knowledgeLinks[1],copy:'Wyjaśnienia pojęć z psychologii, diagnozy i psychoterapii.'},
+    {Icon:FileDown,...knowledgeLinks[2],copy:'Karty, które możesz wydrukować i wykorzystać do samodzielnej refleksji.'},
+  ].map(({Icon,href,name,copy})=><li key={href}><Icon aria-hidden="true"/><div><h3><a href={href}>{name}</a></h3><p>{copy}</p></div></li>)}</ul>
   <section aria-labelledby="home-latest" className="home-latest">
     <h3 id="home-latest">Najnowsze artykuły z datą publikacji</h3>
     <div className="journal-grid">{latestDatedArticles.slice(0,3).map(({slug,title,description})=><article key={slug}><h4><a href={`/blog/${slug}/`}>{title}</a></h4><ReadingTime minutes={blogReadingMinutes(slug)}/><p>{description}</p></article>)}</div>

@@ -294,19 +294,12 @@ main.container.article-editorial {padding-inline:var(--gutter);}
 /* Unlike link labels, printed URLs may be longer than a narrow screen. */
 :where(main p,main li) a[href^="https://"] {overflow-wrap:anywhere;}
 
-/* Educational worksheets and the local, non-persistent cost calculator. */
-.session-cost {display:grid;align-items:start;gap:.6rem;max-inline-size:30rem;}
-.session-cost :is(input,select) {min-height:44px;max-inline-size:100%;border:1px solid var(--strong-rule);border-radius:var(--edge);background:var(--surface);padding:.4rem .6rem;color:var(--ink);}
+/* Printable educational worksheets. */
 .education-sheet li+li {margin-block-start:.5rem;}
 @media print {
   body:has(.education-sheet) :is(.site-header,.site-footer,.skip-link,.crumbs,.knowledge-page nav,.education-download) {display:none;}
   .education-sheet {break-inside:avoid;}
 }
-.education-notes {margin-block:.7rem;padding:.75rem 1rem;border:1px solid var(--rule);border-radius:var(--edge);}
-.education-notes summary {cursor:pointer;min-height:44px;align-content:center;font-weight:600;color:var(--pine);}
-.notes-fields {display:grid;gap:.65rem;margin-block:.8rem;}
-.notes-fields label,.notes-fields textarea {display:block;}
-.notes-fields textarea {width:100%;min-height:44px;resize:vertical;border:1px solid var(--strong-rule);border-radius:var(--edge);background:var(--surface);padding:.45rem;color:var(--ink);}
 
 .practice-contact-form {display:grid;gap:.4rem;margin-block:1rem .65rem;}
 .practice-contact-form label {font-weight:600;}
@@ -344,5 +337,6 @@ main.container.article-editorial {padding-inline:var(--gutter);}
 .home-latest .journal-grid article{border-color:var(--rule)}
 .home-latest h4{font-size:1.12rem;line-height:1.35;margin-bottom:.35rem;color:var(--deep)}
 .home-latest article p{margin-top:.35rem}
-@media(min-width:600px){.home-about-intro{grid-template-columns:minmax(0,1fr) auto}.home-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:600px){.home-about-intro{grid-template-columns:minmax(0,1fr) auto}.home-facts:not(.home-knowledge-grid){grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:850px){.home-latest .journal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:62rem){.home-knowledge-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}

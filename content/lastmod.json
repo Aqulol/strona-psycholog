@@ -1,13 +1,13 @@
 {
   "/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:65fa2aa382c08b5a2673909b61ee6370fa620b5a908e289ed47c251a598275e0",
-    "evidence": "Przebudowa kolejności i treści sekcji, osiem FAQ, 24 linki tematyczne oraz aktualna lista artykułów."
+    "fingerprint": "v1:6092d9b113d688897e55957070b229396cf38d613efc8a50cd729b5baa39b17c",
+    "evidence": "Usunięcie sekcji interaktywnych i odnośników; trzy kategorie bazy wiedzy."
   },
   "/baza-wiedzy/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:bb181d47a16785860f0b8c42243c149ab24acb39bd3b4dc225575a7f9d97d028",
-    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+    "fingerprint": "v1:d8031c9d8a826a2bb07b4a38f2ec6a4822d229256f37d12deed164338a4d56ce",
+    "evidence": "Usunięcie sekcji interaktywnych i odnośników; trzy kategorie bazy wiedzy."
   },
   "/blog/": {
     "date": "2026-11-26",
@@ -21,8 +21,8 @@
   },
   "/cennik/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:0510e4ad4f6bc0db543d34eca3c408ee68ce17d49f1c15852670102987891374",
-    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+    "fingerprint": "v1:9b7928ab720a02aa61af125f56c1ee99aa7f4db3c703fc2fb8bbbcf195dca1da",
+    "evidence": "Usunięcie sekcji interaktywnych i odnośników; trzy kategorie bazy wiedzy."
   },
   "/diagnoza-adhd-wroclaw/": {
     "date": "2026-11-26",
@@ -71,13 +71,8 @@
   },
   "/materialy-psychologiczne/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:fae1f0a3f5ac77d699c792d6f9c390bea882d706d5f53339fabfbc57a0a5792d",
-    "evidence": "Dodanie pobieralnego zestawu PDF z pięcioma kartami."
-  },
-  "/narzedzia-psychologiczne/": {
-    "date": "2026-11-26",
-    "fingerprint": "v1:92217ad28681b3d6ac3a2775f35a05700f9e2e6e727948127a4b0f6796b83be0",
-    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+    "fingerprint": "v1:e3a4e5a31e5a17f6cc2243f1b785a5f2bfdb06517c0bf8c06c78f9f780f1d025",
+    "evidence": "Usunięcie sekcji interaktywnych i odnośników; trzy kategorie bazy wiedzy."
   },
   "/o-mnie/": {
     "date": "2026-11-26",
@@ -91,8 +86,8 @@
   },
   "/polityka-prywatnosci/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:4f9e88bd7562ace864255a97f22ea4b1522565dab991fe807298e59b82a12cf8",
-    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia. Uwzględniono opis wysyłki formularza i liczników antyspamowych. Zaktualizowano techniczny opis transportu kontaktu bez zmiany daty mapy. Zweryfikowano aktualny tekst przy optymalizacji strony gabinetu."
+    "fingerprint": "v1:802c5e3977b72e199bc1a0de988c4a0b297d082fba50a11de8b743a9d53361fc",
+    "evidence": "Usunięcie sekcji interaktywnych i odnośników; trzy kategorie bazy wiedzy."
   },
   "/poradnictwo-psychologiczne-wroclaw/": {
     "date": "2026-11-26",

@@ -53,3 +53,5 @@ yarn-error.log*
 
 # Homepage before/after screenshots and test evidence
 !/docs/optymalizacja-gabinetu/*.jpg
+
+!/docs/usuniecie-narzedzi/*.jpg
