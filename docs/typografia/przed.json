@@ -1,0 +1,346 @@
+{
+  "routes": 192,
+  "widths": [
+    320,
+    360,
+    375,
+    390,
+    430,
+    768,
+    1024,
+    1280,
+    1440,
+    1920
+  ],
+  "results": [
+    {
+      "path": "/baza-wiedzy/",
+      "width": 1024,
+      "findings": [
+        [
+          "split-word",
+          "psychologiczny",
+          "Słownik psychologiczny"
+        ]
+      ]
+    },
+    {
+      "path": "/baza-wiedzy/",
+      "width": 1280,
+      "findings": [
+        [
+          "split-word",
+          "psychologiczny",
+          "Słownik psychologiczny"
+        ]
+      ]
+    },
+    {
+      "path": "/baza-wiedzy/",
+      "width": 1440,
+      "findings": [
+        [
+          "split-word",
+          "psychologiczny",
+          "Słownik psychologiczny"
+        ],
+        [
+          "split-word",
+          "Informacje",
+          "Informacje dla pacjentów"
+        ],
+        [
+          "split-word",
+          "pacjentów",
+          "Informacje dla pacjentów"
+        ]
+      ]
+    },
+    {
+      "path": "/baza-wiedzy/",
+      "width": 1920,
+      "findings": [
+        [
+          "split-word",
+          "psychologiczny",
+          "Słownik psychologiczny"
+        ],
+        [
+          "split-word",
+          "Informacje",
+          "Informacje dla pacjentów"
+        ],
+        [
+          "split-word",
+          "pacjentów",
+          "Informacje dla pacjentów"
+        ]
+      ]
+    },
+    {
+      "path": "/blog/jak-wybrac-psychoterapeute/",
+      "width": 320,
+      "findings": [
+        [
+          "split-word",
+          "psychoterapeutę",
+          "Jak wybrać psychoterapeutę? Praktyczny przewodnik"
+        ]
+      ]
+    },
+    {
+      "path": "/blog/jak-wybrac-psychoterapeute/",
+      "width": 360,
+      "findings": [
+        [
+          "split-word",
+          "psychoterapeutę",
+          "Jak wybrać psychoterapeutę? Praktyczny przewodnik"
+        ]
+      ]
+    },
+    {
+      "path": "/blog/jak-wybrac-psychoterapeute/",
+      "width": 375,
+      "findings": [
+        [
+          "split-word",
+          "psychoterapeutę",
+          "Jak wybrać psychoterapeutę? Praktyczny przewodnik"
+        ]
+      ]
+    },
+    {
+      "path": "/blog/psychoterapia-psychodynamiczna-pierwsze-spotkanie/",
+      "width": 320,
+      "findings": [
+        [
+          "split-word",
+          "psychodynamiczna",
+          "Psychoterapia psychodynamiczna - na czym polega i jak wygląda pierwsze spotkanie"
+        ]
+      ]
+    },
+    {
+      "path": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+      "width": 320,
+      "findings": [
+        [
+          "split-word",
+          "terapeutyczna",
+          "Relacja terapeutyczna jako źródło zmiany"
+        ]
+      ]
+    },
+    {
+      "path": "/kiedy-zglosic-sie-na-terapie/",
+      "width": 320,
+      "findings": [
+        [
+          "centered-prose",
+          "Nie trzeba mieć gotowej odpowiedzi. Podczas pierwszej konsultacji można opowiedzieć o obecnej sytuacji i wspól"
+        ]
+      ]
+    },
+    {
+      "path": "/kiedy-zglosic-sie-na-terapie/",
+      "width": 360,
+      "findings": [
+        [
+          "centered-prose",
+          "Nie trzeba mieć gotowej odpowiedzi. Podczas pierwszej konsultacji można opowiedzieć o obecnej sytuacji i wspól"
+        ]
+      ]
+    },
+    {
+      "path": "/kiedy-zglosic-sie-na-terapie/",
+      "width": 375,
+      "findings": [
+        [
+          "centered-prose",
+          "Nie trzeba mieć gotowej odpowiedzi. Podczas pierwszej konsultacji można opowiedzieć o obecnej sytuacji i wspól"
+        ]
+      ]
+    },
+    {
+      "path": "/kiedy-zglosic-sie-na-terapie/",
+      "width": 390,
+      "findings": [
+        [
+          "centered-prose",
+          "Nie trzeba mieć gotowej odpowiedzi. Podczas pierwszej konsultacji można opowiedzieć o obecnej sytuacji i wspól"
+        ]
+      ]
+    },
+    {
+      "path": "/kiedy-zglosic-sie-na-terapie/",
+      "width": 430,
+      "findings": [
+        [
+          "centered-prose",
+          "Nie trzeba mieć gotowej odpowiedzi. Podczas pierwszej konsultacji można opowiedzieć o obecnej sytuacji i wspól"
+        ]
+      ]
+    },
+    {
+      "path": "/kiedy-zglosic-sie-na-terapie/",
+      "width": 768,
+      "findings": [
+        [
+          "centered-prose",
+          "Nie trzeba mieć gotowej odpowiedzi. Podczas pierwszej konsultacji można opowiedzieć o obecnej sytuacji i wspól"
+        ]
+      ]
+    },
+    {
+      "path": "/kiedy-zglosic-sie-na-terapie/",
+      "width": 1024,
+      "findings": [
+        [
+          "centered-prose",
+          "Nie trzeba mieć gotowej odpowiedzi. Podczas pierwszej konsultacji można opowiedzieć o obecnej sytuacji i wspól"
+        ]
+      ]
+    },
+    {
+      "path": "/kiedy-zglosic-sie-na-terapie/",
+      "width": 1280,
+      "findings": [
+        [
+          "centered-prose",
+          "Nie trzeba mieć gotowej odpowiedzi. Podczas pierwszej konsultacji można opowiedzieć o obecnej sytuacji i wspól"
+        ]
+      ]
+    },
+    {
+      "path": "/kiedy-zglosic-sie-na-terapie/",
+      "width": 1440,
+      "findings": [
+        [
+          "centered-prose",
+          "Nie trzeba mieć gotowej odpowiedzi. Podczas pierwszej konsultacji można opowiedzieć o obecnej sytuacji i wspól"
+        ]
+      ]
+    },
+    {
+      "path": "/kiedy-zglosic-sie-na-terapie/",
+      "width": 1920,
+      "findings": [
+        [
+          "centered-prose",
+          "Nie trzeba mieć gotowej odpowiedzi. Podczas pierwszej konsultacji można opowiedzieć o obecnej sytuacji i wspól"
+        ]
+      ]
+    },
+    {
+      "path": "/oferta/",
+      "width": 320,
+      "findings": [
+        [
+          "split-word",
+          "psychoterapeutycznego",
+          "Oferta gabinetu psychologicznego i psychoterapeutycznego"
+        ]
+      ]
+    },
+    {
+      "path": "/oferta/",
+      "width": 360,
+      "findings": [
+        [
+          "split-word",
+          "psychoterapeutycznego",
+          "Oferta gabinetu psychologicznego i psychoterapeutycznego"
+        ]
+      ]
+    },
+    {
+      "path": "/oferta/",
+      "width": 375,
+      "findings": [
+        [
+          "split-word",
+          "psychoterapeutycznego",
+          "Oferta gabinetu psychologicznego i psychoterapeutycznego"
+        ]
+      ]
+    },
+    {
+      "path": "/oferta/",
+      "width": 390,
+      "findings": [
+        [
+          "split-word",
+          "psychoterapeutycznego",
+          "Oferta gabinetu psychologicznego i psychoterapeutycznego"
+        ]
+      ]
+    },
+    {
+      "path": "/polityka-prywatnosci/",
+      "width": 320,
+      "findings": [
+        [
+          "split-word",
+          "prywatności",
+          "Polityka prywatności"
+        ]
+      ]
+    },
+    {
+      "path": "/psychoterapia-psychodynamiczna-wroclaw/",
+      "width": 320,
+      "findings": [
+        [
+          "split-word",
+          "psychodynamiczna",
+          "Psychoterapia psychodynamiczna we Wrocławiu"
+        ]
+      ]
+    },
+    {
+      "path": "/slownik-psychologiczny/agresja/",
+      "width": 320,
+      "findings": [
+        [
+          "split-word",
+          "psychodynamicznej",
+          "Agresja – czym jest w psychologii i psychoterapii psychodynamicznej?"
+        ]
+      ]
+    },
+    {
+      "path": "/slownik-psychologiczny/interpretacja-psychodynamiczna/",
+      "width": 320,
+      "findings": [
+        [
+          "split-word",
+          "psychodynamiczna",
+          "Interpretacja psychodynamiczna"
+        ]
+      ]
+    },
+    {
+      "path": "/slownik-psychologiczny/przeciwprzeniesienie/",
+      "width": 320,
+      "findings": [
+        [
+          "split-word",
+          "Przeciwprzeniesienie",
+          "Przeciwprzeniesienie"
+        ]
+      ]
+    },
+    {
+      "path": "/slownik-psychologiczny/psychoterapia-psychodynamiczna/",
+      "width": 320,
+      "findings": [
+        [
+          "split-word",
+          "psychodynamiczna",
+          "Psychoterapia psychodynamiczna"
+        ]
+      ]
+    }
+  ]
+}

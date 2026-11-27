@@ -5,7 +5,7 @@
  --strong-rule:#829589;--focus:#87541d;--white:#fff;
  --gutter:clamp(1rem,4vw,3.75rem);--shell:77rem;--measure:69ch;
  --section-space:clamp(3.6rem,7vw,7rem);--edge:.35rem;--motion:160ms ease;
- --display:clamp(2.25rem,4.8vw,4.5rem);--heading:clamp(1.65rem,3.2vw,2.8rem);
+ --display:clamp(1.95rem,5.3vw,4.5rem);--heading:clamp(1.65rem,3.2vw,2.8rem);
 }
 body{background:var(--paper);color:var(--ink)}
 .shell{width:min(100% - 2 * var(--gutter),var(--shell))}
@@ -78,7 +78,7 @@ body{background:var(--paper);color:var(--ink)}
 .offer-overview .service-directory-card ul{margin-top:1rem}
 .offer-home-cta .booking{background:transparent;color:var(--deep);border-color:var(--strong-rule)}
 .offer-home-cta .booking:hover{background:var(--sage)}
-@media(min-width:720px){.offer-overview{grid-template-columns:repeat(5,minmax(0,1fr))}.offer-overview [data-service-area=support],.offer-overview [data-service-area=education]{grid-column:span 2}.offer-overview [data-service-area=diagnosis],.offer-overview [data-therapy-card]{grid-column:span 3}}
+@media(min-width:900px){.offer-overview{grid-template-columns:repeat(5,minmax(0,1fr))}.offer-overview [data-service-area=support],.offer-overview [data-service-area=education]{grid-column:span 2}.offer-overview [data-service-area=diagnosis],.offer-overview [data-therapy-card]{grid-column:span 3}}
 .support-list{border-color:var(--rule)}
 .support-list li{display:grid;grid-template-columns:1.8rem 1fr;gap:.9rem;border-color:var(--rule);padding:1.2rem 0}
 .support-list svg{color:var(--pine);margin-top:.1rem}
@@ -113,9 +113,9 @@ body{background:var(--paper);color:var(--ink)}
 .footer-bottom a{text-decoration:underline;text-underline-offset:.2em}.footer-bottom p+p{display:flex;flex-wrap:wrap;gap:.7rem 1.1rem}
 @media(min-width:760px){.site-footer .footer-grid{grid-template-columns:minmax(0,.75fr) minmax(0,1.4fr)}.footer-bottom{grid-template-columns:1fr auto}}
 .reading{width:min(100% - 2 * var(--gutter),52rem);padding-block:1.5rem clamp(3rem,7vw,6rem)}
-.reading h1,.blog-library h1,.price-editorial h1{font-size:var(--display);line-height:1.06;color:var(--deep);letter-spacing:-.045em;overflow-wrap:break-word}
+.reading h1,.blog-library h1,.price-editorial h1{font-size:var(--display);line-height:1.06;color:var(--deep);letter-spacing:-.038em}
 .reading h2,.article-editorial h2{line-height:1.17}
-.reading p,.article-editorial p{overflow-wrap:break-word}
+
 .reading .hero-copy{font-size:clamp(1.03rem,1.35vw,1.2rem);max-width:var(--measure);line-height:1.68;color:var(--muted)}
 .reading :is(h2,h3)[id]{scroll-margin-top:1rem}
 .crumbs{color:var(--muted);line-height:1.65;margin-bottom:1.45rem}
@@ -125,7 +125,7 @@ body{background:var(--paper);color:var(--ink)}
 .questions details[open] summary{color:var(--deep);font-weight:600}
 .questions details[open]>p{animation:editorial-enter var(--motion)}
 .editorial-card{border-color:var(--rule);border-radius:var(--edge);background:var(--surface)}
-.service-masthead{border-top:1px solid var(--strong-rule);background:var(--sage);padding:clamp(1.2rem,4.5vw,3.4rem);margin-bottom:1.7rem}
+.service-masthead{border-top:1px solid var(--strong-rule);background:var(--sage);padding:clamp(.85rem,3.5vw,3.4rem);margin-bottom:1.7rem}
 [data-service-category=education] .service-masthead{background:var(--sand)}
 [data-service-category=therapy] .service-masthead{background:var(--surface);border-left:3px solid var(--gold)}
 .service-masthead .eyebrow{margin-bottom:1rem}.service-masthead .service-icon{background:var(--surface)}
@@ -140,14 +140,14 @@ body{background:var(--paper);color:var(--ink)}
 .offer-shell .offer-cards .service-directory-card{border:0;border-radius:0;border-bottom:1px solid var(--rule);min-width:0}
 .offer-shell .offer-cards .service-directory-card:last-child{border:0}
 .offer-shell .service-directory-card h3{font-size:clamp(1.3rem,2.6vw,2rem)}
-@media(min-width:1000px){.offer-shell .offer-section{display:grid;grid-template-columns:minmax(14rem,1fr) minmax(0,2.35fr);column-gap:2rem;align-items:start}.offer-shell .offer-section-title{grid-column:1;grid-row:1}.offer-shell .offer-section>p{grid-column:1;grid-row:2;align-self:start}.offer-shell .offer-section>.offer-cards,.offer-shell .offer-section>[data-therapy-card]{grid-column:2;grid-row:1/span 2}}
+@media(min-width:1160px){.offer-shell .offer-section{display:grid;grid-template-columns:minmax(14rem,1fr) minmax(0,2.35fr);column-gap:2rem;align-items:start}.offer-shell .offer-section-title{grid-column:1;grid-row:1}.offer-shell .offer-section>p{grid-column:1;grid-row:2;align-self:start}.offer-shell .offer-section>.offer-cards,.offer-shell .offer-section>[data-therapy-card]{grid-column:2;grid-row:1/span 2}}
 .practice-editorial>.eyebrow,.directory-editorial>.eyebrow{border-top:1px solid var(--strong-rule);padding-top:1rem}
 .practice-editorial[data-practice-page=office] .gallery{gap:.6rem}
 .practice-editorial[data-practice-page=office] .gallery a{overflow:hidden;background:var(--sage)}
 .practice-editorial[data-practice-page=office] .gallery img{aspect-ratio:4/3;object-fit:cover;transition:filter var(--motion)}
 .practice-editorial[data-practice-page=office] .gallery a:hover img{filter:brightness(.93)}
 .help-hero{text-align:start;width:min(100% - 2 * var(--gutter),var(--shell));border-top:1px solid var(--strong-rule);padding-block:1.2rem 2rem}
-.help-hero h1{text-wrap:wrap;color:var(--deep);letter-spacing:-.048em}
+.help-hero h1{color:var(--deep);letter-spacing:-.048em}
 .help-hero p:last-child{margin-inline:0;color:var(--muted)}
 .help-directory>h2{text-align:start;margin:0 0 1.2rem;max-width:none}
 .help-category{border-radius:var(--edge);box-shadow:none;border-top:2px solid var(--strong-rule)}
@@ -155,10 +155,10 @@ body{background:var(--paper);color:var(--ink)}
 .help-more[open]>.help-links{animation:editorial-enter var(--motion) both}
 .catalogue-tools{background:var(--surface);border:1px solid var(--rule);border-radius:var(--edge)}
 .catalogue-tools :is(input,select):focus-visible{background:var(--surface);border-color:var(--pine)}
-.topic-page article>h1,.article-editorial h1{text-wrap:pretty}
+
 .topic-page article>h1+.topic-reading-time{border-bottom:1px solid var(--rule);padding-bottom:.8rem}
 .topic-booking{background:var(--sage)}
-.blog-library h1{max-width:16ch}
+
 .journal-library{display:grid;gap:0;border-top:1px solid var(--strong-rule)}
 .journal-library article{border:0;border-bottom:1px solid var(--rule);border-radius:0;background:transparent;min-width:0;padding:1.1rem 0}
 .journal-library article:first-child{background:var(--sand);padding:1.3rem}
@@ -219,3 +219,48 @@ main.price-editorial{width:min(100% - 2 * var(--gutter),53rem);max-width:53rem;p
 .knowledge-page .glossary-category-counts {display:flex;flex-wrap:wrap;gap:.35rem .65rem;list-style:none;padding:0;margin:1.1rem 0;color:var(--muted);font-size:.8rem;}
 .glossary-category-counts li {padding:.18rem .5rem;border:1px solid var(--rule);border-radius:var(--edge);}
 .glossary-category-counts strong {color:var(--deep);margin-inline-start:.3em;}
+
+/* Keep labels intact. Give actual addresses, not headings, an emergency break. */
+:is(main,header,footer) :is(h1,h2,h3),
+:is(.booking,.button-secondary,.nav-items a,.help-links a,.lexicon-entries dt) {
+ word-break:normal;overflow-wrap:normal;hyphens:none;
+}
+main :is(h1,h2,h3) {text-wrap:balance;}
+.reading,.editorial-card,.service-directory-card,.help-category {text-align:start;}
+.reading :is(p,li,dd),.help-scope-copy {text-wrap:pretty;}
+.reading :is(section,article)>:is(p,ul,ol),.lexicon-entries dd {max-inline-size:var(--measure);}
+.reading :is(li,p) > a[href^="https://"],
+a:is([href^="mailto:"],[href^="tel:"]) {overflow-wrap:anywhere;}
+.reading :is(h1,h2,h3) a {overflow-wrap:normal;}
+.service-masthead h1 {font-size:clamp(1.88rem,5.1vw,4.05rem);line-height:1.1;}
+.editorial-card :is(h2,h3) {font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.16;}
+.offer-section-title .service-icon {flex:none;}
+.offer-section-title h2,.help-category-heading h3,.help-panel-heading h2 {min-inline-size:0;}
+.help-cta p:not(.eyebrow) {text-align:start;}
+.help-more summary svg,.help-cta-button svg,.help-youth-cta svg,.help-contact svg {flex:none;}
+@media(max-width:430px) {
+ .reading {width:calc(100% - 2rem);}
+ .editorial-card,.help-category {padding:1rem;}
+ .help-category-heading,.help-panel-heading {gap:.55rem;}
+ .help-badge {width:2.25rem;height:2.25rem;}
+ .help-links a {gap:.4rem;}
+}
+
+/* Templates authored before the shared reading layout also use its display scale. */
+.article-editorial h1,main.container.max-w-3xl:not(.price-editorial)>h1,.offer-shell h1 {
+ font-size:var(--display);line-height:1.1;letter-spacing:-.038em;
+}
+main.container.article-editorial {padding-inline:var(--gutter);}
+.offer-shell .offer-section-title h2 {font-size:clamp(1.45rem,2.25vw,2.15rem);}
+@media(min-width:1160px) {
+ .offer-shell .offer-section {grid-template-columns:minmax(20rem,1fr) minmax(0,2.25fr);}
+}
+/* The knowledge cards need more room than the surrounding reading column. */
+.reading:has(>.knowledge-grid) {width:min(100% - 2 * var(--gutter),64rem);}
+.reading:has(>.knowledge-grid)>section {max-inline-size:var(--measure);}
+.knowledge-grid .editorial-card {padding:clamp(1rem,2vw,1.6rem);}
+.knowledge-grid .editorial-card h2 {font-size:clamp(1.35rem,2vw,1.8rem);}
+@media(max-width:430px) {
+ /* Long offer title: keep the complete 21-letter word even at 320 px. */
+ .offer-shell>h1 {font-size:clamp(1.5rem,7.5vw,2rem);}
+}

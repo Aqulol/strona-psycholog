@@ -41,3 +41,6 @@ yarn-error.log*
 
 # Verification screenshots only; never served by static export.
 !/docs/publikacja-slownika/zrzuty/*.jpg
+
+# Local typography audit evidence (not exported by Next.js)
+!/docs/typografia/zrzuty/**/*.jpg
