@@ -41,7 +41,9 @@ for(const row of terms){
    assert.ok(hits.slice(0,8).some(hit=>hit.href===href),`Global search: ${query} → ${href}`);
   }
   const html=readFileSync(`out${href}index.html`,'utf8');
-  for(const marker of ['DefinedTerm','BreadcrumbList','Zacytuj to hasło']) assert.ok(html.includes(marker),`${href}: ${marker}`);
+  for(const marker of ['DefinedTerm','BreadcrumbList']) assert.ok(html.includes(marker),`${href}: ${marker}`);
+  assert.doesNotMatch(html,/Zacytuj to hasło|Kopiuj adres|Kopiuj zapis APA 7|Skopiowano|glossary-clipboard/u,`${href}: removed citation feature`);
+  assert.match(html,/<section><h2>Bibliografia<\/h2><ul>.+?<\/ul><\/section><nav aria-label="Sąsiednie hasła">/su,`${href}: bibliography immediately before neighbouring entries`);
  }
 }
 for(const route of ['slownik-psychologiczny','kiedy-zglosic-sie-na-terapie']){
