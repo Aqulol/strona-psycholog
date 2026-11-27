@@ -1,3 +1,4 @@
+import { knowledgePath, knowledgeLinks } from './knowledge';
 import { categoryNames, offerPath, psychologyGroups, services, therapyKeys, type ServiceKey } from './services';
 import { paths } from './site';
 import { servicePaths } from './service-paths';
@@ -7,15 +8,17 @@ const menuItems = (keys:readonly ServiceKey[]) => keys.map(key => {
   return { href, name, guide:status === 'guide' };
 });
 export type MenuItem = ReturnType<typeof menuItems>[number];
-export type NavigationGroup = {label:string;href:string} & ({ columns:{label:string;items:MenuItem[]}[] } | { items:MenuItem[] });
+export type NavigationGroup = {label:string;href:string} & ({ columns:{label:string;href:string;items:MenuItem[]}[] } | { items:MenuItem[] });
 export const navigation = {
   offerPath,
   groups: [
-    { label:'Psycholog', href:servicePaths.psychologist, columns:psychologyGroups.map(({category,keys}) => ({label:categoryNames[category],items:menuItems(keys)})) },
+    { label:'Psycholog', href:servicePaths.psychologist, columns:psychologyGroups.map(({category,keys}) => ({label:categoryNames[category],href:`${servicePaths.psychologist}#oferta-${category}`,items:menuItems(keys)})) },
     { label:'Psychoterapeuta', href:servicePaths.therapist, items:menuItems(therapyKeys) },
   ] satisfies NavigationGroup[],
+  knowledge: {label:'Baza wiedzy',href:knowledgePath,items:knowledgeLinks} satisfies NavigationGroup,
+  contact:paths.contact,
   links: [
     ['Dorośli', paths.adults], ['Młodzież od 15. roku życia', paths.youth], ['W czym pomagam?', paths.signs],
-    ['O mnie', paths.about], ['Gabinet', paths.office], ['Cennik', '/cennik/'], ['Blog', '/blog/'], ['Kontakt', paths.contact],
+    ['O mnie', paths.about], ['Gabinet', paths.office], ['Cennik', '/cennik/'],
   ],
 };

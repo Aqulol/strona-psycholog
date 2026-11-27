@@ -1,3 +1,4 @@
+import CatalogueFilter from './CatalogueFilter';
 import type { ReactNode } from 'react';
 import { helpTopics, topicPath } from '../lib/help-topics';
 import { paths } from '../lib/site';
@@ -112,29 +113,30 @@ const categories: HelpCategory[] = groups.map(([title, icon, tone, entries]) => 
     const topic = topicsBySlug.get(slug);
     if (!topic || assigned.has(slug)) throw new Error(`Missing or duplicated catalogue topic: ${slug}`);
     assigned.add(slug);
-    return { href: topicPath(slug), label: topic.label, icon };
+    const aliases:Record<string,string>={'nadmierne-analizowanie':'ruminacje zamartwianie','lek-przed-odrzuceniem':'lęk przed porzuceniem','trudnosci-emocjonalne':'regulacja emocji','relacje-rodzinne-mlodziezy':'konflikty z rodzicami','relacje-z-rowiesnikami':'presja rówieśnicza','trudnosci-okoloporodowe':'depresja poporodowa','trudne-doswiadczenia-z-dziecinstwa':'zaniedbanie emocjonalne','asertywnosc-i-granice':'people pleasing wyrażanie potrzeb'};
+    return { href: topicPath(slug), label: topic.label, icon, aliases:aliases[slug] };
   }),
 }));
 if (assigned.size !== helpTopics.length) throw new Error('Unassigned catalogue topics');
 
 export default function HelpTopicIndex({ scope }: { scope: ReactNode }) {
   const [youth, services] = categories.slice(-2);
-  return <>
+  return <CatalogueFilter categories={categories.map(c=>c.title)} label="Szukaj tematu" age>
     <section className="help-directory help-width" aria-labelledby="tematy-konsultacji">
       <h2 id="tematy-konsultacji">Obszary pomocy psychologicznej i psychoterapii</h2>
       <div className="help-card-grid" id="lista-tematow">
         {categories.slice(0, -2).map(category => <HelpCategoryCard key={category.title} category={category}/>)}
       </div>
     </section>
-    <section className="help-youth help-width" aria-labelledby="help-youth-heading">
+    <section className="help-youth help-width" data-filter-group={youth.title} data-youth="true" aria-labelledby="help-youth-heading">
       <div className="help-panel-heading"><HelpBadge {...youth}/><h2 id="help-youth-heading">{youth.title}</h2></div>
       <HelpLinks topics={youth.topics}/>
       <a className="help-youth-cta" href={paths.youth}>Jak wygląda konsultacja dla młodzieży? <HelpTopicIcon name="ArrowUpRight" size={17}/></a>
     </section>
-    <section className="help-scope help-width" aria-labelledby="help-scope-heading">
+    <section className="help-scope help-width" data-filter-group={services.title} aria-labelledby="help-scope-heading">
       <div className="help-panel-heading"><HelpBadge {...services}/><h2 id="help-scope-heading">{services.title}</h2></div>
       <HelpLinks topics={services.topics}/>
       {scope}
     </section>
-  </>;
+  </CatalogueFilter>;
 }

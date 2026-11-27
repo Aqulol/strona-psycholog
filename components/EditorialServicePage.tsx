@@ -1,3 +1,4 @@
+import RelatedContent from './RelatedContent';
 import { config } from '../lib/config';
 import { personId, webPage } from '../lib/entities';
 import { diagnosticKeys, editorial, type EditorialKey } from '../lib/service-editorial';
@@ -26,8 +27,10 @@ export default function EditorialServicePage({id}:{id:EditorialKey}) {
     <ServiceIcon name={icon}/><h1>{h1}</h1><p className="hero-copy">{intro}</p>
     <p className="offer-meta">Opracowanie: <a href={paths.about}>{config.name}</a>, psycholog</p>
     {status === 'guide' && <div className="diagnostic-note"><p>Materiał informacyjny. Nie jest to osobna pozycja do rezerwacji. Na <a data-context-link href={services.consult.href}>standardowej konsultacji psychologicznej</a> można omówić swoją sytuację i możliwy dalszy krok.</p></div>}
-    {sections.map(([title,content]) => <section key={title}><h2>{title}</h2>{content}</section>)}
+    {category === 'diagnosis' && <nav className="page-toc" aria-label="Spis treści diagnozy"><ol>{sections.map(([title],index)=><li key={title}><a href={`#etap-${index+1}`}>{title}</a></li>)}</ol></nav>}
+    {sections.map(([title,content],index) => <section key={title} id={category==='diagnosis'?`etap-${index+1}`:undefined}><h2>{title}</h2>{content}</section>)}
     {'faq' in entry && <section><h2>Najczęściej zadawane pytania</h2><Questions items={entry.faq}/></section>}
+    <RelatedContent path={href}/>
     {category === 'diagnosis' && <section className="diagnostic-note"><h2>Powiązane ścieżki diagnostyczne</h2><ul>
       {diagnosticKeys.filter(key=>key!==id).map(key=><li key={key}><a href={services[key].href}>{services[key].name}</a></li>)}
       <li><a href={services.diagnostic.href}>Czym jest konsultacja diagnostyczna?</a></li>

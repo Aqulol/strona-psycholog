@@ -1,3 +1,4 @@
+import RelatedContent from '../../../components/RelatedContent';
 import { services } from '../../../lib/services';
 import { contextLinks } from '../../../lib/context-links';
 import ReadingTime from '../../../components/ReadingTime';
@@ -48,6 +49,7 @@ export default async function Page({ params }: Props) {
       {a.slug === 'tfp-dla-kogo' && <p>Na pytanie, jak ocenia się funkcjonowanie osobowości, odpowiadam osobno w opisie <a data-context-link href={services.personality.href}>diagnozy osobowości</a>. Sama ocena nie przesądza, czy proponowana psychoterapia będzie odpowiednia.</p>}
       <BlogReading slug={a.slug}/>
     </article>
+    <RelatedContent path={path}/>
     <SeeAlso links={[[a.link, a.slug === 'adhd-u-doroslych' ? 'Diagnoza ADHD we Wrocławiu' : a.sections ? 'Więcej o tym, jak pracuję' : 'Psychoterapia indywidualna dorosłych'], [paths.faq, 'Pytania przed konsultacją']]}/>
   </main>;
 }
