@@ -146,7 +146,6 @@ body { background:#faf8f3;color:#243b34; }
 .site-footer :focus-visible { outline-color:#f5d49e; }
 .desktop-menu { display:none; }
 @media(min-width:72rem){.site-menu{display:none}.desktop-menu{display:block}}
-.embed[title*="Booksy"] { min-height:42rem; }
 
 .support-list { display:grid; list-style:none; border-top:1px solid #d8ded3; margin-bottom:.6rem; }
 .support-list li { padding:.85rem 0; border-bottom:1px solid #d8ded3; }
@@ -221,9 +220,14 @@ body { background:#faf8f3;color:#243b34; }
 .topic-page h1 { font-size:clamp(2.2rem, 5vw, 3.8rem); }
 .topic-page h2 { font-size:clamp(1.45rem, 2.8vw, 2.2rem); }
 .topic-booking { scroll-margin-top:1rem; padding:clamp(.75rem, 2vw, 1rem); word-break:normal; overflow-wrap:normal; hyphens:none; }
-.topic-calendar { margin-block:1rem; }
-.topic-calendar p { margin-bottom:.65rem; font-size:.9rem; }
-.topic-calendar iframe { display:block; width:100%; height:780px; max-height:none; }
+.booksy-calendar { display:grid; gap:.75rem; margin-block:.75rem; min-inline-size:0; }
+.booksy-consent { display:grid; gap:.65rem; font-size:.875rem; }
+.booksy-consent-actions { display:flex; flex-wrap:wrap; gap:.5rem; }
+.booksy-status:empty { display:none; }
+.booksy-status { font-size:.875rem; }
+.booksy-slot { min-inline-size:0; height:clamp(38rem, 85svh, 49rem); background:var(--surface); border:1px solid var(--rule); border-radius:var(--edge); }
+.booksy-slot iframe { display:block; width:100%; height:100%; border:0; }
+.booking-contact-layout { align-items:start; }
 .topic-safety { margin-block:1.25rem; padding:.85rem 1rem; border-inline-start:3px solid #244e41; background:#f7f4ee; }
 .topic-booking-person { display:flex; align-items:center; gap:.8rem; margin-bottom:.8rem; }
 .topic-booking-person img { flex:none; border-radius:50%; object-fit:cover; }

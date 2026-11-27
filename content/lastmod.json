@@ -1,7 +1,7 @@
 {
   "/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:c0694d870c5af23101fd20a9ebcbed9c27046513459ea575f1d177901c14b165",
+    "fingerprint": "v1:0100791f5e9819504a2d63922e6e1584810f5e932ef427bfcf2730a9d8f097fd",
     "evidence": "Redakcyjna rozbudowa strony głównej: dodane obszary ADHD i młodzieży, przebieg współpracy oraz linkowanie do oferty i słownika; nie jest to data wdrożenia."
   },
   "/baza-wiedzy/": {
@@ -36,7 +36,7 @@
   },
   "/kontakt/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:e6d40a6b06b00112df107430b9cbb862e3f1210b14e21795aee08ca6ac1eb0f2",
+    "fingerprint": "v1:72e54d7e395033f5b7069b7386da94171d6e6425e86566ee9b6fbd69029a7d58",
     "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
   },
   "/o-mnie/": {
@@ -51,7 +51,7 @@
   },
   "/polityka-prywatnosci/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:a180f86c50ab3e4c4bee0eb144ec4f5a089fc2361f03fcdc2d0ea11edd295517",
+    "fingerprint": "v1:92b6a4359bd97ffda484e4bd41e5568a8cf01174b1698f14fe2a40630b4187c9",
     "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
   },
   "/poradnictwo-psychologiczne-wroclaw/": {
@@ -66,12 +66,12 @@
   },
   "/w-czym-pomagam/wypalenie-zawodowe/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:b17c876c3d82ec914a33e76ac530d25276dfdc8f032ade1d2dbf048eeff236a9",
+    "fingerprint": "v1:44731ddf779c9f3abf67960bdacc8fddfcf24645e6787da991c8b8c06760259c",
     "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
   },
   "/w-czym-pomagam/zrozumienie-siebie/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:6f06b704cf542a9af15534b2cef71c8cf7f7bb437d9da7a49ba2c7b1391cf423",
+    "fingerprint": "v1:3c3224e66b47c816154da5d7a2297632f823659c9a67f970597a39c45eb69ac2",
     "evidence": "Uzupełnienie samopoznania w istniejącym katalogu, bez nowej usługi; zweryfikowane względem 35ce157."
   }
 }
