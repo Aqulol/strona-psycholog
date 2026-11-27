@@ -99,7 +99,6 @@ body{background:var(--paper);color:var(--ink)}
 .journal-grid article:first-child{background:var(--surface);padding:clamp(1rem,3vw,2.4rem);border:0;border-left:3px solid var(--gold)}
 .journal-grid h3{margin:.6rem 0 .8rem;color:var(--deep);font-size:clamp(1.3rem,2.35vw,2rem);line-height:1.18}
 .journal-grid article:first-child h3{font-size:clamp(1.65rem,3vw,2.8rem)}
-.journal-grid a:hover{text-decoration:underline;text-underline-offset:.18em}
 @media(min-width:760px){.journal-grid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}.journal-grid article:first-child{grid-row:span 2}}
 .contact-editorial .editorial-card{border:0;border-top:1px solid var(--strong-rule);background:transparent;border-radius:0;padding-inline:0}
 .site-footer{background:var(--deep);color:var(--surface);padding-block:clamp(2.7rem,5vw,4.5rem) 1.75rem}
@@ -107,10 +106,9 @@ body{background:var(--paper);color:var(--ink)}
 .footer-name{letter-spacing:-.035em;font-size:clamp(1.8rem,3vw,2.6rem)}
 .footer-menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:1rem}
 .footer-menu p{color:var(--sage);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin:0 0 .5rem}
-.footer-grid nav a{padding-block:.55rem;min-height:44px;text-decoration:none}
-.footer-grid nav a:hover{text-decoration:underline}
+.footer-grid nav a{padding-block:.55rem;min-height:44px}
 .footer-bottom{border-top:1px solid var(--strong-rule);margin-top:1.8rem;padding-top:1.2rem;display:grid;gap:.75rem;font-size:.83rem}
-.footer-bottom a{text-decoration:underline;text-underline-offset:.2em}.footer-bottom p+p{display:flex;flex-wrap:wrap;gap:.7rem 1.1rem}
+.footer-bottom p+p{display:flex;flex-wrap:wrap;gap:.7rem 1.1rem}
 @media(min-width:760px){.site-footer .footer-grid{grid-template-columns:minmax(0,.75fr) minmax(0,1.4fr)}.footer-bottom{grid-template-columns:1fr auto}}
 .reading{width:min(100% - 2 * var(--gutter),52rem);padding-block:1.5rem clamp(3rem,7vw,6rem)}
 .reading h1,.blog-library h1,.price-editorial h1{font-size:var(--display);line-height:1.06;color:var(--deep);letter-spacing:-.038em}
@@ -185,8 +183,6 @@ main.price-editorial{width:min(100% - 2 * var(--gutter),53rem);max-width:53rem;p
 .price-number{font-family:var(--font-heading);font-size:clamp(1.8rem,3.5vw,2.75rem);color:var(--deep);white-space:nowrap;font-variant-numeric:lining-nums}
 @media(min-width:620px){.price-row{grid-template-columns:minmax(0,1fr) auto;align-items:start;padding:1.4rem 1.6rem}.price-row h2{grid-column:1;grid-row:1}.price-row .price-number{grid-column:2;grid-row:1}.price-row .price-number+p{grid-column:2;grid-row:2;text-align:right}.price-row>p:last-child{grid-column:1;grid-row:2}}
 @media(prefers-reduced-motion:reduce){.nav-submenu:not([hidden]),.site-search[open],.office-lightbox[open],.questions details[open]>p,.help-more[open]>.help-links{animation:none}.nav-parent svg,.booking,.button-secondary,.questions summary{transition:none}}
-.site-header .nav-items li>a:not([class]),.site-header .nav-parent>a:not([class]){text-decoration:none}
-.site-header .nav-items li>a:not([class]):is(:hover,:focus-visible),.site-header .nav-parent>a:not([class]):is(:hover,:focus-visible){text-decoration:underline;text-underline-offset:.25em}
 .hero-home{isolation:isolate}
 .hero-home::after{z-index:-1;right:-13rem;top:-16rem;width:43rem;height:43rem}
 @media(max-width:600px){.hero-actions{column-gap:.45rem}.hero-home .hero-actions :is(.booking,.button-secondary){padding-inline:.7rem}.hero-home .hero-copy{line-height:1.65}.hero-home h1{margin-bottom:.85rem}.hero-home .hero-copy{margin-bottom:1.05rem}.hero-edition{letter-spacing:.095em}}
@@ -264,3 +260,42 @@ main.container.article-editorial {padding-inline:var(--gutter);}
  /* Long offer title: keep the complete 21-letter word even at 320 px. */
  .offer-shell>h1 {font-size:clamp(1.5rem,7.5vw,2rem);}
 }
+
+/* Link roles. Unlayered rules take precedence over legacy Tailwind underline utilities
+   without changing the original HTML or the link destinations. */
+:where(a[href]) {
+ text-decoration:none;
+ text-decoration-thickness:1px;
+ text-underline-offset:.18em;
+}
+:where(main p, main li, main dd, .see-also, [role=dialog], .site-search) a[href]:not(:where(.booking,.button-secondary,.help-cta-button,.help-links a,.crumbs a,.page-toc a,.glossary-letters a)) {
+ color:var(--link-color,var(--pine));
+ font-weight:600;
+}
+/* Reference titles are usually whole links in source lists, not inline fragments. */
+:where(.article-sources,.knowledge-page section:has(+nav[aria-label="Sąsiednie hasła"])) li a[href] {
+ font-weight:500;
+}
+:where(.site-footer,.help-cta,.offer-overview [data-therapy-card]) {
+ --link-color:var(--surface);
+ --link-hover:#f1dfb6;
+}
+:where(.site-footer) a[href], .help-contact a[href] {
+ color:var(--link-color);
+ font-weight:600;
+}
+/* Navigation and breadcrumbs use their own hierarchy; the focus ring stays independent. */
+:where(.crumbs) a[href] {color:var(--pine);font-weight:500;}
+:where(.page-toc,.lexicon-entries dt,.editorial-card h2,.editorial-card h3,.journal-grid h3) a[href] {
+ color:var(--link-color,var(--deep));
+}
+:where(a[href]):not(:where(.booking,.button-secondary,.help-cta-button,.header-brand,.skip-link,.gallery a,.glossary-letters a,.help-links a,.offer-shell .page-toc a,.editorial-card h2 a,.editorial-card h3 a,.journal-grid h3 a,[href*="booksy.com"])):is(:hover,:focus-visible) {
+ text-decoration-line:underline;
+}
+:where(main,.site-footer,.site-search) a[href]:not(:where(.booking,.button-secondary,.help-cta-button,.gallery a,.help-links a)):is(:hover,:focus-visible) {
+ color:var(--link-hover,var(--deep));
+}
+/* Help rows and letter buttons have a background treatment rather than an underline. */
+.help-catalogue-page .help-links li a:focus-visible {background:var(--sage);}
+/* Unlike link labels, printed URLs may be longer than a narrow screen. */
+:where(main p,main li) a[href^="https://"] {overflow-wrap:anywhere;}
