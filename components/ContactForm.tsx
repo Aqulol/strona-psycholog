@@ -2,9 +2,10 @@
 
 import {useEffect, useId, useRef, useState, type FormEvent} from 'react';
 
-// This URL is public. Mail credentials exist only in the separate Worker.
-const publicEndpoint = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? '';
-const endpoint = /^https:\/\/[a-z0-9-]+\.[a-z0-9-]+\.workers\.dev\/kontakt$/.test(publicEndpoint) ? publicEndpoint : undefined;
+import {contactEndpoint} from '../lib/contact-endpoint.mjs';
+
+// Public URL only. Mail credentials exist exclusively in the Worker.
+const endpoint = contactEndpoint(process.env.NEXT_PUBLIC_CONTACT_ENDPOINT);
 
 type Feedback = { kind:'success'|'error'; text:string };
 export default function ContactForm() {
@@ -34,13 +35,13 @@ export default function ContactForm() {
     setFeedback(undefined);
     try {
       const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:AbortSignal.timeout(18_000),credentials:'omit',referrerPolicy:'no-referrer',redirect:'error',cache:'no-store'});
-      const result=await response.json();
+      const result=await response.json().catch(()=>null);
       if (!response.ok || result?.status!=='accepted') {
         if (response.status===429) {
           setFeedback({kind:'error',text:result?.code==='provider_limit' ? 'Usługa pocztowa osiągnęła limit. Spróbuj później.' : 'Za dużo prób wysyłki. Spróbuj ponownie za kilka minut.'});
           return;
         }
-        if (response.status===400) {
+        if ([400,413,415].includes(response.status)) {
           setFeedback({kind:'error',text:'Sprawdź wpisane dane i spróbuj ponownie.'});
           return;
         }

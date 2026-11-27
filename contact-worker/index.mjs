@@ -31,9 +31,9 @@ function validate(value) {
   const clean = {};
   for (const [key,max] of rules) {
     if (typeof value[key] !== 'string') return null;
-    const text = value[key].trim();
-    if (text.length > max || /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/u.test(text) || (key!=='message' && /[\r\n\t]/u.test(text))) return null;
-    clean[key] = text;
+    const raw = value[key];
+    if (raw.length > max || /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/u.test(raw) || (key!=='message' && /[\r\n\t]/u.test(raw))) return null;
+    clean[key] = raw.trim();
   }
   if (clean.name.length < 2 || !MAILBOX.test(clean.email) || clean.message.length < 10) return null;
   if (clean.phone && (!/^\+?[0-9 ()-]+$/.test(clean.phone) || !/^\d{7,15}$/.test(clean.phone.replace(/\D/g,'')))) return null;
