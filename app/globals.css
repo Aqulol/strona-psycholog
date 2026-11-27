@@ -248,3 +248,9 @@ body { background:#faf8f3;color:#243b34; }
 .article-sources li { margin:.5rem 0; line-height:1.6; overflow-wrap:anywhere; }
 .article-sources a { text-decoration:underline; text-underline-offset:3px; }
 .topic-mobile-booking { margin-top:1rem; }
+
+/* Reading estimates are metadata, not part of the article prose. */
+.reading-time { display:inline-flex; align-items:center; gap:.35rem; white-space:nowrap; vertical-align:middle; color:#405c51; font-size:.875rem; line-height:1.4; }
+.reading-time svg { flex:none; }
+p > .reading-time:not(:first-child) { margin-inline-start:.7rem; }
+.topic-reading-time { margin-bottom:.65rem; }

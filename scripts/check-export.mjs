@@ -172,3 +172,22 @@ for (const path of paths) {
   }
 }
 assert.match(read(file('/w-czym-pomagam/doswiadczenie-przemocy/')), /href="https:\/\/nidzica\.policja\.gov\.pl\//);
+
+// Reading estimates are part of the static HTML and consistent across cards.
+const readingLabels = html => [...html.matchAll(/<span class="reading-time"><svg\b[^>]*>.*?<\/svg>(?:<!-- -->)?([1-9]\d*)(?:<!-- -->)? min czytania<\/span>/gs)].map(([, minutes]) => Number(minutes));
+const blogPaths = paths.filter(path => /^\/blog\/[^/]+\/$/.test(path));
+for (const path of [...blogPaths, ...helpPaths]) {
+  const html = read(file(path));
+  assert.equal(readingLabels(html).length, 1, `${path}: one reading estimate`);
+  const headingEnd = html.indexOf('</h1>');
+  const estimateAt = html.indexOf('<span class="reading-time">');
+  assert.ok(headingEnd >= 0 && estimateAt > headingEnd && estimateAt < html.indexOf('<h2', headingEnd), `${path}: estimate under H1`);
+}
+for (const indexPath of ['/', '/blog/']) {
+  const cards = [...read(file(indexPath)).matchAll(/<article\b[^>]*>(.*?)<\/article>/gs)]
+    .map(([, card]) => [card.match(/href="(\/blog\/[^/]+\/)"/)?.[1], card]).filter(([path]) => path);
+  assert.equal(cards.length, indexPath === '/' ? 3 : blogPaths.length);
+  for (const [path, card] of cards) {
+    assert.deepEqual(readingLabels(card), readingLabels(read(file(path))), `${indexPath}: card matches ${path}`);
+  }
+}

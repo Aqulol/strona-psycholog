@@ -1,10 +1,11 @@
-import BlogReading from '../../../components/BlogReading';
+import { body } from './content';
+import ReadingTime from '../../../components/ReadingTime';
+import { readingMinutes } from '../../../lib/reading-time';
 import ArticleByline from '../../../components/ArticleByline';
 import {Crumbs} from '../../../components/Site';
 import {meta} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
-import {paths} from '../../../lib/site';
 const updated = '2026-11-26';
 
 const description = 'Dlaczego wybieramy podobnych partnerów? O powtarzających się wzorcach w relacjach, granicach badań i pytaniach, które można omówić podczas konsultacji.';
@@ -45,157 +46,8 @@ export default function Page() {
         Dlaczego ciągle wybieram podobnych partnerów?
       </h1>
         <ArticleByline/>
-      <p className="mt-4 text-sm text-ink/70">Opublikowano <time dateTime="2026-08-11">11 sierpnia 2026</time> · Zaktualizowano <time dateTime={updated}>26 listopada 2026</time></p>
-      <p className="mt-6 leading-8 text-ink/80">
-        Zmieniają się imiona, okoliczności i początek znajomości, a jednak po pewnym czasie relacja zaczyna
-        przypominać poprzednią. Pojawia się podobny dystans, lęk przed odrzuceniem, nadmierna odpowiedzialność
-        albo poczucie, że ponownie trzeba zabiegać o czyjąś uwagę. Z perspektywy psychodynamicznej nie musi to
-        świadczyć o „złym guście” czy braku rozsądku. Często jest śladem nieświadomego wzorca relacyjnego -
-        sposobu przeżywania bliskości, który powstał wcześniej i nadal organizuje wybory, oczekiwania oraz
-        reakcje.
-      </p>
-
-      <h2 className="mt-12 text-4xl text-green">Znajome nie zawsze oznacza dobre</h2>
-      <p className="mt-4 leading-8 text-ink/80">
-        W relacjach człowiek nie kieruje się wyłącznie świadomą listą cech pożądanego partnera. Znaczenie ma
-        również to, co emocjonalnie znajome. Jeśli bliskość w ważnych wczesnych relacjach łączyła się z
-        niepewnością, krytyką, koniecznością dopasowania albo walką o uwagę, podobna dynamika może w dorosłości
-        wydawać się zaskakująco naturalna. Nie dlatego, że cierpienie jest pożądane, lecz dlatego, że psychika
-        łatwiej rozpoznaje układ, którego reguły już zna.
-      </p>
-      <p className="mt-4 leading-8 text-ink/80">
-        To, co stabilne i dostępne, może początkowo wydawać się mało intensywne. Z kolei dystans drugiej osoby
-        może uruchamiać silne pragnienie bliskości, interpretowane jako wyjątkowa chemia. Sama intensywność
-        uczucia nie przesądza więc o jakości relacji.
-      </p>
-
-      <h2 className="mt-12 text-4xl text-green">Wewnętrzna mapa relacji</h2>
-      <p className="mt-4 leading-8 text-ink/80">
-        Podejście psychodynamiczne zakłada, że doświadczenia z ważnymi osobami zostają uwewnętrznione. Powstaje
-        swoista mapa: czego można oczekiwać od innych, kim trzeba być, aby zasłużyć na uwagę, oraz co stanie się
-        po ujawnieniu potrzeb. Mapa ta działa przeważnie poza świadomą kontrolą. Wpływa nie tylko na wybór
-        partnera, ale też na interpretowanie jego zachowań.
-      </p>
-      <p className="mt-4 leading-8 text-ink/80">
-        Neutralne milczenie może zostać odczytane jako odrzucenie, prośba jako krytyka, a różnica zdań jako
-        zapowiedź rozpadu związku. Reakcja dotyczy wtedy zarówno bieżącej sytuacji, jak i wcześniejszych
-        emocjonalnych znaczeń, które sytuacja nieświadomie przywołała.
-      </p>
-
-      <h2 className="mt-12 text-4xl text-green">Dlaczego wzorzec się powtarza?</h2>
-      <p className="mt-4 leading-8 text-ink/80">
-        Powtarzanie nie jest świadomą decyzją. Bywa próbą opanowania dawnego doświadczenia i doprowadzenia go do
-        innego zakończenia. Osoba, która długo zabiegała o niedostępnego opiekuna, może ponownie angażować się w
-        relację z kimś zdystansowanym, z nadzieją, że tym razem zostanie wybrana. Taka nadzieja rzadko przybiera
-        formę wyraźnej myśli; częściej ujawnia się jako silne przyciąganie, uporczywe czekanie lub trudność w
-        odejściu.
-      </p>
-      <p className="mt-4 leading-8 text-ink/80">
-        Nie zawsze powtarza się typ partnera. Czasem powtarzana jest rola: ratownika, osoby podporządkowanej,
-        kontrolującej albo tej, która pierwsza wycofuje się z obawy przed porzuceniem. Partnerzy współtworzą
-        dynamikę, ale odpowiedzialność za przemoc, manipulację czy przekraczanie granic zawsze pozostaje po
-        stronie osoby, która się ich dopuszcza.
-      </p>
-
-      <h2 className="mt-12 text-4xl text-green">Co może pomóc zauważyć schemat?</h2>
-      <p className="mt-4 leading-8 text-ink/80">
-        Warto przyglądać się nie tylko temu, jacy byli kolejni partnerzy, lecz także własnej pozycji w relacji.
-        Znaczące bywają momenty najsilniejszego przyciągania, sytuacje uruchamiające lęk oraz powtarzalny sposób
-        reagowania na dystans, konflikt i troskę. Pomocne pytania dotyczą tego, kiedy pojawia się poczucie, że
-        trzeba zasłużyć na bliskość, oraz jakie zachowania drugiej osoby są usprawiedliwiane mimo własnego
-        dyskomfortu.
-      </p>
-      <p className="mt-4 leading-8 text-ink/80">
-        Taka obserwacja nie ma służyć samooskarżaniu. Schemat rozwijał się zwykle jako sposób radzenia sobie i
-        dlatego zasługuje najpierw na zrozumienie. Istotne pozostaje także sprawdzanie faktów: nie każda obawa
-        jest projekcją, a nie każda trudna relacja wynika wyłącznie z osobistej historii.
-      </p>
-
-      <h2 className="mt-12 text-4xl text-green">Jak psychoterapia pomaga zobaczyć niewidoczne?</h2>
-      <p className="mt-4 leading-8 text-ink/80">
-        W psychoterapii psychodynamicznej analizuje się nie tylko historię związków, lecz także emocje, fantazje,
-        uniki i oczekiwania pojawiające się w bieżących relacjach. Szczególne znaczenie ma relacja terapeutyczna.
-        Również w niej mogą ujawnić się obawy, że potrzeby okażą się nadmierne, różnica zdań zakończy kontakt
-        albo akceptację trzeba sobie wypracować.
-      </p>
-      <p className="mt-4 leading-8 text-ink/80">
-        Terapeuta nie ocenia tych reakcji jako błędnych. Pomaga je nazywać, łączyć z kontekstem i odróżniać
-        przeszłe doświadczenie od aktualnej sytuacji. Z czasem automatyczny wzorzec staje się czymś, co można
-        rozpoznać przed działaniem, a nie dopiero po kolejnym rozczarowaniu.
-      </p>
-
-      <h2 className="mt-12 text-4xl text-green">Zmiana nie polega na znalezieniu „idealnej” osoby</h2>
-      <p className="mt-4 leading-8 text-ink/80">
-        Celem terapii nie jest stworzenie bezbłędnego algorytmu wyboru partnera. Chodzi o większą swobodę:
-        zdolność zauważania własnych potrzeb, tolerowania bliskości bez utraty siebie, przyjmowania granic
-        drugiej osoby i odróżniania konfliktu od zagrożenia. Ważnym sygnałem zmiany bywa także to, że spokój
-        przestaje być mylony z obojętnością, a napięcie - z miłością.
-      </p>
-      <p className="mt-4 leading-8 text-ink/80">
-        Psychoterapia psychodynamiczna we Wrocławiu lub prowadzona online może tworzyć warunki do
-        takiej pracy, ale tempo zmiany jest indywidualne. Rozpoznanie schematu stanowi początek. Trwalsza zmiana
-        pojawia się wtedy, gdy nowe rozumienie zostaje również emocjonalnie przeżyte i wypróbowane w relacji.
-      </p>
-
-      <h2 className="mt-12 text-4xl text-green">Najczęściej zadawane pytania</h2>
-      <h3 className="mt-6 text-2xl text-green">Czy podobne wybory w relacjach zawsze są powodem do niepokoju?</h3>
-      <p className="mt-2 leading-8 text-ink/80">
-        Nie. Powtarzalne wzorce występują u wielu osób. O problemie warto myśleć wtedy, gdy regularnie prowadzą
-        do cierpienia, ograniczają wybór lub utrudniają tworzenie bezpiecznej bliskości.
-      </p>
-      <h3 className="mt-6 text-2xl text-green">Czy za każdy schemat odpowiada dzieciństwo?</h3>
-      <p className="mt-2 leading-8 text-ink/80">
-        Nie. Znaczenie mają także późniejsze związki, temperament, aktualne warunki życia i doświadczenia
-        społeczne. Terapia bada indywidualną historię zamiast zakładać jedną przyczynę.
-      </p>
-      <h3 className="mt-6 text-2xl text-green">Czy samo rozpoznanie wzorca wystarczy, aby go zmienić?</h3>
-      <p className="mt-2 leading-8 text-ink/80">
-        Zwykle jest konieczne, ale nie zawsze wystarczające. Schemat obejmuje emocje i automatyczne sposoby
-        reagowania, dlatego zmiana wymaga czasu oraz wielokrotnego przepracowania.
-      </p>
-
-      <h2 className="mt-12 text-4xl text-green">Co wiemy z badań?</h2>
-      <p className="mt-4 leading-8 text-ink/80">Badanie porównujące opisy osobowości byłych i obecnych partnerów wykazało pewne podobieństwo w tej grupie. Nie wyjaśnia jednak, dlaczego konkretna osoba wchodzi w podobne relacje, ani nie potwierdza, że przyczyną zawsze są doświadczenia z dzieciństwa.</p>
-      <p className="mt-8 leading-8 text-ink/80">Jeśli chce Pan/Pani przyjrzeć się powracającym trudnościom w relacjach, można sprawdzić <a className="text-link" href={paths.consult}>jak wygląda konsultacja psychologiczna</a>. Konsultacja nie zobowiązuje do rozpoczęcia terapii.</p>
-
-      <p className="mt-6 leading-8">Powracający dystans w relacjach można rozważyć także od strony <a href="/blog/samotnosc/" className="text-link">samotności w związku</a>. Jeśli ważnym tematem jest zabieganie o akceptację, może zainteresować Pana/Panią artykuł o <a href="/blog/poczucie-wlasnej-wartosci/" className="text-link">poczuciu własnej wartości w relacjach</a>.</p>
-      <h2 className="mt-12 text-4xl text-green">Zobacz także</h2>
-      <ul className="mt-4 space-y-4">
-        <li>
-          <a
-            href="/blog/narcyzm-wrazliwy/"
-            className="text-lg font-medium text-green underline hover:text-green/80"
-          >
-            Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?
-          </a>
-          <p className="mt-1 leading-7 text-ink/70">wrażliwość na ocenę i trudności w bliskości</p>
-        </li>
-        <li>
-          <a
-            href="/blog/dlaczego-sama-swiadomosc-nie-wystarcza/"
-            className="text-lg font-medium text-green underline hover:text-green/80"
-          >
-            „Wiem, skąd to się bierze, ale nadal tak robię” - dlaczego sama świadomość nie wystarcza?
-          </a>
-          <p className="mt-1 leading-7 text-ink/70">sama świadomość nie zawsze zmienia schemat</p>
-        </li>
-        <li>
-          <a
-            href="/blog/relacja-terapeutyczna-zrodlo-zmiany/"
-            className="text-lg font-medium text-green underline hover:text-green/80"
-          >
-            Co dzieje się między pacjentem a terapeutą?
-          </a>
-          <p className="mt-1 leading-7 text-ink/70">relacja terapeutyczna</p>
-        </li>
-        <li>
-          <a href="/psychoterapia-psychodynamiczna-wroclaw/" className="text-lg font-medium text-green underline hover:text-green/80">
-            Psychoterapia psychodynamiczna we Wrocławiu
-          </a>
-          <p className="mt-1 leading-7 text-ink/70">psychoterapia psychodynamiczna we Wrocławiu</p>
-        </li>
-      </ul>
-      <BlogReading slug="dlaczego-wybieram-podobnych-partnerow"/>
+      <p className="mt-4 text-sm text-ink/70">Opublikowano <time dateTime="2026-08-11">11 sierpnia 2026</time> · Zaktualizowano <time dateTime={updated}>26 listopada 2026</time> <ReadingTime minutes={readingMinutes(body)}/></p>
+        {body}
     </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>
