@@ -5,7 +5,7 @@
   "description": "Strona gabinetu psychologicznego Grzegorza Plebaniaka - Wrocław (Next.js 15, static export, Firebase Hosting)",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/check-sitemap.mjs --write && node scripts/build-search.mjs",
+    "build": "next build",
     "start": "next start",
     "preview": "npx serve@latest out -l 3010",
     "check:export": "node scripts/check-export.mjs",
@@ -13,7 +13,9 @@
     "check:content": "node scripts/check-knowledge.mjs",
     "check:sitemap": "node scripts/check-sitemap.mjs",
     "lastmod:record": "node scripts/update-lastmod.mjs",
-    "check:lastmod": "node scripts/check-lastmod.mjs"
+    "check:lastmod": "node scripts/check-lastmod.mjs",
+    "postbuild": "node scripts/check-sitemap.mjs --write && node scripts/build-search.mjs && npm run check:sitemap",
+    "check:sitemap:failures": "node scripts/check-sitemap-failures.mjs"
   },
   "dependencies": {
     "firebase": "^12.17.1",

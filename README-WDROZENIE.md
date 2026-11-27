@@ -20,7 +20,7 @@ firebase hosting:channel:deploy podglad
 
 Otwórz link zwrócony przez Firebase. Podgląd korzysta z aktualnych reguł i tego samego projektu Firestore; wysyłaj tylko wiadomości oznaczone jako test, bez danych pacjentów. Adresów roboczego podglądu nie dodawaj do Search Console.
 
-Mapa witryny powstaje **po eksporcie HTML** w `npm run build`, w `out/sitemap.xml`. Nie zastępuj tego polecenia samym `next build`. Nie dopisuj nowych adresów do ręcznej listy: generator uwzględnia wyeksportowane strony kanoniczne, pomija `noindex`, zweryfikowane aliasy 301 i pliki techniczne. Wiarygodny `lastmod` artykułu pochodzi z jego istniejących dat `BlogPosting`; bez daty generator pomija pole. Kontrolę odpowiedzi hostingu można wykonać poleceniem `node scripts/check-hosting.mjs <adres-podglądu-lub-produkcji>`.
+Mapa witryny powstaje **po eksporcie HTML** w `npm run build` (etap `postbuild`), w `out/sitemap.xml`. Hosting przed standardowym `firebase deploy` sprawdza gotową paczkę i odmawia publikacji, gdy mapa nie przejdzie walidacji. Hook nie buduje paczki; przed publikacją nadal wykonaj `npm run build`. Przy podglądach i w CI jawnie uruchamiaj `npm run check:sitemap`. Nie zastępuj tego polecenia samym `next build`. Nie dopisuj nowych adresów do ręcznej listy: generator uwzględnia wyeksportowane strony kanoniczne, pomija `noindex`, zweryfikowane aliasy 301 i pliki techniczne. `lastmod` pochodzi z metadanych redakcyjnych albo wersjonowanego rejestru zweryfikowanych zmian; nieznana data jest pomijana. Kontrolę odpowiedzi hostingu można wykonać poleceniem `node scripts/check-hosting.mjs <adres-podglądu-lub-produkcji>`.
 
 ## 3. Opublikuj
 
