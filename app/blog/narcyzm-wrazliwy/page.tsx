@@ -1,3 +1,4 @@
+import {withArticleContents} from '../../../components/ArticleContents';
 import RelatedContent from '../../../components/RelatedContent';
 import { services } from '../../../lib/services';
 import { contextLinks } from '../../../lib/context-links';
@@ -28,14 +29,15 @@ const ld = articleJsonLd({
 });
 
 export default function Page() {
+  const layout = withArticleContents(contextLinks('/blog/narcyzm-wrazliwy/', body));
   return (
     <>
-      <main id="tresc" className="container section max-w-3xl">
+      <main id="tresc" className="container section max-w-3xl article-editorial">
         <Crumbs path="/blog/narcyzm-wrazliwy/" title={headline}/>
         <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">{headline}</h1>
         <ArticleByline/>
         <p className="mt-4 text-sm text-ink/70">14 października 2026 <ReadingTime minutes={readingMinutes(body)}/></p>
-        {contextLinks('/blog/narcyzm-wrazliwy/', body)}
+        {layout.contents}{layout.body}
         <p>To, co teoria opisuje jako narcyzm wrażliwy, nie jest wynikiem testu ani odrębnym rozpoznaniem. Jeśli pytanie dotyczy oceny klinicznej, osobno opisuję, jak wygląda <a data-context-link href={services.personality.href}>diagnoza osobowości</a>.</p>
       <RelatedContent path="/blog/narcyzm-wrazliwy/"/>
     </main>

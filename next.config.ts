@@ -14,7 +14,6 @@ const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname),
   trailingSlash: true,
   images: { unoptimized: true },
-  experimental: { inlineCss: true },
   reactStrictMode: true,
   poweredByHeader: false,
   eslint: { ignoreDuringBuilds: true },

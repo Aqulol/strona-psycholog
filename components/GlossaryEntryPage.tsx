@@ -9,7 +9,7 @@ function published(slug:string){const term=reviewedTerms.find(row=>row.slug===sl
 export function glossaryMetadata(slug:string){const term=published(slug);return meta(`${glossaryPath}${slug}/`,`${term.term} | Słownik psychologiczny`,term.definition);}
 export default function GlossaryEntryPage({slug}:{slug:string}){
  const term=published(slug),path=`${glossaryPath}${slug}/`,source=glossarySources[term.source];
- const body=<><p className="hero-copy">{term.definition}</p><section><h2>Znaczenie w psychologii</h2><p>{term.explanation}</p></section><section><h2>Przykład fikcyjny</h2><p>{term.example}</p></section><section><h2>Jak odróżnić od podobnych pojęć?</h2><p>{term.distinction}</p></section></>;
+ const body=<><p className="hero-copy lexicon-definition">{term.definition}</p><section><h2>Znaczenie w psychologii</h2><p>{term.explanation}</p></section><section><h2>Przykład fikcyjny</h2><p>{term.example}</p></section><section><h2>Jak odróżnić od podobnych pojęć?</h2><p>{term.distinction}</p></section></>;
  return <KnowledgePage path={path} title={term.term} description={term.definition}>
   <Json data={{'@context':'https://schema.org','@type':'DefinedTerm','@id':`${domain}${path}#pojecie`,name:term.term,description:term.definition,inDefinedTermSet:{'@id':`${domain}${glossaryPath}#slownik`}}}/>
   <p>Weryfikacja merytoryczna: {term.reviewer} · Aktualizacja: <time dateTime={term.updated}>{term.updated}</time> · <ReadingTime minutes={readingMinutes(body)}/></p>{body}
