@@ -90,17 +90,22 @@ body { background:#faf8f3;color:#243b34; }
 .mast img { width:clamp(120px, 27vw, 260px);height:auto; }
 .booking { display:inline-flex;align-items:center;gap:.6rem;justify-content:center;background:#2d5a4e;color:white;border-radius:.35rem;padding:.75rem 1rem;min-height:44px;font-size:.875rem;font-weight:600;text-decoration:none; }
 .booking:hover { background:#20463b; }
-.site-menu summary,.nav-group summary { cursor:pointer;padding:.75rem 0; }
-.nav-items { display:grid;gap:.2rem;padding-bottom:.6rem; }
-.nav-items a { display:flex;align-items:center;min-height:44px;color:inherit;text-decoration:none;padding:.45rem 0; }
-.nav-items a:hover { text-decoration:underline; }
-.nav-group > div { padding-inline-start:1rem; }
-@media(min-width: 950px){
- .site-menu > summary { display:none; }
- .site-menu::details-content { content-visibility:visible; }
- .site-menu:not([open]) > .nav-items,.nav-items { display:flex;justify-content:space-between;align-items:center;gap:.9rem;padding:0; }
+.site-menu > summary { cursor:pointer;padding:.75rem 0; }
+.nav-items,.nav-submenu { list-style:none; margin:0; padding:0; }
+.nav-items { display:grid;gap:.15rem;padding-bottom:.65rem; }
+.site-header .nav-items a { display:flex;align-items:center;min-height:44px;color:inherit;text-decoration:none;padding:.45rem 0; }
+.site-header .nav-items a:hover { text-decoration:underline; }
+.nav-parent { display:flex; align-items:center; }
+.nav-parent button { display:grid;place-items:center;min-width:44px;min-height:44px;color:#2D5A4E;cursor:pointer; }
+.nav-parent button:hover { background:#e9eee6; border-radius:.35rem; }
+.nav-parent button[aria-expanded="true"] svg { transform:rotate(180deg); }
+.nav-submenu { padding-inline-start:1rem; }
+@media(min-width:72rem) {
+ .nav-items { display:flex;justify-content:space-between;align-items:center;gap:.45rem;padding:0; }
+ .nav-items > li > a,.nav-parent > a { white-space:nowrap; }
  .nav-group { position:relative; }
- .nav-group > div { padding:.4rem 1rem;position:absolute;z-index:2;background:#faf8f3;border:1px solid #dcded4;min-width:13rem; }
+ .nav-parent button { min-width:32px; }
+ .nav-submenu { position:absolute; z-index:5; inset-inline-start:0; top:100%; width:17rem; padding:.45rem .9rem; background:#FAF8F3; border:1px solid #dcded4; border-radius:.45rem; box-shadow:0 6px 18px #263d3210; }
 }
 .hero-home { background:#edf0e7;padding:clamp(2.8rem,6vw,6rem) 0; }
 .hero-grid { display:grid;align-items:center;gap:2.5rem; }
@@ -146,7 +151,7 @@ body { background:#faf8f3;color:#243b34; }
 :focus-visible { outline:3px solid #81541d;outline-offset:4px; }
 .site-footer :focus-visible { outline-color:#f5d49e; }
 .desktop-menu { display:none; }
-@media(min-width:950px){.site-menu{display:none}.desktop-menu{display:block}}
+@media(min-width:72rem){.site-menu{display:none}.desktop-menu{display:block}}
 .text-link:hover,.editorial-card h2 a:hover,.editorial-card h3 a:hover { text-decoration:underline; text-underline-offset:4px; }
 .editorial-card h2 a,.editorial-card h3 a { text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px; }
 .reading h1,main.max-w-3xl h1 { overflow-wrap:anywhere; }
@@ -254,3 +259,13 @@ body { background:#faf8f3;color:#243b34; }
 .reading-time svg { flex:none; }
 p > .reading-time:not(:first-child) { margin-inline-start:.7rem; }
 .topic-reading-time { margin-bottom:.65rem; }
+
+.service-directory-grid { display:grid;gap:1rem;margin-top:1rem; }
+.service-directory-card { display:flex;flex-direction:column;align-items:flex-start;padding:1.25rem; }
+.service-directory-card h3 { font-size:1.35rem;line-height:1.22; }
+.service-directory-card:hover { border-color:#9aafa0; }
+.service-directory-card .text-link { margin-top:auto; }
+.service-directory-card ul { padding-inline-start:1.2rem;list-style:disc;margin:.6rem 0 0; }
+.service-directory-card li + li { margin-top:.35rem; }
+.service-icon { display:grid;place-items:center;width:2.9rem;height:2.9rem;border-radius:.55rem;background:#e7eee5;color:#2D5A4E;border:1px solid #ddd4ba; }
+@media (min-width:43rem) { .service-directory-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .service-directory-grid:has(> :nth-child(3)) { grid-template-columns:repeat(3,minmax(0,1fr)); } }

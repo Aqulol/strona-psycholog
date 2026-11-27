@@ -1,3 +1,4 @@
+import { contextLinks } from '../../../lib/context-links';
 import { body } from './content';
 import ReadingTime from '../../../components/ReadingTime';
 import { readingMinutes } from '../../../lib/reading-time';
@@ -47,7 +48,7 @@ export default function Page() {
       </h1>
         <ArticleByline/>
       <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026 <ReadingTime minutes={readingMinutes(body)}/></p>
-        {body}
+        {contextLinks('/blog/dlaczego-sama-swiadomosc-nie-wystarcza/', body)}
     </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>

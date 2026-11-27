@@ -1,3 +1,4 @@
+import { contextLinks } from '../../../lib/context-links';
 import { body } from './content';
 import ReadingTime from '../../../components/ReadingTime';
 import { readingMinutes } from '../../../lib/reading-time';
@@ -32,7 +33,7 @@ export default function Page() {
         <h1 className="mt-8 text-5xl leading-tight text-green md:text-6xl">{headline}</h1>
         <ArticleByline/>
         <p className="mt-4 text-sm text-ink/70">14 października 2026 <ReadingTime minutes={readingMinutes(body)}/></p>
-        {body}
+        {contextLinks('/blog/narcyzm-wrazliwy/', body)}
     </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>

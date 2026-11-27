@@ -1,3 +1,4 @@
+import { contextLinks } from '../../../lib/context-links';
 import { body } from './content';
 import ReadingTime from '../../../components/ReadingTime';
 import { readingMinutes } from '../../../lib/reading-time';
@@ -47,7 +48,7 @@ export default function Page() {
       </h1>
         <ArticleByline/>
       <p className="mt-4 text-sm text-ink/70">Opublikowano <time dateTime="2026-08-11">11 sierpnia 2026</time> · Zaktualizowano <time dateTime={updated}>26 listopada 2026</time> <ReadingTime minutes={readingMinutes(body)}/></p>
-        {body}
+        {contextLinks('/blog/dlaczego-wybieram-podobnych-partnerow/', body)}
     </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>

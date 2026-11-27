@@ -125,12 +125,14 @@ assert.equal((catalogue.match(/class="help-category"/g) || []).length, 9);
 assert.equal((catalogue.match(/<details\b/g) || []).length, 8);
 assert.match(helpIndex, /id="help-youth-heading"/);
 assert.match(helpIndex, /id="help-scope-heading"/);
+// Contextual inline markup does not change the prose being validated.
+const plain = html => html.replace(/<!--[^]*?-->|<[^>]+>/g, '');
 const topicIntros = helpPaths.map(path => {
   const html = read(file(path));
   assert.ok((html.match(/<h2[ >]/g) || []).length >= 4, `${path}: substantive sections`);
   assert.ok(html.includes(`property="og:url" content="${root}${path}"`), `${path}: Open Graph URL`);
   assert.ok(html.includes('href="#rezerwacja"') && html.includes('id="rezerwacja"'), `${path}: booking jump link`);
-  const intro = html.match(/<p class="hero-copy">([^<]+)<\/p>/)?.[1];
+  const intro = plain(html.match(/<p class="hero-copy">([^]*?)<\/p>/)?.[1] ?? '');
   assert.ok(intro && intro.length >= 80, `${path}: unique introductory copy`);
   return intro;
 });
@@ -143,11 +145,11 @@ for (const re of [/<title>([^<]+)<\/title>/, /<meta name="description" content="
 
 const clinicalSections = helpPaths.map(path => {
   const html = read(file(path));
-  const section = html.match(/<section data-topic-depth="true"><h2>([^<]+)<\/h2><p>([^<]+)<\/p><\/section>/);
-  if (section) return section[2];
-  const paragraphs = [...html.matchAll(/<section><h2>[^<]+<\/h2><p>([^<]+)<\/p><\/section>/g)];
-  assert.ok(paragraphs.filter(([, text]) => text.length >= 220).length >= 2, `${path}: dedicated clinical explanation`);
-  return paragraphs.map(([, text]) => text).join(" ");
+  const section = html.match(/<section data-topic-depth="true"><h2>([^<]+)<\/h2><p>([^]*?)<\/p><\/section>/);
+  if (section) return plain(section[2]);
+  const paragraphs = [...html.matchAll(/<section><h2>[^<]+<\/h2><p>([^]*?)<\/p><\/section>/g)];
+  assert.ok(paragraphs.filter(([, text]) => plain(text).length >= 220).length >= 2, `${path}: dedicated clinical explanation`);
+  return paragraphs.map(([, text]) => plain(text)).join(" ");
 });
 assert.equal(new Set(clinicalSections).size, helpPaths.length, 'Distinct clinical explanation for every topic');
 

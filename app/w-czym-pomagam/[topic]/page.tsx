@@ -1,3 +1,4 @@
+import { contextLinks } from '../../../lib/context-links';
 import ReadingTime from '../../../components/ReadingTime';
 import { readingMinutes } from '../../../lib/reading-time';
 import { topicDepth } from '../../../lib/help-topic-depth';
@@ -46,7 +47,7 @@ export default async function TopicPage({ params }: Props) {
         <p className="eyebrow">{t.group}</p>
         <h1>{heading}</h1>
         <p className="topic-reading-time"><ReadingTime minutes={readingMinutes(body)}/></p>
-        {body}
+        {contextLinks(path, body)}
         <SeeAlso links={[...t.related, ...(t.related.some(([url]) => url === (youth ? paths.youth : paths.adults)) ? [] : [[youth ? paths.youth : paths.adults, youth ? 'Psychoterapia młodzieży od 15. roku życia' : 'Psychoterapia indywidualna dorosłych'] as [string, string]]), [paths.method, 'Jak pracuję w nurcie psychodynamicznym']]}/>
       </article>
       <BookingSidebar/>
