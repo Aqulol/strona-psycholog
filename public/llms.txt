@@ -1,10 +1,12 @@
 # Grzegorz Plebaniak - gabinet psychologiczny we Wrocławiu
 
-> Psycholog, psychoterapeuta (w trakcie szkolenia). Konsultacje i psychoterapia psychodynamiczna dla dorosłych i młodzieży od 15. roku życia, we Wrocławiu i online.
+> Psycholog, psychoterapeuta (w trakcie szkolenia). Konsultacje i psychoterapia indywidualna w nurcie psychodynamicznym z wykorzystaniem TFP pod superwizją dla dorosłych i młodzieży od 15. roku życia, we Wrocławiu i online.
 
 ## Informacje o gabinecie
 
-- [Psychoterapia psychodynamiczna](https://psychologplebaniak.pl/psychoterapia-psychodynamiczna-wroclaw/): Opis podejścia i przebiegu terapii.
+- [Psychoterapia psychodynamiczna](https://psychologplebaniak.pl/psychoterapia-psychodynamiczna-wroclaw/): Opis nurtu.
+- [TFP](https://psychologplebaniak.pl/terapia-skoncentrowana-na-przeniesieniu-tfp/): Model psychodynamiczny wykorzystywany w tej samej psychoterapii.
+- [Psychoterapia indywidualna](https://psychologplebaniak.pl/psychoterapia-indywidualna-wroclaw/): Jedna usługa, w gabinecie lub online.
 - [Konsultacje psychologiczne](https://psychologplebaniak.pl/konsultacje-psychologiczne-wroclaw/): Informacje o pierwszych spotkaniach.
 - [Gabinet we Wrocławiu](https://psychologplebaniak.pl/gabinet-wroclaw/): Adres i mapa.
 - [Cennik](https://psychologplebaniak.pl/cennik/): Koszt i czas trwania spotkań.

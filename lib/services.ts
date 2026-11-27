@@ -5,7 +5,7 @@ import { servicePaths } from './service-paths';
 export const offerPath = '/oferta/';
 export const categoryNames = { support: 'Pomoc psychologiczna', diagnosis: 'Diagnostyka psychologiczna', education: 'Psychoedukacja', therapy: 'Psychoterapia', online: 'Pomoc online' } as const;
 export type Category = keyof typeof categoryNames;
-type Status = 'provided' | 'guide';
+type Status = 'provided' | 'guide' | 'reference';
 const group = 'Dorośli i młodzież od 15. roku życia';
 type ServiceSpec = {
   name: string; href: string; category: Category; icon: string; description: string;
@@ -27,22 +27,22 @@ export const services = {
   adhd: entry({name:'Diagnoza ADHD',href:'/diagnoza-adhd-wroclaw/',category:'diagnosis',icon:'brainSearch',description:'Ocena trudności z uwagą, nadruchliwością i impulsywnością z uwzględnieniem historii rozwoju.'}),
   edu: entry({name:'Psychoedukacja',href:'/psychoedukacja/',category:'education',icon:'book',description:'Indywidualne spotkania pomagające zrozumieć emocje, reakcje i utrwalone wzorce.'}),
   eduAdhd: entry({name:'Psychoedukacja ADHD',href:'/psychoedukacja-adhd/',category:'education',icon:'brainBook',description:'Indywidualna rozmowa o funkcjonowaniu z ADHD i strategiach dopasowanych do codziennych trudności.'}),
-  individual: entry({name:'Psychoterapia indywidualna',href:'/psychoterapia-indywidualna-wroclaw/',category:'therapy',icon:'growth',description:'Regularna praca z jedną osobą: od pierwszych rozmów do ustalenia celów i zasad współpracy.',audience:group,online:true,rate:'psychoterapia'}),
-  method: entry({name:'Psychoterapia psychodynamiczna',href:paths.method,category:'therapy',icon:'brain',description:'Praca nad emocjami i wzorcami, które powracają w relacjach, również w kontakcie terapeutycznym.',audience:group,online:true,rate:'psychoterapia'}),
-  tfp: entry({name:'Terapia skoncentrowana na przeniesieniu (TFP)',href:paths.tfp,category:'therapy',icon:'network',description:'Podejście psychodynamiczne, w którym ważnym źródłem obserwacji jest relacja podczas sesji.'}),
+  individual: entry({name:'Psychoterapia indywidualna',href:'/psychoterapia-indywidualna-wroclaw/',category:'therapy',icon:'growth',description:'Prowadzę psychoterapię indywidualną w nurcie psychodynamicznym, wykorzystując podejście skoncentrowane na przeniesieniu (TFP). Wspólnie przyglądamy się emocjom, relacjom i powtarzającym się wzorcom.',audience:group,online:true,rate:'psychoterapia'}),
+  method: entry({status:'reference',name:'Psychoterapia psychodynamiczna',href:paths.method,category:'therapy',icon:'brain',description:'Praca nad emocjami i wzorcami, które powracają w relacjach, również w kontakcie terapeutycznym.',online:true}),
+  tfp: entry({status:'reference',name:'Terapia skoncentrowana na przeniesieniu (TFP)',href:paths.tfp,category:'therapy',icon:'network',description:'Podejście psychodynamiczne, w którym ważnym źródłem obserwacji jest relacja podczas sesji.'}),
   onlineConsult: entry({name:'Konsultacje psychologiczne online',href:'/konsultacje-psychologiczne-online/',category:'online',icon:'monitor',description:'Pierwsza rozmowa na odległość: prywatność, warunki spotkania i granice tej formy pomocy.',audience:group,online:true,rate:'konsultacja'}),
-  onlineTherapy: entry({name:'Psychoterapia online',href:paths.online,category:'online',icon:'video',description:'Regularna psychoterapia na odległość po uzgodnieniu, czy ten sposób pracy jest odpowiedni.',audience:group,online:true,rate:'psychoterapia'}),
+  onlineTherapy: entry({status:'reference',name:'Psychoterapia online',href:paths.online,category:'online',icon:'video',description:'Regularna psychoterapia na odległość po uzgodnieniu, czy ten sposób pracy jest odpowiedni.',online:true}),
 } as const;
 export type ServiceKey = keyof typeof services;
 export const categoryServices: Record<Category, readonly ServiceKey[]> = {
   support:['consult','counselling','crisis','parents','relationships','choice'],
   diagnosis:['diagnostic','general','personality','adhd'], education:['edu','eduAdhd'],
-  therapy:['individual','method','tfp'], online:['onlineConsult','onlineTherapy'],
+  therapy:['individual'], online:['onlineConsult'],
 };
 export const psychologyGroups = [
   { category:'support' as const, keys:[...categoryServices.support,'onlineConsult' as const] },
   { category:'diagnosis' as const, keys:categoryServices.diagnosis },
   { category:'education' as const, keys:categoryServices.education },
 ];
-export const therapyKeys = [...categoryServices.therapy,'onlineTherapy' as const];
+export const therapyKeys = ['method','tfp','onlineTherapy'] as const;
 export const priceServices = [services.consult,services.individual];

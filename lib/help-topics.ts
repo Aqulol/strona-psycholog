@@ -70,11 +70,11 @@ const existingTopics: Topic[] = [
   },
   {
     slug: 'zaburzenia-osobowosci', group: helpGroups[6], label: 'Zaburzenia osobowości', h1: 'Zaburzenia osobowości - konsultacja i możliwości psychoterapii', title: 'Zaburzenia osobowości - konsultacja i psychoterapia',
-    description: 'Konsultacja przy rozpoznaniu zaburzenia osobowości lub trwałych trudnościach. Można omówić dotychczasową pomoc i zasadność psychoterapii, w tym TFP.',
+    description: 'Konsultacja przy rozpoznaniu zaburzenia osobowości lub trwałych trudnościach. Można omówić dotychczasową pomoc i zasadność psychoterapii psychodynamicznej.',
     intro: 'Po rozpoznaniu zaburzenia osobowości można mieć pytania o jego znaczenie i dalsze możliwości leczenia. Na konsultację można też zgłosić się bez rozpoznania, jeśli od dłuższego czasu powtarzają się trudności w relacjach lub przeżywaniu emocji.',
     sections: [
       ['Rozpoznanie a rozumienie trudności', 'Pojedyncza reakcja lub trudny okres nie wystarcza, by wnioskować o zaburzeniu osobowości. W rozmowie znaczenie ma to, co utrzymuje się z czasem, w jakich sytuacjach i z jakimi konsekwencjami. Organizacja osobowości to pojęcie psychodynamiczne opisujące sposób funkcjonowania, a nie zamiennik rozpoznania klinicznego. Konsultacja nie jest ofertą diagnostyki klinicznej.'],
-      ['Kiedy można rozważyć TFP?', 'W psychoterapii psychodynamicznej przyglądam się powtarzającym się sposobom przeżywania siebie i innych. Jedną z opcji omawianych po konsultacjach jest psychoterapia skoncentrowana na przeniesieniu (TFP), którą prowadzę w trakcie szkolenia i pod superwizją. Wybór zależy od potrzeb, bezpieczeństwa, gotowości i możliwości regularnych spotkań. Rozpoznanie nie oznacza automatycznej kwalifikacji do TFP.'],
+      ['Kiedy można rozważyć TFP?', 'W psychoterapii psychodynamicznej przyglądam się powtarzającym się sposobom przeżywania siebie i innych. W tej psychoterapii wykorzystuję model TFP w trakcie szkolenia i pod superwizją. Decyzja o rozpoczęciu pracy zależy od potrzeb, bezpieczeństwa, gotowości i możliwości regularnych spotkań. Rozpoznanie nie oznacza automatycznej kwalifikacji do TFP.'],
     ],
     related: [tfp, [topicPath('borderline'), 'Zaburzenie osobowości borderline'], ['/blog/narcyzm-wrazliwy/', 'Artykuł o narcyzmie wrażliwym']], sources: [['https://www.who.int/publications/i/item/9789240077263', 'WHO: opisy kliniczne i wymagania diagnostyczne ICD-11']],
   },
@@ -84,7 +84,7 @@ const existingTopics: Topic[] = [
     intro: 'Po rozpoznaniu borderline można mieć pytania o dotychczasowe leczenie albo o to, jakiej pomocy szukać dalej. W rozmowie można zacząć od tego, co w obecnej sytuacji jest najtrudniejsze.',
     sections: [
       ['O czym można porozmawiać po rozpoznaniu', 'Dla jednej osoby ważne będą gwałtowne zmiany emocji w bliskich relacjach, dla innej trudność w utrzymaniu stabilniejszego obrazu siebie. Takie doświadczenia występują także u osób bez tego rozpoznania. Na spotkaniu można omówić ich przebieg, wpływ na życie i to, czy potrzebna jest również opieka psychiatryczna lub kontynuacja trwającego leczenia.'],
-      ['Co odróżnia pracę w TFP', 'Jeśli TFP jest odpowiednią możliwością, można w niej przyglądać się temu, jak przy silnym napięciu zmienia się postrzeganie siebie i drugiej osoby, również podczas spotkania. Przed rozpoczęciem omawiam zasady współpracy, cele i możliwość regularnych spotkań. TFP prowadzę w ramach szkolenia i pod superwizją. To jedna z możliwych metod, nie jedyna forma leczenia.'],
+      ['Co odróżnia pracę w TFP', 'Jeśli TFP jest odpowiednią możliwością, można w niej przyglądać się temu, jak przy silnym napięciu zmienia się postrzeganie siebie i drugiej osoby, również podczas spotkania. Przed rozpoczęciem omawiam zasady współpracy, cele i możliwość regularnych spotkań. Model TFP wykorzystuję w psychoterapii indywidualnej pod superwizją. Nie jest to jedyna możliwa forma leczenia borderline.'],
     ],
     urgent: true, related: [tfp, [topicPath('zaburzenia-osobowosci'), 'Zaburzenia osobowości: możliwości dalszej pomocy']], sources: [borderlineGuide, ['https://doi.org/10.1176/ajp.2007.164.6.922', 'Clarkin i wsp.: porównanie trzech form psychoterapii w zaburzeniu osobowości borderline']],
   },

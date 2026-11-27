@@ -5,7 +5,7 @@ import { webPage } from '../lib/entities';
 import { servicePaths } from '../lib/service-paths';
 import { meta, paths } from '../lib/site';
 import { Booking, Crumbs, Json, Questions } from './Site';
-import { OfferGroups, ServiceCards, therapyCards } from './ServiceCards';
+import { OfferGroups, TherapyReadingLinks } from './ServiceCards';
 
 type Kind = keyof typeof servicePaths;
 const metadataByKind = {
@@ -79,16 +79,16 @@ function Psychologist() {
 }
 function Therapist() {
   return <>
-    <p className="hero-copy">Jestem psychologiem i psychoterapeutą (w trakcie szkolenia). Pracuję wyłącznie psychodynamicznie, we Wrocławiu i online.</p>
+    <p className="hero-copy">Jestem psychologiem i psychoterapeutą (w trakcie szkolenia). Prowadzę psychoterapię indywidualną w nurcie psychodynamicznym, wykorzystując podejście skoncentrowane na przeniesieniu (TFP). Swoją pracę poddaję superwizji.</p>
     <Section title="Czym jest psychoterapia i kiedy ją rozważyć?">
       <p>Psychoterapia to regularne spotkania, podczas których można przyglądać się temu, jak przeżywane są emocje i relacje. Warto ją rozważyć, gdy mimo prób zmiany powraca np. <a href="/w-czym-pomagam/lek-przed-odrzuceniem/">lęk przed odrzuceniem</a> albo utrzymują się <a href="/w-czym-pomagam/powtarzajace-sie-trudnosci-w-relacjach/">trudności w relacjach</a>. Sama nazwa problemu nie przesądza, czy psychoterapia jest właściwą formą pomocy.</p>
     </Section>
-    <Section title="Jak pracuję"><ServiceCards cards={therapyCards}/><p>TFP jest specjalistycznym podejściem psychodynamicznym. Nie trzeba wybierać metody przy rezerwacji. O tym, czy i jak pracować dalej, rozmawiamy po konsultacjach.</p></Section>
+    <Section title="Jak pracuję"><p>Proponuję jedną formę regularnej pracy: <a href={services.individual.href}>psychoterapię indywidualną</a>. TFP jest modelem w obrębie nurtu psychodynamicznego, a online oznacza formę spotkań. Przy rezerwacji umawia się konsultację wstępną, nie wybiera metody.</p><TherapyReadingLinks/></Section>
     <Section title="Od pierwszej rozmowy do regularnych spotkań">
-      <p><a href={paths.consult}>Konsultacje wstępne</a> to zwykle około czterech spotkań. Pozwalają poznać powód zgłoszenia i omówić oczekiwania. Jeśli wspólnie zdecydujemy się kontynuować, ustalimy kontrakt terapeutyczny, czyli zasady współpracy, w tym rytm sesji. Spotkania odbywają się raz lub dwa razy w tygodniu, w klasycznym TFP zwykle dwa razy. Psychoterapia jest długoterminowa, bez z góry ustalonej liczby sesji.</p>
+      <p><a href={paths.consult}>Konsultacje wstępne</a> to zwykle około czterech spotkań. Pozwalają poznać powód zgłoszenia i omówić oczekiwania. Jeśli wspólnie zdecydujemy się kontynuować, ustalimy kontrakt terapeutyczny, czyli zasady współpracy, w tym rytm sesji. Spotkania odbywają się raz lub dwa razy w tygodniu, w zależności od indywidualnych ustaleń. Psychoterapia jest długoterminowa, bez z góry ustalonej liczby sesji.</p>
     </Section>
     <Section title="Relacja, szkolenie i superwizja">
-      <p>Ważna jest dla mnie <a href="/blog/relacja-terapeutyczna-zrodlo-zmiany/">relacja terapeutyczna</a>: podczas spotkań można omówić także to, jak przebiega rozmowa i co się w niej przeżywa. Szkolę się w Międzynarodowej Szkole Psychoterapii Psychodynamicznej i regularnie korzystam z superwizji. Więcej o tych ramach piszę na stronie <a href={`${paths.about}#superwizja`}>O mnie</a>.</p>
+      <p>Ważna jest dla mnie <a href="/blog/relacja-terapeutyczna-zrodlo-zmiany/">relacja terapeutyczna</a>: podczas spotkań można omówić także to, jak przebiega rozmowa i co się w niej przeżywa. Ukończyłem psychologię na Uniwersytecie Wrocławskim. Szkolę się w Międzynarodowej Szkole Psychoterapii Psychodynamicznej i regularnie korzystam z superwizji. Więcej o tych ramach piszę na stronie <a href={`${paths.about}#superwizja`}>O mnie</a>.</p>
     </Section>
     <Section title="Dla dorosłych, młodzieży i osób korzystających z wizyt online">
       <p>Prowadzę <a href={paths.adults}>psychoterapię dorosłych</a> oraz <a href={paths.youth}>psychoterapię młodzieży od 15. roku życia</a>. Jeśli dojazd jest trudny, można sprawdzić <a href={paths.online}>zasady spotkań online</a> i omówić podczas konsultacji, czy ta forma jest odpowiednia.</p>

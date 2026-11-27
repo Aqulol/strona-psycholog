@@ -12,7 +12,7 @@ export const metadata=meta('/cennik/','Psycholog Wrocław - cennik konsultacji i
  * z sekcją cennika na stronie głównej. JSON-LD: OfferCatalog.
  */
 export default function CennikPage() {
-  const prices = priceServices.flatMap(item => item.rate ? [{...item.rate, href:item.href, category:item.category}] : []);
+  const prices = priceServices.flatMap(item => item.rate ? [{...item.rate, name:item.name, href:item.href, category:item.category}] : []);
   const ld = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -24,6 +24,7 @@ export default function CennikPage() {
           '@type': 'Offer',
           seller: { '@id': officeId },
           name: p.name,
+          itemOffered: { '@id': `https://psychologplebaniak.pl${p.href}#usluga` },
           price: String(p.price),
           priceCurrency: 'PLN',
           category: p.category === 'therapy' ? 'Psychoterapia' : 'Konsultacja psychologiczna',
@@ -66,7 +67,7 @@ export default function CennikPage() {
               <p className="mt-4 leading-7 text-ink/80">
                 {p.key === 'konsultacja'
                   ? 'Spotkanie konsultacyjne, podczas którego omawiamy trudności i oczekiwania. Nie zobowiązuje do rozpoczęcia psychoterapii. Zwykle poprzedza ją kilka konsultacji, po których ustalamy dalszą formę pomocy.'
-                  : 'Regularne sesje w nurcie psychodynamicznym, dopasowane do indywidualnych potrzeb i tempa.'}
+                  : 'Psychoterapia indywidualna w nurcie psychodynamicznym z wykorzystaniem TFP. Stawka dotyczy sesji w gabinecie lub online, nie osobnego wariantu terapii.'}
               </p>
             </div>
           ))}

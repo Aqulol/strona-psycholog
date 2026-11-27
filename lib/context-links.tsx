@@ -27,7 +27,7 @@ const reviewed: Record<string, Record<string, string>> = {
     "zaburzeniami osobowości": "/w-czym-pomagam/zaburzenia-osobowosci/"
   },
   "/konsultacje-psychologiczne-wroclaw/": {
-    "klasycznym tfp": "/terapia-skoncentrowana-na-przeniesieniu-tfp/"
+    "klasycznego modelu tfp": "/terapia-skoncentrowana-na-przeniesieniu-tfp/"
   },
   "/psychoterapia-dorosli/": {
     "psychoterapię psychodynamiczną": "/psychoterapia-psychodynamiczna-wroclaw/",
