@@ -29,7 +29,7 @@ export function LonelinessArticle() {
     <section>
       <h2>Kiedy rozważyć konsultację psychologiczną?</h2>
       <p>Samotność nie zawsze wymaga psychoterapii. Czasem bardziej potrzebny jest regularny kontakt z bliską osobą, miejsce do wspólnego działania lub praktyczna pomoc w trudnym okresie. Konsultację można rozważyć, gdy samotność utrzymuje się, utrudnia codzienne życie albo trudno zrozumieć, dlaczego powraca mimo prób nawiązania bliższego kontaktu.</p>
-      <p>Informacje o <a href={paths.consult}>konsultacji psychologicznej we Wrocławiu i online</a> opisują, jak wygląda pierwsze spotkanie. Nie trzeba od razu podejmować decyzji o psychoterapii.</p>
+      <p data-reading-ignore>Informacje o <a href={paths.consult}>konsultacji psychologicznej we Wrocławiu i online</a> opisują, jak wygląda pierwsze spotkanie. Nie trzeba od razu podejmować decyzji o psychoterapii.</p>
     </section>
     <ArticleSources>
       <li>Hawkley, L. C. i Cacioppo, J. T. (2010). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3874845/">Loneliness Matters: A Theoretical and Empirical Review of Consequences and Mechanisms</a>. <cite>Annals of Behavioral Medicine</cite>.</li>
@@ -66,7 +66,7 @@ export function SelfWorthArticle() {
     <section>
       <h2>Co można omówić podczas psychoterapii?</h2>
       <p>W <a href={paths.adults}>psychoterapii indywidualnej dorosłych</a> można zauważać, w jakich sytuacjach zmienia się obraz siebie i jak wpływa to na decyzje i relacje. Jeśli w trakcie sesji pojawi się obawa przed oceną ze strony terapeuty, można porozmawiać zarówno o tej obawie, jak i o tym, co rzeczywiście wydarzyło się w rozmowie. Nie chodzi o zastępowanie każdej trudnej myśli pozytywną ani o zapewnianie, że samo zrozumienie wystarczy. Więcej o pracy z doświadczeniem można przeczytać w artykule <a href="/blog/dlaczego-sama-swiadomosc-nie-wystarcza/">„Dlaczego sama świadomość nie wystarcza?”</a>.</p>
-      <p>Jeśli wahania samooceny, samokrytyka lub obawa przed oceną zabierają dużo sił, można sprawdzić, <a href={paths.consult}>jak wygląda konsultacja psychologiczna we Wrocławiu lub online</a>. To możliwość rozmowy, nie zobowiązanie do rozpoczęcia terapii.</p>
+      <p data-reading-ignore>Jeśli wahania samooceny, samokrytyka lub obawa przed oceną zabierają dużo sił, można sprawdzić, <a href={paths.consult}>jak wygląda konsultacja psychologiczna we Wrocławiu lub online</a>. To możliwość rozmowy, nie zobowiązanie do rozpoczęcia terapii.</p>
     </section>
     <ArticleSources>
       <li>Harris, M. A. i Orth, U. (2020). <a href="https://doi.org/10.1037/pspp0000265">The Link Between Self-Esteem and Social Relationships: A Meta-Analysis of Longitudinal Studies</a>. <cite>Journal of Personality and Social Psychology</cite>.</li>
