@@ -1,3 +1,4 @@
+import { contextLinks } from '../../../lib/context-links';
 import ReadingTime from '../../../components/ReadingTime';
 import { blogReadingMinutes, generatedArticles } from '../../../lib/blog-content';
 import BlogReading from '../../../components/BlogReading';
@@ -41,7 +42,7 @@ export default async function Page({ params }: Props) {
       <ArticleByline minutes={date ? undefined : blogReadingMinutes(a.slug)}/>
       {date && <p>Opublikowano: <time dateTime={a.published}>{date}</time> <ReadingTime minutes={blogReadingMinutes(a.slug)}/></p>}
       <Json data={articleJsonLd({ slug: a.slug, headline: a.h1, description: a.description, image: domain + '/og-image.png', datePublished: a.published })}/>
-      {a.body}
+      {contextLinks(path, a.body)}
       {consultation && <p className="mt-6">Jeśli temat dotyczy Pana/Pani sytuacji, można przeczytać, <a href={consultation[0]}>{consultation[1]}</a>.</p>}
       <BlogReading slug={a.slug}/>
     </article>
