@@ -1,9 +1,10 @@
 import {officeId} from '../../lib/entities';
 import {Crumbs} from '../../components/Site';
 import {details,meta} from '../../lib/site';
+import { priceServices, services } from '../../lib/services';
 import { config } from '../../lib/config';
 
-export const metadata=meta('/cennik/','Psycholog Wrocław - cennik konsultacji i terapii','Sprawdzi Pan/Pani cenę i czas konsultacji psychologicznej oraz psychoterapii we Wrocławiu lub online. Każde spotkanie trwa 50 minut i kosztuje 200 zł.');
+export const metadata=meta('/cennik/','Psycholog Wrocław - cennik konsultacji i terapii','Sprawdź cenę konsultacji psychologicznej i sesji psychoterapii we Wrocławiu lub online. Dowiedz się, jak zapytać o koszt osobnej diagnozy i psychoedukacji.');
 
 /**
  * Podstrona /cennik/ - osobny adres pod frazy „cennik psychoterapia Wrocław”.
@@ -11,6 +12,7 @@ export const metadata=meta('/cennik/','Psycholog Wrocław - cennik konsultacji i
  * z sekcją cennika na stronie głównej. JSON-LD: OfferCatalog.
  */
 export default function CennikPage() {
+  const prices = priceServices.flatMap(item => item.rate ? [{...item.rate, href:item.href, category:item.category}] : []);
   const ld = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -18,13 +20,13 @@ export default function CennikPage() {
         '@type': 'OfferCatalog',
         name: 'Cennik - psycholog Grzegorz Plebaniak Wrocław',
         url: 'https://psychologplebaniak.pl/cennik/',
-        itemListElement: config.prices.map((p) => ({
+        itemListElement: prices.map((p) => ({
           '@type': 'Offer',
           seller: { '@id': officeId },
           name: p.name,
           price: String(p.price),
           priceCurrency: 'PLN',
-          category: 'Psychoterapia',
+          category: p.category === 'therapy' ? 'Psychoterapia' : 'Konsultacja psychologiczna',
           description: `Sesja ${p.duration}. Stacjonarnie we Wrocławiu i online.`,
           areaServed: 'Wrocław',
           url: `https://psychologplebaniak.pl/cennik/#${p.key}`,
@@ -42,7 +44,7 @@ export default function CennikPage() {
           Cennik wizyt - Wrocław · stacjonarnie i online
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/80">
-          Wszystkie spotkania trwają 50 minut. Ceny dotyczą zarówno wizyt stacjonarnych
+          Stawki poniżej dotyczą standardowej konsultacji i sesji psychoterapii, zarówno wizyt stacjonarnych
           w gabinecie przy ul. {config.address} (szczegóły placówki:{' '}
           <a
             className="text-green underline"
@@ -56,20 +58,24 @@ export default function CennikPage() {
         </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {config.prices.map((p) => (
+          {prices.map((p) => (
             <div key={p.key} id={p.key} className="rounded border border-border bg-white p-7">
-              <h2 className="text-2xl text-green">{p.name}</h2>
+              <h2 className="text-2xl text-green"><a href={p.href}>{p.name}</a></h2>
               <p className="mt-3 text-4xl font-semibold text-ink">{p.price} zł</p>
               <p className="mt-1 text-sm text-ink/60">sesja {p.duration}</p>
               <p className="mt-4 leading-7 text-ink/80">
                 {p.key === 'konsultacja'
-                  ? 'Spotkanie konsultacyjne (50 min), podczas którego omawiamy trudności i oczekiwania. Nie zobowiązuje do rozpoczęcia psychoterapii. Zwykle poprzedza ją kilka konsultacji, po których ustalamy dalszą formę pomocy.'
+                  ? 'Spotkanie konsultacyjne, podczas którego omawiamy trudności i oczekiwania. Nie zobowiązuje do rozpoczęcia psychoterapii. Zwykle poprzedza ją kilka konsultacji, po których ustalamy dalszą formę pomocy.'
                   : 'Regularne sesje w nurcie psychodynamicznym, dopasowane do indywidualnych potrzeb i tempa.'}
               </p>
             </div>
           ))}
         </div>
 
+        <section className="diagnostic-note"><h2>Dodatkowe usługi: ustalenie kosztu</h2>
+          <p>Stawka za pojedynczą konsultację nie stanowi ceny procesu diagnostycznego. Informacje o opłatach i czasie proszę ustalić z gabinetem przed spotkaniem.</p>
+          <ul>{(['general','personality','adhd','edu','eduAdhd'] as const).map(key=><li key={key}><a href={services[key].href}>{services[key].name}</a></li>)}</ul>
+        </section>
         <p className="mt-8 text-lg leading-8 text-ink/80">
           {details}
         </p>

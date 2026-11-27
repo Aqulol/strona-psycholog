@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { config } from './config';
+import { config, visitRatesText } from './config';
 export const domain = 'https://psychologplebaniak.pl';
 export const details = 'Szczegóły ustalamy podczas konsultacji, a w razie pytań zapraszam do kontaktu telefonicznego lub mailowego.';
 export const status = 'Grzegorz Plebaniak · psycholog, psychoterapeuta (w trakcie szkolenia)';
 export const faq = [
  ['Czy muszę wiedzieć, z czym przychodzę?', 'Nie. Można zacząć od opowiedzenia o tym, co niepokoi lub zabiera siły, nawet jeśli trudno to nazwać.'],
- ['Ile trwa i kosztuje spotkanie?', 'Konsultacja i sesja psychoterapii trwają po 50 minut. Koszt każdego spotkania to 200 zł.'],
+ ['Ile trwa i kosztuje spotkanie?', visitRatesText],
  ['Czy mogę spotkać się online?', 'Tak, przyjmuję online oraz stacjonarnie we Wrocławiu.'],
  ['Czy rodzic uczestniczy w pierwszym spotkaniu?', 'Na pierwsze spotkanie z osobą niepełnoletnią zapraszam rodzica lub rodziców. Dalsze zasady ustalamy indywidualnie.'],
  ['Ile jest spotkań konsultacyjnych?', 'Zazwyczaj są to cztery spotkania. Pomagają nam wspólnie zdecydować, czy rozpocząć psychoterapię.'],

@@ -120,7 +120,7 @@ for (const id of ['emocje-mlodziezy', 'relacje-mlodziezy', 'dorastanie-i-tozsamo
   assert.ok(youthHtml.includes(`id="${id}"`));
 }
 
-assert.match(helpIndex, /<h1>W czym mogę Ci pomóc\?<\/h1>/);
+assert.match(helpIndex, /<h1>W czym mogę pomóc\?<\/h1>/);
 assert.equal((catalogue.match(/class="help-category"/g) || []).length, 9);
 assert.equal((catalogue.match(/<details\b/g) || []).length, 8);
 assert.match(helpIndex, /id="help-youth-heading"/);
@@ -193,3 +193,29 @@ for (const indexPath of ['/', '/blog/']) {
     assert.deepEqual(readingLabels(card), readingLabels(read(file(path))), `${indexPath}: card matches ${path}`);
   }
 }
+
+const offerHtml = read(file('/oferta/'));
+const offerMain = offerHtml.match(/<main\b[\s\S]*?<\/main>/)?.[0];
+assert.ok(offerMain);
+const diagnosisRoutes = ['/diagnoza-psychologiczna-wroclaw/', '/diagnoza-osobowosci-wroclaw/', '/diagnoza-adhd-wroclaw/'];
+const guideRoutes = ['/poradnictwo-psychologiczne-wroclaw/', '/konsultacja-diagnostyczna-wroclaw/', '/wsparcie-psychologiczne-w-kryzysie/', '/konsultacja-psychologiczna-dla-rodzicow/', '/konsultacja-psychologiczna-problemy-w-relacjach/', '/konsultacja-dotyczaca-wyboru-psychoterapii/'];
+for (const path of diagnosisRoutes) {
+  const html = read(file(path));
+  const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0];
+  assert.ok(main);
+  assert.match(main, /"@type":"Service"/);
+  assert.doesNotMatch(main, /"@type":"Offer"|href="https:\/\/booksy\.com\//, `${path}: no unconfirmed rate or specific booking`);
+  assert.match(main, /href="\/kontakt\/"/);
+  assert.ok(offerMain.includes(`href="${path}"`), `${path}: visible catalogue link`);
+  for (const sibling of diagnosisRoutes.filter(candidate => candidate !== path)) assert.ok(main.includes(`href="${sibling}"`));
+}
+for (const path of guideRoutes) {
+  const html = read(file(path));
+  assert.doesNotMatch(html, /"@type":"Service"/, `${path}: guide, not an independent service`);
+  assert.ok(!offerMain.includes(`href="${path}"`));
+  assert.ok(read(file('/psycholog-wroclaw/')).includes(`href="${path}"`));
+}
+for (const [selector, hub] of [['Psycholog','/psycholog-wroclaw/'],['Psychoterapeuta','/psychoterapeuta-wroclaw/']]) {
+  assert.ok(homepage.includes(`<a href="${hub}">${selector}</a><button type="button" aria-label="Podmenu: ${selector}" aria-expanded="false" aria-controls="`));
+}
+console.log('Offer catalogue: diagnosis links, guarded prices/bookings, informational routes and split menu controls checked.');

@@ -1,16 +1,17 @@
+import { services, offerPath, type ServiceKey } from '../lib/services';
 import type { ReactNode } from 'react';
 import { config } from '../lib/config';
 import { webPage } from '../lib/entities';
 import { servicePaths } from '../lib/service-paths';
 import { meta, paths } from '../lib/site';
 import { Booking, Crumbs, Json, Questions } from './Site';
-import { ServiceCards, psychologyCards, therapyCards } from './ServiceCards';
+import { OfferGroups, ServiceCards, therapyCards } from './ServiceCards';
 
 type Kind = keyof typeof servicePaths;
 const metadataByKind = {
   psychologist: {
-    h1: 'Psycholog we Wrocławiu', title: 'Psycholog we Wrocławiu – przewodnik po konsultacjach',
-    description: 'Jakiej pomocy udzielam jako psycholog we Wrocławiu? Sprawdź zakres konsultacji, sposób pracy i informacje dla dorosłych oraz młodzieży od 15. roku życia.',
+    h1: 'Psycholog we Wrocławiu', title: 'Psycholog we Wrocławiu | Grzegorz Plebaniak',
+    description: 'Prywatny gabinet psychologa we Wrocławiu. Poznaj dostępne konsultacje, diagnostykę psychologiczną i indywidualną psychoedukację oraz zasady kontaktu.',
   },
   therapist: {
     h1: 'Psychoterapeuta we Wrocławiu', title: 'Psychoterapeuta we Wrocławiu | Grzegorz Plebaniak',
@@ -37,7 +38,7 @@ function Practical({ orientational = false }: { orientational?: boolean }) {
   return <>
     <Section title="Informacje praktyczne">
       {orientational && <p>Informacje poniżej dotyczą standardowej konsultacji psychologicznej, nie odrębnego świadczenia opisanego na tej stronie.</p>}
-      <p>Przyjmuję we Wrocławiu przy ul. {config.address} oraz <a href={paths.online}>online</a>. Standardowa konsultacja trwa {config.prices[0].duration} i kosztuje {config.prices[0].price} zł. Szczegóły zawiera <a href="/cennik/">cennik</a>.</p>
+      <p>Przyjmuję we Wrocławiu przy ul. {config.address} oraz <a href={services.onlineConsult.href}>online</a>. Standardowa konsultacja trwa {services.consult.rate?.duration} i kosztuje {services.consult.rate?.price} zł. Szczegóły zawiera <a href="/cennik/">cennik</a>.</p>
     </Section>
     <Section title="Rezerwacja wizyty">
       <p>W Booksy można umówić standardową konsultację psychologiczną. W sprawach organizacyjnych można też <a href={paths.contact}>skontaktować się telefonicznie lub mailowo</a>.</p>
@@ -54,9 +55,11 @@ function Psychologist() {
     <Section title="W czym mogę pomóc i kiedy się zgłosić?">
       <p>Powodem zgłoszenia może być <a href="/w-czym-pomagam/samotnosc/">samotność</a>, powtarzające się <a href="/w-czym-pomagam/problemy-w-relacjach/">problemy w relacjach</a> lub trudność w odnalezieniu się po ważnej zmianie. Konsultację można rozważyć również wtedy, gdy nie wiadomo, co właściwie się zmieniło, ale zwykłe sprawy kosztują więcej wysiłku. Więcej przykładów zawiera <a href={paths.signs}>katalog obszarów pomocy</a>.</p>
     </Section>
-    <Section title="Konsultacje i inne formy pomocy psychologicznej">
-      <p>W gabinecie punktem wyjścia jest konsultacja psychologiczna. Poniższe strony wyjaśniają również, czym są pogłębione rozpoznawanie trudności i poradnictwo oraz kiedy szukać odrębnej pomocy.</p>
-      <ServiceCards cards={psychologyCards}/>
+    <OfferGroups categories={['support','diagnosis','education']} compact/>
+    <p><a href={offerPath}>Zobacz całą ofertę</a>, w tym <a data-context-link href={services.onlineConsult.href}>konsultacje psychologiczne online</a>.</p>
+    <Section title="Przewodniki po konsultacjach">
+      <p>Jak przygotować się do rozmowy na wybrany temat? Poniższe materiały nie są dodatkowymi pozycjami do rezerwacji.</p>
+      <ul>{(['counselling','crisis','parents','relationships','choice','diagnostic'] satisfies ServiceKey[]).map(key => <li key={key}><a href={services[key].href}>{services[key].name}</a></li>)}</ul>
     </Section>
     <Section title="Jak wygląda pierwsze spotkanie?">
       <p>Można zacząć od tego, co skłoniło Pana/Panią do kontaktu właśnie teraz. Pytam o okoliczności, oczekiwania i ewentualną wcześniejszą pomoc. Pierwsza rozmowa nie zobowiązuje do psychoterapii; więcej wyjaśniam w opisie <a href={paths.consult}>konsultacji psychologicznej</a>.</p>
@@ -95,15 +98,18 @@ function Therapist() {
 }
 function Diagnostic() {
   return <>
-    <p className="hero-copy">Rozpoznanie, jak trudności wpływają na życie, to nie to samo co postawienie formalnej diagnozy. Ta strona wyjaśnia, co można omówić na konsultacji psychologicznej i kiedy potrzebna jest odrębna ocena. Nie jest ofertą specjalistycznych badań ani diagnozy.</p>
+    <p className="hero-copy">Rozpoznanie, jak trudności wpływają na życie, to nie to samo co postawienie formalnej diagnozy. Ta strona wyjaśnia rolę rozmowy wstępnej. Taka konsultacja nie zastępuje procesu diagnostycznego i nie jest osobną pozycją do rezerwacji na tej stronie.</p>
     <Section title="Kiedy potrzebne jest pogłębienie obrazu trudności?">
       <p>Na przykład gdy <a href="/w-czym-pomagam/trudnosci-ze-snem/">problemy ze snem</a>, napięcie i wycofywanie się z kontaktów pojawiły się równocześnie, a nie jest jasne, od czego zacząć. Dla dorosłych i młodzieży od 15. roku życia punktem wyjścia w tym gabinecie jest <a href={paths.consult}>konsultacja psychologiczna</a>.</p>
     </Section>
     <Section title="Co można ustalić podczas rozmowy?">
       <p>Warto opisać, od kiedy trudność trwa, gdzie się pojawia i co zmieniła w pracy, nauce albo relacjach. Można też wspomnieć o dotychczasowej pomocy i powiedzieć, czego oczekuje się od oceny. Rozmowa pomaga określić, czy właściwym krokiem może być konsultacja lekarska, ocena psychiatryczna lub zgłoszenie do specjalisty zajmującego się konkretną diagnostyką.</p>
     </Section>
-    <Section title="Co jest poza zakresem tej strony?">
-      <p>Nie jest to oferta testów, opinii, orzeczeń ani diagnostyki ADHD lub spektrum autyzmu. Przy <a href="/w-czym-pomagam/zdrowie-fizyczne-i-psychiczne/">dolegliwościach fizycznych</a> może być potrzebna niezależna ocena medyczna. Jeśli ważniejsza jest decyzja życiowa niż ustalenie przyczyny objawów, warto przeczytać, czym jest <a href={servicePaths.counselling}>poradnictwo psychologiczne</a>.</p>
+    <Section title="Konsultacja a pełny proces diagnostyczny">
+      <p>Na zwykłej konsultacji można rozmawiać szerzej o aktualnej sytuacji i oczekiwanej pomocy. Rozmowa ukierunkowana diagnostycznie służy przede wszystkim określeniu pytania do oceny. Nie należy oczekiwać, że pojedyncze spotkanie wystarczy do rozpoznania. Pogłębiona ocena może wymagać analizy historii objawów i porównania kilku możliwych wyjaśnień.</p>
+    </Section>
+    <Section title="Jakie formy pogłębionej diagnostyki prowadzę?">
+      <p>Prowadzę <a data-context-link href={services.general.href}>ogólną diagnozę psychologiczną</a>, <a data-context-link href={services.personality.href}>diagnozę osobowości</a> oraz <a data-context-link href={services.adhd.href}>diagnozę ADHD</a>. Każda odpowiada na inne pytania. Zakres i przebieg warto omówić z gabinetem przed spotkaniem.</p>
     </Section>
     <Section title="Najczęściej zadawane pytania"><Questions items={[
       ['Czy rozmowa kończy się rozpoznaniem?', 'Nie jest to usługa formalnej diagnozy. Można omówić, czy potrzebna będzie odrębna ocena i gdzie jej szukać.'],

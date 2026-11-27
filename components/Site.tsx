@@ -1,3 +1,5 @@
+import { navigation } from '../lib/navigation';
+import { services } from '../lib/services';
 import MainNavigation from './MainNavigation';
 import { servicePaths } from '../lib/service-paths';
 import { responsiveSrcSet } from '../lib/responsive-images';
@@ -5,13 +7,13 @@ import { config } from '../lib/config';
 import { domain, paths } from '../lib/site';
 export function Json({data}:{data:object}) {return <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(data).replace(/</g,'\\u003c')}}/>;}
 export function Booking(){return <a className="booking" href={config.booksyUrl} rel="noreferrer">Umów konsultację <span aria-hidden="true">↗</span></a>;}
-export function SiteHeader(){return <header className="site-header"><div className="shell mast"><a href="/"><img src="/logo.webp" srcSet={responsiveSrcSet('logo')} sizes="(min-width: 963px) 260px, (min-width: 445px) 27vw, 120px" width="1434" height="258" alt="Grzegorz Plebaniak - strona główna"/></a><Booking/></div><nav className="shell" aria-label="Menu główne"><details className="site-menu"><summary>Menu strony</summary><MainNavigation/></details><div className="desktop-menu"><MainNavigation/></div></nav></header>;}
+export function SiteHeader(){return <header className="site-header"><div className="shell mast"><a href="/"><img src="/logo.webp" srcSet={responsiveSrcSet('logo')} sizes="(min-width: 963px) 260px, (min-width: 445px) 27vw, 120px" width="1434" height="258" alt="Grzegorz Plebaniak - strona główna"/></a><Booking/></div><nav className="shell" aria-label="Menu główne"><details className="site-menu"><summary>Menu strony</summary><MainNavigation {...navigation}/></details><div className="desktop-menu"><MainNavigation {...navigation} desktop/></div></nav></header>;}
 export function SiteFooter(){return <footer className="site-footer"><div className="shell footer-grid"><div><p className="footer-name">Grzegorz Plebaniak</p><p>Psycholog, psychoterapeuta (w trakcie szkolenia)</p><p>{config.address}</p><a href="tel:+48693087574">{config.phone}</a><br/><a href={`mailto:${config.email}`}>{config.email}</a></div><nav aria-label="Informacje dodatkowe"><a href={paths.consult}>Konsultacje</a><a href={paths.online}>Psychoterapia online</a><a href={paths.signs}>W czym pomagam?</a><a href={paths.faq}>FAQ</a><a href="/polityka-prywatnosci/">Polityka prywatności i cookies</a><a href={paths.contact}>Kontakt</a></nav><div><p>Treści mają charakter informacyjny i nie zastępują konsultacji. W nagłym zagrożeniu proszę dzwonić pod <a href="tel:112">112</a>.</p><p>Całodobowe wsparcie: dla dorosłych <a href="tel:116123">116 123</a>, dla dzieci i młodzieży <a href="tel:116111">116 111</a>.</p></div></div></footer>;}
 export type Related = [string,string];
-const serviceParents: Record<string, [string, string]> = {
- [paths.consult]: [servicePaths.psychologist, 'Psycholog'], [servicePaths.diagnostic]: [servicePaths.psychologist, 'Psycholog'], [servicePaths.counselling]: [servicePaths.psychologist, 'Psycholog'],
- [paths.method]: [servicePaths.therapist, 'Psychoterapeuta'], [paths.tfp]: [servicePaths.therapist, 'Psychoterapeuta'],
-};
+const serviceParents = Object.fromEntries(Object.values(services).map(service => {
+ const therapy = service.category === 'therapy' || service.href === paths.online;
+ return [service.href, therapy ? [servicePaths.therapist, 'Psychoterapeuta'] : [servicePaths.psychologist, 'Psycholog']];
+}));
 export function Crumbs({path,title}:{path:string,title:string}){const items = [['/','Strona główna'],...(path.startsWith('/blog/') && path !== '/blog/' ? [['/blog/','Blog']] : []),...(path.startsWith('/w-czym-pomagam/') ? [[paths.signs,'W czym pomagam?']] : []),...(serviceParents[path] ? [serviceParents[path]] : []),[path,title]];return <><nav className="crumbs" aria-label="Ścieżka nawigacji"><ol>{items.map(([href,label],i)=><li key={href}>{i===items.length-1?<span aria-current="page">{label}</span>:<a href={href}>{label}</a>}</li>)}</ol></nav><Json data={{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:items.map(([href,name],i)=>({'@type':'ListItem',position:i+1,name,item:domain+href}))}}/></>;}
 export function SeeAlso({links}:{links:Related[]}){return <aside className="see-also"><h2>Zobacz także</h2><ul>{links.map(([url,label])=><li key={url}><a href={url}>{label}</a></li>)}</ul><a href={paths.contact}>Dane kontaktowe</a></aside>;}
 export function Questions({items}:{items:string[][]}){return <div className="questions">{items.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}<Json data={{'@context':'https://schema.org','@type':'FAQPage',mainEntity:items.map(([name,text])=>({'@type':'Question',name,acceptedAnswer:{'@type':'Answer',text}}))}}/></div>;}
