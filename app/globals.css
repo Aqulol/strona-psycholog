@@ -221,8 +221,12 @@ body { background:#faf8f3;color:#243b34; }
 .topic-page h2 { font-size:clamp(1.45rem, 2.8vw, 2.2rem); }
 .topic-booking { scroll-margin-top:1rem; padding:clamp(.75rem, 2vw, 1rem); word-break:normal; overflow-wrap:normal; hyphens:none; }
 .booksy-calendar { display:grid; gap:.75rem; margin-block:.75rem; min-inline-size:0; }
-.booksy-consent { display:grid; gap:.65rem; font-size:.875rem; }
-.booksy-consent-actions { display:flex; flex-wrap:wrap; gap:.5rem; }
+.privacy-preferences-trigger { text-align:start; font-weight:600; }
+.privacy-preferences-trigger:hover { text-decoration:underline; }
+.privacy-preferences { position:fixed; z-index:90; inset:auto 1rem 1rem; width:min(36rem,calc(100% - 2rem)); max-height:calc(100dvh - 2rem); overflow:auto; margin-inline:auto; display:grid; gap:.65rem; background:var(--surface); color:var(--ink); border:1px solid var(--strong-rule); border-radius:var(--edge); padding:1rem; box-shadow:0 8px 30px #183d3328; }
+.privacy-preferences h2 { font-size:1.35rem; }
+.site-footer .privacy-preferences a[href] { color:var(--pine); }
+.privacy-preferences-actions { display:flex; flex-wrap:wrap; gap:.5rem; }
 .booksy-status:empty { display:none; }
 .booksy-status { font-size:.875rem; }
 .booksy-slot { min-inline-size:0; height:clamp(38rem, 85svh, 49rem); background:var(--surface); border:1px solid var(--rule); border-radius:var(--edge); }

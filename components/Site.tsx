@@ -1,3 +1,4 @@
+import PrivacyPreferences from './PrivacyPreferences';
 import LocalSearch from './LocalSearch';
 import {knowledgePath,glossaryPath,patientPath,crisisPath} from '../lib/knowledge';
 import { navigation } from '../lib/navigation';
@@ -13,7 +14,7 @@ export function SiteHeader(){return <header className="site-header"><div classNa
 export function SiteFooter(){return <footer className="site-footer"><div className="shell">
  <div className="footer-grid"><div><p className="footer-name">Grzegorz Plebaniak</p><p>Psycholog, psychoterapeuta (w trakcie szkolenia)</p><p>{config.address}</p><a href={`tel:${config.phone.replace(/\s/g,'')}`}>{config.phone}</a><br/><a href={`mailto:${config.email}`}>{config.email}</a></div>
  <nav className="footer-menu" aria-label="Informacje dodatkowe"><div><p>Gabinet</p>{' '}<a href={paths.about}>O mnie</a>{' '}<a href={paths.office}>Dojazd i zdjęcia</a>{' '}<a href={paths.contact}>Kontakt</a>{' '}<a href="/cennik/">Cennik</a></div>{' '}<div><p>Pomoc</p>{' '}<a href={paths.consult}>Konsultacje</a>{' '}<a href={services.general.href}>Diagnoza psychologiczna</a>{' '}<a href={services.individual.href}>Psychoterapia indywidualna</a>{' '}<a href={paths.online}>Psychoterapia online</a></div>{' '}<div><p>Czytelnia</p>{' '}<a href={knowledgePath}>Baza wiedzy</a>{' '}<a href={paths.signs}>W czym pomagam?</a>{' '}<a href={glossaryPath}>Słownik</a>{' '}<a href={paths.faq}>FAQ</a></div></nav></div>
- <div className="footer-bottom"><p>Treści mają charakter informacyjny i nie zastępują konsultacji. W nagłym zagrożeniu proszę dzwonić pod <a href="tel:112">112</a>. Całodobowe wsparcie: dla dorosłych <a href="tel:116123">116 123</a>, dla dzieci i młodzieży <a href="tel:116111">116 111</a>.</p><p><a href={crisisPath}>Pilna pomoc</a>{' '}<a href="/polityka-prywatnosci/">Polityka prywatności i cookies</a></p></div>
+ <div className="footer-bottom"><p>Treści mają charakter informacyjny i nie zastępują konsultacji. W nagłym zagrożeniu proszę dzwonić pod <a href="tel:112">112</a>. Całodobowe wsparcie: dla dorosłych <a href="tel:116123">116 123</a>, dla dzieci i młodzieży <a href="tel:116111">116 111</a>.</p><div className="footer-utility"><a href={crisisPath}>Pilna pomoc</a>{' '}<a href="/polityka-prywatnosci/">Polityka prywatności i cookies</a>{' '}<PrivacyPreferences/></div></div>
  </div></footer>;}
 export type Related = [string,string];
 const serviceParents = Object.fromEntries(Object.values(services).map(service => {

@@ -105,7 +105,7 @@ body{background:var(--paper);color:var(--ink)}
 .footer-menu p{color:var(--sage);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin:0 0 .5rem}
 .footer-grid nav a{padding-block:.55rem;min-height:44px}
 .footer-bottom{border-top:1px solid var(--strong-rule);margin-top:1.8rem;padding-top:1.2rem;display:grid;gap:.75rem;font-size:.83rem}
-.footer-bottom p+p{display:flex;flex-wrap:wrap;gap:.7rem 1.1rem}
+.footer-bottom .footer-utility{display:flex;flex-wrap:wrap;gap:.7rem 1.1rem}
 @media(min-width:760px){.site-footer .footer-grid{grid-template-columns:minmax(0,.75fr) minmax(0,1.4fr)}.footer-bottom{grid-template-columns:1fr auto}}
 .reading{width:min(100% - 2 * var(--gutter),52rem);padding-block:1.5rem clamp(3rem,7vw,6rem)}
 .reading h1,.blog-library h1,.price-editorial h1{font-size:var(--display);line-height:1.06;color:var(--deep);letter-spacing:-.038em}
