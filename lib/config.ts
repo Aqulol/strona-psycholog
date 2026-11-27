@@ -3,6 +3,10 @@ const postal = '50-449';
 const address = `${streetAddress}, ${postal} Wrocław`;
 const mapQuery = encodeURIComponent(address);
 
+export const consultationRate = { key: 'konsultacja', name: 'Konsultacja psychologiczna', price: 200, duration: '50 min' };
+export const therapyRate = { key: 'psychoterapia', name: 'Psychoterapia', price: 200, duration: '50 min' };
+export const visitRatesText = `Konsultacja psychologiczna: ${consultationRate.price} zł / ${consultationRate.duration}. Sesja psychoterapii: ${therapyRate.price} zł / ${therapyRate.duration}.`;
+
 export const config = {
   name: 'Grzegorz Plebaniak',
   title: 'Psycholog, psychoterapeuta (w trakcie szkolenia)',
@@ -21,10 +25,7 @@ export const config = {
   booksyUrl: 'https://booksy.com/pl-pl/357056_psycholog-grzegorz-plebaniak_psychoterapia_13750_wroclaw',
 
   // ===== Cennik - edytuj TU ręcznie (zgodnie z aktualnym cennikiem Booksy) =====
-  prices: [
-    { key: 'konsultacja', name: 'Konsultacja psychologiczna', price: 200, duration: '50 min' },
-    { key: 'psychoterapia', name: 'Psychoterapia', price: 200, duration: '50 min' },
-  ],
+  prices: [consultationRate, therapyRate],
 
   // ===== Firebase (wariant darmowy - Spark) =====
   // Formularz kontaktowy zapisuje wiadomości BEZPOŚREDNIO do Firestore

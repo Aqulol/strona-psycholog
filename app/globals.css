@@ -269,3 +269,39 @@ p > .reading-time:not(:first-child) { margin-inline-start:.7rem; }
 .service-directory-card li + li { margin-top:.35rem; }
 .service-icon { display:grid;place-items:center;width:2.9rem;height:2.9rem;border-radius:.55rem;background:#e7eee5;color:#2D5A4E;border:1px solid #ddd4ba; }
 @media (min-width:43rem) { .service-directory-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .service-directory-grid:has(> :nth-child(3)) { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+
+/* Service catalogue and split-control menu */
+.nav-submenu ul { list-style:none; margin:0; padding:0; }
+.nav-submenu[hidden] { display:none; }
+.nav-mega-grid { display:grid; gap:.55rem; }
+.nav-mega-grid details { min-width:0; border:1px solid #dcded4; border-radius:.4rem; padding:.25rem .65rem; }
+.nav-mega-grid summary { cursor:pointer; font-weight:650; color:#2D5A4E; padding:.6rem 0; }
+.nav-submenu a { gap:.25rem .45rem; flex-wrap:wrap; }
+.menu-guide { font-size:.65rem; line-height:1.2; color:#37564a; background:#e9eee6; padding:.15rem .35rem; border-radius:.2rem; }
+.service-icon { position:relative; }
+.icon-overlay { position:absolute; right:3px; bottom:3px; background:#FAF8F3; }
+.offer-cards,.offer-overview { display:grid; gap:1rem; }
+.offer-section { margin-block:2rem 3rem; }
+.offer-section-title { display:flex; align-items:center; gap:.8rem; margin-bottom:.5rem; }
+.offer-section-title h2 { margin:0; }
+.offer-meta { font-size:.88rem; font-weight:600; }
+.offer-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.05rem .9rem; margin-top:auto; font-size:.88rem; }
+.offer-home-cta { margin-top:1.5rem; }
+.offer-shell { max-width:76rem; }
+.diagnostic-note { border-left:3px solid #C9A96A; background:#f1eee4; padding:1rem 1.25rem; margin-block:1.5rem; }
+.diagnostic-note p:last-child { margin-bottom:0; }
+@media(min-width:42rem) { .offer-cards,.offer-overview { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(min-width:68rem) { .offer-cards { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media(min-width:72rem) {
+ .site-header nav[aria-label="Menu główne"] { position:relative; }
+ .nav-mega { position:static; }
+ .nav-mega > .nav-submenu { width:min(62rem,100%); inset-inline-start:0; padding:1rem; }
+ .nav-mega-grid { grid-template-columns:1.25fr 1fr .85fr; gap:.8rem; }
+ .nav-mega-grid details { padding:.35rem .85rem; }
+ .nav-mega-grid summary { cursor:pointer; }
+}
+.nav-parent { gap:.35rem; }
+.offer-section > p { margin-bottom:.8rem; }
+.offer-shell.reading { width:min(100% - 2.5rem,76rem); }
+.offer-shell > .hero-copy { max-width:49rem; }
+@media(min-width:72rem) { .nav-submenu { max-height:min(75dvh,38rem); overflow-y:auto; } }

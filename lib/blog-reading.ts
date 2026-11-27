@@ -2,6 +2,10 @@ export type Reference = { author: string; year: number; title: string; publisher
 const gabbard: Reference = { author: 'Gabbard, G. O.', year: 2017, title: 'Long-Term Psychodynamic Psychotherapy: A Basic Text (wyd. 3)', publisher: 'American Psychiatric Association Publishing' };
 const mcWilliams: Reference = { author: 'McWilliams, N.', year: 2004, title: 'Psychoanalytic Psychotherapy: A Practitioner’s Guide', publisher: 'Guilford Press', href: 'https://www.guilford.com/books/Psychoanalytic-Psychotherapy/Nancy-McWilliams/9781593850098' };
 export const blogReading: Record<string, Reference[]> = {
+  'adhd-u-doroslych': [
+    {author:'National Institute for Health and Care Excellence', year:2018, title:'Attention deficit hyperactivity disorder: diagnosis and management (NG87)', publisher:'NICE', href:'https://www.nice.org.uk/guidance/ng87/chapter/recommendations'},
+    {author:'Adamou i wsp.', year:2024, title:'The adult ADHD assessment quality assurance standard', publisher:'Frontiers in Psychiatry', href:'https://doi.org/10.3389/fpsyt.2024.1380410'},
+  ],
   'psychoterapia-psychodynamiczna-pierwsze-spotkanie': [gabbard],
   'pierwsze-spotkanie-mlodziez-rodzic': [{ author: 'World Health Organization', year: 2025, title: 'Mental health of adolescents', publisher: 'WHO', href: 'https://www.who.int/news-room/fact-sheets/detail/adolescent-mental-health' }],
   'tfp-dla-kogo': [

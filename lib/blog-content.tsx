@@ -1,3 +1,4 @@
+import { adhdArticle } from './adhd-article';
 import type { ReactNode } from 'react';
 import { body as past } from '../app/blog/czy-przeszlosc-ma-znaczenie/content';
 import { body as awareness } from '../app/blog/dlaczego-sama-swiadomosc-nie-wystarcza/content';
@@ -17,6 +18,7 @@ const features = {
 };
 
 export const generatedArticles = [
+  adhdArticle,
   ...featureArticles.map(article => ({ ...article, sections: undefined, link: paths.adults, body: features[article.slug]() })),
   ...editorial.flatMap(article => article.slug && article.sections ? [{
     ...article, slug: article.slug, published: undefined,

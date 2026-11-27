@@ -1,3 +1,4 @@
+import { services } from '../../../lib/services';
 import { contextLinks } from '../../../lib/context-links';
 import { body } from './content';
 import ReadingTime from '../../../components/ReadingTime';
@@ -34,6 +35,7 @@ export default function Page() {
         <ArticleByline/>
         <p className="mt-4 text-sm text-ink/70">14 października 2026 <ReadingTime minutes={readingMinutes(body)}/></p>
         {contextLinks('/blog/narcyzm-wrazliwy/', body)}
+        <p>To, co teoria opisuje jako narcyzm wrażliwy, nie jest wynikiem testu ani odrębnym rozpoznaniem. Jeśli pytanie dotyczy oceny klinicznej, osobno opisuję, jak wygląda <a data-context-link href={services.personality.href}>diagnoza osobowości</a>.</p>
     </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>
