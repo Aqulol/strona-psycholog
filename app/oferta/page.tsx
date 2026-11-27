@@ -7,6 +7,7 @@ import { meta, paths } from '../../lib/site';
 const title = 'Oferta gabinetu psychologicznego i psychoterapeutycznego';
 const description = 'Oferta gabinetu we Wrocławiu: konsultacje psychologiczne, trzy obszary diagnozy, psychoedukacja i psychoterapia. Sprawdź formy spotkań dostępne online.';
 export const metadata = meta(offerPath,'Oferta gabinetu psychologicznego we Wrocławiu',description);
+import {comparisonPath} from '../../lib/knowledge';
 export default function OfferPage() {
   return <main id="tresc" className="shell reading offer-shell">
     <Crumbs path={offerPath} title="Oferta"/><Json data={webPage(offerPath,title,description)}/>
@@ -14,6 +15,7 @@ export default function OfferPage() {
     <p className="hero-copy">Prowadzę konsultacje, diagnozę psychologiczną, psychoedukację i psychoterapię indywidualną. Poniżej można porównać ich cele i sprawdzić, jak zapytać o spotkanie.</p>
     <p>Gabinet prowadzi <a href={paths.about}>Grzegorz Plebaniak</a>, psycholog i psychoterapeuta (w trakcie szkolenia).</p>
     <p><a className="text-link" href="/jakiej-pomocy-potrzebuje/">Nie wiem, jakiej pomocy potrzebuję</a></p>
+ <p><a data-context-link href={comparisonPath}>Porównaj cele i przebieg form pomocy</a>.</p>
     <nav aria-label="Kategorie oferty" className="page-toc"><ul>{Object.entries(categoryNames).map(([key,name])=><li key={key}><a href={`#oferta-${key}`}>{name}</a></li>)}</ul></nav>
     <OfferGroups categories={['support','diagnosis','education','therapy','online']}/>
     <section className="diagnostic-note"><h2>Tematy rozmowy i oceny</h2>

@@ -9,6 +9,7 @@ const description='Alfabetyczny indeks pojęć psychologicznych z odnośnikami d
 export const metadata=meta(glossaryPath,title,description);
 const names=new Map<string,readonly [string,string,string,string]>(publishedExplanations.map(row=>[row[0],row]));
 for(const term of reviewedTerms) names.set(term.term,[term.term,term.category,`${glossaryPath}${term.slug}/`,term.definition]);
+const aliases:Record<string,string> = {'Borderline':'BPD','Ruminacje':'roztrząsanie rozpamiętywanie','Przeniesienie':'transferencja','Kontrakt terapeutyczny':'umowa terapeutyczna','Funkcje wykonawcze':'funkcje egzekutywne','Łączenie obrazów siebie i innych':'integracja reprezentacji siebie i innych'};
 const collator=new Intl.Collator('pl');
 const sorted=[...names.values()].sort((a,b)=>collator.compare(a[0],b[0]));
 const initial=(term:string)=>term[0].toLocaleUpperCase('pl');
@@ -18,6 +19,6 @@ export default function Page(){return <KnowledgePage path={glossaryPath} title={
  <p className="hero-copy">Indeks zawiera {sorted.length} pojęć z odnośnikami do wyjaśnień. Hasła pomagają zrozumieć język artykułów i konsultacji. Nie są kryteriami do samodzielnego stawiania diagnozy.</p>
  <nav aria-label="Indeks alfabetyczny" className="glossary-letters">{letters.map(letter=><a key={letter} href={`#litera-${letter}`}>{letter}</a>)}</nav>
  <CatalogueFilter label="Szukaj pojęcia" categories={[...new Set(sorted.map(x=>x[1]))].sort(collator.compare)}>
-  {letters.map(letter=><section id={`litera-${letter}`} key={letter} data-filter-group=""><h2>{letter}</h2><dl>{sorted.filter(x=>initial(x[0])===letter).map(([term,category,href,copy])=><div key={term} data-filter-row={category}><dt><a href={href}>{term}</a></dt><dd>{copy} <small>· {category}</small></dd></div>)}</dl></section>)}
+  {letters.map(letter=><section id={`litera-${letter}`} key={letter} data-filter-group=""><h2>{letter}</h2><dl>{sorted.filter(x=>initial(x[0])===letter).map(([term,category,href,copy])=><div key={term} data-filter-row={category} data-alias={aliases[term]}><dt><a href={href}>{term}</a></dt><dd>{copy} <small>· {category}</small></dd></div>)}</dl></section>)}
  </CatalogueFilter>
  </KnowledgePage>;}

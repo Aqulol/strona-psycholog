@@ -11,7 +11,9 @@
     "check:export": "node scripts/check-export.mjs",
     "check:links": "node scripts/check-sitemap.mjs",
     "check:content": "node scripts/check-knowledge.mjs",
-    "check:sitemap": "node scripts/check-sitemap.mjs"
+    "check:sitemap": "node scripts/check-sitemap.mjs",
+    "lastmod:record": "node scripts/update-lastmod.mjs",
+    "check:lastmod": "node scripts/check-lastmod.mjs"
   },
   "dependencies": {
     "firebase": "^12.17.1",
@@ -25,6 +27,7 @@
     "@types/node": "^22.10.5",
     "@types/react": "^19.0.4",
     "@types/react-dom": "^19.0.2",
+    "parse5": "^7.3.0",
     "postcss": "^8.5.1",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.3"

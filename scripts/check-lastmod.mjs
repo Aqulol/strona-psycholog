@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+import {cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {contentFingerprint,resolveLastmod} from './lastmod.mjs';
+import {parseSitemap,readExport,serialize} from './sitemap-lib.mjs';
+const make=(text='Przykład',href='/faq/',price=200,cls='old',script='first')=>`<title>Strona</title><script>${script}</script><header>Menu</header><main class="${cls}"><p>To jest <em>${text}</em> oraz <a href="${href}">link</a>.</p><button>UI</button><script type="application/ld+json">{"price":${price},"@type":"Offer"}</script></main>`;
+assert.equal(contentFingerprint(make()),contentFingerprint(make('Przykład','/faq/',200,'new','second').replace('>Menu<','>Inne menu<').replace('To jest ','To\n jest   ').replace('>UI<','>Inny przycisk<').replace('{"price":200,"@type":"Offer"}','{"@type":"Offer","price":200}')));
+for(const mutation of [make('Inny tekst'),make('Przykład','/oferta/'),make('Przykład','/faq/',250),make().replace('Strona','Inny tytuł')]) assert.notEqual(contentFingerprint(make()),contentFingerprint(mutation));
+const today='2026-10-26', older='2026-09-01';
+const record=(page,date=today)=>({fingerprint:page.fingerprint,date,evidence:'fixture'});
+assert.equal(resolveLastmod({editorialDate:today,fingerprint:1},{date:older,fingerprint:1}),today);
+assert.equal(resolveLastmod({fingerprint:1},{date:older,fingerprint:2}),undefined);
+const tmp=mkdtempSync(join(tmpdir(),'lastmod-test-'));
+try {
+ // Exercise the actual exported dataset in an isolated copy, never mutate out.
+ cpSync('out',tmp,{recursive:true,filter:src=>!src.includes('/_next')&&!src.includes('/images')});
+ const before=readExport(tmp,{}).pages;
+ const route=[...before].find(([path,page])=>path.startsWith('/blog/')&&page.editorialDate)?.[0];
+ assert.ok(route);
+ const article=join(tmp,route,'index.html');
+ const original=readFileSync(article,'utf8');
+ const records={};
+ const dates=()=>parseSitemap(serialize(readExport(tmp,records).pages));
+ const old=dates();
+ writeFileSync(article,original.replace('</main>','<p>Testowa istotna zmiana tylko na tej stronie.</p></main>'));
+ records[route]=record(readExport(tmp,{}).pages.get(route),'2026-11-26');
+ const updated=dates();
+ assert.deepEqual([...updated].filter(([path,date])=>date!==old.get(path)).map(row=>row[0]),[route]);
+ assert.deepEqual(dates(),updated);
+ const added='/nowa-strona-testowa/';
+ cpSync(join(tmp,'jaka-forme-pomocy-wybrac'),join(tmp,added),{recursive:true});
+ const addedFile=join(tmp,added,'index.html');
+ writeFileSync(addedFile,readFileSync(addedFile,'utf8').replaceAll('https://psychologplebaniak.pl/jaka-forme-pomocy-wybrac/','https://psychologplebaniak.pl'+added).replace('</main>','<p>Unikalna treść strony testowej.</p></main>'));
+ records[added]=record(readExport(tmp,{}).pages.get(added));
+ assert.equal(dates().get(added),today);
+ rmSync(join(tmp,added),{recursive:true});
+ assert.ok(!dates().has(added));
+ assert.deepEqual(dates(),updated);
+} finally {rmSync(tmp,{recursive:true,force:true});}
+console.log('Lastmod: stabilność, istotna zmiana jednej strony, nowa i usunięta strona, zachowanie dat redakcyjnych — OK.');

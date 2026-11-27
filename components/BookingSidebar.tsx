@@ -1,5 +1,6 @@
 import { config, booksyWidgetUrl } from '../lib/config';
 import { paths } from '../lib/site';
+import ExternalFrame from './ExternalFrame';
 
 const consultation = config.prices.find(item => item.key === 'konsultacja');
 
@@ -11,8 +12,8 @@ export default function BookingSidebar() {
     <p>{config.address}</p>
     <p><a className="booking" href={config.booksyUrl} rel="noreferrer">Umów wizytę w Booksy</a></p>
     {config.booksyId && <div className="topic-calendar">
-      <p>Kalendarz ładuje się automatycznie. Booksy otrzymuje informacje o połączeniu i może użyć własnych plików cookies.</p>
-      <iframe className="embed" src={booksyWidgetUrl} title="Kalendarz rezerwacji Booksy" loading="lazy" referrerPolicy="no-referrer" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"/>
+      <p>Po otwarciu kalendarza Booksy otrzyma informacje o połączeniu i może użyć własnych plików cookies.</p>
+      <ExternalFrame src={booksyWidgetUrl} title="Kalendarz rezerwacji Booksy" label="Pokaż kalendarz Booksy" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"/>
     </div>}
     <p><a href={paths.consult}>Jak wygląda pierwsza konsultacja?</a></p>
     <p>Można też <a href={`tel:${config.phone.replace(/\s/g, '')}`}>zadzwonić</a> lub <a href={`mailto:${config.email}`}>napisać</a>.</p>

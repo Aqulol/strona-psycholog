@@ -8,3 +8,4 @@ export const knowledgeLinks = [
   {href:glossaryPath, name:'Słownik psychologiczny', guide:false},
   {href:patientPath, name:'Informacje dla pacjentów', guide:false},
 ];
+export const comparisonPath = '/jaka-forme-pomocy-wybrac/';

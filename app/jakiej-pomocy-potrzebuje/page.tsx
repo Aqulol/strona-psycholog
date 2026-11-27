@@ -16,7 +16,9 @@ const steps=[
  ['Szukam pomocy dla nastolatka',paths.youth,'Pomoc od 15. roku życia','Informacje o pierwszym spotkaniu i udziale rodziców.'],
  ['Chcę najpierw dowiedzieć się więcej',knowledgePath,'Baza wiedzy','Artykuły, pojęcia i informacje praktyczne do samodzielnego czytania.'],
 ];
+import {comparisonPath} from '../../lib/knowledge';
 export default function Page(){return <KnowledgePage path={guidePath} title={title} description={description}>
  <p className="hero-copy">Proszę wybrać cel, aby zobaczyć możliwy punkt wyjścia. To nawigacja po witrynie, nie test, diagnoza ani kwalifikacja do leczenia. Wybory nie są zapisywane ani wysyłane.</p>
+ <p><a data-context-link href={comparisonPath}>Porównaj cele i przebieg form pomocy</a>.</p>
  <div className="questions">{steps.map(([label,href,link,copy])=><details key={href}><summary>{label}</summary><p>{copy} <a href={href}>{link}</a></p></details>)}</div>
  </KnowledgePage>;}

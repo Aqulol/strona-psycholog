@@ -338,3 +338,9 @@ p > .reading-time:not(:first-child) { margin-inline-start:.7rem; }
 .glossary-letters {display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.8rem;}
 .glossary-letters a {display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid #cdd6cc;border-radius:.3rem;}
 .editorial-card {min-width:0;overflow-wrap:anywhere;}
+.comparison-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem;}
+.comparison-grid section {margin:0;scroll-margin-top:9rem;}
+.comparison-grid dt {font-weight:700;margin-top:.6rem;}
+.office-lightbox {margin:auto;padding:1rem;border:1px solid #2d5a4e;border-radius:.5rem;background:#faf8f3;color:#203d34;max-width:calc(100vw - 1.5rem);max-height:calc(100dvh - 1.5rem);}
+.office-lightbox::backdrop {background:#10241ddd;}
+.office-lightbox img {display:block;margin:.6rem auto 0;width:auto;height:auto;max-height:calc(100dvh - 7.5rem);object-fit:contain;}
