@@ -50,3 +50,6 @@ yarn-error.log*
 
 # Hero and photograph audit screenshots (documentation, not site assets).
 !/docs/fotografie/porownanie/*.jpg
+
+# Homepage before/after screenshots and test evidence
+!/docs/optymalizacja-gabinetu/*.jpg

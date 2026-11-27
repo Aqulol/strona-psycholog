@@ -1,3 +1,4 @@
+import {standalonePublication} from './blog-publication';
 import { empathyArticle } from './empathy-article';
 import { adhdArticle } from './adhd-article';
 import type { ReactNode } from 'react';
@@ -46,3 +47,10 @@ export function blogReadingMinutes(slug: string) {
   if (!bodies.has(slug)) throw new Error(`Missing blog content for: ${slug}`);
   return readingMinutes(bodies.get(slug));
 }
+
+/** Undated pieces remain published, but are not represented as recent. */
+export const latestDatedArticles = [
+  ...generatedArticles.map(({slug, h1: title, description, published})=>({slug,title,description,published})),
+  ...articles.map(([slug,title])=>({slug,title,...standalonePublication[slug]})),
+].filter((article):article is typeof article & {published:string}=>Boolean(article.published))
+  .sort((a,b)=>b.published.localeCompare(a.published)||a.slug.localeCompare(b.slug,'pl'));

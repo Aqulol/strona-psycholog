@@ -1,3 +1,4 @@
+import {standalonePublication} from '../../../lib/blog-publication';
 import {withArticleContents} from '../../../components/ArticleContents';
 import { contextLinks } from '../../../lib/context-links';
 import { body, faq } from './content';
@@ -9,17 +10,16 @@ import {meta} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 
-const description =
-  'Jak wybrać psychoterapeutę i o co zapytać podczas konsultacji? W tekście omawiam wykształcenie, szkolenie, superwizję i zasady regularnych spotkań.';
+const {description, published: publication} = standalonePublication['jak-wybrac-psychoterapeute'];
 
 const seo=meta('/blog/jak-wybrac-psychoterapeute/','Jak wybrać psychoterapeutę?',description,true);
-export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:'2026-08-20'}};
+export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:publication}};
 
 const ld = articleJsonLd({
   headline: 'Jak wybrać psychoterapeutę? Praktyczny przewodnik',
   description,
   slug: 'jak-wybrac-psychoterapeute',
-  datePublished: '2026-08-20',
+  datePublished: publication,
   image: 'https://psychologplebaniak.pl/og-image.png',
   faq,
 });

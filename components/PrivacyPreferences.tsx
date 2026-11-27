@@ -78,7 +78,7 @@ export default function PrivacyPreferences() {
       onClick={() => { setRequested(true); heading.current?.focus(); }}>Ustawienia prywatności</button>
     {visible && <section className="privacy-preferences" aria-labelledby="privacy-preferences-title">
       <h2 id="privacy-preferences-title" ref={heading} tabIndex={-1}>Ustawienia prywatności</h2>
-      <p>Opcjonalny kalendarz rezerwacji wczytuje się z Booksy. Dostawca otrzymuje dane połączenia, np. adres IP, i może używać cookies. Po akceptacji kalendarz pojawi się automatycznie w sekcjach rezerwacji. Bez akceptacji możesz rezerwować bezpośrednio w Booksy. <a href="/polityka-prywatnosci/#cookies">Polityka prywatności</a></p>
+      <p>Kalendarz Booksy może używać własnych cookies i otrzymuje dane połączenia. Jeśli zezwolisz na opcjonalne treści, terminy wczytają się automatycznie w sekcjach rezerwacji na całej stronie. Bez zgody nadal możesz rezerwować bezpośrednio w Booksy. <a href="/polityka-prywatnosci/#cookies">Polityka prywatności</a></p>
       {consent && <p>Aktualny wybór: {consent === 'granted' ? 'zaakceptowano' : 'odrzucono'}.</p>}
       <div className="privacy-preferences-actions">
         <button className="button-secondary" type="button" onClick={() => { saveConsent('granted'); close(); }}>Akceptuję opcjonalne treści</button>

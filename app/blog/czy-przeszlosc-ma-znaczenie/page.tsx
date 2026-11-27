@@ -1,3 +1,4 @@
+import {standalonePublication} from '../../../lib/blog-publication';
 import {withArticleContents} from '../../../components/ArticleContents';
 import { contextLinks } from '../../../lib/context-links';
 import { body } from './content';
@@ -9,11 +10,10 @@ import {meta} from '../../../lib/site';
 import type { Metadata } from 'next';
 import { articleJsonLd } from '../../../lib/articleJsonLd';
 
-const description =
-  'Jak wcześniejsze doświadczenia wpływają na emocje i relacje? Wyjaśniam, jak w terapii psychodynamicznej łączymy historię życia z obecną sytuacją.';
+const {description, published: publication} = standalonePublication['czy-przeszlosc-ma-znaczenie'];
 
 const seo=meta('/blog/czy-przeszlosc-ma-znaczenie/','Czy przeszłość wpływa na relacje?',description,true);
-export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:'2026-08-11'}};
+export const metadata: Metadata={...seo,openGraph:{...seo.openGraph,type:'article',publishedTime:publication}};
 
 const faq: [string, string][] = [
   [
@@ -34,7 +34,7 @@ const ld = articleJsonLd({
   headline: 'Czy przeszłość naprawdę ma aż takie znaczenie?',
   description,
   slug: 'czy-przeszlosc-ma-znaczenie',
-  datePublished: '2026-08-11',
+  datePublished: publication,
   image: 'https://psychologplebaniak.pl/og-image.png',
   faq,
 });

@@ -67,7 +67,7 @@ const homeGroups = [
   {
     category: 'support',
     title: categoryNames.support,
-    description: 'Wsparcie w trudnościach emocjonalnych, problemach w relacjach, kryzysach życiowych oraz sytuacjach wymagających lepszego zrozumienia siebie.',
+    description: 'Rozmowa o emocjach, relacjach, kryzysie lub sprawie, w której trudno znaleźć następny krok.',
     items: [<ServiceLink service="consult">Konsultacje psychologiczne</ServiceLink>, <ServiceLink service="counselling"/>, <ServiceLink service="crisis"/>],
     rate: services.consult.rate,
     rateLabel: 'Konsultacja',
@@ -76,15 +76,15 @@ const homeGroups = [
   {
     category: 'diagnosis',
     title: categoryNames.diagnosis,
-    description: 'Pogłębiona ocena funkcjonowania psychicznego, emocjonalnego i interpersonalnego, służąca rozpoznawaniu charakteru i możliwych przyczyn doświadczanych trudności.',
+    description: 'Ocena psychologiczna pomaga lepiej zrozumieć zgłaszane trudności oraz ich możliwe przyczyny.',
     items: [<ServiceLink service="general"/>, <ServiceLink service="personality"/>, <ServiceLink service="adhd"/>],
     details: [`${offerPath}#oferta-diagnosis`, 'Więcej o diagnostyce'],
   },
   {
     category: 'education',
     title: categoryNames.education,
-    description: 'Indywidualne spotkania poświęcone lepszemu rozumieniu własnego funkcjonowania psychicznego, emocji, potrzeb i powtarzających się sposobów reagowania.',
-    items: [<ServiceLink service="eduAdhd"/>, 'Rozumienie emocji i własnych reakcji', 'Rozumienie wzorców funkcjonowania w relacjach'],
+    description: 'Indywidualne spotkania, podczas których odnosimy wiedzę psychologiczną do Twoich emocji, potrzeb i codziennych sytuacji.',
+    items: [<ServiceLink service="eduAdhd"/>, 'Rozumienie emocji i własnych reakcji', 'Rozumienie własnych relacji'],
     details: [services.edu.href, 'Więcej o psychoedukacji'],
   },
   {
