@@ -1,3 +1,4 @@
+import {inspectRedirectRules} from './redirect-policy.mjs';
 import {isPublishedTerm,glossaryPrefix} from '../lib/glossary-policy.mjs';
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync, statSync } from 'node:fs';
@@ -40,6 +41,7 @@ export function inspectHtml(html) {
   const content = plain(mains.join(' '));
   return {
     canonical: tags(visible, 'link').filter(link => link.rel?.toLowerCase().split(/\s+/).includes('canonical')).map(link => link.href),
+    metaRobots: metas.filter(meta => /^(robots|googlebot|bingbot)$/i.test(meta.name)).map(({name,content})=>({name,content})),
     noindex: metas.some(meta => /^(robots|googlebot|bingbot)$/i.test(meta.name) && noindex(meta.content)),
     refresh: metas.filter(meta => meta['http-equiv']?.toLowerCase() === 'refresh').map(meta => meta.content ?? ''),
     titles: elements(visible, 'title').map(plain),
@@ -109,14 +111,7 @@ export function readExport(directory = out, dates = JSON.parse(readFileSync(last
   assert.equal(hosting.trailingSlash, true);
   assert.equal((hosting.rewrites ?? []).length, 0, 'Hosting rewrites must not mask errors or shadow canonicals');
   assert.ok(!(hosting.headers ?? []).some(group => group.headers.some(({key}) => /^x-robots-tag$/i.test(key))), 'Review X-Robots-Tag policy before changing Firebase headers');
-  const redirects = new Map();
-  for (const { source, destination, type } of hosting.redirects ?? []) {
-    assert.match(source, /^\/(?:[a-z0-9][a-z0-9-]*\/)*[a-z0-9-]*$/, `Review nonliteral Hosting redirect ${source}`);
-    assert.equal(type, 301, source);
-    canonicalPath(origin + destination);
-    assert.ok(!redirects.has(source), `Duplicated redirect: ${source}`);
-    redirects.set(source, destination);
-  }
+  const redirects = inspectRedirectRules(hosting.redirects ?? []);
   const pages = new Map();
   const excluded = new Map();
   const content = new Map();
@@ -136,13 +131,9 @@ export function readExport(directory = out, dates = JSON.parse(readFileSync(last
     assert.ok(file === 'index.html' || file.endsWith('/index.html'), `Unexpected HTML export: ${file}`);
     const path = pathOf(file);
     const destination = redirects.get(path) ?? redirects.get(path.slice(0, -1));
-    if (destination) {
-      assert.ok(page.noindex && page.refresh.length === 1, `${path}: Hosting shadows a non-redirect page`);
-      const refresh = page.refresh[0].match(/^0;\s*url=(.*)$/i)?.[1];
-      assert.equal(refresh?.replace(/\/$/, ''), destination.slice(0, -1), `${path}: meta refresh disagrees with Hosting redirect`);
-      excluded.set(file, 'redirect');
-    } else if (page.noindex) {
-      assert.equal(page.refresh.length, 0, `${path}: register redirects with Hosting`);
+    assert.ok(!destination, `${path}: remove the physical HTML shadowed by Hosting redirect`);
+    assert.equal(page.refresh.length, 0, `${path}: redirects belong in Firebase Hosting, not HTML`);
+    if (page.noindex) {
       excluded.set(file, 'noindex');
     } else {
       assertIndexable(page, path);
@@ -195,7 +186,10 @@ export function auditLinks(pages, redirects) {
     const targets = new Set();
     for (const href of page.links) {
       const target = new URL(href, page.url);
-      if (target.origin !== origin) continue;
+      if (target.origin !== origin) {
+        if (['http:', 'https:'].includes(target.protocol) && target.hostname.replace(/^www\./, '') === new URL(origin).hostname) legacy.add(`${path} → ${href} (host/protocol)`);
+        continue;
+      }
       const { pathname, hash } = target;
       if (redirects.has(pathname)) legacy.add(`${path} → ${href}`);
       else if (!pages.has(pathname)) {

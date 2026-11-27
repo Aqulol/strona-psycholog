@@ -17,7 +17,10 @@
     "postbuild": "node scripts/check-sitemap.mjs --write && node scripts/build-search.mjs && npm run check:sitemap",
     "check:sitemap:failures": "node scripts/check-sitemap-failures.mjs",
     "prebuild": "node scripts/glossary-registry.mjs --check",
-    "predev": "node scripts/glossary-registry.mjs --check"
+    "predev": "node scripts/glossary-registry.mjs --check",
+    "check:redirects": "node scripts/check-redirects.mjs",
+    "check:indexability": "node scripts/check-indexability.mjs",
+    "redirects:sync-html": "node scripts/sync-html-redirects.mjs"
   },
   "dependencies": {
     "firebase": "^12.17.1",

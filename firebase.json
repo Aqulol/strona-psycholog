@@ -1,10 +1,12 @@
 {
   "hosting": {
+    "404": "404.html",
     "public": "out",
-    "predeploy": ["npm --prefix \"$PROJECT_DIR\" run check:sitemap"],
+    "predeploy": [
+      "npm --prefix \"$PROJECT_DIR\" run check:sitemap"
+    ],
     "cleanUrls": true,
     "trailingSlash": true,
-    "404": "404.html",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -22,12 +24,32 @@
         "type": 301
       },
       {
+        "source": "/blog/artykul-1.html",
+        "destination": "/blog/dlaczego-wybieram-podobnych-partnerow/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-1/index.html",
+        "destination": "/blog/dlaczego-wybieram-podobnych-partnerow/",
+        "type": 301
+      },
+      {
         "source": "/blog/artykul-2",
         "destination": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
         "type": 301
       },
       {
         "source": "/blog/artykul-2/",
+        "destination": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-2.html",
+        "destination": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-2/index.html",
         "destination": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
         "type": 301
       },
@@ -42,6 +64,16 @@
         "type": 301
       },
       {
+        "source": "/blog/artykul-3.html",
+        "destination": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-3/index.html",
+        "destination": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+        "type": 301
+      },
+      {
         "source": "/blog/artykul-4",
         "destination": "/blog/czy-przeszlosc-ma-znaczenie/",
         "type": 301
@@ -52,13 +84,33 @@
         "type": 301
       },
       {
+        "source": "/blog/artykul-4.html",
+        "destination": "/blog/czy-przeszlosc-ma-znaczenie/",
+        "type": 301
+      },
+      {
+        "source": "/blog/artykul-4/index.html",
+        "destination": "/blog/czy-przeszlosc-ma-znaczenie/",
+        "type": 301
+      },
+      {
         "source": "/blog/jak-radzic-sobie-z-lekiem",
-        "destination": "/kiedy-zglosic-sie-na-terapie/",
+        "destination": "/w-czym-pomagam/zaburzenia-lekowe/",
         "type": 301
       },
       {
         "source": "/blog/jak-radzic-sobie-z-lekiem/",
-        "destination": "/kiedy-zglosic-sie-na-terapie/",
+        "destination": "/w-czym-pomagam/zaburzenia-lekowe/",
+        "type": 301
+      },
+      {
+        "source": "/blog/jak-radzic-sobie-z-lekiem.html",
+        "destination": "/w-czym-pomagam/zaburzenia-lekowe/",
+        "type": 301
+      },
+      {
+        "source": "/blog/jak-radzic-sobie-z-lekiem/index.html",
+        "destination": "/w-czym-pomagam/zaburzenia-lekowe/",
         "type": 301
       },
       {
@@ -68,6 +120,16 @@
       },
       {
         "source": "/blog/pierwsza-wizyta-u-psychologa/",
+        "destination": "/konsultacje-psychologiczne-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/blog/pierwsza-wizyta-u-psychologa.html",
+        "destination": "/konsultacje-psychologiczne-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/blog/pierwsza-wizyta-u-psychologa/index.html",
         "destination": "/konsultacje-psychologiczne-wroclaw/",
         "type": 301
       },
@@ -82,13 +144,988 @@
         "type": 301
       },
       {
+        "source": "/blog/psychoterapia-psychodynamiczna.html",
+        "destination": "/psychoterapia-psychodynamiczna-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/blog/psychoterapia-psychodynamiczna/index.html",
+        "destination": "/psychoterapia-psychodynamiczna-wroclaw/",
+        "type": 301
+      },
+      {
         "source": "/blog/wypalenie-zawodowe",
-        "destination": "/kiedy-zglosic-sie-na-terapie/",
+        "destination": "/w-czym-pomagam/wypalenie-zawodowe/",
         "type": 301
       },
       {
         "source": "/blog/wypalenie-zawodowe/",
+        "destination": "/w-czym-pomagam/wypalenie-zawodowe/",
+        "type": 301
+      },
+      {
+        "source": "/blog/wypalenie-zawodowe.html",
+        "destination": "/w-czym-pomagam/wypalenie-zawodowe/",
+        "type": 301
+      },
+      {
+        "source": "/blog/wypalenie-zawodowe/index.html",
+        "destination": "/w-czym-pomagam/wypalenie-zawodowe/",
+        "type": 301
+      },
+      {
+        "source": "/baza-wiedzy.html",
+        "destination": "/baza-wiedzy/",
+        "type": 301
+      },
+      {
+        "source": "/blog/adhd-u-doroslych.html",
+        "destination": "/blog/adhd-u-doroslych/",
+        "type": 301
+      },
+      {
+        "source": "/blog/czy-przeszlosc-ma-znaczenie.html",
+        "destination": "/blog/czy-przeszlosc-ma-znaczenie/",
+        "type": 301
+      },
+      {
+        "source": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza.html",
+        "destination": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
+        "type": 301
+      },
+      {
+        "source": "/blog/dlaczego-wybieram-podobnych-partnerow.html",
+        "destination": "/blog/dlaczego-wybieram-podobnych-partnerow/",
+        "type": 301
+      },
+      {
+        "source": "/blog.html",
+        "destination": "/blog/",
+        "type": 301
+      },
+      {
+        "source": "/blog/jak-wybrac-psychoterapeute.html",
+        "destination": "/blog/jak-wybrac-psychoterapeute/",
+        "type": 301
+      },
+      {
+        "source": "/blog/narcyzm-wrazliwy.html",
+        "destination": "/blog/narcyzm-wrazliwy/",
+        "type": 301
+      },
+      {
+        "source": "/blog/pierwsze-spotkanie-mlodziez-rodzic.html",
+        "destination": "/blog/pierwsze-spotkanie-mlodziez-rodzic/",
+        "type": 301
+      },
+      {
+        "source": "/blog/poczucie-wlasnej-wartosci.html",
+        "destination": "/blog/poczucie-wlasnej-wartosci/",
+        "type": 301
+      },
+      {
+        "source": "/blog/psychoterapia-psychodynamiczna-pierwsze-spotkanie.html",
+        "destination": "/blog/psychoterapia-psychodynamiczna-pierwsze-spotkanie/",
+        "type": 301
+      },
+      {
+        "source": "/blog/relacja-terapeutyczna-zrodlo-zmiany.html",
+        "destination": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+        "type": 301
+      },
+      {
+        "source": "/blog/samotnosc.html",
+        "destination": "/blog/samotnosc/",
+        "type": 301
+      },
+      {
+        "source": "/blog/tfp-dla-kogo.html",
+        "destination": "/blog/tfp-dla-kogo/",
+        "type": 301
+      },
+      {
+        "source": "/cennik.html",
+        "destination": "/cennik/",
+        "type": 301
+      },
+      {
+        "source": "/diagnoza-adhd-wroclaw.html",
+        "destination": "/diagnoza-adhd-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/diagnoza-osobowosci-wroclaw.html",
+        "destination": "/diagnoza-osobowosci-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/diagnoza-psychologiczna-wroclaw.html",
+        "destination": "/diagnoza-psychologiczna-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/faq.html",
+        "destination": "/faq/",
+        "type": 301
+      },
+      {
+        "source": "/gabinet-wroclaw.html",
+        "destination": "/gabinet-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/informacje-dla-pacjentow.html",
+        "destination": "/informacje-dla-pacjentow/",
+        "type": 301
+      },
+      {
+        "source": "/jaka-forme-pomocy-wybrac.html",
+        "destination": "/jaka-forme-pomocy-wybrac/",
+        "type": 301
+      },
+      {
+        "source": "/jakiej-pomocy-potrzebuje.html",
+        "destination": "/jakiej-pomocy-potrzebuje/",
+        "type": 301
+      },
+      {
+        "source": "/kiedy-zglosic-sie-na-terapie.html",
         "destination": "/kiedy-zglosic-sie-na-terapie/",
+        "type": 301
+      },
+      {
+        "source": "/konsultacja-diagnostyczna-wroclaw.html",
+        "destination": "/konsultacja-diagnostyczna-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/konsultacja-dotyczaca-wyboru-psychoterapii.html",
+        "destination": "/konsultacja-dotyczaca-wyboru-psychoterapii/",
+        "type": 301
+      },
+      {
+        "source": "/konsultacja-psychologiczna-dla-rodzicow.html",
+        "destination": "/konsultacja-psychologiczna-dla-rodzicow/",
+        "type": 301
+      },
+      {
+        "source": "/konsultacja-psychologiczna-problemy-w-relacjach.html",
+        "destination": "/konsultacja-psychologiczna-problemy-w-relacjach/",
+        "type": 301
+      },
+      {
+        "source": "/konsultacje-psychologiczne-online.html",
+        "destination": "/konsultacje-psychologiczne-online/",
+        "type": 301
+      },
+      {
+        "source": "/konsultacje-psychologiczne-wroclaw.html",
+        "destination": "/konsultacje-psychologiczne-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/kontakt.html",
+        "destination": "/kontakt/",
+        "type": 301
+      },
+      {
+        "source": "/o-mnie.html",
+        "destination": "/o-mnie/",
+        "type": 301
+      },
+      {
+        "source": "/oferta.html",
+        "destination": "/oferta/",
+        "type": 301
+      },
+      {
+        "source": "/polityka-prywatnosci.html",
+        "destination": "/polityka-prywatnosci/",
+        "type": 301
+      },
+      {
+        "source": "/pomoc-w-kryzysie.html",
+        "destination": "/pomoc-w-kryzysie/",
+        "type": 301
+      },
+      {
+        "source": "/poradnictwo-psychologiczne-wroclaw.html",
+        "destination": "/poradnictwo-psychologiczne-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/psychoedukacja-adhd.html",
+        "destination": "/psychoedukacja-adhd/",
+        "type": 301
+      },
+      {
+        "source": "/psychoedukacja.html",
+        "destination": "/psychoedukacja/",
+        "type": 301
+      },
+      {
+        "source": "/psycholog-wroclaw.html",
+        "destination": "/psycholog-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/psychoterapeuta-wroclaw.html",
+        "destination": "/psychoterapeuta-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/psychoterapia-dorosli.html",
+        "destination": "/psychoterapia-dorosli/",
+        "type": 301
+      },
+      {
+        "source": "/psychoterapia-indywidualna-wroclaw.html",
+        "destination": "/psychoterapia-indywidualna-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/psychoterapia-mlodziezy-od-15-roku-zycia.html",
+        "destination": "/psychoterapia-mlodziezy-od-15-roku-zycia/",
+        "type": 301
+      },
+      {
+        "source": "/psychoterapia-online.html",
+        "destination": "/psychoterapia-online/",
+        "type": 301
+      },
+      {
+        "source": "/psychoterapia-psychodynamiczna-wroclaw.html",
+        "destination": "/psychoterapia-psychodynamiczna-wroclaw/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/acting-out.html",
+        "destination": "/slownik-psychologiczny/acting-out/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/adhd.html",
+        "destination": "/slownik-psychologiczny/adhd/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/agresja-posrednia.html",
+        "destination": "/slownik-psychologiczny/agresja-posrednia/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/agresja-proaktywna.html",
+        "destination": "/slownik-psychologiczny/agresja-proaktywna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/agresja-reaktywna.html",
+        "destination": "/slownik-psychologiczny/agresja-reaktywna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/agresja.html",
+        "destination": "/slownik-psychologiczny/agresja/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/badanie-przesiewowe.html",
+        "destination": "/slownik-psychologiczny/badanie-przesiewowe/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/dewaluacja.html",
+        "destination": "/slownik-psychologiczny/dewaluacja/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/diada-relacji-z-obiektem.html",
+        "destination": "/slownik-psychologiczny/diada-relacji-z-obiektem/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/diagnoza-roznicowa.html",
+        "destination": "/slownik-psychologiczny/diagnoza-roznicowa/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/dyfuzja-tozsamosci.html",
+        "destination": "/slownik-psychologiczny/dyfuzja-tozsamosci/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/elastycznosc-poznawcza.html",
+        "destination": "/slownik-psychologiczny/elastycznosc-poznawcza/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/enactment.html",
+        "destination": "/slownik-psychologiczny/enactment/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/formacja-kompromisowa.html",
+        "destination": "/slownik-psychologiczny/formacja-kompromisowa/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/frustracja.html",
+        "destination": "/slownik-psychologiczny/frustracja/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/funkcje-wykonawcze.html",
+        "destination": "/slownik-psychologiczny/funkcje-wykonawcze/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/hamowanie-reakcji.html",
+        "destination": "/slownik-psychologiczny/hamowanie-reakcji/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/holding.html",
+        "destination": "/slownik-psychologiczny/holding/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/idealizacja.html",
+        "destination": "/slownik-psychologiczny/idealizacja/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/identyfikacja-projekcyjna.html",
+        "destination": "/slownik-psychologiczny/identyfikacja-projekcyjna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny.html",
+        "destination": "/slownik-psychologiczny/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/intelektualizacja.html",
+        "destination": "/slownik-psychologiczny/intelektualizacja/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/interpretacja-psychodynamiczna.html",
+        "destination": "/slownik-psychologiczny/interpretacja-psychodynamiczna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/izolacja-afektu.html",
+        "destination": "/slownik-psychologiczny/izolacja-afektu/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/klaryfikacja.html",
+        "destination": "/slownik-psychologiczny/klaryfikacja/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/konfrontacja-terapeutyczna.html",
+        "destination": "/slownik-psychologiczny/konfrontacja-terapeutyczna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/kontenerowanie.html",
+        "destination": "/slownik-psychologiczny/kontenerowanie/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/kontrakt-terapeutyczny.html",
+        "destination": "/slownik-psychologiczny/kontrakt-terapeutyczny/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/mechanizmy-obronne.html",
+        "destination": "/slownik-psychologiczny/mechanizmy-obronne/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/neutralnosc-techniczna.html",
+        "destination": "/slownik-psychologiczny/neutralnosc-techniczna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/obiekt-wewnetrzny.html",
+        "destination": "/slownik-psychologiczny/obiekt-wewnetrzny/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/objaw-cecha-stan.html",
+        "destination": "/slownik-psychologiczny/objaw-cecha-stan/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/obrona-maniakalna.html",
+        "destination": "/slownik-psychologiczny/obrona-maniakalna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/ocena-funkcjonalna.html",
+        "destination": "/slownik-psychologiczny/ocena-funkcjonalna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/ocena-psychologiczna.html",
+        "destination": "/slownik-psychologiczny/ocena-psychologiczna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/organizacja-borderline.html",
+        "destination": "/slownik-psychologiczny/organizacja-borderline/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/organizacja-neurotyczna.html",
+        "destination": "/slownik-psychologiczny/organizacja-neurotyczna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/organizacja-osobowosci.html",
+        "destination": "/slownik-psychologiczny/organizacja-osobowosci/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/organizacja-psychotyczna.html",
+        "destination": "/slownik-psychologiczny/organizacja-psychotyczna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/pamiec-robocza.html",
+        "destination": "/slownik-psychologiczny/pamiec-robocza/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/pozycja-depresyjna.html",
+        "destination": "/slownik-psychologiczny/pozycja-depresyjna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/pozycja-paranoidalno-schizoidalna.html",
+        "destination": "/slownik-psychologiczny/pozycja-paranoidalno-schizoidalna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/projekcja.html",
+        "destination": "/slownik-psychologiczny/projekcja/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/przeciwprzeniesienie.html",
+        "destination": "/slownik-psychologiczny/przeciwprzeniesienie/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/przemieszczenie.html",
+        "destination": "/slownik-psychologiczny/przemieszczenie/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/przeniesienie.html",
+        "destination": "/slownik-psychologiczny/przeniesienie/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/psychoanaliza.html",
+        "destination": "/slownik-psychologiczny/psychoanaliza/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/psychologia-rozwojowa.html",
+        "destination": "/slownik-psychologiczny/psychologia-rozwojowa/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/psychopatologia.html",
+        "destination": "/slownik-psychologiczny/psychopatologia/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/psychoterapia-psychodynamiczna.html",
+        "destination": "/slownik-psychologiczny/psychoterapia-psychodynamiczna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/racjonalizacja.html",
+        "destination": "/slownik-psychologiczny/racjonalizacja/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/reakcja-upozorowana.html",
+        "destination": "/slownik-psychologiczny/reakcja-upozorowana/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/regulacja-emocji.html",
+        "destination": "/slownik-psychologiczny/regulacja-emocji/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/relacja-interpersonalna.html",
+        "destination": "/slownik-psychologiczny/relacja-interpersonalna/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/relacje-z-obiektem.html",
+        "destination": "/slownik-psychologiczny/relacje-z-obiektem/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/rozszczepienie.html",
+        "destination": "/slownik-psychologiczny/rozszczepienie/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/separacja-indywiduacja.html",
+        "destination": "/slownik-psychologiczny/separacja-indywiduacja/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/styl-osobowosci.html",
+        "destination": "/slownik-psychologiczny/styl-osobowosci/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/sublimacja.html",
+        "destination": "/slownik-psychologiczny/sublimacja/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/testowanie-rzeczywistosci.html",
+        "destination": "/slownik-psychologiczny/testowanie-rzeczywistosci/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/tfp.html",
+        "destination": "/slownik-psychologiczny/tfp/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/tlumienie.html",
+        "destination": "/slownik-psychologiczny/tlumienie/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/tolerancja-frustracji.html",
+        "destination": "/slownik-psychologiczny/tolerancja-frustracji/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/wrogosc.html",
+        "destination": "/slownik-psychologiczny/wrogosc/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/wyparcie.html",
+        "destination": "/slownik-psychologiczny/wyparcie/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/wywiad-rozwojowy.html",
+        "destination": "/slownik-psychologiczny/wywiad-rozwojowy/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/zaprzeczanie.html",
+        "destination": "/slownik-psychologiczny/zaprzeczanie/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/zawisc.html",
+        "destination": "/slownik-psychologiczny/zawisc/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/zlosc.html",
+        "destination": "/slownik-psychologiczny/zlosc/",
+        "type": 301
+      },
+      {
+        "source": "/slownik-psychologiczny/zwracanie-przeciw-sobie.html",
+        "destination": "/slownik-psychologiczny/zwracanie-przeciw-sobie/",
+        "type": 301
+      },
+      {
+        "source": "/terapia-skoncentrowana-na-przeniesieniu-tfp.html",
+        "destination": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/asertywnosc-i-granice.html",
+        "destination": "/w-czym-pomagam/asertywnosc-i-granice/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/borderline.html",
+        "destination": "/w-czym-pomagam/borderline/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/brak-satysfakcji-z-zycia.html",
+        "destination": "/w-czym-pomagam/brak-satysfakcji-z-zycia/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/budowanie-bliskich-relacji.html",
+        "destination": "/w-czym-pomagam/budowanie-bliskich-relacji/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/dda.html",
+        "destination": "/w-czym-pomagam/dda/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/depresja.html",
+        "destination": "/w-czym-pomagam/depresja/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/dorastanie-i-tozsamosc.html",
+        "destination": "/w-czym-pomagam/dorastanie-i-tozsamosc/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/doswiadczenie-przemocy.html",
+        "destination": "/w-czym-pomagam/doswiadczenie-przemocy/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/doswiadczenie-zdrady.html",
+        "destination": "/w-czym-pomagam/doswiadczenie-zdrady/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/impulsywnosc.html",
+        "destination": "/w-czym-pomagam/impulsywnosc/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/intensywne-emocje.html",
+        "destination": "/w-czym-pomagam/intensywne-emocje/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/kryzys-w-zwiazku.html",
+        "destination": "/w-czym-pomagam/kryzys-w-zwiazku/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/kryzys-zyciowy.html",
+        "destination": "/w-czym-pomagam/kryzys-zyciowy/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/lek-przed-bliskoscia.html",
+        "destination": "/w-czym-pomagam/lek-przed-bliskoscia/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/lek-przed-odrzuceniem.html",
+        "destination": "/w-czym-pomagam/lek-przed-odrzuceniem/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/lek-przed-porazka.html",
+        "destination": "/w-czym-pomagam/lek-przed-porazka/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/lek-spoleczny.html",
+        "destination": "/w-czym-pomagam/lek-spoleczny/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/nadmierne-analizowanie.html",
+        "destination": "/w-czym-pomagam/nadmierne-analizowanie/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/nadmierne-poczucie-winy.html",
+        "destination": "/w-czym-pomagam/nadmierne-poczucie-winy/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/nadmierny-samokrytycyzm.html",
+        "destination": "/w-czym-pomagam/nadmierny-samokrytycyzm/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/nadwrazliwosc-na-krytyke.html",
+        "destination": "/w-czym-pomagam/nadwrazliwosc-na-krytyke/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/narcyzm.html",
+        "destination": "/w-czym-pomagam/narcyzm/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/natlok-mysli.html",
+        "destination": "/w-czym-pomagam/natlok-mysli/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/nawiazywanie-kontaktow-spolecznych.html",
+        "destination": "/w-czym-pomagam/nawiazywanie-kontaktow-spolecznych/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/niestabilna-samoocena.html",
+        "destination": "/w-czym-pomagam/niestabilna-samoocena/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/niska-samoocena.html",
+        "destination": "/w-czym-pomagam/niska-samoocena/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/obraz-ciala.html",
+        "destination": "/w-czym-pomagam/obraz-ciala/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/odpoczynek-i-przeciazenie.html",
+        "destination": "/w-czym-pomagam/odpoczynek-i-przeciazenie/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/perfekcjonizm.html",
+        "destination": "/w-czym-pomagam/perfekcjonizm/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/poczucie-niewystarczalnosci.html",
+        "destination": "/w-czym-pomagam/poczucie-niewystarczalnosci/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/poczucie-pustki.html",
+        "destination": "/w-czym-pomagam/poczucie-pustki/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/podobni-partnerzy.html",
+        "destination": "/w-czym-pomagam/podobni-partnerzy/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/potrzeba-akceptacji.html",
+        "destination": "/w-czym-pomagam/potrzeba-akceptacji/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/powracajace-wspomnienia.html",
+        "destination": "/w-czym-pomagam/powracajace-wspomnienia/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/powtarzajace-sie-trudnosci-w-relacjach.html",
+        "destination": "/w-czym-pomagam/powtarzajace-sie-trudnosci-w-relacjach/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/problemowe-uzywanie-substancji.html",
+        "destination": "/w-czym-pomagam/problemowe-uzywanie-substancji/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/problemy-w-relacjach.html",
+        "destination": "/w-czym-pomagam/problemy-w-relacjach/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/radzenie-sobie-ze-zloscia.html",
+        "destination": "/w-czym-pomagam/radzenie-sobie-ze-zloscia/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/relacje-rodzinne-mlodziezy.html",
+        "destination": "/w-czym-pomagam/relacje-rodzinne-mlodziezy/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/relacje-z-rowiesnikami.html",
+        "destination": "/w-czym-pomagam/relacje-z-rowiesnikami/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/rodzicielstwo.html",
+        "destination": "/w-czym-pomagam/rodzicielstwo/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/rozpoznawanie-emocji.html",
+        "destination": "/w-czym-pomagam/rozpoznawanie-emocji/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/rozstanie-i-rozwod.html",
+        "destination": "/w-czym-pomagam/rozstanie-i-rozwod/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/samoocena-mlodziezy.html",
+        "destination": "/w-czym-pomagam/samoocena-mlodziezy/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/samotnosc-w-zwiazku.html",
+        "destination": "/w-czym-pomagam/samotnosc-w-zwiazku/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/samotnosc.html",
+        "destination": "/w-czym-pomagam/samotnosc/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/seksualnosc-i-intymnosc.html",
+        "destination": "/w-czym-pomagam/seksualnosc-i-intymnosc/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/stabilny-obraz-siebie.html",
+        "destination": "/w-czym-pomagam/stabilny-obraz-siebie/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/stres-mniejszosciowy.html",
+        "destination": "/w-czym-pomagam/stres-mniejszosciowy/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/stres-szkolny.html",
+        "destination": "/w-czym-pomagam/stres-szkolny/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/stres.html",
+        "destination": "/w-czym-pomagam/stres/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/trudne-doswiadczenia-z-dziecinstwa.html",
+        "destination": "/w-czym-pomagam/trudne-doswiadczenia-z-dziecinstwa/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/trudnosci-emocjonalne-mlodziezy.html",
+        "destination": "/w-czym-pomagam/trudnosci-emocjonalne-mlodziezy/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/trudnosci-emocjonalne.html",
+        "destination": "/w-czym-pomagam/trudnosci-emocjonalne/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/trudnosci-komunikacyjne.html",
+        "destination": "/w-czym-pomagam/trudnosci-komunikacyjne/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/trudnosci-okoloporodowe.html",
+        "destination": "/w-czym-pomagam/trudnosci-okoloporodowe/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/trudnosci-w-okresleniu-tozsamosci.html",
+        "destination": "/w-czym-pomagam/trudnosci-w-okresleniu-tozsamosci/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/trudnosci-w-podejmowaniu-decyzji.html",
+        "destination": "/w-czym-pomagam/trudnosci-w-podejmowaniu-decyzji/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/trudnosci-z-odzywianiem.html",
+        "destination": "/w-czym-pomagam/trudnosci-z-odzywianiem/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/trudnosci-z-zaufaniem.html",
+        "destination": "/w-czym-pomagam/trudnosci-z-zaufaniem/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/trudnosci-ze-snem.html",
+        "destination": "/w-czym-pomagam/trudnosci-ze-snem/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/trudnosci-zwiazane-z-choroba.html",
+        "destination": "/w-czym-pomagam/trudnosci-zwiazane-z-choroba/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/utrata-pracy-i-zmiany-zawodowe.html",
+        "destination": "/w-czym-pomagam/utrata-pracy-i-zmiany-zawodowe/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/wazne-zmiany-zyciowe.html",
+        "destination": "/w-czym-pomagam/wazne-zmiany-zyciowe/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/wczesniejsze-doswiadczenia-a-relacje.html",
+        "destination": "/w-czym-pomagam/wczesniejsze-doswiadczenia-a-relacje/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/wstyd.html",
+        "destination": "/w-czym-pomagam/wstyd/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/wypalenie-zawodowe.html",
+        "destination": "/w-czym-pomagam/wypalenie-zawodowe/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/zaburzenia-lekowe.html",
+        "destination": "/w-czym-pomagam/zaburzenia-lekowe/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/zaburzenia-osobowosci.html",
+        "destination": "/w-czym-pomagam/zaburzenia-osobowosci/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/zaburzenia-psychosomatyczne.html",
+        "destination": "/w-czym-pomagam/zaburzenia-psychosomatyczne/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/zaleznosc-emocjonalna.html",
+        "destination": "/w-czym-pomagam/zaleznosc-emocjonalna/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/zaloba.html",
+        "destination": "/w-czym-pomagam/zaloba/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/zdrowie-fizyczne-i-psychiczne.html",
+        "destination": "/w-czym-pomagam/zdrowie-fizyczne-i-psychiczne/",
+        "type": 301
+      },
+      {
+        "source": "/w-czym-pomagam/zrozumienie-siebie.html",
+        "destination": "/w-czym-pomagam/zrozumienie-siebie/",
+        "type": 301
+      },
+      {
+        "source": "/wsparcie-psychologiczne-w-kryzysie.html",
+        "destination": "/wsparcie-psychologiczne-w-kryzysie/",
         "type": 301
       }
     ],
