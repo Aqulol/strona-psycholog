@@ -150,7 +150,7 @@ export default function ServiceDirectoryPage({ kind }: { kind: Kind }) {
   const { h1, description } = metadataByKind[kind];
   const path = servicePaths[kind];
   const Content = content[kind];
-  return <main id="tresc" className="reading">
+  return <main id="tresc" className="reading directory-editorial">
     <Crumbs path={path} title={h1}/><Json data={webPage(path, h1, description)}/>
     <p className="eyebrow">Gabinet psychologiczny · Wrocław i online</p><h1>{h1}</h1><Content/>
   </main>;

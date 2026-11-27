@@ -1,3 +1,4 @@
+import {withArticleContents} from '../../../components/ArticleContents';
 import RelatedContent from '../../../components/RelatedContent';
 import { services } from '../../../lib/services';
 import { contextLinks } from '../../../lib/context-links';
@@ -36,15 +37,16 @@ export async function generateMetadata({ params }: Props) {
 export default async function Page({ params }: Props) {
   const { a, path } = await getPage(params);
   const date = a.published && new Intl.DateTimeFormat('pl-PL', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(a.published));
+  const {body,contents} = withArticleContents(contextLinks(path,a.body));
   const consultation = consultationLinks[a.slug];
-  return <main id="tresc" className="reading">
+  return <main id="tresc" className="reading article-editorial">
     <Crumbs path={path} title={a.title}/>
     <article>
       <h1>{a.h1}</h1>
       <ArticleByline minutes={date ? undefined : blogReadingMinutes(a.slug)}/>
       {date && <p>Opublikowano: <time dateTime={a.published}>{date}</time> <ReadingTime minutes={blogReadingMinutes(a.slug)}/></p>}
       <Json data={articleJsonLd({ slug: a.slug, headline: a.h1, description: a.description, image: domain + '/og-image.png', datePublished: a.published })}/>
-      {contextLinks(path, a.body)}
+      {contents}{body}
       {consultation && <p className="mt-6">Jeśli temat dotyczy Pana/Pani sytuacji, można przeczytać, <a href={consultation[0]}>{consultation[1]}</a>.</p>}
       {a.slug === 'tfp-dla-kogo' && <p>Na pytanie, jak ocenia się funkcjonowanie osobowości, odpowiadam osobno w opisie <a data-context-link href={services.personality.href}>diagnozy osobowości</a>. Sama ocena nie przesądza, czy proponowana psychoterapia będzie odpowiednia.</p>}
       <BlogReading slug={a.slug}/>

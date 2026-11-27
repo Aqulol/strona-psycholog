@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { gzipSync } from 'node:zlib';
 const root = 'https://psychologplebaniak.pl';
 const read = (p) => readFileSync(p, 'utf8');
 const urls = [...read('out/sitemap.xml').matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
@@ -46,7 +47,11 @@ for (const name of ['portret2', 'gabinet', 'logo']) {
   }
 }
 assert.match(homepage, /<img\b(?=[^>]*portret2\.webp)(?=[^>]*fetchpriority="high")[^>]*>/i);
-assert.doesNotMatch(homepage, /<link[^>]+rel="stylesheet"/i, 'Homepage CSS must not require a blocking request');
+// The shared, immutable stylesheet avoids duplicating CSS in every exported HTML.
+const styles = [...homepage.split('</head>')[0].matchAll(/<link rel="stylesheet" href="([^"]+)"/g)].map(match => match[1]);
+assert.equal(styles.length,1,'Expected one shared stylesheet for the homepage');
+assert.match(styles[0],/^\/_next\/static\/css\/[a-f0-9]+\.css$/);
+assert.ok(gzipSync(homepage).length + gzipSync(read(join('out',styles[0]))).length < 38_000, 'Homepage HTML and CSS gzip budget');
 
 const hosting = JSON.parse(read('firebase.json')).hosting;
 assert.equal(hosting.public, 'out');

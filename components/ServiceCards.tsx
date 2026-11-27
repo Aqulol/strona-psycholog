@@ -64,7 +64,7 @@ const homeGroups = [
 export function HomeServiceCards() {
   return <><div className="offer-overview">{homeGroups.map(({category,link,keys,text}) => {
     const Icon = groupIcons[category];
-    return <section className="editorial-card service-directory-card" key={category}>
+    return <section className="editorial-card service-directory-card" data-service-area={category} key={category}>
       <span className="service-icon"><Icon size={24} aria-hidden="true"/></span><h3><a href={link}>{categoryNames[category]}</a></h3><p>{text}</p>
       <ul>{keys.filter(key => services[key].href !== link).map(key => <li key={key}><a href={services[key].href}>{services[key].name}</a></li>)}</ul>
     </section>;

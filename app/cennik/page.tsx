@@ -39,7 +39,7 @@ export default function CennikPage() {
   return (
     <>
 
-      <main id="tresc" className="container section max-w-3xl">
+      <main id="tresc" className="container section max-w-3xl price-editorial">
         <Crumbs path="/cennik/" title="Cennik"/>
         <h1 className="mt-4 text-5xl leading-tight text-green md:text-6xl">
           Cennik wizyt - Wrocław · stacjonarnie i online
@@ -58,11 +58,11 @@ export default function CennikPage() {
           ), jak i sesji online.
         </p>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <div className="price-ledger">
           {prices.map((p) => (
-            <div key={p.key} id={p.key} className="rounded border border-border bg-white p-7">
+            <div key={p.key} id={p.key} className="price-row">
               <h2 className="text-2xl text-green"><a href={p.href}>{p.name}</a></h2>
-              <p className="mt-3 text-4xl font-semibold text-ink">{p.price} zł</p>
+              <p className="price-number">{p.price} zł</p>
               <p className="mt-1 text-sm text-ink/60">sesja {p.duration}</p>
               <p className="mt-4 leading-7 text-ink/80">
                 {p.key === 'konsultacja'

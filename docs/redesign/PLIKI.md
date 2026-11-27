@@ -1,0 +1,35 @@
+# Pliki zmodyfikowane lub dodane
+
+- `app/blog/[article]/page.tsx`
+- `app/blog/czy-przeszlosc-ma-znaczenie/page.tsx`
+- `app/blog/dlaczego-sama-swiadomosc-nie-wystarcza/page.tsx`
+- `app/blog/dlaczego-wybieram-podobnych-partnerow/page.tsx`
+- `app/blog/jak-wybrac-psychoterapeute/page.tsx`
+- `app/blog/narcyzm-wrazliwy/page.tsx`
+- `app/blog/page.tsx`
+- `app/blog/relacja-terapeutyczna-zrodlo-zmiany/page.tsx`
+- `app/cennik/page.tsx`
+- `app/editorial.css`
+- `app/globals.css`
+- `app/layout.tsx`
+- `app/page.tsx`
+- `app/slownik-psychologiczny/page.tsx`
+- `components/ArticleContents.tsx`
+- `components/EditorialHeading.tsx`
+- `components/EditorialServicePage.tsx`
+- `components/GlossaryEntryPage.tsx`
+- `components/ServiceCards.tsx`
+- `components/ServiceDirectoryPage.tsx`
+- `components/ServicePage.tsx`
+- `components/Site.tsx`
+- `content/lastmod.json`
+- `docs/redesign/PLIKI.md`
+- `docs/redesign/RAPORT.md`
+- `docs/redesign/ZRZUTY.md`
+- `next.config.ts`
+- `public/images/responsive/portret-288.webp`
+- `scripts/check-design-browser.cjs`
+- `scripts/check-design-export.py`
+- `scripts/check-export.mjs`
+
+- `docs/redesign/zrzuty/` — 68 plików WebP, [indeks](ZRZUTY.md).

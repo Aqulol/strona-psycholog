@@ -1,6 +1,7 @@
 import {entities} from '../lib/entities';
 import type {Metadata, Viewport} from 'next';
 import './globals.css';
+import './editorial.css';
 import {Json, SiteFooter, SiteHeader} from '../components/Site';
 import {domain} from '../lib/site';
 export const metadata:Metadata={ metadataBase:new URL(domain), referrer:'no-referrer', title:'Grzegorz Plebaniak', icons:{icon:'/favicon-32.png'}, verification:{google:'CzlhzCDS5zGi-A7dtgAl5kU80WTzUisLFFLmqwd5wD4'} };
