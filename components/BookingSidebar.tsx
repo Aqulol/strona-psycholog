@@ -1,6 +1,6 @@
-import { config, booksyWidgetUrl } from '../lib/config';
+import { config } from '../lib/config';
 import { paths } from '../lib/site';
-import ExternalFrame from './ExternalFrame';
+import BooksyCalendar from './BooksyCalendar';
 
 const consultation = config.prices.find(item => item.key === 'konsultacja');
 
@@ -10,11 +10,7 @@ export default function BookingSidebar() {
     <div className="topic-booking-person"><img src="/images/responsive/portret2-320.webp" width="64" height="64" alt="" loading="lazy"/><p>{config.name}<br/>{config.title}</p></div>
     {consultation && <p>{consultation.name}<br/><strong>{consultation.price} zł · {consultation.duration}</strong></p>}
     <p>{config.address}</p>
-    <p><a className="booking" href={config.booksyUrl} rel="noreferrer">Umów wizytę w Booksy</a></p>
-    {config.booksyId && <div className="topic-calendar">
-      <p>Po otwarciu kalendarza Booksy otrzyma informacje o połączeniu i może użyć własnych plików cookies.</p>
-      <ExternalFrame src={booksyWidgetUrl} title="Kalendarz rezerwacji Booksy" label="Pokaż kalendarz Booksy" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"/>
-    </div>}
+    <BooksyCalendar linkLabel="Umów wizytę w Booksy" primary/>
     <p><a href={paths.consult}>Jak wygląda pierwsza konsultacja?</a></p>
     <p>Można też <a href={`tel:${config.phone.replace(/\s/g, '')}`}>zadzwonić</a> lub <a href={`mailto:${config.email}`}>napisać</a>.</p>
   </aside>;

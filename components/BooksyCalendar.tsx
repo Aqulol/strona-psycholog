@@ -1,71 +1,104 @@
 'use client';
 
-import { config, booksyWidgetUrl } from '../lib/config';
-import { track } from '../lib/analytics';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { booksyWidgetUrl, config } from '../lib/config';
 
-/**
- * Widget kalendarza Booksy - osadzony w stronie (inline).
- *
- * Kod powstał w oparciu o integrację Booksy (Business Settings → Online
- * Booking → Your Website). Unikalny identyfikator gabinetu pochodzi z
- * lib/config.ts (config.booksyId) - wystarczy go wpisać w jednym miejscu.
- *
- * Kalendarz jest ładowany w <iframe> (pełny, osadzony widok dostępności),
- * dzięki czemu nie wymaga `<script>` od strony klienta i nie jest cofany
- * przez re-render Reacta. Dla a11y/bezpieczeństwa ustawiamy tytuł ramki i
- * tryb sandbox ograniczony do tego, co potrzebne do rezerwacji.
- */
-export default function BooksyCalendar() {
-  const id = config.booksyId;
-  const hasId = Boolean(id);
+const consentKey = 'gabinet-booksy-consent-v1';
+const consentEvent = 'gabinet-booksy-consent-change';
+type Consent = 'granted' | 'denied' | null;
+let sessionChoice: Consent = null;
 
-  // Gdy booksyId nie jest jeszcze wpisane w lib/config.ts, pokazujemy
-  // przyjazny fallback z przyciskiem do rezerwacji - zamiast komunikatu
-  // technicznego przeznaczonego dla dewelopera.
-  if (!hasId) {
-    return (
-      <div className="rounded bg-cream p-6">
-        <p className="text-base leading-7 text-ink/80">
-          Najszybciej umówi się Pan/Pani wizytę bezpośrednio w kalendarzu online:
-        </p>
-        <a
-          href={config.bookingUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => track('book_click', { method: 'link', location: 'kontakt' })}
-          className="mt-3 inline-flex items-center justify-center rounded bg-green px-6 py-3 text-base font-medium text-white transition hover:bg-green/90 active:scale-[0.99]"
-        >
-          Zarezerwuj termin online
-        </a>
-      </div>
-    );
+function readConsent(): Consent {
+  if (sessionChoice !== null) return sessionChoice;
+  try {
+    const value = localStorage.getItem(consentKey);
+    return value === 'granted' || value === 'denied' ? value : null;
+  } catch { return null; }
+}
+
+function subscribe(callback: () => void) {
+  function onStorage(event: StorageEvent) {
+    if (event.key === consentKey || event.key === null) callback();
   }
+  window.addEventListener(consentEvent, callback);
+  window.addEventListener('storage', onStorage);
+  return () => {
+    window.removeEventListener(consentEvent, callback);
+    window.removeEventListener('storage', onStorage);
+  };
+}
 
-  return (
-    <div className="overflow-hidden rounded-lg border border-border">
-      <iframe
-        title="Rezerwacja wizyty online - Booksy"
+function saveConsent(choice: Exclude<Consent, null>) {
+  try {
+    localStorage.setItem(consentKey, choice);
+    sessionChoice = null;
+  } catch { sessionChoice = choice; }
+  window.dispatchEvent(new Event(consentEvent));
+}
+
+function CalendarFrame() {
+  const slot = useRef<HTMLDivElement>(null);
+  const [near, setNear] = useState(false);
+  const [status, setStatus] = useState<'loading' | 'loaded' | 'slow'>('loading');
+
+  useEffect(() => {
+    if (!slot.current || !('IntersectionObserver' in window)) {
+      setNear(true);
+      return;
+    }
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      setNear(true);
+      observer.disconnect();
+    }, { rootMargin: '240px 0px' });
+    observer.observe(slot.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!near || status !== 'loading') return;
+    const timer = window.setTimeout(() => setStatus('slow'), 12000);
+    return () => window.clearTimeout(timer);
+  }, [near, status]);
+
+  return <>
+    <div className="booksy-slot" ref={slot}>
+      {near && <iframe
         src={booksyWidgetUrl}
-        className="block h-[780px] w-full lg:h-[920px]"
-        style={{ border: 0 }}
-        loading="lazy"
-        allow="payment"
+        title="Kalendarz rezerwacji Booksy"
         sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-      />
-      <div className="flex items-center justify-between border-t border-border bg-cream px-4 py-3 text-sm text-ink/70">
-        <span>
-          Rezerwacja online przez{' '}
-          <a
-            href={config.booksyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-green hover:underline"
-          >
-            Booksy
-          </a>
-        </span>
-        <span>Aktualne terminy na żywo</span>
-      </div>
+        referrerPolicy="no-referrer"
+        onLoad={() => setStatus('loaded')}
+        onError={() => setStatus('slow')}
+      />}
     </div>
-  );
+    <p className="booksy-status" role="status">{status === 'slow'
+      ? 'Kalendarz ładuje się długo. Można przejść bezpośrednio do Booksy, korzystając z odnośnika powyżej.'
+      : ''}</p>
+  </>;
+}
+
+export default function BooksyCalendar({ linkLabel = 'Otwórz kalendarz w Booksy', primary = false }: { linkLabel?: string; primary?: boolean }) {
+  const consent = useSyncExternalStore(subscribe, readConsent, () => null);
+  const allowed = consent === 'granted';
+
+  return <div className="booksy-calendar">
+    <p><a className={primary ? 'booking' : 'text-link'} href={config.booksyUrl} rel="noreferrer">{linkLabel}</a></p>
+    {config.booksyId && <>
+      <div className="booksy-consent">
+        <p>{allowed
+          ? 'Gdy zbliżysz się do kalendarza, wczyta się on automatycznie. Jeśli nie działa, skorzystaj z odnośnika powyżej.'
+          : 'Opcjonalny kalendarz Booksy wymaga zgody. Po wczytaniu Booksy otrzyma dane połączenia (np. adres IP) i może używać własnych plików cookies. Bez zgody możesz skorzystać z odnośnika powyżej.'}{' '}<a href="/polityka-prywatnosci/#cookies">Informacje o prywatności</a></p>
+        <div className="booksy-consent-actions">
+          <button type="button" className="button-secondary" onClick={() => saveConsent(allowed ? 'denied' : 'granted')}>
+            {allowed ? 'Wycofaj zgodę na osadzenie Booksy' : 'Zezwól na osadzenie Booksy'}
+          </button>
+          {consent === null && <button type="button" className="button-secondary" onClick={() => saveConsent('denied')}>Nie zezwalaj</button>}
+        </div>
+        <p className="booksy-status" role="status">{consent === 'denied' ? 'Kalendarz nie jest osadzany.' : ''}</p>
+        <noscript><p>Do zapisania zgody potrzebny jest JavaScript. Możesz przejść bezpośrednio do Booksy.</p></noscript>
+      </div>
+      {allowed && <CalendarFrame/>}
+    </>}
+  </div>;
 }

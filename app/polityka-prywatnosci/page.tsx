@@ -146,8 +146,10 @@ export default function Page() {
         .
       </p>
 
-      <h2 className="mt-8 text-3xl">Cookies</h2>
-      <p className="mt-3 leading-8">Strona nie uruchamia analityki ani narzędzi marketingowych. Na stronie głównej i kontaktowej kalendarz Booksy ładuje się po wybraniu opcji jego wyświetlenia. Na podstronach tematycznych kalendarz również ładuje się dopiero po otwarciu, bez przekazywania adresu podstrony jako strony odsyłającej. Mapa Google ładuje się po wybraniu opcji jej wyświetlenia. Przy wczytaniu tych elementów dostawcy otrzymują informacje o połączeniu i mogą używać własnych plików cookies. Rezerwacja za pośrednictwem Booksy nie jest wymagana: można zadzwonić lub napisać. Ustawienia cookies można zmienić w przeglądarce.</p>
+      <h2 id="cookies" className="mt-8 text-3xl">Cookies</h2>
+      <p className="mt-3 leading-8">Strona nie uruchamia analityki ani narzędzi marketingowych. Osadzony kalendarz jest opcjonalny. Po odrębnej zgodzie na osadzenie Booksy kalendarz ładuje się automatycznie, gdy użytkownik zbliży się do sekcji rezerwacji. Bez tej zgody witryna nie wczytuje ramki Booksy. Wybór jest zapisywany w pamięci lokalnej przeglądarki i stosowany we wszystkich sekcjach z kalendarzem tej witryny. Można go zmienić lub wycofać w dowolnej z tych sekcji.</p>
+      <p className="mt-3 leading-8">Po wczytaniu kalendarza Booksy otrzymuje dane połączenia, np. adres IP. Witryna nie wysyła adresu podstrony w nagłówku odsyłającym przy wczytaniu ramki. W ramce mogą działać skrypty i pliki cookies dostawcy zgodnie z <a href="https://booksy.com/pl-pl/p/privacy" rel="noreferrer">polityką prywatności Booksy</a>. Wycofanie zgody usuwa ramkę, ale nie usuwa danych już otrzymanych przez Booksy ani jego plików cookies. Można rezerwować bezpośrednio w serwisie Booksy, zadzwonić lub napisać.</p>
+      <p className="mt-3 leading-8">Mapa Google ładuje się dopiero po wybraniu opcji jej wyświetlenia. Przy wczytaniu mapy dostawca otrzymuje dane połączenia i może używać własnych plików cookies. Ustawienia cookies można zmienić w przeglądarce.</p>
 
       <h2 className="mt-8 text-3xl">Przekazywanie danych poza EOG</h2>
       <p className="mt-3 leading-8">
