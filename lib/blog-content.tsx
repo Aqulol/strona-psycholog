@@ -1,3 +1,4 @@
+import {patientArticles} from './patient-articles';
 import {standalonePublication} from './blog-publication';
 import { empathyArticle } from './empathy-article';
 import { adhdArticle } from './adhd-article';
@@ -20,6 +21,7 @@ const features = {
 };
 
 export const generatedArticles = [
+  ...patientArticles,
   empathyArticle,
   adhdArticle,
   ...featureArticles.map(article => ({ ...article, sections: undefined, link: paths.adults, body: features[article.slug]() })),
