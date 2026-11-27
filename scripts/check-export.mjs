@@ -1,3 +1,4 @@
+import {assertContactRewrite} from './sitemap-lib.mjs';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -56,7 +57,7 @@ assert.ok(gzipSync(homepage).length + gzipSync(read(join('out',styles[0]))).leng
 const hosting = JSON.parse(read('firebase.json')).hosting;
 assert.equal(hosting.public, 'out');
 assert.equal(hosting.trailingSlash, true);
-assert.equal((hosting.rewrites ?? []).length, 0, 'No fallback rewrite that can mask a true 404');
+assertContactRewrite(hosting);
 assert.match(read('out/404.html'), /name="robots" content="noindex/);
 for (const bot of ['OAI-SearchBot', 'Bingbot']) {
   assert.ok(read('out/robots.txt').includes(`User-Agent: ${bot}`));

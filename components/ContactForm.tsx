@@ -1,213 +1,64 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
-import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
-import Input from './Input';
-import { config } from '../lib/config';
+import {useId, useRef, useState, type FormEvent} from 'react';
 
-// Firebase Web SDK - inicjalizujemy tylko, gdy właściciel wpisał prawdziwy
-// apiKey (zamiast placeholdera „TU-WPISZ-..."). W wariancie darmowym (Spark)
-// formularz zapisuje wiadomości bezpośrednio do Firestore z przeglądarki.
-
-type FormState = 'idle' | 'sending' | 'success' | 'error' | 'unconfigured';
-
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-/** Czy firebaseConfig został już uzupełniony przez właściciela? */
-function isFirebaseConfigured(): boolean {
-  return !config.firebaseConfig.apiKey.startsWith('TU-WPISZ');
-}
-
-/**
- * Waliduje pole „Telefon lub e-mail": poprawny adres e-mail LUB
- * numer telefonu z min. 9 cyframi.
- */
-function isValidContact(value: string): boolean {
-  const trimmed = value.trim();
-  if (!trimmed) return false;
-  if (emailPattern.test(trimmed)) return true;
-  const digits = trimmed.replace(/\D/g, '');
-  return digits.length >= 9;
-}
-
-/**
- * Formularz kontaktowy - walidacja klient-side, honeypot i zapis
- * bezpośrednio do Firestore (wariant darmowy, bez Cloud Functions).
- *
- * Komponent ładuje się LENIWIE (React.lazy w components/Contact.tsx),
- * więc SDK Firestore (~190 kB) nie trafia do początkowego bundla.
- * Logika i komunikaty są identyczne jak w wersji sprzed podziału.
- */
+type Feedback = { kind:'success'|'error'; text:string };
 export default function ContactForm() {
-  const [name, setName] = useState('');
-  const [contact, setContact] = useState('');
-  const [message, setMessage] = useState('');
-  const [rodo, setRodo] = useState(false);
-  const [honeypot, setHoneypot] = useState('');
-  const [state, setState] = useState<FormState>('idle');
-  const [errors, setErrors] = useState<{ name?: string; contact?: string; rodo?: string; message?: string }>({});
+  const id=useId();
+  const inFlight=useRef(false);
+  const [sending,setSending]=useState(false);
+  const [feedback,setFeedback]=useState<Feedback>();
 
-  const validate = () => {
-    const next: typeof errors = {};
-    if (name.trim().length < 2) next.name = 'Proszę podać imię (min. 2 znaki).';
-    if (!isValidContact(contact)) {
-      next.contact = 'Proszę podać poprawny e-mail lub numer telefonu (min. 9 cyfr).';
-    }
-    if (message.trim().length < 1 || message.trim().length > 1000) next.message = 'Proszę wpisać krótką wiadomość (do 1000 znaków).';
-    if (name.trim().length > 80) next.name = 'Proszę skrócić imię do 80 znaków.';
-    if (contact.trim().length > 160) next.contact = 'Proszę skrócić dane kontaktowe do 160 znaków.';
-    if (!rodo) next.rodo = 'Zgoda RODO jest wymagana.';
-    setErrors(next);
-    return Object.keys(next).length === 0;
-  };
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    // Honeypot: jeśli ukryte pole zostało wypełnione, nie wysyłamy
-    // (symulujemy sukces, by nie zdradzać mechanizmu botowi).
-    if (honeypot) {
-      setState('success');
+  async function submit(event:FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (inFlight.current) return;
+    const form=event.currentTarget;
+    const data=Object.fromEntries(new FormData(form));
+    const text=(key:string)=>String(data[key]??'').trim();
+    if (text('name').length<2 || text('message').length<10 || (text('phone') && !/^\+?[0-9 ()-]+$/.test(text('phone'))) || (text('phone') && !/^\d{7,15}$/.test(text('phone').replace(/\D/g,'')))) {
+      setFeedback({kind:'error',text:'Podaj imię (co najmniej 2 znaki), treść (co najmniej 10 znaków) i — jeśli go wpisujesz — poprawny numer telefonu.'});
       return;
     }
-
-    if (!validate()) return;
-
-    // Jeśli właściciel nie uzupełnił jeszcze firebaseConfig - nie próbuj
-    // zapisu, pokaż komunikat z prośbą o kontakt telefoniczny.
-    if (!isFirebaseConfigured()) {
-      setState('unconfigured');
-      return;
-    }
-
-    setState('sending');
+    inFlight.current=true;
+    setSending(true);
+    setFeedback(undefined);
     try {
-      const [{initializeApp, getApps, getApp}, {getFirestore, collection, addDoc, serverTimestamp}] = await Promise.all([
-        import('firebase/app'), import('firebase/firestore'),
-      ]);
-      const app = getApps().length ? getApp() : initializeApp(config.firebaseConfig);
-      const db = getFirestore(app);
-      await addDoc(collection(db, 'messages'), {
-        name: name.trim(),
-        contact: contact.trim(),
-        message: message.trim(),
-        rodoConsent: true,
-        createdAt: serverTimestamp(),
-      });
-      setState('success');
-      setName('');
-      setContact('');
-      setMessage('');
-      setRodo(false);
-      setErrors({});
-    } catch (err) {
-      console.error('Błąd wysyłki formularza:', err);
-      setState('error');
+      const response=await fetch('/api/kontakt',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:AbortSignal.timeout(50_000),credentials:'omit',referrerPolicy:'origin',cache:'no-store'});
+      const result=await response.json();
+      if (!response.ok || result?.ok!==true) {
+        if (response.status===429) {
+          setFeedback({kind:'error',text:'Za dużo prób wysyłki. Spróbuj ponownie za kilka minut.'});
+          return;
+        }
+        throw new Error('Delivery unconfirmed');
+      }
+      form.reset();
+      setFeedback({kind:'success',text:'Dziękuję za wiadomość. Odpowiem tak szybko, jak będzie to możliwe.'});
+    } catch {
+      setFeedback({kind:'error',text:'Nie udało się potwierdzić wysłania wiadomości. Sprawdź połączenie i spróbuj ponownie lub skorzystaj z telefonu albo e-maila.'});
+    } finally {
+      inFlight.current=false;
+      setSending(false);
     }
-  };
+  }
 
-  return (
-    <form onSubmit={handleSubmit} noValidate className="space-y-5">
-      <Input
-        id="imie"
-        label="Imię"
-        placeholder="Jan"
-        required
-        autoComplete="given-name"
-        value={name}
-        onChange={setName}
-        error={errors.name}
-      />
-
-      <Input
-        id="kontakt-form"
-        label="Telefon lub e-mail"
-        placeholder="+48 600 000 000 lub jan@przyklad.pl"
-        required
-        autoComplete="email"
-        value={contact}
-        onChange={setContact}
-        error={errors.contact}
-      />
-
-      <Input
-        id="wiadomosc"
-        label="Wiadomość"
-        placeholder="Np. pytanie o dostępność innego terminu"
-        required
-        textarea
-        error={errors.message}
-        value={message}
-        onChange={setMessage}
-      />
-
-      {/* Honeypot - ukryte pole antyspamowe */}
-      <div className="hidden" aria-hidden="true">
-        <label htmlFor="website">Nie wypełniaj tego pola</label>
-        <input
-          id="website"
-          type="text"
-          tabIndex={-1}
-          autoComplete="off"
-          value={honeypot}
-          onChange={(e) => setHoneypot(e.target.value)}
-        />
-      </div>
-
-      <div>
-        <label className="flex items-start gap-2 text-sm text-ink/80">
-          <input
-            type="checkbox"
-            checked={rodo}
-            onChange={(e) => setRodo(e.target.checked)}
-            className="mt-1"
-            required
-            aria-invalid={errors.rodo ? true : undefined}
-            aria-describedby={errors.rodo ? 'rodo-error' : undefined}
-          />
-          <span>
-            Wyrażam zgodę na przetwarzanie danych podanych w formularzu w celu odpowiedzi na moją wiadomość. Więcej w{' '}
-            <a href="/polityka-prywatnosci/" className="text-green underline">
-              polityką prywatności
-            </a>
-            .
-          </span>
-        </label>
-        {errors.rodo && (
-          <p id="rodo-error" className="mt-1 text-sm text-red-700" role="alert">
-            {errors.rodo}
-          </p>
-        )}
-      </div>
-
-      {state === 'success' && (
-        <p
-          role="status"
-          className="flex items-start gap-2 rounded border border-green/30 bg-green/5 p-4 text-sm text-green"
-        >
-          <CheckCircle2 aria-hidden="true" className="mt-0.5 shrink-0" size={18} />
-          Dziękuję za wiadomość. Odpowiem na podane dane kontaktowe.
-        </p>
-      )}
-
-      {(state === 'error' || state === 'unconfigured') && (
-        <p
-          role="alert"
-          className="flex items-start gap-2 rounded border border-red-300 bg-red-50 p-4 text-sm text-red-700"
-        >
-          <AlertCircle aria-hidden="true" className="mt-0.5 shrink-0" size={18} />
-          Nie udało się wysłać wiadomości. Proszę spróbować później lub skontaktować się telefonicznie pod numerem {config.phone}.
-        </p>
-      )}
-
-      <button
-        type="submit"
-        disabled={state === 'sending'}
-        className="inline-flex items-center gap-2 rounded bg-green px-6 py-3.5 text-base font-medium text-white transition hover:bg-green/90 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-60"
-      >
-        <Send aria-hidden="true" size={16} />
-        {state === 'sending' ? 'Wysyłanie…' : 'Wyślij wiadomość'}
-      </button>
+  return <>
+    <form className="practice-contact-form" method="post" action="/api/kontakt" onSubmit={submit} aria-describedby={`${id}-privacy`}>
+      <label htmlFor={`${id}-name`}>Imię</label>
+      <input id={`${id}-name`} name="name" autoComplete="given-name" required minLength={2} maxLength={80}/>
+      <label htmlFor={`${id}-email`}>Adres e-mail</label>
+      <input id={`${id}-email`} name="email" type="email" pattern="[^ @]+@[^ @]+[.][^ @]+" autoComplete="email" required maxLength={160}/>
+      <label htmlFor={`${id}-phone`}>Numer telefonu (opcjonalnie)</label>
+      <input id={`${id}-phone`} name="phone" type="tel" autoComplete="tel" maxLength={24}/>
+      <label htmlFor={`${id}-subject`}>Temat wiadomości (opcjonalnie)</label>
+      <input id={`${id}-subject`} name="subject" maxLength={120}/>
+      <label htmlFor={`${id}-message`}>Treść wiadomości</label>
+      <textarea id={`${id}-message`} name="message" rows={5} required minLength={10} maxLength={1000}/>
+      <div hidden><label htmlFor={`${id}-website`}>Pozostaw puste</label><input id={`${id}-website`} name="website" tabIndex={-1} autoComplete="off"/></div>
+      <button className="booking" type="submit" disabled={sending}>{sending?'Wysyłanie…':'Wyślij wiadomość'}</button>
+      <p role="status" className={feedback?.kind==='error'?'contact-form-error':undefined}>{feedback?.text}</p>
     </form>
-  );
+    <p id={`${id}-privacy`} className="contact-form-privacy">Proszę nie przesyłać danych medycznych ani dokumentacji. Więcej informacji w <a href="/polityka-prywatnosci/">polityce prywatności</a>.</p>
+    <noscript><p>Wysyłka formularza wymaga JavaScriptu. Można też zadzwonić lub napisać e-mail.</p></noscript>
+  </>;
 }

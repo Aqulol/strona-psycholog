@@ -1,89 +1,11 @@
-# Firebase Functions - formularz kontaktowy
+# Formularz kontaktowy: Firebase Hosting → Functions → SMTP
 
-> **Wariant funkcji (wymaga planu Blaze) - NIEUŻYWANY w obecnym wdrożeniu.**
-> Formularz zapisuje wiadomości bezpośrednio w Firestore
-> (z przeglądarki, bez Cloud Functions). Poniższy opis dotyczy wariantu
-> przyszłościowego - gdyby właściciel zdecydował się na plan Blaze i
-> automatyczne wysyłanie wiadomości e-mail przez SMTP. Do działania
-> wymaga planu Blaze (płatnego) oraz ustawienia sekretów SMTP.
+Statyczny eksport Next wysyła JSON do `/api/kontakt` na tej samej domenie. Jedyna reguła `rewrite` obsługuje ten endpoint przez `sendContactForm` (`europe-west1`, Node.js 22); nie ma reguły zastępującej strony ani 404. Formularz nie zapisuje treści w Firestore, nie przekazuje jej do analityki i pokazuje potwierdzenie dopiero po akceptacji przez serwer SMTP. Akceptacja SMTP nie gwarantuje umieszczenia wiadomości w folderze Odebrane: test wdrożeniowy wymaga potwierdzenia przez gabinet.
 
-Funkcja `sendContactForm` zapisuje zgłoszenia w Firestore i wysyła je przez SMTP.
-Nie zawiera żadnych sekretów w repozytorium - wszystkie wrażliwe wartości są
-deklarowane w kodzie przez `defineSecret` (z `firebase-functions/params`)
-i dostarczane funkcji przez Cloud Functions (opcja `secrets` w `onRequest`).
+## Warunki przed ręcznym wdrożeniem
 
-Zadeklarowane sekrety: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_TO`, `SITE_URL`.
-
-## Ustawienie sekretów (wymagane przed wdrożeniem)
-
-W katalogu projektu (tam, gdzie jest `.firebaserc`):
-
-```bash
-firebase login
-firebase functions:secrets:set SMTP_HOST
-firebase functions:secrets:set SMTP_PORT
-firebase functions:secrets:set SMTP_USER
-firebase functions:secrets:set SMTP_PASS
-firebase functions:secrets:set MAIL_TO
-firebase functions:secrets:set SITE_URL
-```
-
-CLI poprosi o wartość każdego sekretu po kolei. Sugerowane wartości:
-
-- `SMTP_HOST` - serwer poczty wychodzącej (np. `smtp.gmail.com`),
-- `SMTP_PORT` - zwykle `587` (STARTTLS) albo `465` (TLS),
-- `SMTP_USER` - login do skrzynki nadawcy,
-- `SMTP_PASS` - hasło do skrzynki nadawcy,
-- `MAIL_TO` - adres odbiorcy wiadomości z formularza; domyślnie (jeśli nie ustawisz) `gpplebaniak@gmail.com`,
-- `SITE_URL` - domena produkcyjna, np. `https://psychologplebaniak.pl`; jeśli nie ustawisz, CORS użyje `*` (wygodne testowo, ale nie na produkcję).
-
-> **Ważne:** sekret musi istnieć ZANIM wdrożysz funkcję. Wdrożenie funkcji,
-> która odwołuje się do nieustawionego sekretu, zakończy się błędem
-> (CLI wskaże, którego sekretu brakuje). Po ustawieniu (lub zmianie) sekretu
-> trzeba **ponownie wdrożyć funkcję**: `firebase deploy --only functions`.
-
-Sekrety są przechowywane w Google Cloud Secret Manager - nie ma ich w repo,
-więc można bezpiecznie commitować kod.
-
-## Instalacja i wdrożenie
-
-Z katalogu projektu:
-
-```bash
-cd functions
-npm install
-npm run build
-cd ..
-firebase login
-firebase deploy --only functions,firestore,storage,hosting
-```
-
-ID projektu jest już wpisane w `.firebaserc`:
-`psychologplebaniak-e4480`.
-
-Funkcja działa w regionie `europe-west1`, więc jej adres będzie miał postać:
-
-```
-https://europe-west1-psychologplebaniak-e4480.cloudfunctions.net/sendContactForm
-```
-
-## Podpięcie formularza
-
-W `lib/config.ts` ustaw `formEndpoint` na powyższy adres
-(po wdrożeniu funkcji skopiuj go z konsoli Firebase lub z komunikatu deploya).
-`components/Contact.tsx` wysyła metodą `POST` JSON z polami `name`, `contact`,
-`message`, `rodo` oraz `honeypot` (puste pole honeypot jest prawidłowe).
-Funkcja akceptuje również docelową nazwę `rodoConsent`.
-
-Odpowiedzi:
-
-- `200` - `{ "ok": true }` (także dla wypełnionego honeypota, bez zapisu),
-- `400` - `{ "ok": false, "error": "..." }` dla niepoprawnych danych,
-- `405` - `{ "ok": false, "error": "..." }` dla innej metody,
-- `500` - `{ "ok": false, "error": "..." }` przy błędzie zapisu lub wysyłki.
-
-## Do wdrożenia potrzebne są
-
-ID projektu Firebase (gotowe: `psychologplebaniak-e4480`), dane SMTP
-(4 sekrety `SMTP_*`), docelowy adres e-mail (`MAIL_TO`, opcjonalnie -
-domyślny jest już w kodzie) oraz produkcyjna domena (`SITE_URL`).
+1. Potwierdzić, że projekt `psychologplebaniak-e4480` już ma aktywny plan Blaze i uprawnienia do Cloud Functions v2, Secret Manager i Firestore. Jeżeli nie, **nie włączać naliczania opłat bez osobnej zgody**; bez funkcji (lub innego zatwierdzonego backendu) sam statyczny Hosting nie może bezpiecznie wysyłać SMTP. Usługi Firebase mogą naliczać opłaty także przy małym ruchu zależnie od konfiguracji i wykorzystania.
+2. Potwierdzić istniejący serwer SMTP i uprawniony adres nadawcy oraz faktyczną skrzynkę odbiorczą. Ustawić sekrety poleceniem `firebase functions:secrets:set NAZWA --project psychologplebaniak-e4480`: `SMTP_HOST`, `SMTP_PORT` (465 z TLS lub zazwyczaj 587 z STARTTLS), `SMTP_USER` (adres nadawcy), `SMTP_PASS`, `MAIL_TO` (jedna skrzynka). Nie umieszczać tych wartości w plikach budowy, kodzie ani zgłoszeniu. `SITE_URL` nie jest używany; produkcyjny origin to `https://psychologplebaniak.pl`.
+3. W Firestore włączyć TTL na `expiresAt` dla grupy kolekcji `contactRateLimits`. Sprawdzić IAM konta funkcji (transakcje Firestore i odczyt wskazanych sekretów), zasady retencji poczty i historycznych danych `/messages`, oraz konfigurację i dostawców opisanych w polityce prywatności. Starsze dokumenty nie są kasowane przez tę zmianę; przeglądarka nie może już pisać do kolekcji.
+4. Przeprowadzić test w projekcie testowym z dozwolonym originem testowym i odbiorcą kontrolowanym przez właściciela. Sprawdzić rewrite pod rzeczywistym Hostingiem, w tym brak przekierowania POST na ścieżkę z ukośnikiem, oraz adres widziany przez `req.ip` za proxy Firebase. Limity (4 próby na IP i 30 globalnie co 10 min) są zaporą wolumenu, nie gwarancją rozpoznania człowieka; IP w liczniku jest pseudonimizowany, a globalny limit obejmuje też nieudane wysyłki.
+5. Po akceptacji i sprawdzeniu konfiguracji wdrożyć ręcznie `firebase deploy --only functions:sendContactForm,firestore:rules,hosting --project psychologplebaniak-e4480` po `npm ci --prefix functions` oraz `npm ci && npm run build`. Z wysłaniem uzgodnionej wiadomości bez danych osobowych na domenie produkcyjnej odczekać do publikacji; potwierdzić obecność w skrzynce gabinetu i poprawne `Reply-To`. W razie braku odbioru sprawdzić logi dostawcy poczty, konfigurację nadawcy i folder spamu. Nie używać produkcyjnego formularza do testów obciążeniowych.

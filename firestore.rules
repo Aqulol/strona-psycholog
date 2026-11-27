@@ -3,19 +3,7 @@ service cloud.firestore {
   match /databases/{database}/documents {
     // Staff access via Firebase Console IAM, never via browser SDK.
     match /messages/{messageId} {
-      allow create: if request.resource.data.keys().hasOnly(['name','contact','message','rodoConsent','createdAt'])
-                    && request.resource.data.name is string
-                    && request.resource.data.name.size() >= 2
-                    && request.resource.data.name.size() <= 80
-                    && request.resource.data.contact is string
-                    && request.resource.data.contact.size() > 0
-                    && request.resource.data.contact.size() <= 160
-                    && request.resource.data.message is string
-                    && request.resource.data.message.size() > 0
-                    && request.resource.data.message.size() <= 1000
-                    && request.resource.data.rodoConsent == true
-                    && request.resource.data.createdAt == request.time;
-      allow read, update, delete: if false;
+      allow read, write: if false;
     }
     match /blogPosts/{postId} {
       allow read: if true;

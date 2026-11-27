@@ -310,3 +310,12 @@ main.container.article-editorial {padding-inline:var(--gutter);}
 .notes-fields {display:grid;gap:.65rem;margin-block:.8rem;}
 .notes-fields label,.notes-fields textarea {display:block;}
 .notes-fields textarea {width:100%;min-height:44px;resize:vertical;border:1px solid var(--strong-rule);border-radius:var(--edge);background:var(--surface);padding:.45rem;color:var(--ink);}
+
+.practice-contact-form {display:grid;gap:.4rem;margin-block:1rem .65rem;}
+.practice-contact-form label {font-weight:600;}
+.practice-contact-form :is(input, textarea) {width:100%;min-height:44px;border:1px solid var(--strong-rule);border-radius:var(--edge);background:var(--surface);color:var(--ink);padding:.5rem .65rem;margin-block-end:.35rem;}
+.practice-contact-form textarea {resize:vertical;}
+.practice-contact-form .booking {justify-self:start;}
+.practice-contact-form .booking:disabled {opacity:.7;cursor:wait;}
+.contact-form-error {color:#842d27;}
+.contact-form-privacy {font-size:.875rem;}

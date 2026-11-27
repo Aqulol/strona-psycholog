@@ -98,6 +98,10 @@ function walk(directory, prefix = '') {
   });
 }
 
+export function assertContactRewrite(hosting) {
+  assert.deepEqual(hosting.rewrites ?? [], [{source:'/api/kontakt',function:{functionId:'sendContactForm',region:'europe-west1'}}], 'Only the exact contact API rewrite is allowed');
+}
+
 export function readExport(directory = out, dates = JSON.parse(readFileSync(lastmodFile, 'utf8'))) {
   for (const [path, record] of Object.entries(dates)) {
     canonicalPath(origin + path);
@@ -109,8 +113,10 @@ export function readExport(directory = out, dates = JSON.parse(readFileSync(last
   assert.equal(hosting.public, out);
   assert.equal(hosting.cleanUrls, true);
   assert.equal(hosting.trailingSlash, true);
-  assert.equal((hosting.rewrites ?? []).length, 0, 'Hosting rewrites must not mask errors or shadow canonicals');
-  assert.ok(!(hosting.headers ?? []).some(group => group.headers.some(({key}) => /^x-robots-tag$/i.test(key))), 'Review X-Robots-Tag policy before changing Firebase headers');
+  assertContactRewrite(hosting);
+  for (const group of hosting.headers ?? []) for (const {key,value} of group.headers) {
+    if (/^x-robots-tag$/i.test(key)) assert.ok(group.source === '/materialy/karty-psychologiczne.pdf' && value === 'noindex', 'Unexpected Firebase robots header');
+  }
   const redirects = inspectRedirectRules(hosting.redirects ?? []);
   const pages = new Map();
   const excluded = new Map();
