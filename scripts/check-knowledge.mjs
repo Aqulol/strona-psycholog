@@ -1,3 +1,5 @@
+import {readRegistry} from './glossary-registry.mjs';
+import {isPublishedTerm} from '../lib/glossary-policy.mjs';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import {readExport} from './sitemap-lib.mjs';
@@ -13,15 +15,24 @@ for(const [query, expected] of [
  ['borderline','/diagnoza-osobowosci-wroclaw/'],['borderline','/terapia-skoncentrowana-na-przeniesieniu-tfp/'],['borderline','/blog/tfp-dla-kogo/'],
 ]) assert.ok(findContent(index,query).some(row=>row.href===expected),`${query}: ${expected}`);
 assert.deepEqual(findContent(index,'xxxqqqzzz'),[]);
-const terms=JSON.parse(readFileSync('content/glossary.json','utf8'));
-assert.equal(new Set(terms.map(x=>x.slug)).size,terms.length);
+const terms=readRegistry();
 for(const row of terms){
  const href=`/slownik-psychologiczny/${row.slug}/`;
  const present=pages.has(href);
- assert.ok(row.related.every(slug=>terms.some(x=>x.slug===slug)),row.slug);
- assert.ok(pages.has(row.href.split('#')[0]),row.href);
- assert.equal(present, row.status==='reviewed' && Boolean(row.updated&&row.reviewer),href);
- if(!present) assert.ok(!existsSync(`out${href}index.html`),`Non-indexable draft leaked: ${href}`);
+ for(const link of row.links)assert.ok(pages.has(link.href.split('#')[0]),`${row.slug}: ${link.href}`);
+ assert.equal(present,isPublishedTerm(row),href);
+ assert.equal(existsSync(`out${href}index.html`),present,href);
+ assert.equal(index.some(entry=>entry.href===href),present,href);
+ if(present){
+  const html=readFileSync(`out${href}index.html`,'utf8');
+  for(const marker of ['DefinedTerm','BreadcrumbList','Zacytuj to hasło']) assert.ok(html.includes(marker),`${href}: ${marker}`);
+ }
+}
+for(const route of ['slownik-psychologiczny','kiedy-zglosic-sie-na-terapie']){
+ const main=readFileSync(`out/${route}/index.html`,'utf8').match(/<main\b[\s\S]+?<\/main>/)?.[0];
+ assert.ok(main);
+ assert.ok(!/type="search"|Szukaj pojęcia|Szukaj tematu|Wyczyść filtry/.test(main),route);
+ assert.ok(main.includes('data-filter-group')&&main.includes('data-filter-row'),route);
 }
 const crisis=readFileSync('out/pomoc-w-kryzysie/index.html','utf8').match(/<main\b[\s\S]+?<\/main>/)?.[0];
 assert.ok(crisis?.includes('href="tel:112"'));

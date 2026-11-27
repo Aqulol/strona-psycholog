@@ -199,3 +199,21 @@ main.price-editorial{width:min(100% - 2 * var(--gutter),53rem);max-width:53rem;p
 /* Preserve room for the Booksy panel at the two-column breakpoint. */
 .reading.topic-page{width:min(100% - 1.5rem,86rem)}
 @media(min-width:1088px){.reading.topic-page{width:min(100% - 2.5rem,86rem)}}
+.category-toolbar {display:flex; margin:0 auto 1.25rem; padding:.8rem 1rem; border-block:1px solid var(--rule); color:var(--deep);}
+.help-catalogue-page .category-toolbar {width:min(100% - 2rem,77.5rem);}
+.category-toolbar label {display:flex;flex-wrap:wrap;align-items:center;gap:.45rem .8rem;max-width:100%;font-weight:600;}
+.category-toolbar select {min-width:0;max-width:100%;min-height:44px;padding:.4rem .65rem;border:1px solid var(--strong-rule);border-radius:var(--edge);background:var(--surface);font-weight:400;}
+.help-category-description {margin:.55rem 0;color:var(--muted);font-size:.875rem;line-height:1.5;}
+.help-category-description span {font-weight:600;}
+.glossary-intro {padding:1.1rem 1.3rem;border-inline-start:2px solid var(--gold);background:var(--sage);margin-bottom:1.2rem;}
+.glossary-intro .hero-copy {margin-top:0;margin-bottom:.55rem;}
+.glossary-letters {margin-top:.8rem;}
+.lexicon-category {color:var(--muted);display:block;font-size:.8rem;}
+.glossary-chronology {padding:1rem;border:1px solid var(--rule);}
+.glossary-clipboard p {overflow-wrap:anywhere;}
+
+[data-filter-group][hidden], [data-filter-row][hidden], [data-catalogue-letter][hidden], [data-catalogue-section][hidden] {display:none!important;}
+.help-category-nav ul {display:flex;flex-wrap:wrap;gap:.35rem .8rem;margin:0 0 1.25rem;padding:0;list-style:none;}
+.help-category-nav a:not([hidden]) {display:inline-flex;align-items:center;min-height:44px;font-size:.875rem;}
+.help-category-nav li:not(:has(a:not([hidden]))) {display:none;}
+.help-catalogue-page [data-filter-group], .lexicon-group {scroll-margin-top:7rem;}

@@ -38,3 +38,6 @@ yarn-error.log*
 # Firebase service-account private keys - never commit
 **/service-account*.json
 **/*firebase-adminsdk*.json
+
+# Defined-term routes generated from the approved glossary registry
+/app/slownik-psychologiczny/*/page.tsx

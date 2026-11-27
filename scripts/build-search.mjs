@@ -1,3 +1,5 @@
+import {readRegistry} from './glossary-registry.mjs';
+import {glossaryPrefix,isPublishedTerm} from '../lib/glossary-policy.mjs';
 import {writeFileSync,readFileSync} from 'node:fs';
 import {readExport} from './sitemap-lib.mjs';
 import {tokens} from '../lib/search-core.mjs';
@@ -5,6 +7,7 @@ const {pages}=readExport();
 const aliases=JSON.parse(readFileSync(new URL('./editorial-concepts.json',import.meta.url),'utf8'));
 const special={ '/diagnoza-osobowosci-wroclaw/':'borderline organizacja osobowości', '/terapia-skoncentrowana-na-przeniesieniu-tfp/':'borderline przeniesienie', '/blog/tfp-dla-kogo/':'borderline', '/faq/':'płatność koszty pierwsza wizyta rezerwacja' };
 const group = path => path.startsWith('/w-czym-pomagam/') || path==='/kiedy-zglosic-sie-na-terapie/' ? 'W czym pomagam?' : path.startsWith('/blog/') ? 'Artykuły' : path.startsWith('/slownik-psychologiczny/') ? 'Słownik psychologiczny' : /^\/(?:diagnoza-|konsultacj|psychoterap|psychoedukacj|poradnictwo|oferta|psycholog-wroclaw)/.test(path) ? 'Usługi' : 'Informacje praktyczne';
-const rows=[...pages].map(([href,p])=>({href,title:p.headings[0],group:group(href),terms:[...new Set(tokens([p.content,special[href],...aliases.filter(x=>x.target.split('#')[0]===href).flatMap(x=>x.forms)].join(' ')))].join(' ')}));
+const terms=new Map(readRegistry().filter(isPublishedTerm).map(x=>[`${glossaryPrefix}${x.slug}/`,[...x.synonyms,x.english].filter(Boolean).join(' ')]));
+const rows=[...pages].map(([href,p])=>({href,title:p.headings[0],group:group(href),terms:[...new Set(tokens([p.content,special[href],terms.get(href),...aliases.filter(x=>x.target.split('#')[0]===href).flatMap(x=>x.forms)].join(' ')))].join(' ')}));
 writeFileSync('out/indeks-tresci.json',JSON.stringify(rows));
 console.log(`Lokalny indeks: ${rows.length} kanonicznych tras.`);

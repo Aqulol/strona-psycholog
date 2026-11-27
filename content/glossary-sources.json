@@ -1,0 +1,83 @@
+{
+  "mcwilliams": {
+    "label": "McWilliams, N. (2011). Psychoanalytic Diagnosis (wyd. 2). Guilford Press.",
+    "href": "https://www.guilford.com/books/Psychoanalytic-Diagnosis/Nancy-McWilliams/9781462543694"
+  },
+  "tfp": {
+    "label": "Yeomans, F. E., Clarkin, J. F., i Kernberg, O. F. (2015). Transference-Focused Psychotherapy for Borderline Personality Disorder: A Clinical Guide. American Psychiatric Publishing."
+  },
+  "gabbard": {
+    "label": "Gabbard, G. O. (2017). Long-Term Psychodynamic Psychotherapy: A Basic Text (wyd. 3). American Psychiatric Association Publishing."
+  },
+  "who": {
+    "label": "WHO (2024). Clinical descriptions and diagnostic requirements for ICD-11 mental, behavioural and neurodevelopmental disorders.",
+    "href": "https://www.who.int/publications/i/item/9789240077263"
+  },
+  "diamond": {
+    "label": "Diamond, A. (2013). Executive functions. Annual Review of Psychology, 64, 135–168.",
+    "href": "https://doi.org/10.1146/annurev-psych-113011-143750"
+  },
+  "kernberg1994": {
+    "label": "Kernberg, O. F. (1994). Aggression, trauma, and hatred in the treatment of borderline patients. Psychiatric Clinics of North America, 17(4), 701–714.",
+    "href": "https://pubmed.ncbi.nlm.nih.gov/7877899/"
+  },
+  "kernberg2001": {
+    "label": "Kernberg, O. F. (2001). Object Relations, Affects, and Drives: Toward a New Synthesis. Psychoanalytic Inquiry, 21(5), 604–619.",
+    "href": "https://doi.org/10.1080/07351692109348963"
+  },
+  "kernberg1992": {
+    "label": "Kernberg, O. F. (1992). Aggression in Personality Disorders and Perversions. Yale University Press."
+  },
+  "freud1920": {
+    "label": "Freud, S. (1920). Jenseits des Lustprinzips [Poza zasadą przyjemności]. Internationaler Psychoanalytischer Verlag."
+  },
+  "klein1946": {
+    "label": "Klein, M. (1946). Notes on Some Schizoid Mechanisms. International Journal of Psychoanalysis, 27, 99–110."
+  },
+  "klein1957": {
+    "label": "Klein, M. (1957). Envy and Gratitude: A Study of Unconscious Sources. Tavistock Publications."
+  },
+  "winnicott1950": {
+    "label": "Winnicott, D. W. (1950–1955). Aggression in Relation to Emotional Development. W: Through Paediatrics to Psycho-Analysis (1958). Tavistock Publications."
+  },
+  "bion1962": {
+    "label": "Bion, W. R. (1962). Learning from Experience. William Heinemann Medical Books."
+  },
+  "anderson": {
+    "label": "Anderson, C. A., i Bushman, B. J. (2002). Human aggression. Annual Review of Psychology, 53, 27–51.",
+    "href": "https://doi.org/10.1146/annurev.psych.53.100901.135231"
+  },
+  "dodge": {
+    "label": "Dodge, K. A., i Coie, J. D. (1987). Social-information-processing factors in reactive and proactive aggression in children's peer groups. Journal of Personality and Social Psychology, 53(6), 1146–1158.",
+    "href": "https://doi.org/10.1037/0022-3514.53.6.1146"
+  },
+  "vaillant": {
+    "label": "Vaillant, G. E. (1992). Ego Mechanisms of Defense: A Guide for Clinicians and Researchers. American Psychiatric Press."
+  },
+  "anna": {
+    "label": "Freud, A. (1936). Das Ich und die Abwehrmechanismen [Ego i mechanizmy obronne]. Internationaler Psychoanalytischer Verlag."
+  },
+  "nice": {
+    "label": "NICE. Attention deficit hyperactivity disorder: diagnosis and management (NG87).",
+    "href": "https://www.nice.org.uk/guidance/ng87/chapter/recommendations"
+  },
+  "kernbergHatred": {
+    "label": "Kernberg, O. F. (1992). The Psychopathology of Hatred. W: Aggression in Personality Disorders and Perversions (s. 21–32). Yale University Press.",
+    "href": "https://doi.org/10.12987/9780300159462-003"
+  },
+  "klein1940": {
+    "label": "Klein, M. (1940). Mourning and its relation to manic-depressive states. International Journal of Psychoanalysis, 21, 125–153."
+  },
+  "ego": {
+    "label": "Freud, S. (1923). Das Ich und das Es [Ego i id]. Internationaler Psychoanalytischer Verlag."
+  },
+  "fairbairn": {
+    "label": "Fairbairn, W. R. D. (1952). Psychoanalytic Studies of the Personality. Tavistock Publications."
+  },
+  "mahler": {
+    "label": "Mahler, M. S., Pine, F., i Bergman, A. (1975). The Psychological Birth of the Human Infant. Basic Books."
+  },
+  "holding": {
+    "label": "Winnicott, D. W. (1960). The theory of the parent-infant relationship. International Journal of Psychoanalysis, 41, 585–595."
+  }
+}
