@@ -1,8 +1,9 @@
+import AssessmentPanel from './AssessmentPanel';
 import RelatedContent from './RelatedContent';
 import { config } from '../lib/config';
 import { personId, webPage } from '../lib/entities';
-import { diagnosticKeys, editorial, type EditorialKey } from '../lib/service-editorial';
-import { categoryNames, services } from '../lib/services';
+import { editorial, type EditorialKey } from '../lib/service-editorial';
+import { assessmentKeys, assessmentTerms, categoryNames, services } from '../lib/services';
 import { meta, paths } from '../lib/site';
 import { Crumbs, Json, Questions } from './Site';
 import { ServiceIcon } from './ServiceCards';
@@ -27,30 +28,22 @@ export default function EditorialServicePage({id}:{id:EditorialKey}) {
     <ServiceIcon name={icon}/><h1>{h1}</h1><p className="hero-copy">{intro}</p>
     <p className="offer-meta">{category === 'diagnosis' ? 'Gabinet prowadzi: ' : 'Opracowanie: '}<a href={paths.about}>{config.name}</a>, psycholog</p></div>
     {status === 'guide' && <div className="diagnostic-note"><p>Materiał informacyjny. Nie jest to osobna pozycja do rezerwacji. Na <a data-context-link href={services.consult.href}>standardowej konsultacji psychologicznej</a> można omówić swoją sytuację i możliwy dalszy krok.</p></div>}
-    {category === 'diagnosis' && <section className="diagnostic-note" aria-labelledby="przed-rezerwacja">
-      <h2 id="przed-rezerwacja">Przed umówieniem spotkania</h2>
-      <dl>
-        <dt><strong>Kontakt w sprawie diagnostyki</strong></dt>
-        <dd><a href={`tel:${config.phone.replace(/\s/g, '')}`}>{config.phone}</a> lub <a href={`mailto:${config.email}`}>e-mail do gabinetu</a>. Wystarczy pytanie organizacyjne; nie przesyłaj dokumentacji ani opisu objawów.</dd>
-        <dt><strong>Dostępność</strong></dt>
-        <dd>Przed rezerwacją ustal, czy zakres oceny odpowiada Twojemu pytaniu, oraz potwierdź dostępność dla danej grupy wiekowej i w wybranej formie.</dd>
-        <dt><strong>Koszt i zakres</strong></dt>
-        <dd>Stawka z <a href="/cennik/">cennika konsultacji</a> nie jest ceną pełnej diagnozy. Jeśli potrzebujesz dokumentu, zapytaj o jego dostępność przed rozpoczęciem oceny.</dd>
-      </dl>
-      <p className="mt-3"><a href="/materialy-psychologiczne/#diagnoza">Lista pytań przed diagnostyką</a></p>
-    </section>}
+    <AssessmentPanel id={id}/>
     {category === 'diagnosis' && <nav className="page-toc diagnostic-toc" aria-label="Spis treści diagnozy"><ol>{sections.map(([title],index)=><li key={title}><a href={`#etap-${index+1}`}>{title}</a></li>)}</ol></nav>}
     {sections.map(([title,content],index) => <section key={title} id={category==='diagnosis'?`etap-${index+1}`:undefined}><h2>{title}</h2>{content}</section>)}
+    {(id === 'general' || id === 'personality') && <section><h2>Jak się przygotować do diagnozy?</h2>
+      <p>{id === 'general' ? 'Zapisz jedno pytanie, na które chcesz uzyskać odpowiedź, oraz przykłady trudności: kiedy się zaczęły, gdzie występują i co się wtedy zmieniło.' : 'Przypomnij sobie konkretne sytuacje, które powtarzają się w relacjach lub wpływają na obraz siebie. Pomaga przykład aktualny i taki z wcześniejszego okresu. Nie trzeba samodzielnie dobierać testów ani rozpoznania.'} Pomocna może być <a href="/materialy-psychologiczne/#diagnoza">karta przygotowania do diagnozy</a>.</p>
+    </section>}
     {'faq' in entry && <section><h2>Najczęściej zadawane pytania</h2><Questions items={entry.faq}/></section>}
     <RelatedContent path={href}/>
     {category === 'diagnosis' && <section className="diagnostic-note"><h2>Powiązane ścieżki diagnostyczne</h2><ul>
-      {diagnosticKeys.filter(key=>key!==id).map(key=><li key={key}><a href={services[key].href}>{services[key].name}</a></li>)}
+      {assessmentKeys.filter(key=>key!==id).map(key=><li key={key}><a href={services[key].href}>{services[key].name}</a></li>)}
       <li><a href={services.diagnostic.href}>Czym jest konsultacja diagnostyczna?</a></li>
     </ul></section>}
-    <section><h2>{category === 'diagnosis' ? 'Kontakt w sprawie diagnozy' : 'Informacje praktyczne'}</h2>
+    <section><h2>{category === 'diagnosis' ? 'Kontakt i konsultacja' : id === 'eduAdhd' ? 'Jak umówić spotkanie?' : 'Informacje praktyczne'}</h2>
       {audience && <p>{audience}.</p>}
-      {rate ? <p>Potwierdzona stawka za spotkanie: {rate.price} zł / {rate.duration}. Więcej informacji w <a href="/cennik/">cenniku</a>.</p> : category === 'diagnosis' ? <p>Gabinet: {config.address}. Przed umówieniem diagnozy proszę zapytać o zakres wiekowy, tryb, przebieg, dostępne podsumowanie i koszt. Stawka standardowej konsultacji nie jest ceną procesu diagnostycznego.</p> : null}
-      <p>{initialBooking ? <a className="booking" href={initialBooking} rel="noreferrer">{id === 'individual' ? 'Umów konsultację wstępną' : 'Umów konsultację'}</a> : <a className="booking" href={paths.contact}>{status === 'guide' ? 'Skontaktuj się z gabinetem' : 'Zapytaj o spotkanie'}</a>}</p>
+      {rate ? <p>Potwierdzona stawka za spotkanie: {rate.price} zł / {rate.duration}. Więcej informacji w <a href="/cennik/">cenniku</a>.</p> : category === 'diagnosis' ? <p>{assessmentTerms} Przed rozpoczęciem oceny można ustalić jej zakres, koszt i formę podsumowania. Jeśli nie wiesz, od czego zacząć, możesz umówić standardową konsultację psychologiczną — nie jest to rezerwacja diagnozy.</p> : null}
+      <p>{initialBooking ? <a className="booking" href={initialBooking} rel="noreferrer">{id === 'individual' ? 'Umów konsultację wstępną' : 'Umów konsultację'}</a> : category === 'diagnosis' ? <><a className="booking" href={services.consult.bookingUrl ?? services.consult.href} rel="noreferrer">Umów standardową konsultację</a>{' · '}<a href={paths.contact}>Kontakt w sprawie diagnozy</a></> : <a className="booking" href={paths.contact}>{status === 'guide' ? 'Skontaktuj się z gabinetem' : 'Zapytaj o spotkanie'}</a>}</p>
     </section>
   </main>;
 }

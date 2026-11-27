@@ -1,3 +1,4 @@
+import RelatedContent from '../../../components/RelatedContent';
 import {standalonePublication} from '../../../lib/blog-publication';
 import {withArticleContents} from '../../../components/ArticleContents';
 import { contextLinks } from '../../../lib/context-links';
@@ -51,6 +52,7 @@ export default function Page() {
         <ArticleByline/>
       <p className="mt-4 text-sm text-ink/70">11 sierpnia 2026 <ReadingTime minutes={readingMinutes(body)}/></p>
         {layout.contents}{layout.body}
+        <RelatedContent path="/blog/relacja-terapeutyczna-zrodlo-zmiany/"/>
     </main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>

@@ -24,3 +24,15 @@ export const blogReading: Record<string, Reference[]> = {
     { author: 'Park, Y. i MacDonald, G.', year: 2019, title: 'Consistency between individuals’ past and current romantic partners’ own reports of their personalities', publisher: 'Proceedings of the National Academy of Sciences', href: 'https://doi.org/10.1073/pnas.1902937116' },
   ],
 };
+
+const niceAdhd = blogReading['adhd-u-doroslych'][0];
+const aqas = blogReading['adhd-u-doroslych'][1];
+const icd:Reference = {author:'World Health Organization',year:2024,title:'Clinical descriptions and diagnostic requirements for ICD-11 mental, behavioural and neurodevelopmental disorders',publisher:'WHO',href:'https://www.who.int/publications/i/item/9789240077263'};
+const alliance = blogReading['relacja-terapeutyczna-zrodlo-zmiany'][0];
+Object.assign(blogReading,{
+  'jak-przygotowac-sie-do-diagnozy-adhd':[niceAdhd,aqas],
+  'cechy-borderline-a-zaburzenie-osobowosci':[icd,{author:'Bach, B. i First, M. B.',year:2018,title:'Application of the ICD-11 classification of personality disorders',publisher:'BMC Psychiatry',href:'https://doi.org/10.1186/s12888-018-1908-3'}],
+  'adhd-a-borderline-u-doroslych':[niceAdhd,icd,{author:'Weiner, L., Perroud, N. i Weibel, S.',year:2019,title:'Attention Deficit Hyperactivity Disorder and Borderline Personality Disorder in Adults: A Review of Their Links and Risks',publisher:'Neuropsychiatric Disease and Treatment',href:'https://doi.org/10.2147/NDT.S192871'}],
+  'jak-rozpoznac-postepy-w-psychoterapii':[alliance,{author:'Lambert, M. J., Whipple, J. L. i Kleinstäuber, M.',year:2018,title:'Collecting and Delivering Progress Feedback: A Meta-Analysis of Routine Outcome Monitoring',publisher:'Psychotherapy',href:'https://doi.org/10.1037/pst0000167'}],
+  'czy-mozna-zloscic-sie-na-psychoterapeute':[gabbard,{author:'Eubanks, C. F., Muran, J. C. i Safran, J. D.',year:2018,title:'Alliance Rupture Repair: A Meta-Analysis',publisher:'Psychotherapy',href:'https://doi.org/10.1037/pst0000185'}],
+} satisfies Record<string,Reference[]>);

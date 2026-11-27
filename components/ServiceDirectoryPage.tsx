@@ -1,3 +1,4 @@
+import AssessmentPanel from './AssessmentPanel';
 import { services, offerPath, type ServiceKey } from '../lib/services';
 import type { ReactNode } from 'react';
 import { config } from '../lib/config';
@@ -99,7 +100,8 @@ function Therapist() {
 function Diagnostic() {
   return <>
     <p className="hero-copy">Rozpoznanie, jak trudności wpływają na życie, to nie to samo co postawienie formalnej diagnozy. Ta strona wyjaśnia rolę rozmowy wstępnej. Taka konsultacja nie zastępuje procesu diagnostycznego i nie jest osobną pozycją do rezerwacji na tej stronie.</p>
-    <section className="diagnostic-note"><h2>Co zrobić przed spotkaniem?</h2><p>Jeżeli chodzi o omówienie kierunku dalszej oceny, punktem wyjścia jest standardowa konsultacja. Gdy celem jest pełna diagnoza lub dokument do określonego celu, proszę najpierw <a href={paths.contact}>skontaktować się z gabinetem</a> i ustalić zakres, koszt oraz dostępność. Pomocna może być <a href="/materialy-psychologiczne/#diagnoza">lista pytań do przygotowania</a>.</p></section>
+    <AssessmentPanel id="diagnostic"/>
+    <Section title="Jak się przygotować?"><p>Zapisz, czego chcesz się dowiedzieć, i przypomnij sobie konkretny przykład z codzienności. Możesz skorzystać z <a href="/materialy-psychologiczne/#diagnoza">listy pytań przed diagnostyką</a>.</p></Section>
     <Section title="Kiedy potrzebne jest pogłębienie obrazu trudności?">
       <p>Na przykład gdy <a href="/w-czym-pomagam/trudnosci-ze-snem/">problemy ze snem</a>, napięcie i wycofywanie się z kontaktów pojawiły się równocześnie, a nie jest jasne, od czego zacząć. Dla dorosłych i młodzieży od 15. roku życia punktem wyjścia w tym gabinecie jest <a href={paths.consult}>konsultacja psychologiczna</a>.</p>
     </Section>
@@ -110,13 +112,13 @@ function Diagnostic() {
       <p>Na zwykłej konsultacji można rozmawiać szerzej o aktualnej sytuacji i oczekiwanej pomocy. Rozmowa ukierunkowana diagnostycznie służy przede wszystkim określeniu pytania do oceny. Nie należy oczekiwać, że pojedyncze spotkanie wystarczy do rozpoznania. Pogłębiona ocena może wymagać analizy historii objawów i porównania kilku możliwych wyjaśnień.</p>
     </Section>
     <Section title="Jakie formy pogłębionej diagnostyki prowadzę?">
-      <p>Prowadzę <a data-context-link href={services.general.href}>ogólną diagnozę psychologiczną</a>, <a data-context-link href={services.personality.href}>diagnozę osobowości</a> oraz <a data-context-link href={services.adhd.href}>diagnozę ADHD</a>. Każda odpowiada na inne pytania. Zakres i przebieg warto omówić z gabinetem przed spotkaniem.</p>
+      <p>Prowadzę <a data-context-link href={services.general.href}>ogólną diagnozę psychologiczną</a>, <a data-context-link href={services.personality.href}>diagnozę osobowości</a> oraz <a data-context-link href={services.adhd.href}>diagnozę ADHD</a>. Każda odpowiada na inne pytania.</p>
     </Section>
     <Section title="Najczęściej zadawane pytania"><Questions items={[
       ['Czy rozmowa kończy się rozpoznaniem?', 'Nie jest to usługa formalnej diagnozy. Można omówić, czy potrzebna będzie odrębna ocena i gdzie jej szukać.'],
       ['Czy trzeba samodzielnie wybrać specjalistę przed zgłoszeniem?', 'Jeżeli kierunek nie jest jasny, można zapytać o niego na standardowej konsultacji psychologicznej.'],
     ]}/></Section>
-    <Practical orientational/>
+    <Section title="Umów standardową konsultację"><p><Booking/></p></Section>
   </>;
 }
 function Counselling() {

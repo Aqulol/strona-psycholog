@@ -39,6 +39,7 @@ export default async function Page({ params }: Props) {
   const date = a.published && new Intl.DateTimeFormat('pl-PL', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(a.published));
   const {body,contents} = withArticleContents(contextLinks(path,a.body));
   const editorialByline = 'editorialByline' in a && a.editorialByline === true;
+  const linkLabel = 'linkLabel' in a ? a.linkLabel : undefined;
   const consultation = consultationLinks[a.slug];
   return <main id="tresc" className="reading article-editorial">
     <Crumbs path={path} title={a.title}/>
@@ -51,8 +52,9 @@ export default async function Page({ params }: Props) {
       {consultation && <p className="mt-6">Jeśli temat dotyczy Pana/Pani sytuacji, można przeczytać, <a href={consultation[0]}>{consultation[1]}</a>.</p>}
       {a.slug === 'tfp-dla-kogo' && <p>Na pytanie, jak ocenia się funkcjonowanie osobowości, odpowiadam osobno w opisie <a data-context-link href={services.personality.href}>diagnozy osobowości</a>. Sama ocena nie przesądza, czy proponowana psychoterapia będzie odpowiednia.</p>}
       <BlogReading slug={a.slug}/>
+      {linkLabel && <p><a href={a.link}>{linkLabel}</a>.</p>}
     </article>
     <RelatedContent path={path}/>
-    <SeeAlso links={[[a.link, editorialByline ? 'Jak wygląda pomoc dla młodzieży od 15. roku życia' : a.slug === 'adhd-u-doroslych' ? 'Diagnoza ADHD we Wrocławiu' : a.sections ? 'Więcej o tym, jak pracuję' : 'Psychoterapia indywidualna dorosłych'], [paths.faq, 'Pytania przed konsultacją']]}/>
+    <SeeAlso links={[...(!linkLabel ? [[a.link, editorialByline ? 'Jak wygląda pomoc dla młodzieży od 15. roku życia' : a.slug === 'adhd-u-doroslych' ? 'Diagnoza ADHD we Wrocławiu' : a.sections ? 'Więcej o tym, jak pracuję' : 'Psychoterapia indywidualna dorosłych'] as [string,string]] : []), [paths.faq, 'Pytania przed konsultacją']]}/>
   </main>;
 }

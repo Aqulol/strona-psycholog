@@ -1,7 +1,7 @@
 import {officeId} from '../../lib/entities';
 import {Crumbs} from '../../components/Site';
 import {details,meta} from '../../lib/site';
-import { priceServices, services } from '../../lib/services';
+import { assessmentKeys, assessmentTerms, priceServices, services } from '../../lib/services';
 import { config } from '../../lib/config';
 
 export const metadata=meta('/cennik/','Psycholog Wrocław - cennik konsultacji i terapii','Sprawdź cenę konsultacji psychologicznej i sesji psychoterapii we Wrocławiu lub online. Dowiedz się, jak zapytać o koszt osobnej diagnozy i psychoedukacji.');
@@ -74,9 +74,9 @@ export default function CennikPage() {
         </div>
 
         <section className="diagnostic-note"><h2>Dodatkowe usługi: ustalenie kosztu</h2>
-          <p>Stawka za pojedynczą konsultację nie stanowi ceny procesu diagnostycznego. Informacje o opłatach i czasie proszę ustalić z gabinetem przed spotkaniem.</p>
+          <p>{assessmentTerms}</p>
           <p><a href={services.diagnostic.href}>Konsultacja ukierunkowana diagnostycznie</a> to rozmowa o kierunku oceny, a nie z góry wyceniony pakiet ani osobna pozycja w rezerwacji. Cenę i czas psychoedukacji trzeba ustalić niezależnie od stawek powyżej.</p>
-          <ul>{(['general','personality','adhd','edu','eduAdhd'] as const).map(key=><li key={key}><a href={services[key].href}>{services[key].name}</a></li>)}</ul>
+          <ul>{([...assessmentKeys,'edu','eduAdhd'] as const).map(key=><li key={key}><a href={services[key].href}>{services[key].name}</a>{services[key].assessment?.fee && ` — ${services[key].assessment.fee}`}</li>)}</ul>
         </section>
         <p className="mt-8 text-lg leading-8 text-ink/80">
           {details}
