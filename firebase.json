@@ -359,11 +359,6 @@
         "type": 301
       },
       {
-        "source": "/materialy-psychologiczne.html",
-        "destination": "/materialy-psychologiczne/",
-        "type": 301
-      },
-      {
         "source": "/o-mnie.html",
         "destination": "/o-mnie/",
         "type": 301
@@ -1165,15 +1160,6 @@
       }
     ],
     "headers": [
-      {
-        "source": "/materialy/karty-psychologiczne.pdf",
-        "headers": [
-          {
-            "key": "X-Robots-Tag",
-            "value": "noindex"
-          }
-        ]
-      },
       {
         "source": "**",
         "headers": [

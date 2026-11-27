@@ -4,6 +4,8 @@ Strona pozostaje na Firebase. Next.js jest potrzebny tylko podczas budowania. Fo
 
 Lokalny podgląd po `npm ci && npm run build`: `npm run preview` (statyczny HTTP; nie `next start`). Formularz korzysta z osobnego Workera i Resend po konfiguracji. Pomiar konwersji jest wyłączony w zwykłym buildzie; [warunki ewentualnego uruchomienia](docs/audyt-koncowy/POMIAR.md). Booksy to osobna decyzja użytkownika, nie statystyka strony.
 
+Baza wiedzy obejmuje blog, słownik i informacje dla pacjentów; katalog trudności oraz FAQ nadal są dostępne. Witryna nie publikuje dedykowanych kart do pobrania ani interaktywnych narzędzi psychoedukacyjnych. Psychoedukacja nadal jest usługą gabinetu.
+
 ## 1. Zabezpiecz obecną wersję
 
 1. W konsoli Firebase projektu `psychologplebaniak-e4480` wejdź w **Hosting → Historia wersji**. Zapisz, która wersja jest obecnie aktywna. Tam można ją przywrócić poleceniem **Rollback**.
