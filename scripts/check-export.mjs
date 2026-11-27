@@ -219,3 +219,20 @@ for (const [selector, hub] of [['Psycholog','/psycholog-wroclaw/'],['Psychoterap
   assert.ok(homepage.includes(`<a href="${hub}">${selector}</a><button type="button" aria-label="Podmenu: ${selector}" aria-expanded="false" aria-controls="`));
 }
 console.log('Offer catalogue: diagnosis links, guarded prices/bookings, informational routes and split menu controls checked.');
+
+const therapyService = '/psychoterapia-indywidualna-wroclaw/';
+const therapyReferences = ['/psychoterapia-psychodynamiczna-wroclaw/', '/terapia-skoncentrowana-na-przeniesieniu-tfp/', '/psychoterapia-online/'];
+for (const path of therapyReferences) {
+  const main = read(file(path)).match(/<main\b[\s\S]*?<\/main>/)?.[0];
+  assert.ok(main);
+  assert.doesNotMatch(main, /"@type":"(?:Service|Offer)"/, `${path}: educational page, not a separate therapy offer`);
+}
+assert.match(read(file(therapyService)), /"@type":"Service","@id":"https:\/\/psychologplebaniak\.pl\/psychoterapia-indywidualna-wroclaw\/#usluga"/);
+for (const html of [homepage, offerHtml]) {
+  const cards = [...html.matchAll(/<article[^>]*data-therapy-card="true"[^>]*>([\s\S]*?)<\/article>/g)];
+  assert.equal(cards.length, 1);
+  assert.equal((cards[0][1].match(/href="https:\/\/booksy\.com\//g) || []).length, 1);
+  assert.match(cards[0][1], /Umów konsultację wstępną/);
+  for (const path of [therapyService,...therapyReferences]) assert.ok(cards[0][1].includes(`href="${path}"`));
+}
+console.log('Therapy: one offer with method, approach and delivery links; one initial consultation CTA per card.');

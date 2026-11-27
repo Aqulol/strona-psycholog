@@ -16,6 +16,7 @@ export function editorialMetadata(id:EditorialKey) {
 }
 export default function EditorialServicePage({id}:{id:EditorialKey}) {
   const {href,name,status,category,icon,rate,bookingUrl,audience} = services[id];
+  const initialBooking = id === 'individual' ? services.consult.bookingUrl : bookingUrl;
   const {h1,description,intro,sections} = fields(id);
   const entry = editorial[id];
   return <main id="tresc" className="reading">
@@ -34,7 +35,7 @@ export default function EditorialServicePage({id}:{id:EditorialKey}) {
     <section><h2>{category === 'diagnosis' ? 'Kontakt w sprawie diagnozy' : 'Informacje praktyczne'}</h2>
       {audience && <p>{audience}.</p>}
       {rate ? <p>Potwierdzona stawka za spotkanie: {rate.price} zł / {rate.duration}. Więcej informacji w <a href="/cennik/">cenniku</a>.</p> : category === 'diagnosis' ? <p>Gabinet: {config.address}. Przed umówieniem diagnozy proszę zapytać o zakres wiekowy, tryb, przebieg, dostępne podsumowanie i koszt. Stawka standardowej konsultacji nie jest ceną procesu diagnostycznego.</p> : null}
-      <p>{bookingUrl ? <a className="booking" href={bookingUrl} rel="noreferrer">Umów konsultację</a> : <a className="booking" href={paths.contact}>{status === 'guide' ? 'Skontaktuj się z gabinetem' : 'Zapytaj o spotkanie'}</a>}</p>
+      <p>{initialBooking ? <a className="booking" href={initialBooking} rel="noreferrer">{id === 'individual' ? 'Umów konsultację wstępną' : 'Umów konsultację'}</a> : <a className="booking" href={paths.contact}>{status === 'guide' ? 'Skontaktuj się z gabinetem' : 'Zapytaj o spotkanie'}</a>}</p>
     </section>
   </main>;
 }

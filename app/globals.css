@@ -305,3 +305,4 @@ p > .reading-time:not(:first-child) { margin-inline-start:.7rem; }
 .offer-shell.reading { width:min(100% - 2.5rem,76rem); }
 .offer-shell > .hero-copy { max-width:49rem; }
 @media(min-width:72rem) { .nav-submenu { max-height:min(75dvh,38rem); overflow-y:auto; } }
+.offer-section > [data-therapy-card] { max-width:44rem; }
