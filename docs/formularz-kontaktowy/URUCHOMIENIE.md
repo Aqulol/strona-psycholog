@@ -1,3 +1,5 @@
+> Dokument historyczny. Aktualne czynności opisuje [instrukcja produkcyjna](../URUCHOMIENIE-PRODUKCYJNE.md). Odbiorca jest obecnie stały w kodzie Workera; nie ustawiaj `MAIL_TO`.
+
 # Formularz kontaktowy — stan i uruchomienie (PowerShell)
 
 ## Ustalenia

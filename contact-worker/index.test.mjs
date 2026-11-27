@@ -6,7 +6,7 @@ const URL = 'https://gabinet-kontakt.test.workers.dev/kontakt';
 const origin = 'https://psychologplebaniak.pl';
 const payload = {name:'Test techniczny',email:'test@example.test',phone:'',subject:'',message:'Test bez danych osobowych',website:''};
 const allow = {limit:async()=>({success:true})};
-const env = {SITE_ORIGIN:origin,RESEND_API_KEY:'intentionally-invalid-test-value', MAIL_FROM:'formularz@example.test',MAIL_TO:'skrzynka@example.test',PER_IP:allow,SEND_BUDGET:allow};
+const env = {SITE_ORIGIN:origin,RESEND_API_KEY:'intentionally-invalid-test-value', MAIL_FROM:'formularz@example.test',PER_IP:allow,SEND_BUDGET:allow};
 const request = (body=JSON.stringify(payload), headers={}) => new Request(URL,{method:'POST',headers:{Origin:origin,'CF-Connecting-IP':'192.0.2.1','Content-Type':'application/json',...headers},body});
 
 async function rejected(req, config, status) {
@@ -52,7 +52,7 @@ test('mail API refusal, quota exhaustion and malformed receipts never report suc
     const mock = t.mock.method(globalThis,'fetch',async(url, options)=>{
       assert.equal(url,'https://api.resend.com/emails');
       const body = JSON.parse(options.body);
-      assert.deepEqual(body.to,[env.MAIL_TO]);
+      assert.deepEqual(body.to,['gpplebaniak@gmail.com']);
       assert.equal(body.reply_to,payload.email);
       assert.ok(body.text.includes(payload.message));
       assert.ok(!options.body.includes('192.0.2.1'));
@@ -70,7 +70,7 @@ test('only a provider acceptance receipt yields success; outbound mail is fixed 
     assert.equal(url,'https://api.resend.com/emails');
     assert.equal(options.redirect,'error');
     assert.deepEqual(JSON.parse(options.body),{
-      from:env.MAIL_FROM,to:[env.MAIL_TO],reply_to:unique.email,
+      from:env.MAIL_FROM,to:['gpplebaniak@gmail.com'],reply_to:unique.email,
       subject:'Wiadomość z formularza gabinetu',
       text:`Imię: ${unique.name}\nE-mail: ${unique.email}\nTelefon: ${unique.phone}\nTemat: ${unique.subject}\n\n${unique.message}`,
     });

@@ -1,12 +1,12 @@
 import { config } from '../lib/config';
 import ContactForm from './ContactForm';
-import BooksyCalendar from './BooksyCalendar';
+import BookingLink from './BookingLink';
 
 export default function BookingAndContact() {
   return <div className="home-pair booking-contact-layout mt-6">
     <section className="editorial-card">
-      <h3>Kalendarz Booksy</h3>
-      <BooksyCalendar/>
+      <h3>Umów konsultację</h3>
+      <BookingLink/>
     </section>
     <section className="editorial-card">
       <h3>Formularz kontaktowy</h3>

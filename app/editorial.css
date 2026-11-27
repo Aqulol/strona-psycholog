@@ -352,9 +352,6 @@ main.container.article-editorial {padding-inline:var(--gutter);}
 .editorial-home .home-topic-links a{display:inline-block;padding-block:.075rem;line-height:1.55}
 .editorial-home .questions summary{min-height:44px;padding-block:.55rem}
 .home-latest .journal-grid{gap:.35rem 1.25rem}
-.booksy-fallback-note{color:var(--muted);font-size:.875rem;margin:.25rem 0 .55rem}
-.booksy-slot[data-status=failed]{height:auto;min-height:0}
-.booksy-slot[data-status=failed] .booksy-loading{position:static}
 @media(max-width:40rem){
  .editorial-home .hero-photo{width:min(100%,17.75rem)}
  .editorial-home .trust-band ul{gap:.42rem;padding-block:.7rem}
@@ -369,3 +366,5 @@ main.container.article-editorial {padding-inline:var(--gutter);}
 .assessment-panel dt {font-weight:650;color:var(--deep)}
 .assessment-panel dd {margin:0}
 @media(min-width:40rem){.assessment-panel dl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.practice-booking p:first-child svg {display:inline-block;vertical-align:middle;margin-inline-end:.35rem;color:var(--deep)}

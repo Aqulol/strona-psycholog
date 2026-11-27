@@ -4,7 +4,7 @@ import { paths } from '../lib/site';
 import { config } from '../lib/config';
 import { guidePath } from '../lib/knowledge';
 import { Booking } from './Site';
-import { categoryNames, categoryServices, offerPath, services, type Category, type ServiceKey } from '../lib/services';
+import { adhdAssessment, adhdDuration, psychoeducationTerms, categoryNames, categoryServices, offerPath, services, type Category, type ServiceKey } from '../lib/services';
 
 const icons = {
   dialogue:MessagesSquare, compass:Compass, fileSearch:FileSearch, analysis:FileChartColumn, profile:Fingerprint,
@@ -40,19 +40,20 @@ export function ServiceCards({ cards }: { cards: readonly ServiceKey[] }) {
       <ServiceIcon name={icon}/><h3><a href={href}>{name}</a></h3><p>{description}</p>
       {audience && <p className="offer-meta">{audience}</p>}
       {rate && <p className="offer-meta">{rate.price} zł / {rate.duration}</p>}
+      {key === 'adhd' && <p className="offer-meta">{adhdAssessment.price} zł · {adhdDuration}</p>}
       <div className="offer-actions"><a className="text-link" href={href} aria-label={`Szczegóły: ${name}`}>Szczegóły <span aria-hidden="true">↗</span></a>
-      <a className="text-link" href={bookingUrl ?? paths.contact} rel={bookingUrl ? 'noreferrer' : undefined}>{bookingUrl ? 'Umów konsultację' : 'Zapytaj o spotkanie'}</a></div>
+      {services[key].category !== 'education' && <a className="text-link" href={bookingUrl ?? paths.contact} rel={bookingUrl ? 'noreferrer' : undefined}>{bookingUrl ? 'Umów konsultację' : 'Zapytaj o spotkanie'}</a>}</div>
     </article>;
   })}</div>;
 }
 export function OfferGroups({categories, compact = false}: {categories:readonly Category[];compact?:boolean}) {
   return <>{categories.map(category => {
-    const keys = categoryServices[category].filter(key => services[key].status === 'provided');
+    const keys = categoryServices[category].filter(key => category === 'education' || services[key].status === 'provided');
     const Icon = groupIcons[category];
     return <section className="offer-section" key={category} id={`oferta-${category}`}>
       <div className="offer-section-title"><span className="service-icon"><Icon size={22} aria-hidden="true"/></span><h2>{categoryNames[category]}</h2></div>
       {category === 'diagnosis' && <p>Trzy odrębne ścieżki oceny. Zakres i sprawy organizacyjne warto ustalić przed umówieniem spotkania.</p>}
-      {category === 'education' && <p>Indywidualne spotkania pomagające odnieść wiedzę psychologiczną do codziennych doświadczeń.</p>}
+      {category === 'education' && <p>{psychoeducationTerms}</p>}
       {category === 'support' && <p>Planowa pomoc w bieżących trudnościach i ustaleniu kolejnego kroku.</p>}
       {category === 'therapy' ? <TherapyCard/> : compact ? <ul>{keys.map(key => <li key={key}><a href={services[key].href}>{services[key].name}</a></li>)}</ul> : <ServiceCards cards={keys}/>}
       {category === 'online' && <p>Ta sama <a href={services.individual.href}>psychoterapia indywidualna</a> może odbywać się na odległość. <a href={services.onlineTherapy.href}>Jak działają sesje online?</a></p>}
@@ -77,13 +78,13 @@ const homeGroups = [
     category: 'diagnosis',
     title: categoryNames.diagnosis,
     description: 'Ocena psychologiczna pomaga lepiej zrozumieć zgłaszane trudności oraz ich możliwe przyczyny.',
-    items: [<ServiceLink service="general"/>, <ServiceLink service="personality"/>, <ServiceLink service="adhd"/>],
+    items: [<ServiceLink service="general"/>, <ServiceLink service="personality"/>, <><ServiceLink service="adhd"/> – {adhdAssessment.price} zł za {adhdAssessment.meetings} spotkania</>],
     details: [`${offerPath}#oferta-diagnosis`, 'Więcej o diagnostyce'],
   },
   {
     category: 'education',
     title: categoryNames.education,
-    description: 'Indywidualne spotkania, podczas których odnosimy wiedzę psychologiczną do Twoich emocji, potrzeb i codziennych sytuacji.',
+    description: psychoeducationTerms,
     items: [<ServiceLink service="eduAdhd"/>, 'Rozumienie emocji i własnych reakcji', 'Rozumienie własnych relacji'],
     details: [services.edu.href, 'Więcej o psychoedukacji'],
   },

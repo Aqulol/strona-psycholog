@@ -5,7 +5,7 @@ import { servicePaths } from './service-paths';
 
 const menuItems = (keys:readonly ServiceKey[]) => keys.map(key => {
   const {href,name,status} = services[key];
-  return { href, name, guide:status === 'guide' };
+  return { href, name, guide:status === 'guide' || services[key].category === 'education' };
 });
 export type MenuItem = ReturnType<typeof menuItems>[number];
 export type NavigationGroup = {label:string;href:string} & ({ columns:{label:string;href:string;items:MenuItem[]}[] } | { items:MenuItem[] });

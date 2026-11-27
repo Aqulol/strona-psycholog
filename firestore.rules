@@ -1,18 +1,8 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Staff access via Firebase Console IAM, never via browser SDK.
-    match /messages/{messageId} {
-      allow read, write: if false;
-    }
-    match /blogPosts/{postId} {
-      allow read: if true;
-    }
-    match /opinions/{opinionId} {
-      allow read: if true;
-    }
-    match /terms/{termId} {
-      allow read: if true;
-    }
+    // The static site and its mail Worker do not use Firestore.
+    // Administratively authorized server access is governed by IAM, not these rules.
+    match /{document=**} { allow read, write: if false; }
   }
 }

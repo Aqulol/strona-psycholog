@@ -119,8 +119,8 @@ for (const path of helpPaths) {
   assert.ok(html.includes(`href="${helpIndexPath}"`), `${path}: backlink to catalog`);
   assert.match(html, /"@type":"BreadcrumbList"/);
   assert.match(html, /name="referrer" content="no-referrer"/);
-  assert.doesNotMatch(html, /<iframe\b/i, `${path}: Booksy must not load before activation`);
-  assert.match(html, /Ustawienia prywatności/);
+  assert.doesNotMatch(html, /<iframe\b/i, `${path}: Booksy must never be embedded`);
+  assert.match(html, /Sprawdź dostępne terminy/);
   assert.doesNotMatch(html, /name="robots" content="[^\"]*noindex/);
   assert.match(html, /href="https:\/\/booksy\.com\/pl-pl\/357056_[^"?]+" rel="noreferrer"/);
 }
@@ -222,9 +222,10 @@ for (const path of diagnosisRoutes) {
   const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0];
   assert.ok(main);
   assert.match(main, /"@type":"Service"/);
-  assert.doesNotMatch(main, /"@type":"Offer"/, `${path}: no unconfirmed diagnostic rate`);
+  if (path === diagnosisRoutes[2]) assert.match(main, /"@type":"Offer","price":700/);
+  else assert.doesNotMatch(main, /"@type":"Offer"/, `${path}: no unconfirmed diagnostic rate`);
   const bookings = [...main.matchAll(/<a[^>]+href="https:\/\/booksy\.com\/pl-pl\/357056_[^"?]+" rel="noreferrer">([^<]+)<\/a>/g)];
-  assert.deepEqual(bookings.map(match => match[1]), ['Umów standardową konsultację'], `${path}: no claim of direct diagnostic booking`);
+  assert.deepEqual(bookings.map(match => match[1]), [path === diagnosisRoutes[2] ? 'Sprawdź terminy pierwszej konsultacji' : 'Umów standardową konsultację'], `${path}: no claim of direct diagnostic booking`);
   assert.equal((main.match(/href="https:\/\/booksy\.com\//g) ?? []).length, 1);
   assert.match(main, /href="\/kontakt\/"/);
   assert.ok(offerMain.includes(`href="${path}"`), `${path}: visible catalogue link`);
@@ -244,7 +245,7 @@ console.log('Offer catalogue: diagnosis links, guarded prices/bookings, informat
 const therapyService = '/psychoterapia-indywidualna-wroclaw/';
 const therapyReferences = ['/psychoterapia-psychodynamiczna-wroclaw/', '/terapia-skoncentrowana-na-przeniesieniu-tfp/', '/psychoterapia-online/'];
 for (const path of therapyReferences) {
-  const main = read(file(path)).match(/<main\b[\s\S]*?<\/main>/)?.[0];
+  const main = read(file(path)).replaceAll('<!-- -->','').match(/<main\b[\s\S]*?<\/main>/)?.[0];
   assert.ok(main);
   assert.doesNotMatch(main, /"@type":"(?:Service|Offer)"/, `${path}: educational page, not a separate therapy offer`);
 }
@@ -270,4 +271,18 @@ for (const [html, className, heading] of [[homepage, 'home-facts home-knowledge-
 }
 for (const destination of ['/faq/', '/kiedy-zglosic-sie-na-terapie/']) {
   assert.ok(knowledgeHub.match(/<main\b[\s\S]*?<\/main>/)?.[0].includes(`href="${destination}"`));
+}
+
+// Existing booking placements only; no third-party frames or consent gate.
+for (const path of ['/', '/kontakt/', ...helpPaths]) {
+  const html = read(file(path));
+  assert.equal((html.match(/class="practice-booking"/g) ?? []).length,1,`${path}: one booking card`);
+  assert.match(html, /rel="noreferrer">Sprawdź dostępne terminy<\/a>/);
+  assert.doesNotMatch(html, /booksy\.com\/widget|gabinet-booksy-consent/);
+}
+for (const path of ['/', '/kontakt/', '/o-mnie/']) {
+  const main = read(file(path)).replaceAll('<!-- -->','').match(/<main\b[\s\S]*?<\/main>/)?.[0] ?? '';
+  for (const label of ['Booksy','ZnanyLekarz','TwójPsycholog','Psycheo','Facebook','Instagram']) {
+    assert.ok(main.includes(`rel="noreferrer">${label} <svg`),`${path}: ${label} link with icon`);
+  }
 }

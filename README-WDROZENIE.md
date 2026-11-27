@@ -1,10 +1,12 @@
 # Wdrożenie strony psychologplebaniak.pl
 
+Aktualna instrukcja właściciela: [uruchomienie produkcyjne](docs/URUCHOMIENIE-PRODUKCYJNE.md).
+
 Strona pozostaje na Firebase. Next.js jest potrzebny tylko podczas budowania. Folder **`out/` to gotowa paczka HTML/CSS/JS i zdjęć**: każda podstrona ma swój `index.html`. Nie trzeba uruchamiać serwera Node na hostingu.
 
 Lokalny podgląd po `npm ci && npm run build`: `npm run preview` (statyczny HTTP; nie `next start`). Formularz korzysta z osobnego Workera i Resend po konfiguracji. Pomiar konwersji jest wyłączony w zwykłym buildzie; [warunki ewentualnego uruchomienia](docs/audyt-koncowy/POMIAR.md). Booksy to osobna decyzja użytkownika, nie statystyka strony.
 
-Baza wiedzy obejmuje blog, słownik i informacje dla pacjentów; katalog trudności oraz FAQ nadal są dostępne. Witryna nie publikuje dedykowanych kart do pobrania ani interaktywnych narzędzi psychoedukacyjnych. Psychoedukacja nadal jest usługą gabinetu.
+Baza wiedzy obejmuje blog, słownik i informacje dla pacjentów; katalog trudności oraz FAQ nadal są dostępne. Witryna nie publikuje dedykowanych kart do pobrania ani interaktywnych narzędzi psychoedukacyjnych. Psychoedukacja jest metodą stosowaną podczas konsultacji i psychoterapii.
 
 ## 1. Zabezpiecz obecną wersję
 
@@ -44,7 +46,7 @@ Pobierz kopię starego katalogu publicznego przez menedżer plików lub SFTP, a 
 
 - Otwórz `/`, `/kontakt/`, `/cennik/`, `/polityka-prywatnosci/` i cztery zachowane artykuły. Sprawdź też stary adres `/blog/artykul-3/` (301) i losowy nieistniejący adres (404).
 - Na telefonie i komputerze sprawdź menu, podmenu, poruszanie się samą klawiaturą i powiększenie tekstu. W Lighthouse wykonaj pomiar mobilny na własnej domenie przed uznaniem wyniku >90 za osiągnięty. Sam build nie certyfikuje WCAG 2.2 AA.
-- Sprawdź link Booksy, wyświetlanie kalendarza po zgodzie na Booksy i przewinięciu oraz otwieranie mapy na żądanie, położenie znacznika oraz link pomocniczy ZnanyLekarz. Jeśli osadzenie Booksy nie działa po stronie dostawcy, wciąż dostępny jest bezpośredni link w nagłówku.
+- Sprawdź bezpośredni link Booksy, otwieranie mapy na żądanie, położenie znacznika i profile zawodowe. Witryna nie osadza Booksy.
 - Wyślij jedną uzgodnioną wiadomość testową bez danych osobowych, sprawdź rzeczywisty odbiór w skrzynce gabinetu i działanie `Reply-To`. Sprawdź błędny e-mail i zachowanie wpisanej treści przy awarii transportu. Nowe wiadomości nie trafiają do Firestore.
 - W Search Console zgłoś `https://psychologplebaniak.pl/sitemap.xml` i zbadaj nowe adresy. Upewnij się, że canonical wskazuje właściwy adres z końcowym ukośnikiem. Sprawdź podgląd udostępniania `og-image.png`.
 - Porównaj nazwę, adres, numer telefonu, opisy usług, grupy wiekowe, czas i ceny w Profilu Firmy w Google, Booksy i ZnanyLekarz. Sprawdź też kwalifikator statusu szkolenia.
