@@ -134,6 +134,13 @@ function Counselling() {
       ['Czy mogę przyjść z jedną konkretną sprawą?', 'Tak, można rozpocząć konsultację od jednej decyzji albo zmiany. Nie trzeba zobowiązywać się do psychoterapii.'],
       ['Czy mogę zarezerwować osobną wizytę poradniczą?', 'Przycisk prowadzi do standardowej konsultacji psychologicznej; nie wskazuje osobnej usługi poradniczej ani jej ceny.'],
     ]}/></Section>
+    <Section title="Bieżące trudności zawodowe i samopoznanie">
+      <p>W konsultacji można omówić zmianę lub utratę pracy, napięcie w rozmowie z przełożonym, presję osiągnięć albo trudność w odpoczynku, gdy praca przenosi się na wieczory. Rozmowa psychologiczna nie jest doradztwem zawodowym. Więcej o przewlekłym stresie i jego granicach piszę w materiale o <a data-context-link href="/w-czym-pomagam/wypalenie-zawodowe/">wypaleniu zawodowym</a>.</p>
+      <p>Rozpoznanie zaburzenia nie jest warunkiem rozmowy. W ramach <a data-context-link href="/w-czym-pomagam/zrozumienie-siebie/">lepszego rozumienia siebie</a> można przyjrzeć się własnym potrzebom, motywacjom i temu, dlaczego trudno wyrazić odmienne zdanie lub podjąć decyzję. Pomocny kontekst daje artykuł o <a data-context-link href="/blog/poczucie-wlasnej-wartosci/">poczuciu własnej wartości</a>.</p>
+    </Section>
+    <Section title="Wsparcie wokół jednej sprawy a pilna pomoc">
+      <p>Rozmowa może skupiać się na jednej aktualnej sprawie, np. rozstaniu lub przeciążeniu, bez zobowiązania do długoterminowej psychoterapii. Nie jest to osobna usługa ani gwarancja określonej liczby spotkań. Interwencja kryzysowa służy pomocy w nagłej sytuacji; gabinet nie prowadzi dyżuru interwencyjnego. Sprawdź <a data-context-link href="/pomoc-w-kryzysie/">gdzie szukać pilnej pomocy</a>.</p>
+    </Section>
     <Practical orientational/>
   </>;
 }

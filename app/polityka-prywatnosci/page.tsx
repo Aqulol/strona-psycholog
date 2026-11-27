@@ -1,7 +1,7 @@
 import {config} from '../../lib/config';
 import {Crumbs,SeeAlso} from '../../components/Site';
 import {meta,paths} from '../../lib/site';
-export const metadata=meta('/polityka-prywatnosci/','Polityka prywatności i cookies | Plebaniak','Zasady przetwarzania danych w gabinecie Grzegorza Plebaniaka: formularz, odbiorcy danych, pliki cookies, prawa osób i kontakt w sprawach prywatności.');
+export const metadata=meta('/polityka-prywatnosci/','Polityka prywatności i cookies | Plebaniak','Zasady przetwarzania danych w gabinecie Grzegorza Plebaniaka: kontakt, odbiorcy danych, pliki cookies, prawa osób i kontakt w sprawach prywatności.');
 
 export default function Page() {
   return (
@@ -35,7 +35,7 @@ export default function Page() {
       <p className="mt-3 leading-8">W zależności od formy kontaktu możemy przetwarzać następujące dane:</p>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Dane podane w formularzu kontaktowym</strong> - imię, adres e-mail lub numer telefonu oraz treść
+          <strong>Dane podane przy kontakcie</strong> - imię, adres e-mail lub numer telefonu oraz treść
           wiadomości.
         </li>
         <li className="leading-8">
@@ -43,7 +43,7 @@ export default function Page() {
         </li>
       </ul>
       <p className="mt-3 leading-8">
-        Formularz kontaktowy nie jest przeznaczony do przesyłania danych o zdrowiu. Proszę nie wpisywać ich w formularzu. Informacje o zdrowiu można omówić podczas pierwszej wizyty.
+        Kontakt organizacyjny nie służy do przesyłania danych o zdrowiu. Proszę nie przesyłać dokumentacji ani opisu objawów. Informacje o zdrowiu można omówić podczas pierwszej wizyty.
       </p>
 
       <h2 className="mt-8 text-3xl">Dane szczególnej kategorii (art. 9 RODO)</h2>
@@ -59,7 +59,7 @@ export default function Page() {
       <h2 className="mt-8 text-3xl">Cele i podstawy prawne</h2>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Odpowiedź na zapytanie i umówienie wizyty</strong> - art. 6 ust. 1 lit. a RODO (zgoda) w przypadku formularza; w przypadku kontaktu w sprawie zawarcia umowy poza formularzem art. 6 ust. 1 lit. b RODO.
+          <strong>Odpowiedź na zapytanie i umówienie wizyty</strong> - art. 6 ust. 1 lit. a RODO (zgoda) dla wcześniejszych wiadomości z formularza; w przypadku kontaktu w sprawie zawarcia umowy art. 6 ust. 1 lit. b RODO.
         </li>
         <li className="leading-8">
           <strong>Prowadzenie dokumentacji i rozliczeń, w tym wystawianie faktur</strong> - art. 6 ust. 1 lit. c RODO
@@ -75,7 +75,7 @@ export default function Page() {
       <p className="mt-3 leading-8">Z danych mogą korzystać wyłącznie podmioty, które wspierają prowadzenie gabinetu:</p>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Google LLC</strong> - hosting strony (Firebase), przechowywanie wiadomości z formularza (Firestore); dane mogą być przekazywane do Stanów Zjednoczonych;
+          <strong>Google LLC</strong> - hosting strony (Firebase), przechowywanie wcześniejszych wiadomości z formularza (Firestore); dane mogą być przekazywane do Stanów Zjednoczonych;
         </li>
         <li className="leading-8">
           <strong>Booksy</strong> - platforma, za pośrednictwem której można rezerwować wizyty online; dane podane
@@ -103,7 +103,7 @@ export default function Page() {
       <h2 className="mt-8 text-3xl">Okres przechowywania danych</h2>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Wiadomości z formularza kontaktowego</strong> - do czasu obsługi sprawy, nie dłużej niż 12 miesięcy
+          <strong>Wiadomości organizacyjne</strong> - do czasu obsługi sprawy, nie dłużej niż 12 miesięcy
           od ostatniego kontaktu.
         </li>
         <li className="leading-8">
@@ -147,7 +147,7 @@ export default function Page() {
       </p>
 
       <h2 className="mt-8 text-3xl">Cookies</h2>
-      <p className="mt-3 leading-8">Strona nie uruchamia analityki ani narzędzi marketingowych. W sekcji kontaktowej kalendarz Booksy ładuje się automatycznie w pobliżu rezerwacji. Na podstronach tematycznych kalendarz również ładuje się automatycznie, gdy panel rezerwacji znajdzie się w pobliżu widocznej części strony, bez przekazywania adresu podstrony jako strony odsyłającej. Mapa Google ładuje się po wybraniu opcji jej wyświetlenia. Przy wczytaniu tych elementów dostawcy otrzymują informacje o połączeniu i mogą używać własnych plików cookies. Rezerwacja za pośrednictwem Booksy nie jest wymagana: można zadzwonić lub napisać. Ustawienia cookies można zmienić w przeglądarce.</p>
+      <p className="mt-3 leading-8">Strona nie uruchamia analityki ani narzędzi marketingowych. Na stronie głównej i kontaktowej kalendarz Booksy ładuje się po wybraniu opcji jego wyświetlenia. Na podstronach tematycznych kalendarz również ładuje się dopiero po otwarciu, bez przekazywania adresu podstrony jako strony odsyłającej. Mapa Google ładuje się po wybraniu opcji jej wyświetlenia. Przy wczytaniu tych elementów dostawcy otrzymują informacje o połączeniu i mogą używać własnych plików cookies. Rezerwacja za pośrednictwem Booksy nie jest wymagana: można zadzwonić lub napisać. Ustawienia cookies można zmienić w przeglądarce.</p>
 
       <h2 className="mt-8 text-3xl">Przekazywanie danych poza EOG</h2>
       <p className="mt-3 leading-8">
@@ -164,7 +164,7 @@ export default function Page() {
 
       <h2 className="mt-8 text-3xl">Wymóg podania danych</h2>
       <p className="mt-3 leading-8">
-        Podanie danych w formularzu kontaktowym jest dobrowolne, ale niezbędne, aby odpowiedzieć na zapytanie.
+        Podanie danych kontaktowych jest dobrowolne, ale niezbędne, aby odpowiedzieć na zapytanie.
         Konsekwencją niepodania danych jest brak możliwości obsługi zapytania.
       </p>
       <SeeAlso links={[[paths.contact,'Kontakt'],[paths.faq,'Pytania organizacyjne']]}/>

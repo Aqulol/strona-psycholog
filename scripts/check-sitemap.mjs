@@ -24,3 +24,5 @@ const links = auditLinks(pages, redirects);
 console.log(`Sitemap: ${entries.size} indexable pages, ${excluded.size} excluded HTML files, ${[...entries.values()].filter(Boolean).length} sourced lastmod dates.`);
 console.log(`Internal links: ${links.orphaned.length} orphaned, ${links.unreachable.length} unreachable, maximum depth ${links.maxDepth}.`);
 for (const kind of ['broken', 'legacy', 'orphaned', 'unreachable']) if (links[kind].length) console.warn(`${kind}:\n${links[kind].join('\n')}`);
+
+assert.ok(!links.broken.length && !links.legacy.length && !links.orphaned.length && !links.unreachable.length, 'Internal link audit failed');

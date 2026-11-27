@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
-import { readdirSync, readFileSync } from 'node:fs';
+import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import {contentFingerprint,resolveLastmod} from './lastmod.mjs';
+export const lastmodFile = 'content/lastmod.json';
 
 export const origin = 'https://psychologplebaniak.pl';
 export const out = 'out';
@@ -93,7 +95,14 @@ function walk(directory, prefix = '') {
   });
 }
 
-export function readExport(directory = out) {
+export function readExport(directory = out, dates = JSON.parse(readFileSync(lastmodFile, 'utf8'))) {
+  for (const [path, record] of Object.entries(dates)) {
+    canonicalPath(origin + path);
+    assertDate(record.date);
+    assert.match(record.fingerprint, /^v1:[a-f0-9]{64}$/);
+    assert.ok(record.evidence?.trim(), `${path}: missing lastmod evidence`);
+  }
+  const glossary = new Map(JSON.parse(readFileSync('content/glossary.json', 'utf8')).filter(term => term.status === 'reviewed' && term.updated && term.reviewer).map(term => [`/slownik-psychologiczny/${term.slug}/`, term.updated]));
   assert.equal(hosting.public, out);
   assert.equal(hosting.cleanUrls, true);
   assert.equal(hosting.trailingSlash, true);
@@ -140,7 +149,10 @@ export function readExport(directory = out) {
       content.set(page.content, path);
       const url = origin + path;
       canonicalPath(url);
-      pages.set(path, { ...page, url, lastmod: articleDate(html, url) });
+      const editorialDate = articleDate(html, url) ?? glossary.get(path);
+      if (editorialDate) assertDate(editorialDate);
+      const fingerprint = contentFingerprint(html);
+      pages.set(path, { ...page, url, editorialDate, fingerprint, lastmod: resolveLastmod({editorialDate,fingerprint}, dates[path]) });
     }
   }
   assert.equal(excluded.get('404.html'), 'error', 'Missing Hosting 404.html');
@@ -185,7 +197,10 @@ export function auditLinks(pages, redirects) {
       if (target.origin !== origin) continue;
       const { pathname, hash } = target;
       if (redirects.has(pathname)) legacy.add(`${path} → ${href}`);
-      else if (!pages.has(pathname)) broken.add(`${path} → ${href}`);
+      else if (!pages.has(pathname)) {
+        const asset = /^\/images\/[a-z0-9/_-]+\.(?:webp|avif)$/i.test(pathname) && !target.search && !hash;
+        if (!asset || !statSync(join(out, pathname), {throwIfNoEntry:false})?.isFile()) broken.add(`${path} → ${href}`);
+      }
       else {
         targets.add(pathname);
         if (hash && !pages.get(pathname).ids.has(decodeURIComponent(hash.slice(1)))) broken.add(`${path} → ${href} (fragment)`);

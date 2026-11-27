@@ -6,7 +6,7 @@ const { chromium } = require('playwright-core');
 const site = process.env.HELP_TEST_URL || 'http://127.0.0.1:3010';
 const route = '/kiedy-zglosic-sie-na-terapie/';
 const shots = process.env.HELP_SCREENSHOT_DIR;
-const topics = 'main a[href^="/w-czym-pomagam/"]';
+const topics = 'main [data-filter-row] a[href^="/w-czym-pomagam/"]';
 const selector = `${topics}, .help-youth-cta`;
 const links = page => page.locator(selector).evaluateAll(anchors => anchors.map(anchor => anchor.getAttribute('href')));
 
@@ -36,7 +36,7 @@ const links = page => page.locator(selector).evaluateAll(anchors => anchors.map(
       await page.setViewportSize({ width, height: 900 });
       await page.goto(site + route);
       await page.evaluate(() => document.fonts.ready);
-      assert.equal(await page.getByRole('searchbox').count(), 0);
+      await page.locator('main input[type=search]').waitFor();
       assert.deepEqual(await links(page), original);
       assert.equal(await page.locator('.help-category').count(), 9);
       const layout = await page.locator('.help-card-grid').evaluate(grid => ({

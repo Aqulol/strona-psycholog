@@ -22,7 +22,7 @@ for (const path of paths) {
   assert.ok(!titles.has(title) && !descriptions.has(description), `${path}: duplicated SEO metadata`);
   titles.add(title); descriptions.add(description);
   for (const [, link] of html.matchAll(/<a\b[^>]*href="(\/[^"#?]*)[^\"]*"/g)) {
-    assert.ok(existsSync(file(link)), `${path}: internal link ${link}`);
+    assert.ok(existsSync(file(link)) || (/^\/images\/[a-z0-9/_-]+\.(?:webp|avif)$/i.test(link) && existsSync(join('out',link))), `${path}: internal link ${link}`);
   }
   for (const [, source] of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)) {
     assert.doesNotThrow(() => JSON.parse(source), `${path}: JSON-LD`);
@@ -107,11 +107,8 @@ for (const path of helpPaths) {
   assert.ok(html.includes(`href="${helpIndexPath}"`), `${path}: backlink to catalog`);
   assert.match(html, /"@type":"BreadcrumbList"/);
   assert.match(html, /name="referrer" content="no-referrer"/);
-  const frame = html.match(/<iframe\b[^>]*>/)?.[0];
-  assert.ok(frame, `${path}: Booksy iframe rendered without clicking`);
-  assert.match(frame, /src="https:\/\/booksy\.com\/widget\/index\.html\?id=357056&amp;lang=pl&amp;country=pl"/);
-  assert.match(frame, /loading="lazy"/);
-  assert.match(frame, /referrerPolicy="no-referrer"/i);
+  assert.doesNotMatch(html, /<iframe\b/i, `${path}: Booksy must not load before activation`);
+  assert.match(html, /Pokaż kalendarz Booksy/);
   assert.doesNotMatch(html, /name="robots" content="[^\"]*noindex/);
   assert.match(html, /href="https:\/\/booksy\.com\/pl-pl\/357056_[^"?]+" rel="noreferrer"/);
 }
