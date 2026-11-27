@@ -1,3 +1,4 @@
+import {isPublishedTerm,glossaryPrefix} from '../lib/glossary-policy.mjs';
 import assert from 'node:assert/strict';
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
@@ -102,7 +103,7 @@ export function readExport(directory = out, dates = JSON.parse(readFileSync(last
     assert.match(record.fingerprint, /^v1:[a-f0-9]{64}$/);
     assert.ok(record.evidence?.trim(), `${path}: missing lastmod evidence`);
   }
-  const glossary = new Map(JSON.parse(readFileSync('content/glossary.json', 'utf8')).filter(term => term.status === 'reviewed' && term.updated && term.reviewer).map(term => [`/slownik-psychologiczny/${term.slug}/`, term.updated]));
+  const glossary = new Map(JSON.parse(readFileSync('content/glossary.json', 'utf8')).filter(isPublishedTerm).map(term => [`${glossaryPrefix}${term.slug}/`, term.updated ?? term.published]));
   assert.equal(hosting.public, out);
   assert.equal(hosting.cleanUrls, true);
   assert.equal(hosting.trailingSlash, true);

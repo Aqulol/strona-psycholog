@@ -1,13 +1,9 @@
-import drafts from '../content/glossary.json';
-export const glossarySources:Record<string,{label:string;href?:string}>={
- mcwilliams:{label:'Nancy McWilliams (2011), Psychoanalytic Diagnosis, wyd. 2, Guilford Press.'},
- tfp:{label:'Frank Yeomans, John Clarkin, Otto Kernberg (2015), Transference-Focused Psychotherapy for Borderline Personality Disorder: A Clinical Guide, American Psychiatric Publishing.'},
- gabbard:{label:'Glen Gabbard (2017), Long-Term Psychodynamic Psychotherapy: A Basic Text, wyd. 3, American Psychiatric Association Publishing.'},
- who:{label:'WHO (2024), Clinical descriptions and diagnostic requirements for ICD-11 mental, behavioural and neurodevelopmental disorders.',href:'https://www.who.int/publications/i/item/9789240077263'},
- diamond:{label:'Adele Diamond (2013), Executive Functions, Annual Review of Psychology, 64:135–168.',href:'https://doi.org/10.1146/annurev-psych-113011-143750'},
-};
-export type GlossaryEntry = typeof drafts[number] & {updated?:string; reviewer?:string};
-export const reviewedTerms=(drafts as GlossaryEntry[]).filter(term=>term.status==='reviewed' && Boolean(term.updated && term.reviewer));
+import entries from '../content/glossary.json';
+import sources from '../content/glossary-sources.json';
+import {isPublishedTerm} from './glossary-policy.mjs';
+export const glossarySources:Record<string,{label:string;href?:string}>=sources;
+export type GlossaryEntry={slug:string;term:string;category:string;status:string;verification:string; definition:string;explanation:string;examples:string[];distinction:string;clinical?:string;related:string[];sources:string[];links:{href:string;label:string}[];synonyms:string[];english?:string;categories?:string[];sections?:{title:string;paragraphs:string[]}[];h1?:string;featured?:boolean;published?:string;updated?:string;reviewedAt?:string;author?:string;reviewer?:string};
+export const reviewedTerms=(entries as GlossaryEntry[]).filter(isPublishedTerm).sort((a,b)=>a.term.localeCompare(b.term,'pl'));
 // A curated index into already published explanations. Not separate draft entries.
 export const publishedExplanations=[
  ['Borderline','Osobowość','/w-czym-pomagam/borderline/','Na czym polegają trudności opisywane w związku z tym rozpoznaniem?'],

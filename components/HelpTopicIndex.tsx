@@ -1,4 +1,4 @@
-import CatalogueFilter from './CatalogueFilter';
+import CategoryCatalogue from './CategoryCatalogue';
 import type { ReactNode } from 'react';
 import { helpTopics, topicPath } from '../lib/help-topics';
 import { paths } from '../lib/site';
@@ -113,30 +113,32 @@ const categories: HelpCategory[] = groups.map(([title, icon, tone, entries]) => 
     const topic = topicsBySlug.get(slug);
     if (!topic || assigned.has(slug)) throw new Error(`Missing or duplicated catalogue topic: ${slug}`);
     assigned.add(slug);
-    const aliases:Record<string,string>={'nadmierne-analizowanie':'ruminacje zamartwianie','lek-przed-odrzuceniem':'lęk przed porzuceniem','trudnosci-emocjonalne':'regulacja emocji','relacje-rodzinne-mlodziezy':'konflikty z rodzicami','relacje-z-rowiesnikami':'presja rówieśnicza','trudnosci-okoloporodowe':'depresja poporodowa','trudne-doswiadczenia-z-dziecinstwa':'zaniedbanie emocjonalne','asertywnosc-i-granice':'people pleasing wyrażanie potrzeb'};
-    return { href: topicPath(slug), label: topic.label, icon, aliases:aliases[slug] };
+    return { href: topicPath(slug), label: topic.label, icon };
   }),
 }));
 if (assigned.size !== helpTopics.length) throw new Error('Unassigned catalogue topics');
 
 export default function HelpTopicIndex({ scope }: { scope: ReactNode }) {
   const [youth, services] = categories.slice(-2);
-  return <CatalogueFilter categories={categories.map(c=>c.title)} label="Szukaj tematu" age>
-    <section className="help-directory help-width" aria-labelledby="tematy-konsultacji">
+  return <CategoryCatalogue categories={categories.map(c=>c.title)}>
+    <nav className="help-width help-category-nav" aria-label="Przejdź do obszaru pomocy"><ul>{categories.map((category,index)=><li key={category.title}><a data-catalogue-letter href={`#obszar-${index+1}`}>{category.title}</a></li>)}</ul></nav>
+    <section className="help-directory help-width" aria-labelledby="tematy-konsultacji" data-catalogue-section>
       <h2 id="tematy-konsultacji">Obszary pomocy psychologicznej i psychoterapii</h2>
       <div className="help-card-grid" id="lista-tematow">
-        {categories.slice(0, -2).map(category => <HelpCategoryCard key={category.title} category={category}/>)}
+        {categories.slice(0, -2).map((category,index) => <HelpCategoryCard id={`obszar-${index+1}`} key={category.title} category={category}/>)}
       </div>
     </section>
-    <section className="help-youth help-width" data-filter-group={youth.title} data-youth="true" aria-labelledby="help-youth-heading">
+    <section id={`obszar-${categories.length-1}`} className="help-youth help-width" data-filter-group={youth.title} aria-labelledby="help-youth-heading">
       <div className="help-panel-heading"><HelpBadge {...youth}/><h2 id="help-youth-heading">{youth.title}</h2></div>
+      <p className="help-category-description">Szkoła, dorastanie i relacje z rówieśnikami lub rodziną. · {youth.topics.length} tematów</p>
       <HelpLinks topics={youth.topics}/>
       <a className="help-youth-cta" href={paths.youth}>Jak wygląda konsultacja dla młodzieży? <HelpTopicIcon name="ArrowUpRight" size={17}/></a>
     </section>
-    <section className="help-scope help-width" data-filter-group={services.title} aria-labelledby="help-scope-heading">
+    <section id={`obszar-${categories.length}`} className="help-scope help-width" data-filter-group={services.title} aria-labelledby="help-scope-heading">
       <div className="help-panel-heading"><HelpBadge {...services}/><h2 id="help-scope-heading">{services.title}</h2></div>
+      <p className="help-category-description">Kiedy może być potrzebna pomoc innego rodzaju. · 1 temat</p>
       <HelpLinks topics={services.topics}/>
       {scope}
     </section>
-  </CatalogueFilter>;
+  </CategoryCatalogue>;
 }

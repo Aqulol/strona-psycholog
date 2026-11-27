@@ -15,7 +15,9 @@
     "lastmod:record": "node scripts/update-lastmod.mjs",
     "check:lastmod": "node scripts/check-lastmod.mjs",
     "postbuild": "node scripts/check-sitemap.mjs --write && node scripts/build-search.mjs && npm run check:sitemap",
-    "check:sitemap:failures": "node scripts/check-sitemap-failures.mjs"
+    "check:sitemap:failures": "node scripts/check-sitemap-failures.mjs",
+    "prebuild": "node scripts/generate-glossary.mjs",
+    "predev": "node scripts/generate-glossary.mjs"
   },
   "dependencies": {
     "firebase": "^12.17.1",

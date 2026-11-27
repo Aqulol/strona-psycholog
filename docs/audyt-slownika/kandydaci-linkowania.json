@@ -1,0 +1,293 @@
+{
+  "pages": 123,
+  "candidates": [
+    {
+      "from": "/blog/adhd-u-doroslych/",
+      "to": "/slownik-psychologiczny/funkcje-wykonawcze/",
+      "form": "Funkcje wykonawcze",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/blog/czy-przeszlosc-ma-znaczenie/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złości",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/blog/dlaczego-sama-swiadomosc-nie-wystarcza/",
+      "to": "/slownik-psychologiczny/mechanizmy-obronne/",
+      "form": "mechanizmy obronne",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/blog/narcyzm-wrazliwy/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "Złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/blog/psychoterapia-psychodynamiczna-pierwsze-spotkanie/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+      "to": "/slownik-psychologiczny/przeniesienie/",
+      "form": "Przeniesienie",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+      "to": "/slownik-psychologiczny/przeciwprzeniesienie/",
+      "form": "przeciwprzeniesienie",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/blog/tfp-dla-kogo/",
+      "to": "/slownik-psychologiczny/organizacja-osobowosci/",
+      "form": "organizacją osobowości",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/diagnoza-osobowosci-wroclaw/",
+      "to": "/slownik-psychologiczny/mechanizmy-obronne/",
+      "form": "Mechanizmy obronne",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/diagnoza-osobowosci-wroclaw/",
+      "to": "/slownik-psychologiczny/organizacja-osobowosci/",
+      "form": "organizacji osobowości",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/diagnoza-osobowosci-wroclaw/",
+      "to": "/slownik-psychologiczny/rozszczepienie/",
+      "form": "Rozszczepienie",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/",
+      "to": "/slownik-psychologiczny/przeniesienie/",
+      "form": "przeniesieniu",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/kiedy-zglosic-sie-na-terapie/",
+      "to": "/slownik-psychologiczny/przeniesienie/",
+      "form": "przeniesieniu",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/o-mnie/",
+      "to": "/slownik-psychologiczny/przeniesienie/",
+      "form": "przeniesieniu",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/oferta/",
+      "to": "/slownik-psychologiczny/przeniesienie/",
+      "form": "przeniesieniu",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/psychoedukacja/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "Złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/psychoterapeuta-wroclaw/",
+      "to": "/slownik-psychologiczny/przeniesienie/",
+      "form": "przeniesieniu",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/psychoterapia-dorosli/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złości",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/psychoterapia-online/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złości",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/psychoterapia-psychodynamiczna-wroclaw/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/psychoterapia-psychodynamiczna-wroclaw/",
+      "to": "/slownik-psychologiczny/przeniesienie/",
+      "form": "przeniesieniu",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+      "to": "/slownik-psychologiczny/przeniesienie/",
+      "form": "Przeniesienie",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+      "to": "/slownik-psychologiczny/organizacja-osobowosci/",
+      "form": "organizacją osobowości",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+      "to": "/slownik-psychologiczny/relacje-z-obiektem/",
+      "form": "relacji z obiektem",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+      "to": "/slownik-psychologiczny/rozszczepienie/",
+      "form": "rozszczepienie",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/asertywnosc-i-granice/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/doswiadczenie-zdrady/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "Złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/impulsywnosc/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złości",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/intensywne-emocje/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/poczucie-pustki/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/potrzeba-akceptacji/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/radzenie-sobie-ze-zloscia/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "Złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/rodzicielstwo/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/rozpoznawanie-emocji/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/seksualnosc-i-intymnosc/",
+      "to": "/slownik-psychologiczny/mechanizmy-obronne/",
+      "form": "mechanizm obronny",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/stabilny-obraz-siebie/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złości",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/trudnosci-emocjonalne-mlodziezy/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złości",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/trudnosci-emocjonalne/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/trudnosci-okoloporodowe/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/utrata-pracy-i-zmiany-zawodowe/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złości",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/wstyd/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/zaburzenia-osobowosci/",
+      "to": "/slownik-psychologiczny/organizacja-osobowosci/",
+      "form": "organizacji osobowości",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/zaburzenia-osobowosci/",
+      "to": "/slownik-psychologiczny/relacje-z-obiektem/",
+      "form": "relacji z obiektem",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/zaloba/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    },
+    {
+      "from": "/w-czym-pomagam/zdrowie-fizyczne-i-psychiczne/",
+      "to": "/slownik-psychologiczny/zlosc/",
+      "form": "złość",
+      "status": "blocked-unpublished"
+    }
+  ]
+}

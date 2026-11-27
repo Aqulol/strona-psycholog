@@ -1,17 +1,1698 @@
 [
-{"slug":"mechanizmy-obronne","term":"Mechanizmy obronne","category":"Mechanizmy obronne","status":"draft","definition":"W ujęciu psychodynamicznym są to sposoby regulowania trudnych przeżyć, często poza świadomością.","explanation":"Mogą chwilowo chronić przed przeciążeniem. Klinicznie liczy się ich elastyczność i koszt, nie samo wystąpienie.","example":"Po bolesnej uwadze fikcyjna osoba przechodzi do rzeczowej analizy i dopiero później zauważa smutek.","distinction":"Nie każdy świadomie wybrany sposób radzenia sobie jest obroną w znaczeniu psychodynamicznym. Pojęcie wyjaśnia hipotezę funkcji zachowania, nie diagnozę.","related":["projekcja","rozszczepienie"],"source":"mcwilliams","href":"/psychoedukacja/"},
-{"slug":"projekcja","term":"Projekcja","category":"Mechanizmy obronne","status":"draft","definition":"Przypisywanie innej osobie przeżyć, które trudno rozpoznać jako własne.","explanation":"W opisie klinicznym jest to hipoteza, którą należy zestawić z rzeczywistym zachowaniem drugiej osoby i z kontekstem relacji.","example":"Osoba rozdrażniona w rozmowie może być przekonana, że to rozmówca jest zirytowany, choć jego reakcja nie jest jasna.","distinction":"Trafne zauważenie cudzej złości nie jest projekcją. Identyfikacja projekcyjna w niektórych ujęciach obejmuje również dynamikę wzajemnych reakcji.","related":["identyfikacja-projekcyjna","przeniesienie"],"source":"mcwilliams","href":"/psychoterapia-psychodynamiczna-wroclaw/"},
-{"slug":"identyfikacja-projekcyjna","term":"Identyfikacja projekcyjna","category":"Mechanizmy obronne","status":"draft","definition":"Pojęcie teorii relacji z obiektem opisujące przypisywanie drugiej osobie trudnego do przyjęcia aspektu własnego doświadczenia i, w części ujęć, jego odegranie w relacji.","explanation":"Niektóre szkoły akcentują fantazję i reprezentacje wewnętrzne, inne także to, jak wzorzec kontaktu wpływa na emocje i zachowania obu osób.","example":"Fikcyjna osoba spodziewa się odrzucenia, stale sprawdza gotowość drugiej strony i zaczyna wycofywać się z rozmowy; druga strona z czasem również nabiera dystansu.","distinction":"W odróżnieniu od prostego przypisania uczucia opis może obejmować reakcje wzajemne. Przykład nie dowodzi mechanizmu i nie zakłada świadomej manipulacji.","related":["projekcja","relacje-z-obiektem"],"source":"mcwilliams","href":"/terapia-skoncentrowana-na-przeniesieniu-tfp/"},
-{"slug":"rozszczepienie","term":"Rozszczepienie","category":"Mechanizmy obronne","status":"draft","definition":"Trudność w jednoczesnym utrzymaniu sprzecznych aspektów doświadczenia siebie lub innych osób.","explanation":"W teorii psychodynamicznej skrajnie pozytywne i negatywne obrazy pozostają oddzielone. Jest to model rozumienia funkcjonowania, nie wskaźnik przesądzający rozpoznanie.","example":"Po rozczarowaniu trudno przypomnieć sobie, że ta sama osoba bywała również wspierająca.","distinction":"Chwilowa zmiana zdania po zdarzeniu nie dowodzi rozszczepienia; istotne są kontekst i możliwość powrotu do bardziej złożonego obrazu.","related":["idealizacja","dewaluacja","organizacja-osobowosci"],"source":"tfp","href":"/terapia-skoncentrowana-na-przeniesieniu-tfp/"},
-{"slug":"idealizacja","term":"Idealizacja","category":"Mechanizmy obronne","status":"draft","definition":"Ujęcie siebie lub drugiej osoby w nadmiernie korzystny sposób, z pominięciem informacji komplikujących ten obraz.","explanation":"W teorii psychodynamicznej idealizacja może ograniczać niepewność lub chronić przed ambiwalencją. Klinicznie znaczenie zależy od sztywności obrazu.","example":"Po jednym ciepłym spotkaniu fikcyjna osoba zakłada, że nowy znajomy nigdy jej nie rozczaruje.","distinction":"Zachwyt i docenienie nie muszą być idealizacją. Można podziwiać kogoś i jednocześnie dostrzegać jego ograniczenia.","related":["dewaluacja","rozszczepienie"],"source":"tfp","href":"/w-czym-pomagam/narcyzm/"},
-{"slug":"dewaluacja","term":"Dewaluacja","category":"Mechanizmy obronne","status":"draft","definition":"Skrajne obniżenie wartości przypisywanej sobie lub innej osobie, przy pominięciu bardziej złożonego obrazu.","explanation":"Może w ujęciu psychodynamicznym zmniejszać odczuwany wstyd lub potrzebę zależności. To możliwe wyjaśnienie funkcji, nie pewnik o motywacji.","example":"Po odmowie pomocy fikcyjna osoba uznaje, że cała znajomość była bezwartościowa, choć wcześniej wiele dla niej znaczyła.","distinction":"Realistyczna krytyka nie jest dewaluacją. Można nazwać krzywdzące zachowanie, nie redukując całego obrazu do jednej oceny.","related":["idealizacja","rozszczepienie"],"source":"tfp","href":"/w-czym-pomagam/narcyzm/"},
-{"slug":"przeniesienie","term":"Przeniesienie","category":"Proces terapeutyczny","status":"draft","definition":"Pojawienie się w bieżącej relacji oczekiwań, uczuć lub sposobów działania znanych z innych ważnych relacji.","explanation":"W psychoterapii można wspólnie badać zarówno powracający wzorzec, jak i rzeczywiste zachowanie terapeuty. Jedno wyjaśnienie nie wyklucza drugiego.","example":"Pytanie o ostatnią rozmowę fikcyjna osoba słyszy jako ocenę, chociaż terapeuta stara się doprecyzować fakty.","distinction":"Przeniesienie jest zjawiskiem klinicznym. TFP to model terapii, który obejmuje także kontrakt, rozumienie relacji i integrację obrazu siebie oraz innych.","related":["przeciwprzeniesienie","kontrakt-terapeutyczny"],"source":"tfp","href":"/blog/relacja-terapeutyczna-zrodlo-zmiany/"},
-{"slug":"przeciwprzeniesienie","term":"Przeciwprzeniesienie","category":"Proces terapeutyczny","status":"draft","definition":"Reakcje terapeuty wobec osoby oraz sytuacji terapeutycznej, rozumiane różnie w zależności od szkoły.","explanation":"W szerszym ujęciu obejmuje odpowiedzi emocjonalne terapeuty, które można rozważyć jako źródło hipotez. Refleksja i superwizja pomagają odróżnić udział terapeuty od dynamiki relacji.","example":"Terapeuta zauważa u siebie pośpiech, zastanawia się nad jego źródłami i nie zakłada, że stanowi on dowód intencji drugiej osoby.","distinction":"Przeniesienie opisuje przede wszystkim wzorce pojawiające się po stronie osoby korzystającej z terapii. Reakcja terapeuty nie jest obiektywnym pomiarem tych wzorców.","related":["przeniesienie","kontrakt-terapeutyczny"],"source":"gabbard","href":"/o-mnie/#superwizja"},
-{"slug":"kontrakt-terapeutyczny","term":"Kontrakt terapeutyczny","category":"Proces terapeutyczny","status":"draft","definition":"Uzgodnione ramy psychoterapii: cele, role, granice i warunki współpracy.","explanation":"Jasne ramy pozwalają wracać do pytań o regularność i bezpieczeństwo. W TFP kontrakt jest częścią struktury modelu, nie ozdobą ani samym regulaminem.","example":"Przed rozpoczęciem pracy dwie osoby omawiają cel spotkań i to, jak postępować, gdy regularna obecność staje się trudna.","distinction":"Uzgodnienie nie gwarantuje wyniku. Jest szersze niż pojedyncza decyzja o terminie wizyty.","related":["przeniesienie","przeciwprzeniesienie"],"source":"tfp","href":"/psychoterapia-indywidualna-wroclaw/"},
-{"slug":"relacje-z-obiektem","term":"Relacje z obiektem","category":"Teoria psychodynamiczna","status":"draft","definition":"W teorii psychodynamicznej: sposoby przeżywania siebie i innych w relacji, wraz z towarzyszącymi emocjami.","explanation":"Słowo obiekt może odnosić się do znaczącej osoby lub jej psychicznej reprezentacji. Różne teorie nie posługują się dokładnie takim samym modelem.","example":"W podobnych sytuacjach osoba czuje się bezradna i spodziewa dominującej reakcji innych, także gdy konkretna osoba zachowuje się inaczej.","distinction":"Wewnętrzna reprezentacja nie jest portretem faktycznej osoby; odnosi się do tego, jak dana relacja jest przeżywana.","related":["organizacja-osobowosci","przeniesienie"],"source":"tfp","href":"/terapia-skoncentrowana-na-przeniesieniu-tfp/"},
-{"slug":"organizacja-osobowosci","term":"Organizacja osobowości","category":"Osobowość i tożsamość","status":"draft","definition":"Psychodynamiczny model opisujący sposób zorganizowania funkcjonowania osobowości.","explanation":"W modelu Kernberga uwzględnia się m.in. integrację tożsamości, dominujące mechanizmy obronne i testowanie rzeczywistości.","example":"Klinicysta analizuje, czy zmiany obrazu siebie powtarzają się w różnych sytuacjach i czy osoba może spojrzeć na nie z dystansu.","distinction":"Poziom organizacji nie jest nazwą zaburzenia w klasyfikacji. Organizacja borderline i rozpoznanie zaburzenia borderline nie są tożsame.","related":["dyfuzja-tozsamosci","rozszczepienie"],"source":"tfp","href":"/diagnoza-osobowosci-wroclaw/"},
-{"slug":"dyfuzja-tozsamosci","term":"Dyfuzja tożsamości","category":"Osobowość i tożsamość","status":"draft","definition":"W modelu Kernberga: ograniczona spójność i ciągłość obrazu siebie oraz znaczących innych.","explanation":"Ocena zwraca uwagę na to, czy przeciwstawne obrazy mogą zostać połączone w bardziej złożony opis. Okres rozwoju i okoliczności zgłoszenia mają znaczenie.","example":"Opis własnych potrzeb zmienia się skrajnie zależnie od aktualnej relacji, a wcześniejsze wersje siebie wydają się zupełnie obce.","distinction":"Niepewność dotycząca ról lub wybór drogi życiowej, szczególnie w dorastaniu, nie przesądza o dyfuzji w sensie klinicznym. Termin pojawia się również w innych teoriach rozwoju.","related":["organizacja-osobowosci","rozszczepienie"],"source":"tfp","href":"/w-czym-pomagam/trudnosci-w-okresleniu-tozsamosci/"},
-{"slug":"diagnoza-roznicowa","term":"Diagnoza różnicowa","category":"Diagnostyka","status":"draft","definition":"Porównywanie prawdopodobnych wyjaśnień objawów i trudności.","explanation":"Ważne są przebieg, kontekst, inne problemy i wpływ na życie. Ocena może wykazać potrzebę dodatkowej konsultacji albo współwystępowanie kilku trudności.","example":"Przy kłopocie z koncentracją rozważa się historię rozwojową, sen, nastrój i stan zdrowia, zamiast przyjmować jedno wyjaśnienie.","distinction":"Przesiew wskazuje, czy warto dokładniej ocenić wybrany obszar. Nie zastępuje porównania wyjaśnień.","related":["psychopatologia","funkcje-wykonawcze"],"source":"who","href":"/diagnoza-psychologiczna-wroclaw/"},
-{"slug":"psychopatologia","term":"Psychopatologia","category":"Diagnostyka","status":"draft","definition":"Obszar wiedzy i opisu klinicznego dotyczący objawów oraz zaburzeń funkcjonowania psychicznego.","explanation":"W praktyce opisuje się formę, czas, nasilenie i kontekst trudności oraz ich wpływ na codzienne życie. Rozpoznanie wymaga więcej niż nazwania objawu.","example":"Ocena obniżonego nastroju uwzględnia przebieg zmian i funkcjonowanie osoby, a nie tylko deklarację smutku.","distinction":"Psychopatologia nie jest synonimem diagnozy psychiatrycznej i nie oznacza, że każde cierpienie spełnia kryteria zaburzenia.","related":["diagnoza-roznicowa","organizacja-osobowosci"],"source":"who","href":"/diagnoza-psychologiczna-wroclaw/"},
-{"slug":"funkcje-wykonawcze","term":"Funkcje wykonawcze","category":"Funkcje poznawcze","status":"draft","definition":"Procesy pozwalające kierować działaniem z myślą o celu, np. utrzymać plan, hamować reakcję i zmienić strategię.","explanation":"Modele badawcze różnią się szczegółami, lecz często wyróżniają pamięć roboczą, hamowanie i elastyczność poznawczą. Dostępność tych zasobów może zmieniać się zależnie od warunków.","example":"Podczas gotowania trzeba pamiętać kilka kroków, przejść do następnego we właściwym momencie i wrócić po przerwie.","distinction":"Trudności wykonawcze nie są same w sobie rozpoznaniem ADHD; występują także w innych sytuacjach, np. przy niewyspaniu.","related":["diagnoza-roznicowa"],"source":"diamond","href":"/blog/adhd-u-doroslych/"}
+  {
+    "slug": "mechanizmy-obronne",
+    "term": "Mechanizmy obronne",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "definition": "W ujęciu psychodynamicznym są to sposoby regulowania trudnych przeżyć, często poza świadomością.",
+    "explanation": "Mogą chwilowo chronić przed przeciążeniem. Klinicznie liczy się ich elastyczność i koszt, nie samo wystąpienie. Anna Freud opisywała obrony ego wobec konfliktu i lęku. Vaillant porządkował obrony między innymi według dojrzałości i adaptacyjności; McWilliams odróżnia obrony pierwotne i wtórne według sposobu organizowania doświadczenia. Kernberg zwraca uwagę na obrony oparte na rozszczepieniu w ocenie strukturalnej. Są to różne osie opisu, nie wymienne listy poziomów.",
+    "distinction": "Nie każdy świadomie wybrany sposób radzenia sobie jest obroną w znaczeniu psychodynamicznym. Pojęcie wyjaśnia hipotezę funkcji zachowania, nie diagnozę.",
+    "related": [
+      "projekcja",
+      "rozszczepienie"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Po bolesnej uwadze fikcyjna osoba przechodzi do rzeczowej analizy i dopiero później zauważa smutek."
+    ],
+    "sources": [
+      "mcwilliams",
+      "anna",
+      "vaillant",
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "projekcja",
+    "term": "Projekcja",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "definition": "Przypisywanie innej osobie przeżyć, które trudno rozpoznać jako własne.",
+    "explanation": "W opisie klinicznym jest to hipoteza, którą należy zestawić z rzeczywistym zachowaniem drugiej osoby i z kontekstem relacji.",
+    "distinction": "Trafne zauważenie cudzej złości nie jest projekcją. Identyfikacja projekcyjna w niektórych ujęciach obejmuje również dynamikę wzajemnych reakcji.",
+    "related": [
+      "identyfikacja-projekcyjna",
+      "przeniesienie"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Osoba rozdrażniona w rozmowie może być przekonana, że to rozmówca jest zirytowany, choć jego reakcja nie jest jasna."
+    ],
+    "sources": [
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoterapia-psychodynamiczna-wroclaw/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "identyfikacja-projekcyjna",
+    "term": "Identyfikacja projekcyjna",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "definition": "Pojęcie teorii relacji z obiektem opisujące przypisywanie drugiej osobie trudnego do przyjęcia aspektu własnego doświadczenia i, w części ujęć, jego odegranie w relacji.",
+    "explanation": "Niektóre szkoły akcentują fantazję i reprezentacje wewnętrzne, inne także to, jak wzorzec kontaktu wpływa na emocje i zachowania obu osób. U Klein nacisk padał na nieświadomą fantazję ulokowania części siebie w obiekcie. Późniejsze podejścia kliniczne uwzględniają, że sposób kontaktu może wywoływać nacisk na przyjęcie określonej roli. Reakcja drugiej osoby pozostaje jej reakcją: nie dowodzi zdalnego „przekazania” uczucia ani nie pozwala odczytać czyjegoś umysłu.",
+    "distinction": "W odróżnieniu od prostego przypisania uczucia opis może obejmować reakcje wzajemne. Przykład nie dowodzi mechanizmu i nie zakłada świadomej manipulacji.",
+    "related": [
+      "projekcja",
+      "relacje-z-obiektem"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Fikcyjna osoba spodziewa się odrzucenia, stale sprawdza gotowość drugiej strony i zaczyna wycofywać się z rozmowy; druga strona z czasem również nabiera dystansu."
+    ],
+    "sources": [
+      "mcwilliams",
+      "klein1946",
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "rozszczepienie",
+    "term": "Rozszczepienie",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "definition": "Trudność w jednoczesnym utrzymaniu sprzecznych aspektów doświadczenia siebie lub innych osób.",
+    "explanation": "W teorii psychodynamicznej skrajnie pozytywne i negatywne obrazy pozostają oddzielone. Jest to model rozumienia funkcjonowania, nie wskaźnik przesądzający rozpoznanie.",
+    "distinction": "Chwilowa zmiana zdania po zdarzeniu nie dowodzi rozszczepienia; istotne są kontekst i możliwość powrotu do bardziej złożonego obrazu.",
+    "related": [
+      "idealizacja",
+      "dewaluacja",
+      "organizacja-osobowosci"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Po rozczarowaniu trudno przypomnieć sobie, że ta sama osoba bywała również wspierająca."
+    ],
+    "sources": [
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": [],
+    "english": "splitting"
+  },
+  {
+    "slug": "idealizacja",
+    "term": "Idealizacja",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "definition": "Ujęcie siebie lub drugiej osoby w nadmiernie korzystny sposób, z pominięciem informacji komplikujących ten obraz.",
+    "explanation": "W teorii psychodynamicznej idealizacja może ograniczać niepewność lub chronić przed ambiwalencją. Klinicznie znaczenie zależy od sztywności obrazu.",
+    "distinction": "Zachwyt i docenienie nie muszą być idealizacją. Można podziwiać kogoś i jednocześnie dostrzegać jego ograniczenia.",
+    "related": [
+      "dewaluacja",
+      "rozszczepienie"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Po jednym ciepłym spotkaniu fikcyjna osoba zakłada, że nowy znajomy nigdy jej nie rozczaruje."
+    ],
+    "sources": [
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/narcyzm/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "dewaluacja",
+    "term": "Dewaluacja",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "definition": "Skrajne obniżenie wartości przypisywanej sobie lub innej osobie, przy pominięciu bardziej złożonego obrazu.",
+    "explanation": "Może w ujęciu psychodynamicznym zmniejszać odczuwany wstyd lub potrzebę zależności. To możliwe wyjaśnienie funkcji, nie pewnik o motywacji.",
+    "distinction": "Realistyczna krytyka nie jest dewaluacją. Można nazwać krzywdzące zachowanie, nie redukując całego obrazu do jednej oceny.",
+    "related": [
+      "idealizacja",
+      "rozszczepienie"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Po odmowie pomocy fikcyjna osoba uznaje, że cała znajomość była bezwartościowa, choć wcześniej wiele dla niej znaczyła."
+    ],
+    "sources": [
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/narcyzm/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "przeniesienie",
+    "term": "Przeniesienie",
+    "category": "Proces terapeutyczny",
+    "status": "draft",
+    "definition": "Pojawienie się w bieżącej relacji oczekiwań, uczuć lub sposobów działania znanych z innych ważnych relacji.",
+    "explanation": "W psychoterapii można wspólnie badać zarówno powracający wzorzec, jak i rzeczywiste zachowanie terapeuty. Jedno wyjaśnienie nie wyklucza drugiego. Interpretacja przeniesienia wymaga zwrócenia uwagi na rzeczywiste słowa, działania i błędy terapeuty. Wzorzec może stać się widoczny w zmianie ról, np. od przekonania o byciu lekceważonym do odruchu lekceważenia innych; nie wszystkie reakcje wobec terapeuty wynikają z przeszłości.",
+    "distinction": "Przeniesienie jest zjawiskiem klinicznym. TFP to model terapii, który obejmuje także kontrakt, rozumienie relacji i integrację obrazu siebie oraz innych.",
+    "related": [
+      "przeciwprzeniesienie",
+      "kontrakt-terapeutyczny"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Pytanie o ostatnią rozmowę fikcyjna osoba słyszy jako ocenę, chociaż terapeuta stara się doprecyzować fakty."
+    ],
+    "sources": [
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/blog/relacja-terapeutyczna-zrodlo-zmiany/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "przeciwprzeniesienie",
+    "term": "Przeciwprzeniesienie",
+    "category": "Proces terapeutyczny",
+    "status": "draft",
+    "definition": "Reakcje terapeuty wobec osoby oraz sytuacji terapeutycznej, rozumiane różnie w zależności od szkoły.",
+    "explanation": "W szerszym ujęciu obejmuje odpowiedzi emocjonalne terapeuty, które można rozważyć jako źródło hipotez. Refleksja i superwizja pomagają odróżnić udział terapeuty od dynamiki relacji.",
+    "distinction": "Przeniesienie opisuje przede wszystkim wzorce pojawiające się po stronie osoby korzystającej z terapii. Reakcja terapeuty nie jest obiektywnym pomiarem tych wzorców.",
+    "related": [
+      "przeniesienie",
+      "kontrakt-terapeutyczny"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Terapeuta zauważa u siebie pośpiech, zastanawia się nad jego źródłami i nie zakłada, że stanowi on dowód intencji drugiej osoby."
+    ],
+    "sources": [
+      "gabbard"
+    ],
+    "links": [
+      {
+        "href": "/o-mnie/#superwizja",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "kontrakt-terapeutyczny",
+    "term": "Kontrakt terapeutyczny",
+    "category": "Proces terapeutyczny",
+    "status": "draft",
+    "definition": "Uzgodnione ramy psychoterapii: cele, role, granice i warunki współpracy.",
+    "explanation": "Jasne ramy pozwalają wracać do pytań o regularność i bezpieczeństwo. W TFP kontrakt jest częścią struktury modelu, nie ozdobą ani samym regulaminem.",
+    "distinction": "Uzgodnienie nie gwarantuje wyniku. Jest szersze niż pojedyncza decyzja o terminie wizyty.",
+    "related": [
+      "przeniesienie",
+      "przeciwprzeniesienie"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Przed rozpoczęciem pracy dwie osoby omawiają cel spotkań i to, jak postępować, gdy regularna obecność staje się trudna."
+    ],
+    "sources": [
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/psychoterapia-indywidualna-wroclaw/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "relacje-z-obiektem",
+    "term": "Relacje z obiektem",
+    "category": "Teoria psychodynamiczna",
+    "status": "draft",
+    "definition": "W teorii psychodynamicznej: sposoby przeżywania siebie i innych w relacji, wraz z towarzyszącymi emocjami.",
+    "explanation": "Słowo obiekt może odnosić się do znaczącej osoby lub jej psychicznej reprezentacji. Różne teorie nie posługują się dokładnie takim samym modelem. Klein podkreślała znaczenie nieświadomych fantazji i pozycji, Winnicott – środowiska podtrzymującego i warunków rozwoju, a Kernberg integrował reprezentacje siebie i obiektu z afektami. Zbieżne słownictwo nie oznacza tożsamych modeli.",
+    "distinction": "Wewnętrzna reprezentacja nie jest portretem faktycznej osoby; odnosi się do tego, jak dana relacja jest przeżywana.",
+    "related": [
+      "organizacja-osobowosci",
+      "przeniesienie"
+    ],
+    "verification": "pending",
+    "examples": [
+      "W podobnych sytuacjach osoba czuje się bezradna i spodziewa dominującej reakcji innych, także gdy konkretna osoba zachowuje się inaczej."
+    ],
+    "sources": [
+      "tfp",
+      "klein1946",
+      "kernberg2001"
+    ],
+    "links": [
+      {
+        "href": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "organizacja-osobowosci",
+    "term": "Organizacja osobowości",
+    "category": "Osobowość i tożsamość",
+    "status": "draft",
+    "definition": "Psychodynamiczny model opisujący sposób zorganizowania funkcjonowania osobowości.",
+    "explanation": "W modelu Kernberga uwzględnia się m.in. integrację tożsamości, dominujące mechanizmy obronne i testowanie rzeczywistości. Model opisuje poziom strukturalny, a nie typ charakteru. Poziom borderline nie oznacza automatycznie rozpoznania borderline, a psychotyczna organizacja nie opisuje pojedynczego epizodu psychozy. Poziom neurotyczny nie przesądza o występowaniu zaburzenia lękowego. Ocena nie wynika z jednej cechy czy krótkiej rozmowy.",
+    "distinction": "Poziom organizacji nie jest nazwą zaburzenia w klasyfikacji. Organizacja borderline i rozpoznanie zaburzenia borderline nie są tożsame.",
+    "related": [
+      "dyfuzja-tozsamosci",
+      "rozszczepienie"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Klinicysta analizuje, czy zmiany obrazu siebie powtarzają się w różnych sytuacjach i czy osoba może spojrzeć na nie z dystansu."
+    ],
+    "sources": [
+      "tfp",
+      "who"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-osobowosci-wroclaw/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "dyfuzja-tozsamosci",
+    "term": "Dyfuzja tożsamości",
+    "category": "Osobowość i tożsamość",
+    "status": "draft",
+    "definition": "W modelu Kernberga: ograniczona spójność i ciągłość obrazu siebie oraz znaczących innych.",
+    "explanation": "Ocena zwraca uwagę na to, czy przeciwstawne obrazy mogą zostać połączone w bardziej złożony opis. Okres rozwoju i okoliczności zgłoszenia mają znaczenie.",
+    "distinction": "Niepewność dotycząca ról lub wybór drogi życiowej, szczególnie w dorastaniu, nie przesądza o dyfuzji w sensie klinicznym. Termin pojawia się również w innych teoriach rozwoju.",
+    "related": [
+      "organizacja-osobowosci",
+      "rozszczepienie"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Opis własnych potrzeb zmienia się skrajnie zależnie od aktualnej relacji, a wcześniejsze wersje siebie wydają się zupełnie obce."
+    ],
+    "sources": [
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/trudnosci-w-okresleniu-tozsamosci/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "diagnoza-roznicowa",
+    "term": "Diagnoza różnicowa",
+    "category": "Diagnostyka",
+    "status": "draft",
+    "definition": "Porównywanie prawdopodobnych wyjaśnień objawów i trudności.",
+    "explanation": "Ważne są przebieg, kontekst, inne problemy i wpływ na życie. Ocena może wykazać potrzebę dodatkowej konsultacji albo współwystępowanie kilku trudności.",
+    "distinction": "Przesiew wskazuje, czy warto dokładniej ocenić wybrany obszar. Nie zastępuje porównania wyjaśnień.",
+    "related": [
+      "psychopatologia",
+      "funkcje-wykonawcze"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Przy kłopocie z koncentracją rozważa się historię rozwojową, sen, nastrój i stan zdrowia, zamiast przyjmować jedno wyjaśnienie."
+    ],
+    "sources": [
+      "who"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-psychologiczna-wroclaw/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "psychopatologia",
+    "term": "Psychopatologia",
+    "category": "Diagnostyka",
+    "status": "draft",
+    "definition": "Obszar wiedzy i opisu klinicznego dotyczący objawów oraz zaburzeń funkcjonowania psychicznego.",
+    "explanation": "W praktyce opisuje się formę, czas, nasilenie i kontekst trudności oraz ich wpływ na codzienne życie. Rozpoznanie wymaga więcej niż nazwania objawu.",
+    "distinction": "Psychopatologia nie jest synonimem diagnozy psychiatrycznej i nie oznacza, że każde cierpienie spełnia kryteria zaburzenia.",
+    "related": [
+      "diagnoza-roznicowa",
+      "organizacja-osobowosci"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Ocena obniżonego nastroju uwzględnia przebieg zmian i funkcjonowanie osoby, a nie tylko deklarację smutku."
+    ],
+    "sources": [
+      "who"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-psychologiczna-wroclaw/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "funkcje-wykonawcze",
+    "term": "Funkcje wykonawcze",
+    "category": "Funkcje poznawcze",
+    "status": "draft",
+    "definition": "Procesy pozwalające kierować działaniem z myślą o celu, np. utrzymać plan, hamować reakcję i zmienić strategię.",
+    "explanation": "Modele badawcze różnią się szczegółami, lecz często wyróżniają pamięć roboczą, hamowanie i elastyczność poznawczą. Dostępność tych zasobów może zmieniać się zależnie od warunków.",
+    "distinction": "Trudności wykonawcze nie są same w sobie rozpoznaniem ADHD; występują także w innych sytuacjach, np. przy niewyspaniu.",
+    "related": [
+      "diagnoza-roznicowa"
+    ],
+    "verification": "pending",
+    "examples": [
+      "Podczas gotowania trzeba pamiętać kilka kroków, przejść do następnego we właściwym momencie i wrócić po przerwie."
+    ],
+    "sources": [
+      "diamond"
+    ],
+    "links": [
+      {
+        "href": "/blog/adhd-u-doroslych/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "agresja",
+    "term": "Agresja",
+    "h1": "Agresja – czym jest w psychologii i psychoterapii psychodynamicznej?",
+    "category": "Emocje i relacje",
+    "categories": [
+      "Teoria psychodynamiczna",
+      "TFP"
+    ],
+    "status": "draft",
+    "verification": "pending",
+    "featured": true,
+    "english": "aggression",
+    "synonyms": [],
+    "definition": "W psychologii ogólnej agresja oznacza zachowanie podejmowane z zamiarem wyrządzenia krzywdy. W teorii Kernberga termin obejmuje również organizację afektów i sposobów przeżywania relacji, nawet bez agresywnego działania.",
+    "explanation": "W wielu badaniach nad ludzką agresją intencja wyrządzenia szkody odróżnia agresję od wypadku lub niezamierzonego urazu. Osoba, ku której zachowanie jest skierowane, chce go uniknąć. W psychoterapii psychodynamicznej zakres pojęcia zależy od modelu: może chodzić także o fantazje, afekty i nastawienia wobec siebie albo innych, nie o ustalenie winy na podstawie uczuć.",
+    "sections": [
+      {
+        "title": "Złość, gniew, wrogość, przemoc i granice",
+        "paragraphs": [
+          "Złość i gniew to w polszczyźnie bliskie nazwy emocji; gniew nie ma jednej powszechnie obowiązującej granicy nasilenia. Wrogość oznacza bardziej trwałą postawę lub skłonność do nieżyczliwego interpretowania innych. Można przeżywać intensywny gniew bez agresji. Możliwa jest też przemyślana agresja bez silnego gniewu.",
+          "W psychologii agresji przemoc bywa ujmowana węziej, jako ciężka agresja fizyczna; w ujęciach prawnych lub społecznych może obejmować również wymuszanie, kontrolę i przemoc psychiczną. Asertywność polega na wyrażaniu potrzeb i odmowie z poszanowaniem granic drugiej osoby. Impuls do ataku ≠ zamiar podjęcia działania ≠ działanie."
+        ]
+      },
+      {
+        "title": "Freud: konflikt, popędy i obrony",
+        "paragraphs": [
+          "Freud zmieniał sposób ujmowania agresji. Nie chodzi o jedną teorię, którą formułował niezmiennie od początku. W późnej teorii dualistycznej przeciwstawiał tendencje wiążące życie popędowi śmierci i rozważał skierowanie destrukcyjności na zewnątrz. Popęd śmierci jest historyczną hipotezą metapsychologiczną, nie empirycznie potwierdzonym mechanizmem.",
+          "W późniejszym języku id, ego i superego można opisać konflikt między impulsem, wymogami rzeczywistości a standardami moralnymi. Obrony pomagają ograniczać doświadczanie konfliktu; w niektórych teoriach część agresji może zostać skierowana przeciw sobie, np. w formie uporczywego samopotępienia. Nie znaczy to, że samokrytycyzm ma zawsze takie pochodzenie."
+        ]
+      },
+      {
+        "title": "Klein i Winnicott: odrębne akcenty",
+        "paragraphs": [
+          "Klein opisywała rozdzielanie idealizowanych i prześladowczych aspektów obiektu, projekcję i identyfikację projekcyjną. W jej teorii większa zdolność do przeżywania tej samej osoby jako zarazem dającej i frustrującej pozwala pomieścić ambiwalencję, troskę i reparację. Zawiść dotyczy dobra przypisywanego obiektowi; nie jest tym samym co zazdrość o zagrożoną więź ani nienawiść.",
+          "Winnicott inaczej rozkładał akcenty: łączył wczesną ruchliwość i żywotność oraz późniejsze przeżywanie frustracji z funkcją środowiska i rozwojem zdolności do troski. Nie utożsamiał każdej spontanicznej aktywności dziecka z intencją krzywdzenia. Wczesne relacje mają tu znaczenie rozwojowe, ale pojedynczy konflikt z opiekunem nie wyjaśnia późniejszej osobowości."
+        ]
+      },
+      {
+        "title": "Kernberg: agresja jako zorganizowany system motywacyjny",
+        "paragraphs": [
+          "W syntezie Kernberga afekty są podstawowymi składnikami motywacji. Negatywne afekty związane z bólem i frustracją mogą organizować się w szerszy system agresji. Rozdrażnienie, gniew i wściekłość nie są tożsame; nienawiść Kernberg rozważa jako szczególnie złożony, utrwalony afekt, w którym atak lub zniszczenie obiektu może nabrać centralnego znaczenia. Jest to model kliniczny, nie skala do samodzielnej oceny.",
+          "Jednostką opisu jest sposób przeżywania siebie w relacji do kogoś, wraz z afektem. W danej chwili można czuć się bezradnym w obliczu kogoś przeżywanego jako upokarzający, a po odwróceniu ról samemu poczuć pogardę. Jeśli obrazy relacji zabarwione miłością oraz złością pozostają od siebie odcięte, frustracja może prowadzić do nagłego przejścia od idealizacji do dewaluacji i utraty dostępu do bardziej złożonego obrazu osoby.",
+          "W patologii narcystycznej w tym modelu agresja może wyrażać się np. w pogardzie lub dewaluacji po zranieniu samooceny. W organizacji borderline pod uwagę bierze się m.in. integrację tożsamości, sposób używania obron i testowanie rzeczywistości. Nie jest to równoważne rozpoznaniu zaburzenia borderline i nie jest oceną ryzyka przemocy. Agresywny afekt może dotyczyć także siebie lub pojawiać się wyłącznie w fantazji."
+        ]
+      },
+      {
+        "title": "Psychoterapia psychodynamiczna i TFP",
+        "paragraphs": [
+          "W nurcie psychodynamicznym terapeuta może pytać, co dzieje się po krytyce, odmowie lub zmianie terminu: co osoba poczuła, jak zrozumiała zachowanie drugiej osoby i co chciała zrobić. W TFP obserwuje się także, jak relacja self–obiekt uaktywnia się w kontakcie z terapeutą. Ważne jest sprawdzenie realnego kontekstu, a nie uznanie każdej reakcji za projekcję.",
+          "Celem nie jest wyeliminowanie złości, ale lepsze rozpoznawanie, regulowanie i integrowanie afektu z pozostałymi przeżyciami. Rozumienie fantazji lub obron nie usprawiedliwia przemocy i nie zastępuje ochrony osoby zagrożonej. Opis modelu TFP nie jest deklaracją stosowania przez gabinet pełnego protokołu."
+        ]
+      }
+    ],
+    "examples": [
+      "Projekcja: po trudnej uwadze Lena dostrzega w wypowiedzi koleżanki pogardę. Później zauważa u siebie wrogą reakcję. To tylko jedna hipoteza; pogarda rozmówczyni mogła być rzeczywista.",
+      "Dewaluacja: gdy przełożona odmawia zmiany terminu, dotychczas ceniony zespół w jednej chwili wydaje się bezwartościowy.",
+      "Zwrócenie przeciw sobie: po odmowie pomocy Piotr nie dopuszcza myśli, że ma żal do bliskiej osoby; przez resztę dnia oskarża siebie o bycie ciężarem.",
+      "Ambiwalencja: można złościć się na przyjaciela, który zawiódł, i nadal pamiętać o jego trosce. Gdy te uczucia trudno połączyć, w chwili złości cała relacja wydaje się pozbawiona wartości.",
+      "Przeniesienie: zmiana godziny spotkania jest odebrana jako upokorzenie. Terapeuta i pacjent rozważają zarówno rzeczywisty sposób przekazania zmiany, jak i znaczenie powracającego oczekiwania pogardy.",
+      "Granica: „Nie zgadzam się na rozmowę w tym tonie. Wrócę do niej później” różni się od grożenia komuś po to, by uległ."
+    ],
+    "distinction": "Agresywny afekt, zachowanie agresywne i przemoc nie są wymienne. W ujęciu Kernberga termin dotyczy również organizacji doświadczenia; w badaniach nad zachowaniem zwykle dotyczy działania. Stanowczość, autonomia i sprzeciw nie są same w sobie agresją.",
+    "clinical": "Jeżeli istnieje bezpośrednie zagrożenie życia lub zdrowia, należy zadzwonić pod 112. Opis psychodynamiczny pomaga formułować hipotezy kliniczne; nie służy do przypisywania komukolwiek zaburzenia osobowości ani do oceny niebezpieczeństwa na podstawie etykiety.",
+    "related": [
+      "projekcja",
+      "identyfikacja-projekcyjna",
+      "rozszczepienie",
+      "organizacja-osobowosci",
+      "przeniesienie",
+      "agresja-reaktywna",
+      "zlosc"
+    ],
+    "sources": [
+      "anderson",
+      "freud1920",
+      "klein1946",
+      "klein1957",
+      "winnicott1950",
+      "kernberg1992",
+      "kernberg1994",
+      "kernberg2001",
+      "tfp",
+      "kernbergHatred",
+      "ego"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/radzenie-sobie-ze-zloscia/",
+        "label": "Złość i codzienne trudności"
+      },
+      {
+        "href": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+        "label": "Podejście TFP"
+      },
+      {
+        "href": "/pomoc-w-kryzysie/",
+        "label": "Pilna pomoc"
+      }
+    ]
+  },
+  {
+    "slug": "agresja-reaktywna",
+    "term": "Agresja reaktywna",
+    "category": "Emocje i relacje",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Zachowanie krzywdzące podejmowane w odpowiedzi na spostrzeganą prowokację lub zagrożenie.",
+    "explanation": "Silne pobudzenie i interpretacja sytuacji mogą sprzyjać szybkiej reakcji; prowokacja może być rzeczywista lub błędnie przypisana.",
+    "examples": [
+      "Po potrąceniu w kolejce Tomek od razu obrzuca drugą osobę obelgami, sądząc, że zrobiła to celowo."
+    ],
+    "distinction": "Reakcja na napaść nie oznacza automatycznie agresji; obrona i odwet wymagają uwzględnienia kontekstu.",
+    "related": [
+      "agresja"
+    ],
+    "sources": [
+      "dodge",
+      "anderson"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/radzenie-sobie-ze-zloscia/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "agresja-proaktywna",
+    "term": "Agresja proaktywna",
+    "category": "Emocje i relacje",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Zachowanie krzywdzące inicjowane w celu uzyskania przewagi lub innej korzyści.",
+    "explanation": "W odróżnieniu od reakcji na bezpośrednią prowokację motywem może być oczekiwanie nagrody lub podporządkowania innych; w jednej sytuacji oba motywy mogą współistnieć. Agresję instrumentalną opisuje się na pokrewnej osi: chodzi o użycie agresji jako narzędzia do celu, a nie wyłącznie o to, czy działanie zainicjowano bez bezpośredniej prowokacji. Te pojęcia często się pokrywają, lecz nie są ścisłymi synonimami.",
+    "examples": [
+      "Ktoś regularnie ośmiesza kolegę, aby uzyskać poparcie grupy."
+    ],
+    "distinction": "Proaktywność opisuje funkcję zachowania, nie nasilenie gniewu ani typ osobowości.",
+    "related": [
+      "agresja"
+    ],
+    "sources": [
+      "dodge",
+      "anderson"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/radzenie-sobie-ze-zloscia/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": [],
+    "english": "proactive aggression"
+  },
+  {
+    "slug": "agresja-posrednia",
+    "term": "Agresja pośrednia",
+    "category": "Emocje i relacje",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Krzywdzenie poprzez inne osoby lub mniej bezpośrednie kanały kontaktu.",
+    "explanation": "Skutek może dotyczyć reputacji albo miejsca w grupie; nie każde nieporozumienie w zespole stanowi zamierzoną agresję.",
+    "examples": [
+      "Osoba rozpuszcza fałszywą pogłoskę, żeby koleżanka została pominięta w spotkaniu."
+    ],
+    "distinction": "To sposób działania, a nie odpowiednik terminu „bierna agresja”, który opisuje inny wymiar zachowania.",
+    "related": [
+      "agresja"
+    ],
+    "sources": [
+      "anderson"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/radzenie-sobie-ze-zloscia/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "zlosc",
+    "term": "Złość",
+    "category": "Emocje i relacje",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Emocja, która może pojawić się m.in. przy przeszkodzie, poczuciu niesprawiedliwości albo naruszeniu granicy.",
+    "explanation": "Uczucie sygnalizuje, że coś ma znaczenie, ale nie stanowi dowodu intencji innych ludzi ani nakazu działania.",
+    "examples": [
+      "Ola czuje złość, gdy ktoś przerywa jej wypowiedź, i prosi, by mogła ją dokończyć."
+    ],
+    "distinction": "Gniew jest bliską nazwą emocji; agresja w psychologii zachowania oznacza czyn ukierunkowany na krzywdzenie.",
+    "related": [
+      "agresja"
+    ],
+    "sources": [
+      "anderson"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/radzenie-sobie-ze-zloscia/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": [
+      "gniew"
+    ],
+    "english": "anger"
+  },
+  {
+    "slug": "wrogosc",
+    "term": "Wrogość",
+    "category": "Emocje i relacje",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Nieżyczliwe lub antagonistyczne nastawienie wobec osoby lub grupy.",
+    "explanation": "Może występować w postaci podejrzliwych interpretacji i nie musi wiązać się z otwartym działaniem czy chwilowym pobudzeniem.",
+    "examples": [
+      "Pracownik stale zakłada złą wolę kolegi, choć ich rozmowy pozostają rzeczowe."
+    ],
+    "distinction": "Gniew jest doświadczanym stanem emocjonalnym, a agresja może być działaniem. Sama nieufność przy rzeczywistym zagrożeniu nie oznacza wrogiego usposobienia.",
+    "related": [
+      "agresja"
+    ],
+    "sources": [
+      "anderson"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/radzenie-sobie-ze-zloscia/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "frustracja",
+    "term": "Frustracja",
+    "category": "Emocje i relacje",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Stan związany z przeszkodą w osiągnięciu ważnego celu lub zaspokojeniu potrzeby.",
+    "explanation": "Przeszkoda może uruchomić rozczarowanie, złość albo zmianę planu; agresja nie jest jej koniecznym następstwem.",
+    "examples": [
+      "Po odwołaniu długo planowanego spotkania osoba czuje irytację i szuka innej daty."
+    ],
+    "distinction": "Przeszkoda to zdarzenie, frustracja to reakcja na nie; nie oznacza rozpoznania klinicznego.",
+    "related": [
+      "agresja"
+    ],
+    "sources": [
+      "anderson"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/radzenie-sobie-ze-zloscia/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "tolerancja-frustracji",
+    "term": "Tolerancja frustracji",
+    "category": "Emocje i relacje",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Zdolność pozostania w kontakcie z rozczarowaniem i rozważenia reakcji, gdy ważna potrzeba nie jest od razu zaspokojona.",
+    "explanation": "Zależy między innymi od sytuacji, zmęczenia i znaczenia przeszkody. Można zmienić cel lub zaprotestować bez konieczności natychmiastowego rozładowania napięcia.",
+    "examples": [
+      "Osoba rezygnuje z odpowiadania pod wpływem złości i wraca do sprawy, aby przedstawić swoje racje."
+    ],
+    "distinction": "Tolerowanie nie oznacza zgody na złe traktowanie ani tłumienia wszystkich uczuć.",
+    "related": [
+      "agresja"
+    ],
+    "sources": [
+      "gabbard",
+      "anderson"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/radzenie-sobie-ze-zloscia/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "zawisc",
+    "term": "Zawiść",
+    "category": "Emocje i relacje",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W ujęciu Klein: bolesna reakcja na dobro przeżywane jako posiadane przez obiekt, z tendencją do jego umniejszenia lub zniszczenia.",
+    "explanation": "To hipoteza psychodynamiczna; rozczarowanie nierównością albo zwykła chęć posiadania podobnej możliwości nie muszą mieć tej funkcji.",
+    "examples": [
+      "Osoba nie tylko tęskni za podobnym uznaniem, ale odruchowo odbiera wartość sukcesowi znajomego."
+    ],
+    "distinction": "Zazdrość częściej organizuje się wokół zagrożenia ważnej więzi i obecności rywala.",
+    "related": [
+      "agresja"
+    ],
+    "sources": [
+      "klein1957",
+      "anderson"
+    ],
+    "links": [
+      {
+        "href": "/w-czym-pomagam/radzenie-sobie-ze-zloscia/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "wyparcie",
+    "term": "Wyparcie",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W psychoanalizie nieświadome ograniczenie dostępu do psychicznie konfliktowego doświadczenia lub wyobrażenia.",
+    "explanation": "Znaczenie przypisuje się nie tyle prostemu zapomnieniu, ile możliwemu utrzymywaniu się skutków konfliktu mimo jego niewidoczności w przeżyciu świadomym.",
+    "examples": [
+      "Osoba nie rozpoznaje żalu, choć podobne tematy systematycznie budzą niepokój; to jedna z hipotez, nie dowód wyparcia."
+    ],
+    "distinction": "Nie jest to świadoma decyzja, by pomyśleć o czymś później, ani metoda ustalania prawdy o przeszłości.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "anna",
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "tlumienie",
+    "term": "Tłumienie",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Świadome odłożenie uwagi poświęcanej trudnej myśli lub emocji.",
+    "explanation": "W rozumieniu obrony może pomagać wrócić do sprawy później bez przekreślania jej znaczenia.",
+    "examples": [
+      "Przed wystąpieniem osoba odkłada rozważanie konfliktu rodzinnego do końca pracy."
+    ],
+    "distinction": "Wyparcie w teorii psychoanalitycznej jest nieświadome. Hamowanie ekspresji emocji nie musi oznaczać odłożenia jej przeżywania.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "vaillant",
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "zaprzeczanie",
+    "term": "Zaprzeczanie",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Niedopuszczanie do uznania aspektu rzeczywistości, którego znaczenie jest trudne do przyjęcia.",
+    "explanation": "W ocenie klinicznej ważne są okoliczności, dostępne informacje i czas potrzebny do oswojenia wiadomości.",
+    "examples": [
+      "Osoba po otrzymaniu jednoznacznego zawiadomienia zachowuje się, jakby zdarzenie w ogóle nie zaszło."
+    ],
+    "distinction": "To inna hipoteza niż celowe kłamstwo lub racjonalne kwestionowanie niepewnej wiadomości.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "racjonalizacja",
+    "term": "Racjonalizacja",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Nadawanie działaniu wiarygodnego wyjaśnienia, które zasłania trudniejszy do uznania motyw.",
+    "explanation": "Podane wyjaśnienie może zawierać część prawdy. W rozmowie potrzeba danych o powtarzalności i emocjach, by rozważać jego możliwą funkcję.",
+    "examples": [
+      "Po nieudanej rozmowie rekrutacyjnej ktoś mówi, że posada była zupełnie bez znaczenia, choć wcześniej bardzo na niej zależało."
+    ],
+    "distinction": "Posiadanie dobrych argumentów nie oznacza obrony; racjonalizacja różni się od świadomego kłamstwa.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "intelektualizacja",
+    "term": "Intelektualizacja",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Odwoływanie się do abstrakcji i analiz w sposób, który ogranicza bezpośredni kontakt z uczuciami.",
+    "explanation": "Myślenie analityczne może być pomocne. O obronnej funkcji można myśleć, gdy staje się jedynym sposobem podejmowania emocjonalnego tematu.",
+    "examples": [
+      "Osoba omawia statystyki dotyczące rozwodów, lecz nie może odnieść się do własnego poczucia straty."
+    ],
+    "distinction": "To nie jest synonim inteligencji; izolacja afektu może zachodzić także przy bardzo konkretnym opisie.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "izolacja-afektu",
+    "term": "Izolacja afektu",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Oddzielenie emocjonalnego tonu doświadczenia od jego treści poznawczej.",
+    "explanation": "Wspomnienie pozostaje dostępne, ale uczucie, które zwykle mu towarzyszy, jest słabo odczuwane lub nieobecne w opisie.",
+    "examples": [
+      "Osoba pamięta dokładny przebieg przykrego zdarzenia, lecz relacjonuje je bez kontaktu z własnym smutkiem."
+    ],
+    "distinction": "Nie musi oznaczać zapomnienia ani nie jest równoznaczna z rozpoznaniem zaburzenia dysocjacyjnego.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": [
+      "izolacja uczucia"
+    ],
+    "english": "isolation of affect"
+  },
+  {
+    "slug": "przemieszczenie",
+    "term": "Przemieszczenie",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Przeniesienie reakcji z jej pierwotnego przedmiotu na inny, łatwiejszy do zniesienia lub mniej ryzykowny.",
+    "explanation": "Obrona zmienia adresata afektu, ale niekoniecznie jego intensywność. Decyduje powiązanie między sytuacjami, nie samo wystąpienie złości.",
+    "examples": [
+      "Po upokorzeniu w pracy ktoś nadmiernie reaguje na drobne niedopatrzenie w domu."
+    ],
+    "distinction": "Nie jest tym samym co projekcja, w której uczucie przypisuje się komuś innemu.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "anna",
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "zwracanie-przeciw-sobie",
+    "term": "Zwrócenie przeciwko sobie",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Hipoteza psychodynamiczna, że impuls lub wrogość wobec innej osoby znajduje wyraz w sposobie odnoszenia się do siebie.",
+    "explanation": "Przywiązanie, lęk przed utratą więzi lub potrzeba ochrony obrazu bliskiej osoby mogą utrudniać przyjęcie własnego żalu.",
+    "examples": [
+      "Po powtarzającej się niesprawiedliwej krytyce osoba kieruje wszystkie pretensje wobec siebie."
+    ],
+    "distinction": "To nie synonim zachowań samouszkadzających ani wyjaśnienie każdej samokrytyki.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "anna",
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "sublimacja",
+    "term": "Sublimacja",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W psychoanalizie przekształcanie impulsu w działanie znajdujące inne, możliwe do przyjęcia ujście.",
+    "explanation": "W klasyfikacjach obron opisuje formę adaptacyjną; z samego rodzaju zajęcia nie można odtworzyć źródłowego impulsu.",
+    "examples": [
+      "Przeżycie rywalizacji może zasilać twórczą pracę wymagającą wytrwałości."
+    ],
+    "distinction": "Nie polega jedynie na zablokowaniu impulsu, jak mogłoby się wydawać w potocznym rozumieniu hamowania.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "vaillant",
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "reakcja-upozorowana",
+    "term": "Reakcja upozorowana",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Przyjmowanie postawy przeciwnej wobec uczucia lub dążenia, które z trudem daje się zaakceptować.",
+    "explanation": "W modelu psychodynamicznym przesadnie sztywny wzorzec może sygnalizować konflikt, ale życzliwość nie stanowi dowodu ukrytej wrogości.",
+    "examples": [
+      "Ktoś odpowiada przesadną serdecznością w sytuacjach, w których nie potrafi uznać własnej niechęci."
+    ],
+    "distinction": "Świadoma uprzejmość mimo irytacji może być decyzją, nie nieświadomą obroną.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "anna",
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": [
+      "formacja reaktywna"
+    ],
+    "english": "reaction formation"
+  },
+  {
+    "slug": "acting-out",
+    "term": "Acting out",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Wyrażanie napięcia lub konfliktu poprzez działanie, zanim można je dostrzec i omówić.",
+    "explanation": "W psychoterapii termin bywa używany zarówno wobec zdarzeń związanych z relacją terapeutyczną, jak i poza nią. Nie każda impulsywność spełnia tę funkcję.",
+    "examples": [
+      "Zamiast mówić o złości związanej ze spotkaniami, osoba w powtarzalny sposób je zrywa; istnieją także inne możliwe wyjaśnienia."
+    ],
+    "distinction": "Enactment kładzie większy nacisk na współtworzenie odgrywanego wzorca w relacji.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "gabbard",
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": [
+      "acting-out"
+    ],
+    "english": "acting out"
+  },
+  {
+    "slug": "obrona-maniakalna",
+    "term": "Obrona maniakalna",
+    "category": "Mechanizmy obronne",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W teorii Klein: odwracanie się od zależności, straty lub winy poprzez kontrolę, triumf lub pogardę.",
+    "explanation": "Można ją rozumieć jako hipotezę o chronieniu się przed znaczeniem utraty, nie jako opis pobudzenia psychoruchowego.",
+    "examples": [
+      "Po rozstaniu osoba powtarza, że nikt nigdy nie był jej potrzebny, i wyśmiewa znaczenie dawnej więzi."
+    ],
+    "distinction": "Nie jest to epizod maniakalny w rozumieniu klinicznym.",
+    "related": [
+      "mechanizmy-obronne"
+    ],
+    "sources": [
+      "klein1940",
+      "mcwilliams"
+    ],
+    "links": [
+      {
+        "href": "/psychoedukacja/",
+        "label": "Przeczytaj w szerszym kontekście"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "obiekt-wewnetrzny",
+    "term": "Obiekt wewnętrzny",
+    "category": "Teoria psychodynamiczna",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W teorii relacji z obiektem: uwewnętrzniony sposób przeżywania ważnej osoby, związany z emocjami i oczekiwaniami.",
+    "explanation": "Nie jest fotograficznym zapisem doświadczeń. Jedna osoba może być psychicznie przedstawiana na różne sposoby zależnie od kontekstu i afektu.",
+    "examples": [
+      "Nawet samodzielnie pracując, Ania reaguje na mały błąd tak, jakby spotkała się z surową oceną."
+    ],
+    "distinction": "Obiekt wewnętrzny nie jest tożsamy z realną osobą ani z pojedynczym wspomnieniem.",
+    "related": [
+      "relacje-z-obiektem"
+    ],
+    "sources": [
+      "fairbairn",
+      "kernberg2001"
+    ],
+    "links": [
+      {
+        "href": "/psychoterapia-psychodynamiczna-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "holding",
+    "term": "Podtrzymywanie (holding)",
+    "category": "Teoria psychodynamiczna",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "U Winnicotta: funkcja środowiska, które zapewnia ciągłość i ochronę przed nadmiarem zakłóceń.",
+    "explanation": "Pojęcie wywodzi się z opisu wczesnej opieki. Przeniesienie go do psychoterapii dotyczy między innymi niezawodności ram, a nie odtwarzania relacji rodzic–dziecko.",
+    "examples": [
+      "Regularność spotkań ułatwia osobie pozostawanie w kontakcie z uczuciami, które wcześniej szybko przerywała."
+    ],
+    "distinction": "Holding nie jest techniką fizycznego przytrzymywania ani obietnicą stałej dostępności.",
+    "related": [
+      "relacje-z-obiektem"
+    ],
+    "sources": [
+      "holding"
+    ],
+    "links": [
+      {
+        "href": "/psychoterapia-psychodynamiczna-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "kontenerowanie",
+    "term": "Kontenerowanie",
+    "category": "Teoria psychodynamiczna",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W modelu Biona: przyjmowanie i przekształcanie trudnego do pomyślenia doświadczenia w coś, co można zacząć rozpoznawać.",
+    "explanation": "Model kontenera i zawartości opisuje funkcję psychiczną. Rozmówca nie tyle zgaduje, co ktoś czuje, ile pomaga wypracować możliwe znaczenie napięcia.",
+    "examples": [
+      "Zamiast natychmiast rozstrzygać, kto zawinił, terapeuta i pacjent próbują znaleźć słowa dla poczucia bezradności."
+    ],
+    "distinction": "Holding kładzie nacisk na podtrzymujące warunki; kontenerowanie – na przekształcanie przeżyć. Nie są wymienne.",
+    "related": [
+      "relacje-z-obiektem"
+    ],
+    "sources": [
+      "bion1962"
+    ],
+    "links": [
+      {
+        "href": "/psychoterapia-psychodynamiczna-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": [],
+    "english": "containment"
+  },
+  {
+    "slug": "separacja-indywiduacja",
+    "term": "Separacja–indywiduacja",
+    "category": "Teoria psychodynamiczna",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W klasycznej teorii Mahler: proces różnicowania siebie od opiekuna i stopniowego kształtowania odrębności psychicznej.",
+    "explanation": "Jest to historyczny model rozwojowy, a nie uniwersalny kalendarz. Odrębność nie wyklucza zależności ani utrzymywania więzi.",
+    "examples": [
+      "Dziecko podejmuje krótką samodzielną zabawę, wraca do opiekuna i ponownie próbuje odejść."
+    ],
+    "distinction": "Separacja psychiczna nie oznacza fizycznej rozłąki ani braku przywiązania.",
+    "related": [
+      "relacje-z-obiektem"
+    ],
+    "sources": [
+      "mahler"
+    ],
+    "links": [
+      {
+        "href": "/psychoterapia-psychodynamiczna-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "pozycja-paranoidalno-schizoidalna",
+    "term": "Pozycja paranoidalno-schizoidalna",
+    "category": "Teoria psychodynamiczna",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W teorii Klein: sposób organizowania przeżyć, w którym doświadczenia dobre i złe pozostają rozdzielone, a zagrożenie lokowane jest na zewnątrz.",
+    "explanation": "Pozycja odnosi się do wzorca lęków, obron i relacji. U Klein do takiego sposobu przeżywania można powracać także poza wczesnym rozwojem.",
+    "examples": [
+      "Po rozczarowaniu dawniej wspierający przyjaciel przez chwilę wydaje się wyłącznie wrogi."
+    ],
+    "distinction": "Nazwa historyczna nie oznacza schizofrenii ani rozpoznania paranoi.",
+    "related": [
+      "relacje-z-obiektem"
+    ],
+    "sources": [
+      "klein1946"
+    ],
+    "links": [
+      {
+        "href": "/psychoterapia-psychodynamiczna-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "pozycja-depresyjna",
+    "term": "Pozycja depresyjna",
+    "category": "Teoria psychodynamiczna",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W teorii Klein: sposób przeżywania, który pozwala widzieć tę samą osobę jako kochaną i budzącą złość.",
+    "explanation": "Wraz z integracją pojawia się możliwość troski o obiekt i przeżywania odpowiedzialności za rzeczywistą lub wyobrażoną szkodę.",
+    "examples": [
+      "Po kłótni ktoś nadal jest zły, ale pamięta o więzi i chce naprawić własny krzywdzący komentarz."
+    ],
+    "distinction": "Termin nie jest nazwą epizodu depresyjnego.",
+    "related": [
+      "relacje-z-obiektem"
+    ],
+    "sources": [
+      "klein1940"
+    ],
+    "links": [
+      {
+        "href": "/psychoterapia-psychodynamiczna-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "testowanie-rzeczywistosci",
+    "term": "Testowanie rzeczywistości",
+    "category": "Osobowość",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Zdolność do odróżniania doświadczeń wewnętrznych od tego, co dzieje się na zewnątrz, oraz do sprawdzania interpretacji.",
+    "explanation": "W modelu strukturalnym ważne jest, czy osoba potrafi odnieść się do odmiennej perspektywy i zrewidować wniosek przy dodatkowych danych.",
+    "examples": [
+      "Ktoś czuje się odrzucony po braku odpowiedzi, ale bierze pod uwagę, że znajomy mógł nie odczytać wiadomości."
+    ],
+    "distinction": "To nie test, który można przeprowadzić z jednego przykładu, ani miara poprawności wszystkich sądów.",
+    "related": [
+      "organizacja-osobowosci"
+    ],
+    "sources": [
+      "mcwilliams",
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-osobowosci-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "organizacja-neurotyczna",
+    "term": "Neurotyczna organizacja osobowości",
+    "category": "Osobowość",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W modelach psychodynamicznych poziom funkcjonowania zwykle wiązany z względnie zintegrowaną tożsamością i zachowanym testowaniem rzeczywistości.",
+    "explanation": "Konflikt lub silne objawy mogą występować przy równoczesnej zdolności do widzenia różnych stron siebie i innych.",
+    "examples": [
+      "Osoba przeżywa znaczny lęk przed oceną, a mimo to potrafi opisać zarówno własne mocne strony, jak i długotrwałe trudności."
+    ],
+    "distinction": "Słowo „neurotyczna” oznacza tutaj poziom organizacji, nie formalne rozpoznanie nerwicy.",
+    "related": [
+      "organizacja-osobowosci"
+    ],
+    "sources": [
+      "mcwilliams",
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-osobowosci-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "organizacja-borderline",
+    "term": "Organizacja osobowości borderline",
+    "category": "Osobowość",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W modelu Kernberga poziom organizacji opisywany m.in. przez słabszą integrację tożsamości i dominację obron związanych z rozszczepieniem, przy zasadniczo zachowanym testowaniu rzeczywistości.",
+    "explanation": "Pojęcie obejmuje niejednorodne obrazy funkcjonowania. Ocena uwzględnia szeroki wzorzec i stan osoby, a nie pojedynczy kryzys.",
+    "examples": [
+      "Osoba odmiennie opisuje siebie w różnych relacjach i z trudem łączy te opisy; sam taki przykład nie przesądza o poziomie organizacji."
+    ],
+    "distinction": "Zaburzenie osobowości borderline to odrębne pojęcie diagnostyczne. Ten poziom organizacji nie opisuje tego, czy ktoś jest niebezpieczny.",
+    "related": [
+      "organizacja-osobowosci"
+    ],
+    "sources": [
+      "tfp",
+      "who"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-osobowosci-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "organizacja-psychotyczna",
+    "term": "Psychotyczna organizacja osobowości",
+    "category": "Osobowość",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W modelach strukturalnych poziom, na którym szczególne trudności mogą dotyczyć m.in. różnicowania doświadczenia wewnętrznego od świata zewnętrznego.",
+    "explanation": "Rozumienie poziomu organizacji wymaga całościowej oceny. Czynniki somatyczne, substancje i stres mogą mieć znaczenie dla aktualnego stanu.",
+    "examples": [
+      "W rozmowie trzeba rozdzielić wieloletnie funkcjonowanie od nagłej zmiany w przeżywaniu rzeczywistości."
+    ],
+    "distinction": "Organizacja osobowości nie jest synonimem epizodu psychotycznego ani schizofrenii.",
+    "related": [
+      "organizacja-osobowosci"
+    ],
+    "sources": [
+      "mcwilliams",
+      "who"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-osobowosci-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "styl-osobowosci",
+    "term": "Styl osobowości",
+    "category": "Osobowość",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Charakterystyczny sposób przeżywania, interpretowania i reagowania, który sam w sobie nie oznacza zaburzenia.",
+    "explanation": "Styl można opisywać niezależnie od poziomu organizacji. O znaczeniu klinicznym decydują m.in. sztywność wzorca, jego skutki i kontekst.",
+    "examples": [
+      "Skłonność do dokładności pomaga przy pracy z danymi, a w czasie wolnym ta sama osoba potrafi przyjąć rozwiązanie wystarczająco dobre."
+    ],
+    "distinction": "Cecha opisuje wymiar, styl – konfigurację cech, a zaburzenie wymaga odrębnej oceny diagnostycznej.",
+    "related": [
+      "organizacja-osobowosci"
+    ],
+    "sources": [
+      "mcwilliams",
+      "who"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-osobowosci-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "diada-relacji-z-obiektem",
+    "term": "Diada relacji z obiektem",
+    "category": "TFP",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W TFP: powiązane reprezentacje siebie i drugiej osoby połączone dominującym afektem.",
+    "explanation": "Role w tej samej konfiguracji mogą się odwracać. Klinicznie chodzi o zrozumienie, jak przeżywana jest relacja, a nie o przypisanie stałych ról.",
+    "examples": [
+      "W jednej chwili ktoś czuje się zlekceważony, w innej sam traktuje rozmówcę jako niewartego uwagi."
+    ],
+    "distinction": "Nie jest to opis dwóch realnych osobowości ani dowód złej intencji drugiej osoby.",
+    "related": [
+      "przeniesienie"
+    ],
+    "sources": [
+      "tfp",
+      "kernberg2001"
+    ],
+    "links": [
+      {
+        "href": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "klaryfikacja",
+    "term": "Klaryfikacja",
+    "category": "TFP",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Doprecyzowanie tego, co osoba przeżywa lub opisuje, zanim sformułuje się bardziej złożoną hipotezę.",
+    "explanation": "Może dotyczyć znaczenia słów, kolejności zdarzeń lub różnicy między uczuciem a zachowaniem. Nie wymaga wyjaśnienia nieświadomego motywu.",
+    "examples": [
+      "Terapeuta pyta, czy przez „zignorował mnie” osoba rozumie brak odpowiedzi, czy odczuwany w rozmowie dystans."
+    ],
+    "distinction": "Konfrontacja zestawia dostrzeżone rozbieżności; interpretacja proponuje powiązanie lub znaczenie.",
+    "related": [
+      "przeniesienie"
+    ],
+    "sources": [
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "konfrontacja-terapeutyczna",
+    "term": "Konfrontacja terapeutyczna",
+    "category": "TFP",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W TFP: zestawienie aspektów wypowiedzi lub zachowania, których związek albo rozbieżność nie są jeszcze widoczne dla rozmówcy.",
+    "explanation": "Zwykle wymaga wcześniejszego doprecyzowania. Powinna umożliwić przyjrzenie się obu stronom doświadczenia, bez upokarzania i wywierania presji.",
+    "examples": [
+      "Osoba mówi, że zwolnienie nie miało znaczenia, a jednocześnie opisuje powracającą bezsenność od czasu tej wiadomości."
+    ],
+    "distinction": "Nie oznacza agresywnego zakwestionowania stanowiska ani automatycznego przypisania przyczyny.",
+    "related": [
+      "przeniesienie"
+    ],
+    "sources": [
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "interpretacja-psychodynamiczna",
+    "term": "Interpretacja psychodynamiczna",
+    "category": "TFP",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Hipoteza łącząca znaczenie uczuć, zachowań, konfliktów lub wzorców ujawniających się w relacji.",
+    "explanation": "Jej użyteczność zależy m.in. od momentu, dostępnego materiału i możliwości rozmówcy do sprawdzenia hipotezy we własnym doświadczeniu.",
+    "examples": [
+      "Terapeuta zastanawia się wspólnie z osobą, czy unikanie powiedzenia „nie” wiąże się z oczekiwaniem utraty więzi."
+    ],
+    "distinction": "Interpretacja nie jest odczytaniem prawdziwych intencji ani rozpoznaniem diagnostycznym.",
+    "related": [
+      "przeniesienie"
+    ],
+    "sources": [
+      "tfp",
+      "gabbard"
+    ],
+    "links": [
+      {
+        "href": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "neutralnosc-techniczna",
+    "term": "Neutralność techniczna",
+    "category": "TFP",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W podejściu psychodynamicznym postawa polegająca na nieopowiadaniu się automatycznie po jednej stronie konfliktu psychicznego.",
+    "explanation": "Nie wyłącza empatii i obowiązków związanych z bezpieczeństwem. Terapeuta może działać stanowczo, gdy wymaga tego ochrona lub utrzymanie ram.",
+    "examples": [
+      "W sporze między pragnieniem bliskości a lękiem terapeuta pomaga uznać oba doświadczenia bez narzucania wyboru."
+    ],
+    "distinction": "Neutralność nie oznacza obojętności ani pozostawania neutralnym wobec krzywdzenia.",
+    "related": [
+      "przeniesienie"
+    ],
+    "sources": [
+      "tfp"
+    ],
+    "links": [
+      {
+        "href": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "enactment",
+    "term": "Enactment",
+    "category": "TFP",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "W języku psychodynamicznym: współodgrywanie wzorca relacyjnego, który staje się widoczny w reakcjach obu uczestników spotkania.",
+    "explanation": "Terapeuta bierze pod uwagę własny wkład, zamiast wyjaśniać wszystko wyłącznie poprzez przeniesienie pacjenta.",
+    "examples": [
+      "Jedna osoba oczekuje krytyki, druga staje się coraz bardziej dyrektywna; dostrzeżenie układu pozwala o nim porozmawiać."
+    ],
+    "distinction": "Acting out podkreśla funkcję czynu dla osoby; enactment – rozwijanie się układu między osobami.",
+    "related": [
+      "przeniesienie"
+    ],
+    "sources": [
+      "gabbard"
+    ],
+    "links": [
+      {
+        "href": "/terapia-skoncentrowana-na-przeniesieniu-tfp/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "badanie-przesiewowe",
+    "term": "Badanie przesiewowe",
+    "category": "Diagnostyka",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Wstępna ocena służąca rozpoznaniu, czy warto rozważyć pełniejszą diagnostykę.",
+    "explanation": "Dodatni wynik zwiększa zasadność dalszej oceny, ale może być wynikiem podobnych trudności o innym pochodzeniu. Ujemny wynik nie rozstrzyga każdej sytuacji.",
+    "examples": [
+      "Krótki formularz wskazuje na trudności z uwagą i staje się punktem wyjścia do rozmowy o ich historii."
+    ],
+    "distinction": "Narzędzie przesiewowe nie zastępuje badania diagnostycznego ani nie jest samodiagnozą.",
+    "related": [
+      "diagnoza-roznicowa"
+    ],
+    "sources": [
+      "nice"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-psychologiczna-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "ocena-funkcjonalna",
+    "term": "Ocena funkcjonowania",
+    "category": "Diagnostyka",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Opis, jak trudność wpływa na codzienne zadania i role w różnych warunkach.",
+    "explanation": "Ważne są zarówno ograniczenia, jak i zasoby oraz sytuacje, w których osoba radzi sobie lepiej. Ocena może uzupełniać opis objawów.",
+    "examples": [
+      "Ktoś wykonuje zadania zawodowe z pomocą listy kroków, a jednocześnie regularnie ma trudność z organizacją spraw domowych."
+    ],
+    "distinction": "Funkcjonowanie to obszar oceny, nie samodzielny rodzaj rozpoznania.",
+    "related": [
+      "diagnoza-roznicowa"
+    ],
+    "sources": [
+      "who",
+      "nice"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-psychologiczna-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "objaw-cecha-stan",
+    "term": "Objaw, cecha i stan",
+    "category": "Diagnostyka",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Trzy osie opisu: wskaźnik trudności, względnie trwała dyspozycja i aktualne przeżywanie lub funkcjonowanie.",
+    "explanation": "To samo słowo w potocznym opisie nie rozstrzyga, czy problem jest przejściowy, powtarzalny czy ma znaczenie diagnostyczne.",
+    "examples": [
+      "Pogorszona koncentracja po kilku źle przespanych nocach jest inną informacją niż trudność obecna od lat w różnych miejscach."
+    ],
+    "distinction": "Nie ustala się rozpoznania na podstawie jednego objawu, stanu ani cechy.",
+    "related": [
+      "diagnoza-roznicowa"
+    ],
+    "sources": [
+      "who"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-psychologiczna-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "wywiad-rozwojowy",
+    "term": "Wywiad rozwojowy",
+    "category": "Diagnostyka",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Rozmowa porządkująca informacje o występowaniu trudności, zasobach i zmianach funkcjonowania na wcześniejszych etapach życia.",
+    "explanation": "Dane mogą być niepełne, a pamięć selektywna. Ważne jest opisanie kontekstu i źródeł informacji bez dopowiadania brakujących faktów.",
+    "examples": [
+      "Dorosły opisuje trudności z zadaniami szkolnymi inaczej w klasie i inaczej podczas samodzielnej nauki."
+    ],
+    "distinction": "Jest częścią procesu, nie odrębnym testem ani samodzielnym potwierdzeniem ADHD.",
+    "related": [
+      "diagnoza-roznicowa"
+    ],
+    "sources": [
+      "nice"
+    ],
+    "links": [
+      {
+        "href": "/diagnoza-psychologiczna-wroclaw/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "hamowanie-reakcji",
+    "term": "Hamowanie reakcji",
+    "category": "Funkcje poznawcze",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Zdolność powstrzymania rozpoczętej lub dominującej reakcji, gdy nie odpowiada aktualnemu celowi.",
+    "explanation": "Ten składnik kontroli wykonawczej zależy od wymagań zadania i warunków. W badaniu trzeba odróżniać trudność z hamowaniem od braku zrozumienia instrukcji.",
+    "examples": [
+      "Ktoś umie poczekać na sygnał, choć odruchowo przygotował już odpowiedź."
+    ],
+    "distinction": "Nie jest równoznaczne z tłumieniem emocji ani nie wystarcza do rozpoznania ADHD.",
+    "related": [
+      "funkcje-wykonawcze"
+    ],
+    "sources": [
+      "diamond",
+      "nice"
+    ],
+    "links": [
+      {
+        "href": "/blog/adhd-u-doroslych/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": [],
+    "english": "inhibitory control"
+  },
+  {
+    "slug": "pamiec-robocza",
+    "term": "Pamięć robocza",
+    "category": "Funkcje poznawcze",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Czasowe utrzymywanie informacji dostępnej do wykonania zadania, często połączone z jej przekształcaniem.",
+    "explanation": "W codziennym działaniu pozwala łączyć kolejne kroki albo porównać nowe dane z aktualną instrukcją. Obciążenie rośnie przy równoległych zadaniach.",
+    "examples": [
+      "Osoba liczy koszt zakupów, aktualizując sumę w miarę dodawania produktów."
+    ],
+    "distinction": "Nie jest pamięcią długotrwałą; trudność w zadaniu nie wskazuje sama na jej przyczynę.",
+    "related": [
+      "funkcje-wykonawcze"
+    ],
+    "sources": [
+      "diamond"
+    ],
+    "links": [
+      {
+        "href": "/blog/adhd-u-doroslych/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  },
+  {
+    "slug": "elastycznosc-poznawcza",
+    "term": "Elastyczność poznawcza",
+    "category": "Funkcje poznawcze",
+    "status": "draft",
+    "verification": "pending",
+    "definition": "Zdolność zmiany reguły, perspektywy lub strategii po zmianie celu albo warunków.",
+    "explanation": "Wymaga zarówno porzucenia dominującej reakcji, jak i utrzymania nowego celu. Upór przy strategii może także wynikać z tego, że nadal jest najlepsza.",
+    "examples": [
+      "Po odwołaniu autobusu osoba porównuje alternatywne sposoby dotarcia, zamiast powtarzać poprzedni plan."
+    ],
+    "distinction": "Nie jest wprost miarą otwartości osobowości ani objawem konkretnego zaburzenia.",
+    "related": [
+      "funkcje-wykonawcze"
+    ],
+    "sources": [
+      "diamond"
+    ],
+    "links": [
+      {
+        "href": "/blog/adhd-u-doroslych/",
+        "label": "Szerszy kontekst"
+      }
+    ],
+    "synonyms": []
+  }
 ]
