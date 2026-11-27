@@ -32,7 +32,6 @@ yarn-error.log*
 
 # firebase
 .firebase/
-/functions/lib/
 *.log
 
 # Firebase service-account private keys - never commit
@@ -44,3 +43,7 @@ yarn-error.log*
 
 # Local typography audit evidence (not exported by Next.js)
 !/docs/typografia/zrzuty/**/*.jpg
+
+# Optional contact Worker: local secrets and runtime state.
+.dev.vars*
+.wrangler/

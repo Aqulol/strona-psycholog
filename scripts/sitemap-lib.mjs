@@ -98,8 +98,10 @@ function walk(directory, prefix = '') {
   });
 }
 
-export function assertContactRewrite(hosting) {
-  assert.deepEqual(hosting.rewrites ?? [], [{source:'/api/kontakt',function:{functionId:'sendContactForm',region:'europe-west1'}}], 'Only the exact contact API rewrite is allowed');
+export function assertSparkHosting(config) {
+  assert.deepEqual(Object.keys(config), ['hosting'], 'Firebase deploy must target only Spark Hosting');
+  assert.deepEqual(config.hosting.rewrites ?? [], [], 'No backend or fallback rewrite allowed');
+  assert.deepEqual(config.hosting.predeploy, ['npm --prefix "$PROJECT_DIR" run check:sitemap'], 'Hosting predeploy must only verify the static export');
 }
 
 export function readExport(directory = out, dates = JSON.parse(readFileSync(lastmodFile, 'utf8'))) {
@@ -113,7 +115,7 @@ export function readExport(directory = out, dates = JSON.parse(readFileSync(last
   assert.equal(hosting.public, out);
   assert.equal(hosting.cleanUrls, true);
   assert.equal(hosting.trailingSlash, true);
-  assertContactRewrite(hosting);
+  assertSparkHosting(JSON.parse(readFileSync('firebase.json', 'utf8')));
   for (const group of hosting.headers ?? []) for (const {key,value} of group.headers) {
     if (/^x-robots-tag$/i.test(key)) assert.ok(group.source === '/materialy/karty-psychologiczne.pdf' && value === 'noindex', 'Unexpected Firebase robots header');
   }

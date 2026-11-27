@@ -1,0 +1,21 @@
+name = "gabinet-kontakt"
+main = "index.mjs"
+compatibility_date = "2026-11-26"
+workers_dev = true
+preview_urls = false
+
+[observability]
+enabled = false
+
+[vars]
+SITE_ORIGIN = "https://psychologplebaniak.pl"
+
+[[ratelimits]]
+name = "PER_IP"
+namespace_id = "41401"
+simple = { limit = 3, period = 60 }
+
+[[ratelimits]]
+name = "SEND_BUDGET"
+namespace_id = "41402"
+simple = { limit = 8, period = 60 }

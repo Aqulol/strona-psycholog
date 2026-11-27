@@ -18,7 +18,6 @@
         "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
       }
     ],
-    "rewrites": [{ "source": "/api/kontakt", "function": { "functionId": "sendContactForm", "region": "europe-west1" } }],
     "redirects": [
       {
         "source": "/blog/artykul-1",
@@ -1173,7 +1172,7 @@
           },
           {
             "key": "Content-Security-Policy",
-            "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://firestore.googleapis.com wss://firestore.googleapis.com; frame-src https://www.google.com https://booksy.com https://*.booksy.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+            "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com https://booksy.com https://*.booksy.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
           },
           {
             "key": "Cache-Control",
@@ -1218,13 +1217,5 @@
         ]
       }
     ]
-  },
-  "functions": {
-    "source": "functions",
-    "runtime": "nodejs22",
-    "predeploy": ["npm --prefix \"$RESOURCE_DIR\" run build"]
-  },
-  "firestore": {
-    "rules": "firestore.rules"
   }
 }

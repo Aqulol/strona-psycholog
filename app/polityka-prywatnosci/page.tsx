@@ -75,7 +75,7 @@ export default function Page() {
       <p className="mt-3 leading-8">Z danych mogą korzystać wyłącznie podmioty, które wspierają prowadzenie gabinetu:</p>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
-          <strong>Google LLC</strong> - hosting strony (Firebase), przechowywanie wcześniejszych wiadomości z formularza (Firestore), obsługa wysyłki (Firebase Functions) i liczniki przeciw spamowi (Firestore); dane mogą być przekazywane do Stanów Zjednoczonych;
+          <strong>Google LLC</strong> - hosting strony (Firebase), przechowywanie archiwalnych wiadomości z dawnego formularza (Firestore); dane mogą być przekazywane do Stanów Zjednoczonych;
         </li>
         <li className="leading-8">
           <strong>Booksy</strong> - platforma, za pośrednictwem której można rezerwować wizyty online; dane podane
@@ -101,7 +101,7 @@ export default function Page() {
       </p>
 
       <h2 className="mt-8 text-3xl">Formularz kontaktowy</h2>
-      <p className="mt-3 leading-8">Treść formularza jest przekazywana przez serwer do skrzynki e-mail gabinetu, bez zapisywania nowej kopii wiadomości w Firestore. W celu ograniczenia spamu serwer sprawdza krótkookresowy licznik prób powiązany z pseudonimem adresu IP; w liczniku nie ma treści zgłoszenia ani jawnego adresu IP. Dane formularza nie trafiają do analityki.</p>
+      <p className="mt-3 leading-8">Po uruchomieniu wysyłki dane formularza (imię, e-mail, opcjonalny telefon i temat oraz treść) są przekazywane przez Cloudflare Workers do Resend i dalej do skrzynki gabinetu. Cloudflare przetwarza też dane połączenia, w tym adres IP na potrzeby ochrony przed spamem. Dostawcy mogą przetwarzać dane poza EOG; do transferów stosuje się odpowiednie zabezpieczenia, w tym standardowe klauzule umowne, gdy są wymagane. Witryna nie zapisuje nowych zgłoszeń w Firestore ani nie przekazuje treści do analityki.</p>
       <h2 className="mt-8 text-3xl">Okres przechowywania danych</h2>
       <ul className="mt-3 space-y-2">
         <li className="leading-8">
