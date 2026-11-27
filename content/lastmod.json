@@ -1,8 +1,8 @@
 {
   "/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:6092d9b113d688897e55957070b229396cf38d613efc8a50cd729b5baa39b17c",
-    "evidence": "Usunięcie sekcji interaktywnych i odnośników; trzy kategorie bazy wiedzy."
+    "fingerprint": "v1:42fee90a4ad6de4d622530a744a005f489894ac6ac4b00be856d19741b08f905",
+    "evidence": "Kompaktowy układ strony głównej i doprecyzowanie informacji o prywatności rezerwacji Booksy."
   },
   "/baza-wiedzy/": {
     "date": "2026-11-26",
@@ -86,8 +86,8 @@
   },
   "/polityka-prywatnosci/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:802c5e3977b72e199bc1a0de988c4a0b297d082fba50a11de8b743a9d53361fc",
-    "evidence": "Usunięcie sekcji interaktywnych i odnośników; trzy kategorie bazy wiedzy."
+    "fingerprint": "v1:50df0753e2d556531c95f82252631f5c684a2efadd1036de38f7890071a772ca",
+    "evidence": "Kompaktowy układ strony głównej i doprecyzowanie informacji o prywatności rezerwacji Booksy."
   },
   "/poradnictwo-psychologiczne-wroclaw/": {
     "date": "2026-11-26",

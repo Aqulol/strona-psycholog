@@ -33,11 +33,9 @@ export default function Home(){return <main id="tresc" className="editorial-home
 <section className="band" aria-labelledby="home-about">
   <div className="shell home-block home-about">
     <div className="home-about-intro">
-      <div><h2 id="home-about">O mnie</h2>
+      <h2 id="home-about">O mnie</h2>
         <p>Jestem psychologiem, absolwentem Uniwersytetu Wrocławskiego, oraz psychoterapeutą w trakcie szkolenia. W swojej pracy pomagam przyjrzeć się emocjom, relacjom, obrazowi siebie i temu, co w życiu się powtarza.</p>
         <p>Pracuję w nurcie psychodynamicznym, wykorzystując podejście skoncentrowane na przeniesieniu (TFP). Swoją pracę poddaję regularnej superwizji.</p>
-      </div>
-      <img src="/images/responsive/portret-288.webp" srcSet={responsiveSrcSet('portret')} sizes="auto, 144px" alt="Portret Grzegorza Plebaniaka" width="288" height="288" loading="lazy"/>
     </div>
     <ul className="home-facts" role="list">
       <li><GraduationCap aria-hidden="true"/><div><h3>Wykształcenie</h3><p>Magister psychologii, Uniwersytet Wrocławski. Specjalność studiów: psychologia kliniczna i zdrowia dorosłych.</p></div></li>

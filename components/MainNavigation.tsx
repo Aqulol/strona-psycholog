@@ -38,16 +38,7 @@ export default function MainNavigation({ offerPath, groups, links, knowledge, co
         </div>
       </li>;
   };
-  return <ul className="nav-items" role="list" ref={menu} onKeyDown={event => {
-    if (!desktop && event.key === 'Escape') {
-      const disclosure = event.currentTarget.closest<HTMLDetailsElement>('.site-menu');
-      if (disclosure?.open) {
-        disclosure.open = false;
-        disclosure.querySelector('summary')?.focus();
-        setOpen(null);
-      }
-    }
-  }}>
+  return <ul className="nav-items" role="list" ref={menu}>
     <li><a href={offerPath}>Oferta</a></li>
     {groups.map(renderGroup)}
     {links.map(([label, href]) => <li key={href}><a href={href}>{label}</a></li>)}

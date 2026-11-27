@@ -1,0 +1,106 @@
+[
+  {
+    "width": 390,
+    "stage": "grant",
+    "kind": "request",
+    "url": "https://booksy.com/widget/index.html?id=357056&lang=pl&country=pl",
+    "referer": null
+  },
+  {
+    "width": 390,
+    "stage": "grant",
+    "kind": "failed",
+    "error": "net::ERR_CONNECTION_CLOSED"
+  },
+  {
+    "width": 390,
+    "stage": "/kontakt/",
+    "kind": "request",
+    "url": "https://booksy.com/widget/index.html?id=357056&lang=pl&country=pl",
+    "referer": null
+  },
+  {
+    "width": 390,
+    "stage": "/kontakt/",
+    "kind": "failed",
+    "error": "net::ERR_CONNECTION_CLOSED"
+  },
+  {
+    "width": 390,
+    "stage": "/w-czym-pomagam/borderline/",
+    "kind": "request",
+    "url": "https://booksy.com/widget/index.html?id=357056&lang=pl&country=pl",
+    "referer": null
+  },
+  {
+    "width": 390,
+    "stage": "/w-czym-pomagam/borderline/",
+    "kind": "failed",
+    "error": "net::ERR_CONNECTION_CLOSED"
+  },
+  {
+    "width": 390,
+    "stage": "/w-czym-pomagam/depresja/",
+    "kind": "request",
+    "url": "https://booksy.com/widget/index.html?id=357056&lang=pl&country=pl",
+    "referer": null
+  },
+  {
+    "width": 390,
+    "stage": "/w-czym-pomagam/depresja/",
+    "kind": "failed",
+    "error": "net::ERR_CONNECTION_CLOSED"
+  },
+  {
+    "width": 1440,
+    "stage": "grant",
+    "kind": "request",
+    "url": "https://booksy.com/widget/index.html?id=357056&lang=pl&country=pl",
+    "referer": null
+  },
+  {
+    "width": 1440,
+    "stage": "grant",
+    "kind": "failed",
+    "error": "net::ERR_CONNECTION_CLOSED"
+  },
+  {
+    "width": 1440,
+    "stage": "/kontakt/",
+    "kind": "request",
+    "url": "https://booksy.com/widget/index.html?id=357056&lang=pl&country=pl",
+    "referer": null
+  },
+  {
+    "width": 1440,
+    "stage": "/kontakt/",
+    "kind": "failed",
+    "error": "net::ERR_CONNECTION_CLOSED"
+  },
+  {
+    "width": 1440,
+    "stage": "/w-czym-pomagam/borderline/",
+    "kind": "request",
+    "url": "https://booksy.com/widget/index.html?id=357056&lang=pl&country=pl",
+    "referer": null
+  },
+  {
+    "width": 1440,
+    "stage": "/w-czym-pomagam/borderline/",
+    "kind": "failed",
+    "error": "net::ERR_CONNECTION_CLOSED"
+  },
+  {
+    "width": 1440,
+    "stage": "/w-czym-pomagam/depresja/",
+    "kind": "request",
+    "url": "https://booksy.com/widget/index.html?id=357056&lang=pl&country=pl",
+    "referer": null
+  },
+  {
+    "width": 1440,
+    "stage": "/w-czym-pomagam/depresja/",
+    "kind": "failed",
+    "error": "net::ERR_CONNECTION_CLOSED"
+  }
+]
