@@ -169,7 +169,7 @@ export function serialize(pages) {
 
 export function parseSitemap(xml) {
   assert.ok(Buffer.byteLength(xml) <= 52_428_800, 'Sitemap exceeds 50 MiB');
-  const root = xml.match(/^\s*<\?xml version="1\.0" encoding="UTF-8"\?>\s*<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">([\s\S]*)<\/urlset>\s*$/);
+  const root = xml.match(/^<\?xml version="1\.0" encoding="UTF-8"\?>\s*<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">([\s\S]*)<\/urlset>\s*$/);
   assert.ok(root, 'Invalid sitemap XML root or namespace');
   const entries = new Map();
   const remaining = root[1].replace(/<url>\s*<loc>([^<]+)<\/loc>\s*(?:<lastmod>([^<]+)<\/lastmod>\s*)?<\/url>/g, (_, loc, lastmod) => {

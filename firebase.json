@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "out",
+    "predeploy": ["npm --prefix \"$PROJECT_DIR\" run check:sitemap"],
     "cleanUrls": true,
     "trailingSlash": true,
     "404": "404.html",

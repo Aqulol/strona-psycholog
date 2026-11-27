@@ -1,10 +1,12 @@
 import assert from 'node:assert/strict';
-import { readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { auditLinks, out, parseSitemap, readExport, serialize } from './sitemap-lib.mjs';
 
-const { pages, excluded, redirects } = readExport();
 const filename = `${out}/sitemap.xml`;
-if (process.argv.includes('--write')) {
+const write = process.argv.includes('--write');
+if (!write) assert.ok(existsSync(filename), `Brak ${filename}. Uruchom npm run build (sam next build nie generuje mapy).`);
+const { pages, excluded, redirects } = readExport();
+if (write) {
   // Next duplicates the error template at /404/, which Hosting would serve
   // with status 200. Keep only the custom fallback at out/404.html.
   if (excluded.get('404/index.html') === 'error') {
