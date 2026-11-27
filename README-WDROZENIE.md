@@ -14,10 +14,13 @@ Pobierz zmiany w swojej kopii repozytorium (`git pull`, gdy zmiany są już dost
 
 ```sh
 npm run build
+npm run check:sitemap
 firebase hosting:channel:deploy podglad
 ```
 
 Otwórz link zwrócony przez Firebase. Podgląd korzysta z aktualnych reguł i tego samego projektu Firestore; wysyłaj tylko wiadomości oznaczone jako test, bez danych pacjentów. Adresów roboczego podglądu nie dodawaj do Search Console.
+
+Mapa witryny powstaje **po eksporcie HTML** w `npm run build`, w `out/sitemap.xml`. Nie zastępuj tego polecenia samym `next build`. Nie dopisuj nowych adresów do ręcznej listy: generator uwzględnia wyeksportowane strony kanoniczne, pomija `noindex`, zweryfikowane aliasy 301 i pliki techniczne. Wiarygodny `lastmod` artykułu pochodzi z jego istniejących dat `BlogPosting`; bez daty generator pomija pole. Kontrolę odpowiedzi hostingu można wykonać poleceniem `node scripts/check-hosting.mjs <adres-podglądu-lub-produkcji>`.
 
 ## 3. Opublikuj
 
