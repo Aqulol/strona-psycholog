@@ -35,7 +35,7 @@ body{background:var(--paper);color:var(--ink)}
 @media(max-width:374px){.site-header .mast img{width:7.5rem}.site-header .mast-actions .booking{font-size:.75rem;padding-inline:.45rem}}
 @media(min-width:72rem){.site-header>.mast{padding-block:.8rem}.site-header>nav{border-top:1px solid var(--rule)}.site-header .nav-items>li>a,.site-header .nav-parent>a{font-size:.9rem}.site-header .mast-actions .booking span{display:inline}.nav-parent button{min-width:36px}}
 .hero-home{position:relative;overflow:hidden;background:var(--paper);padding:clamp(2.25rem,5.6vw,5.75rem) 0 clamp(2.2rem,4.5vw,4rem)}
-.hero-grid{isolation:isolate;align-items:center;gap:clamp(2rem,5vw,5rem)}
+.hero-home .hero-grid{grid-template-columns:minmax(0,1fr);align-items:center;gap:clamp(2rem,5vw,5rem)}
 .hero-edition{display:flex;align-items:center;flex-wrap:wrap;gap:.55rem .75rem}
 .hero-edition span{width:1.1rem;height:1px;background:var(--strong-rule)}
 .hero-home h1{font-size:clamp(2.25rem,5.25vw,5.35rem);line-height:1.04;letter-spacing:-.059em;color:var(--deep);margin:.7rem 0 1.2rem;max-width:none}
@@ -45,12 +45,9 @@ body{background:var(--paper);color:var(--ink)}
 .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
 .hero-practical{margin-top:.85rem;font-size:.85rem;color:var(--muted)}
 .hero-practical span{padding-inline:.25rem}
-.hero-photo{padding:.7rem 0 0 .7rem;min-width:0}
-.hero-photo::before{content:'';position:absolute;z-index:-1;inset:0 1.4rem 2.6rem 0;border:1px solid var(--gold);border-radius:48% 48% 0 0}
-.portrait-frame{overflow:hidden;background:var(--sage);border-radius:48% 48% 0 0}
-.hero-photo img{border-radius:0;aspect-ratio:1.19;object-fit:cover;object-position:50% 39%}
-.hero-photo figcaption{display:flex;justify-content:space-between;gap:.4rem;flex-wrap:wrap;color:var(--muted);border-color:var(--rule);font-size:.77rem}
-@media(min-width:760px){.hero-grid{grid-template-columns:minmax(0,1.18fr) minmax(0,.85fr)}.hero-photo{padding:1.25rem 0 0 1.25rem}.hero-photo img{aspect-ratio:1.06}.hero-home::after{content:'';position:absolute;pointer-events:none;z-index:-1;right:-9rem;top:-10rem;width:38rem;height:38rem;border:1px solid var(--rule);border-radius:50%}}
+.hero-photo{width:min(100%,26.75rem);justify-self:center}
+.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:50% center;border-radius:50% 50% var(--edge) var(--edge) / 38% 38% var(--edge) var(--edge)}
+@media(min-width:760px){.hero-home .hero-grid{grid-template-columns:minmax(0,1.18fr) minmax(0,.85fr)}}
 .trust-band{border-block:1px solid var(--rule);background:var(--surface)}
 .trust-band ul{display:flex;flex-wrap:wrap;gap:.45rem 1rem;padding-block:.9rem;list-style:none;font-size:.8rem;color:var(--deep);font-weight:600}
 .trust-band li{display:flex;align-items:center;gap:.55rem}
@@ -139,6 +136,7 @@ body{background:var(--paper);color:var(--ink)}
 .practice-editorial>.eyebrow,.directory-editorial>.eyebrow{border-top:1px solid var(--strong-rule);padding-top:1rem}
 .practice-editorial[data-practice-page=office] .gallery{gap:.6rem}
 .practice-editorial[data-practice-page=office] .gallery a{overflow:hidden;background:var(--sage)}
+.practice-portrait{display:block;width:min(100%,36rem);height:auto;aspect-ratio:1;margin-block-start:1.25rem}
 .practice-editorial[data-practice-page=office] .gallery img{aspect-ratio:4/3;object-fit:cover;transition:filter var(--motion)}
 .practice-editorial[data-practice-page=office] .gallery a:hover img{filter:brightness(.93)}
 .help-hero{text-align:start;width:min(100% - 2 * var(--gutter),var(--shell));border-top:1px solid var(--strong-rule);padding-block:1.2rem 2rem}
@@ -188,7 +186,7 @@ main.price-editorial{width:min(100% - 2 * var(--gutter),53rem);max-width:53rem;p
 .offer-shell .page-toc a:is(:hover,:focus-visible){background:var(--sage);border-color:var(--strong-rule)}
 .home-profile img{float:right;width:clamp(4.4rem,11vw,8rem);aspect-ratio:1;object-fit:cover;margin:0 0 .6rem .8rem;border-radius:48% 48% 0 0}
 .office-duet{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);align-items:end;gap:.6rem}
-.office-duet img:first-child{border-top:1px solid var(--strong-rule);padding-top:.5rem;aspect-ratio:3/4;object-fit:cover}
+.office-duet img:first-child{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
 /* Preserve room for the Booksy panel at the two-column breakpoint. */
 .reading.topic-page{width:min(100% - 1.5rem,86rem)}
 @media(min-width:1088px){.reading.topic-page{width:min(100% - 2.5rem,86rem)}}

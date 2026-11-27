@@ -7,7 +7,7 @@ const consultation = config.prices.find(item => item.key === 'konsultacja');
 export default function BookingSidebar() {
   return <aside id="rezerwacja" className="topic-booking editorial-card" aria-labelledby="rezerwacja-tytul">
     <h2 id="rezerwacja-tytul">Umów konsultację</h2>
-    <div className="topic-booking-person"><img src="/images/responsive/portret2-320.webp" width="64" height="64" alt="" loading="lazy"/><p>{config.name}<br/>{config.title}</p></div>
+    <div className="topic-booking-person"><img src="/images/responsive/portret-hero-96.webp" srcSet="/images/responsive/portret-hero-96.webp 96w, /images/responsive/portret-hero-192.webp 192w" sizes="64px" width="64" height="64" alt="" loading="lazy"/><p>{config.name}<br/>{config.title}</p></div>
     {consultation && <p>{consultation.name}<br/><strong>{consultation.price} zł · {consultation.duration}</strong></p>}
     <p>{config.address}</p>
     <BooksyCalendar linkLabel="Umów wizytę w Booksy" primary/>

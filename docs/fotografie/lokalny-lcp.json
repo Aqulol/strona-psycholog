@@ -1,0 +1,386 @@
+[
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 1,
+    "lcp": {
+      "ms": 568,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-480.webp",
+        "ms": 151,
+        "body": 16372
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 1,
+    "lcp": {
+      "ms": 408,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-360.webp",
+        "ms": 154,
+        "body": 14854
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 1,
+    "lcp": {
+      "ms": 392,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-360.webp",
+        "ms": 151,
+        "body": 14854
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 1,
+    "lcp": {
+      "ms": 400,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-480.webp",
+        "ms": 162,
+        "body": 16372
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 1,
+    "lcp": {
+      "ms": 384,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-480.webp",
+        "ms": 153,
+        "body": 16372
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 1,
+    "lcp": {
+      "ms": 384,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-360.webp",
+        "ms": 148,
+        "body": 14854
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "ms": 420,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-800.webp",
+        "ms": 222,
+        "body": 33578
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "ms": 408,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-720.webp",
+        "ms": 260,
+        "body": 42218
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "ms": 404,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-720.webp",
+        "ms": 262,
+        "body": 42218
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "ms": 392,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-800.webp",
+        "ms": 221,
+        "body": 33578
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "ms": 396,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-800.webp",
+        "ms": 222,
+        "body": 33578
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 2,
+    "lcp": {
+      "ms": 404,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-720.webp",
+        "ms": 265,
+        "body": 42218
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "ms": 428,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-480.webp",
+        "ms": 157,
+        "body": 16372
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "ms": 388,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-428.webp",
+        "ms": 165,
+        "body": 19168
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "ms": 392,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-428.webp",
+        "ms": 163,
+        "body": 19168
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "ms": 388,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-480.webp",
+        "ms": 156,
+        "body": 16372
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "ms": 396,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-480.webp",
+        "ms": 156,
+        "body": 16372
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 1,
+    "lcp": {
+      "ms": 404,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-428.webp",
+        "ms": 164,
+        "body": 19168
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 2,
+    "lcp": {
+      "ms": 520,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-960.webp",
+        "ms": 263,
+        "body": 42558
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 2,
+    "lcp": {
+      "ms": 432,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-855.webp",
+        "ms": 318,
+        "body": 57428
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 2,
+    "lcp": {
+      "ms": 424,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-855.webp",
+        "ms": 316,
+        "body": 57428
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 2,
+    "lcp": {
+      "ms": 404,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-960.webp",
+        "ms": 260,
+        "body": 42558
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 2,
+    "lcp": {
+      "ms": 412,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret2-960.webp",
+        "ms": 261,
+        "body": 42558
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 2,
+    "lcp": {
+      "ms": 416,
+      "tag": "IMG"
+    },
+    "requests": [
+      {
+        "name": "portret-hero-855.webp",
+        "ms": 317,
+        "body": 57428
+      }
+    ]
+  }
+]

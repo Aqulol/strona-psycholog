@@ -1,8 +1,8 @@
 {
   "/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:971bfc3cbf30fb389d2863ff68b9c6e1860c8ce14e5ee59ac78c13e86ca6ebcb",
-    "evidence": "Redakcyjna rozbudowa strony głównej: dodane obszary ADHD i młodzieży, przebieg współpracy oraz linkowanie do oferty i słownika; nie jest to data wdrożenia. Uwzględniono zmianę techniczną: przywrócenie formularza przy Booksy."
+    "fingerprint": "v1:6b7cb644a1327f2e5a0d08a0910c284ad4fd5c9213ef0fb6b5cd7d5dfeeaa843",
+    "evidence": "Redakcyjna rozbudowa strony głównej: dodane obszary ADHD i młodzieży, przebieg współpracy oraz linkowanie do oferty i słownika; nie jest to data wdrożenia. Uwzględniono zmianę techniczną: przywrócenie formularza przy Booksy. Usunięto zduplikowany podpis portretu, zachowując datę redakcyjną."
   },
   "/baza-wiedzy/": {
     "date": "2026-11-26",

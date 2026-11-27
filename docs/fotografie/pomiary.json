@@ -1,0 +1,1016 @@
+[
+  {
+    "stage": "przed",
+    "width": 320,
+    "dpr": 1,
+    "file": "portret2-320.webp",
+    "w": 320,
+    "h": 214,
+    "bytes": 9854,
+    "slot": 277,
+    "height": 233,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 320,
+    "dpr": 2,
+    "file": "portret2-640.webp",
+    "w": 640,
+    "h": 428,
+    "bytes": 24180,
+    "slot": 277,
+    "height": 233,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 320,
+    "dpr": 3,
+    "file": "portret2-960.webp",
+    "w": 960,
+    "h": 641,
+    "bytes": 42558,
+    "slot": 277,
+    "height": 233,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 375,
+    "dpr": 1,
+    "file": "portret2-480.webp",
+    "w": 480,
+    "h": 321,
+    "bytes": 16372,
+    "slot": 332,
+    "height": 279,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 375,
+    "dpr": 2,
+    "file": "portret2-800.webp",
+    "w": 800,
+    "h": 534,
+    "bytes": 33578,
+    "slot": 332,
+    "height": 279,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 375,
+    "dpr": 3,
+    "file": "portret2-960.webp",
+    "w": 960,
+    "h": 641,
+    "bytes": 42558,
+    "slot": 332,
+    "height": 279,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 1,
+    "file": "portret2-480.webp",
+    "w": 480,
+    "h": 321,
+    "bytes": 16372,
+    "slot": 347,
+    "height": 291,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 2,
+    "file": "portret2-800.webp",
+    "w": 800,
+    "h": 534,
+    "bytes": 33578,
+    "slot": 347,
+    "height": 291,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 3,
+    "file": "portret2-960.webp",
+    "w": 960,
+    "h": 641,
+    "bytes": 42558,
+    "slot": 347,
+    "height": 291,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 768,
+    "dpr": 1,
+    "file": "portret2-320.webp",
+    "w": 320,
+    "h": 214,
+    "bytes": 9854,
+    "slot": 260,
+    "height": 245,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 768,
+    "dpr": 2,
+    "file": "portret2-640.webp",
+    "w": 640,
+    "h": 428,
+    "bytes": 24180,
+    "slot": 260,
+    "height": 245,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 768,
+    "dpr": 3,
+    "file": "portret2-960.webp",
+    "w": 960,
+    "h": 641,
+    "bytes": 42558,
+    "slot": 260,
+    "height": 245,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 1024,
+    "dpr": 1,
+    "file": "portret2-480.webp",
+    "w": 480,
+    "h": 321,
+    "bytes": 16372,
+    "slot": 353,
+    "height": 333,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 1024,
+    "dpr": 2,
+    "file": "portret2-960.webp",
+    "w": 960,
+    "h": 641,
+    "bytes": 42558,
+    "slot": 353,
+    "height": 333,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 1024,
+    "dpr": 3,
+    "file": "portret2-960.webp",
+    "w": 960,
+    "h": 641,
+    "bytes": 42558,
+    "slot": 353,
+    "height": 333,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 1,
+    "file": "portret2-480.webp",
+    "w": 480,
+    "h": 321,
+    "bytes": 16372,
+    "slot": 466,
+    "height": 439,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 2,
+    "file": "portret2-960.webp",
+    "w": 960,
+    "h": 641,
+    "bytes": 42558,
+    "slot": 466,
+    "height": 439,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 3,
+    "file": "portret2-960.webp",
+    "w": 960,
+    "h": 641,
+    "bytes": 42558,
+    "slot": 466,
+    "height": 439,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 1920,
+    "dpr": 1,
+    "file": "portret2-480.webp",
+    "w": 480,
+    "h": 321,
+    "bytes": 16372,
+    "slot": 462,
+    "height": 436,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 1920,
+    "dpr": 2,
+    "file": "portret2-960.webp",
+    "w": 960,
+    "h": 641,
+    "bytes": 42558,
+    "slot": 462,
+    "height": 436,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 1920,
+    "dpr": 3,
+    "file": "portret2-960.webp",
+    "w": 960,
+    "h": 641,
+    "bytes": 42558,
+    "slot": 462,
+    "height": 436,
+    "fit": "cover",
+    "position": "50% 39%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 320,
+    "dpr": 1,
+    "file": "portret-hero-288.webp",
+    "w": 288,
+    "h": 288,
+    "bytes": 10954,
+    "slot": 288,
+    "height": 288,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 320,
+    "dpr": 2,
+    "file": "portret-hero-576.webp",
+    "w": 576,
+    "h": 576,
+    "bytes": 30190,
+    "slot": 288,
+    "height": 288,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 320,
+    "dpr": 3,
+    "file": "portret-hero-855.webp",
+    "w": 855,
+    "h": 855,
+    "bytes": 57428,
+    "slot": 288,
+    "height": 288,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 375,
+    "dpr": 1,
+    "file": "portret-hero-360.webp",
+    "w": 360,
+    "h": 360,
+    "bytes": 14854,
+    "slot": 343,
+    "height": 343,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 375,
+    "dpr": 2,
+    "file": "portret-hero-720.webp",
+    "w": 720,
+    "h": 720,
+    "bytes": 42218,
+    "slot": 343,
+    "height": 343,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 375,
+    "dpr": 3,
+    "file": "portret-hero-855.webp",
+    "w": 855,
+    "h": 855,
+    "bytes": 57428,
+    "slot": 343,
+    "height": 343,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 1,
+    "file": "portret-hero-360.webp",
+    "w": 360,
+    "h": 360,
+    "bytes": 14854,
+    "slot": 358,
+    "height": 358,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 2,
+    "file": "portret-hero-720.webp",
+    "w": 720,
+    "h": 720,
+    "bytes": 42218,
+    "slot": 358,
+    "height": 358,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 3,
+    "file": "portret-hero-855.webp",
+    "w": 855,
+    "h": 855,
+    "bytes": 57428,
+    "slot": 358,
+    "height": 358,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 768,
+    "dpr": 1,
+    "file": "portret-hero-288.webp",
+    "w": 288,
+    "h": 288,
+    "bytes": 10954,
+    "slot": 280,
+    "height": 280,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 768,
+    "dpr": 2,
+    "file": "portret-hero-576.webp",
+    "w": 576,
+    "h": 576,
+    "bytes": 30190,
+    "slot": 280,
+    "height": 280,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 768,
+    "dpr": 3,
+    "file": "portret-hero-855.webp",
+    "w": 855,
+    "h": 855,
+    "bytes": 57428,
+    "slot": 280,
+    "height": 280,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 1024,
+    "dpr": 1,
+    "file": "portret-hero-428.webp",
+    "w": 428,
+    "h": 428,
+    "bytes": 19168,
+    "slot": 373,
+    "height": 373,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 1024,
+    "dpr": 2,
+    "file": "portret-hero-855.webp",
+    "w": 855,
+    "h": 855,
+    "bytes": 57428,
+    "slot": 373,
+    "height": 373,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 1024,
+    "dpr": 3,
+    "file": "portret-hero-855.webp",
+    "w": 855,
+    "h": 855,
+    "bytes": 57428,
+    "slot": 373,
+    "height": 373,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 1,
+    "file": "portret-hero-428.webp",
+    "w": 428,
+    "h": 428,
+    "bytes": 19168,
+    "slot": 428,
+    "height": 428,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 2,
+    "file": "portret-hero-855.webp",
+    "w": 855,
+    "h": 855,
+    "bytes": 57428,
+    "slot": 428,
+    "height": 428,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 3,
+    "file": "portret-hero-855.webp",
+    "w": 855,
+    "h": 855,
+    "bytes": 57428,
+    "slot": 428,
+    "height": 428,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 1920,
+    "dpr": 1,
+    "file": "portret-hero-428.webp",
+    "w": 428,
+    "h": 428,
+    "bytes": 19168,
+    "slot": 428,
+    "height": 428,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 1920,
+    "dpr": 2,
+    "file": "portret-hero-855.webp",
+    "w": 855,
+    "h": 855,
+    "bytes": 57428,
+    "slot": 428,
+    "height": 428,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "po",
+    "width": 1920,
+    "dpr": 3,
+    "file": "portret-hero-855.webp",
+    "w": 855,
+    "h": 855,
+    "bytes": 57428,
+    "slot": 428,
+    "height": 428,
+    "fit": "cover",
+    "position": "50% 50%",
+    "priority": "high",
+    "loading": "auto"
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 2,
+    "slug": "",
+    "photos": [
+      {
+        "file": "gabinet-detal-1-320.webp",
+        "w": 320,
+        "h": 427,
+        "bytes": 11438,
+        "slot": 102,
+        "height": 137
+      },
+      {
+        "file": "gabinet-800.webp",
+        "w": 800,
+        "h": 1067,
+        "bytes": 118370,
+        "slot": 246,
+        "height": 148
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 2,
+    "slug": "",
+    "photos": [
+      {
+        "file": "gabinet-detal-1-320.webp",
+        "w": 320,
+        "h": 427,
+        "bytes": 11438,
+        "slot": 174,
+        "height": 232
+      },
+      {
+        "file": "gabinet-960.webp",
+        "w": 960,
+        "h": 1280,
+        "bytes": 160640,
+        "slot": 417,
+        "height": 250
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 2,
+    "slug": "o-mnie",
+    "photos": [
+      {
+        "file": "portret.webp",
+        "w": 1280,
+        "h": 1280,
+        "bytes": 60114,
+        "slot": 358,
+        "height": 358
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 2,
+    "slug": "o-mnie",
+    "photos": [
+      {
+        "file": "portret.webp",
+        "w": 1280,
+        "h": 1280,
+        "bytes": 60114,
+        "slot": 832,
+        "height": 832
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 2,
+    "slug": "gabinet-wroclaw",
+    "photos": [
+      {
+        "file": "gabinet-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 47468,
+        "slot": 174,
+        "height": 131
+      },
+      {
+        "file": "gabinet-fotel-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 26684,
+        "slot": 174,
+        "height": 131
+      },
+      {
+        "file": "gabinet-detal-1-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 20828,
+        "slot": 174,
+        "height": 131
+      },
+      {
+        "file": "gabinet-detal-2-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 40990,
+        "slot": 174,
+        "height": 131
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 2,
+    "slug": "gabinet-wroclaw",
+    "photos": [
+      {
+        "file": "gabinet-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 47468,
+        "slot": 411,
+        "height": 308
+      },
+      {
+        "file": "gabinet-fotel-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 26684,
+        "slot": 411,
+        "height": 308
+      },
+      {
+        "file": "gabinet-detal-1-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 20828,
+        "slot": 411,
+        "height": 308
+      },
+      {
+        "file": "gabinet-detal-2-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 40990,
+        "slot": 411,
+        "height": 308
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 390,
+    "dpr": 2,
+    "slug": "w-czym-pomagam/depresja",
+    "photos": [
+      {
+        "file": "portret2-320.webp",
+        "w": 320,
+        "h": 214,
+        "bytes": 9854,
+        "slot": 64,
+        "height": 43
+      }
+    ]
+  },
+  {
+    "stage": "przed",
+    "width": 1440,
+    "dpr": 2,
+    "slug": "w-czym-pomagam/depresja",
+    "photos": [
+      {
+        "file": "portret2-320.webp",
+        "w": 320,
+        "h": 214,
+        "bytes": 9854,
+        "slot": 64,
+        "height": 43
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 2,
+    "slug": "",
+    "photos": [
+      {
+        "file": "gabinet-detal-1-320.webp",
+        "w": 320,
+        "h": 427,
+        "bytes": 11438,
+        "slot": 102,
+        "height": 137
+      },
+      {
+        "file": "gabinet-640.webp",
+        "w": 640,
+        "h": 854,
+        "bytes": 79696,
+        "slot": 246,
+        "height": 148
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 2,
+    "slug": "",
+    "photos": [
+      {
+        "file": "gabinet-detal-1-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 20828,
+        "slot": 174,
+        "height": 232
+      },
+      {
+        "file": "gabinet-960.webp",
+        "w": 960,
+        "h": 1280,
+        "bytes": 160640,
+        "slot": 417,
+        "height": 250
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 2,
+    "slug": "o-mnie",
+    "photos": [
+      {
+        "file": "portret-800.webp",
+        "w": 800,
+        "h": 800,
+        "bytes": 29842,
+        "slot": 358,
+        "height": 358
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 2,
+    "slug": "o-mnie",
+    "photos": [
+      {
+        "file": "portret.webp",
+        "w": 1280,
+        "h": 1280,
+        "bytes": 60114,
+        "slot": 576,
+        "height": 576
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 2,
+    "slug": "gabinet-wroclaw",
+    "photos": [
+      {
+        "file": "gabinet-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 47468,
+        "slot": 174,
+        "height": 131
+      },
+      {
+        "file": "gabinet-fotel-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 26684,
+        "slot": 174,
+        "height": 131
+      },
+      {
+        "file": "gabinet-detal-1-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 20828,
+        "slot": 174,
+        "height": 131
+      },
+      {
+        "file": "gabinet-detal-2-480.webp",
+        "w": 480,
+        "h": 640,
+        "bytes": 40990,
+        "slot": 174,
+        "height": 131
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 2,
+    "slug": "gabinet-wroclaw",
+    "photos": [
+      {
+        "file": "gabinet-960.webp",
+        "w": 960,
+        "h": 1280,
+        "bytes": 160640,
+        "slot": 411,
+        "height": 308
+      },
+      {
+        "file": "gabinet-fotel-840.webp",
+        "w": 840,
+        "h": 1120,
+        "bytes": 71512,
+        "slot": 411,
+        "height": 308
+      },
+      {
+        "file": "gabinet-detal-1.webp",
+        "w": 720,
+        "h": 960,
+        "bytes": 49962,
+        "slot": 411,
+        "height": 308
+      },
+      {
+        "file": "gabinet-detal-2-840.webp",
+        "w": 840,
+        "h": 1120,
+        "bytes": 95832,
+        "slot": 411,
+        "height": 308
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 390,
+    "dpr": 2,
+    "slug": "w-czym-pomagam/depresja",
+    "photos": [
+      {
+        "file": "portret-hero-192.webp",
+        "w": 192,
+        "h": 192,
+        "bytes": 6344,
+        "slot": 64,
+        "height": 64
+      }
+    ]
+  },
+  {
+    "stage": "po",
+    "width": 1440,
+    "dpr": 2,
+    "slug": "w-czym-pomagam/depresja",
+    "photos": [
+      {
+        "file": "portret-hero-192.webp",
+        "w": 192,
+        "h": 192,
+        "bytes": 6344,
+        "slot": 64,
+        "height": 64
+      }
+    ]
+  }
+]
