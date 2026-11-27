@@ -6,7 +6,7 @@ const base=process.env.PREVIEW_URL??'http://127.0.0.1:3010';
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH});
  try{
- for(const [id,slug,count] of [['slownik','slownik-psychologiczny',9],['pomoc','kiedy-zglosic-sie-na-terapie',74]]){
+ for(const [id,slug,count] of [['slownik','slownik-psychologiczny',69],['pomoc','kiedy-zglosic-sie-na-terapie',74]]){
   const route=`${base}/${slug}/`;
   const ssr=await browser.newContext({javaScriptEnabled:false});
   const staticPage=await ssr.newPage();await staticPage.goto(route);
@@ -32,6 +32,23 @@ const base=process.env.PREVIEW_URL??'http://127.0.0.1:3010';
     if(process.env.SCREENSHOTS)await page.screenshot({path:`${process.env.SCREENSHOTS}/${id}-${width}.jpg`,type:'jpeg',quality:75});
    }
    console.log(id,width,'OK');
+  }
+  if(id==='slownik'){
+   await page.getByRole('navigation',{name:'Indeks alfabetyczny'}).getByRole('link',{name:'Ł',exact:true}).click();
+   assert.equal(decodeURIComponent(new URL(page.url()).hash),'#litera-Ł');
+   await page.getByRole('button',{name:'Szukaj w witrynie'}).click();
+   await page.locator('#search-query').fill('agresja');
+   await page.locator('dialog a[href="/slownik-psychologiczny/agresja/"]').click();
+   await page.getByRole('heading',{level:1,name:/Agresja/}).waitFor();
+   for(const slug of ['agresja','projekcja','formacja-kompromisowa','organizacja-osobowosci','adhd']){
+    await page.goto(`${base}/slownik-psychologiczny/${slug}/`);
+    for(const width of [390,1440]){
+     await page.setViewportSize({width,height:850});
+     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${slug} ${width}: overflow`);
+     assert.equal(await page.locator('main h1').count(),1);
+     if(process.env.SCREENSHOTS)await page.screenshot({path:`${process.env.SCREENSHOTS}/${slug}-${width}.jpg`,type:'jpeg',quality:75});
+    }
+   }
   }
   await context.close();
  }

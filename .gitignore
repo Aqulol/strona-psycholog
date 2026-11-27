@@ -39,5 +39,5 @@ yarn-error.log*
 **/service-account*.json
 **/*firebase-adminsdk*.json
 
-# Defined-term routes generated from the approved glossary registry
-/app/slownik-psychologiczny/*/page.tsx
+# Verification screenshots only; never served by static export.
+!/docs/publikacja-slownika/zrzuty/*.jpg
