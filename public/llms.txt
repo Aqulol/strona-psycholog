@@ -1,6 +1,6 @@
 # Grzegorz Plebaniak - gabinet psychologiczny we Wrocławiu
 
-> Psycholog, psychoterapeuta (w trakcie szkolenia). Konsultacje, diagnostyka psychologiczna, psychoedukacja i psychoterapia indywidualna w nurcie psychodynamicznym z wykorzystaniem TFP pod superwizją dla dorosłych i młodzieży od 15. roku życia, we Wrocławiu i online.
+> Psycholog, psychoterapeuta (w trakcie szkolenia). Konsultacje, diagnostyka psychologiczna i psychoterapia indywidualna w nurcie psychodynamicznym z wykorzystaniem TFP pod superwizją dla dorosłych i młodzieży od 15. roku życia, we Wrocławiu i online. Psychoedukacja jest metodą podczas konsultacji i psychoterapii, a diagnoza ADHD jest wyłącznie stacjonarna.
 
 ## Informacje o gabinecie
 
@@ -12,8 +12,8 @@
 - [Cennik](https://psychologplebaniak.pl/cennik/): Koszt i czas trwania spotkań.
 - [Kontakt i rezerwacja](https://psychologplebaniak.pl/kontakt/): Telefon, e-mail, formularz kontaktowy (wysyłka zależy od konfiguracji) i bezpośredni link Booksy.
 
-- [Diagnostyka psychologiczna](https://psychologplebaniak.pl/diagnoza-psychologiczna-wroclaw/): Zakres oceny i ścieżki ADHD oraz osobowości. Cena standardowej konsultacji nie jest ceną pełnej diagnostyki.
-- [Prywatność](https://psychologplebaniak.pl/polityka-prywatnosci/): Kalendarz Booksy osadzany opcjonalnie po osobnej zgodzie. Nie należy przesyłać danych medycznych przez formularz.
+- [Diagnostyka psychologiczna](https://psychologplebaniak.pl/diagnoza-psychologiczna-wroclaw/): Zakres oceny i ścieżki ADHD oraz osobowości. Cennik obejmuje także pełną diagnozę ADHD.
+- [Prywatność](https://psychologplebaniak.pl/polityka-prywatnosci/): Booksy otwiera się przez bezpośredni link, bez osadzania. Nie należy przesyłać danych medycznych przez formularz.
 
 ## Optional
 

@@ -12,7 +12,7 @@ export default function OfferPage() {
   return <main id="tresc" className="shell reading offer-shell">
     <Crumbs path={offerPath} title="Oferta"/><Json data={webPage(offerPath,title,description)}/>
     <p className="eyebrow">Prywatny gabinet · Wrocław</p><h1>{title}</h1>
-    <p className="hero-copy">Prowadzę konsultacje, diagnozę psychologiczną, psychoedukację i psychoterapię indywidualną. Poniżej można porównać ich cele i sprawdzić, jak zapytać o spotkanie.</p>
+    <p className="hero-copy">Prowadzę konsultacje, diagnozę psychologiczną i psychoterapię indywidualną. Psychoedukacja jest metodą pracy podczas konsultacji i psychoterapii. Poniżej można porównać ich cele i sprawdzić, jak zapytać o spotkanie.</p>
     <p>Gabinet prowadzi <a href={paths.about}>Grzegorz Plebaniak</a>, psycholog i psychoterapeuta (w trakcie szkolenia).</p>
     <p><a className="text-link" href="/jakiej-pomocy-potrzebuje/">Nie wiem, jakiej pomocy potrzebuję</a></p>
  <p><a data-context-link href={comparisonPath}>Porównaj cele i przebieg form pomocy</a>.</p>
@@ -24,6 +24,6 @@ export default function OfferPage() {
     </section>
     <section className="diagnostic-note"><h2>Dla kogo?</h2><ul>
       <li><a href={paths.adults}>Dorośli</a></li><li><a href={paths.youth}>Młodzież od 15. roku życia</a></li>
-    </ul><p>Zakres wiekowy konkretnej diagnozy lub psychoedukacji proszę ustalić przed umówieniem spotkania. Nie każda usługa jest dostępna online.</p></section>
+    </ul><p>Diagnoza ADHD odbywa się wyłącznie stacjonarnie we Wrocławiu.</p></section>
   </main>;
 }

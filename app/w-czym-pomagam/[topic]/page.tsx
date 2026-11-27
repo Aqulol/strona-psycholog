@@ -35,7 +35,7 @@ export default async function TopicPage({ params }: Props) {
   const body = <>
         <p className="hero-copy">{t.intro}</p>
         {t.urgent && <p data-reading-ignore className="topic-safety"><strong>W bezpośrednim zagrożeniu życia lub zdrowia należy zadzwonić pod <a href="tel:112">112</a>.</strong> Planowa konsultacja nie zastępuje pilnej pomocy. Całodobowe wsparcie dla dorosłych: <a href="tel:116123">116 123</a>; dla dzieci i młodzieży: <a href="tel:116111">116 111</a>.</p>}
-        <div data-reading-ignore className="topic-mobile-booking"><a className="booking" href={config.booksyUrl} rel="noreferrer">Umów wizytę w Booksy</a><p><a href="#rezerwacja">Przejdź do osadzonego kalendarza</a></p></div>
+        <div data-reading-ignore className="topic-mobile-booking"><a className="booking" href={config.booksyUrl} rel="noreferrer">Umów wizytę w Booksy</a><p><a href="#rezerwacja">Informacje o konsultacji</a></p></div>
         {depth && <section data-topic-depth><h2>{depth[0]}</h2><p>{depth[1]}</p></section>}
         {t.sections.map(([title, text]) => <section key={title}><h2>{title}</h2><p>{text}</p></section>)}
         {t.slug === 'radzenie-sobie-ze-zloscia' && <p>Więcej o różnicy między uczuciem, naruszeniem granic i krzywdzącym działaniem: <GlossaryLink slug="agresja">agresja w słowniku psychologicznym</GlossaryLink>.</p>}

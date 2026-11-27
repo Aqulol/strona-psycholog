@@ -20,8 +20,6 @@ export const config = {
   mapsUrl: `https://www.google.com/maps?q=${mapQuery}&output=embed`,
   mapsLink: `https://www.google.com/maps/search/?api=1&query=${mapQuery}`,
 
-  // ===== Booksy - rezerwacja online (kalendarz w sekcji Kontakt) =====
-  booksyId: '357056',
   booksyUrl: 'https://booksy.com/pl-pl/357056_psycholog-grzegorz-plebaniak_psychoterapia_13750_wroclaw',
 
   // ===== Cennik - edytuj TU ręcznie (zgodnie z aktualnym cennikiem Booksy) =====
@@ -29,5 +27,3 @@ export const config = {
 
 
 };
-
-export const booksyWidgetUrl = `https://booksy.com/widget/index.html?id=${encodeURIComponent(config.booksyId)}&lang=pl&country=pl`;

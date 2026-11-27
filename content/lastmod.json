@@ -1,8 +1,8 @@
 {
   "/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:42fee90a4ad6de4d622530a744a005f489894ac6ac4b00be856d19741b08f905",
-    "evidence": "Kompaktowy układ strony głównej i doprecyzowanie informacji o prywatności rezerwacji Booksy."
+    "fingerprint": "v1:cd07adf37539fb4ace001269aa4eeca085f3c53a482bde4dc89e34fae8400360",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
   },
   "/baza-wiedzy/": {
     "date": "2026-11-26",
@@ -21,23 +21,23 @@
   },
   "/cennik/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:e84b614c163b7d30f98029189bad1c4b6b30fa1b6cbab4346596a25f86ce0cbe",
-    "evidence": "Uzupełniono informacje praktyczne, profile zawodowe lub linki i katalog artykułów; nie jest to zmiana dat publikacji artykułów."
+    "fingerprint": "v1:53338fb47500386ffe197ef9b2734aad03a9febf6fae2db3f926081c7ef14094",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
   },
   "/diagnoza-adhd-wroclaw/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:774a736430076131e6412397a76366823cf3a74e5dc68d1b4c3f45a84a20a1ca",
-    "evidence": "Uzupełniono informacje praktyczne, profile zawodowe lub linki i katalog artykułów; nie jest to zmiana dat publikacji artykułów."
+    "fingerprint": "v1:caa1529fcf8d1e9452ea225b3336f221e766f7c75289e0b6328464b8e274a83e",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
   },
   "/diagnoza-osobowosci-wroclaw/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:e03a404e67e72a57a1fb72d0aefc77e1d9f6de8624758b48935941f83dad0483",
-    "evidence": "Uzupełniono informacje praktyczne, profile zawodowe lub linki i katalog artykułów; nie jest to zmiana dat publikacji artykułów."
+    "fingerprint": "v1:5205d623ba8ef3e298538c3a37532dd963d59cfbd19c38690e82a0088bb5837d",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
   },
   "/diagnoza-psychologiczna-wroclaw/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:88bf23fb28e3fc79e729921301abcc046aecb1ded6660f2900036eaf2646039f",
-    "evidence": "Uzupełniono informacje praktyczne, profile zawodowe lub linki i katalog artykułów; nie jest to zmiana dat publikacji artykułów."
+    "fingerprint": "v1:b39220a823cc58039cb2b9e5265e458c081dc832169980a5a121da5983f9d829",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
   },
   "/gabinet-wroclaw/": {
     "date": "2026-11-26",
@@ -46,8 +46,8 @@
   },
   "/informacje-dla-pacjentow/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:b3bb821a172e9409e6d61a98a96b6caaa69bb6543ab866a36a803689bbc58a80",
-    "evidence": "Rozbudowa informacji diagnostycznych i pacjenckich, cennika, prezentacji gabinetu, profilu naukowego oraz redakcyjne materiały i narzędzia."
+    "fingerprint": "v1:43b7eabaa9a35f3aa5609c059cba3b9a3ac138a70f826158f07ad0e09b54158f",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
   },
   "/jaka-forme-pomocy-wybrac/": {
     "date": "2026-11-26",
@@ -66,33 +66,43 @@
   },
   "/kontakt/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:d1d86130adf266ccd33498e286c03b4b88ce5ef052a1d06a5d3e09c62e432188",
-    "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157. Uwzględniono zmianę techniczną: przywrócenie formularza przy Booksy."
+    "fingerprint": "v1:4119c88193a03d891a94407b265ae8d7d25e11927cdc3f65841e169bf78104b5",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
   },
   "/o-mnie/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:152d9bdfd6c055e86623b9086c84ef9e7727734b873ab50dc53bb30949663aa3",
-    "evidence": "Uzupełniono informacje praktyczne, profile zawodowe lub linki i katalog artykułów; nie jest to zmiana dat publikacji artykułów."
+    "fingerprint": "v1:ee276e6202be477d1c09f1de7c1de23bc85ad0e260f8379b896537ffa8108472",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
   },
   "/oferta/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:e8538deaca4096487da5bc26e2f9e65d12a704857a8cf7350c17aad838e49872",
-    "evidence": "Uzupełniono informacje praktyczne, profile zawodowe lub linki i katalog artykułów; nie jest to zmiana dat publikacji artykułów."
+    "fingerprint": "v1:b612083ebbafb72f0206e1d024a7f13f9f99f64ba8a0ea93a4465e3e6355177f",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
   },
   "/polityka-prywatnosci/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:50df0753e2d556531c95f82252631f5c684a2efadd1036de38f7890071a772ca",
-    "evidence": "Kompaktowy układ strony głównej i doprecyzowanie informacji o prywatności rezerwacji Booksy."
+    "fingerprint": "v1:aa9d1c145f5aed50fe688d08bf096faad708b9676cdd47d6ff4f9e0506f157c3",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
   },
   "/poradnictwo-psychologiczne-wroclaw/": {
     "date": "2026-11-26",
     "fingerprint": "v1:ffed88444e15ecec45bb1bfaa633d786489ad389d4f2c94d801bc1eec145cb6f",
     "evidence": "Uzupełnienie samopoznania w istniejącym katalogu, bez nowej usługi; zweryfikowane względem 35ce157."
   },
+  "/psychoedukacja-adhd/": {
+    "date": "2026-11-26",
+    "fingerprint": "v1:2a9bc882716a541cf317c83b78d77b5df3ec97d7c811f6204475caa0679547d3",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
+  },
   "/psychoedukacja/": {
     "date": "2026-11-26",
-    "fingerprint": "v1:6f7e3be6ad96ccc1ac08260b1d5e9584bd3e6909a97276503a334870e6ab471d",
-    "evidence": "Zmiana redakcyjna tego etapu: porównanie form pomocy, przygotowanie do wizyty, opis zakresu, kontakt i dojazd; potwierdzona różnicą treści względem eksportu 35ce157."
+    "fingerprint": "v1:4851159f60a92d430a652a8a2000cba3f839ce1325d25a6b80102ca4f094b2e7",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
+  },
+  "/psycholog-wroclaw/": {
+    "date": "2026-11-26",
+    "fingerprint": "v1:8fbf7946d2c0d434a2da7d8b4d8ca73b3cc513d9955744ce918e69ec2fddd8c7",
+    "evidence": "Aktualizacja oferty, diagnostyki, rezerwacji lub profili po konsultacjach właściciela"
   },
   "/w-czym-pomagam/wypalenie-zawodowe/": {
     "date": "2026-11-26",

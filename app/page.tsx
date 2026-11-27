@@ -1,7 +1,7 @@
 import {ArrowUpRight, BookOpen, CalendarDays, Compass, FileText, FlaskConical, GitFork, GraduationCap, HeartHandshake, LibraryBig, MapPin, MessagesSquare} from 'lucide-react';
 import {knowledgeLinks} from '../lib/knowledge';
 import {homeFaq, homeTopics} from '../lib/home-content';
-import {professionalProfiles} from '../lib/professional-profiles';
+import ProfileLinks from '../components/ProfileLinks';
 import {empathyStudy} from '../lib/research';
 import { services } from '../lib/services';
 import { HomeServiceCards } from '../components/ServiceCards';
@@ -18,7 +18,7 @@ export const metadata = meta('/', 'Grzegorz Plebaniak | Gabinet psychologiczny W
 function More({href,children}:{href:string,children:React.ReactNode}){return <a className="text-link" href={href}>{children}<span aria-hidden="true">↗</span></a>;}
 export default function Home(){return <main id="tresc" className="editorial-home">
 <Json data={webPage('/', 'Gabinet psychologiczny we Wrocławiu', homeDescription)}/>
-<section className="hero-home"><div className="shell hero-grid"><div className="hero-editorial-copy"><p className="eyebrow hero-edition">Grzegorz Plebaniak <span aria-hidden="true"/> Wrocław / online</p><h1>Gabinet psychologiczny <span>we Wrocławiu</span></h1><p className="hero-purpose">Pomoc w lepszym zrozumieniu siebie, własnych emocji i relacji.</p><p className="hero-identity">Psycholog, psychoterapeuta w trakcie szkolenia</p><p className="hero-copy">Prowadzę konsultacje psychologiczne, diagnostykę, psychoedukację oraz psychoterapię indywidualną w nurcie psychodynamicznym z wykorzystaniem TFP. Pracuję z dorosłymi i młodzieżą od 15. roku życia.</p><div className="hero-actions"><Booking/>{' '}<a className="button-secondary" href={paths.about}>Poznaj mnie <ArrowUpRight size={16} aria-hidden="true"/></a></div><p className="hero-practical"><a href="/cennik/">{services.consult.rate?.price} zł / {services.consult.rate?.duration}</a> za konsultację <span aria-hidden="true">·</span> <a href={paths.consult}>Jak wygląda spotkanie?</a></p></div><div className="hero-photo"><img src="/images/responsive/portret-hero-855.webp" srcSet={heroPortraitSrcSet} sizes={heroPortraitSizes} width="855" height="855" alt="Portret Grzegorza Plebaniaka" fetchPriority="high"/></div></div></section>
+<section className="hero-home"><div className="shell hero-grid"><div className="hero-editorial-copy"><p className="eyebrow hero-edition">Grzegorz Plebaniak <span aria-hidden="true"/> Wrocław / online</p><h1>Gabinet psychologiczny <span>we Wrocławiu</span></h1><p className="hero-purpose">Pomoc w lepszym zrozumieniu siebie, własnych emocji i relacji.</p><p className="hero-identity">Psycholog, psychoterapeuta w trakcie szkolenia</p><p className="hero-copy">Prowadzę konsultacje psychologiczne, diagnostykę oraz psychoterapię indywidualną w nurcie psychodynamicznym z wykorzystaniem TFP. Psychoedukację wykorzystuję podczas konsultacji i psychoterapii. Pracuję z dorosłymi i młodzieżą od 15. roku życia.</p><div className="hero-actions"><Booking/>{' '}<a className="button-secondary" href={paths.about}>Poznaj mnie <ArrowUpRight size={16} aria-hidden="true"/></a></div><p className="hero-practical"><a href="/cennik/">{services.consult.rate?.price} zł / {services.consult.rate?.duration}</a> za konsultację <span aria-hidden="true">·</span> <a href={paths.consult}>Jak wygląda spotkanie?</a></p></div><div className="hero-photo"><img src="/images/responsive/portret-hero-855.webp" srcSet={heroPortraitSrcSet} sizes={heroPortraitSizes} width="855" height="855" alt="Portret Grzegorza Plebaniaka" fetchPriority="high"/></div></div></section>
 <div className="trust-band"><ul className="shell" role="list">{[
   {Icon:GraduationCap,label:'Magister psychologii'}, {Icon:BookOpen,label:'Czteroletnie szkolenie psychoterapeutyczne – w trakcie'},
   {Icon:MessagesSquare,label:'Regularna superwizja'}, {Icon:HeartHandshake,label:'Psychoterapia psychodynamiczna z wykorzystaniem TFP'}, {Icon:MapPin,label:'Spotkania we Wrocławiu i online'},
@@ -44,7 +44,7 @@ export default function Home(){return <main id="tresc" className="editorial-home
       <li><FlaskConical aria-hidden="true"/><div><h3>Działalność naukowa</h3><p>Jestem współautorem badania nad twórczością i empatią u dzieci, opublikowanego w <cite>Thinking Skills and Creativity</cite> ({empathyStudy.year}). <a href={`${paths.about}#publikacje`}>Dane publikacji i lista autorów</a>.</p></div></li>
     </ul>
     <More href={paths.about}>Więcej o moim doświadczeniu</More>
-    <div className="home-professional"><h3>Moje profile zawodowe</h3><ul role="list">{professionalProfiles.map(({label,href})=><li key={href}><a href={href} rel="noreferrer">{label} <ArrowUpRight size={14} aria-hidden="true"/></a></li>)}</ul></div>
+    <ProfileLinks onHome/>
   </div>
 </section>
 

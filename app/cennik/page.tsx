@@ -1,10 +1,10 @@
 import {officeId} from '../../lib/entities';
 import {Crumbs} from '../../components/Site';
 import {details,meta} from '../../lib/site';
-import { assessmentKeys, assessmentTerms, priceServices, services } from '../../lib/services';
+import { adhdAssessment, adhdDuration, adhdDocumentation, firstAssessmentConsult, psychoeducationTerms, priceServices, services } from '../../lib/services';
 import { config } from '../../lib/config';
 
-export const metadata=meta('/cennik/','Psycholog Wrocław - cennik konsultacji i terapii','Sprawdź cenę konsultacji psychologicznej i sesji psychoterapii we Wrocławiu lub online. Dowiedz się, jak zapytać o koszt osobnej diagnozy i psychoedukacji.');
+export const metadata=meta('/cennik/','Psycholog Wrocław - cennik konsultacji i terapii','Sprawdź cenę konsultacji psychologicznej i sesji psychoterapii we Wrocławiu lub online. Sprawdź też cenę pełnej diagnozy ADHD i zasady pierwszej konsultacji diagnostycznej.');
 
 /**
  * Podstrona /cennik/ - osobny adres pod frazy „cennik psychoterapia Wrocław”.
@@ -12,7 +12,7 @@ export const metadata=meta('/cennik/','Psycholog Wrocław - cennik konsultacji i
  * z sekcją cennika na stronie głównej. JSON-LD: OfferCatalog.
  */
 export default function CennikPage() {
-  const prices = priceServices.flatMap(item => item.rate ? [{...item.rate, name:item.name, href:item.href, category:item.category}] : []);
+  const prices = priceServices.flatMap(item => item.rate ? [{...item.rate, name:item.name, href:item.href, category:item.category}] : []).concat([{...adhdAssessment,name:services.adhd.name,href:services.adhd.href,category:'diagnosis'}]);
   const ld = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -27,8 +27,8 @@ export default function CennikPage() {
           itemOffered: { '@id': `https://psychologplebaniak.pl${p.href}#usluga` },
           price: String(p.price),
           priceCurrency: 'PLN',
-          category: p.category === 'therapy' ? 'Psychoterapia' : 'Konsultacja psychologiczna',
-          description: `Sesja ${p.duration}. Stacjonarnie we Wrocławiu i online.`,
+          category: p.category === 'diagnosis' ? 'Diagnostyka' : p.category === 'therapy' ? 'Psychoterapia' : 'Konsultacja psychologiczna',
+          description: p.category === 'diagnosis' ? `${adhdDuration}. Tylko stacjonarnie we Wrocławiu. Pierwsza konsultacja w cenie. ${adhdDocumentation}` : `Sesja ${p.duration}. Stacjonarnie we Wrocławiu i online.`,
           areaServed: 'Wrocław',
           url: `https://psychologplebaniak.pl/cennik/#${p.key}`,
         })),
@@ -42,10 +42,10 @@ export default function CennikPage() {
       <main id="tresc" className="container section max-w-3xl price-editorial">
         <Crumbs path="/cennik/" title="Cennik"/>
         <h1 className="mt-4 text-5xl leading-tight text-green md:text-6xl">
-          Cennik wizyt - Wrocław · stacjonarnie i online
+          Cennik konsultacji, psychoterapii i diagnozy
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/80">
-          Stawki poniżej dotyczą standardowej konsultacji i sesji psychoterapii, zarówno wizyt stacjonarnych
+          Stawki standardowej konsultacji i sesji psychoterapii dotyczą zarówno wizyt stacjonarnych
           w gabinecie przy ul. {config.address} (szczegóły placówki:{' '}
           <a
             className="text-green underline"
@@ -55,7 +55,7 @@ export default function CennikPage() {
           >
             centrumrownowagi.com
           </a>
-          ), jak i sesji online.
+          ), jak i sesji online. Diagnoza ADHD odbywa się wyłącznie stacjonarnie.
         </p>
 
         <div className="price-ledger">
@@ -63,9 +63,9 @@ export default function CennikPage() {
             <div key={p.key} id={p.key} className="price-row">
               <h2 className="text-2xl text-green"><a href={p.href}>{p.name}</a></h2>
               <p className="price-number">{p.price} zł</p>
-              <p className="mt-1 text-sm text-ink/60">sesja {p.duration}</p>
+              <p className="mt-1 text-sm text-ink/60">{p.category === 'diagnosis' ? adhdDuration : `sesja ${p.duration}`}</p>
               <p className="mt-4 leading-7 text-ink/80">
-                {p.key === 'konsultacja'
+                {p.category === 'diagnosis' ? `Cena całego procesu obejmuje pierwszą konsultację. ${adhdDocumentation}` : p.key === 'konsultacja'
                   ? 'Spotkanie konsultacyjne, podczas którego omawiamy trudności i oczekiwania. Nie zobowiązuje do rozpoczęcia psychoterapii. Zwykle poprzedza ją kilka konsultacji, po których ustalamy dalszą formę pomocy.'
                   : 'Psychoterapia indywidualna w nurcie psychodynamicznym z wykorzystaniem TFP. Stawka dotyczy sesji w gabinecie lub online, nie osobnego wariantu terapii.'}
               </p>
@@ -73,10 +73,9 @@ export default function CennikPage() {
           ))}
         </div>
 
-        <section className="diagnostic-note"><h2>Dodatkowe usługi: ustalenie kosztu</h2>
-          <p>{assessmentTerms}</p>
-          <p><a href={services.diagnostic.href}>Konsultacja ukierunkowana diagnostycznie</a> to rozmowa o kierunku oceny, a nie z góry wyceniony pakiet ani osobna pozycja w rezerwacji. Cenę i czas psychoedukacji trzeba ustalić niezależnie od stawek powyżej.</p>
-          <ul>{([...assessmentKeys,'edu','eduAdhd'] as const).map(key=><li key={key}><a href={services[key].href}>{services[key].name}</a>{services[key].assessment?.fee && ` — ${services[key].assessment.fee}`}</li>)}</ul>
+        <section className="diagnostic-note"><h2>Diagnoza psychologiczna i diagnoza osobowości</h2>
+          <p><a href={services.general.href}>Diagnoza psychologiczna</a> i <a href={services.personality.href}>diagnoza osobowości</a>: pierwsza konsultacja {firstAssessmentConsult}. Dalszy zakres ustalamy indywidualnie.</p>
+          <p>{psychoeducationTerms} Nie ma odrębnej stawki.</p>
         </section>
         <p className="mt-8 text-lg leading-8 text-ink/80">
           {details}

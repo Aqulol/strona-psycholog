@@ -1,3 +1,4 @@
+const RECIPIENT = 'gpplebaniak@gmail.com';
 const LIMIT = 8192;
 const MAILBOX = /^[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$/i;
 const FIELDS = {name:80, email:160, phone:24, subject:120, message:1000, website:0};
@@ -42,10 +43,11 @@ function validate(value) {
 
 export default {
   async fetch(request, env) {
-    const headers = new Headers({'Cache-Control':'no-store', Vary:'Origin'});
+    const headers = new Headers({'Cache-Control':'no-store', 'X-Content-Type-Options':'nosniff', Vary:'Origin'});
     const json = (status, body) => Response.json(body,{status,headers});
     const fail = (status, code) => json(status,{status:'error',code});
-    if (new URL(request.url).pathname !== '/kontakt') return fail(404,'not_found');
+    const {pathname, search} = new URL(request.url);
+    if (pathname !== '/kontakt' || search) return fail(404,'not_found');
     const origin = request.headers.get('Origin');
     if (!origin || origin !== env.SITE_ORIGIN) return fail(403,'origin');
     headers.set('Access-Control-Allow-Origin', origin);
@@ -59,7 +61,7 @@ export default {
     if (request.headers.get('Content-Type')?.split(';',1)[0].trim().toLowerCase() !== 'application/json') return fail(415,'content_type');
     try {
       const ip = request.headers.get('CF-Connecting-IP');
-      if (!ip || !env.RESEND_API_KEY || !MAILBOX.test(env.MAIL_FROM ?? '') || !MAILBOX.test(env.MAIL_TO ?? '')) return fail(503,'unavailable');
+      if (!ip || !env.RESEND_API_KEY || !MAILBOX.test(env.MAIL_FROM ?? '')) return fail(503,'unavailable');
       if (!(await env.PER_IP.limit({key:ip})).success) {
         headers.set('Retry-After','60');
         return fail(429,'rate');
@@ -79,7 +81,7 @@ export default {
       const response = await fetch('https://api.resend.com/emails',{
         method:'POST', redirect:'error', signal:AbortSignal.timeout(12_000),
         headers:{Authorization:`Bearer ${env.RESEND_API_KEY}`,'Content-Type':'application/json'},
-        body:JSON.stringify({from:env.MAIL_FROM,to:[env.MAIL_TO],reply_to:data.email,subject:'Wiadomość z formularza gabinetu',text}),
+        body:JSON.stringify({from:env.MAIL_FROM,to:[RECIPIENT],reply_to:data.email,subject:'Wiadomość z formularza gabinetu',text}),
       });
       if (response.status === 429) return fail(429,'provider_limit');
       if (!response.ok) return fail(503,'delivery_unconfirmed');

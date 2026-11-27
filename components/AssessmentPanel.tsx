@@ -1,3 +1,4 @@
+import {config} from '../lib/config';
 import {services, type ServiceKey, type AssessmentDetails} from '../lib/services';
 
 const labels = {
@@ -11,7 +12,7 @@ export default function AssessmentPanel({id}:{id:ServiceKey}) {
   if (!details) return null;
   const consultation = id === 'diagnostic' ? services.consult : undefined;
   return <section className="assessment-panel diagnostic-note" aria-labelledby="informacje-praktyczne">
-    <h2 id="informacje-praktyczne">{consultation ? 'Standardowa konsultacja: informacje praktyczne' : 'Informacje praktyczne'}</h2>
+    <h2 id="informacje-praktyczne">{consultation ? 'Standardowa konsultacja: informacje praktyczne' : id === 'adhd' ? 'Diagnoza ADHD: informacje praktyczne' : 'Informacje praktyczne'}</h2>
     <dl>{(Object.keys(labels) as (keyof AssessmentDetails)[]).flatMap(key => details[key] ? [<div key={key}><dt>{labels[key]}</dt><dd>{details[key]}</dd></div>] : [])}
       {consultation && <>
         <div><dt>Dla kogo</dt><dd>{consultation.audience}</dd></div>
@@ -19,5 +20,6 @@ export default function AssessmentPanel({id}:{id:ServiceKey}) {
         {consultation.rate && <div><dt>Czas i koszt konsultacji</dt><dd>{consultation.rate.duration} · {consultation.rate.price} zł</dd></div>}
       </>}
     </dl>
+    {id === 'adhd' && <><p>W Booksy wybierz standardową konsultację i przed wizytą potwierdź z gabinetem, że ma rozpocząć diagnostykę ADHD. W procesie ADHD pierwsze spotkanie nie jest dodatkowo płatne.</p><a className="booking" href={config.booksyUrl} rel="noreferrer">Sprawdź terminy pierwszej konsultacji</a></>}
   </section>;
 }

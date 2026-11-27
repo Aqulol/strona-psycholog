@@ -3,7 +3,7 @@ import RelatedContent from './RelatedContent';
 import { config } from '../lib/config';
 import { personId, webPage } from '../lib/entities';
 import { editorial, type EditorialKey } from '../lib/service-editorial';
-import { assessmentKeys, assessmentTerms, categoryNames, services } from '../lib/services';
+import { adhdAssessment, assessmentKeys, categoryNames, services } from '../lib/services';
 import { meta, paths } from '../lib/site';
 import { Crumbs, Json, Questions } from './Site';
 import { ServiceIcon } from './ServiceCards';
@@ -23,7 +23,7 @@ export default function EditorialServicePage({id}:{id:EditorialKey}) {
   const entry = editorial[id];
   return <main id="tresc" className="reading service-editorial" data-service-category={category}>
     <Crumbs path={href} title={h1}/>
-    <Json data={{...webPage(href,h1,description,status === 'provided' ? name : undefined,rate ?? undefined),...(category !== 'diagnosis' ? {author:{'@id':personId}} : {})}}/>
+    <Json data={{...webPage(href,h1,description,status === 'provided' ? name : undefined,id === 'adhd' ? {price:adhdAssessment.price, duration:adhdAssessment.duration, description:'Cały proces diagnostyczny, stacjonarnie we Wrocławiu. Pierwsza konsultacja w cenie; dokumentacja pisemna dodatkowo płatna.'} : rate ?? undefined),...(category !== 'diagnosis' ? {author:{'@id':personId}} : {})}}/>
     <div className="service-masthead"><p className="eyebrow">{status === 'guide' ? 'Przewodnik po konsultacjach' : categoryNames[category]}</p>
     <ServiceIcon name={icon}/><h1>{h1}</h1><p className="hero-copy">{intro}</p>
     <p className="offer-meta">{category === 'diagnosis' ? 'Gabinet prowadzi: ' : 'Opracowanie: '}<a href={paths.about}>{config.name}</a>, psycholog</p></div>
@@ -40,10 +40,11 @@ export default function EditorialServicePage({id}:{id:EditorialKey}) {
       {assessmentKeys.filter(key=>key!==id).map(key=><li key={key}><a href={services[key].href}>{services[key].name}</a></li>)}
       <li><a href={services.diagnostic.href}>Czym jest konsultacja diagnostyczna?</a></li>
     </ul></section>}
-    <section><h2>{category === 'diagnosis' ? 'Kontakt i konsultacja' : id === 'eduAdhd' ? 'Jak umówić spotkanie?' : 'Informacje praktyczne'}</h2>
+    {category === 'education' ? <section><h2>Jak korzystam z psychoedukacji?</h2><p>Zakres omawiamy podczas <a href={services.consult.href}>konsultacji psychologicznej</a> lub <a href={services.individual.href}>psychoterapii</a>. Psychoedukacja nie ma osobnej ceny ani rezerwacji.</p></section> : id === 'adhd' ? <p><a href={paths.contact}>Kontakt w sprawie diagnozy ADHD</a></p> :
+    <section><h2>{category === 'diagnosis' ? 'Kontakt i konsultacja' : 'Informacje praktyczne'}</h2>
       {audience && <p>{audience}.</p>}
-      {rate ? <p>Potwierdzona stawka za spotkanie: {rate.price} zł / {rate.duration}. Więcej informacji w <a href="/cennik/">cenniku</a>.</p> : category === 'diagnosis' ? <p>{assessmentTerms} Przed rozpoczęciem oceny można ustalić jej zakres, koszt i formę podsumowania. Jeśli nie wiesz, od czego zacząć, możesz umówić standardową konsultację psychologiczną — nie jest to rezerwacja diagnozy.</p> : null}
-      <p>{initialBooking ? <a className="booking" href={initialBooking} rel="noreferrer">{id === 'individual' ? 'Umów konsultację wstępną' : 'Umów konsultację'}</a> : category === 'diagnosis' ? <><a className="booking" href={services.consult.bookingUrl ?? services.consult.href} rel="noreferrer">Umów standardową konsultację</a>{' · '}<a href={paths.contact}>Kontakt w sprawie diagnozy</a></> : <a className="booking" href={paths.contact}>{status === 'guide' ? 'Skontaktuj się z gabinetem' : 'Zapytaj o spotkanie'}</a>}</p>
-    </section>
+      {rate && <p>Stawka: {rate.price} zł / {rate.duration}. Więcej w <a href="/cennik/">cenniku</a>.</p>}
+      <p>{initialBooking ? <a className="booking" href={initialBooking} rel="noreferrer">{id === 'individual' ? 'Umów konsultację wstępną' : 'Umów konsultację'}</a> : category === 'diagnosis' ? <><a className="booking" href={config.booksyUrl} rel="noreferrer">Umów standardową konsultację</a>{' · '}<a href={paths.contact}>Kontakt w sprawie diagnozy</a></> : <a className="booking" href={paths.contact}>Skontaktuj się z gabinetem</a>}</p>
+    </section>}
   </main>;
 }

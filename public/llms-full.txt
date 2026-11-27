@@ -10,7 +10,7 @@ Diagnostyka i psychoedukacja:
 - https://psychologplebaniak.pl/diagnoza-adhd-wroclaw/
 - https://psychologplebaniak.pl/diagnoza-osobowosci-wroclaw/
 - https://psychologplebaniak.pl/psychoedukacja/
-Cennik standardowych spotkań nie określa ceny pełnej diagnozy. Booksy służy do rezerwacji standardowej konsultacji; kalendarz w witrynie wymaga osobnej zgody. Formularz kontaktowy nie służy do przesyłania danych medycznych; korzysta z transportu Cloudflare Workers i Resend po konfiguracji. Strona to statyczny eksport Next.js na Firebase Hosting. Więcej: https://psychologplebaniak.pl/polityka-prywatnosci/
+Cennik obejmuje także pełną diagnozę ADHD. Booksy służy do rezerwacji standardowej konsultacji i otwiera się przez bezpośredni link. Formularz kontaktowy nie służy do przesyłania danych medycznych; korzysta z transportu Cloudflare Workers i Resend po konfiguracji. Strona to statyczny eksport Next.js na Firebase Hosting. Więcej: https://psychologplebaniak.pl/polityka-prywatnosci/
 
 Wybrane artykuły (pełny indeks: https://psychologplebaniak.pl/blog/):
 - Narcyzm wrażliwy: czym jest i jak może wpływać na relacje?: https://psychologplebaniak.pl/blog/narcyzm-wrazliwy/ - wrażliwość na krytykę, zmienne poczucie własnej wartości, bliskość i relacje.

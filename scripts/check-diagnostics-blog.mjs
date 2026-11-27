@@ -11,13 +11,21 @@ for (const path of [...diagnostic,consultation,'/psychoedukacja-adhd/']) {
   const panel = page.match(/class="assessment-panel[\s\S]*?<\/section>/)?.[0];
   assert.ok(panel,path);
   assert.match(page,/Najczęściej zadawane pytania/);
-  assert.doesNotMatch(panel,/DIVA-5|MOXO|SCID-5-PD|MMPI|<dd><\/dd>/);
+  assert.doesNotMatch(panel,/Young DIVA-5|MOXO|SCID-5-PD|MMPI|STIPO-R|<dd><\/dd>/);
   if (path === consultation) assert.match(panel,/50 min · 200 zł/);
-  else assert.doesNotMatch(panel,/200 zł|od 15\. roku/);
+  if (path === diagnostic[0]) {
+    for (const pattern of [/700 zł/,/3 spotkania po 50 minut/,/od 15\. roku/,/Wyłącznie stacjonarnie we Wrocławiu/,/pierwszą konsultacją w cenie/,/Dokumentacja pisemna dodatkowo płatna/,/DIVA-5 tylko w diagnostyce dorosłych/]) assert.match(panel,pattern);
+    assert.doesNotMatch(panel,/200 zł/);
+  }
+  if (diagnostic.slice(1).includes(path)) assert.match(panel,/Pierwsza konsultacja: 200 zł \/ 50 min/);
 }
-for (const path of ['/cennik/','/oferta/',...diagnostic]) {
-  assert.ok(main(path).includes('Cena standardowej konsultacji nie jest ceną pełnej diagnozy.'),path);
+assert.match(main('/cennik/'),/700 zł/);
+for(const path of ['/psychoedukacja/','/psychoedukacja-adhd/']) {
+  const page=main(path);
+  assert.match(page,/nie osobną usługą ani rezerwacją/);
+  assert.doesNotMatch(page,/"@type":"(?:Service|Offer)"|href="https:\/\/booksy\.com/);
 }
+
 const index = JSON.parse(read('indeks-tresci.json'));
 const sitemap = read('sitemap.xml');
 for (const [slug, query, incoming] of [
